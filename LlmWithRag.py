@@ -9,6 +9,7 @@ from langgraph.graph import START, StateGraph
 from typing_extensions import List, TypedDict
 from langchain_core.documents import Document
 from langchain import hub
+import json
 
 os.environ["LANGSMITH_TRACING"] = "true"
 os.environ["LANGSMITH_API_KEY"] = "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"
@@ -25,6 +26,7 @@ llm = init_chat_model("llama3-8b-8192", model_provider="groq")
 embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
 
 """ Indexing part """
+
 csv_folder = "csv_data"
 faiss_index_folder = "faiss_index"
 
@@ -55,6 +57,25 @@ else:
 
 """ Retrieve and Generate part """
 
+
+def save_to_json(result, filename="results.json"):
+    """Save results as a properly formatted JSON file"""
+    if os.path.exists(filename):
+        with open(filename, "r") as f:
+            try:
+                data = json.load(f)
+                if not isinstance(data, list):
+                    data = []
+            except json.JSONDecodeError:
+                data = []
+    else:
+        data = []
+
+    data.append(result)
+
+    with open(filename, "w") as f:
+        json.dump(data, f, indent=4)  # Pretty-print with indentation
+
 # Define prompt for question-answering
 prompt = hub.pull("rlm/rag-prompt")
 
@@ -66,7 +87,7 @@ class State(TypedDict):
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 1)
+    retrieved_docs = vector_store.similarity_search(state["question"], k = 10)
     for doc in retrieved_docs:
         print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
     return {"context": retrieved_docs}
@@ -78,7 +99,34 @@ def generate(state: State):
     Given this question and the context provided, provide the answer including the explanation on how you get the information: 
     - the name of the file
     - the row of the file
-    You can find this information in the metadata of the document you use for the answer.
+    (You can find this two information in the metadata of the document you use for the answer.)
+    The answer must respect this following structure in a JSON format, without adding more words or sentences before or after:
+        {{
+        "answer": ["<answer_1>", "<answer_2>", "..."],  
+        "explanation": [  
+            {{"file": "<file_name>", "row": <row_number>}},  
+            {{"file": "<file_name>", "row": <row_number>}}  
+            ]  
+        }}
+    ### IMPORTANT ###
+    - The answer must be a list of strings. If there is only one answer, it must still be inside a list.
+    - The explanation must be a list of dictionaries, where each dictionary contains the file name and row number from which the answer was extracted.
+    - The output must be a valid JSON object with no extra text.
+
+    ### Example ###
+        Question: "In which courses is enrolled Giulia Rossi?"
+    Expected output:
+        {{
+        "answer": ["Machine Learning", "Advanced Algorithms"],  
+        "explanation": [
+            {{"file": "students.csv", "row": 1}},
+            {{"file": "enrollments.csv", "row": 1}},
+            {{"file": "enrollments.csv", "row": 4}},
+            {{"file": "courses.csv", "row": 1}},
+            {{"file": "courses.csv", "row": 4}}
+        ]
+        }}
+        
     """
     docs_content = "\n\n".join(str(doc.metadata) + doc.page_content for doc in state["context"])
     messages = prompt.invoke({"question": prompt_with_explanation, "context": docs_content})
@@ -92,9 +140,21 @@ graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
 
+# Load question txt
+with open("question.txt", "r") as f:
+    questions = [line.strip() for line in f.readlines() if line.strip()]
+print(questions[2])
+for i, question in enumerate(questions):
+    print(f"Processing question n. {i+1}")
+    result = graph.invoke({"question": question})
+    
+    save_to_json({
+        "question": result["question"],
+        "answer": result["answer"]
+    })
+    
+    
+    print(result["answer"] + "\n")
 
-# Test RAG application
-question = "Which is the email of Giulia Rossi? "
-result = graph.invoke({"question": question})
-print(result["answer"])
+
 
