@@ -10,6 +10,11 @@ from typing_extensions import List, TypedDict
 from langchain_core.documents import Document
 from langchain import hub
 import json
+from langchain_core.output_parsers import JsonOutputParser
+from pydantic import BaseModel, Field
+from typing import List
+
+import re
 
 os.environ["LANGSMITH_TRACING"] = "true"
 os.environ["LANGSMITH_API_KEY"] = "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"
@@ -78,18 +83,30 @@ def save_to_json(result, filename="results.json"):
 
 # Define prompt for question-answering
 prompt = hub.pull("rlm/rag-prompt")
+# Step 1: Define Pydantic models
+class ExplanationItem(BaseModel):
+    file: str
+    row: int
 
 # Define state for application
 class State(TypedDict):
     question: str
     context: List[Document]
-    answer: str
+    answer: List[str]
+    explanation: List[ExplanationItem]
+    
+
+class AnswerExplanation(BaseModel):
+    answer: List[str]  # List of answers
+    explanation: List[ExplanationItem]  # List of explanation items
+    
+parser = JsonOutputParser(pydantic_object=AnswerExplanation)
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
     retrieved_docs = vector_store.similarity_search(state["question"], k = 10)
-    for doc in retrieved_docs:
-        print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
+    #for doc in retrieved_docs:
+    #    print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
     return {"context": retrieved_docs}
 
 # Generate the answer invoking the LLM with the context joined with the question
@@ -100,61 +117,78 @@ def generate(state: State):
     - the name of the file
     - the row of the file
     (You can find this two information in the metadata of the document you use for the answer.)
-    The answer must respect this following structure in a JSON format, without adding more words or sentences before or after:
-        {{
+    The answer must respect the following structure, but return it as a string representation of a JSON:
+
+    {{
         "answer": ["<answer_1>", "<answer_2>", "..."],  
         "explanation": [  
-            {{"file": "<file_name>", "row": <row_number>}},  
-            {{"file": "<file_name>", "row": <row_number>}}  
-            ]  
-        }}
+            {{  "file": "<file_name>",
+                "row": <row_number>}},  
+            {{  "file": "<file_name>", 
+                "row": <row_number>}}  
+        ]
+    }}
+
     ### IMPORTANT ###
-    - The answer must be a list of strings. If there is only one answer, it must still be inside a list.
-    - The explanation must be a list of dictionaries, where each dictionary contains the file name and row number from which the answer was extracted.
-    - The output must be a valid JSON object with no extra text.
+
+    - The output must be a valid JSON object, without extra text.
 
     ### Example ###
-        Question: "In which courses is enrolled Giulia Rossi?"
-    Expected output:
-        {{
-        "answer": ["Machine Learning", "Advanced Algorithms"],  
+    {{
+        "answer": [
+            "Computer Science"
+        ],
         "explanation": [
-            {{"file": "students.csv", "row": 1}},
-            {{"file": "enrollments.csv", "row": 1}},
-            {{"file": "enrollments.csv", "row": 4}},
-            {{"file": "courses.csv", "row": 1}},
-            {{"file": "courses.csv", "row": 4}}
-        ]
-        }}
-        
+            {{
+                "file": "teachers.csv",
+                "row": 1
+            }}
+        ]}}
     """
-    docs_content = "\n\n".join(str(doc.metadata) + doc.page_content for doc in state["context"])
+
+    docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
     messages = prompt.invoke({"question": prompt_with_explanation, "context": docs_content})
     
     response = llm.invoke(messages)
-    return {"answer": response.content}
+    #print(response.content)
+    cleaned_response = response.content.strip()
+    #print(cleaned_response)
 
-# Control flow: compile the application into a single graph object. 
-# Connect the retrieval and generation steps into a single sequence.
+    try:
+        parsed_response = json.loads(cleaned_response)
+    except json.JSONDecodeError as e:
+        print(f"Error parsing response: {cleaned_response}")
+        print(f"JSONDecodeError: {str(e)}")
+        return {"answer": [], "explanation": []}
+    print(parsed_response)
+   
+    return {
+        "answer": parsed_response.get("answer", []),
+        "explanation": parsed_response.get("explanation", [])
+    }
+    
+
+# Step 4: Control flow: Compile the application into a graph
 graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
 
-# Load question txt
+# Step 5: Process questions from a file
 with open("question.txt", "r") as f:
     questions = [line.strip() for line in f.readlines() if line.strip()]
-print(questions[2])
+all_results = []
 for i, question in enumerate(questions):
     print(f"Processing question n. {i+1}")
-    result = graph.invoke({"question": question})
     
-    save_to_json({
-        "question": result["question"],
-        "answer": result["answer"]
-    })
+    # Evita l'errore KeyError se la risposta non è presente
+    full_result = graph.invoke({"question": question})
+    result = {
+        "question": question,
+        "answer": full_result.get("answer", []),
+        "explanation": full_result.get("explanation", [])
+    }
     
-    
-    print(result["answer"] + "\n")
+    all_results.append(result)
 
-
-
+with open("all_outputs.json", "w", encoding="utf-8") as f:
+    json.dump(all_results, f, indent=4, ensure_ascii=False)
