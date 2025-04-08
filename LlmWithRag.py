@@ -62,28 +62,9 @@ else:
 
 """ Retrieve and Generate part """
 
-
-def save_to_json(result, filename="results.json"):
-    """Save results as a properly formatted JSON file"""
-    if os.path.exists(filename):
-        with open(filename, "r") as f:
-            try:
-                data = json.load(f)
-                if not isinstance(data, list):
-                    data = []
-            except json.JSONDecodeError:
-                data = []
-    else:
-        data = []
-
-    data.append(result)
-
-    with open(filename, "w") as f:
-        json.dump(data, f, indent=4)  # Pretty-print with indentation
-
 # Define prompt for question-answering
 prompt = hub.pull("rlm/rag-prompt")
-# Step 1: Define Pydantic models
+# Step 1: Define Explanation Class: composed by file and row
 class ExplanationItem(BaseModel):
     file: str
     row: int
@@ -95,12 +76,6 @@ class State(TypedDict):
     answer: List[str]
     explanation: List[ExplanationItem]
     
-
-class AnswerExplanation(BaseModel):
-    answer: List[str]  # List of answers
-    explanation: List[ExplanationItem]  # List of explanation items
-    
-parser = JsonOutputParser(pydantic_object=AnswerExplanation)
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
@@ -153,7 +128,7 @@ def generate(state: State):
     #print(response.content)
     cleaned_response = response.content.strip()
     #print(cleaned_response)
-
+    '''Parse generated answer in a JSON format'''
     try:
         parsed_response = json.loads(cleaned_response)
     except json.JSONDecodeError as e:
@@ -168,19 +143,20 @@ def generate(state: State):
     }
     
 
-# Step 4: Control flow: Compile the application into a graph
+# Control flow: Compile the application into a graph
 graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
 
-# Step 5: Process questions from a file
+# Process questions from a txt file
 with open("question.txt", "r") as f:
     questions = [line.strip() for line in f.readlines() if line.strip()]
+
 all_results = []
+''' Loop for LLM invocation'''
 for i, question in enumerate(questions):
     print(f"Processing question n. {i+1}")
     
-    # Evita l'errore KeyError se la risposta non è presente
     full_result = graph.invoke({"question": question})
     result = {
         "question": question,
@@ -189,6 +165,6 @@ for i, question in enumerate(questions):
     }
     
     all_results.append(result)
-
+# Save results to json file
 with open("all_outputs.json", "w", encoding="utf-8") as f:
     json.dump(all_results, f, indent=4, ensure_ascii=False)

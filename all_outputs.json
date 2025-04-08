@@ -145,8 +145,15 @@
     },
     {
         "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
-        "answer": [],
-        "explanation": []
+        "answer": [
+            "B"
+        ],
+        "explanation": [
+            {
+                "file": "courses.csv",
+                "row": 0
+            }
+        ]
     },
     {
         "question": "Who is the teacher following Sophie Durand in her thesis?",
@@ -371,8 +378,25 @@
     },
     {
         "question": "Which courses have 8 credits?",
-        "answer": [],
-        "explanation": []
+        "answer": [
+            "Database Systems",
+            "Advanced Algorithms",
+            "Software Engineering"
+        ],
+        "explanation": [
+            {
+                "file": "courses.csv",
+                "row": 1
+            },
+            {
+                "file": "courses.csv",
+                "row": 3
+            },
+            {
+                "file": "courses.csv",
+                "row": 6
+            }
+        ]
     },
     {
         "question": "What is the academic year of the thesis titled 'IoT Security Challenges'?",
