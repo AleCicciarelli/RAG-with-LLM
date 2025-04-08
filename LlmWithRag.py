@@ -142,7 +142,45 @@ def generate(state: State):
         "explanation": parsed_response.get("explanation", [])
     }
     
+'''k analysis'''
+'''
+import time
 
+results_by_k = {}
+# Process questions from a txt file
+with open("question.txt", "r") as f:
+    questions = [line.strip() for line in f.readlines() if line.strip()]
+    
+for k in range(12, 21):  # k da 0 a 20
+    print(f"\n=== Running evaluation with k={k} ===")
+    all_results = []
+
+    def retrieve(state: State):
+        retrieved_docs = vector_store.similarity_search(state["question"], k=k)
+        return {"context": retrieved_docs}
+
+    graph_builder = StateGraph(State).add_sequence([retrieve, generate])
+    graph_builder.add_edge(START, "retrieve")
+    graph = graph_builder.compile()
+
+    for i, question in enumerate(questions):
+        print(f"[k={k}] Processing question n. {i+1}")
+        full_result = graph.invoke({"question": question})
+        result = {
+            "question": question,
+            "answer": full_result.get("answer", []),
+            "explanation": full_result.get("explanation", [])
+        }
+        all_results.append(result)
+
+    output_filename = f"outputs_k_{k}.json"
+    with open(output_filename, "w", encoding="utf-8") as f:
+        json.dump(all_results, f, indent=4, ensure_ascii=False)
+
+    results_by_k[k] = output_filename
+    time.sleep(1)  # opzionale: per evitare throttling dell'API
+
+''' 
 # Control flow: Compile the application into a graph
 graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 graph_builder.add_edge(START, "retrieve")
@@ -153,7 +191,9 @@ with open("question.txt", "r") as f:
     questions = [line.strip() for line in f.readlines() if line.strip()]
 
 all_results = []
+
 ''' Loop for LLM invocation'''
+
 for i, question in enumerate(questions):
     print(f"Processing question n. {i+1}")
     
@@ -166,5 +206,5 @@ for i, question in enumerate(questions):
     
     all_results.append(result)
 # Save results to json file
-with open("all_outputs.json", "w", encoding="utf-8") as f:
+with open("all_outputs_cosine.json", "w", encoding="utf-8") as f:
     json.dump(all_results, f, indent=4, ensure_ascii=False)

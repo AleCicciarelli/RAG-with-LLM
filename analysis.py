@@ -28,7 +28,7 @@ def compute_metrics(total_tp, total_fp, total_fn, total_exact, n):
 
 def main():
     gt_data = load_json("true_answers.json")
-    pred_data = load_json("all_outputs.json")
+    pred_data = load_json("all_outputs_cosine.json")
 
     assert len(gt_data) == len(pred_data), "Mismatch in number of questions"
 
@@ -72,7 +72,7 @@ def main():
         })
 
     # Write per-question results to CSV
-    with open("evaluation_results.csv", "w", encoding="utf-8", newline="") as f:
+    with open("evaluation_results_cosine.csv", "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=rows[0].keys())
         writer.writeheader()
         writer.writerows(rows)
@@ -102,7 +102,7 @@ def main():
     plt.title("LLM Evaluation Metrics")
     plt.legend()
     plt.tight_layout()
-    plt.savefig("evaluation_metrics.png")
+    plt.savefig("evaluation_metrics_cosine.png")
     plt.show()
 
 if __name__ == "__main__":
