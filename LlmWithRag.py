@@ -24,7 +24,7 @@ if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 
 # LLM: Llama3-8b by Groq
-llm = init_chat_model("llama3-8b-8192", model_provider="groq")
+llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
 
 #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 token hugging-face
 # Embedding model: Hugging Face
@@ -88,7 +88,7 @@ def retrieve(state: State):
 def generate(state: State):
     prompt_with_explanation = f"""
     Question: {state["question"]}
-    Given this question and the context provided, provide the answer including the explanation on how you get the information: 
+    Given this question and the context provided , provide the answer including the explanation on how you get the information: 
     - the name of the file
     - the row of the file
     (You can find this two information in the metadata of the document you use for the answer.)
@@ -119,11 +119,11 @@ def generate(state: State):
                 "row": 1
             }}
         ]}}
+        
     """
 
     docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
     messages = prompt.invoke({"question": prompt_with_explanation, "context": docs_content})
-    
     response = llm.invoke(messages)
     #print(response.content)
     cleaned_response = response.content.strip()
@@ -192,7 +192,7 @@ with open("question.txt", "r") as f:
 
 all_results = []
 
-''' Loop for LLM invocation'''
+''' Loop for LLM invocation on questions'''
 
 for i, question in enumerate(questions):
     print(f"Processing question n. {i+1}")
@@ -206,5 +206,5 @@ for i, question in enumerate(questions):
     
     all_results.append(result)
 # Save results to json file
-with open("all_outputs_cosine.json", "w", encoding="utf-8") as f:
+with open("all_outputs.json", "w", encoding="utf-8") as f:
     json.dump(all_results, f, indent=4, ensure_ascii=False)

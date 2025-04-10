@@ -60,16 +60,9 @@
         ]
     },
     {
-        "question": "In which classroom is the Database Systems exam?",
-        "answer": [
-            "2"
-        ],
-        "explanation": [
-            {
-                "file": "exams.csv",
-                "row": 1
-            }
-        ]
+        "question": "Which is the capacity of the class 302?",
+        "answer": [],
+        "explanation": []
     },
     {
         "question": "In which area is the \\\"User Experience Design in Web Apps\\\" thesis?",
@@ -86,7 +79,7 @@
     {
         "question": "Which instructor teaches Machine Learning course?",
         "answer": [
-            "Carlo Rossi"
+            "Dr. Rossi"
         ],
         "explanation": [
             {
@@ -103,14 +96,14 @@
         "explanation": [
             {
                 "file": "teachers.csv",
-                "row": 0
+                "row": 1
             }
         ]
     },
     {
         "question": "How many research project follows the teacher Giulia Colombo?",
         "answer": [
-            "5"
+            "Software Engineering"
         ],
         "explanation": [
             {
@@ -133,37 +126,35 @@
     },
     {
         "question": "In which courses Giulia Rossi is enrolled?",
-        "answer": [
-            "Computer Science"
-        ],
+        "answer": [],
         "explanation": [
             {
-                "file": "courses.csv",
-                "row": 9
+                "file": "students.csv",
+                "row": 0
             }
         ]
     },
     {
         "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
         "answer": [
-            "Not available"
+            "grade not available"
         ],
         "explanation": [
             {
-                "file": "courses.csv",
-                "row": null
+                "file": "students.csv",
+                "row": 0
             }
         ]
     },
     {
         "question": "Who is the teacher following Sophie Durand in her thesis?",
         "answer": [
-            "Marco Verdi"
+            "Maria"
         ],
         "explanation": [
             {
                 "file": "teachers.csv",
-                "row": 2
+                "row": 9
             }
         ]
     },
@@ -171,13 +162,13 @@
         "question": "What are all the courses offered by the Computer Science department?",
         "answer": [
             "Database Systems",
-            "Software Engineering",
             "Human-Computer Interaction",
-            "Cybersecurity",
+            "Software Engineering",
             "Advanced Algorithms",
             "Machine Learning",
             "Data Mining",
-            "Artificial Intelligence"
+            "Artificial Intelligence",
+            "Cybersecurity"
         ],
         "explanation": [
             {
@@ -186,15 +177,11 @@
             },
             {
                 "file": "courses.csv",
+                "row": 2
+            },
+            {
+                "file": "courses.csv",
                 "row": 5
-            },
-            {
-                "file": "courses.csv",
-                "row": 9
-            },
-            {
-                "file": "courses.csv",
-                "row": 8
             },
             {
                 "file": "courses.csv",
@@ -210,31 +197,35 @@
             },
             {
                 "file": "courses.csv",
+                "row": 8
+            },
+            {
+                "file": "courses.csv",
                 "row": 7
             }
         ]
     },
     {
-        "question": "What is the department name in which Antonio Gallo teaches?",
+        "question": "Which students are enrolled in the Artificial Intelligence course?",
         "answer": [
             "Computer Science"
         ],
         "explanation": [
             {
-                "file": "teachers.csv",
-                "row": 2
+                "file": "courses.csv",
+                "row": 7
             }
         ]
     },
     {
-        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "question": "What is the enrollment date of Lucas Schmidt?",
         "answer": [
-            "Not Found"
+            "2020-08-25"
         ],
         "explanation": [
             {
-                "file": "courses.csv",
-                "row": -1
+                "file": "enrollments.csv",
+                "row": 3
             }
         ]
     },
@@ -251,21 +242,21 @@
         ]
     },
     {
-        "question": "In which building will be the Embedded Systems exam?",
+        "question": "Who is the instructor of the Data Mining course?",
         "answer": [
-            "Electronics"
+            "Dr. Conti"
         ],
         "explanation": [
             {
-                "file": "classrooms.csv",
-                "row": 5
+                "file": "courses.csv",
+                "row": 6
             }
         ]
     },
     {
         "question": "What is the title of the thesis followed by Alessandro Moretti?",
         "answer": [
-            "Thesis in Computer Science"
+            "Deep Learning for Computer Vision and Machine Learning"
         ],
         "explanation": [
             {
@@ -289,53 +280,56 @@
     {
         "question": "What is the location of the Humanities Library?",
         "answer": [
-            "Humanities"
+            "The Humanities Library"
         ],
         "explanation": [
             {
                 "file": "departments.csv",
-                "row": 0
+                "row": 1
             }
         ]
     },
     {
         "question": "How many students are enrolled in the Database Systems course?",
         "answer": [
-            "3"
+            "5"
         ],
         "explanation": [
             {
                 "file": "enrollments.csv",
                 "row": 0
+            },
+            {
+                "file": "enrollments.csv",
+                "row": 1
+            },
+            {
+                "file": "enrollments.csv",
+                "row": 2
             }
         ]
     },
     {
         "question": "What are the research areas of Maria Ferrari?",
         "answer": [
-            "Artificial Intelligence",
             "Human-Computer Interaction"
         ],
         "explanation": [
             {
                 "file": "teacher_research_areas.csv",
                 "row": 9
-            },
-            {
-                "file": "teacher_research_areas.csv",
-                "row": 0
             }
         ]
     },
     {
-        "question": "How many research projects are led by Laura Bianchi?",
+        "question": "How many research projects are led by Dr. Bianchi?",
         "answer": [
             "6"
         ],
         "explanation": [
             {
                 "file": "teacher_research_areas.csv",
-                "row": 1
+                "row": 8
             }
         ]
     },
@@ -386,12 +380,17 @@
         "answer": [
             "Database Systems",
             "Software Engineering",
-            "Advanced Algorithms"
+            "Advanced Algorithms",
+            "Data Structures and Algorithms"
         ],
         "explanation": [
             {
                 "file": "courses.csv",
-                "row": 2
+                "row": 1
+            },
+            {
+                "file": "courses.csv",
+                "row": 5
             },
             {
                 "file": "courses.csv",
@@ -399,20 +398,13 @@
             },
             {
                 "file": "courses.csv",
-                "row": 4
+                "row": 7
             }
         ]
     },
     {
-        "question": "What is the title of the thesis of Sophie Durand?",
-        "answer": [
-            "User Experience Design in Web Apps"
-        ],
-        "explanation": [
-            {
-                "file": "thesis.csv",
-                "row": 4
-            }
-        ]
+        "question": "What is the academic year of the thesis titled 'IoT Security Challenges'?",
+        "answer": [],
+        "explanation": []
     }
 ]

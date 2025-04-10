@@ -60,19 +60,27 @@
         ]
     },
     {
-        "question": "Which is the capacity of the class 302?",
+        "question": "In which classroom is the Database Systems exam?",
         "answer": [
-            "100"
+            "Main"
         ],
         "explanation": [
             {
+                "file": "courses.csv",
+                "row": 1
+            },
+            {
+                "file": "exams.csv",
+                "row": 1
+            },
+            {
                 "file": "classrooms.csv",
-                "row": 4
+                "row": 1
             }
         ]
     },
     {
-        "question": "In which area is the \\\"User Experience Design in Web Apps\\\" thesis?",
+        "question": "In which area is the \"User Experience Design in Web Apps\" thesis?",
         "answer": [
             "Human-Computer Interaction"
         ],
@@ -260,28 +268,38 @@
         ]
     },
     {
-        "question": "Which students are enrolled in the Artificial Intelligence course?",
-        "answer": [],
+        "question": "What is the department name in which Antonio Gallo teaches?",
+        "answer": [
+            "Electronics"
+        ],
         "explanation": [
             {
-                "file": "courses.csv",
-                "row": 7
+                "file": "teachers.csv",
+                "row": 4
             },
             {
-                "file": "enrollments.csv",
-                "row": ""
+                "file": "departments.csv",
+                "row": 1
             }
         ]
     },
     {
-        "question": "What is the enrollment date of Lucas Schmidt?",
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
         "answer": [
-            "2020-08-25"
+            "26"
         ],
         "explanation": [
             {
                 "file": "students.csv",
-                "row": 3
+                "row": 4
+            },
+            {
+                "file": "courses.csv",
+                "row": 9
+            },
+            {
+                "file": "grades.csv",
+                "row": 6
             }
         ]
     },
@@ -298,14 +316,22 @@
         ]
     },
     {
-        "question": "Who is the instructor of the Data Mining course?",
+        "question": "In which building will be the Embedded Systems exam?",
         "answer": [
-            "Dr. Conti"
+            "Science"
         ],
         "explanation": [
             {
                 "file": "courses.csv",
-                "row": 6
+                "row": 2
+            },
+            {
+                "file": "exams.csv",
+                "row": 2
+            },
+            {
+                "file": "classrooms.csv",
+                "row": 2
             }
         ]
     },
@@ -378,7 +404,7 @@
         ]
     },
     {
-        "question": "How many research projects are led by Dr. Bianchi?",
+        "question": "How many research projects are led by Laura Bianchi?",
         "answer": [
             "6"
         ],
@@ -461,11 +487,15 @@
         ]
     },
     {
-        "question": "What is the academic year of the thesis titled 'IoT Security Challenges'?",
+        "question": "What is the title of the thesis of Sophie Durand?",
         "answer": [
-            "2023-2024"
+            "IoT Security Challenges"
         ],
         "explanation": [
+            {
+                "file": "students.csv",
+                "row": 3
+            },
             {
                 "file": "thesis.csv",
                 "row": 2
