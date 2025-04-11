@@ -28,7 +28,7 @@ def compute_metrics(total_tp, total_fp, total_fn, total_exact, n):
 
 def main():
     gt_data = load_json("true_answers.json")
-    pred_data = load_json("all_outputs_COSINE.json")
+    pred_data = load_json("all_outputs_SENTENCE.json")
     question_types = load_json("questions.json")  # Dizionario dei tipi di domanda
 
     assert len(gt_data) == len(pred_data), "Mismatch in number of questions"
@@ -98,7 +98,7 @@ def main():
         })
 
     # Scrive i risultati per domanda in un file CSV
-    with open("evaluation_results_COSINE.csv", "w", encoding="utf-8", newline="") as f:
+    with open("evaluation_results_SENTENCE.csv", "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=rows[0].keys())
         writer.writeheader()
         writer.writerows(rows)
@@ -140,7 +140,7 @@ def main():
         plt.title(f"Metrics for {q_type.replace('_', ' ').title()}")
         plt.legend()
         plt.tight_layout()
-        plt.savefig(f"metrics_COSINE_{q_type}.png")
+        plt.savefig(f"metrics_SENTENCE_{q_type}.png")
         plt.close()
 
     # Salva il grafico globale
@@ -159,7 +159,7 @@ def main():
     plt.title("Global LLM Evaluation Metrics")
     plt.legend()
     plt.tight_layout()
-    plt.savefig("evaluation_metrics_COSINE.png")
+    plt.savefig("evaluation_metrics_SENTENCE.png")
     plt.show()
 
 if __name__ == "__main__":

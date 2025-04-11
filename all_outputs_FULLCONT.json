@@ -6,7 +6,7 @@
         ],
         "explanation": [
             {
-                "file": "students.csv",
+                "file": "csv_data/students.csv",
                 "row": 0
             }
         ]
@@ -31,7 +31,7 @@
         "explanation": [
             {
                 "file": "courses.csv",
-                "row": 5
+                "row": 4
             }
         ]
     },
@@ -60,14 +60,14 @@
         ]
     },
     {
-        "question": "Which is the capacity of the class 302?",
+        "question": "In which classroom is the Database Systems exam?",
         "answer": [
-            "100"
+            "Classroom 2"
         ],
         "explanation": [
             {
-                "file": "classrooms.csv",
-                "row": 4
+                "file": "exams.csv",
+                "row": 1
             }
         ]
     },
@@ -86,7 +86,7 @@
     {
         "question": "Which instructor teaches Machine Learning course?",
         "answer": [
-            "Dr. Rossi"
+            "Carlo Rossi"
         ],
         "explanation": [
             {
@@ -98,12 +98,12 @@
     {
         "question": "Which is the research area of the teacher Carlo Rossi?",
         "answer": [
-            "Signal Processing"
+            "Artificial Intelligence"
         ],
         "explanation": [
             {
-                "file": "teacher_research_areas.csv",
-                "row": 4
+                "file": "csv_data/teacher_research_areas.csv",
+                "row": 0
             }
         ]
     },
@@ -111,8 +111,15 @@
         "question": "How many research project follows the teacher Giulia Colombo?",
         "answer": [
             "Software Engineering",
+            "Cybersecurity",
+            "Data Science",
+            "Artificial Intelligence",
             "Algorithms Optimization",
-            "Signal Processing"
+            "Signal Processing",
+            "Machine Learning",
+            "Data Mining",
+            "Human-Computer Interaction",
+            "Robotics"
         ],
         "explanation": [
             {
@@ -121,7 +128,35 @@
             },
             {
                 "file": "teacher_research_areas.csv",
+                "row": 8
+            },
+            {
+                "file": "teacher_research_areas.csv",
+                "row": 1
+            },
+            {
+                "file": "teacher_research_areas.csv",
+                "row": 6
+            },
+            {
+                "file": "teacher_research_areas.csv",
                 "row": 3
+            },
+            {
+                "file": "teacher_research_areas.csv",
+                "row": 4
+            },
+            {
+                "file": "teacher_research_areas.csv",
+                "row": 7
+            },
+            {
+                "file": "teacher_research_areas.csv",
+                "row": 2
+            },
+            {
+                "file": "teacher_research_areas.csv",
+                "row": 9
             },
             {
                 "file": "teacher_research_areas.csv",
@@ -143,116 +178,108 @@
     },
     {
         "question": "In which courses Giulia Rossi is enrolled?",
-        "answer": [
-            "Computer Science"
-        ],
-        "explanation": [
-            {
-                "file": "teachers.csv",
-                "row": 0
-            }
-        ]
+        "answer": [],
+        "explanation": []
     },
     {
         "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
         "answer": [
-            "Not found"
+            "I don't know"
         ],
-        "explanation": [
-            {
-                "file": "teachers.csv",
-                "row": 7
-            }
-        ]
+        "explanation": []
     },
     {
         "question": "Who is the teacher following Sophie Durand in her thesis?",
         "answer": [
-            "Maria"
+            "Maria Ferrari"
         ],
         "explanation": [
             {
-                "file": "teachers.csv",
-                "row": 9
+                "file": "thesis.csv",
+                "row": 4
             }
         ]
     },
     {
         "question": "What are all the courses offered by the Computer Science department?",
         "answer": [
-            "Machine Learning",
             "Database Systems",
-            "Software Engineering",
+            "Embedded Systems",
             "Advanced Algorithms",
+            "Digital Signal Processing",
+            "Machine Learning",
+            "Software Engineering",
             "Human-Computer Interaction",
-            "Data Mining",
+            "Cybersecurity",
             "Artificial Intelligence",
-            "Cybersecurity"
+            "Data Mining"
         ],
         "explanation": [
-            {
-                "file": "courses.csv",
-                "row": 0
-            },
             {
                 "file": "courses.csv",
                 "row": 1
-            },
-            {
+              },
+              {
                 "file": "courses.csv",
-                "row": 5
-            },
-            {
+                "row": 2
+              },
+              {
                 "file": "courses.csv",
                 "row": 3
-            },
-            {
+              },
+              {
                 "file": "courses.csv",
-                "row": 9
-            },
-            {
+                "row": 4
+              },
+              {
+                "file": "courses.csv",
+                "row": 5
+              },
+              {
                 "file": "courses.csv",
                 "row": 6
-            },
-            {
+              },
+              {
+                "file": "courses.csv",
+                "row": 7
+              },
+              {
                 "file": "courses.csv",
                 "row": 8
-            },
-            {
+              },
+              {
                 "file": "courses.csv",
-                "row": 7
+                "row": 9
+              }
+        ]
+    },
+    {
+        "question": "What is the department name in which Antonio Gallo teaches?",
+        "answer": [
+            "Electronics"
+        ],
+        "explanation": [
+            {
+                "file": "teacher_research_areas.csv",
+                "row": 4
             }
         ]
     },
     {
-        "question": "Which students are enrolled in the Artificial Intelligence course?",
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
         "answer": [
-            "Computer Science"
+            "26"
         ],
         "explanation": [
             {
-                "file": "courses.csv",
-                "row": 7
-            }
-        ]
-    },
-    {
-        "question": "What is the enrollment date of Lucas Schmidt?",
-        "answer": [
-            "2020-08-25"
-        ],
-        "explanation": [
-            {
-                "file": "enrollments.csv",
-                "row": 2
+                "file": "grades.csv",
+                "row": 6
             }
         ]
     },
     {
         "question": "Which faculty does the Electronics department belong to?",
-        "answer": [
-            "Engineering"
-        ],
+        "answer": ["Engineering"],
         "explanation": [
             {
                 "file": "departments.csv",
@@ -261,50 +288,49 @@
         ]
     },
     {
-        "question": "Who is the instructor of the Data Mining course?",
+        "question": "In which building will be the Embedded Systems exam?",
         "answer": [
-            "Dr. Conti"
+            "Electronics"
         ],
         "explanation": [
             {
-                "file": "courses.csv",
-                "row": 6
+                "file": "classrooms.csv",
+                "row": 5
             }
         ]
     },
     {
         "question": "What is the title of the thesis followed by Alessandro Moretti?",
         "answer": [
-            "Deep Learning for Image Recognition"
+            "Artificial Intelligence"
         ],
         "explanation": [
             {
-                "file": "thesis.csv",
-                "row": 0
+                "file": "courses.csv",
+                "row": 7
             }
         ]
     },
     {
         "question": "Which students have an enrollment date before 2022?",
         "answer": [
-            "4",
-            "9"
+            "2020-08-25", "2021-01-10"
         ],
         "explanation": [
             {
                 "file": "enrollments.csv",
-                "row": 5
-            },
+                "row": 4
+              },
             {
                 "file": "enrollments.csv",
-                "row": 8
+                "row": 7
             }
         ]
     },
     {
         "question": "What is the location of the Humanities Library?",
         "answer": [
-            "Humanities"
+            "Humanities Library"
         ],
         "explanation": [
             {
@@ -315,121 +341,115 @@
     },
     {
         "question": "How many students are enrolled in the Database Systems course?",
-        "answer": [
-            "3"
-        ],
-        "explanation": [
-            {
-                "file": "enrollments.csv",
-                "row": 0
-            },
-            {
-                "file": "enrollments.csv",
-                "row": 2
-            },
-            {
-                "file": "enrollments.csv",
-                "row": 5
-            }
-        ]
+        "answer": [],
+        "explanation": []
     },
     {
         "question": "What are the research areas of Maria Ferrari?",
         "answer": [
+            "Artificial Intelligence",
             "Human-Computer Interaction"
         ],
         "explanation": [
             {
                 "file": "teacher_research_areas.csv",
-                "row": 9
+                "row": 0
+            },
+            {
+            "file": "teacher_research_areas.csv",
+            "row": 9
             }
         ]
     },
     {
-        "question": "How many research projects are led by Dr. Bianchi?",
+        "question": "How many research projects are led by Laura Bianchi?",
         "answer": [
             "6"
         ],
         "explanation": [
             {
                 "file": "teacher_research_areas.csv",
-                "row": 8
+                "row": 1
             }
         ]
     },
     {
         "question": "Which students have a grade higher than 27 in any course?",
-        "answer": [
-            "Student 1",
-            "Student 4",
-            "Student 3"
-        ],
+        "answer": ["28", "29"],
         "explanation": [
             {
                 "file": "grades.csv",
-                "row": 0
-            },
-            {
-                "file": "grades.csv",
-                "row": 3
-            },
-            {
+                "row": 1
+              },
+              {
                 "file": "grades.csv",
                 "row": 5
-            }
+              }
         ]
     },
     {
         "question": "Which classroom has the highest capacity?",
         "answer": [
-            "Engineering 302"
+            "Engineering"
         ],
         "explanation": [
             {
                 "file": "classrooms.csv",
                 "row": 4
-            }
+              }
         ]
     },
     {
         "question": "What is the day and time of the Software Engineering exam?",
-        "answer": [
-            "2023-05-30",
-            "13:00"
-        ],
+        "answer": ["No exam scheduled"],
         "explanation": [
             {
                 "file": "exams.csv",
-                "row": 4
-            }
+                "row": null
+              }
         ]
     },
     {
         "question": "Which courses have 8 credits?",
         "answer": [
+            "Database Systems",
             "Advanced Algorithms",
-            "Data Structures"
+            "Artificial Intelligence",
+            "Software Engineering",
+            "Data Mining"
         ],
         "explanation": [
             {
                 "file": "courses.csv",
+                "row": 2
+              },
+              {
+                "file": "courses.csv",
                 "row": 3
-            },
-            {
+              },
+              {
                 "file": "courses.csv",
                 "row": 7
-            }
+              },
+              {
+                "file": "courses.csv",
+                "row": 5
+              },
+              {
+                "file": "courses.csv",
+                "row": 8
+              }
         ]
     },
     {
-        "question": "What is the academic year of the thesis titled 'IoT Security Challenges'?",
+        "question": "What is the title of the thesis of Sophie Durand?",
         "answer": [
-            "2023-2024"
+            "User Experience Design in Web Apps"
         ],
         "explanation": [
             {
                 "file": "thesis.csv",
-                "row": 2
+                "row": 4
             }
         ]
     }
