@@ -26,7 +26,7 @@ if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 
 # LLM: Llama3-8b by Groq
-llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
+llm = init_chat_model("llama3-8b-8192", model_provider="groq")
 
 folder_path = "./csv_data"
 faiss_db_path = "./faiss_db"
@@ -60,14 +60,15 @@ else:
         if file.endswith(".csv") and file in TEMPLATES:
             filepath = os.path.join(folder_path, file)
             df = pd.read_csv(filepath)
-            for _, row in df.iterrows():
+            for idx, row in df.iterrows():
                 try:
                     text = TEMPLATES[file](row)
-                    metadata = {"source": file}
+                    metadata = {"source": file, "row" : idx}
                     descriptions.append(Document(page_content=text, metadata=metadata))
                 except Exception as e:
                     print(f"Errore nel file {file} su riga: {row} -> {e}")
     # Vector store creation
+        # (if we want other similarity strategies: distance_strategy = DistanceStrategy.COSINE, the default is L2 distance)
     vector_store = FAISS.from_documents(descriptions, embedding_model)
 
     # Save vectore store locally
@@ -93,55 +94,42 @@ class State(TypedDict):
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 10)
+    retrieved_docs = vector_store.similarity_search(state["question"], k = 17)
     #for doc in retrieved_docs:
     #    print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
     return {"context": retrieved_docs}
 
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
-    prompt_with_explanation = f"""
-    Question: {state["question"]}
-    Given this question and the context provided, provide the answer including the explanation on how you get the information: 
-    - the name of the file
-    - the row of the file
-    (You can find this two information in the metadata of the document you use for the answer.)
-    The answer must respect the following structure, but return it as a string representation of a JSON:
-    In the context you find some sentences, explaining the 
-    {{
-        "answer": ["<answer_1>", "<answer_2>", "..."],  
-        "explanation": [  
-            {{  "file": "<file_name>",
-                "row": <row_number>}},  
-            {{  "file": "<file_name>", 
-                "row": <row_number>}}  
-        ]
-    }}
+    prompt_with_explanation =  f"""
+            Given this Question: {state["question"]}
 
-    ### IMPORTANT ###
+            Use the context to answer the question, and return a **valid** JSON, don't add any text before or after the JSON:
 
-    - The output must be a valid JSON object, without extra text.
-
-    ### Example ###
-    {{
-        "answer": [
-            "Computer Science"
-        ],
-        "explanation": [
+            Use metadata in the context to extract file and row.
+            The response format should refer to JSON format:
+            ```json
+            
             {{
-                "file": "teachers.csv",
-                "row": 1
+                "answer": [
+                    "Computer Science"
+                ],
+                "explanation": [
+                    {{
+                        "file": "courses.csv",
+                        "row": 0
+                    }}
+                ]
             }}
-        ]}}
-        
-    """
+            If you don't know the answer or the explanation, leave it empty
+            """
 
     docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
     messages = prompt.invoke({"question": prompt_with_explanation, "context": docs_content})
     response = llm.invoke(messages)
-    #print(response.content)
+    print(response.content)
     cleaned_response = response.content.strip()
-    #print(cleaned_response)
+    print(cleaned_response)
     '''Parse generated answer in a JSON format'''
     try:
         parsed_response = json.loads(cleaned_response)
@@ -166,7 +154,7 @@ with open("question.txt", "r") as f:
 
 all_results = []
 
-''' Loop for LLM invocation on questions'''
+''' Loop for LLM invocation on questions '''
 
 for i, question in enumerate(questions):
     print(f"Processing question n. {i+1}")
@@ -185,9 +173,11 @@ with open("all_outputs_SENTENCE.json", "w", encoding="utf-8") as f:
     
 '''
 # Test query
-query = "What is the grade obtained by Sophie Durand in Embedded Systems?"
-docs = vector_store.similarity_search(query, k=20)
+query = "How many students are enrolled in the Database Systems course?"
+#docs = vector_store.similarity_search(query, k=10)
 
-for doc in docs:
-    print(doc.page_content + str(doc.metadata))
+#for doc in docs:
+#    print(doc.page_content + str(doc.metadata))
+    
+full_result = graph.invoke({"question": query})
 '''

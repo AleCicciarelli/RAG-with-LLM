@@ -15,6 +15,7 @@ from pydantic import BaseModel, Field
 from typing import List
 import faiss 
 import re
+import spacy
 
 os.environ["LANGSMITH_TRACING"] = "true"
 os.environ["LANGSMITH_API_KEY"] = "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"
@@ -60,6 +61,31 @@ else:
     vector_store.save_local(faiss_index_folder)
     print("FAISS vector store created and saved successfully!")
 
+
+''' Key word extraction'''
+
+'''
+# Funzione per estrarre parole chiave con un LLM
+def extract_keywords_from_question(question: str) -> str:
+    prompt = f"""
+    Given the question: "{question}", 
+    extract the most important keywords or keyphrases. 
+    The output should be a list of relevant keywords, without duplicates and without unnecessary words (such as 'what', 'is', 'the', etc.). 
+    For example, if the question is 'What is the capital of France?', the output should be 'capital, France'.
+    Return only the keywords as a comma-separated string **without** other text or explanation.
+    """
+    
+    # Chiedi al LLM di estrarre le parole chiave
+    response = llm.invoke(prompt)
+    print(response)
+    keywords = response.content.strip()  # Pulisci la risposta
+    
+    return keywords
+'''
+# Carica il modello predefinito di spaCy per l'inglese
+nlp = spacy.load("en_core_web_sm")
+
+
 """ Retrieve and Generate part """
 # Define prompt for question-answering
 prompt = hub.pull("rlm/rag-prompt")
@@ -74,13 +100,30 @@ class State(TypedDict):
     context: List[Document]
     answer: List[str]
     explanation: List[ExplanationItem]
+    keywords : List[str]
     
+# Funzione per estrarre le parole chiave dalla domanda
+def extract_keywords(state: State):
+    # Utilizza spaCy per analizzare la domanda
+    query = state["question"]
+    doc = nlp(query)
+    print(doc)
+    # Estrai le parole chiave (sostantivi, aggettivi, e verbi)
+    keywords = [token.text for token in doc if token.pos_ in ['NOUN', 'ADJ', 'VERB'] and not token.is_stop]
+        # Estrai anche le entità nominate (es. nomi propri, organizzazioni, ecc.)
+    named_entities = [ent.text for ent in doc.ents]
+    
+    # Combina le parole chiave con le entità
+    keywords.extend(named_entities)
+    
+    return {"keywords": keywords} 
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
+
 def retrieve(state: State):
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 10)
-    #for doc in retrieved_docs:
-    #    print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
+    keywords = state["keywords"]
+    query = " ".join(keywords)  # Combina le parole chiave in una query
+    retrieved_docs = vector_store.similarity_search(query, k=10)
     return {"context": retrieved_docs}
 
 # Generate the answer invoking the LLM with the context joined with the question
@@ -140,50 +183,14 @@ def generate(state: State):
         "answer": parsed_response.get("answer", []),
         "explanation": parsed_response.get("explanation", [])
     }
-    
-'''k analysis'''
-'''
-import time
 
-results_by_k = {}
-# Process questions from a txt file
-with open("question.txt", "r") as f:
-    questions = [line.strip() for line in f.readlines() if line.strip()]
-    
-for k in range(12, 21):  # k da 0 a 20
-    print(f"\n=== Running evaluation with k={k} ===")
-    all_results = []
-
-    def retrieve(state: State):
-        retrieved_docs = vector_store.similarity_search(state["question"], k=k)
-        return {"context": retrieved_docs}
-
-    graph_builder = StateGraph(State).add_sequence([retrieve, generate])
-    graph_builder.add_edge(START, "retrieve")
-    graph = graph_builder.compile()
-
-    for i, question in enumerate(questions):
-        print(f"[k={k}] Processing question n. {i+1}")
-        full_result = graph.invoke({"question": question})
-        result = {
-            "question": question,
-            "answer": full_result.get("answer", []),
-            "explanation": full_result.get("explanation", [])
-        }
-        all_results.append(result)
-
-    output_filename = f"outputs_k_{k}.json"
-    with open(output_filename, "w", encoding="utf-8") as f:
-        json.dump(all_results, f, indent=4, ensure_ascii=False)
-
-    results_by_k[k] = output_filename
-    time.sleep(1)  # opzionale: per evitare throttling dell'API
-
-''' 
-# Control flow: Compile the application into a graph
-graph_builder = StateGraph(State).add_sequence([retrieve, generate])
-graph_builder.add_edge(START, "retrieve")
+# Definisci il grafo con i nodi di estrazione, recupero e generazione
+graph_builder = StateGraph(State).add_sequence([extract_keywords, retrieve, generate])
+graph_builder.add_edge(START, "extract_keywords")
+graph_builder.add_edge("extract_keywords", "retrieve")
+graph_builder.add_edge("retrieve", "generate")
 graph = graph_builder.compile()
+
 
 # Process questions from a txt file
 with open("question.txt", "r") as f:
@@ -205,5 +212,6 @@ for i, question in enumerate(questions):
     
     all_results.append(result)
 # Save results to json file
-with open("all_outputs_70B.json", "w", encoding="utf-8") as f:
+with open("all_outputs_keywords.json", "w", encoding="utf-8") as f:
     json.dump(all_results, f, indent=4, ensure_ascii=False)
+

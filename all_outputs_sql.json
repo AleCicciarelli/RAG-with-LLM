@@ -1,0 +1,312 @@
+[
+    {
+        "question": "Which is the email of Giulia Rossi?",
+        "answer": [
+            "giulia.rossi@student.edu"
+        ],
+        "explanation": [
+            "First, I located the relevant tables, which are students.csv and teachers.csv.",
+            "Then, I joined the tables on the id column, as Giulia Rossi is a student and a teacher.",
+            "Finally, I filtered the rows where the name was 'Giulia' and the surname was 'Rossi' to get the email."
+        ]
+    },
+    {
+        "question": "Which is the department of the teacher Laura Bianchi?",
+        "answer": [
+            "Department of Computer Science"
+        ],
+        "explanation": [
+            "I located the relevant table, which is the teachers table.",
+            "I filtered the rows where the name was 'Laura' and the surname was 'Bianchi', and then I retrieved the department_id, which is 1, and matched it with the department_id in the departments table to get the department name, which is 'Computer Science'."
+        ]
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "answer": [
+            "6"
+        ],
+        "explanation": [
+            "First, I located the relevant table, which is the courses table.",
+            "Then, I filtered the rows where the course name was 'Software Engineering'."
+        ]
+    },
+    {
+        "question": "In which building is the class 401?",
+        "answer": [
+            "Electronics"
+        ],
+        "explanation": [
+            "I located the relevant table as 'classrooms.csv' and identified the column 'building' that contains the required information.",
+            "I filtered the rows where the 'room_number' was '401' and retrieved the corresponding 'building' value."
+        ]
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "answer": [
+            "Fall"
+        ],
+        "explanation": [
+            "I located the relevant table 'courses.csv' which contains the required data. I determined that I need to filter the rows where the course name is 'Cybersecurity'. I applied a filter using the WHERE clause on the course_name column. Finally, I retrieved the semester column and found that the Cybersecurity course is done in the Fall semester."
+        ]
+    },
+    {
+        "question": "In which classroom is the Database Systems exam?",
+        "answer": [
+            "Classroom 2"
+        ],
+        "explanation": [
+            "I joined the exams table with the courses table on the course_id column to find the classroom for the Database Systems exam.",
+            "I filtered the rows where the course name was 'Database Systems' and found the corresponding classroom_id, which is 2."
+        ]
+    },
+    {
+        "question": "In which area is the \\\"User Experience Design in Web Apps\\\" thesis?",
+        "answer": [
+            "Human-Computer Interaction"
+        ],
+        "explanation": [
+            "First, I joined the thesis table with the teacher_research_areas table on the teacher_id column.",
+            "Then, I filtered the rows where the research_area was 'Human-Computer Interaction'."
+        ]
+    },
+    {
+        "question": "Which instructor teaches Machine Learning course?",
+        "answer": [
+            "Carlo Rossi"
+        ],
+        "explanation": [
+            "First, I joined the courses table with the teacher_research_areas table on the teacher column.",
+            "Then, I filtered the rows where the course name was 'Machine Learning' and found the corresponding teacher."
+        ]
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "answer": [
+            "Research Area: Computer Science"
+        ],
+        "explanation": [
+            "First, I located the relevant table, which is the 'teachers.csv' table.",
+            "Then, I filtered the rows where the name was 'Carlo' and the surname was 'Rossi' to find the corresponding teacher_id, which is 1."
+        ]
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "answer": [
+            "5"
+        ],
+        "explanation": [
+            "First, I joined the teacher_research_areas table with the teachers table on the teacher_id column to find the research projects of the teacher Giulia Colombo.",
+            "Then, I filtered the rows where the teacher_id was 6, which corresponds to Giulia Colombo."
+        ]
+    },
+    {
+        "question": "When is the machine learning exam?",
+        "answer": [
+            "Fall"
+        ],
+        "explanation": [
+            "First, I located the relevant table, which is the courses table.",
+            "Then, I filtered the rows where the course name was 'Machine Learning' and the semester was 'Fall'."
+        ]
+    },
+    {
+        "question": "In which courses Giulia Rossi is enrolled?",
+        "answer": [
+            "Human-Computer Interaction"
+        ],
+        "explanation": [
+            "First, I joined the students table with the teachers table on the id column.",
+            "Then, I filtered the rows where the student name was 'Giulia' and the surname was 'Rossi'."
+        ]
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "answer": [
+            "A"
+        ],
+        "explanation": [
+            "First, I joined the courses table with the students table on the teacher column.",
+            "Then, I filtered the rows where the course name was 'Machine Learning' and the student name was 'Giulia Rossi'."
+        ]
+    },
+    {
+        "question": "Who is the teacher following Sophie Durand in her thesis?",
+        "answer": [
+            "Marco Verdi"
+        ],
+        "explanation": [
+            "First, I joined the teachers table with itself on the teacher_id column to find the teacher who is following Sophie Durand in her thesis.",
+            "Then, I filtered the rows where the teacher_id was the next one after Sophie Durand's teacher_id."
+        ]
+    },
+    {
+        "question": "What are all the courses offered by the Computer Science department?",
+        "answer": [
+            "Machine Learning",
+            "Database Systems",
+            "Software Engineering",
+            "Advanced Algorithms",
+            "Data Mining",
+            "Artificial Intelligence",
+            "Cybersecurity",
+            "Human-Computer Interaction"
+        ],
+        "explanation": [
+            "First, I located the relevant table, which is the courses table.",
+            "Then, I filtered the rows where the department was 'Computer Science'."
+        ]
+    },
+    {
+        "question": "What is the department name in which Antonio Gallo teaches?",
+        "answer": [
+            "Department of Computer Science"
+        ],
+        "explanation": [
+            "First, I located the relevant table, which is the 'teachers.csv' table.",
+            "Then, I filtered the rows where the teacher's name was 'Antonio Gallo'."
+        ]
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "answer": [
+            "A"
+        ],
+        "explanation": [
+            "First, I joined the students table with the courses table on the course_id column to find the course taken by Elena Gonzales.",
+            "Then, I filtered the rows where the course name was 'Human-Computer Interaction' and the student name was 'Elena Gonzales'."
+        ]
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "answer": [
+            "Engineering"
+        ],
+        "explanation": [
+            "I located the relevant table, which is the departments table, and identified the faculty column that contains the required information.",
+            "I determined that no joins are needed because the faculty information is already present in the departments table."
+        ]
+    },
+    {
+        "question": "In which building will be the Embedded Systems exam?",
+        "answer": [
+            "Electronics"
+        ],
+        "explanation": [
+            "First, I joined the courses table with the classrooms table on the course_id column.",
+            "Then, I filtered the rows where the course name was 'Embedded Systems' and retrieved the building column."
+        ]
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "answer": [
+            "Deep Learning for Image Recognition"
+        ],
+        "explanation": [
+            "First, I joined the teachers table with the thesis table on the teacher_id column.",
+            "Then, I filtered the rows where the teacher's name was 'Alessandro Moretti'."
+        ]
+    },
+    {
+        "question": "Which students have an enrollment date before 2022?",
+        "answer": [
+            "Student 4 (Lucas Schmidt)"
+        ],
+        "explanation": [
+            "First, I used the enrollments table to locate the relevant data.",
+            "Then, I applied a filter to retrieve only the rows where the enrollment date is before 2022."
+        ]
+    },
+    {
+        "question": "What is the location of the Humanities Library?",
+        "answer": [
+            "Science"
+        ],
+        "explanation": [
+            "First, I located the relevant table, which is the departments.csv table.",
+            "Then, I filtered the rows where the department_name was 'Humanities', but since there is no Humanities department, I looked for the closest match, which is the department with the faculty 'Science'."
+        ]
+    },
+    {
+        "question": "How many students are enrolled in the Database Systems course?",
+        "answer": [
+            "2"
+        ],
+        "explanation": [
+            "First, I joined the enrollments table with the courses table on the course_id column to find the students enrolled in the Database Systems course.",
+            "Then, I filtered the rows where the course_name was 'Database Systems'."
+        ]
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "answer": [
+            "Artificial Intelligence",
+            "Human-Computer Interaction"
+        ],
+        "explanation": [
+            "First, I joined the teachers table with the teacher_research_areas table on the teacher_id column.",
+            "Then, I filtered the rows where the teacher's name was 'Maria Ferrari'."
+        ]
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "answer": [
+            "6"
+        ],
+        "explanation": [
+            "First, I joined the teachers table with the teacher_research_areas table on the teacher_id column.",
+            "Then, I filtered the rows where the surname was 'Bianchi' and retrieved the number of projects."
+        ]
+    },
+    {
+        "question": "Which students have a grade higher than 27 in any course?",
+        "answer": [
+            "Student 1, Student 3"
+        ],
+        "explanation": [
+            "First, I joined the grades table with the enrollments table on the student_id and course_id columns.",
+            "Then, I filtered the rows where the grade was higher than 27."
+        ]
+    },
+    {
+        "question": "Which classroom has the highest capacity?",
+        "answer": [
+            "Classroom 4"
+        ],
+        "explanation": [
+            "I used the classrooms table to find the classroom with the highest capacity.",
+            "I filtered the rows to find the classroom with the maximum capacity, which is 80."
+        ]
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "answer": [
+            "2023-05-30 13:00"
+        ],
+        "explanation": [
+            "First, I located the relevant table, which is the exams table.",
+            "Then, I filtered the rows where the course_id was 106, which matches the course_name 'Software Engineering'."
+        ]
+    },
+    {
+        "question": "Which courses have 8 credits?",
+        "answer": [
+            "Database Systems",
+            "Software Engineering",
+            "Advanced Algorithms"
+        ],
+        "explanation": [
+            "First, I located the relevant table, which is the courses table.",
+            "Then, I applied a filter to retrieve only the courses with 8 credits, using the WHERE clause: WHERE credits = 8."
+        ]
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "answer": [
+            "User Experience Design in Web Apps"
+        ],
+        "explanation": [
+            "First, I joined the students table with the thesis table on the student_id column.",
+            "Then, I filtered the rows where the student name was 'Sophie Durand'."
+        ]
+    }
+]

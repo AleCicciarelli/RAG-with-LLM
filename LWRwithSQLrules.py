@@ -78,7 +78,7 @@ class State(TypedDict):
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 10)
+    retrieved_docs = vector_store.similarity_search(state["question"], k = 17)
     #for doc in retrieved_docs:
     #    print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
     return {"context": retrieved_docs}
@@ -86,25 +86,37 @@ def retrieve(state: State):
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
     prompt_with_explanation = f"""
-    Question: {state["question"]}
-    Given this question and the context provided , provide the answer including the explanation on how you get the information: 
-    - the name of the file
-    - the row of the file
-    (You can find this two information in the metadata of the document you use for the answer.)
-    The answer must respect the following structure, but return it as a string representation of a JSON:
+    Your task is to answer questions based on structured CSV data, by reasoning using SQL-like operations.
+    When you receive a user question and the top-k relevant documents (each one representing a table or a view), follow these steps:
+
+    1. **Identify the required information**: What is being asked?
+    2. **Locate the relevant tables**: Find in the documents the tables or entities that contain the required data.
+    3. **Determine joins**:
+       - If data is spread across multiple tables, identify common keys.
+       - Explain which tables need to be joined and on which columns.
+    4. **Apply filters and projections**:
+       - Use WHERE clauses to filter rows (e.g., student name, course title).
+       - Use SELECT to retrieve only the needed fields.
+    5. **Construct the logic in natural language**:
+       - Describe the reasoning as if you were writing an SQL query.
+       - Then, answer the question using the values found in the data.
+    6. **Explain your steps clearly**:
+       - Always show which rules you applied (JOIN, SELECT, WHERE).
+       - Show intermediate steps if needed.
+
+    Always provide the final answer **and** the reasoning that led to it.
+
+    Your answer must follow this structure, but return it as a string representation of a JSON:
 
     {{
         "answer": ["<answer_1>", "<answer_2>", "..."],  
         "explanation": [  
-            {{  "file": "<file_name>",
-                "row": <row_number>}},  
-            {{  "file": "<file_name>", 
-                "row": <row_number>}}  
+            "<step_1_explanation>",
+            "<step_2_explanation>"
         ]
     }}
 
     ### IMPORTANT ###
-
     - The output must be a valid JSON object, without extra text.
 
     ### Example ###
@@ -113,97 +125,71 @@ def generate(state: State):
             "Computer Science"
         ],
         "explanation": [
-            {{
-                "file": "teachers.csv",
-                "row": 1
-            }}
-        ]}}
-        
+            "First, I joined the teachers table with the courses table on the teacher_id column.",
+            "Then, I filtered the rows where the course title was 'Computer Science'."
+        ]
+    }}
+
+    Question: {state["question"]}
+    Given this question and the context provided , provide the answer including the explanation on how you get the information: 
+    - the steps taken to query the data
     """
 
+    # Creare il contesto per i documenti (contenuto e metadati)
     docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
+
+    # Preparare il messaggio finale per l'LLM
     messages = prompt.invoke({"question": prompt_with_explanation, "context": docs_content})
+    
+    # Eseguire la chiamata all'LLM
     response = llm.invoke(messages)
-    #print(response.content)
+    
+    # Pulire e analizzare la risposta dell'LLM
     cleaned_response = response.content.strip()
-    #print(cleaned_response)
-    '''Parse generated answer in a JSON format'''
+
+    # Analizzare la risposta in formato JSON
     try:
         parsed_response = json.loads(cleaned_response)
     except json.JSONDecodeError as e:
         print(f"Error parsing response: {cleaned_response}")
         print(f"JSONDecodeError: {str(e)}")
         return {"answer": [], "explanation": []}
-    print(parsed_response)
-   
+
+    # Restituire la risposta come struttura di output
     return {
         "answer": parsed_response.get("answer", []),
         "explanation": parsed_response.get("explanation", [])
     }
-    
-'''k analysis'''
-'''
-import time
 
-results_by_k = {}
-# Process questions from a txt file
-with open("question.txt", "r") as f:
-    questions = [line.strip() for line in f.readlines() if line.strip()]
-    
-for k in range(12, 21):  # k da 0 a 20
-    print(f"\n=== Running evaluation with k={k} ===")
-    all_results = []
-
-    def retrieve(state: State):
-        retrieved_docs = vector_store.similarity_search(state["question"], k=k)
-        return {"context": retrieved_docs}
-
-    graph_builder = StateGraph(State).add_sequence([retrieve, generate])
-    graph_builder.add_edge(START, "retrieve")
-    graph = graph_builder.compile()
-
-    for i, question in enumerate(questions):
-        print(f"[k={k}] Processing question n. {i+1}")
-        full_result = graph.invoke({"question": question})
-        result = {
-            "question": question,
-            "answer": full_result.get("answer", []),
-            "explanation": full_result.get("explanation", [])
-        }
-        all_results.append(result)
-
-    output_filename = f"outputs_k_{k}.json"
-    with open(output_filename, "w", encoding="utf-8") as f:
-        json.dump(all_results, f, indent=4, ensure_ascii=False)
-
-    results_by_k[k] = output_filename
-    time.sleep(1)  # opzionale: per evitare throttling dell'API
-
-''' 
 # Control flow: Compile the application into a graph
 graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
 
-# Process questions from a txt file
+# Leggi le domande da un file di testo
 with open("question.txt", "r") as f:
     questions = [line.strip() for line in f.readlines() if line.strip()]
 
+# Inizializza una lista per i risultati
 all_results = []
 
-''' Loop for LLM invocation on questions '''
-
+# Loop per invocare LLM su tutte le domande
 for i, question in enumerate(questions):
     print(f"Processing question n. {i+1}")
     
+    # Eseguire l'invocazione del grafo
     full_result = graph.invoke({"question": question})
+    
+    # Organizzare il risultato per ogni domanda
     result = {
         "question": question,
         "answer": full_result.get("answer", []),
         "explanation": full_result.get("explanation", [])
     }
     
+    # Aggiungere il risultato alla lista
     all_results.append(result)
-# Save results to json file
-with open("all_outputs_70B.json", "w", encoding="utf-8") as f:
+
+# Salva i risultati in un file JSON
+with open("all_outputs_sql_K17.json", "w", encoding="utf-8") as f:
     json.dump(all_results, f, indent=4, ensure_ascii=False)
