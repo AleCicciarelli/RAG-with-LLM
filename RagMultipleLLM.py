@@ -8,22 +8,15 @@ from langchain import hub
 from pydantic import BaseModel
 from typing import List, TypedDict
 from langchain_core.documents import Document
-
+from langchain_community.chat_models import ChatOllama
 # API keys
 os.environ["LANGSMITH_TRACING"] = "true"
 os.environ["LANGSMITH_API_KEY"] = "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"
 if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 
-# Modelli Groq da testare
-groq_models = {
-    "llama3-8b-8192": "llama8B",
-    "llama3-70b-8192": "llama70B",
-    "mistral-7b-32768": "mistral",
-    "mixtral-8x7b-32768": "mixtral",
-    "gemma-7b-it": "gemma"
-}
-
+# Ollama LLM
+llm = ChatOllama(model="mistral", temperature=0)
 # Embedding model
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
 
@@ -67,7 +60,7 @@ def retrieve(state: State):
     return {"context": retrieved_docs}
 
 # Generation
-def generate(llm, state: State):
+def generate(state: State):
     prompt_with_explanation = f"""
     Question: {state["question"]}
     Given this question and the context provided , provide the answer including the explanation on how you get the information: 
@@ -112,25 +105,23 @@ with open("question.txt", "r") as f:
     questions = [line.strip() for line in f.readlines() if line.strip()]
 
 # Loop su ciascun modello
-for model_id, model_shortname in groq_models.items():
-    print(f"\n🚀 Running model: {model_id}")
-    llm = init_chat_model(model_id, model_provider="groq", temperature=0)
-    all_results = []
 
-    for i, question in enumerate(questions):
-        print(f"  → Question {i+1}/{len(questions)}")
-        state = {"question": question}
-        state.update(retrieve(state))
-        result = generate(llm, state)
+all_results = []
 
-        all_results.append({
-            "question": question,
-            "answer": result["answer"],
-            "explanation": result["explanation"]
-        })
+for i, question in enumerate(questions):
+    print(f"  → Question {i+1}/{len(questions)}")
+    state = {"question": question}
+    state.update(retrieve(state))
+    result = generate(llm, state)
 
-    # Salvataggio risultati
-    output_file = f"outputs_{model_shortname}.json"
-    with open(output_file, "w", encoding="utf-8") as f:
-        json.dump(all_results, f, indent=4, ensure_ascii=False)
-    print(f"✅ Saved: {output_file}")
+    all_results.append({
+        "question": question,
+        "answer": result["answer"],
+        "explanation": result["explanation"]
+    })
+
+# Salvataggio risultati
+output_file = f"outputs_mistral.json"
+with open(output_file, "w", encoding="utf-8") as f:
+    json.dump(all_results, f, indent=4, ensure_ascii=False)
+print(f"✅ Saved: {output_file}")
