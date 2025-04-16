@@ -1,13 +1,21 @@
 import os
-import json
 from langchain.chat_models import init_chat_model
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.document_loaders import CSVLoader
-from langchain_community.vectorstores import FAISS
-from langchain import hub
-from pydantic import BaseModel
-from typing import List, TypedDict
 from langchain_core.documents import Document
+from langchain_community.vectorstores import FAISS
+from langchain_community.vectorstores.utils import DistanceStrategy
+from langgraph.graph import START, StateGraph
+from typing_extensions import List, TypedDict
+from langchain_core.documents import Document
+from langchain import hub
+import json
+from langchain_core.output_parsers import JsonOutputParser
+from pydantic import BaseModel, Field
+from typing import List
+import faiss 
+import re
+
 from langchain_community.chat_models import ChatOllama
 # API keys
 os.environ["LANGSMITH_TRACING"] = "true"
@@ -99,6 +107,10 @@ def generate(state: State):
         "answer": parsed_response.get("answer", []),
         "explanation": parsed_response.get("explanation", [])
     }
+# Control flow: Compile the application into a graph
+graph_builder = StateGraph(State).add_sequence([retrieve, generate])
+graph_builder.add_edge(START, "retrieve")
+graph = graph_builder.compile()
 
 # Carica le domande
 with open("question.txt", "r") as f:
@@ -111,14 +123,14 @@ all_results = []
 for i, question in enumerate(questions):
     print(f"  → Question {i+1}/{len(questions)}")
     state = {"question": question}
-    state.update(retrieve(state))
-    result = generate(llm, state)
-
-    all_results.append({
+    
+    full_result = graph.invoke({"question": question})
+    result = {
         "question": question,
-        "answer": result["answer"],
-        "explanation": result["explanation"]
-    })
+        "answer": full_result.get("answer", []),
+        "explanation": full_result.get("explanation", [])
+    }
+    all_results.append(result)
 
 # Salvataggio risultati
 output_file = f"outputs_mistral.json"
