@@ -28,7 +28,8 @@ llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
 
 #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 token hugging-face
 # Embedding model: Hugging Face
-embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
+#embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
+embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
 
 """ Indexing part """
 
@@ -190,8 +191,9 @@ with open("question.txt", "r") as f:
     questions = [line.strip() for line in f.readlines() if line.strip()]
 
 all_results = []
-
-''' Loop for LLM invocation on questions '''
+result = graph.invoke({"question" : questions[0]})
+print(result)
+''' Loop for LLM invocation on questions 
 
 for i, question in enumerate(questions):
     print(f"Processing question n. {i+1}")
@@ -207,3 +209,4 @@ for i, question in enumerate(questions):
 # Save results to json file
 with open("all_outputs_70B.json", "w", encoding="utf-8") as f:
     json.dump(all_results, f, indent=4, ensure_ascii=False)
+'''
