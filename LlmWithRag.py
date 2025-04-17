@@ -24,7 +24,7 @@ if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 
 # LLM: Llama3-8b by Groq
-llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
+llm = init_chat_model("llama3-70b-8192", model_provider="groq", temperature = 0)
 
 #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 token hugging-face
 # Embedding model: Hugging Face
@@ -79,7 +79,7 @@ class State(TypedDict):
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 10)
+    retrieved_docs = vector_store.similarity_search(state["question"], k = 17)
     #for doc in retrieved_docs:
     #    print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
     return {"context": retrieved_docs}
@@ -191,9 +191,8 @@ with open("question.txt", "r") as f:
     questions = [line.strip() for line in f.readlines() if line.strip()]
 
 all_results = []
-result = graph.invoke({"question" : questions[0]})
-print(result)
-''' Loop for LLM invocation on questions 
+
+''' Loop for LLM invocation on questions '''
 
 for i, question in enumerate(questions):
     print(f"Processing question n. {i+1}")
@@ -207,6 +206,5 @@ for i, question in enumerate(questions):
     
     all_results.append(result)
 # Save results to json file
-with open("all_outputs_70B.json", "w", encoding="utf-8") as f:
+with open("all_outputs_k76_llama70b.json", "w", encoding="utf-8") as f:
     json.dump(all_results, f, indent=4, ensure_ascii=False)
-'''

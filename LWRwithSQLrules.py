@@ -24,7 +24,7 @@ if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 
 # LLM: Llama3-8b by Groq
-llm = init_chat_model("llama3-70b-8192", model_provider="groq", temperature = 0)
+llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
 
 #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 token hugging-face
 # Embedding model: Hugging Face
@@ -87,16 +87,27 @@ def retrieve(state: State):
 def generate(state: State):
     prompt_with_explanation = f"""
     Your task is to answer questions based on structured CSV data, by reasoning using SQL-like operations.
-    When you receive a user question and the top-k relevant documents (each one representing a table or a view), follow these steps:
+    When you receive a user question and the top-k relevant documents (each one representing a table), follow these steps:
 
     1. **Identify the required information**: What is being asked?
     2. **Locate the relevant tables**: Find in the documents the tables or entities that contain the required data.
     3. **Determine joins**:
-       - If data is spread across multiple tables, identify common keys.
-       - Explain which tables need to be joined and on which columns.
+       - A JOIN is used to combine rows from two or more tables, based on a related column between them.
+       - If data is spread across multiple tables, identify common fields.
+       - Explain which tables need to be joined and on which fields.
     4. **Apply filters and projections**:
-       - Use WHERE clauses to filter rows (e.g., student name, course title).
-       - Use SELECT to retrieve only the needed fields.
+       - Use WHERE clauses to filter rows, it is used to extract only those records that fulfill a specified condition (e.g., student name = "Giulia Rossi").
+       - Use SELECT to retrieve only the needed fields (e.g., student email, thesis title).
+    5. **Use aggregate functions if needed**:
+       - An aggregate function is a function that performs a calculation on a set of values, and returns a single value.
+         The most commonly used SQL aggregate functions are:
+            MIN() - returns the smallest value within the selected column
+            MAX() - returns the largest value within the selected column
+            COUNT() - returns the number of rows in a set
+            SUM() - returns the total sum of a numerical column
+            AVG() - returns the average value of a numerical column
+        (e.g., Question: "How many students are enrolled in the Database Systems course", to do this you need to use the COUNT(*) combined with a JOIN:
+        SELECT COUNT(*) FROM courses c, enrollment e WHERE c.course_name = "Database Systems" AND c.course_id = e.course_id )
     5. **Construct the logic in natural language**:
        - Describe the reasoning as if you were writing an SQL query.
        - Then, answer the question using the values found in the data.
@@ -191,5 +202,5 @@ for i, question in enumerate(questions):
     all_results.append(result)
 
 # Salva i risultati in un file JSON
-with open("all_outputs_sql_K17_70B.json", "w", encoding="utf-8") as f:
+with open("all_outputs_sql_K17_8B.json", "w", encoding="utf-8") as f:
     json.dump(all_results, f, indent=4, ensure_ascii=False)

@@ -27,8 +27,8 @@ def compute_metrics(total_tp, total_fp, total_fn, total_exact, n):
     return precision, recall, accuracy
 
 def main():
-    gt_data = load_json("true_answers.json")
-    pred_data = load_json("all_outputs_keywords.json")
+    gt_data = load_json("results/true_answers.json")
+    pred_data = load_json("results/all_outputs_k17_llama70b.json")
     question_types = load_json("questions.json")  # Dizionario dei tipi di domanda
 
     assert len(gt_data) == len(pred_data), "Mismatch in number of questions"
@@ -98,7 +98,7 @@ def main():
         })
 
     # Scrive i risultati per domanda in un file CSV
-    with open("evaluation_results_keywords.csv", "w", encoding="utf-8", newline="") as f:
+    with open("evaluation_results_llama70bK17.csv", "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=rows[0].keys())
         writer.writeheader()
         writer.writerows(rows)
@@ -124,24 +124,7 @@ def main():
         print(f"Answer      - Precision: {answer_metrics[0]:.2f}, Recall: {answer_metrics[1]:.2f}, Accuracy: {answer_metrics[2]:.2f}")
         print(f"Explanation - Precision: {expl_metrics[0]:.2f}, Recall: {expl_metrics[1]:.2f}, Accuracy: {expl_metrics[2]:.2f}")
 
-        # Salva il grafico per ogni tipo di domanda
-        labels = ['Precision', 'Recall', 'Accuracy']
-        answer_scores = [answer_metrics[0], answer_metrics[1], answer_metrics[2]]
-        expl_scores = [expl_metrics[0], expl_metrics[1], expl_metrics[2]]
 
-        x = range(len(labels))
-        width = 0.35
-
-        plt.bar([i - width/2 for i in x], answer_scores, width=width, label='Answer')
-        plt.bar([i + width/2 for i in x], expl_scores, width=width, label='Explanation')
-        plt.xticks(x, labels)
-        plt.ylim(0, 1.0)
-        plt.ylabel("Score")
-        plt.title(f"Metrics for {q_type.replace('_', ' ').title()}")
-        plt.legend()
-        plt.tight_layout()
-        plt.savefig(f"metrics_keywords_{q_type}.png")
-        plt.close()
 
     # Salva il grafico globale
     labels = ['Precision', 'Recall', 'Accuracy']
@@ -159,7 +142,7 @@ def main():
     plt.title("Global LLM Evaluation Metrics")
     plt.legend()
     plt.tight_layout()
-    plt.savefig("evaluation_metrics_keywords.png")
+    plt.savefig("evaluation_metrics_llama70bK17.png")
     plt.show()
 
 if __name__ == "__main__":
