@@ -64,7 +64,7 @@ class State(TypedDict):
 
 # Retrieval
 def retrieve(state: State):
-    retrieved_docs = vector_store.similarity_search(state["question"], k=17)
+    retrieved_docs = vector_store.similarity_search(state["question"], k=76)
     return {"context": retrieved_docs}
 
 # Generation
@@ -133,7 +133,7 @@ for i, question in enumerate(questions):
     all_results.append(result)
 
 # Salvataggio risultati
-output_file = f"outputs_mistral17.json"
+output_file = f"outputs_mistralk76.json"
 with open(output_file, "w", encoding="utf-8") as f:
     json.dump(all_results, f, indent=4, ensure_ascii=False)
 print(f"✅ Saved: {output_file}")
