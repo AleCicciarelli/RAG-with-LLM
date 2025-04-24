@@ -78,7 +78,7 @@ class State(TypedDict):
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 76)
+    retrieved_docs = vector_store.similarity_search(state["question"], k = 17)
     #for doc in retrieved_docs:
     #    print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
     return {"context": retrieved_docs}
@@ -200,7 +200,7 @@ for i, question in enumerate(questions):
     # Aggiungere il risultato alla lista
     all_results.append(result)
 
-with open("all_outputs_WHY_FOREIGNKEYS_k76_mistral.txt", "w", encoding="utf-8") as f:
+with open("all_outputs_WHY_FOREIGNKEYS_k17_mistral.txt", "w", encoding="utf-8") as f:
     for result in all_results:
         f.write(f"Question: {result['question']}\n")
         f.write(result["answer"].strip() + "\n")
