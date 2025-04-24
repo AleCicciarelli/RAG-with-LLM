@@ -1,0 +1,223 @@
+Question: Which is the email of Giulia Rossi?
+Result: giulia.rossi@student.edu
+WHY: 
+    { Students(name:Giulia, surname:Rossi) AND Students(email:giulia.rossi@student.edu) }
+
+============================================================
+
+Question: Which is the department of the teacher Laura Bianchi?
+Result: 1
+WHY: 
+    { Teachers(teacher_id:2, name: Laura, surname: Bianchi, department_id:1) }
+
+============================================================
+
+Question: How many credits has the course Software Engineering?
+Result: 6
+WHY: 
+    { courses(course_id:106, course_name:Software Engineering) AND credits:6 }
+
+============================================================
+
+Question: In which building is the class 401?
+Result: Electronics
+WHY: 
+    {classroom(classroom_id:6, building:Electronics, room_number:401) }
+
+============================================================
+
+Question: In which semester is done the Cybersecurity course?
+Result: Fall
+WHY: {courses(course_id:109, course_name:Cybersecurity, semester:Fall)}
+
+============================================================
+
+Question: In which classroom is the Database Systems exam?
+Result: 2
+WHY: 
+    { courses(course_id:102, course_name:Database Systems) AND exams(exam_id:2,course_id:102,date:2023-02-15,time:14:00,classroom_id:2) }
+
+============================================================
+
+Question: In which area is the \"User Experience Design in Web Apps\" thesis?
+Result: Human-Computer Interaction
+WHY: 
+    { courses(thesis_id:5, title:User Experience Design in Web Apps) AND thesis(thesis_id:5, research_area:Human-Computer Interaction) }, 
+    { teacher_research_areas(teacher_id:10, research_area:Human-Computer Interaction) }
+
+============================================================
+
+Question: Which instructor teaches Machine Learning course?
+Result: Carlo Rossi
+WHY: 
+    {courses(course_id:101, course_name:Machine Learning) AND courses(teacher:Carlo Rossi)}
+
+============================================================
+
+Question: Which is the research area of the teacher Carlo Rossi?
+Result: Artificial Intelligence
+WHY: 
+    { teachers(teacher_id:1, name:Carlo, surname:Rossi) AND teacher_research_areas(teacher_id:1, research_area:Artificial Intelligence, number_of_project:5) }
+
+============================================================
+
+Question: How many research project follows the teacher Giulia Colombo?
+Result: 5
+WHY: 
+    { courses(course_id:106, course_name:Software Engineering, teacher:Giulia Colombo) AND teacher_research_areas(teacher_id:6, research_area:Software Engineering, number_of_project:5) }, 
+    { teacher_research_areas(teacher_id:2, research_area:Data Science, number_of_project:6) }, 
+    { teacher_research_areas(teacher_id:10, research_area:Human-Computer Interaction, number_of_project:6) }, 
+    { teacher_research_areas(teacher_id:9, research_area:Cybersecurity, number_of_project:6) }, 
+    { teacher_research_areas(teacher_id:8, research_area:Machine Learning, number_of_project:3) }
+
+============================================================
+
+Question: When is the machine learning exam?
+- Result: 2023-01-10,09:00
+WHY: 
+    { courses(course_id:101, course_name:Machine Learning) AND exams(exam_id:1,course_id:101,date:2023-01-10,time:09:00) }
+
+============================================================
+
+Question: In which courses Giulia Rossi is enrolled?
+- Result: 101, 106
+WHY: 
+    { courses(course_id:101, course_name:Machine Learning) AND students(id:1, name:Giulia, surname:Rossi) }, 
+    { courses(course_id:106, course_name:Software Engineering) AND students(id:1, name:Giulia, surname:Rossi) }
+
+============================================================
+
+Question: What is the grade of Giulia Rossi for the Machine Learning course?
+Result: 28
+WHY: 
+    { courses(course_id:101, course_name:Machine Learning) AND grades(grade_id:1, student_id:1, course_id:101, grade:28) }
+
+============================================================
+
+Question: Who is the teacher following Sophie Durand in her thesis?
+Result: Laura Bianchi
+WHY: { courses(course_id:102, course_name:Database Systems) AND students(id:3, name:Sophie, surname:Durand) AND teachers(teacher_id:2, name: Laura, surname:Bianchi) }
+
+============================================================
+
+Question: What are all the courses offered by the Computer Science department?
+Result: 101, 102, 104, 106, 107, 108
+WHY: 
+    { courses(course_id:101, course_name:Machine Learning) AND department:Computer Science }, 
+    { courses(course_id:102, course_name:Database Systems) AND department:Computer Science }, 
+    { courses(course_id:104, course_name:Advanced Algorithms) AND department:Computer Science }, 
+    { courses(course_id:106, course_name:Software Engineering) AND department:Computer Science }, 
+    { courses(course_id:107, course_name:Data Mining) AND department:Computer Science }, 
+    { courses(course_id:108, course_name:Artificial Intelligence) AND department:Computer Science }
+
+============================================================
+
+Question: What is the department name in which Antonio Gallo teaches?
+Result: Computer Science
+WHY: { teachers(teacher_id:5, surname:Gallo, department_id:2) AND departments(department_id:2, department_name:?, faculty:?) },
+
+============================================================
+
+Question: What is the grade of Elena Gonzales for the Human-Computer Interaction exam?
+- Result: None
+WHY: None
+
+============================================================
+
+Question: Which faculty does the Electronics department belong to?
+Result: Engineering
+WHY: 
+    { departments(department_id:2, department_name:Electronics, faculty:Engineering) }
+
+============================================================
+
+Question: In which building will be the Embedded Systems exam?
+Result: Electronics
+WHY: 
+    { courses(course_id:103, course_name:Embedded Systems) AND classrooms(classroom_id:6, building:Electronics) }
+
+============================================================
+
+Question: What is the title of the thesis followed by Alessandro Moretti?
+Result: Deep Learning for Image Recognition
+WHY: 
+    { courses(course_id:101, course_name:Machine Learning) AND exams(exam_id:1,course_id:101,date:2023-01-10,time:09:00) }, 
+    { thesis(thesis_id:1,title:Deep Learning for Image Recognition)student_id:1,teacher_id:1,academic_year:2023-2024,status:Completed,research_area:Artificial Intelligence) }
+
+============================================================
+
+Question: Which students have an enrollment date before 2022?
+Result: Lucas, Sophie
+WHY: 
+    {enrollments(enrollment_id:9, student_id:4, enrollment_date:2020-08-25) AND students(id:4, name:Lucas, surname:Schmidt, enrollment_date:2020-08-25)}, 
+    {enrollments(enrollment_id:5, student_id:4, enrollment_date:2020-08-25) AND students(id:4, name:Lucas, surname:Schmidt, enrollment_date:2020-08-25)}, 
+    {enrollments(enrollment_id:8, student_id:3, enrollment_date:2021-01-10) AND students(id:3, name:Sophie, surname:Durand, enrollment_date:2021-01-10)}, 
+    {enrollments(enrollment_id:6, student_id:3, enrollment_date:2021-01-10) AND students(id:3, name:Sophie, surname:Durand, enrollment_date:2021-01-10)}
+
+============================================================
+
+Question: What is the location of the Humanities Library?
+I don't know.
+
+============================================================
+
+Question: How many students are enrolled in the Database Systems course?
+Result: 2
+WHY: 
+    { courses(course_id:102, course_name:Database Systems) AND enrollments(enrollment_id:4, student_id:1, course_id:102) }, 
+    { courses(course_id:102, course_name:Database Systems) AND enrollments(enrollment_id:2, student_id:2, course_id:102) }
+
+============================================================
+
+Question: What are the research areas of Maria Ferrari?
+- Result: Artificial Intelligence, Human-Computer Interaction
+WHY: 
+    { teachers(teacher_id:10, name: Maria, surname: Ferrari) AND teacher_research_areas(teacher_id:10, research_area: Artificial Intelligence) }, 
+    { teachers(teacher_id:10, name: Maria, surname: Ferrari) AND teacher_research_areas(teacher_id:10, research_area: Human-Computer Interaction) }
+
+============================================================
+
+Question: How many research projects are led by Laura Bianchi?
+Result: 6
+WHY: 
+    { teachers(teacher_id:2, name: Laura, surname: Bianchi) AND teacher_research_areas(teacher_id:2, research_area:Data Science, number_of_project:6) }, 
+    { teacher_research_areas(teacher_id:2, research_area:Data Science, number_of_project:6) }
+
+============================================================
+
+Question: Which students have a grade higher than 27 in any course?
+Result: 1, 3, 5
+WHY: 
+    { grades(grade_id:1, student_id:1, course_id:101, grade:28) AND grades(grade_id:6, student_id:3, course_id:106, grade:29) AND grades(grade_id:7, student_id:3, course_id:110, grade:28) }, 
+    { grades(grade_id:2, student_id:3, course_id:103, grade:30) }
+
+============================================================
+
+Question: Which classroom has the highest capacity?
+Result: 5
+WHY: 
+    {classrooms(classroom_id:5, capacity:100) }
+
+============================================================
+
+Question: What is the day and time of the Software Engineering exam?
+Result: 2023-05-30, 13:00  
+WHY: 
+    { courses(course_id:106, course_name:Software Engineering) AND exams(exam_id:5, course_id:105, date:2023-05-30, time:13:00) }
+
+============================================================
+
+Question: Which courses have 8 credits?
+- Result: 104
+WHY: 
+    { courses(course_id:104, course_name:Advanced Algorithms) AND courses(credits:8) }
+
+============================================================
+
+Question: What is the title of the thesis of Sophie Durand?
+Result: User Experience Design in Web Apps
+WHY: 
+    { students(id:3, name:Sophie, surname:Durand) AND thesis(thesis_id:5, title:User Experience Design in Web Apps, student_id:5) }
+
+============================================================
+

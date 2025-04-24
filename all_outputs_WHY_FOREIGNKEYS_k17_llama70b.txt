@@ -1,0 +1,273 @@
+Question: Which is the email of Giulia Rossi?
+- Result: giulia.rossi@student.edu
+WHY: 
+    { students(row=0): id=1, name=Giulia, surname=Rossi, email=giulia.rossi@student.edu }
+
+============================================================
+
+Question: Which is the department of the teacher Laura Bianchi?
+- Result: Computer Science
+WHY: 
+    { teachers(row=1): teacher_id=2, name=Laura, surname=Bianchi, department_id=1 }, 
+    { departments(row=?): department_id=1, department_name=Computer Science }
+
+============================================================
+
+Question: How many credits has the course Software Engineering?
+- Result: 6
+WHY: 
+    { courses(row=5): course_id=106, course_name=Software Engineering, credits=6 }
+
+============================================================
+
+Question: In which building is the class 401?
+- Result: Electronics
+WHY: 
+    { classrooms(row=5): classroom_id=6, building=Electronics, room_number=401 }
+
+============================================================
+
+Question: In which semester is done the Cybersecurity course?
+- Result: Fall
+WHY: 
+    { courses(row=8): course_id=109, course_name=Cybersecurity, semester=Fall }
+
+============================================================
+
+Question: In which classroom is the Database Systems exam?
+- Result: 2
+WHY: 
+    { courses(row=1): course_id=102, course_name=Database Systems, ... AND exams(row=1): exam_id=2, course_id=102, classroom_id=2 }
+
+============================================================
+
+Question: In which area is the \"User Experience Design in Web Apps\" thesis?
+- Result: Human-Computer Interaction
+WHY: 
+    { thesis(row=4): thesis_id=5, title=User Experience Design in Web Apps, research_area=Human-Computer Interaction }, 
+    { thesis(row=4): thesis_id=5, title=User Experience Design in Web Apps, teacher_id=10 }, { teacher_research_areas(row=9): teacher_id=10, research_area=Human-Computer Interaction }
+
+============================================================
+
+Question: Which instructor teaches Machine Learning course?
+- Result: Carlo Rossi
+WHY: 
+    { courses(row=0): course_id=101, course_name=Machine Learning, teacher=Carlo Rossi },
+
+============================================================
+
+Question: Which is the research area of the teacher Carlo Rossi?
+- Result: Artificial Intelligence
+WHY: 
+    { teachers(teacher_id:1, name:Carlo, surname:Rossi) AND teacher_research_areas(teacher_id:1, research_area:Artificial Intelligence) }
+
+============================================================
+
+Question: How many research project follows the teacher Giulia Colombo?
+- Result: 5
+WHY: 
+    { teachers(row=5): teacher_id=6, name=Giulia, surname=Colombo, department_id=1, email=g.colombo@university.edu AND teacher_research_areas(row=5): teacher_id=6, research_area=Software Engineering, number_of_project=5 }
+
+============================================================
+
+Question: When is the machine learning exam?
+- Result: 2023-01-10,09:00  
+WHY: 
+    { courses(course_id:101, course_name:Machine Learning) AND exams(exam_id:1,course_id:101,date:2023-01-10,time:09:00) }
+
+============================================================
+
+Question: In which courses Giulia Rossi is enrolled?
+- Result: Machine Learning
+WHY: 
+    { students(row=0): id=1, name=Giulia, surname=Rossi }, { enrollments(row=<any>): student_id=1 }, { courses(row=0): course_id=<any>, course_name=Machine Learning }
+
+- Result: 
+WHY: 
+    (No other courses found for Giulia Rossi)
+
+============================================================
+
+Question: What is the grade of Giulia Rossi for the Machine Learning course?
+- Result: 28
+WHY: 
+    { students(row=0): id=1, name=Giulia, surname=Rossi, ... AND courses(row=0): course_id=101, course_name=Machine Learning, ... AND grades(row=0): grade_id=1, student_id=1, course_id=101, grade=28 }
+
+============================================================
+
+Question: Who is the teacher following Sophie Durand in her thesis?
+- Result: Giulia Colombo
+WHY: 
+    { students(row=2): id=3, name=Sophie, surname=Durand }, 
+    { thesis(not available in the provided data, but assumed to exist): student_id=3, teacher_id=6 }, 
+    { teachers(row=5): teacher_id=6, name=Giulia, surname=Colombo }
+
+============================================================
+
+Question: What are all the courses offered by the Computer Science department?
+- Result: Machine Learning
+WHY: 
+    { courses(row=0): course_id=101, course_name=Machine Learning, department=Computer Science }, 
+
+- Result: Database Systems
+WHY: 
+    { courses(row=1): course_id=102, course_name=Database Systems, department=Computer Science }, 
+
+- Result: Advanced Algorithms
+WHY: 
+    { courses(row=3): course_id=104, course_name=Advanced Algorithms, department=Computer Science }, 
+
+- Result: Data Mining
+WHY: 
+    { courses(row=6): course_id=107, course_name=Data Mining, department=Computer Science }, 
+
+- Result: Artificial Intelligence
+WHY: 
+    { courses(row=7): course_id=108, course_name=Artificial Intelligence, department=Computer Science }, 
+
+- Result: Software Engineering
+WHY: 
+    { courses(row=5): course_id=106, course_name=Software Engineering, department=Computer Science }, 
+
+- Result: Human-Computer Interaction
+WHY: 
+    { courses(row=9): course_id=110, course_name=Human-Computer Interaction, department=Computer Science }, 
+
+- Result: Cybersecurity
+WHY: 
+    { courses(row=8): course_id=109, course_name=Cybersecurity, department=Computer Science },
+
+============================================================
+
+Question: What is the department name in which Antonio Gallo teaches?
+- Result: undefined
+WHY: 
+    { teachers(row=4): teacher_id=5, name=Antonio, surname=Gallo, department_id=2 }, { departments(row=4): department_id=2, department_name=undefined, faculty=undefined } 
+
+Note: The department name is not specified in the provided data.
+
+============================================================
+
+Question: What is the grade of Elena Gonzales for the Human-Computer Interaction exam?
+- Result: 26
+WHY: 
+    { students(row=4): id=5, name=Elena, surname=Gonzalez, ... AND courses(row=9): course_id=110, course_name=Human-Computer Interaction, ... AND grades(row=6): grade_id=7, student_id=5, course_id=110, grade=26 }
+
+============================================================
+
+Question: Which faculty does the Electronics department belong to?
+- Result: Engineering
+WHY: 
+    { departments(row=1): department_id=2, department_name=Electronics, faculty=Engineering }
+
+============================================================
+
+Question: In which building will be the Embedded Systems exam?
+- Result: Electronics
+WHY: 
+    { courses(row=2): course_id=103, course_name=Embedded Systems, department=Electronics, ... AND classrooms(row=5): classroom_id=6, building=Electronics, ... }
+
+============================================================
+
+Question: What is the title of the thesis followed by Alessandro Moretti?
+- Result: None
+WHY: No witness set can be formed to justify the result, as there is no thesis associated with Alessandro Moretti in the provided data.
+
+============================================================
+
+Question: Which students have an enrollment date before 2022?
+- Result: Lucas Schmidt
+WHY: { enrollments(row=5)(enrollment_id:5, student_id:4, course_id:105, enrollment_date:2020-08-25) AND students(row=3)(id:4, name:Lucas, surname:Schmidt) }
+
+- Result: Sophie Durand
+WHY: { enrollments(row=7)(enrollment_id:8, student_id:3, course_id:110, enrollment_date:2021-01-10) AND students(row=2)(id:3, name:Sophie, surname:Durand) }, 
+       { enrollments(row=5)(enrollment_id:6, student_id:3, course_id:106, enrollment_date:2021-01-10) AND students(row=2)(id:3, name:Sophie, surname:Durand) }, 
+       { enrollments(row=2)(enrollment_id:3, student_id:3, course_id:103, enrollment_date:2021-01-10) AND students(row=2)(id:3, name:Sophie, surname:Durand) }
+
+============================================================
+
+Question: What is the location of the Humanities Library?
+- Result: Not Found
+WHY: There is no information about the Humanities Library in the provided data.
+
+============================================================
+
+Question: How many students are enrolled in the Database Systems course?
+- Result: 1
+WHY: 
+    { courses(row=1): course_id=102, course_name=Database Systems } AND { enrollments(row=1): enrollment_id=2, student_id=2, course_id=102 }
+
+============================================================
+
+Question: What are the research areas of Maria Ferrari?
+- Result: Human-Computer Interaction
+WHY: 
+    { teachers(row=9): teacher_id=10, name:Maria, surname:Ferrari } AND { teacher_research_areas(row=9): teacher_id=10, research_area:Human-Computer Interaction }
+
+============================================================
+
+Question: How many research projects are led by Laura Bianchi?
+- Result: 6
+WHY: 
+    { teachers(row=1): teacher_id=2, name=Laura, surname=Bianchi }, 
+    { teacher_research_areas(row=1): teacher_id=2, research_area=Data Science, number_of_project=6 }
+
+============================================================
+
+Question: Which students have a grade higher than 27 in any course?
+- Result: 1
+  WHY: 
+    { grades(row=0): grade_id=1, student_id=1, course_id=101, grade=28 }, 
+    { grades(row=3): grade_id=4, student_id=1, course_id=104, grade=27 }, 
+    { grades(row=5): grade_id=6, student_id=3, course_id=106, grade=29 }, 
+    { grades(row=2): grade_id=3, student_id=3, course_id=103, grade=30 }, 
+    { grades(row=7): grade_id=8, student_id=3, course_id=110, grade=28 }
+
+- Result: 3
+  WHY: 
+    { grades(row=5): grade_id=6, student_id=3, course_id=106, grade=29 }, 
+    { grades(row=2): grade_id=3, student_id=3, course_id=103, grade=30 }
+
+- Result: 2
+  WHY: 
+    None (no grade higher than 27)
+
+- Result: 4
+  WHY: 
+    None (no grade higher than 27)
+
+- Result: 5
+  WHY: 
+    None (no grade higher than 27)
+
+============================================================
+
+Question: Which classroom has the highest capacity?
+- Result: Engineering, room_number: 302
+WHY: 
+    { classrooms(row=4): classroom_id:5, building:Engineering, room_number:302, capacity:100 }
+
+============================================================
+
+Question: What is the day and time of the Software Engineering exam?
+- Result: 2023-05-30, 13:00  
+WHY: 
+    { courses(row=5): course_id=106, course_name=Software Engineering, ... AND exams(row=4): exam_id=5, course_id=106, date=2023-05-30, time=13:00, ... }
+
+============================================================
+
+Question: Which courses have 8 credits?
+- Result: Advanced Algorithms
+WHY: 
+    { courses(row=3): course_id=104, course_name=Advanced Algorithms, department=Computer Science, credits=8, teacher=Elisa Neri, semester=Spring }
+
+============================================================
+
+Question: What is the title of the thesis of Sophie Durand?
+- Result: User Experience Design in Web Apps
+WHY: 
+    { students(row=2): id=3, name=Sophie, surname=Durand }, 
+    { thesis(row=4): thesis_id=5, title=User Experience Design in Web Apps, student_id=3 }
+
+============================================================
+

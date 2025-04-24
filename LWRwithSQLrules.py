@@ -15,17 +15,18 @@ from pydantic import BaseModel, Field
 from typing import List
 import faiss 
 import re
-
+from langchain_community.chat_models import ChatOllama
 os.environ["LANGSMITH_TRACING"] = "true"
 os.environ["LANGSMITH_API_KEY"] = "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"
 
 
-if not os.environ.get("GROQ_API_KEY"):
-  os.environ["GROQ_API_KEY"] = "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"
-
+#if not os.environ.get("GROQ_API_KEY"):
+#  os.environ["GROQ_API_KEY"] = "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"
+#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 previous token groq
 # LLM: Llama3-8b by Groq
-llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
-
+#llm = init_chat_model("llama3-70b-8192", model_provider="groq", temperature = 0)
+# Ollama LLM
+llm = ChatOllama(model="mistral", temperature=0)
 #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 token hugging-face
 # Embedding model: Hugging Face
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
@@ -72,13 +73,12 @@ class ExplanationItem(BaseModel):
 class State(TypedDict):
     question: str
     context: List[Document]
-    answer: List[str]
-    explanation: List[ExplanationItem]
+    answer: str
     
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 17)
+    retrieved_docs = vector_store.similarity_search(state["question"], k = 76)
     #for doc in retrieved_docs:
     #    print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
     return {"context": retrieved_docs}
@@ -86,64 +86,72 @@ def retrieve(state: State):
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
     prompt_with_explanation = f"""
-    Your task is to answer questions based on structured CSV data, by reasoning using SQL-like operations.
-    When you receive a user question and the top-k relevant documents (each one representing a table), follow these steps:
+   You are an assistant that answers questions over structured data, the data came from tabular data and some tables are related
+   with foreign keys(same attributes in more tables). For example the field "id" in students.csv is binded with "student_id" field in enrollments.csv,
+   exams.csv, grades.csv, thesis.csv. So if "id = 1, name = Giulia, surname = Rossi,.." in students.csv, and "thesis_id=1, title=Deep Learning for Image Recognition, student_id=1, ..."
+   in thesis.csv; it means that Giulia Rossi is doing the thesis with id 1, title= Deep Learning for Image Recognition,..
+    You must not only answer the question, but for each result item, explain **WHY** it appears in the result.
+    This explanation must be in terms of **WITNESSES SET**: the minimal sets of input tuples that justify the result.
+    IMPORTANT:
+        - **Inside** each witness set: tuples are combined using **AND** (all are required).
+        - **Between** different witness sets: use **OR** (any one is enough).
+    This means: 
+        > Result X is in the output if (WitnessSet1) OR (WitnessSet2) OR ...
 
-    1. **Identify the required information**: What is being asked?
-    2. **Locate the relevant tables**: Find in the documents the tables or entities that contain the required data.
-    3. **Determine joins**:
-       - A JOIN is used to combine rows from two or more tables, based on a related column between them.
-       - If data is spread across multiple tables, identify common fields.
-       - Explain which tables need to be joined and on which fields.
-    4. **Apply filters and projections**:
-       - Use WHERE clauses to filter rows, it is used to extract only those records that fulfill a specified condition (e.g., student name = "Giulia Rossi").
-       - Use SELECT to retrieve only the needed fields (e.g., student email, thesis title).
-    5. **Use aggregate functions if needed**:
-       - An aggregate function is a function that performs a calculation on a set of values, and returns a single value.
-         The most commonly used SQL aggregate functions are:
-            MIN() - returns the smallest value within the selected column
-            MAX() - returns the largest value within the selected column
-            COUNT() - returns the number of rows in a set
-            SUM() - returns the total sum of a numerical column
-            AVG() - returns the average value of a numerical column
-        (e.g., Question: "How many students are enrolled in the Database Systems course", to do this you need to use the COUNT(*) combined with a JOIN:
-        SELECT COUNT(*) FROM courses c, enrollment e WHERE c.course_name = "Database Systems" AND c.course_id = e.course_id )
-    5. **Construct the logic in natural language**:
-       - Describe the reasoning as if you were writing an SQL query.
-       - Then, answer the question using the values found in the data.
-    6. **Explain your steps clearly**:
-       - Always show which rules you applied (JOIN, SELECT, WHERE).
-       - Show intermediate steps if needed.
+        And each WitnessSet has form:
+        > {{Tuple1 AND Tuple2 AND ...}}
+   
 
-    Always provide the final answer **and** the reasoning that led to it.
+    Answer in the following format:
+    - Result: <Result Value>
+    WHY: {{ <witness 1> }}, {{ <witness 2> }}, ...
 
-    Your answer must follow this structure, but return it as a string representation of a JSON:
+    Only include witnesses that are minimal and sufficient for deriving the result.
+    Group equivalent witnesses together if possible.
+    EXAMPLE 1(GENERIC DATA):
+        Input data:
+        Shop_Assistant(AID, Name) 
+        1, Alice 
+        2, Bob
 
-    {{
-        "answer": ["<answer_1>", "<answer_2>", "..."],  
-        "explanation": [  
-            "<step_1_explanation>",
-            "<step_2_explanation>"
-        ]
-    }}
+        Products(PID, Name) 
+        p1, X 
+        p2, Y
+        
+        Sales(SID, AID, PID)
+        s1, 1, p1
+        s2, 1, p1
+        QUESTION: "Which shop assistants have sold product X?"
 
-    ### IMPORTANT ###
-    - The output must be a valid JSON object, without extra text.
+      - Result: Alice  
+        WHY: 
+            {{ Shop_Assistant(AID:1, Name:Alice) AND Products(PID:p1, Name:X) AND Sales(SID:s1, AID:1, PID:p1) }},  
+            {{ Shop_Assistant(AID:1, Name:Alice) AND Products(PID:p1, Name:X) AND Sales(SID:s2, AID:1, PID:p1) }}
+    EXAMPLE 2(CONTEXT DATE):
+        Input Data:
+        courses.csv(course_id,course_name,department,credits,teacher,semester)
+        101,Machine Learning,Computer Science,6,Carlo Rossi,Fall
+        102,Database Systems,Computer Science,6,Laura Bianchi,Spring
+        
+        exams.csv(exam_id,course_id,date,time,classroom_id)
+        1,101,2023-01-10,09:00,1
+        2,102,2023-02-15,14:00,2
+        
+        QUESTION: "When is the Machine Learning exam?"
 
-    ### Example ###
-    {{
-        "answer": [
-            "Computer Science"
-        ],
-        "explanation": [
-            "First, I joined the teachers table with the courses table on the teacher_id column.",
-            "Then, I filtered the rows where the course title was 'Computer Science'."
-        ]
-    }}
+      - Result: 2023-01-10,09:00  
+        WHY: 
+            {{ courses(course_id:101, course_name:Machine Learning) AND exams(exam_id:1,course_id:101,date:2023-01-10,time:09:00) }}
+    When referencing tuples from the input, use a readable format like:
 
-    Question: {state["question"]}
-    Given this question and the context provided , provide the answer including the explanation on how you get the information: 
-    - the steps taken to query the data
+    <table>(row=<index>): attribute1=value1, attribute2=value2, ...
+    Avoid internal object representations (e.g., Document(...)). Focus on clarity.
+    
+    Data:
+    {state["context"]}
+
+    Question:
+    {state["question"]}
     """
 
     # Creare il contesto per i documenti (contenuto e metadati)
@@ -157,20 +165,14 @@ def generate(state: State):
     
     # Pulire e analizzare la risposta dell'LLM
     cleaned_response = response.content.strip()
+    print(cleaned_response)
 
-    # Analizzare la risposta in formato JSON
-    try:
-        parsed_response = json.loads(cleaned_response)
-    except json.JSONDecodeError as e:
-        print(f"Error parsing response: {cleaned_response}")
-        print(f"JSONDecodeError: {str(e)}")
-        return {"answer": [], "explanation": []}
 
-    # Restituire la risposta come struttura di output
+    # Restituiamo la risposta intera come testo (rispetta il nuovo formato con Result/WHY)
     return {
-        "answer": parsed_response.get("answer", []),
-        "explanation": parsed_response.get("explanation", [])
+        "answer": cleaned_response
     }
+
 
 # Control flow: Compile the application into a graph
 graph_builder = StateGraph(State).add_sequence([retrieve, generate])
@@ -191,16 +193,15 @@ for i, question in enumerate(questions):
     # Eseguire l'invocazione del grafo
     full_result = graph.invoke({"question": question})
     
-    # Organizzare il risultato per ogni domanda
     result = {
         "question": question,
-        "answer": full_result.get("answer", []),
-        "explanation": full_result.get("explanation", [])
+        "answer": full_result.get("answer", "")
     }
-    
     # Aggiungere il risultato alla lista
     all_results.append(result)
 
-# Salva i risultati in un file JSON
-with open("all_outputs_sql_K17_8B.json", "w", encoding="utf-8") as f:
-    json.dump(all_results, f, indent=4, ensure_ascii=False)
+with open("all_outputs_WHY_FOREIGNKEYS_k76_mistral.txt", "w", encoding="utf-8") as f:
+    for result in all_results:
+        f.write(f"Question: {result['question']}\n")
+        f.write(result["answer"].strip() + "\n")
+        f.write("\n" + "="*60 + "\n\n")
