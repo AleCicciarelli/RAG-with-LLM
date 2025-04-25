@@ -20,13 +20,13 @@ os.environ["LANGSMITH_TRACING"] = "true"
 os.environ["LANGSMITH_API_KEY"] = "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"
 
 
-#if not os.environ.get("GROQ_API_KEY"):
-#  os.environ["GROQ_API_KEY"] = "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"
+if not os.environ.get("GROQ_API_KEY"):
+  os.environ["GROQ_API_KEY"] = "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"
 #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 previous token groq
 # LLM: Llama3-8b by Groq
 #llm = init_chat_model("llama3-70b-8192", model_provider="groq", temperature = 0)
 # Ollama LLM
-llm = ChatOllama(model="mixtral", temperature=0)
+llm = ChatOllama(model="llama3-70b-8192", temperature=0)
 #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 token hugging-face
 # Embedding model: Hugging Face
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
@@ -78,7 +78,7 @@ class State(TypedDict):
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 17)
+    retrieved_docs = vector_store.similarity_search(state["question"], k = 76)
     #for doc in retrieved_docs:
     #    print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
     return {"context": retrieved_docs}
@@ -90,6 +90,7 @@ def generate(state: State):
    with foreign keys(same attributes in more tables). For example the field "id" in students.csv is binded with "student_id" field in enrollments.csv,
    exams.csv, grades.csv, thesis.csv. So if "id = 1, name = Giulia, surname = Rossi,.." in students.csv, and "thesis_id=1, title=Deep Learning for Image Recognition, student_id=1, ..."
    in thesis.csv; it means that Giulia Rossi is doing the thesis with id 1, title= Deep Learning for Image Recognition,..
+   
     You must not only answer the question, but for each result item, explain **WHY** it appears in the result.
     This explanation must be in terms of **WITNESSES SET**: the minimal sets of input tuples that justify the result.
     IMPORTANT:
@@ -108,26 +109,8 @@ def generate(state: State):
 
     Only include witnesses that are minimal and sufficient for deriving the result.
     Group equivalent witnesses together if possible.
-    EXAMPLE 1(GENERIC DATA):
-        Input data:
-        Shop_Assistant(AID, Name) 
-        1, Alice 
-        2, Bob
 
-        Products(PID, Name) 
-        p1, X 
-        p2, Y
-        
-        Sales(SID, AID, PID)
-        s1, 1, p1
-        s2, 1, p1
-        QUESTION: "Which shop assistants have sold product X?"
-
-      - Result: Alice  
-        WHY: 
-            {{ Shop_Assistant(AID:1, Name:Alice) AND Products(PID:p1, Name:X) AND Sales(SID:s1, AID:1, PID:p1) }},  
-            {{ Shop_Assistant(AID:1, Name:Alice) AND Products(PID:p1, Name:X) AND Sales(SID:s2, AID:1, PID:p1) }}
-    EXAMPLE 2(CONTEXT DATE):
+    EXAMPLE(CONTEXT DATA):
         Input Data:
         courses.csv(course_id,course_name,department,credits,teacher,semester)
         101,Machine Learning,Computer Science,6,Carlo Rossi,Fall
@@ -200,7 +183,7 @@ for i, question in enumerate(questions):
     # Aggiungere il risultato alla lista
     all_results.append(result)
 
-with open("all_outputs_WHY_FOREIGNKEYS_k17_mistral.txt", "w", encoding="utf-8") as f:
+with open("all_outputs_WHY_FOREIGNKEYS2_k76_llama70B.txt", "w", encoding="utf-8") as f:
     for result in all_results:
         f.write(f"Question: {result['question']}\n")
         f.write(result["answer"].strip() + "\n")

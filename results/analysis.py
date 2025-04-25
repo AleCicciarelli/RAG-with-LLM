@@ -28,7 +28,7 @@ def compute_metrics(total_tp, total_fp, total_fn, total_exact, n):
 
 def main():
     gt_data = load_json("results/true_answers.json")
-    pred_data = load_json("results/outputs_mistral17.json")
+    pred_data = load_json("results/all_outputs_k76_llama70b.json")
     question_types = load_json("questions.json")  # Dizionario dei tipi di domanda
 
     assert len(gt_data) == len(pred_data), "Mismatch in number of questions"

@@ -20,13 +20,13 @@ os.environ["LANGSMITH_TRACING"] = "true"
 os.environ["LANGSMITH_API_KEY"] = "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"
 
 
-#if not os.environ.get("GROQ_API_KEY"):
-#  os.environ["GROQ_API_KEY"] = "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"
+if not os.environ.get("GROQ_API_KEY"):
+  os.environ["GROQ_API_KEY"] = "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"
 #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 previous token groq
 # LLM: Llama3-8b by Groq
-#llm = init_chat_model("llama3-70b-8192", model_provider="groq", temperature = 0)
+#llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
 # Ollama LLM
-llm = ChatOllama(model="mixtral", temperature=0)
+llm = ChatOllama(model="llama3-70b-8192", temperature=0)
 #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 token hugging-face
 # Embedding model: Hugging Face
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
@@ -86,72 +86,47 @@ def retrieve(state: State):
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
     prompt_with_explanation = f"""
-   You are an assistant that answers questions over structured data, the data came from tabular data and some tables are related
-   with foreign keys(same attributes in more tables). For example the field "id" in students.csv is binded with "student_id" field in enrollments.csv,
-   exams.csv, grades.csv, thesis.csv. So if "id = 1, name = Giulia, surname = Rossi,.." in students.csv, and "thesis_id=1, title=Deep Learning for Image Recognition, student_id=1, ..."
-   in thesis.csv; it means that Giulia Rossi is doing the thesis with id 1, title= Deep Learning for Image Recognition,..
-    You must not only answer the question, but for each result item, explain **WHY** it appears in the result.
-    This explanation must be in terms of **WITNESSES SET**: the minimal sets of input tuples that justify the result.
-    IMPORTANT:
-        - **Inside** each witness set: tuples are combined using **AND** (all are required).
-        - **Between** different witness sets: use **OR** (any one is enough).
-    This means: 
-        > Result X is in the output if (WitnessSet1) OR (WitnessSet2) OR ...
+        You are an assistant that answers questions based on structured document data (e.g., CSV table rows in natural language). 
+        You must first answer the question, and then explain **how** the result was derived, using a symbolic formula known as **HOW Provenance**.
 
-        And each WitnessSet has form:
-        > {{Tuple1 AND Tuple2 AND ...}}
-   
+        HOW Provenance:
+        - Describes all possible derivations of the result.
+        - Uses semiring-style notation:
+            & = AND (tuple combinations in a join)
+            || = OR  (alternative derivation paths)
 
-    Answer in the following format:
-    - Result: <Result Value>
-    WHY: {{ <witness 1> }}, {{ <witness 2> }}, ...
+        Each tuple can be represented as:
+        <table>(row=<index>): <attribute=value, ...>
 
-    Only include witnesses that are minimal and sufficient for deriving the result.
-    Group equivalent witnesses together if possible.
-    EXAMPLE 1(GENERIC DATA):
-        Input data:
-        Shop_Assistant(AID, Name) 
-        1, Alice 
-        2, Bob
+        The HOW Provenance should be an algebraic expression over those symbolic tuples.
 
-        Products(PID, Name) 
-        p1, X 
-        p2, Y
-        
-        Sales(SID, AID, PID)
-        s1, 1, p1
-        s2, 1, p1
-        QUESTION: "Which shop assistants have sold product X?"
+        ---
 
-      - Result: Alice  
-        WHY: 
-            {{ Shop_Assistant(AID:1, Name:Alice) AND Products(PID:p1, Name:X) AND Sales(SID:s1, AID:1, PID:p1) }},  
-            {{ Shop_Assistant(AID:1, Name:Alice) AND Products(PID:p1, Name:X) AND Sales(SID:s2, AID:1, PID:p1) }}
-    EXAMPLE 2(CONTEXT DATE):
-        Input Data:
-        courses.csv(course_id,course_name,department,credits,teacher,semester)
-        101,Machine Learning,Computer Science,6,Carlo Rossi,Fall
-        102,Database Systems,Computer Science,6,Laura Bianchi,Spring
-        
-        exams.csv(exam_id,course_id,date,time,classroom_id)
-        1,101,2023-01-10,09:00,1
-        2,102,2023-02-15,14:00,2
-        
-        QUESTION: "When is the Machine Learning exam?"
+        📘 Example
 
-      - Result: 2023-01-10,09:00  
-        WHY: 
-            {{ courses(course_id:101, course_name:Machine Learning) AND exams(exam_id:1,course_id:101,date:2023-01-10,time:09:00) }}
-    When referencing tuples from the input, use a readable format like:
+        Question: "Which students are enrolled in the Machine Learning course?"
 
-    <table>(row=<index>): attribute1=value1, attribute2=value2, ...
-    Avoid internal object representations (e.g., Document(...)). Focus on clarity.
-    
-    Data:
-    {state["context"]}
+        Answer: Giulia Rossi
 
-    Question:
-    {state["question"]}
+        HOW Provenance:
+        Giulia Rossi = 
+        (students[row=0] ⊗ enrollments[row=0] ⊗ courses[row=0]) ⊕ 
+        (students[row=0] ⊗ enrollments[row=3] ⊗ courses[row=0])
+
+        ---
+
+        Now use the same format for:
+
+        Context:
+        {state["context"]}
+
+        Question:
+        {state["question"]}
+
+        Format:
+        Answer: <result>
+        HOW Provenance: <symbolic semiring expression>
+
     """
 
     # Creare il contesto per i documenti (contenuto e metadati)
@@ -200,7 +175,7 @@ for i, question in enumerate(questions):
     # Aggiungere il risultato alla lista
     all_results.append(result)
 
-with open("all_outputs_WHY_FOREIGNKEYS_k76_mistral.txt", "w", encoding="utf-8") as f:
+with open("all_outputs_HOW_k76_llama70B.txt", "w", encoding="utf-8") as f:
     for result in all_results:
         f.write(f"Question: {result['question']}\n")
         f.write(result["answer"].strip() + "\n")

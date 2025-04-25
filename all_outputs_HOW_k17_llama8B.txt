@@ -1,0 +1,218 @@
+Question: Which is the email of Giulia Rossi?
+Answer: giulia.rossi@student.edu
+
+HOW Provenance: (students[row=0] ⊗ metadata[row=0] ⊗ page_content[row=0])
+
+============================================================
+
+Question: Which is the department of the teacher Laura Bianchi?
+Answer: 1
+
+HOW Provenance: (teachers[row=1] ⊗ department_id=1)
+
+============================================================
+
+Question: How many credits has the course Software Engineering?
+Answer: 6
+
+HOW Provenance: (courses[row=5] ⊗ courses[row=5])
+
+============================================================
+
+Question: In which building is the class 401?
+Answer: Electronics
+
+HOW Provenance: (classrooms[row=5] ⊗ building=Electronics)
+
+============================================================
+
+Question: In which semester is done the Cybersecurity course?
+Answer: Fall
+
+HOW Provenance: (courses[row=8] ⊗ teacher_research_areas[row=8])
+
+============================================================
+
+Question: In which classroom is the Database Systems exam?
+Answer: 2
+
+HOW Provenance: (exams[row=1] ⊗ courses[row=1])
+
+============================================================
+
+Question: In which area is the \"User Experience Design in Web Apps\" thesis?
+Answer: Human-Computer Interaction
+
+HOW Provenance: (thesis[row=4] ⊗ research_areas[row=9])
+
+============================================================
+
+Question: Which instructor teaches Machine Learning course?
+Answer: Carlo Rossi
+
+HOW Provenance: (courses[row=0] ⊗ teacher[row=0])
+
+============================================================
+
+Question: Which is the research area of the teacher Carlo Rossi?
+Answer: Artificial Intelligence
+
+HOW Provenance: (teachers[row=0] ⊗ research_areas[row=0])
+
+============================================================
+
+Question: How many research project follows the teacher Giulia Colombo?
+Answer: 2
+
+HOW Provenance: Giulia Colombo ⊗ (teacher_research_areas[row=5] ⊗ number_of_project[row=5])
+
+============================================================
+
+Question: When is the machine learning exam?
+Answer: 2023-01-10
+
+HOW Provenance: (exams[row=0] ⊗ courses[row=0])
+
+============================================================
+
+Question: In which courses Giulia Rossi is enrolled?
+Answer: Machine Learning
+
+HOW Provenance: Giulia Rossi = (students[row=0] ⊗ enrollments[row=0] ⊗ courses[row=0])
+
+============================================================
+
+Question: What is the grade of Giulia Rossi for the Machine Learning course?
+Answer: 28
+
+HOW Provenance: Giulia Rossi = (students[row=0] ⊗ grades[row=0])
+
+============================================================
+
+Question: Who is the teacher following Sophie Durand in her thesis?
+Answer: Giulia Colombo
+
+HOW Provenance: (students[row=2] ⊗ courses[row=5]) ⊕ (students[row=2] ⊗ courses[row=9])
+
+============================================================
+
+Question: What are all the courses offered by the Computer Science department?
+Answer: 106, 110, 102, 109, 104, 107, 108
+
+HOW Provenance: 
+(courses[row=5] ⊗ courses[row=9] ⊗ courses[row=1] ⊗ courses[row=8] ⊗ courses[row=2] ⊗ courses[row=3] ⊗ courses[row=0] ⊗ courses[row=6] ⊗ courses[row=7])
+
+============================================================
+
+Question: What is the department name in which Antonio Gallo teaches?
+Answer: Department 2
+
+HOW Provenance: (teachers[row=4] ⊗ department_id=2)
+
+============================================================
+
+Question: What is the grade of Elena Gonzales for the Human-Computer Interaction exam?
+Answer: 26
+
+HOW Provenance: (students[row=4] ⊗ grades[row=6])
+
+============================================================
+
+Question: Which faculty does the Electronics department belong to?
+Answer: Engineering
+
+HOW Provenance: (departments[row=1] ⊗ faculty)
+
+============================================================
+
+Question: In which building will be the Embedded Systems exam?
+Answer: Electronics
+
+HOW Provenance: (classrooms[row=5] ⊗ courses[row=2])
+
+============================================================
+
+Question: What is the title of the thesis followed by Alessandro Moretti?
+Answer: Deep Learning for Image Recognition
+
+HOW Provenance: (theses[row=0] ⊗ teacher_id[row=7])
+
+============================================================
+
+Question: Which students have an enrollment date before 2022?
+Answer: Lucas Schmidt, Sophie Durand
+
+HOW Provenance: 
+(students[row=2] ⊗ students[row=3]) ⊕ (enrollments[row=4] ⊗ enrollments[row=5] ⊗ enrollments[row=7]) ⊕ (enrollments[row=0] ⊗ enrollments[row=2])
+
+============================================================
+
+Question: What is the location of the Humanities Library?
+Answer: There is no location of the Humanities Library mentioned in the provided context.
+
+HOW Provenance: None (since the question is asking about a non-existent entity)
+
+============================================================
+
+Question: How many students are enrolled in the Database Systems course?
+Answer: 2
+
+HOW Provenance: (enrollments[row=0] ⊗ courses[row=1]) || (enrollments[row=1] ⊗ courses[row=1])
+
+============================================================
+
+Question: What are the research areas of Maria Ferrari?
+Answer: Machine Learning, Human-Computer Interaction
+
+HOW Provenance: 
+(Maria Ferrari ⊗ teacher_research_areas[row=9]) ⊕ (teacher_research_areas[row=0] ⊗ Maria Ferrari)
+
+============================================================
+
+Question: How many research projects are led by Laura Bianchi?
+Answer: 1
+
+HOW Provenance: (teachers[row=1] ⊗ teacher_research_areas[row=1])
+
+============================================================
+
+Question: Which students have a grade higher than 27 in any course?
+Answer: Giulia Rossi, Student 3, Student 4
+
+HOW Provenance: 
+(students[row=0] ⊗ grades[row=0] ⊗ courses[row=0]) ⊕ 
+(students[row=0] ⊗ grades[row=5] ⊗ courses[row=5]) ⊕ 
+(students[row=2] ⊗ grades[row=2] ⊗ courses[row=2]) ⊕ 
+(students[row=4] ⊗ grades[row=4] ⊗ courses[row=4])
+
+============================================================
+
+Question: Which classroom has the highest capacity?
+Answer: 5
+
+HOW Provenance: (classrooms[row=4] ⊗ capacity=100)
+
+============================================================
+
+Question: What is the day and time of the Software Engineering exam?
+Answer: 2023-05-30, 13:00
+
+HOW Provenance: (exams[row=4] ⊗ courses[row=5])
+
+============================================================
+
+Question: Which courses have 8 credits?
+Answer: 104
+
+HOW Provenance: (courses[row=3] ⊗ credits=8)
+
+============================================================
+
+Question: What is the title of the thesis of Sophie Durand?
+Answer: User Experience Design in Web Apps
+
+HOW Provenance: 
+(students[row=2] ⊗ thesis[row=4])
+
+============================================================
+
