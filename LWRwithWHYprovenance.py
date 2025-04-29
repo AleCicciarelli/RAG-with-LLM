@@ -24,9 +24,13 @@ if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 #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 previous token groq
 # LLM: Llama3-8b by Groq
-#llm = init_chat_model("llama3-70b-8192", model_provider="groq", temperature = 0)
+llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
+# MISTRAL by Groq
+#llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
+
+
 # Ollama LLM
-llm = ChatOllama(model="llama3-70b-8192", temperature=0)
+#llm = ChatOllama(model="llama3-70b-8192", temperature=0)
 #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 token hugging-face
 # Embedding model: Hugging Face
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
@@ -78,7 +82,7 @@ class State(TypedDict):
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 76)
+    retrieved_docs = vector_store.similarity_search(state["question"], k = 50)
     #for doc in retrieved_docs:
     #    print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
     return {"context": retrieved_docs}
@@ -86,30 +90,30 @@ def retrieve(state: State):
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
     prompt_with_explanation = f"""
-   You are an assistant that answers questions over structured data, the data came from tabular data and some tables are related
-   with foreign keys(same attributes in more tables). For example the field "id" in students.csv is binded with "student_id" field in enrollments.csv,
-   exams.csv, grades.csv, thesis.csv. So if "id = 1, name = Giulia, surname = Rossi,.." in students.csv, and "thesis_id=1, title=Deep Learning for Image Recognition, student_id=1, ..."
-   in thesis.csv; it means that Giulia Rossi is doing the thesis with id 1, title= Deep Learning for Image Recognition,..
-   
-    You must not only answer the question, but for each result item, explain **WHY** it appears in the result.
+    Question: {state["question"]}
+    Context: {state["context"]}
+    Given this question and the context provided, provide the answer, and for each answer's item, explain **WHY** it appears in the result.
     This explanation must be in terms of **WITNESSES SET**: the minimal sets of input tuples that justify the result.
-    IMPORTANT:
-        - **Inside** each witness set: tuples are combined using **AND** (all are required).
-        - **Between** different witness sets: use **OR** (any one is enough).
     This means: 
         > Result X is in the output if (WitnessSet1) OR (WitnessSet2) OR ...
 
-        And each WitnessSet has form:
-        > {{Tuple1 AND Tuple2 AND ...}}
+        And the Witnesses Sets have form:
+        > {{Tuple1 AND Tuple2 AND ...}} OR
+        > {{Tuple3 AND Tuple4 AND ...}}
+        
    
-
-    Answer in the following format:
-    - Result: <Result Value>
-    WHY: {{ <witness 1> }}, {{ <witness 2> }}, ...
-
-    Only include witnesses that are minimal and sufficient for deriving the result.
-    Group equivalent witnesses together if possible.
-
+    The answer must respect the following structure, but return it as a string representation of a JSON:
+    [
+    {{
+        "answer": ["<answer_1>"],  
+        "why": [  
+            {{  
+                "<file_name>": "<row_number>", "<file_name>": "<row_number>"
+            }}            
+        ]
+    }}
+    ]
+    (You can find file_name and row_number in the metadata of the document you use for the answer.)
     EXAMPLE(CONTEXT DATA):
         Input Data:
         courses.csv(course_id,course_name,department,credits,teacher,semester)
@@ -121,20 +125,21 @@ def generate(state: State):
         2,102,2023-02-15,14:00,2
         
         QUESTION: "When is the Machine Learning exam?"
+        ANSWER:
+            [
+            {{
+                "answer": ["2023-01-10,09:00 "], 
+                "why": [  
+                    {{  
+                        "courses": "0", "exams": "0"
+                    }}            
+                ] 
+            }}
+            ]
+    ### IMPORTANT ###
 
-      - Result: 2023-01-10,09:00  
-        WHY: 
-            {{ courses(course_id:101, course_name:Machine Learning) AND exams(exam_id:1,course_id:101,date:2023-01-10,time:09:00) }}
-    When referencing tuples from the input, use a readable format like:
-
-    <table>(row=<index>): attribute1=value1, attribute2=value2, ...
-    Avoid internal object representations (e.g., Document(...)). Focus on clarity.
-    
-    Data:
-    {state["context"]}
-
-    Question:
-    {state["question"]}
+    - The output must be a valid JSON object, without extra text.
+  
     """
 
     # Creare il contesto per i documenti (contenuto e metadati)
@@ -183,7 +188,7 @@ for i, question in enumerate(questions):
     # Aggiungere il risultato alla lista
     all_results.append(result)
 
-with open("all_outputs_WHY_FOREIGNKEYS2_k76_llama70B.txt", "w", encoding="utf-8") as f:
+with open("all_outputs_WHY_k50_mistral24b.txt", "w", encoding="utf-8") as f:
     for result in all_results:
         f.write(f"Question: {result['question']}\n")
         f.write(result["answer"].strip() + "\n")

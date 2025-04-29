@@ -24,9 +24,9 @@ if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 #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 previous token groq
 # LLM: Llama3-8b by Groq
-#llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
+llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
 # Ollama LLM
-llm = ChatOllama(model="llama3-70b-8192", temperature=0)
+#llm = ChatOllama(model="llama3-70b-8192", temperature=0)
 #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 token hugging-face
 # Embedding model: Hugging Face
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
@@ -64,21 +64,18 @@ else:
 """ Retrieve and Generate part """
 # Define prompt for question-answering
 prompt = hub.pull("rlm/rag-prompt")
-# Step 1: Define Explanation Class: composed by file and row
-class ExplanationItem(BaseModel):
-    file: str
-    row: int
 
 # Define state for application
 class State(TypedDict):
     question: str
     context: List[Document]
     answer: str
+    hhow_provenance: str
     
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 76)
+    retrieved_docs = vector_store.similarity_search(state["question"], k = 17)
     #for doc in retrieved_docs:
     #    print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
     return {"context": retrieved_docs}
@@ -110,8 +107,8 @@ def generate(state: State):
 
         HOW Provenance:
         Giulia Rossi = 
-        (students[row=0] ⊗ enrollments[row=0] ⊗ courses[row=0]) ⊕ 
-        (students[row=0] ⊗ enrollments[row=3] ⊗ courses[row=0])
+        (students[row=0] & enrollments[row=0] & courses[row=0]) ||
+        (students[row=0] & enrollments[row=3] & courses[row=0])
 
         ---
 
@@ -129,54 +126,43 @@ def generate(state: State):
 
     """
 
-    # Creare il contesto per i documenti (contenuto e metadati)
     docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
-
-    # Preparare il messaggio finale per l'LLM
     messages = prompt.invoke({"question": prompt_with_explanation, "context": docs_content})
-    
-    # Eseguire la chiamata all'LLM
     response = llm.invoke(messages)
-    
-    # Pulire e analizzare la risposta dell'LLM
     cleaned_response = response.content.strip()
-    print(cleaned_response)
 
-
-    # Restituiamo la risposta intera come testo (rispetta il nuovo formato con Result/WHY)
+    # Parse the answer and the HOW provenance (you may need to split the response based on format)
+    answer, how_provenance = cleaned_response.split("HOW Provenance:")
     return {
-        "answer": cleaned_response
+        "answer": answer.strip(),
+        "how_provenance": how_provenance.strip()
     }
-
 
 # Control flow: Compile the application into a graph
 graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
 
-# Leggi le domande da un file di testo
+# Read the questions from a text file
 with open("question.txt", "r") as f:
     questions = [line.strip() for line in f.readlines() if line.strip()]
 
-# Inizializza una lista per i risultati
+# Initialize a list for the results
 all_results = []
 
-# Loop per invocare LLM su tutte le domande
+# Loop to invoke LLM on all questions
 for i, question in enumerate(questions):
     print(f"Processing question n. {i+1}")
     
-    # Eseguire l'invocazione del grafo
     full_result = graph.invoke({"question": question})
     
     result = {
         "question": question,
-        "answer": full_result.get("answer", "")
+        "answer": full_result.get("answer", ""),
+        "how_provenance": full_result.get("how_provenance", "")
     }
-    # Aggiungere il risultato alla lista
     all_results.append(result)
 
-with open("all_outputs_HOW_k76_llama70B.txt", "w", encoding="utf-8") as f:
-    for result in all_results:
-        f.write(f"Question: {result['question']}\n")
-        f.write(result["answer"].strip() + "\n")
-        f.write("\n" + "="*60 + "\n\n")
+# Save results in JSON format
+with open("all_outputs_HOW_k17_llama70B.json", "w", encoding="utf-8") as f:
+    json.dump(all_results, f, ensure_ascii=False, indent=4)

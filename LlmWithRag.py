@@ -24,7 +24,7 @@ if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 
 # LLM: Llama3-8b by Groq
-llm = init_chat_model("llama3-70b-8192", model_provider="groq", temperature = 0)
+llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
 
 #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 token hugging-face
 # Embedding model: Hugging Face
@@ -79,7 +79,7 @@ class State(TypedDict):
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 76)
+    retrieved_docs = vector_store.similarity_search(state["question"], k = 17)
     #for doc in retrieved_docs:
     #    print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
     return {"context": retrieved_docs}
@@ -88,11 +88,12 @@ def retrieve(state: State):
 def generate(state: State):
     prompt_with_explanation = f"""
     Question: {state["question"]}
+    Context: {state["context"]}
     Given this question and the context provided , provide the answer including the explanation on how you get the information: 
     - the name of the file
     - the row of the file
     (You can find this two information in the metadata of the document you use for the answer.)
-    The answer must respect the following structure, but return it as a string representation of a JSON:
+    The answer must respect the following structure, returning a JSON format like this **without** extra text before or after:
 
     {{
         "answer": ["<answer_1>", "<answer_2>", "..."],  
@@ -104,9 +105,6 @@ def generate(state: State):
         ]
     }}
 
-    ### IMPORTANT ###
-
-    - The output must be a valid JSON object, without extra text.
 
     ### Example ###
     {{
@@ -206,5 +204,5 @@ for i, question in enumerate(questions):
     
     all_results.append(result)
 # Save results to json file
-with open("all_outputs_k76_llama70b.json", "w", encoding="utf-8") as f:
+with open("outputs_k17_llama8b.json", "w", encoding="utf-8") as f:
     json.dump(all_results, f, indent=4, ensure_ascii=False)

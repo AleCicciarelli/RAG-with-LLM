@@ -9,7 +9,7 @@ Question: Which is the department of the teacher Laura Bianchi?
 - Result: Computer Science
 WHY: 
     { teachers(row=1): teacher_id=2, name=Laura, surname=Bianchi, department_id=1 }, 
-    { departments(row=?): department_id=1, department_name=Computer Science }
+    { departments(row=0): department_id=1, department_name=Computer Science }
 
 ============================================================
 
@@ -35,17 +35,16 @@ WHY:
 ============================================================
 
 Question: In which classroom is the Database Systems exam?
-- Result: 2
+- Result: Main
 WHY: 
-    { courses(row=1): course_id=102, course_name=Database Systems, ... AND exams(row=1): exam_id=2, course_id=102, classroom_id=2 }
+    { courses(row=1): course_id=102, course_name=Database Systems, ... AND exams(row=1): exam_id=2, course_id=102, classroom_id=2 AND classrooms(row=1): classroom_id=2, building=Main, room_number=102, capacity=60 }
 
 ============================================================
 
-Question: In which area is the \"User Experience Design in Web Apps\" thesis?
+Question: In which area is the "User Experience Design in Web Apps" thesis?
 - Result: Human-Computer Interaction
 WHY: 
     { thesis(row=4): thesis_id=5, title=User Experience Design in Web Apps, research_area=Human-Computer Interaction }, 
-    { thesis(row=4): thesis_id=5, title=User Experience Design in Web Apps, teacher_id=10 }, { teacher_research_areas(row=9): teacher_id=10, research_area=Human-Computer Interaction }
 
 ============================================================
 
@@ -59,7 +58,7 @@ WHY:
 Question: Which is the research area of the teacher Carlo Rossi?
 - Result: Artificial Intelligence
 WHY: 
-    { teachers(teacher_id:1, name:Carlo, surname:Rossi) AND teacher_research_areas(teacher_id:1, research_area:Artificial Intelligence) }
+    { teachers(row=0) teacher_id:1, name:Carlo, surname:Rossi AND teacher_research_areas(row=0): teacher_id:1, research_area:Artificial Intelligence}
 
 ============================================================
 
@@ -73,18 +72,18 @@ WHY:
 Question: When is the machine learning exam?
 - Result: 2023-01-10,09:00  
 WHY: 
-    { courses(course_id:101, course_name:Machine Learning) AND exams(exam_id:1,course_id:101,date:2023-01-10,time:09:00) }
+    { courses(row 0): course_id:101, course_name:Machine Learning AND exams(row 0 ) exam_id:1,course_id:101,date:2023-01-10,time:09:00}
 
 ============================================================
 
 Question: In which courses Giulia Rossi is enrolled?
 - Result: Machine Learning
 WHY: 
-    { students(row=0): id=1, name=Giulia, surname=Rossi }, { enrollments(row=<any>): student_id=1 }, { courses(row=0): course_id=<any>, course_name=Machine Learning }
+    { students(row=0): id=1, name=Giulia, surname=Rossi }, { enrollments(row=0): student_id=1, course_id=101 }, { courses(row=0): course_id=101, course_name=Machine Learning }
 
-- Result: 
+- Result: Advanced Algorithms
 WHY: 
-    (No other courses found for Giulia Rossi)
+    { students(row=0): id=1, name=Giulia, surname=Rossi }, { enrollments(row=3): student_id=1, course_id=104 }, { courses(row=3): course_id=104, course_name=Advanced Algorithms }
 
 ============================================================
 
@@ -96,11 +95,11 @@ WHY:
 ============================================================
 
 Question: Who is the teacher following Sophie Durand in her thesis?
-- Result: Giulia Colombo
+- Result: Luca Esposito 
 WHY: 
     { students(row=2): id=3, name=Sophie, surname=Durand }, 
-    { thesis(not available in the provided data, but assumed to exist): student_id=3, teacher_id=6 }, 
-    { teachers(row=5): teacher_id=6, name=Giulia, surname=Colombo }
+    { thesis(row=2): thesis_id=3, title=IoT Security Challenges,student_id=3, teacher_id=9 }, 
+    { teachers(row=8): teacher_id=9, name=Luca, surname=Esposito }
 
 ============================================================
 
@@ -140,11 +139,9 @@ WHY:
 ============================================================
 
 Question: What is the department name in which Antonio Gallo teaches?
-- Result: undefined
+- Result: Electronics
 WHY: 
-    { teachers(row=4): teacher_id=5, name=Antonio, surname=Gallo, department_id=2 }, { departments(row=4): department_id=2, department_name=undefined, faculty=undefined } 
-
-Note: The department name is not specified in the provided data.
+    { teachers(row=4): teacher_id=5, name=Antonio, surname=Gallo, department_id=2 }, { departments(row=1): department_id=2, department_name=Electronics, faculty=Engineering } 
 
 ============================================================
 
@@ -163,16 +160,15 @@ WHY:
 ============================================================
 
 Question: In which building will be the Embedded Systems exam?
-- Result: Electronics
+- Result: Science
 WHY: 
-    { courses(row=2): course_id=103, course_name=Embedded Systems, department=Electronics, ... AND classrooms(row=5): classroom_id=6, building=Electronics, ... }
+    { courses(row=2): course_id=103, course_name=Embedded Systems, department=Electronics, ... AND exams(row=2): exam_id=3, course_id=103, date=2023-03-20, time=10:00,classroom_id=3 ... AND classrooms(row=3): classroom_id=3, building=Science, ... }
 
 ============================================================
 
 Question: What is the title of the thesis followed by Alessandro Moretti?
 - Result: None
-WHY: No witness set can be formed to justify the result, as there is no thesis associated with Alessandro Moretti in the provided data.
-
+WHY: None
 ============================================================
 
 Question: Which students have an enrollment date before 2022?
@@ -187,8 +183,8 @@ WHY: { enrollments(row=7)(enrollment_id:8, student_id:3, course_id:110, enrollme
 ============================================================
 
 Question: What is the location of the Humanities Library?
-- Result: Not Found
-WHY: There is no information about the Humanities Library in the provided data.
+- Result: None
+WHY: None
 
 ============================================================
 
@@ -215,59 +211,44 @@ WHY:
 ============================================================
 
 Question: Which students have a grade higher than 27 in any course?
-- Result: 1
+- Result: Sophie Durand
   WHY: 
-    { grades(row=0): grade_id=1, student_id=1, course_id=101, grade=28 }, 
-    { grades(row=3): grade_id=4, student_id=1, course_id=104, grade=27 }, 
     { grades(row=5): grade_id=6, student_id=3, course_id=106, grade=29 }, 
     { grades(row=2): grade_id=3, student_id=3, course_id=103, grade=30 }, 
-    { grades(row=7): grade_id=8, student_id=3, course_id=110, grade=28 }
+    { grades(row=7): grade_id=8, student_id=3, course_id=110, grade=28 },
+    { students(row=2): id:3, name:Sophie, surname:Durand}
 
-- Result: 3
-  WHY: 
-    { grades(row=5): grade_id=6, student_id=3, course_id=106, grade=29 }, 
-    { grades(row=2): grade_id=3, student_id=3, course_id=103, grade=30 }
 
-- Result: 2
-  WHY: 
-    None (no grade higher than 27)
 
-- Result: 4
-  WHY: 
-    None (no grade higher than 27)
-
-- Result: 5
-  WHY: 
-    None (no grade higher than 27)
 
 ============================================================
 
 Question: Which classroom has the highest capacity?
-- Result: Engineering, room_number: 302
+- Result: Engineering
 WHY: 
     { classrooms(row=4): classroom_id:5, building:Engineering, room_number:302, capacity:100 }
 
 ============================================================
 
 Question: What is the day and time of the Software Engineering exam?
-- Result: 2023-05-30, 13:00  
-WHY: 
-    { courses(row=5): course_id=106, course_name=Software Engineering, ... AND exams(row=4): exam_id=5, course_id=106, date=2023-05-30, time=13:00, ... }
-
+- Result: None
+WHY: None
 ============================================================
 
 Question: Which courses have 8 credits?
 - Result: Advanced Algorithms
 WHY: 
-    { courses(row=3): course_id=104, course_name=Advanced Algorithms, department=Computer Science, credits=8, teacher=Elisa Neri, semester=Spring }
-
+    { courses(row=3): course_id=104, course_name=Advanced Algorithms, department=Computer Science, credits=8, ... }
+- Result: Artificial Intelligence
+WHY:
+    { courses(row=7): course_id=108, course_name=Artificial Intelligence, department=Computer Science, credits=8, ... }, 
 ============================================================
 
 Question: What is the title of the thesis of Sophie Durand?
-- Result: User Experience Design in Web Apps
+- Result: IoT Security Challenges
 WHY: 
     { students(row=2): id=3, name=Sophie, surname=Durand }, 
-    { thesis(row=4): thesis_id=5, title=User Experience Design in Web Apps, student_id=3 }
+    { thesis(row=4): thesis_id=3, IoT Security Challenges, student_id=3,... }
 
 ============================================================
 
