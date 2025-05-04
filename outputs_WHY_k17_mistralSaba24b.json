@@ -24,7 +24,7 @@
                 "why": [
                     {
                         "teachers": "1",
-                        "department": "0"
+                        "departments": "2"
                     }
                 ]
             }
@@ -80,13 +80,12 @@
         "answer": [
             {
                 "answer": [
-                    "Main"
+                    "Classroom 2"
                 ],
                 "why": [
                     {
                         "courses": "1",
-                        "exams": "1",
-                        "classroom": "1"
+                        "exams": "1"
                     }
                 ]
             }
@@ -101,7 +100,8 @@
                 ],
                 "why": [
                     {
-                        "thesis": "4"
+                        "thesis": "4",
+                        "teacher_research_areas": "9"
                     }
                 ]
             }
@@ -147,7 +147,6 @@
                 ],
                 "why": [
                     {
-                        "teacher": "5",
                         "teacher_research_areas": "5"
                     }
                 ]
@@ -163,6 +162,7 @@
                 ],
                 "why": [
                     {
+                        "courses": "0",
                         "exams": "0"
                     }
                 ]
@@ -174,14 +174,11 @@
         "answer": [
             {
                 "answer": [
-                    "Machine Learning",
-                    "Advanced Algorithms"
+                    "No courses found for Giulia Rossi"
                 ],
                 "why": [
                     {
-                        "students": "0",
-                        "enrollments": "0, 3",
-                        "courses": "0, 3"
+                        "students": "0"
                     }
                 ]
             }
@@ -196,9 +193,8 @@
                 ],
                 "why": [
                     {
-                        "courses": "0",
-                        "students": "0",
-                        "grades": "0"
+                        "grades": "0",
+                        "students": "0"
                     }
                 ]
             }
@@ -209,13 +205,12 @@
         "answer": [
             {
                 "answer": [
-                    "Luca Esposito"
+                    "Maria Ferrari"
                 ],
                 "why": [
                     {
                         "students": "2",
-                        "thesis": "2",
-                        "teachers": "8"
+                        "courses": "9"
                     }
                 ]
             }
@@ -226,18 +221,39 @@
         "answer": [
             {
                 "answer": [
+                    "Software Engineering",
+                    "Human-Computer Interaction",
                     "Database Systems",
+                    "Cybersecurity",
                     "Advanced Algorithms",
                     "Machine Learning",
-                    "Human-Computer Interaction",
-                    "Software Engineering",
-                    "Cybersecurity",
                     "Data Mining",
                     "Artificial Intelligence"
                 ],
                 "why": [
                     {
-                        "courses": "1, 3, 0, 9, 5, 8, 6, 7"
+                        "courses": "5"
+                    },
+                    {
+                        "courses": "9"
+                    },
+                    {
+                        "courses": "1"
+                    },
+                    {
+                        "courses": "8"
+                    },
+                    {
+                        "courses": "3"
+                    },
+                    {
+                        "courses": "0"
+                    },
+                    {
+                        "courses": "6"
+                    },
+                    {
+                        "courses": "7"
                     }
                 ]
             }
@@ -248,12 +264,12 @@
         "answer": [
             {
                 "answer": [
-                    "Electronics"
+                    "Mathematics"
                 ],
                 "why": [
                     {
                         "teachers": "4",
-                        "departments": "1"
+                        "departments": "2"
                     }
                 ]
             }
@@ -268,9 +284,8 @@
                 ],
                 "why": [
                     {
-                        "students": "4",
-                        "courses": "9",
-                        "grades": "6"
+                        "grades": "6",
+                        "students": "4"
                     }
                 ]
             }
@@ -296,13 +311,12 @@
         "answer": [
             {
                 "answer": [
-                    "Science"
+                    "Electronics"
                 ],
                 "why": [
                     {
                         "courses": "2",
-                        "exams": "2",
-                        "classrooms": "3"
+                        "classrooms": "5"
                     }
                 ]
             }
@@ -312,9 +326,14 @@
         "question": "What is the title of the thesis followed by Alessandro Moretti?",
         "answer": [
             {
-                "answer": [],
+                "answer": [
+                    "Deep Learning for Image Recognition"
+                ],
                 "why": [
-                    {}
+                    {
+                        "teachers": "7",
+                        "thesis": "0"
+                    }
                 ]
             }
         ]
@@ -329,7 +348,12 @@
                 ],
                 "why": [
                     {
-                        "students": "2, 3"
+                        "enrollments": "8",
+                        "students": "3"
+                    },
+                    {
+                        "enrollments": "7",
+                        "students": "2"
                     }
                 ]
             }
@@ -339,10 +363,10 @@
         "question": "What is the location of the Humanities Library?",
         "answer": [
             {
-                "answer": [],
-                "why": [
-                    {}
-                ]
+                "answer": [
+                    "Not Found"
+                ],
+                "why": []
             }
         ]
     },
@@ -351,13 +375,12 @@
         "answer": [
             {
                 "answer": [
-                    "Marco Bianchi"
+                    "Student 2"
                 ],
                 "why": [
                     {
                         "courses": "1",
-                        "enrollments": "1",
-                        "students": "1"
+                        "enrollments": "1"
                     }
                 ]
             }
@@ -400,13 +423,11 @@
         "answer": [
             {
                 "answer": [
-                    "Sophie Durand"
+                    "Student 3"
                 ],
                 "why": [
                     {
-                        "grades": "8",
-                        "courses": "9",
-                        "students": "2"
+                        "grades": "7"
                     }
                 ]
             }
@@ -417,7 +438,7 @@
         "answer": [
             {
                 "answer": [
-                    "Engineering"
+                    "302"
                 ],
                 "why": [
                     {
@@ -431,9 +452,13 @@
         "question": "What is the day and time of the Software Engineering exam?",
         "answer": [
             {
-                "answer": [],
+                "answer": [
+                    "No information available"
+                ],
                 "why": [
-                    {}
+                    {
+                        "courses": "5"
+                    }
                 ]
             }
         ]
@@ -443,12 +468,11 @@
         "answer": [
             {
                 "answer": [
-                    "Advanced Algorithms",
-                    "Artificial Intelligence"
+                    "Advanced Algorithms"
                 ],
                 "why": [
                     {
-                        "courses": "3, 7"
+                        "csv_data/courses": "3"
                     }
                 ]
             }
@@ -459,12 +483,12 @@
         "answer": [
             {
                 "answer": [
-                    "IoT Security Challenges"
+                    "User Experience Design in Web Apps"
                 ],
                 "why": [
                     {
-                        "students": "3",
-                        "thesis": "2"
+                        "students": "2",
+                        "thesis": "4"
                     }
                 ]
             }

@@ -12,10 +12,12 @@ from langchain import hub
 import json
 from langchain_core.output_parsers import JsonOutputParser
 from pydantic import BaseModel, Field
-from typing import List
+from typing import List, Dict
 import faiss 
 import re
 from langchain_community.chat_models import ChatOllama
+from langchain_core.output_parsers import JsonOutputParser
+
 os.environ["LANGSMITH_TRACING"] = "true"
 os.environ["LANGSMITH_API_KEY"] = "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"
 
@@ -24,9 +26,9 @@ if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 #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 previous token groq
 # LLM: Llama3-8b by Groq
-llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
+#llm = init_chat_model("llama3-70b-8192", model_provider="groq", temperature = 0)
 # MISTRAL by Groq
-#llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
+llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 
 
 # Ollama LLM
@@ -69,16 +71,18 @@ else:
 # Define prompt for question-answering
 prompt = hub.pull("rlm/rag-prompt")
 # Step 1: Define Explanation Class: composed by file and row
-class ExplanationItem(BaseModel):
-    file: str
-    row: int
+
+class AnswerItem(BaseModel):
+    answer: List[str]
+    why: List[Dict[str, str]]
 
 # Define state for application
 class State(TypedDict):
     question: str
     context: List[Document]
-    answer: str
-    
+    answer: AnswerItem
+
+parser = JsonOutputParser(pydantic_schema=AnswerItem)    
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
@@ -89,20 +93,24 @@ def retrieve(state: State):
 
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
+    
+    # Creare il contesto per i documenti (contenuto e metadati)
+    docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
+    
     prompt_with_explanation = f"""
     Question: {state["question"]}
-    Context: {state["context"]}
+    Context: {docs_content}
     Given this question and the context provided, provide the answer, and for each answer's item, explain **WHY** it appears in the result.
     This explanation must be in terms of **WITNESSES SET**: the minimal sets of input tuples that justify the result.
     This means: 
         > Result X is in the output if (WitnessSet1) OR (WitnessSet2) OR ...
 
         And the Witnesses Sets have form:
-        > {{Tuple1 AND Tuple2 AND ...}} OR
-        > {{Tuple3 AND Tuple4 AND ...}}
+        > {{Tuple1 , Tuple2 , ...}} 
+        > {{Tuple3 , Tuple4 , ...}}
         
    
-    The answer must respect the following structure, but return it as a string representation of a JSON:
+    The answer must respect the following structure, but return it as a string representation of a JSON **without** extra text:
     [
     {{
         "answer": ["<answer_1>"],  
@@ -113,16 +121,16 @@ def generate(state: State):
         ]
     }}
     ]
-    (You can find file_name and row_number in the metadata of the document you use for the answer.)
+    (You can find file_name and row_number in the metadata (source and row) of the document you use for the answer.)
     EXAMPLE(CONTEXT DATA):
         Input Data:
         courses.csv(course_id,course_name,department,credits,teacher,semester)
-        101,Machine Learning,Computer Science,6,Carlo Rossi,Fall
-        102,Database Systems,Computer Science,6,Laura Bianchi,Spring
+        0:101,Machine Learning,Computer Science,6,Carlo Rossi,Fall
+        1:102,Database Systems,Computer Science,6,Laura Bianchi,Spring
         
         exams.csv(exam_id,course_id,date,time,classroom_id)
-        1,101,2023-01-10,09:00,1
-        2,102,2023-02-15,14:00,2
+        0:1,101,2023-01-10,09:00,1
+        1:2,102,2023-02-15,14:00,2
         
         QUESTION: "When is the Machine Learning exam?"
         ANSWER:
@@ -136,29 +144,30 @@ def generate(state: State):
                 ] 
             }}
             ]
-    ### IMPORTANT ###
 
-    - The output must be a valid JSON object, without extra text.
   
     """
 
-    # Creare il contesto per i documenti (contenuto e metadati)
-    docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
 
     # Preparare il messaggio finale per l'LLM
     messages = prompt.invoke({"question": prompt_with_explanation, "context": docs_content})
     
     # Eseguire la chiamata all'LLM
-    response = llm.invoke(messages)
+    #response = llm.invoke(messages)
     
     # Pulire e analizzare la risposta dell'LLM
-    cleaned_response = response.content.strip()
-    print(cleaned_response)
+    #cleaned_response = response.content.strip()
+    #print(cleaned_response)
+    response = llm.invoke(messages)
+    
+    try:
+        parsed = parser.parse(response.content)
+    except Exception as e:
+        print(f"Errore nel parsing: {e}")
+        parsed = None
 
-
-    # Restituiamo la risposta intera come testo (rispetta il nuovo formato con Result/WHY)
     return {
-        "answer": cleaned_response
+        "answer": parsed if parsed else response.content.strip()
     }
 
 
@@ -175,7 +184,7 @@ with open("question.txt", "r") as f:
 all_results = []
 
 # Loop per invocare LLM su tutte le domande
-for i, question in enumerate(questions):
+for i, question in enumerate(questions[16:],start= 16):
     print(f"Processing question n. {i+1}")
     
     # Eseguire l'invocazione del grafo
@@ -188,8 +197,9 @@ for i, question in enumerate(questions):
     # Aggiungere il risultato alla lista
     all_results.append(result)
 
-with open("all_outputs_WHY_k50_mistral24b.txt", "w", encoding="utf-8") as f:
-    for result in all_results:
-        f.write(f"Question: {result['question']}\n")
-        f.write(result["answer"].strip() + "\n")
-        f.write("\n" + "="*60 + "\n\n")
+
+# Salva il file come JSON ben formattato
+with open("outputs_WHY_k50_mistralSaba24b2.json", "w", encoding="utf-8") as f:
+    json.dump(all_results, f, indent=4, ensure_ascii=False)
+
+

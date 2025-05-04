@@ -23,7 +23,7 @@
             },
             {
                 "file": "departments.csv",
-                "row": 0
+                "row": 3
             }
         ]
     },
@@ -34,7 +34,7 @@
         ],
         "explanation": [
             {
-                "file": "courses.csv",
+                "file": "csv_data/courses.csv",
                 "row": 5
             }
         ]
@@ -46,7 +46,7 @@
         ],
         "explanation": [
             {
-                "file": "classrooms.csv",
+                "file": "csv_data/classrooms.csv",
                 "row": 5
             }
         ]
@@ -58,7 +58,7 @@
         ],
         "explanation": [
             {
-                "file": "courses.csv",
+                "file": "csv_data/courses.csv",
                 "row": 8
             }
         ]
@@ -66,19 +66,11 @@
     {
         "question": "In which classroom is the Database Systems exam?",
         "answer": [
-            "Main"
+            "Classroom 2"
         ],
         "explanation": [
             {
-                "file": "courses.csv",
-                "row": 1
-            },
-            {
-                "file": "exams.csv",
-                "row": 1
-            },
-            {
-                "file": "classrooms.csv",
+                "file": "csv_data/exams.csv",
                 "row": 1
             }
         ]
@@ -90,7 +82,7 @@
         ],
         "explanation": [
             {
-                "file": "thesis.csv",
+                "file": "csv_data/thesis.csv",
                 "row": 4
             }
         ]
@@ -102,7 +94,7 @@
         ],
         "explanation": [
             {
-                "file": "courses.csv",
+                "file": "csv_data/courses.csv",
                 "row": 0
             }
         ]
@@ -113,10 +105,6 @@
             "Artificial Intelligence"
         ],
         "explanation": [
-            {
-                "file": "teachers.csv",
-                "row": 0
-            },
             {
                 "file": "teacher_research_areas.csv",
                 "row": 0
@@ -130,10 +118,6 @@
         ],
         "explanation": [
             {
-                "file": "teachers.csv",
-                "row": 5
-            },
-            {
                 "file": "teacher_research_areas.csv",
                 "row": 5
             }
@@ -146,11 +130,7 @@
         ],
         "explanation": [
             {
-                "file": "courses.csv",
-                "row": 0
-            },
-            {
-                "file": "exams.csv",
+                "file": "csv_data/exams.csv",
                 "row": 0
             }
         ]
@@ -158,29 +138,12 @@
     {
         "question": "In which courses Giulia Rossi is enrolled?",
         "answer": [
-            "Machine Learning",
-            "Advanced Algorithms"
+            "Giulia Rossi is not enrolled in any courses listed in the provided context."
         ],
         "explanation": [
             {
                 "file": "students.csv",
                 "row": 0
-            },
-            {
-                "file": "enrollments.csv",
-                "row": 0
-            },
-            {
-                "file": "enrollments.csv",
-                "row": 3
-            },
-            {
-                "file": "courses.csv",
-                "row": 0
-            },
-            {
-                "file": "courses.csv",
-                "row": 3
             }
         ]
     },
@@ -191,14 +154,6 @@
         ],
         "explanation": [
             {
-                "file": "students.csv",
-                "row": 0
-            },
-            {
-                "file": "courses.csv",
-                "row": 0
-            },
-            {
                 "file": "grades.csv",
                 "row": 0
             }
@@ -207,66 +162,53 @@
     {
         "question": "Who is the teacher following Sophie Durand in her thesis?",
         "answer": [
-            "Luca Esposito"
+            "I don't know"
         ],
-        "explanation": [
-            {
-                "file": "students.csv",
-                "row": 2
-            },
-            {
-                "file": "thesis.csv",
-                "row": 2
-            },
-            {
-                "file": "teachers.csv",
-                "row": 8
-            }
-        ]
+        "explanation": []
     },
     {
         "question": "What are all the courses offered by the Computer Science department?",
         "answer": [
+            "Software Engineering",
+            "Human-Computer Interaction",
             "Database Systems",
+            "Cybersecurity",
             "Advanced Algorithms",
             "Machine Learning",
-            "Human-Computer Interaction",
-            "Software Engineering",
-            "Cybersecurity",
             "Data Mining",
             "Artificial Intelligence"
         ],
         "explanation": [
             {
-                "file": "courses.csv",
-                "row": 1
-            },
-            {
-                "file": "courses.csv",
-                "row": 3
-            },
-            {
-                "file": "courses.csv",
-                "row": 0
-            },
-            {
-                "file": "courses.csv",
-                "row": 9
-            },
-            {
-                "file": "courses.csv",
+                "file": "csv_data/courses.csv",
                 "row": 5
             },
             {
-                "file": "courses.csv",
+                "file": "csv_data/courses.csv",
+                "row": 9
+            },
+            {
+                "file": "csv_data/courses.csv",
+                "row": 1
+            },
+            {
+                "file": "csv_data/courses.csv",
                 "row": 8
             },
             {
-                "file": "courses.csv",
+                "file": "csv_data/courses.csv",
+                "row": 3
+            },
+            {
+                "file": "csv_data/courses.csv",
+                "row": 0
+            },
+            {
+                "file": "csv_data/courses.csv",
                 "row": 6
             },
             {
-                "file": "courses.csv",
+                "file": "csv_data/courses.csv",
                 "row": 7
             }
         ]
@@ -274,16 +216,16 @@
     {
         "question": "What is the department name in which Antonio Gallo teaches?",
         "answer": [
-            "Electronics"
+            "Mathematics"
         ],
         "explanation": [
             {
-                "file": "teachers.csv",
-                "row": 4
+                "file": "departments.csv",
+                "row": 2
             },
             {
-                "file": "departments.csv",
-                "row": 1
+                "file": "teachers.csv",
+                "row": 4
             }
         ]
     },
@@ -293,14 +235,6 @@
             "26"
         ],
         "explanation": [
-            {
-                "file": "students.csv",
-                "row": 4
-            },
-            {
-                "file": "courses.csv",
-                "row": 9
-            },
             {
                 "file": "grades.csv",
                 "row": 6
@@ -322,32 +256,21 @@
     {
         "question": "In which building will be the Embedded Systems exam?",
         "answer": [
-            "Science"
+            "Electronics"
         ],
         "explanation": [
             {
-                "file": "courses.csv",
-                "row": 2
-            },
-            {
-                "file": "exams.csv",
-                "row": 3
-            },
-            {
                 "file": "classrooms.csv",
-                "row": 3
+                "row": 5
             }
         ]
     },
     {
         "question": "What is the title of the thesis followed by Alessandro Moretti?",
-        "answer": [],
-        "explanation": [
-            {
-                "file": "students.csv",
-                "row": null
-            }
-        ]
+        "answer": [
+            "I don't know"
+        ],
+        "explanation": []
     },
     {
         "question": "Which students have an enrollment date before 2022?",
@@ -358,40 +281,34 @@
         "explanation": [
             {
                 "file": "students.csv",
-                "row": 2
+                "row": 3
             },
             {
                 "file": "students.csv",
-                "row": 3
+                "row": 2
             }
         ]
     },
     {
         "question": "What is the location of the Humanities Library?",
-        "answer": [],
-        "explanation": [
-            {
-                "file": "departments.csv",
-                "row": null
-            }
-        ]
+        "answer": [
+            "I don't know"
+        ],
+        "explanation": []
     },
     {
         "question": "Which are the students enrolled in the Database Systems course?",
         "answer": [
-            "Marco Bianchi"
+            "Student 1",
+            "Student 2"
         ],
         "explanation": [
             {
-                "file": "courses.csv",
-                "row": 1
+                "file": "enrollments.csv",
+                "row": 0
             },
             {
                 "file": "enrollments.csv",
-                "row": 1
-            },
-            {
-                "file": "students.csv",
                 "row": 1
             }
         ]
@@ -402,10 +319,6 @@
             "Human-Computer Interaction"
         ],
         "explanation": [
-            {
-                "file": "teachers.csv",
-                "row": 9
-            },
             {
                 "file": "teacher_research_areas.csv",
                 "row": 9
@@ -419,10 +332,6 @@
         ],
         "explanation": [
             {
-                "file": "teachers.csv",
-                "row": 1
-            },
-            {
                 "file": "teacher_research_areas.csv",
                 "row": 1
             }
@@ -431,79 +340,60 @@
     {
         "question": "Which student had a grade equal to 28 in Human-Computer Interaction?",
         "answer": [
-            "Sophie Durand"
+            "Student 3"
         ],
         "explanation": [
             {
-                "file": "grades.csv",
-                "row": 8
-            },
-            {
-                "file": "courses.csv",
-                "row": 9
-            },
-            {
-                "file": "students.csv",
-                "row": 2
+                "file": "csv_data/grades.csv",
+                "row": 7
             }
         ]
     },
     {
         "question": "Which classroom has the highest capacity?",
         "answer": [
-            "Engineering"
+            "Engineering 302"
         ],
         "explanation": [
             {
-                "file": "classrooms.csv",
+                "file": "csv_data/classrooms.csv",
                 "row": 4
             }
         ]
     },
     {
         "question": "What is the day and time of the Software Engineering exam?",
-        "answer": [],
+        "answer": [
+            "The exam date is not available."
+        ],
         "explanation": [
             {
-                "file": "courses.csv",
-                "row": 7
-            },
-            {
                 "file": "exams.csv",
-                "row": null
+                "row": 4
             }
         ]
     },
     {
         "question": "Which courses have 8 credits?",
         "answer": [
-            "Advanced Algorithms",
-            "Artificial Intelligence"
+            "Advanced Algorithms"
         ],
         "explanation": [
             {
-                "file": "courses.csv",
+                "file": "csv_data/courses.csv",
                 "row": 3
-            },
-            {
-                "file": "courses.csv",
-                "row": 7
             }
         ]
     },
     {
         "question": "What is the title of the thesis of Sophie Durand?",
         "answer": [
-            "IoT Security Challenges"
+            "User Experience Design in Web Apps"
         ],
         "explanation": [
             {
-                "file": "students.csv",
-                "row": 3
-            },
-            {
                 "file": "thesis.csv",
-                "row": 2
+                "row": 4
             }
         ]
     }

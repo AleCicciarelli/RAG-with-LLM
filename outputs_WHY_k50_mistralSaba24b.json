@@ -24,7 +24,7 @@
                 "why": [
                     {
                         "teachers": "1",
-                        "department": "0"
+                        "departments": "0"
                     }
                 ]
             }
@@ -80,13 +80,12 @@
         "answer": [
             {
                 "answer": [
-                    "Main"
+                    "Main 102"
                 ],
                 "why": [
                     {
                         "courses": "1",
-                        "exams": "1",
-                        "classroom": "1"
+                        "exams": "1"
                     }
                 ]
             }
@@ -131,8 +130,8 @@
                 ],
                 "why": [
                     {
-                        "teachers": "0",
-                        "teacher_research_areas": "0"
+                        "teacher_research_areas": "0",
+                        "teachers": "0"
                     }
                 ]
             }
@@ -147,8 +146,8 @@
                 ],
                 "why": [
                     {
-                        "teacher": "5",
-                        "teacher_research_areas": "5"
+                        "teacher_research_areas": "5",
+                        "teachers": "5"
                     }
                 ]
             }
@@ -163,6 +162,7 @@
                 ],
                 "why": [
                     {
+                        "courses": "0",
                         "exams": "0"
                     }
                 ]
@@ -174,14 +174,13 @@
         "answer": [
             {
                 "answer": [
-                    "Machine Learning",
                     "Advanced Algorithms"
                 ],
                 "why": [
                     {
                         "students": "0",
-                        "enrollments": "0, 3",
-                        "courses": "0, 3"
+                        "enrollments": "3",
+                        "courses": "3"
                     }
                 ]
             }
@@ -196,9 +195,8 @@
                 ],
                 "why": [
                     {
-                        "courses": "0",
-                        "students": "0",
-                        "grades": "0"
+                        "grades": "0",
+                        "students": "0"
                     }
                 ]
             }
@@ -209,13 +207,12 @@
         "answer": [
             {
                 "answer": [
-                    "Luca Esposito"
+                    "Maria Ferrari"
                 ],
                 "why": [
                     {
                         "students": "2",
-                        "thesis": "2",
-                        "teachers": "8"
+                        "thesis": "4"
                     }
                 ]
             }
@@ -226,18 +223,81 @@
         "answer": [
             {
                 "answer": [
-                    "Database Systems",
-                    "Advanced Algorithms",
-                    "Machine Learning",
-                    "Human-Computer Interaction",
-                    "Software Engineering",
-                    "Cybersecurity",
-                    "Data Mining",
+                    "Software Engineering"
+                ],
+                "why": [
+                    {
+                        "courses": "5"
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    "Human-Computer Interaction"
+                ],
+                "why": [
+                    {
+                        "courses": "9"
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    "Database Systems"
+                ],
+                "why": [
+                    {
+                        "courses": "1"
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    "Cybersecurity"
+                ],
+                "why": [
+                    {
+                        "courses": "8"
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    "Advanced Algorithms"
+                ],
+                "why": [
+                    {
+                        "courses": "3"
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    "Machine Learning"
+                ],
+                "why": [
+                    {
+                        "courses": "0"
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    "Data Mining"
+                ],
+                "why": [
+                    {
+                        "courses": "6"
+                    }
+                ]
+            },
+            {
+                "answer": [
                     "Artificial Intelligence"
                 ],
                 "why": [
                     {
-                        "courses": "1, 3, 0, 9, 5, 8, 6, 7"
+                        "courses": "7"
                     }
                 ]
             }
@@ -254,217 +314,6 @@
                     {
                         "teachers": "4",
                         "departments": "1"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
-        "answer": [
-            {
-                "answer": [
-                    "26"
-                ],
-                "why": [
-                    {
-                        "students": "4",
-                        "courses": "9",
-                        "grades": "6"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which faculty does the Electronics department belong to?",
-        "answer": [
-            {
-                "answer": [
-                    "Engineering"
-                ],
-                "why": [
-                    {
-                        "departments": "1"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "question": "In which building will be the Embedded Systems exam?",
-        "answer": [
-            {
-                "answer": [
-                    "Science"
-                ],
-                "why": [
-                    {
-                        "courses": "2",
-                        "exams": "2",
-                        "classrooms": "3"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "question": "What is the title of the thesis followed by Alessandro Moretti?",
-        "answer": [
-            {
-                "answer": [],
-                "why": [
-                    {}
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which students have an enrollment date before 2022?",
-        "answer": [
-            {
-                "answer": [
-                    "Lucas Schmidt",
-                    "Sophie Durand"
-                ],
-                "why": [
-                    {
-                        "students": "2, 3"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "question": "What is the location of the Humanities Library?",
-        "answer": [
-            {
-                "answer": [],
-                "why": [
-                    {}
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which are the students enrolled in the Database Systems course?",
-        "answer": [
-            {
-                "answer": [
-                    "Marco Bianchi"
-                ],
-                "why": [
-                    {
-                        "courses": "1",
-                        "enrollments": "1",
-                        "students": "1"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "question": "What are the research areas of Maria Ferrari?",
-        "answer": [
-            {
-                "answer": [
-                    "Human-Computer Interaction"
-                ],
-                "why": [
-                    {
-                        "teachers": "9",
-                        "teacher_research_areas": "9"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "question": "How many research projects are led by Laura Bianchi?",
-        "answer": [
-            {
-                "answer": [
-                    "6"
-                ],
-                "why": [
-                    {
-                        "teachers": "1",
-                        "teacher_research_areas": "1"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which student had a grade equal to 28 in Human-Computer Interaction?",
-        "answer": [
-            {
-                "answer": [
-                    "Sophie Durand"
-                ],
-                "why": [
-                    {
-                        "grades": "8",
-                        "courses": "9",
-                        "students": "2"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which classroom has the highest capacity?",
-        "answer": [
-            {
-                "answer": [
-                    "Engineering"
-                ],
-                "why": [
-                    {
-                        "classrooms": "4"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "question": "What is the day and time of the Software Engineering exam?",
-        "answer": [
-            {
-                "answer": [],
-                "why": [
-                    {}
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which courses have 8 credits?",
-        "answer": [
-            {
-                "answer": [
-                    "Advanced Algorithms",
-                    "Artificial Intelligence"
-                ],
-                "why": [
-                    {
-                        "courses": "3, 7"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "question": "What is the title of the thesis of Sophie Durand?",
-        "answer": [
-            {
-                "answer": [
-                    "IoT Security Challenges"
-                ],
-                "why": [
-                    {
-                        "students": "3",
-                        "thesis": "2"
                     }
                 ]
             }

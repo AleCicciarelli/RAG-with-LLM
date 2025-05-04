@@ -24,8 +24,9 @@ if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 
 # LLM: Llama3-8b by Groq
-llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
-
+llm = init_chat_model("llama3-70b-8192", model_provider="groq", temperature = 0)
+# MISTRAL by Groq
+#llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
@@ -79,7 +80,7 @@ class State(TypedDict):
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 17)
+    retrieved_docs = vector_store.similarity_search(state["question"], k = 50)
     #for doc in retrieved_docs:
     #    print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
     return {"context": retrieved_docs}
@@ -204,5 +205,5 @@ for i, question in enumerate(questions):
     
     all_results.append(result)
 # Save results to json file
-with open("outputs_k17_llama8b.json", "w", encoding="utf-8") as f:
+with open("outputs_k50_llama70b.json", "w", encoding="utf-8") as f:
     json.dump(all_results, f, indent=4, ensure_ascii=False)
