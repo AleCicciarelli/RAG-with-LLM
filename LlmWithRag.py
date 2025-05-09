@@ -80,7 +80,7 @@ class State(TypedDict):
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 50)
+    retrieved_docs = vector_store.similarity_search(state["question"], k = 17)
     #for doc in retrieved_docs:
     #    print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
     return {"context": retrieved_docs}
@@ -205,5 +205,5 @@ for i, question in enumerate(questions):
     
     all_results.append(result)
 # Save results to json file
-with open("outputs_k50_llama70b.json", "w", encoding="utf-8") as f:
+with open("outputs_k17_llama70b-3.json", "w", encoding="utf-8") as f:
     json.dump(all_results, f, indent=4, ensure_ascii=False)

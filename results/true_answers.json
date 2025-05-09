@@ -341,11 +341,17 @@
     },
     {
         "question": "What is the title of the thesis followed by Alessandro Moretti?",
-        "answer": [],
+        "answer": [
+            "User Experience Design in Web Apps"
+        ],
         "explanation": [
             {
-                "file": "students.csv",
-                "row": null
+                "file": "teachers.csv",
+                "row": 7
+            },
+            {
+                "file": "thesis.csv",
+                "row": 4
             }
         ]
     },
@@ -367,12 +373,14 @@
         ]
     },
     {
-        "question": "What is the location of the Humanities Library?",
-        "answer": [],
+        "question": "What is the faculty of the Chemistry department?",
+        "answer": [
+            "Science"
+        ],
         "explanation": [
             {
                 "file": "departments.csv",
-                "row": null
+                "row": 5
             }
         ]
     },
@@ -449,11 +457,16 @@
         ]
     },
     {
-        "question": "Which classroom has the highest capacity?",
+        "question": "Which are the classrooms in the Engineering building?",
         "answer": [
-            "Engineering"
+            "301",
+            "302"
         ],
         "explanation": [
+            {
+                "file": "classrooms.csv",
+                "row": 3
+            },
             {
                 "file": "classrooms.csv",
                 "row": 4
@@ -462,15 +475,18 @@
     },
     {
         "question": "What is the day and time of the Software Engineering exam?",
-        "answer": [],
+        "answer": [
+            "2023-05-30",
+            "13:00"
+        ],
         "explanation": [
             {
                 "file": "courses.csv",
-                "row": 7
+                "row": 5
             },
             {
                 "file": "exams.csv",
-                "row": null
+                "row": 4
             }
         ]
     },

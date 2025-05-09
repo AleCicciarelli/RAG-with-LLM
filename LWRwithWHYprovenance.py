@@ -184,7 +184,7 @@ with open("question.txt", "r") as f:
 all_results = []
 
 # Loop per invocare LLM su tutte le domande
-for i, question in enumerate(questions[16:],start= 16):
+for i, question in enumerate(questions[26:30],start= 26):
     print(f"Processing question n. {i+1}")
     
     # Eseguire l'invocazione del grafo
@@ -199,7 +199,7 @@ for i, question in enumerate(questions[16:],start= 16):
 
 
 # Salva il file come JSON ben formattato
-with open("outputs_WHY_k50_mistralSaba24b2.json", "w", encoding="utf-8") as f:
+with open("outputs_WHY_k50_mistralSaba24b4.json", "w", encoding="utf-8") as f:
     json.dump(all_results, f, indent=4, ensure_ascii=False)
 
 

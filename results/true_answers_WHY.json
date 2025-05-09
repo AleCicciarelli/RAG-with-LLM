@@ -312,9 +312,14 @@
         "question": "What is the title of the thesis followed by Alessandro Moretti?",
         "answer": [
             {
-                "answer": [],
+                "answer": [
+                    "User Experience Design in Web Apps"
+                ],
                 "why": [
-                    {}
+                    {
+                        "teachers": "7",
+                        "thesis": "4"
+                    }
                 ]
             }
         ]
@@ -336,12 +341,16 @@
         ]
     },
     {
-        "question": "What is the location of the Humanities Library?",
+        "question": "What is the faculty of the Chemistry department?",
         "answer": [
             {
-                "answer": [],
+                "answer": [
+                    "Science"
+                ],
                 "why": [
-                    {}
+                    {
+                        "departments": "5"
+                    }
                 ]
             }
         ]
@@ -413,15 +422,16 @@
         ]
     },
     {
-        "question": "Which classroom has the highest capacity?",
+        "question": "Which are the classrooms in the Engineering building?",
         "answer": [
             {
                 "answer": [
-                    "Engineering"
+                    "301",
+                    "302"
                 ],
                 "why": [
                     {
-                        "classrooms": "4"
+                        "classrooms": "3, 4"
                     }
                 ]
             }
@@ -431,9 +441,15 @@
         "question": "What is the day and time of the Software Engineering exam?",
         "answer": [
             {
-                "answer": [],
+                "answer": [
+                    "2023-05-30",
+                    "13:00"
+                ],
                 "why": [
-                    {}
+                    {
+                        "courses": "5",
+                        "exams": "4"
+                    }
                 ]
             }
         ]

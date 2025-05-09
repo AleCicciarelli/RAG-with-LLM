@@ -32,7 +32,7 @@ def compute_metrics(total_tp, total_fp, total_fn, total_exact, n):
 
 def main():
     gt_data = load_json("results/true_answers_WHY.json")
-    pred_data = load_json("outputs_WHY_k50_llama70b.json")
+    pred_data = load_json("outputs_WHY_k50_mistralSaba24b.json")
     question_types = load_json("questions.json")  # Dizionario dei tipi di domanda
 
     assert len(gt_data) == len(pred_data), "Mismatch in number of questions"
@@ -106,7 +106,7 @@ def main():
         })
 
     # Scrive i risultati per domanda in un file CSV
-    with open("evaluation_results_llama70b.csv", "w", encoding="utf-8", newline="") as f:
+    with open("evaluation_results_mistralSaba24b.csv", "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=rows[0].keys())
         writer.writeheader()
         writer.writerows(rows)
@@ -153,14 +153,14 @@ def main():
     #plt.savefig("evaluation_metrics_mistral.png")
     plt.show()
     # --- Salva le metriche globali ---
-    with open("global_metrics_WHY_llama70b_K50.csv", "w", encoding="utf-8", newline="") as f:
+    with open("global_metrics_WHY_mistral24b_K50.csv", "w", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
         writer.writerow(["Category", "Precision", "Recall", "Accuracy"])
         writer.writerow(["Answer", f"{answer_prec:.4f}", f"{answer_rec:.4f}", f"{answer_acc:.4f}"])
         writer.writerow(["Explanation", f"{expl_prec:.4f}", f"{expl_rec:.4f}", f"{expl_acc:.4f}"])
 
     # --- Salva le metriche per tipo di domanda ---
-    with open("metrics_by_type_WHY_llama70b_K50.csv", "w", encoding="utf-8", newline="") as f:
+    with open("metrics_by_type_WHY_mistral24b_K50.csv", "w", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
         writer.writerow(["Question Type", "Answer Precision", "Answer Recall", "Answer Accuracy",
                         "Explanation Precision", "Explanation Recall", "Explanation Accuracy", "#Questions"])
