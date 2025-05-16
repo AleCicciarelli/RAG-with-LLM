@@ -29,11 +29,9 @@ if not os.environ.get("GROQ_API_KEY"):
 # MISTRAL by Groq
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 
-# Prendi le variabili di ambiente
-model_name = os.environ["OLLAMA_MODEL"]
-output_file = os.environ["OUTPUT_FILE"]
+# Prendi le variabili di ambiente model_name = os.environ["OLLAMA_MODEL"] output_file = os.environ["OUTPUT_FILE"]
 # Inizializza l'LLM
-llm = ChatOllama(model=model_name, temperature=0)
+llm = ChatOllama(model="llama3:70b", temperature=0)
 # Ollama LLM
 #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 token hugging-face
 # Embedding model: Hugging Face
@@ -263,7 +261,7 @@ for l in range(1, 4):  # Da 1 a 3
         all_results.append(result)
 
 
-    output_filename = f"{output_file}_{l}.json"
+    output_filename = f"output_FC_llama70b_{l}.json"
     with open(output_filename, "w", encoding="utf-8") as f:
         json.dump(all_results, f, indent=4, ensure_ascii=False)
 

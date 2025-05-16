@@ -1,10 +1,10 @@
 import os
 
 models = [
-    "llama3.3:70b",
-    "mistral-small3.1:24b",
-    "deepseek-r1:8b",
-    "deepseek-r1:32b"
+    "llama3:70b",
+    "mixtral:8x7b",
+    "deepseek-r1:70b",  
+       "mistral:7b"
 ]
 
 for model in models:
