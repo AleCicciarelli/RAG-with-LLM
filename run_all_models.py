@@ -9,4 +9,4 @@ models = [
 
 for model in models:
     output_file = f"outputs_FC_{model.replace(':', '_')}"
-    os.system(f"OLLAMA_MODEL='{model}' OUTPUT_FILE='{output_file}' python run_eval.py")
+    os.system(f"OLLAMA_MODEL='{model}' OUTPUT_FILE='{output_file}' python LWRFullRelevantContext.py ")
