@@ -7,9 +7,7 @@
                     "giulia.rossi@student.edu"
                 ],
                 "why": [
-                    {
-                        "csv_data/students": "0"
-                    }
+                    "{students_0}"
                 ]
             }
         ]
@@ -19,13 +17,10 @@
         "answer": [
             {
                 "answer": [
-                    "Computer Science"
+                    "Engineering"
                 ],
                 "why": [
-                    {
-                        "csv_data/teachers": "1",
-                        "csv_data/departments": "2"
-                    }
+                    "{departments_0}"
                 ]
             }
         ]
@@ -35,12 +30,10 @@
         "answer": [
             {
                 "answer": [
-                    "6"
+                    "4"
                 ],
                 "why": [
-                    {
-                        "csv_data/courses": "5"
-                    }
+                    "{courses_5}"
                 ]
             }
         ]
@@ -53,9 +46,7 @@
                     "Electronics"
                 ],
                 "why": [
-                    {
-                        "csv_data/classrooms": "5"
-                    }
+                    "{classrooms_5}"
                 ]
             }
         ]
@@ -68,9 +59,7 @@
                     "Fall"
                 ],
                 "why": [
-                    {
-                        "courses": "8"
-                    }
+                    "{courses_8}"
                 ]
             }
         ]
@@ -80,13 +69,10 @@
         "answer": [
             {
                 "answer": [
-                    "2"
+                    "Main"
                 ],
                 "why": [
-                    {
-                        "courses": "1",
-                        "exams": "1"
-                    }
+                    "{classrooms_1, courses_1}"
                 ]
             }
         ]
@@ -99,10 +85,7 @@
                     "Human-Computer Interaction"
                 ],
                 "why": [
-                    {
-                        "thesis": "4",
-                        "teacher_research_areas": "9"
-                    }
+                    "{thesis_4}"
                 ]
             }
         ]
@@ -115,9 +98,7 @@
                     "Carlo Rossi"
                 ],
                 "why": [
-                    {
-                        "csv_data/courses": "0"
-                    }
+                    "{courses_0, teachers_0}"
                 ]
             }
         ]
@@ -130,10 +111,7 @@
                     "Artificial Intelligence"
                 ],
                 "why": [
-                    {
-                        "csv_data/teachers": "0",
-                        "csv_data/teacher_research_areas": "0"
-                    }
+                    "{teachers_0, teacherResearchAreas_0}"
                 ]
             }
         ]
@@ -143,13 +121,10 @@
         "answer": [
             {
                 "answer": [
-                    "5"
+                    "0"
                 ],
                 "why": [
-                    {
-                        "csv_data/teachers": "5",
-                        "csv_data/teacher_research_areas": "5"
-                    }
+                    "{teachers_5, teacherResearchAreas_5}"
                 ]
             }
         ]
@@ -162,10 +137,7 @@
                     "2023-01-10,09:00"
                 ],
                 "why": [
-                    {
-                        "courses": "0",
-                        "exams": "0"
-                    }
+                    "{courses_0, exams_0}"
                 ]
             }
         ]
@@ -174,9 +146,13 @@
         "question": "In which courses Giulia Rossi is enrolled?",
         "answer": [
             {
-                "answer": [],
+                "answer": [
+                    "Machine Learning",
+                    "Advanced Algorithms"
+                ],
                 "why": [
-                    {}
+                    "{students_0, enrollments_0, courses_0}",
+                    "{students_0, enrollments_3, courses_3}"
                 ]
             }
         ]
@@ -189,10 +165,7 @@
                     "28"
                 ],
                 "why": [
-                    {
-                        "csv_data/students": "0",
-                        "csv_data/grades": "0"
-                    }
+                    "{grades_0, courses_0}"
                 ]
             }
         ]
@@ -202,13 +175,10 @@
         "answer": [
             {
                 "answer": [
-                    "Unknown"
+                    "Luca Esposito"
                 ],
                 "why": [
-                    {
-                        "students": "2",
-                        "teachers": "No matching teacher found"
-                    }
+                    "{students_2, thesis_2, teachers_8}"
                 ]
             }
         ]
@@ -218,37 +188,24 @@
         "answer": [
             {
                 "answer": [
-                    "Software Engineering",
-                    "Human-Computer Interaction",
-                    "Database Systems",
-                    "Cybersecurity",
-                    "Advanced Algorithms",
                     "Machine Learning",
+                    "Database Systems",
+                    "Advanced Algorithms",
+                    "Software Engineering",
                     "Data Mining",
-                    "Artificial Intelligence"
+                    "Artificial Intelligence",
+                    "Cybersecurity",
+                    "Human-Computer Interaction"
                 ],
                 "why": [
-                    {
-                        "csv_data/courses": "9"
-                    },
-                    {
-                        "csv_data/courses": "1"
-                    },
-                    {
-                        "csv_data/courses": "8"
-                    },
-                    {
-                        "csv_data/courses": "3"
-                    },
-                    {
-                        "csv_data/courses": "0"
-                    },
-                    {
-                        "csv_data/courses": "6"
-                    },
-                    {
-                        "csv_data/courses": "7"
-                    }
+                    "{courses_0, departments_0}",
+                    "{courses_1, departments_0}",
+                    "{courses_3, departments_0}",
+                    "{courses_5, departments_0}",
+                    "{courses_6, departments_0}",
+                    "{courses_7, departments_0}",
+                    "{courses_8, departments_0}",
+                    "{courses_9, departments_0}"
                 ]
             }
         ]
@@ -258,13 +215,10 @@
         "answer": [
             {
                 "answer": [
-                    "Mathematics"
+                    "Engineering"
                 ],
                 "why": [
-                    {
-                        "csv_data/teachers": "4",
-                        "csv_data/departments": "2"
-                    }
+                    "{departments_1, teachers_4}"
                 ]
             }
         ]
@@ -277,10 +231,7 @@
                     "26"
                 ],
                 "why": [
-                    {
-                        "csv_data/students": "4",
-                        "csv_data/grades": "6"
-                    }
+                    "{courses_9, grades_6}"
                 ]
             }
         ]
@@ -293,9 +244,7 @@
                     "Engineering"
                 ],
                 "why": [
-                    {
-                        "csv_data/departments": "1"
-                    }
+                    "{departments_1}"
                 ]
             }
         ]
@@ -305,13 +254,10 @@
         "answer": [
             {
                 "answer": [
-                    "Electronics"
+                    "Science"
                 ],
                 "why": [
-                    {
-                        "csv_data/courses": "2",
-                        "csv_data/classrooms": "5"
-                    }
+                    "{courses_2, exams_2}"
                 ]
             }
         ]
@@ -321,13 +267,10 @@
         "answer": [
             {
                 "answer": [
-                    "Big Data Processing"
+                    "User Experience Design in Web Apps"
                 ],
                 "why": [
-                    {
-                        "csv_data/thesis": "1",
-                        "csv_data/teachers": "7"
-                    }
+                    "{thesis_4}"
                 ]
             }
         ]
@@ -337,31 +280,25 @@
         "answer": [
             {
                 "answer": [
-                    "Lucas",
-                    "Sophie"
+                    "Sophie Durand",
+                    "Lucas Schmidt"
                 ],
                 "why": [
-                    {
-                        "csv_data/enrollments": "4",
-                        "csv_data/students": "3"
-                    },
-                    {
-                        "csv_data/enrollments": "5",
-                        "csv_data/students": "2"
-                    }
+                    "{students_2}",
+                    "{students_3}"
                 ]
             }
         ]
     },
     {
-        "question": "What is the location of the Humanities Library?",
+        "question": "What is the faculty of the Chemistry department?",
         "answer": [
             {
                 "answer": [
-                    "Unknown"
+                    "Science"
                 ],
                 "why": [
-                    {}
+                    "{departments_5}"
                 ]
             }
         ]
@@ -371,24 +308,10 @@
         "answer": [
             {
                 "answer": [
-                    "2"
+                    "Marco Bianchi"
                 ],
                 "why": [
-                    {
-                        "csv_data/enrollments": "1",
-                        "csv_data/courses": "1"
-                    }
-                ]
-            },
-            {
-                "answer": [
-                    "1"
-                ],
-                "why": [
-                    {
-                        "csv_data/enrollments": "0",
-                        "csv_data/courses": "1"
-                    }
+                    "{courses_1, enrollments_1, students_1}"
                 ]
             }
         ]
@@ -401,10 +324,7 @@
                     "Human-Computer Interaction"
                 ],
                 "why": [
-                    {
-                        "teacher_research_areas": "9",
-                        "teachers": "9"
-                    }
+                    "{teachers_9, teacherResearchAreas_9}"
                 ]
             }
         ]
@@ -414,13 +334,10 @@
         "answer": [
             {
                 "answer": [
-                    "6"
+                    "1"
                 ],
                 "why": [
-                    {
-                        "csv_data/teachers": "1",
-                        "csv_data/teacher_research_areas": "1"
-                    }
+                    "{teachers_1, teacherResearchAreas_1}"
                 ]
             }
         ]
@@ -430,28 +347,25 @@
         "answer": [
             {
                 "answer": [
-                    "3"
+                    "Sophie Durand"
                 ],
                 "why": [
-                    {
-                        "csv_data/grades": "7",
-                        "csv_data/courses": "9"
-                    }
+                    "{courses_9, grades_7, students_2}"
                 ]
             }
         ]
     },
     {
-        "question": "Which classroom has the highest capacity?",
+        "question": "Which are the classrooms in the Engineering building?",
         "answer": [
             {
                 "answer": [
-                    "5"
+                    "301",
+                    "302"
                 ],
                 "why": [
-                    {
-                        "csv_data/classrooms": "4"
-                    }
+                    "{classrooms_3}",
+                    "{classrooms_4}"
                 ]
             }
         ]
@@ -461,10 +375,10 @@
         "answer": [
             {
                 "answer": [
-                    "I don't know"
+                    "2023-05-30,13:00"
                 ],
                 "why": [
-                    {}
+                    "{courses_5, exams_4}"
                 ]
             }
         ]
@@ -474,12 +388,12 @@
         "answer": [
             {
                 "answer": [
-                    "Advanced Algorithms"
+                    "Advanced Algorithms",
+                    "Artificial Intelligence"
                 ],
                 "why": [
-                    {
-                        "csv_data/courses": "3"
-                    }
+                    "{courses_3}",
+                    "{courses_7}"
                 ]
             }
         ]
@@ -489,13 +403,10 @@
         "answer": [
             {
                 "answer": [
-                    "None"
+                    "IoT Security Challenges"
                 ],
                 "why": [
-                    {
-                        "students": "2",
-                        "thesis": "4"
-                    }
+                    "{students_2, thesis_2}"
                 ]
             }
         ]

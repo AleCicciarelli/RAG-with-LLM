@@ -26,9 +26,9 @@ if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 #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 previous token groq
 # LLM: Llama3-8b by Groq
-#llm = init_chat_model("llama3-70b-8192", model_provider="groq", temperature = 0)
+llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
 # MISTRAL by Groq
-llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
+#llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 
 
 # Ollama LLM
@@ -86,7 +86,7 @@ parser = JsonOutputParser(pydantic_schema=AnswerItem)
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 50)
+    retrieved_docs = vector_store.similarity_search(state["question"], k = 17)
     #for doc in retrieved_docs:
     #    print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
     return {"context": retrieved_docs}
@@ -102,22 +102,18 @@ def generate(state: State):
     Context: {docs_content}
     Given this question and the context provided, provide the answer, and for each answer's item, explain **WHY** it appears in the result.
     This explanation must be in terms of **WITNESSES SET**: the minimal sets of input tuples that justify the result.
-    This means: 
-        > Result X is in the output if (WitnessSet1) OR (WitnessSet2) OR ...
+    This means that result X is in the output if (WitnessSet1) OR (WitnessSet2) OR ...
 
         And the Witnesses Sets have form:
         > {{Tuple1 , Tuple2 , ...}} 
         > {{Tuple3 , Tuple4 , ...}}
         
-   
-    The answer must respect the following structure, but return it as a string representation of a JSON **without** extra text:
+       The answer must respect the following structure, but return it as a string representation of a JSON **without** extra text before or after:
     [
     {{
         "answer": ["<answer_1>"],  
         "why": [  
-            {{  
-                "<file_name>": "<row_number>", "<file_name>": "<row_number>"
-            }}            
+            "{{<file_name>_<row_number>, <file_name>_<row_number>}}"           
         ]
     }}
     ]
@@ -132,18 +128,18 @@ def generate(state: State):
         0:1,101,2023-01-10,09:00,1
         1:2,102,2023-02-15,14:00,2
         
-        QUESTION: "When is the Machine Learning exam?"
+         QUESTION: "When is the Machine Learning exam?"
         ANSWER:
             [
             {{
                 "answer": ["2023-01-10,09:00 "], 
                 "why": [  
-                    {{  
-                        "courses": "0", "exams": "0"
-                    }}            
+                    "{{courses_0, exams_0}}"            
                 ] 
             }}
             ]
+        Each witness set must be returned as a string enclosed in two curly braces, like `"{{courses_8, exams_3}}"`.
+  
 
   
     """
@@ -151,9 +147,6 @@ def generate(state: State):
 
     # Preparare il messaggio finale per l'LLM
     messages = prompt.invoke({"question": prompt_with_explanation, "context": docs_content})
-    
-    # Eseguire la chiamata all'LLM
-    #response = llm.invoke(messages)
     
     # Pulire e analizzare la risposta dell'LLM
     #cleaned_response = response.content.strip()
@@ -175,31 +168,31 @@ def generate(state: State):
 graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
+for l in range(1, 3):  # Da 1 a 3
+    print(f"Esecuzione {l}...")
+    # Leggi le domande da un file di testo
+    with open("question.txt", "r") as f:
+        questions = [line.strip() for line in f.readlines() if line.strip()]
 
-# Leggi le domande da un file di testo
-with open("question.txt", "r") as f:
-    questions = [line.strip() for line in f.readlines() if line.strip()]
+    # Inizializza una lista per i risultati
+    all_results = []
 
-# Inizializza una lista per i risultati
-all_results = []
+    # Loop per invocare LLM su tutte le domande
+    for i, question in enumerate(questions):
+        print(f"Processing question n. {i+1}")
+        
+        # Eseguire l'invocazione del grafo
+        full_result = graph.invoke({"question": question})
+        
+        result = {
+            "question": question,
+            "answer": full_result.get("answer", "")
+        }
+        # Aggiungere il risultato alla lista
+        all_results.append(result)
 
-# Loop per invocare LLM su tutte le domande
-for i, question in enumerate(questions[26:30],start= 26):
-    print(f"Processing question n. {i+1}")
-    
-    # Eseguire l'invocazione del grafo
-    full_result = graph.invoke({"question": question})
-    
-    result = {
-        "question": question,
-        "answer": full_result.get("answer", "")
-    }
-    # Aggiungere il risultato alla lista
-    all_results.append(result)
+    output_filename = f"outputs_WHYK17_llama8b_{l}.json"
+    with open(output_filename, "w", encoding="utf-8") as f:
+        json.dump(all_results, f, indent=4, ensure_ascii=False)
 
-
-# Salva il file come JSON ben formattato
-with open("outputs_WHY_k50_mistralSaba24b4.json", "w", encoding="utf-8") as f:
-    json.dump(all_results, f, indent=4, ensure_ascii=False)
-
-
+    print(f"Risultati salvati in {output_filename}\n")
