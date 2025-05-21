@@ -18,20 +18,20 @@ from langchain_community.chat_models import ChatOllama
 from langchain_core.output_parsers import JsonOutputParser
 
 os.environ["LANGSMITH_TRACING"] = "true"
-os.environ["LANGSMITH_API_KEY"] = "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"
-
+os.environ["LANGSMITH_API_KEY"] = "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"
+#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 olt token langsmith
 
 if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 #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 previous token groq
 # LLM: Llama3-8b by Groq
-#llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
+llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
 # MISTRAL by Groq
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 
 # Prendi le variabili di ambiente model_name = os.environ["OLLAMA_MODEL"] output_file = os.environ["OUTPUT_FILE"]
 # Inizializza l'LLM
-llm = ChatOllama(model="llama3:70b", temperature=0)
+#llm = ChatOllama(model="llama3:70b", temperature=0)
 # Ollama LLM
 #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 token hugging-face
 # Embedding model: Hugging Face
@@ -70,12 +70,9 @@ class Document:
 
 def get_rows_from_ground_truth(ground_f2: str, csv_folder: str) -> List[Document]:
     """
-    Estrae le righe specificate in f2, gestendo Witness Sets multipli e duplicati.
+    Estrae le righe specificate in why, gestendo Witness Sets multipli e duplicati.
     Supporta anche formati annidati come:
-    [
-        "{{courses_0,enrollments_0,students_0},{courses_3,enrollments_3,students_0}}",
-        "{{courses_0,enrollments_9,students_1}}"
-    ]
+
     """
     documents = []
     seen_entries: Set[str] = set()
@@ -138,59 +135,47 @@ def generate(state: State):
 
         [
             {{
-            "answer": ["<answer_1>"],
+            "answer": ["<answer_1>","<answer_2>"],
             "why": [
-            "{{{{table_row_a, table_row_b}}}}",
-            "{{{{table_row_c, table_row_d}}}}"
-            ]
-            }},
-            {{
-            "answer": ["<answer_2>"],
-            "why": [
-            "{{{{table_row_e, table_row_f}}}}"
+            "{{{{table_row_a, table_row_b}}}}",  //answer1
+            "{{{{table_row_c, table_row_d}}}}",  //answer1
+            "{{{{table_row_e, table_row_f}}}}"    //answer2
             ]
             }}
         ]
 
-        ---
-
         Example:
 
         CONTEXT:
-            - source: courses.csv, row: 0  
-            (course_id:101, course_name:Machine Learning, ...)  
-            - source: courses.csv, row: 3  
-            (course_id:104, course_name:Advanced Algorithms, ...)  
-            - source: enrollments.csv, row: 0  
-            (enrollment_id:1, student_id:1, course_id:101, ...)  
-            - source: enrollments.csv, row: 3  
-            (enrollment_id:4, student_id:1, course_id:104, ...)  
-            - source: enrollments.csv, row: 9  
-            (enrollment_id:10, student_id:2, course_id:101, ...)  
-            - source: students.csv, row: 0  
-            (student_id:1, name:Giulia, surname:Rossi, ...)  
-            - source: students.csv, row: 1  
-            (student_id:2, name:Marco, surname:Bianchi, ...)  
+        - source: <table_1>, row: <row_idx_1>
+        (<col_a>:<val_a>, <col_b>:<val_b>, ...)
+        - source: <table_1>, row: <row_idx_2>
+        (<col_a>:<val_a1>, <col_b>:<val_b1>, ...)
+        - source: <table_2>, row: <row_idx_3>
+        (<col_c>:<val_c>, <col_d>:<val_d>, ...)
+        - source: <table_2>, row: <row_idx_4>
+        (<col_c>:<val_c1>, <col_d>:<val_d1>, ...)
+        - source: <table_3>, row: <row_idx_1>
+        (<col_e>:<val_e>, <col_f>:<val_f>, ...)
+        - source: <table_3>, row: <row_idx_2>
+        (<col_e>:<val_e1>, <col_f>:<val_f1>, ...)
 
-        QUESTION:  
-            "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
+        QUESTION:
+            "Which are the <entity_type> (specify <col_a> and <col_b>) involved in <condition_1> or <condition_2>?"
 
         EXPECTED ANSWER:
 
         [
             {{
-            "answer": ["Giulia Rossi"],
-            "why": [
-            "{{{{courses_0,enrollments_0,students_0}}}}",
-            "{{{{courses_3,enrollments_3,students_0}}}}"
-            ]
-            }},
-            {{
-            "answer": ["Marco Bianchi"],
-            "why": [
-            "{{{{courses_0,enrollments_9,students_1}}}}"
-            ]
+                "answer": ["<col_a_val> <col_b_val>", "<col_a_val> <col_b_val>"],
+                "why": [
+                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_3>,<table_3>_<row_idx_1>}}}}",
+                    "{{{{<table_1>_<row_idx_2>,<table_2>_<row_idx_4>,<table_3>_<row_idx_1>}}}}",
+                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_4>,<table_3>_<row_idx_2>}}}}"
+                ]
             }}
+        
+
         ]
 """
 
@@ -212,10 +197,6 @@ def generate(state: State):
     return {
         "answer": parsed if parsed else response.content.strip()
     }
-f2 = [
-    "{{courses_0,enrollments_0,students_0},{courses_3,enrollments_3,students_0}}",
-    "{{courses_0,enrollments_9,students_1}}"
-]
 
 
 for l in range(1, 4):  # Da 1 a 3
@@ -235,8 +216,8 @@ for l in range(1, 4):  # Da 1 a 3
         print(f"Processing question n. {i+1}")
         # Step 1: Ottieni la risposta attesa (facoltativo, puoi usarla per confronto)
         gt = ground_truth[i]
-        gt_answer = gt["f1"]
-        gt_source_info = gt["f2"]  # "{{students_0,exams_3}}"
+        #gt_answer = gt["f1"]
+        gt_source_info = gt["why"]  # "{{students_0,exams_3}}"
         
         # Step 2: Costruisci contesto perfetto a partire dalle righe vere
         context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="csv_data")
@@ -250,9 +231,6 @@ for l in range(1, 4):  # Da 1 a 3
         # Step 4: Esegui solo il passo di generazione
         full_result = generate(state)
         
-        # Eseguire l'invocazione del grafo
-        full_result = generate(state)
-        
         result = {
             "question": question,
             "answer": full_result.get("answer", "")
@@ -261,7 +239,7 @@ for l in range(1, 4):  # Da 1 a 3
         all_results.append(result)
 
 
-    output_filename = f"output_FC_llama70b_{l}.json"
+    output_filename = f"output_FCGEN_llama8b_{l}.json"
     with open(output_filename, "w", encoding="utf-8") as f:
         json.dump(all_results, f, indent=4, ensure_ascii=False)
 

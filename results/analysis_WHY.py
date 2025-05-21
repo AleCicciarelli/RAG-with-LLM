@@ -27,11 +27,11 @@ def normalize_why_entry(entry: str) -> str:
     return "{" + ",".join(sorted(p.strip() for p in parts)) + "}"
 
 def main():
-    pred_path = "outputs_FC_llama70b_3.json"
+    pred_path = "previous_results/llama8b_FC/outputs_FC_llama8b_1.json"
     gt_path = "ground_truth.json"
     question_type_path = "questions.json"
-    output_csv_type = "metrics_by_type_FC_llama70b_3.csv"
-    output_csv_global = "metrics_global_FC_llama70b_3.csv"
+    output_csv_type = "previous_results/llama8b_FC/metrics_by_type_FC_llama8b_1.csv"
+    output_csv_global = "previous_results/llama8b_FC/metrics_global_FC_llama8b_1.csv"
 
     pred_data = load_json(pred_path)
     gt_data = load_json(gt_path)
@@ -51,9 +51,10 @@ def main():
     for gt, pred in zip(gt_data, pred_data):
         question = pred["question"]
         q_type = question_types.get(question, "unknown")
-
+        if q_type =='unknown':
+            print(question)
         # Estrai risposte
-        true_answer = gt["f1"]
+        true_answer = gt["answer"]
         if not isinstance(true_answer, list):
             true_answer = [str(true_answer)]
         else:
@@ -64,7 +65,7 @@ def main():
         tp_ans, fp_ans, fn_ans = evaluate_lists(true_answer, pred_answer)
 
         # Estrai spiegazioni
-        true_expl_raw = gt["f2"]
+        true_expl_raw = gt["why"]
         if isinstance(true_expl_raw, str):
             true_expl = set(s.strip("{}") for s in true_expl_raw.split("}}") if s)
         else:
