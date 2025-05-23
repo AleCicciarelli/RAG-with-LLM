@@ -10,6 +10,7 @@ from langchain_core.documents import Document
 from langchain import hub
 import json
 import re
+import time
 from langchain_core.output_parsers import JsonOutputParser
 from pydantic import BaseModel
 from typing import List, Dict
@@ -25,9 +26,9 @@ if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 #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 previous token groq
 # LLM: Llama3-8b by Groq
-llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
+#llm = init_chat_model("llama3-70b-8192", model_provider="groq", temperature = 0)
 # MISTRAL by Groq
-#llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
+llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 
 # Prendi le variabili di ambiente model_name = os.environ["OLLAMA_MODEL"] output_file = os.environ["OUTPUT_FILE"]
 # Inizializza l'LLM
@@ -126,19 +127,18 @@ def generate(state: State):
         2. For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
 
         Each Witness Set must be a string like:
-            "{{{{<table_name>_<row>, <table_name>_<row>, ...}}}}"
+            "{{{{<table_name>_<row>}}}}"
         (use `source` and `row` metadata from the context).
 
         If an answer has multiple Witness Sets, list each one in the `"why"` array "{{{{WitnessSet1}}, {{WitnessSet2}}}}". A result is valid if at least one Witness Set supports it.
 
-        Return the output as a **stringified JSON array**, with no extra text:
+        Return the output as a **stringified JSON array**, with NO extra text:
 
         [
             {{
             "answer": ["<answer_1>","<answer_2>"],
             "why": [
-            "{{{{table_row_a, table_row_b}}}}",  //answer1
-            "{{{{table_row_c, table_row_d}}}}",  //answer1
+            "{{{{table_row_a, table_row_b}}, {{table_row_c, table_row_d}}}}",   //answer1 
             "{{{{table_row_e, table_row_f}}}}"    //answer2
             ]
             }}
@@ -169,8 +169,7 @@ def generate(state: State):
             {{
                 "answer": ["<col_a_val> <col_b_val>", "<col_a_val> <col_b_val>"],
                 "why": [
-                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_3>,<table_3>_<row_idx_1>}}}}",
-                    "{{{{<table_1>_<row_idx_2>,<table_2>_<row_idx_4>,<table_3>_<row_idx_1>}}}}",
+                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_3>,<table_3>_<row_idx_1>}},{{<table_1>_<row_idx_2>,<table_2>_<row_idx_4>,<table_3>_<row_idx_1>}}}}", 
                     "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_4>,<table_3>_<row_idx_2>}}}}"
                 ]
             }}
@@ -212,6 +211,7 @@ for l in range(1, 4):  # Da 1 a 3
         ground_truth = json.load(f)
 
     # Loop per invocare LLM su tutte le domande
+    cpu_time = time.process_time()
     for i, question in enumerate(questions):
         print(f"Processing question n. {i+1}")
         # Step 1: Ottieni la risposta attesa (facoltativo, puoi usarla per confronto)
@@ -238,8 +238,9 @@ for l in range(1, 4):  # Da 1 a 3
         # Aggiungere il risultato alla lista
         all_results.append(result)
 
-
-    output_filename = f"output_FCGEN_llama8b_{l}.json"
+    cpu_time = time.process_time() - cpu_time
+    print(f"Total CPU time for mistral24b_{l}: {cpu_time} seconds\n")
+    output_filename = f"output_FCGEN_mistral24b_{l}.json"
     with open(output_filename, "w", encoding="utf-8") as f:
         json.dump(all_results, f, indent=4, ensure_ascii=False)
 

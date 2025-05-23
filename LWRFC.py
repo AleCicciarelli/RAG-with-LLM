@@ -10,6 +10,7 @@ from langchain_core.documents import Document
 from langchain import hub
 import json
 import re
+import time
 from langchain_core.output_parsers import JsonOutputParser
 from pydantic import BaseModel
 from typing import List, Dict
@@ -98,7 +99,7 @@ def get_rows_from_ground_truth(ground_f2: str, csv_folder: str) -> List[Document
                 table_name, row_number = entry.rsplit("_", 1)
                 row_number = int(row_number)
                 csv_path = os.path.join(csv_folder, f"{table_name}.csv")
-
+                #print(table_name, row_number)   
                 with open(csv_path, "r", encoding="utf-8") as f:
                     reader = csv.reader(f)
                     header = next(reader)
@@ -129,7 +130,7 @@ def generate(state: State):
         2. For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
 
         Each Witness Set must be a string like:
-            "{{{{<table_name>_<row>, <table_name>_<row>, ...}}}}"
+            "{{{{<table_name>_<row>}}}}"
         (use `source` and `row` metadata from the context).
 
         If an answer has multiple Witness Sets, list each one in the `"why"` array "{{{{WitnessSet1}}, {{WitnessSet2}}}}". A result is valid if at least one Witness Set supports it.
@@ -140,8 +141,7 @@ def generate(state: State):
             {{
             "answer": ["<answer_1>","<answer_2>"],
             "why": [
-            "{{{{table_row_a, table_row_b}}}}",  //answer1
-            "{{{{table_row_c, table_row_d}}}}",  //answer1
+            "{{{{table_row_a, table_row_b}}, {{table_row_c, table_row_d}}}}",   //answer1        
             "{{{{table_row_e, table_row_f}}}}"    //answer2
             ]
             }}
@@ -174,9 +174,8 @@ def generate(state: State):
             {{
             "answer": ["Giulia Rossi","Marco Bianchi"],
             "why": [
-            "{{{{courses_0,enrollments_0,students_0}}}}", 
-            "{{{{courses_3,enrollments_3,students_0}}}}",  
-            "{{{{courses_0,enrollments_9,students_1}}}}"   
+            "{{{{courses_0,enrollments_0,students_0}},{{courses_3,enrollments_3,students_0}}}}",
+            "{{{{courses_0,enrollments_9,students_1}}}}"
             ]
             }}
  
@@ -217,9 +216,10 @@ for l in range(1, 4):  # Da 1 a 3
     # Inizializza una lista per i risultati
     all_results = []
     # carica il ground truth
-    with open("ground_truth.json", "r", encoding="utf-8") as f:
+    with open("ground_truth2.json", "r", encoding="utf-8") as f:
         ground_truth = json.load(f)
-
+    
+    cpu_time = time.process_time()
     # Loop per invocare LLM su tutte le domande
     for i, question in enumerate(questions):
         print(f"Processing question n. {i+1}")
@@ -247,7 +247,8 @@ for l in range(1, 4):  # Da 1 a 3
         # Aggiungere il risultato alla lista
         all_results.append(result)
 
-
+    cpu_time = time.process_time() - cpu_time
+    print(f"Total CPU time for mistral24b_{l}: {cpu_time} seconds\n")
     output_filename = f"output_FC_mistral24b_{l}.json"
     with open(output_filename, "w", encoding="utf-8") as f:
         json.dump(all_results, f, indent=4, ensure_ascii=False)

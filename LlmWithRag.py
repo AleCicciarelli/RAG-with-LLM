@@ -13,13 +13,12 @@ import json
 from langchain_core.output_parsers import JsonOutputParser
 from pydantic import BaseModel, Field
 from typing import List
-import faiss 
-import re
+import time
 
 os.environ["LANGSMITH_TRACING"] = "true"
-os.environ["LANGSMITH_API_KEY"] = "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"
+os.environ["LANGSMITH_API_KEY"] = "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"
 
-
+#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 olt token langsmith
 if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 
@@ -66,7 +65,7 @@ else:
 # Define prompt for question-answering
 prompt = hub.pull("rlm/rag-prompt")
 # Step 1: Define Explanation Class: composed by file and row
-class ExplanationItem(BaseModel):
+class AnswerItem(BaseModel):
     file: str
     row: int
 
@@ -74,13 +73,16 @@ class ExplanationItem(BaseModel):
 class State(TypedDict):
     question: str
     context: List[Document]
-    answer: List[str]
-    explanation: List[ExplanationItem]
-    
+    answer: List[AnswerItem]
+    k: int
+   
+parser = JsonOutputParser(pydantic_schema=AnswerItem)    
+ 
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 17)
+   
+    retrieved_docs = vector_store.similarity_search(state["question"], k = state["k"])
     #for doc in retrieved_docs:
     #    print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
     return {"context": retrieved_docs}
@@ -88,122 +90,106 @@ def retrieve(state: State):
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
     prompt_with_explanation = f"""
-    Question: {state["question"]}
-    Context: {state["context"]}
-    Given this question and the context provided , provide the answer including the explanation on how you get the information: 
-    - the name of the file
-    - the row of the file
-    (You can find this two information in the metadata of the document you use for the answer.)
-    The answer must respect the following structure, returning a JSON format like this **without** extra text before or after:
+        You are a question-answering system. Given a question and a context, you must provide the answer(s) to the question.
+        Question: {state["question"]}
+        Your task is to:
+        1. Provide the correct answer(s) based only on the context.
+        2. For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
 
-    {{
-        "answer": ["<answer_1>", "<answer_2>", "..."],  
-        "explanation": [  
-            {{  "file": "<file_name>",
-                "row": <row_number>}},  
-            {{  "file": "<file_name>", 
-                "row": <row_number>}}  
-        ]
-    }}
+        Each Witness Set must be a string like:
+            "{{{{<table_name>_<row>}}}}"
+        (use `source` and `row` metadata from the context).
 
+        If an answer has multiple Witness Sets, list each one in the `"why"` array "{{{{WitnessSet1}}, {{WitnessSet2}}}}". A result is valid if at least one Witness Set supports it.
 
-    ### Example ###
-    {{
-        "answer": [
-            "Computer Science"
-        ],
-        "explanation": [
+        Return the output as a **stringified JSON array**, with no extra text:
+
+        [
             {{
-                "file": "teachers.csv",
-                "row": 1
+            "answer": ["<answer_1>","<answer_2>"],
+            "why": [
+            "{{{{table_row_a, table_row_b}}, {{table_row_c, table_row_d}}}}",   //answer1        
+            "{{{{table_row_e, table_row_f}}}}"    //answer2
+            ]
             }}
-        ]}}
-        
-    """
+        ]
+
+        Example:
+
+        CONTEXT:
+            - source: courses.csv, row: 0  
+            (course_id:101, course_name:Machine Learning, ...)  
+            - source: courses.csv, row: 3  
+            (course_id:104, course_name:Advanced Algorithms, ...)  
+            - source: enrollments.csv, row: 0  
+            (enrollment_id:1, student_id:1, course_id:101, ...)  
+            - source: enrollments.csv, row: 3  
+            (enrollment_id:4, student_id:1, course_id:104, ...)  
+            - source: enrollments.csv, row: 9  
+            (enrollment_id:10, student_id:2, course_id:101, ...)  
+            - source: students.csv, row: 0  
+            (student_id:1, name:Giulia, surname:Rossi, ...)  
+            - source: students.csv, row: 1  
+            (student_id:2, name:Marco, surname:Bianchi, ...)  
+
+        QUESTION:  
+            "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
+
+        EXPECTED ANSWER:
+
+        [
+            {{
+            "answer": ["Giulia Rossi","Marco Bianchi"],
+            "why": [
+            "{{{{courses_0,enrollments_0,students_0}},{{courses_3,enrollments_3,students_0}}}}",
+            "{{{{courses_0,enrollments_9,students_1}}}}"
+            ]
+            }}
+ 
+        ]
+"""
+
 
     docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
     messages = prompt.invoke({"question": prompt_with_explanation, "context": docs_content})
     response = llm.invoke(messages)
-    #print(response.content)
-    cleaned_response = response.content.strip()
-    #print(cleaned_response)
-    '''Parse generated answer in a JSON format'''
+     
     try:
-        parsed_response = json.loads(cleaned_response)
-    except json.JSONDecodeError as e:
-        print(f"Error parsing response: {cleaned_response}")
-        print(f"JSONDecodeError: {str(e)}")
-        return {"answer": [], "explanation": []}
-    print(parsed_response)
-   
-    return {
-        "answer": parsed_response.get("answer", []),
-        "explanation": parsed_response.get("explanation", [])
-    }
-    
-'''k analysis'''
-'''
-import time
+        parsed = parser.parse(response.content)
+    except Exception as e:
+        print(f"Errore nel parsing: {e}")
+        parsed = None
 
+    return {
+        "answer": parsed if parsed else response.content.strip()
+    }
+'''k analysis'''
+# Create a dictionary to store results for each k
 results_by_k = {}
 # Process questions from a txt file
 with open("question.txt", "r") as f:
     questions = [line.strip() for line in f.readlines() if line.strip()]
     
-for k in range(12, 21):  # k da 0 a 20
-    print(f"\n=== Running evaluation with k={k} ===")
-    all_results = []
-
-    def retrieve(state: State):
-        retrieved_docs = vector_store.similarity_search(state["question"], k=k)
-        return {"context": retrieved_docs}
-
-    graph_builder = StateGraph(State).add_sequence([retrieve, generate])
-    graph_builder.add_edge(START, "retrieve")
-    graph = graph_builder.compile()
-
-    for i, question in enumerate(questions):
-        print(f"[k={k}] Processing question n. {i+1}")
-        full_result = graph.invoke({"question": question})
-        result = {
-            "question": question,
-            "answer": full_result.get("answer", []),
-            "explanation": full_result.get("explanation", [])
-        }
-        all_results.append(result)
-
-    output_filename = f"outputs_k_{k}.json"
-    with open(output_filename, "w", encoding="utf-8") as f:
-        json.dump(all_results, f, indent=4, ensure_ascii=False)
-
-    results_by_k[k] = output_filename
-    time.sleep(1)  # opzionale: per evitare throttling dell'API
-
-''' 
-# Control flow: Compile the application into a graph
+# Build the graph structure once
 graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
 
-# Process questions from a txt file
-with open("question.txt", "r") as f:
-    questions = [line.strip() for line in f.readlines() if line.strip()]
+for k in range(18, 70):  # k da 0 a 20
+    print(f"\n=== Running evaluation with k={k} ===")
+    all_results = []
 
-all_results = []
+    for i, question in enumerate(questions):
+        print(f"[k={k}] Processing question n. {i+1}")
+        full_result = graph.invoke({"question": question, "k": k})
+        result = {
+            "question": question,
+            "answer": full_result.get("answer", []),
+        }
+        all_results.append(result)
 
-''' Loop for LLM invocation on questions '''
-
-for i, question in enumerate(questions):
-    print(f"Processing question n. {i+1}")
-    
-    full_result = graph.invoke({"question": question})
-    result = {
-        "question": question,
-        "answer": full_result.get("answer", []),
-        "explanation": full_result.get("explanation", [])
-    }
-    
-    all_results.append(result)
-# Save results to json file
-with open("outputs_k17_llama70b-3.json", "w", encoding="utf-8") as f:
-    json.dump(all_results, f, indent=4, ensure_ascii=False)
+    output_filename = f"outputs_llama70b/outputs_k_{k}_llama70b.json"
+    # Save the results for the current value of k to a JSON file for later analysis
+    with open(output_filename, "w") as output_file:
+        json.dump(all_results, output_file, indent=4, ensure_ascii=False)
+    print(f"Results for k={k} saved to {output_filename}")
