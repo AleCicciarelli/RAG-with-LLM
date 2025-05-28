@@ -1,0 +1,284 @@
+[
+    {
+        "question": "Which is the email of Giulia Rossi?",
+        "answer": 1
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "answer": 1
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "answer": [
+            {
+                "name": "Giuseppe Barone",
+                "course": "Machine Learning"
+            },
+            {
+                "name": "Giuseppe Barone",
+                "course": "Deep Learning"
+            }
+        ]
+    },
+    {
+        "question": "In which building is the class with room number 401?",
+        "answer": "{\n\"answer\": {\n\"teacher\\_names\": [\"Giuseppe\", \"Bianchi\"],\n\"courses\": [{\"name\": \"Machine Learning\", \"code\": \"108\"}]\n}\n}\n\nExplanation:\nTo find the teachers who teach \"Machine Learning\" or \"ML\" courses, we need to look for such courses in the 'courses' csv file. After finding the course with name \"Machine Learning\" and code \"108\", we look at the 'exams' csv file to find the teacher who is teaching this course. We find that the teacher with id 8 teaches this course, and from the 'teachers' csv file, we get the name of the teacher as \"Giuseppe Bianchi\"."
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "answer": 1
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "answer": "Based on the data provided, the students enrolled in the courses \"Machine Learning\" and \"Embedded Systems\" (which is equivalent to \"Advanced Embedded Systems\") are as follows:\n\nFor Machine Learning (course ID 101):\n- Student with ID 1, grade: 28\n\nFor Embedded Systems/Advanced Embedded Systems (course ID 103):\n- Student with ID 3, grade: 30\n\nSo, the students who are enrolled in both courses are not listed in the data provided."
+    },
+    {
+        "question": "In which area is the 'User Experience Design in Web Apps' thesis?",
+        "answer": 1
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "answer": 1
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "answer": 1
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "answer": 1
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "answer": 1
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "answer": 1
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "answer": "Based on the provided data, the instructors for the \"Young Researchers in Artificial Intelligence and Data Science\" course with code YOU001 are Carlo Rossi (teacher\\_id: 1) and Giulia Colombo (teacher\\_id: 6). The course is related to the research area of Artificial Intelligence and Data Science.\n\nNow, let's find out which students are enrolled in this course. Based on the data, there are two students who are working on a thesis related to Artificial Intelligence, and their instructors are Carlo Rossi (teacher\\_id: 1) and Giulia Colombo (teacher\\_id: 6). These students are:\n\n* Student with student\\_id: 1, named \"Carlo Bianchi\"\n* Student with student\\_id: 2, named \"Marco Rossi\"\n\nTherefore, the students enrolled in the YOU001 course are Carlo Bianchi and Marco Rossi."
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "answer": 1
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "answer": 1
+    },
+    {
+        "question": "What is the department name in which Antonio Gallo teaches?",
+        "answer": 1
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "answer": 1
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "answer": "{\n\t\"course\\_id\": \"101\",\n\t\"course\\_name\": \"Machine Learning\",\n\t\"department\": \"1\",\n\t\"credits\": \"6\",\n\t\"teacher\": \"1\",\n\t\"semester\": \"Fall\"\n},\n{\n\t\"course\\_id\": \"104\",\n\t\"course\\_name\": \"Advanced Algorithms\",\n\t\"department\": \"1\",\n\t\"credits\": \"8\",\n\t\"teacher\": \"4\",\n\t\"semester\": \"Spring\"\n},\n{\n\t\"student\\_id\": \"10\",\n\t\"first\\_name\": \"John\",\n\t\"last\\_name\": \"Doe\",\n\t\"enrollments\": [\n\t\t{\n\t\t\t\"course\\_id\": \"101\",\n\t\t\t\"grade\": \"A\"\n\t\t},\n\t\t{"
+    },
+    {
+        "question": "In which building will be the Embedded Systems exam?",
+        "answer": 1
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "answer": 1
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "answer": 1
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "answer": 1
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "answer": 1
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "answer": 1
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "answer": "[\n  {\n    \"student\\_id\": 1,\n    \"name\": \"John Doe\",\n    \"course\\_id\": 103,\n    \"course\\_name\": \"Embedded Systems\",\n    \"date\": \"2023-03-20\",\n    \"time\": \"10:00\",\n    \"classroom\\_id\": 3,\n    \"classroom\": \"Engineering Building 100\"\n  },\n  {\n    \"student\\_id\": 2,\n    \"name\": \"Jane Smith\",\n    \"course\\_id\": 106,\n    \"course\\_name\": \"Software Engineering\",\n    \"date\": \"2023-05-30\",\n    \"time\": \"13:00\",\n    \"classroom\\_id\": 5,\n    \"classroom\": \"Engineering Building 500\"\n  }\n]"
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "answer": 1
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "answer": [
+            {
+                "student_id": 1,
+                "name": "James Smith",
+                "courses": [
+                    "Machine Learning",
+                    "Calculus III"
+                ]
+            },
+            {
+                "student_id": 2,
+                "name": "Anna Johnson",
+                "courses": [
+                    "Introduction to Programming"
+                ]
+            },
+            {
+                "student_id": 3,
+                "name": "Laura Jones",
+                "courses": [
+                    "Data Structures and Algorithms",
+                    "Introduction to Programming",
+                    "Calculus III"
+                ]
+            },
+            {
+                "student_id": 4,
+                "name": "Ethan Brown",
+                "courses": [
+                    "Machine Learning",
+                    "Data Structures and Algorithms"
+                ]
+            },
+            {
+                "student_id": 5,
+                "name": "Emma Davis",
+                "courses": [
+                    "Calculus III"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "answer": 1
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "answer": "[\n  {\"student\\_id\": 1, \"course\\_id\": \"101\", \"enrollment\\_date\": \"2022-09-01\"},\n  {\"student\\_id\": 2, \"course\\_id\": \"102\", \"enrollment\\_date\": \"2022-10-15\"}\n]\n\nExplanation:\nBased on the provided data, student with id 1 is enrolled in course with id 101 and student with id 2 is enrolled in course with id 102. There are no students enrolled in courses with ids 104 or 106, which are the only other courses offered based on the exams csv file. Therefore, the only possible answer for this question is that students with ids 1 and 2 are enrolled in the machine learning and computer architecture courses respectively."
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "answer": 1
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "answer": "[\n  {\n    \"student\\_id\": 1,\n    \"course\\_name\": \"Machine Learning\",\n    \"grade\": 28\n  },\n  {\n    \"student\\_id\": 3,\n    \"course\\_name\": \"Human-Computer Interaction\",\n    \"grade\": 28\n  },\n  {\n    \"student\\_id\": 5,\n    \"course\\_name\": \"Human-Computer Interaction\",\n    \"grade\": 26\n  },\n  {\n    \"student\\_id\": 4,\n    \"course\\_name\": \"Human-Computer Interaction\",\n    \"grade\": 27\n  }\n]"
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "answer": [
+            {
+                "studentId": 1,
+                "courseName": "Machine Learning",
+                "teacherName": "Carlo Rossi"
+            },
+            {
+                "studentId": 2,
+                "courseName": "Advanced Algorithms",
+                "teacherName": "Laura Bianchi"
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "answer": "{\n\"student\\_id\": [\"4\"],\n\"name\": [\"Lucas\"],\n\"surname\": [\"Schmidt\"],\n\"course\\_name\": [\"Human-Computer Interaction\"],\n\"teacher\": [\"10\"],\n\"semester\": [\"Spring\"]\n}\n\nThe student Lucas Schmidt is taking the course Human-Computer Interaction, taught by teacher 10 in the Spring semester."
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "answer": 1
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "answer": 1
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "answer": 1
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "answer": [
+            {
+                "student_id": 1,
+                "name": "John Doe",
+                "grade": "A"
+            },
+            {
+                "student_id": 2,
+                "name": "Jane Smith",
+                "grade": "B+"
+            },
+            {
+                "student_id": 3,
+                "name": "Alice Johnson",
+                "grade": "A-"
+            },
+            {
+                "student_id": 4,
+                "name": "Bob Brown",
+                "grade": "C+"
+            },
+            {
+                "student_id": 5,
+                "name": "Charlie Green",
+                "grade": "B"
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "answer": 1
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "answer": "Based on the information provided, the students who are enrolled in the courses \"Machine Learning\" and \"Artificial Intelligence\" would be taking classes from professors with expertise in Machine Learning and Artificial Intelligence. The specific course and professor mappings are as follows:\n\n* Course \"Machine Learning\" (course\\_id: 101) is taught by Professor Marco Verdi (teacher\\_id: 3) who specializes in Data Science.\n* Course \"Artificial Intelligence\" (course\\_id: 108) is taught by Professor Alessandro Profaci (teacher\\_id: 7) who specializes in Machine Learning.\n\nTherefore, the students enrolled in these courses would be learning from professors with expertise in Machine Learning and Artificial Intelligence."
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "answer": 1
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "answer": 1
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "answer": "[\n{\n\"course\\_name\": \"Machine Learning\",\n\"surname\": \"Neri\"\n}\n,\n{\n\"course\\_name\": \"Advanced Algorithms\",\n\"surname\": \"Neri\"\n}\n]"
+    }
+]

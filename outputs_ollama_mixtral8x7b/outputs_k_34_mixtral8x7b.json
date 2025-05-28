@@ -1,0 +1,228 @@
+[
+    {
+        "question": "Which is the email of Giulia Rossi?",
+        "answer": 1
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "answer": 1
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "answer": 1
+    },
+    {
+        "question": "In which building is the class with room number 401?",
+        "answer": 1
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "answer": 1
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "answer": [
+            {
+                "teacherId": 3,
+                "name": "John Doe",
+                "researchArea": "Embedded Systems",
+                "numberOfProjects": 3,
+                "course": {
+                    "courseId": 103,
+                    "name": "Embedded Systems",
+                    "department": 2,
+                    "credits": 6,
+                    "teacherId": 3,
+                    "semester": "Fall"
+                }
+            },
+            {
+                "teacherId": 1,
+                "name": "Jane Smith"
+            }
+        ]
+    },
+    {
+        "question": "In which area is the 'User Experience Design in Web Apps' thesis?",
+        "answer": 1
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "answer": 1
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "answer": 1
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "answer": 1
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "answer": "Here is the information you are looking for, organized in a more readable format:\n\nExam Information:\nExam ID: 5\nCourse ID: 106\nCourse Name: Software Engineering\nDepartment: 1\nTeacher ID: 4\nTeacher Name: (Information not provided)\nSemester: Spring\nExam Date: Not provided\n\nStudent Information:\nID: 3\nName: Alex\nSurname: Doe\nBirth Date: 2000-01-01\nNationality: American\nGender: Male\nEnrollment Date: 2021-01-10\nEmail: [alex.doe@student.edu](mailto:alex.doe@student.edu)\n\nEnrollment Information:\nID: 6\nStudent ID: 3\nCourse ID: 106\nCourse Name: Software Engineering\nDepartment: 1\nTeacher ID: 4\nTeacher Name: (Information not provided)\nSemester: Spring\nEnrollment Date: 2021-01-10\n\nI hope this helps! Let me know if you need any further information."
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "answer": 1
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "answer": 1
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "answer": 1
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "answer": 1
+    },
+    {
+        "question": "What is the department name in which Antonio Gallo teaches?",
+        "answer": 1
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "answer": 1
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "answer": "{\n\"course_id\": 106,\n\"department\": 1,\n\"name\": \"Software Engineering\",\n\"credits\": 6,\n\"teacher\": {\n\"teacher\\_id\": 4,\n\"name\": \"Alessandra\",\n\"surname\": \"Rossi\",\n\"email\": \"l.rossi@university.edu\",\n\"research\\_areas\": [\n{\n\"research\\_area\": \"Software Engineering\",\n\"number\\_of\\_projects\": 5\n}\n]\n},\n\"semester\": \"Spring\",\n\"classrooms\": [\n{\n\"classroom\\_id\": 3,\n\"building\": \"Science\",\n\"room\\_number\": 201,\n\"capacity\": 40\n}\n]\n}\n\nIt seems like there's a mistake in the provided data. The name and email for teacher with teacher\\_id 4 are listed as \"Alessandra Rossi\" and \"[l.rossi@university.edu](mailto:l.rossi@university.edu)\", but those values do not match any of the teachers in the provided data. I've used the closest match, which is \"Marco Verdi\" and \"[m.verdi@university.edu](mailto:m.verdi@university.edu)\". Here's the corrected JSON for course 106:\n\n{\n\"course\\_id\": 106,\n\"department\": 1,\n\"name\": \"Software Engineering\",\n\"credits\": 6,\n\"teacher\": {\n\"teacher\\_id\": 3,\n\"name\": \"Marco\",\n\"surname\": \"Verdi\",\n\"email\": \"[m.verdi@university.edu](mailto:m.verdi@university.edu)\",\n\"research\\_areas\": [\n{\n\"research\\_area\": \"Software Engineering\",\n\"number\\_of\\_projects\": 5\n}\n]\n},\n\"semester\": \"Spring\",\n\"classrooms\": [\n{\n\"classroom\\_id\": 3,\n\"building\": \"Science\",\n\"room\\_number\": 201,\n\"capacity\": 40\n}\n]\n}"
+    },
+    {
+        "question": "In which building will be the Embedded Systems exam?",
+        "answer": 1
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "answer": 1
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "answer": 1
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "answer": 1
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "answer": 1
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "answer": 1
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "answer": "[\n  {\n    \"student\\_id\": 1,\n    \"name\": \"Leonardo\",\n    \"surname\": \"Da Vinci\",\n    \"courses\": [\n      {\n        \"course\\_id\": 101,\n        \"name\": \"Introduction to Programming\",\n        \"grade\": 28\n      },\n      {\n        \"course\\_id\": 106,\n        \"name\": \"Software Engineering\",\n        \"grade\": null\n      }\n    ]\n  }\n]"
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "answer": 1
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "answer": "Based on the provided data, here is the information about course 103, which has a course\\_id of 103:\n\n* Course Name: The course name is not mentioned in the provided data.\n* Teacher: The teacher for this course is associated with teacher\\_id 7, but their name is not provided in the 'teachers' dataset.\n* Research Area: The research area of the teacher for this course is 'Artificial Intelligence'.\n* Students Enrolled: There are 3 students currently enrolled in this course - with student\\_ids 3, 5, and 7.\n* Grades: So far, only student with student\\_id 3 has a grade (30) for this course.\n* Exam Details: The exam for this course is scheduled on 2023-03-20 at 10:00 in classroom with classroom\\_id 3.\n\nPlease note that not all the information requested is available in the provided data, such as the course name and teacher's name."
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "answer": 1
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "answer": 1
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "answer": 1
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "answer": "[\n  {\n    \"student\\_id\": 4,\n    \"course\\_id\": 105,\n    \"teacher\\_name\": \"Giulia Colombo\",\n    \"course\\_name\": \"Digital Signal Processing\"\n  },\n  {\n    \"student\\_id\": 4,\n    \"course\\_id\": 110,\n    \"teacher\\_name\": \"Maria Ferrari\",\n    \"course\\_name\": \"Human-Computer Interaction\"\n  }\n]"
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "answer": "{\n\"answer\": {\n\"course\\_id\": \"101\",\n\"course\\_name\": \"Machine Learning\",\n\"department\": \"1\",\n\"credits\": \"6\",\n\"teacher\": \"1\",\n\"semester\": \"Fall\"\n},\n\"support\": [\n{\n\"record\": {\n\"source\": \"csv\\_data/courses.csv\",\n\"row\": \"0\",\n\"course\\_id\": \"101\",\n\"course\\_name\": \"Machine Learning\",\n\"department\": \"1\",\n\"credits\": \"6\",\n\"teacher\": \"1\",\n\"semester\": \"Fall\"\n}\n},\n{\n\"record\": {\n\"source\": \"csv\\_data/teachers.csv\",\n\"row\": \"0\",\n\"teacher\\_id\": \"1\",\n\"name\": \"Laura\",\n\"surname\": \"Bianchi\",\n\"department\\_id\": \"1\",\n\"email\": \"l.bianchi@university.edu\"\n}\n},\n{\n\"record\": {\n\"source\": \"csv\\_data/teacher\\_research\\_areas.csv\",\n\"row\": \"0\",\n\"teacher\\_id\": \"1\",\n\"research\\_area\": \"Artificial Intelligence\",\n\"number\\_of\\_project\": \"5\"\n}\n}\n]\n}"
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "answer": 1
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "answer": 1
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "answer": 1
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "answer": 1
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "answer": [
+            {
+                "student_id": 1,
+                "course_id": 101,
+                "name": "Marco Verdi"
+            },
+            {
+                "student_id": 2,
+                "course_id": 104,
+                "name": "Giuseppe Bianchi"
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "answer": 1
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "answer": 1
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "answer": 1
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "answer": 1
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "answer": "[\n{\n\"student\\_name\": \"Leonardo Da Vinci\",\n\"course\\_name\": \"Machine Learning\",\n\"teacher\\_name\": \"Professor John Doe\",\n\"date\": \"2023-01-10\",\n\"time\": \"09:00\",\n\"classroom\": \"Room 101, Building A\"\n}\n]"
+    }
+]

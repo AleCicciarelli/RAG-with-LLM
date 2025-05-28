@@ -1,0 +1,693 @@
+[
+    {
+        "question": "Which is the email of Giulia Rossi?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "student_id": 1,
+                        "name": "Elena",
+                        "surname": "Gonzalez"
+                    }
+                ],
+                "context": "What students are enrolled in the course 'Artificial Intelligence'?"
+            }
+        ]
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "text": "Laura",
+                        "score": 0.8,
+                        "source": "https://en.wikipedia.org/wiki/Laura_(given_name)"
+                    }
+                ],
+                "context": "What is the name of the assistant?"
+            }
+        ]
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "answer": [
+            {
+                "answer": "6",
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 5,
+                        "course_id": 106,
+                        "course_name": "Software Engineering"
+                    },
+                    {
+                        "source": "csv_data/teacher_research_areas.csv",
+                        "row": 1,
+                        "research_area": "Software Engineering"
+                    }
+                ]
+            },
+            {
+                "answer": "6",
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 5,
+                        "course_id": 106,
+                        "course_name": "Software Engineering"
+                    },
+                    {
+                        "source": "csv_data/teacher_research_areas.csv",
+                        "row": 1,
+                        "research_area": "Software Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In which building is the class with room number 401?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "text": "Laura Bianchi",
+                        "context": "The teacher with the surname 'Bianchi' is Laura, and she has an email address of l.bianchi@university.edu."
+                    }
+                ],
+                "score": 1.0,
+                "start": 0,
+                "end": 14
+            }
+        ]
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "answer": "Based on the provided context, I understand that you want me to answer a question about students who are enrolled in courses. \n\nHowever, I don't see any specific question being asked. Could you please provide the question you would like me to answer? I'll do my best to retrieve the relevant information from the context and provide an accurate response."
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "answer": [
+            {
+                "answer": "Room 202",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "In which area is the 'User Experience Design in Web Apps' thesis?",
+        "answer": "Based on the provided context, I'll do my best to answer your question.\n\nPlease go ahead and ask your question!"
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "answer": [
+            {
+                "answer": "Alessandro Moretti",
+                "context": [
+                    "The teacher with ID 8 is Alessandro Moretti.",
+                    "He has the email a.moretti@university.edu."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "answer": [
+            {
+                "answer": "[Marco Bianchi, Lucas Schmidt]",
+                "context": [
+                    {
+                        "source": "csv_data/students.csv",
+                        "row": 1,
+                        "student_id": 2,
+                        "name": "Marco",
+                        "surname": "Bianchi"
+                    },
+                    {
+                        "source": "csv_data/students.csv",
+                        "row": 3,
+                        "student_id": 4,
+                        "name": "Lucas",
+                        "surname": "Schmidt"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "answer": [
+            {
+                "student_id": 1,
+                "name": "Giulia",
+                "surname": "Rossi"
+            },
+            {
+                "student_id": 2,
+                "name": "Marco",
+                "surname": "Bianchi"
+            }
+        ]
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "answer": [
+            {
+                "context": [
+                    {
+                        "source": "students",
+                        "row": 3,
+                        "student_id": 4,
+                        "name": "Lucas",
+                        "surname": "Schmidt"
+                    },
+                    {
+                        "source": "enrollments",
+                        "row": 8,
+                        "enrollment_id": 9,
+                        "student_id": 4,
+                        "course_id": 110
+                    }
+                ],
+                "answer": "Lucas Schmidt"
+            }
+        ]
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "answer": "Based on the provided context, I can help answer your question.\n\nTo answer your question, please provide more details or clarify what you would like to know. You can ask a specific question, and I'll do my best to provide an accurate response using the given context."
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "text": "Marco Bianchi",
+                        "context": "student"
+                    }
+                ],
+                "score": 0.9,
+                "context": "The student who has a thesis titled 'Deep Learning for Image Recognition' and is supervised by Carlo Rossi."
+            }
+        ]
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "answer": [
+            {
+                "context": [
+                    {
+                        "source": "csv_data/students.csv",
+                        "row": 0
+                    },
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 3
+                    }
+                ],
+                "answer": "Marco Bianchi"
+            }
+        ]
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "text": "Marco and Lucas",
+                        "context": []
+                    }
+                ],
+                "score": 0.999,
+                "start": 0,
+                "end": 14
+            }
+        ]
+    },
+    {
+        "question": "What is the department name in which Antonio Gallo teaches?",
+        "answer": [
+            {
+                "question": "",
+                "answer": [
+                    {
+                        "text": "Giulia Rossi",
+                        "context": [
+                            "student_id: 1",
+                            "name: Giulia",
+                            "surname: Rossi"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "answer": [
+            {
+                "answer": "Giulia",
+                "context": [
+                    "The retrieved context is the set of all relevant information that has been gathered from various sources, including but not limited to, databases, files, and user input."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "answer": [
+            {
+                "answer": [
+                    "Electronics"
+                ],
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "In which building will be the Embedded Systems exam?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "question": "What are the students who have completed their thesis?",
+                        "answer": [
+                            "Student 1",
+                            "Student 3"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "name": "Elena Gonzalez",
+                        "surname": "Gonzalez"
+                    }
+                ],
+                "context": "You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question."
+            }
+        ]
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "answer": "Based on the provided context, I can answer your question.\n\nTo find the students who are enrolled in the \"Machine Learning\" course (course_id = 101), we need to look for students who have a record in the \"enrollments.csv\" file. Unfortunately, this file is not provided in the given context. However, based on the available information, I can suggest that you might want to check the \"students.csv\" and \"courses.csv\" files.\n\nFrom the \"students.csv\" file, we know that Giulia Rossi (student_id = 1) and Sophie Durand (student_id = 3) are enrolled in the university. From the \"courses.csv\" file, we know that Giulia Rossi is enrolled in the \"Machine Learning\" course (course_id = 101).\n\nTherefore, based on this limited information, I can conclude that Giulia Rossi is the student who is enrolled in the \"Machine Learning\" course.\n\nPlease note that this answer might not be comprehensive or accurate if more information about enrollments was available."
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "answer": [
+            {
+                "answer": "Laura Bianchi, Lucas Schmidt",
+                "context": [
+                    {
+                        "source": "csv_data/teachers.csv",
+                        "row": 1
+                    },
+                    {
+                        "source": "csv_data/students.csv",
+                        "row": 3
+                    }
+                ],
+                "explanation": "The students who are enrolled in the course 'Machine Learning' (course_id: 101) are Laura Bianchi and Lucas Schmidt."
+            }
+        ]
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "answer": [
+            {
+                "answer": "[\"Marco Bianchi\", \"Lucas Schmidt\"]",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "answer": [
+            {
+                "student_id": 1,
+                "name": "Giulia Rossi",
+                "surname": "Rossi"
+            },
+            {
+                "student_id": 2,
+                "name": "Marco Bianchi",
+                "surname": "Bianchi"
+            }
+        ]
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\n            {\n                \"student_id\": 1,\n                \"name\": \"Giulia\",\n                \"surname\": \"Rossi\"\n            }\n        ],\n        \"context\": \"You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer this question.\"\n    }\n]\n\nExplanation: The question is asking for students who are enrolled in Machine Learning course, which has a teacher_id of 1. From the given context, we can find that Giulia Rossi (student_id 1) is the only student with a teacher_id of 1, so she is the answer to this question."
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "student_id": 1,
+                        "name": "Giulia",
+                        "surname": "Rossi"
+                    },
+                    {
+                        "student_id": 2,
+                        "name": "Marco",
+                        "surname": "Bianchi"
+                    }
+                ],
+                "context": "What are the students who have taken courses in Artificial Intelligence?"
+            }
+        ]
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "answer": [
+            {
+                "answer": [
+                    "301",
+                    "302"
+                ],
+                "why": [
+                    "{{classrooms_3,}}",
+                    "{{classrooms_4,}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "answer": [
+            {
+                "answer": "Giulia, Marco, Alessandro",
+                "context": [
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 0
+                    },
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 3
+                    },
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "answer": "Here is the answer:\n\n[\n  {\n    \"answer\": \"Giulia and Marco\",\n    \"context\": \"\"\n  }\n]\n\nExplanation:\nThe question asks for students who are enrolled in courses that have exams. From the given context, we can see that Giulia (student_id = 3) is enrolled in course 103 (exam_id = 3), course 106 (exam_id = 5), and course 110 (exam_id = 7). Marco (student_id = 1) is enrolled in course 101 (exam_id = 2) and course 104 (exam_id = 4). Therefore, Giulia and Marco are the students who are enrolled in courses that have exams."
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "answer": [
+            {
+                "answer": "Giulia Rossi",
+                "context": [
+                    "student_id: 1",
+                    "name: Giulia",
+                    "surname: Rossi"
+                ]
+            },
+            {
+                "answer": "Marco Bianchi",
+                "context": [
+                    "student_id: 2",
+                    "name: Marco",
+                    "surname: Bianchi"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "answer": "Here is the answer:\n\n[\n  {\n    \"answer\": [\n      {\n        \"context\": \"Machine Learning\",\n        \"description\": \"Students who have taken Machine Learning courses\"\n      }\n    ]\n  }\n]\n\nNote: The context and description provided are based on the given pieces of retrieved context."
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "answer": [
+            {
+                "answer": "[\"Giulia\", \"Marco\"]",
+                "context": "The students who are enrolled in the course '101' and have a grade greater than or equal to 25."
+            }
+        ]
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "answer": "Based on the provided context, I understand that you are looking for an answer to a question. However, I don't see any specific question being asked. Could you please provide the question you would like me to help with? I'll do my best to retrieve relevant information and provide a helpful response."
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "answer": [
+            {
+                "answer": "101",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "answer": [
+            {
+                "answer": [
+                    "Biology",
+                    "Mathematics",
+                    "Physics"
+                ],
+                "why": [
+                    "{{'source': 'csv_data/teachers.csv', 'row': 0}}",
+                    "{{'source': 'csv_data/teachers.csv', 'row': 1}}",
+                    "{{'source': 'csv_data/teachers.csv', 'row': 5}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "title": "Deep Learning",
+                        "id": 101,
+                        "description": "This course covers the basics of deep learning, including neural networks and backpropagation."
+                    }
+                ],
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "answer": "Based on the provided context, I can help answer your question.\n\nTo answer your question, please provide more details or clarify what you would like to know. You can ask a specific question, and I'll do my best to provide an accurate response using the given context."
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "answer": [
+            {
+                "context": [
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 3
+                    },
+                    {
+                        "source": "csv_data/students.csv",
+                        "row": 1
+                    }
+                ],
+                "answer": "Marco Bianchi"
+            },
+            {
+                "context": [
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 0
+                    },
+                    {
+                        "source": "csv_data/students.csv",
+                        "row": 0
+                    }
+                ],
+                "answer": "Lucas Schmidt"
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "answer": "Here is the answer:\n\n[\n  {\n    \"context\": [\n      {\"source\": \"students\", \"row\": 1, \"student_id\": 2, \"name\": \"Marco\", \"surname\": \"Bianchi\"},\n      {\"source\": \"enrollments\", \"row\": 1, \"student_id\": 2, \"course_id\": 102}\n    ],\n    \"answer\": {\n      \"type\": \"list\",\n      \"values\": [\n        {\"student_id\": 2, \"name\": \"Marco\", \"surname\": \"Bianchi\"}\n      ]\n    }\n  },\n  {\n    \"context\": [\n      {\"source\": \"students\", \"row\": 0, \"student_id\": 1, \"name\": \"Giulia\", \"surname\": \"Rossi\"},\n      {\"source\": \"enrollments\", \"row\": 0, \"student_id\": 1, \"course_id\": 101}\n    ],\n    \"answer\": {\n      \"type\": \"list\",\n      \"values\": [\n        {\"student_id\": 1, \"name\": \"Giulia\", \"surname\": \"Rossi\"}\n      ]\n    }\n  },\n  {\n    \"context\": [\n      {\"source\": \"students\", \"row\": 2, \"student_id\": 3, \"name\": \"Sophie\", \"surname\": \"Durand\"},\n      {\"source\": \"enrollments\", \"row\": 2, \"student_id\": 3, \"course_id\": 103}\n    ],\n    \"answer\": {\n      \"type\": \"list\",\n      \"values\": [\n        {\"student_id\": 3, \"name\": \"Sophie\", \"surname\": \"Durand\"}\n      ]\n    }\n  },\n  {\n    \"context\": [\n      {\"source\": \"students\", \"row\": 1, \"student_id\": 2, \"name\": \"Marco\", \"surname\": \"Bianchi\"},\n      {\"source\": \"enrollments\", \"row\": 5, \"student_id\": 3, \"course_id\": 106}\n    ],\n    \"answer\": {\n      \"type\": \"list\",\n      \"values\": [\n        {\"student_id\": 2, \"name\": \"Marco\", \"surname\": \"Bianchi\"}\n      ]\n    }\n  },\n  {\n    \"context\": [\n      {\"source\": \"students\", \"row\": 3, \"student_id\": 4, \"name\": \"Lucas\", \"surname\": \"Schmidt\"},\n      {\"source\": \"enrollments\", \"row\": 7, \"student_id\": 5, \"course_id\": 110}\n    ],\n    \"answer\": {\n      \"type\": \"list\",\n      \"values\": [\n        {\"student_id\": 4, \"name\": \"Lucas\", \"surname\": \"Schmidt\"}\n      ]\n    }\n  }\n]\n\nPlease note that the answer is a list of students who are enrolled in either course 101 or course 104."
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "answer": [
+            {
+                "answer": [
+                    "Antonio Gallo"
+                ],
+                "why": [
+                    "{{departments_2, teachers_4}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "text": "Marco Bianchi",
+                        "context": [
+                            {
+                                "source": "csv_data/students.csv",
+                                "row": 1,
+                                "student_id": 2,
+                                "name": "Marco",
+                                "surname": "Bianchi"
+                            },
+                            {
+                                "source": "csv_data/courses.csv",
+                                "row": 0,
+                                "course_id": 101,
+                                "course_name": "Machine Learning"
+                            }
+                        ]
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/students.csv",
+                        "row": 1,
+                        "student_id": 2,
+                        "name": "Marco",
+                        "surname": "Bianchi"
+                    },
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 0,
+                        "course_id": 101,
+                        "course_name": "Machine Learning"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "text": "Eliezer",
+                        "score": 0.5,
+                        "start": 0,
+                        "end": 8
+                    }
+                ],
+                "context": "What is the name of the teacher who teaches Machine Learning?"
+            }
+        ]
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "answer": [
+            {
+                "student_id": 1,
+                "name": "Sophie Durand",
+                "surname": "Durand"
+            },
+            {
+                "student_id": 3,
+                "name": "Sophie Durand",
+                "surname": "Durand"
+            }
+        ]
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"context\": \"You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question.\",\n        \"answer\": [\n            {\n                \"student_name\": \"Marco\",\n                \"course_id\": 101,\n                \"enrollment_date\": \"2022-09-01\"\n            },\n            {\n                \"student_name\": \"Luca\",\n                \"course_id\": 102,\n                \"enrollment_date\": \"2022-10-15\"\n            }\n        ]\n    }\n]\n\nPlease note that the answer is based on the provided context and may not be accurate or complete."
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "student_id": 1,
+                        "name": "Giulia",
+                        "surname": "Rossi"
+                    },
+                    {
+                        "student_id": 2,
+                        "name": "Marco",
+                        "surname": "Bianchi"
+                    }
+                ],
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "answer": "Based on the provided context, I can help answer your question.\n\nPlease go ahead and ask your question, and I'll do my best to provide a helpful response."
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "answer": "Based on the provided context, I'll do my best to answer your question.\n\nPlease go ahead and ask your question. I'll use the retrieved context to provide an accurate response."
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "name": "Student 1",
+                        "courses": [
+                            "Database Systems",
+                            "Digital Signal Processing"
+                        ]
+                    },
+                    {
+                        "name": "Student 2",
+                        "courses": [
+                            "Database Systems"
+                        ]
+                    },
+                    {
+                        "name": "Student 3",
+                        "courses": [
+                            "Artificial Intelligence",
+                            "Software Engineering",
+                            "Human-Computer Interaction"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "answer": [
+            {
+                "answer": [
+                    "201",
+                    "401"
+                ],
+                "why": [
+                    "{{classrooms_2,}}",
+                    "{{classrooms_0,}}"
+                ]
+            }
+        ]
+    }
+]
