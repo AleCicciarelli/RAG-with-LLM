@@ -1,0 +1,179 @@
+import json
+import csv
+import os
+from collections import defaultdict
+
+def load_json(path):
+    with open(path, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+def compute_metrics(tp, fp, fn, exact=0, total=0):
+    precision = tp / (tp + fp) if (tp + fp) else 0
+    recall = tp / (tp + fn) if (tp + fn) else 0
+    f1 = (2 * precision * recall) / (precision + recall) if (precision + recall) else 0
+    accuracy = exact / total if total else 0
+    return precision, recall, f1, accuracy
+
+def evaluate_lists(true_list, pred_list):
+    true_set = set(true_list)
+    pred_set = set(pred_list)
+
+    tp = len(true_set & pred_set)
+    fp = len(pred_set - true_set)
+    fn = len(true_set - pred_set)
+
+    return tp, fp, fn
+
+def main():
+    gt_data = load_json("ground_truth2.json")
+    question_types = load_json("questions.json")
+
+    # Cartella contenente i file di output predetti
+    pred_folder = "outputs_ollama_llama8b"
+    global_metrics_file = os.path.join(pred_folder, "global_metrics_all_k.csv")
+    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_all_k.csv")
+
+    # Scrivi header CSV solo se i file non esistono
+    write_header_global = not os.path.exists(global_metrics_file)
+    write_header_type = not os.path.exists(type_metrics_file)
+
+    with open(global_metrics_file, "a", newline="", encoding="utf-8") as f_global, \
+         open(type_metrics_file, "a", newline="", encoding="utf-8") as f_type:
+
+        global_writer = csv.writer(f_global)
+        type_writer = csv.writer(f_type)
+
+        if write_header_global:
+            global_writer.writerow(["K", "Category", "Precision", "Recall", "F1", "Accuracy"])
+        if write_header_type:
+            type_writer.writerow([
+                "K", "Question Type",
+                "Answer Precision", "Answer Recall", "Answer F1", "Answer Accuracy",
+                "Explanation Precision", "Explanation Recall", "Explanation F1", "Explanation Accuracy",
+                "Count"
+            ])
+
+        # Itera su tutti i file con pattern k da 10 a 69 (come esempio)
+        for k_val in range(10, 70):
+            pred_file = os.path.join(pred_folder, f"outputs_ollama_llama8b_outputs_k_{k_val}llama8b.json")
+            if not os.path.isfile(pred_file):
+                print(f"[k={k_val}] File {pred_file} non trovato, salto...")
+                continue
+
+            pred_data = load_json(pred_file)
+            if not pred_data:
+                print(f"[k={k_val}] Nessuna predizione trovata, salto...")
+                continue
+            if len(gt_data) != len(pred_data):
+                print(f"[k={k_val}] Mismatch numero domande (GT {len(gt_data)} vs Pred {len(pred_data)}), salto...")
+                continue
+
+            # Inizializza metriche per tipo domanda
+            metrics_by_type = defaultdict(lambda: {
+                "tp_ans": 0, "fp_ans": 0, "fn_ans": 0,
+                "tp_expl": 0, "fp_expl": 0, "fn_expl": 0,
+                "exact_ans": 0, "exact_expl": 0,
+                "count": 0
+            })
+
+            # Metriche globali
+            answer_tp = answer_fp = answer_fn = 0
+            answer_exact = 0
+            expl_tp = expl_fp = expl_fn = 0
+            expl_exact = 0
+
+            for gt, pred in zip(gt_data, pred_data):
+                question = pred["question"]
+                q_type = question_types.get(question, "unknown")
+
+                # Normalizza risposte (sempre lista di stringhe)
+                true_answer = gt["answer"]
+                if not isinstance(true_answer, list):
+                    true_answer = [str(true_answer)]
+                else:
+                    true_answer = [str(x) for x in true_answer]
+
+                pred_answer = [str(x) for x in pred["answer"][0]["answer"]]
+
+                # Calcola TP, FP, FN per risposta
+                tp_ans, fp_ans, fn_ans = evaluate_lists(true_answer, pred_answer)
+
+                # Calcola se risposta esatta (tutti corrispondono)
+                exact_answer = 1 if (set(true_answer) == set(pred_answer)) else 0
+
+                # Estrai spiegazioni
+                true_expl_raw = gt["why"]
+                true_expl = set()
+                if isinstance(true_expl_raw, str):
+                    # Può essere una stringa singola o multipla separata da "}}"
+                    parts = [s.strip("{} ") for s in true_expl_raw.split("}}") if s.strip()]
+                    true_expl.update(parts)
+                elif isinstance(true_expl_raw, list):
+                    for s in true_expl_raw:
+                        parts = [ss.strip("{} ") for ss in s.split("}}") if ss.strip()]
+                        true_expl.update(parts)
+
+                pred_expl = set([x.strip("{} ") for x in pred["answer"][0].get("why", [])])
+
+                # Calcola TP, FP, FN per spiegazione
+                # Valuta solo se risposta corretta (intersection non vuota)
+                #if tp_ans > 0:
+                tp_expl, fp_expl, fn_expl = evaluate_lists(true_expl, pred_expl)
+                #else:
+                #    tp_expl = fp_expl = fn_expl = 0
+
+                # Calcola se spiegazione esatta
+                exact_expl = 1 if (true_expl == pred_expl and exact_answer) else 0
+
+                # Aggiorna metriche globali
+                answer_tp += tp_ans
+                answer_fp += fp_ans
+                answer_fn += fn_ans
+                answer_exact += exact_answer
+
+                expl_tp += tp_expl
+                expl_fp += fp_expl
+                expl_fn += fn_expl
+                expl_exact += exact_expl
+
+                # Aggiorna metriche per tipo domanda
+                m = metrics_by_type[q_type]
+                m["count"] += 1
+                m["tp_ans"] += tp_ans
+                m["fp_ans"] += fp_ans
+                m["fn_ans"] += fn_ans
+                m["exact_ans"] += exact_answer
+
+                m["tp_expl"] += tp_expl
+                m["fp_expl"] += fp_expl
+                m["fn_expl"] += fn_expl
+                m["exact_expl"] += exact_expl
+
+            # Calcola metriche globali
+            ans_prec, ans_rec, ans_f1, ans_acc = compute_metrics(
+                answer_tp, answer_fp, answer_fn, answer_exact, len(gt_data)
+            )
+            expl_prec, expl_rec, expl_f1, expl_acc = compute_metrics(
+                expl_tp, expl_fp, expl_fn, expl_exact, len(gt_data)
+            )
+
+            # Scrivi metriche globali nel CSV
+            global_writer.writerow([k_val, "Answer", f"{ans_prec:.4f}", f"{ans_rec:.4f}", f"{ans_f1:.4f}", f"{ans_acc:.4f}"])
+            global_writer.writerow([k_val, "Explanation", f"{expl_prec:.4f}", f"{expl_rec:.4f}", f"{expl_f1:.4f}", f"{expl_acc:.4f}"])
+
+            # Scrivi metriche per tipo domanda
+            for q_type, stats in metrics_by_type.items():
+                ans_m = compute_metrics(stats["tp_ans"], stats["fp_ans"], stats["fn_ans"], stats["exact_ans"], stats["count"])
+                expl_m = compute_metrics(stats["tp_expl"], stats["fp_expl"], stats["fn_expl"], stats["exact_expl"], stats["count"])
+
+                type_writer.writerow([
+                    k_val, q_type,
+                    f"{ans_m[0]:.4f}", f"{ans_m[1]:.4f}", f"{ans_m[2]:.4f}", f"{ans_m[3]:.4f}",
+                    f"{expl_m[0]:.4f}", f"{expl_m[1]:.4f}", f"{expl_m[2]:.4f}", f"{expl_m[3]:.4f}",
+                    stats["count"]
+                ])
+
+            print(f"[k={k_val}] Processed metrics: Answer F1={ans_f1:.4f}, Explanation F1={expl_f1:.4f}")
+
+if __name__ == "__main__":
+    main()
