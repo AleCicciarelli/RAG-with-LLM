@@ -1,0 +1,314 @@
+[
+    {
+        "question": "Which is the email of Giulia Rossi?",
+        "answer": [
+            {
+                "answer": "Giulia, Lucas"
+            }
+        ]
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "answer": [
+            {
+                "answer": "Giulia Rossi"
+            },
+            {
+                "answer": "Sophie Durand"
+            }
+        ]
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "answer": [
+            {
+                "answer": "Gianni"
+            },
+            {
+                "answer": "There are no students mentioned by name in the provided context."
+            }
+        ]
+    },
+    {
+        "question": "In which building is the class with room number 401?",
+        "answer": "I'm happy to help! However, I don't see a specific question in your prompt. Could you please provide the question you'd like me to answer using the provided context?"
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "answer": "Based on the provided context, I can answer your question.\n\nThe students enrolled in either \"Machine Learning\" (course_id = 101) or \"Deep Learning\" (no such course exists, but I assume you meant \"Artificial Intelligence\", which is not present either; however, there's a research area and thesis with this title) are:\n\n1. Giulia Rossi (student_id = 1) - enrolled in Machine Learning (course_id = 101)\n2. Marco Bianchi (student_id = 2) - no enrollment in Machine Learning or Deep Learning\n\nSo, the answer is: Giulia Rossi and Marco Bianchi."
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "answer": [
+            {
+                "answer": "The classrooms that are used for Machine Learning and Advanced Algorithms are not specified in the given context."
+            }
+        ]
+    },
+    {
+        "question": "In which area is the 'User Experience Design in Web Apps' thesis?",
+        "answer": "Based on the provided context, I can answer your question.\n\nThe question is: Which students are enrolled in either Machine Learning (course ID 101) or Advanced Algorithms (course ID 104)?\n\nAfter analyzing the context, I found that the students enrolled in these courses are:\n\n* Giulia Rossi (student ID 1), enrolled in Machine Learning.\n* No other students are explicitly mentioned as being enrolled in Advanced Algorithms. However, since we don't have explicit enrollment data for each student, we can't rule out the possibility of other students being enrolled in this course.\n\nPlease let me know if you'd like me to clarify or expand on this answer!"
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "answer": "The answer is:\n\nGiulia Rossi and Marco Bianchi.\n\nExplanation:\nFrom the provided context, we can see that Giulia Rossi (student_id: 1) is enrolled in course 101 (Machine Learning) and Marco Bianchi (student_id: 2) is enrolled in course 102 (Database Systems). However, the question asks for students who are enrolled in courses related to Machine Learning or Algorithms. \n\nFrom the context, we can see that course 101 (Machine Learning) is related to Machine Learning, and course 104 (Algorithms Optimization) is related to Algorithms. We also know that Giulia Rossi is enrolled in course 101 (Machine Learning), and Marco Bianchi is not enrolled in any of these courses directly. However, we can see that Marco Bianchi is enrolled in course 101 (Machine Learning) indirectly through the enrollment table.\n\nTherefore, the answer is Giulia Rossi and Marco Bianchi."
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "answer": "Based on the provided context, I understand that you want me to answer a question. However, I don't see a specific question asked. If you meant to ask \"Who are the students enrolled in Machine Learning and Advanced Algorithms courses?\", I can help with that.\n\nFrom the provided context, I found the following information:\n\n* Course 101: Machine Learning (teacher: 1)\n\t+ Student 1: Marco Bianchi\n* Course 104: Advanced Algorithms (teacher: 4)\n\t+ No students explicitly mentioned\n\nIf you could provide more context or clarify your question, I'd be happy to help."
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "answer": "Based on the provided context, I can answer your question.\n\nThe students enrolled in Machine Learning (course_id: 101) or Advanced Algorithms (course_id: 104) are:\n\n* Marco Bianchi (student_id: 2)\n* Elena Rossi (student_id: 1)\n\nThese students are enrolled in either Machine Learning or Advanced Algorithms."
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "answer": "Based on the provided context, I can answer your question.\n\nThe students enrolled in either \"Machine Learning\" (course_id = 101) or \"Database Systems\" (course_id = 104) are:\n\n1. Giulia Rossi (student_id = 1) - enrolled in Machine Learning\n2. Marco Bianchi (student_id = 2) - not enrolled in either course\n3. Sophie Durand (student_id = 3) - not enrolled in either course\n4. Lucas Schmidt (student_id = 4) - not enrolled in either course\n\nSo, the answer is: Giulia Rossi and Marco Bianchi."
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "answer": [
+            {
+                "answer": "Giulia De Luca and Lucas Schmidt",
+                "context": "Machine Learning"
+            },
+            {
+                "answer": "Sophie Durand",
+                "context": "Advanced Algorithms"
+            }
+        ]
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "answer": "Based on the provided context, I can answer your question.\n\nYou want to know which students are enrolled in courses \"Machine Learning\" or \"Artificial Intelligence\". However, there is no course with the name \"Machine Learning\" in the provided context. But there are courses related to Artificial Intelligence.\n\nThe students enrolled in courses related to Artificial Intelligence are:\n\n1. Student with ID 1 (name: Marco, surname: Bianchi) - Enrolled in thesis with title \"Deep Learning for Image Recognition\" which is related to Artificial Intelligence.\n\nPlease note that the provided context does not contain any course named \"Machine Learning\". If you have any further questions or need more information, feel free to ask!"
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "answer": [
+            {
+                "answer": "Giulia",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "answer": "Based on the provided context, I can answer your question.\n\nThe question is not explicitly stated, but based on the context, I assume it's about finding students who are enrolled in courses related to Machine Learning or Data Science.\n\nTo answer this, we need to join the `enrollments` table with the `courses` table (not provided) and then filter the results based on the course names. Since the `courses` table is not available, I'll assume that the course IDs 101 and 104 are related to Machine Learning or Data Science.\n\nHere's the answer:\n\nThe students enrolled in courses related to Machine Learning or Data Science are:\n\n* Student ID 1 (name: unknown, surname: unknown) - enrolled in course ID 101 (Machine Learning)\n* Student ID 1 (name: unknown, surname: unknown) - enrolled in course ID 104 (Data Science)\n\nPlease note that the student names and surnames are not available in the provided context. If you need more information or clarification, please let me know!"
+    },
+    {
+        "question": "What is the department name in which Antonio Gallo teaches?",
+        "answer": [
+            {
+                "answer": "Giulia Rossi and Marco Bianchi",
+                "context": "The students who took Machine Learning or Advanced Algorithms courses are Giulia Rossi and Marco Bianchi."
+            }
+        ]
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "answer": [
+            "Giulia Rossi",
+            "Marco Bianchi"
+        ]
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "answer": [
+            {
+                "answer": "Marco Verdi"
+            }
+        ]
+    },
+    {
+        "question": "In which building will be the Embedded Systems exam?",
+        "answer": "I'm happy to help! However, I don't see a specific question being asked. Could you please provide the question or task you'd like me to assist with using the provided context?"
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "answer": "Based on the provided context, I can answer your question.\n\nThe question is not explicitly stated, but based on the context, I assume it's about finding students who are enrolled in courses related to Machine Learning or Algorithms Optimization.\n\nFrom the retrieved context, we have:\n\n* In `enrollments.csv`, there are no specific course names mentioned. However, we can use the `research_area` column from `teacher_research_areas.csv` to identify teachers who specialize in Machine Learning or Algorithms Optimization.\n* From `teacher_research_areas.csv`, we find:\n\t+ Teacher ID 8 has a research area of Machine Learning.\n\t+ Teacher ID 4 has a research area of Algorithms Optimization.\n\nNow, let's find the students enrolled with these teachers:\n\n* From `enrollments.csv`, we have:\n\t+ Student ID 1 is enrolled with Teacher ID 8 (Machine Learning).\n\t+ Student ID 2 is enrolled with Teacher ID 4 (Algorithms Optimization).\n\nFinally, let's retrieve the student names from `students.csv`:\n\n* Student ID 1: name = Emma, surname = Johnson\n* Student ID 2: name = Michael, surname = Brown\n\nTherefore, the answer is:\n\nThe students enrolled in courses related to Machine Learning or Algorithms Optimization are:\n1. Emma Johnson (Machine Learning)\n2. Michael Brown (Algorithms Optimization)"
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "answer": "Based on the provided context, I can answer your question.\n\nThe students enrolled in Machine Learning (course_id: 101) or Advanced Algorithms (course_id: 104) are:\n\n1. Giulia Rossi (student_id: 1) - Enrolled in Machine Learning and Advanced Algorithms.\n2. Marco Bianchi (student_id: 2) - Not found in the provided context.\n\nThe answer is:\nGiulia Rossi, Marco Bianchi"
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "answer": "I'm happy to help! However, I don't see a specific question in your request. Could you please provide the question you'd like me to answer based on the provided context?"
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "answer": "Based on the provided context, I can answer your question.\n\nThe question is not explicitly stated, but based on the context, I assume it's about finding students who are enrolled in either \"Machine Learning\" or \"Advanced Algorithms\" courses.\n\nTo answer this, I'll analyze the provided context. \n\nFrom the `enrollments.csv` table (not explicitly mentioned but can be inferred from the context), we need to find students who are enrolled in courses with IDs 101 (Machine Learning) and 104 (Advanced Algorithms).\n\nAfter analyzing the context, I found the following students:\n\n1. Student ID: 1 - Name: [Not provided] - Enrolled in course 101 (Machine Learning)\n2. Student ID: 1 - Name: [Not provided] - Enrolled in course 104 (Advanced Algorithms)\n3. Student ID: 2 - Name: Marco Bianchi - Not enrolled in either course\n4. Student ID: 3 - Name: [Not provided] - Not enrolled in either course\n5. Student ID: 4 - Name: [Not provided] - Not enrolled in either course\n\nSo, the students who are enrolled in either \"Machine Learning\" or \"Advanced Algorithms\" courses are:\n\n1. Student ID: 1 (enrolled in both courses)\n\nPlease note that the names of students with IDs 1, 3, and 4 are not provided in the context."
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "answer": [
+            {
+                "answer": "Giulia Bianchi"
+            }
+        ]
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "answer": [
+            "Giulia Bianchi",
+            "Marco Rossi"
+        ]
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "answer": "The students enrolled in either \"Artificial Intelligence\" or \"Algorithms Optimization\" courses are:\n\nGiulia Rossi and Marco Bianchi."
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "answer": "I'm happy to help! However, I don't see a specific question or task in the provided context. Could you please clarify what you would like me to assist with? Are you looking for answers to a particular question, or perhaps trying to extract certain information from the provided data? Let me know and I'll do my best to help!"
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "answer": [
+            {
+                "student_name": "Giulia",
+                "student_surname": "Rossi"
+            },
+            {
+                "student_name": "Luca",
+                "student_surname": "Bianchi"
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "answer": {
+            "answer": "Gianni and another student",
+            "explanation": "The students enrolled in Machine Learning are Gianni and another student."
+        }
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "answer": "Based on the provided context, I can answer your question.\n\nThe students who are enrolled in either Machine Learning or Advanced Algorithms courses are:\n\n1. Marco Bianchi (enrolled in Machine Learning)\n2. Lucas Schmidt (enrolled in Advanced Algorithms)\n\nThese students' names and surnames are: \n\nGiulia De Luca, Marco Bianchi"
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "answer": [
+            "Giulia Rossi",
+            "Marco Bianchi"
+        ]
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "answer": [
+            {
+                "answer": "Giulia",
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "answer": "Based on the provided context, I can answer your question.\n\nThe question is: \"Which students are enrolled in Machine Learning (course_id = 101) or Advanced Data Structures (course_id = 106)?\"\n\nTo answer this, we need to find the students who have grades for course_id = 101 or course_id = 106. \n\nFrom the provided context, I found the following students:\n\n* For course_id = 101: \n    - student_id = 1 (grade_id = 1)\n* For course_id = 106:\n    - student_id = 3 (grade_id = 5 and grade_id = 6)\n    - student_id = 5 (grade_id = 7)\n\nSo, the students enrolled in Machine Learning (course_id = 101) or Advanced Data Structures (course_id = 106) are:\n\n* Student with id = 1\n* Student with id = 3\n* Student with id = 5"
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "answer": [
+            {
+                "answer": "No question was provided."
+            }
+        ]
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "answer": [
+            {
+                "answer": "Carlo Rossi, Laura Bianchi, Alessandro Moretti, Luca Esposito, Francesco Conti",
+                "why": "These are the names of teachers in the Computer Science department (department_id = 1)"
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "answer": "Based on the provided context, I understand that you want me to answer a question. However, I don't see a specific question asked. Could you please provide the question you'd like me to answer? I'll do my best to assist you using the given context."
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "answer": "Based on the provided context, I can answer your question as follows:\n\nThe students enrolled in either Machine Learning (course_id = 101) or Advanced Algorithms (course_id = 104) are:\n\n1. Giulia Rossi (student_id = 1) - enrolled in Advanced Algorithms (course_id = 104)\nAnswer: Giulia Rossi and"
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "answer": "The students who are enrolled in courses \"Machine Learning\" or \"Data Science\" are:\n\n* Giulia Rossi (enrolled in Machine Learning)\n* Marco Bianchi (enrolled in Data Science)"
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "answer": [
+            {
+                "answer": "Giulia Rossini",
+                "context": ""
+            },
+            {
+                "answer": "Marco Bianchi, Giuilia Rossini",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "answer": [
+            {
+                "answer": "Carlo Verdi, Marco Verdi",
+                "why": "The question is asking for the names of teachers who teach in the Electronics department. From the context, we can see that Carlo Verdi and Marco Verdi are both teachers with department 2, which corresponds to the Electronics department."
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "answer": "Based on the provided context, I understand that you want me to answer a question. However, I don't see a specific question asked. Could you please provide the question you'd like me to answer? I'll do my best to assist you using the given context."
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "answer": [
+            {
+                "answer": "Carlo",
+                "context": []
+            },
+            {
+                "answer": "Elisabetta",
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "answer": [
+            {
+                "answer": "Giulia De Luca",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "answer": "Based on the provided context, I can answer your question.\n\nThe question is: Who are the students enrolled in Machine Learning (course_id: 104) or Advanced Computer Systems (course_id: 106)?\n\nAfter analyzing the context, I found the following information:\n\n* Student \"Giulia\" with student_id: 1 is enrolled in course_id: 104 (Machine Learning).\n* There is no student enrolled in course_id: 106 (Advanced Computer Systems).\n\nSo, the answer is:\nGiulia"
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "answer": "Based on the provided context, I can answer your question.\n\nThe students enrolled in Machine Learning (course_id: 101) or Advanced Database Systems (course_id: 104) are:\n\n1. Giulia Rossi (student_id: 1)\n2. Marco Bianchi (student_id: 2)\n\nThese students are enrolled in the mentioned courses, which correspond to Machine Learning and Advanced Database Systems respectively."
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "answer": [
+            {
+                "answer": "Giulia Rossi, Marco Bianchi"
+            }
+        ]
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "answer": "Based on the provided context, I can answer your question.\n\nThe students enrolled in either \"Machine Learning\" (which doesn't exist in the provided context) or \"Advanced Algorithms\" are:\n\n1. Giulia Rossi (student_id: 1)\n2. Marco Bianchi (student_id: 2)\n\nThese students are enrolled in courses with course_ids 101 and 104, respectively."
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "answer": "Based on the provided context, I understand that you want me to answer a question. However, I don't see a specific question asked. If you could provide the question, I'll do my best to answer it using the given context.\n\nIf you're looking for students enrolled in courses with names \"Artificial Intelligence\" or \"Human-Computer Interaction\", I can try to help with that. Based on the provided context, here are the results:\n\n* Artificial Intelligence (course_id: 108): No students enrolled.\n* Human-Computer Interaction (course_id: 110): Students enrolled are student_id: 3, student_id: 4, and student_id: 5.\n\nPlease let me know if this is what you were looking for or if I can assist with something else."
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "answer": "I'm happy to help! However, I don't see a specific question or task that you'd like me to assist with. Could you please provide more context or clarify what you'd like me to do with the provided data? Are you looking for answers to specific questions, or would you like me to perform some analysis or processing on the data?"
+    }
+]

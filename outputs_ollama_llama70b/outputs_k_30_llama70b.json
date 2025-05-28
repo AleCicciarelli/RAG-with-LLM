@@ -1,0 +1,629 @@
+[
+    {
+        "question": "Which is the email of Giulia Rossi?",
+        "answer": [
+            {
+                "answer": "gilena.gonzalez@student.edu",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "answer": [
+            {
+                "answer": [
+                    "Computer Science"
+                ],
+                "why": "The department name is retrieved from the 'departments.csv' file where the department_id matches with the department id of the teacher Laura in the 'teachers.csv' file."
+            }
+        ]
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "answer": [
+            {
+                "answer": [
+                    "6"
+                ],
+                "why": [
+                    "{{courses_5}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In which building is the class with room number 401?",
+        "answer": [
+            {
+                "answer": [
+                    "Electronics"
+                ],
+                "why": [
+                    "{{classrooms_5}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "answer": "I'm happy to help! However, I don't see a specific question being asked. Could you please provide the question or task you'd like me to assist with using the provided context?"
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "answer": [
+            {
+                "answer": [
+                    "101"
+                ],
+                "why": [
+                    "{{courses_1,exams_0,classrooms_0}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In which area is the 'User Experience Design in Web Apps' thesis?",
+        "answer": [
+            {
+                "answer": "Marco Bianchi, Lucas Schmidt, Sophie Durand, Elena Gonzalez, Giulia Rossi",
+                "justification": "The question is asking for the names of students who are enrolled in a course taught by a teacher with a specific research area. Based on the provided context, the students who match this criteria are Marco Bianchi, Lucas Schmidt, Sophie Durand, Elena Gonzalez, and Giulia Rossi."
+            }
+        ]
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "answer": [
+            {
+                "answer": [
+                    "Carlo Rossi",
+                    "Alessandro Moretti"
+                ],
+                "why": "The question asks for the instructor who teaches Machine Learning. According to the context, there is no course named 'Machine Learning'. However, we can find instructors who teach courses related to Machine Learning or have research areas related to it. Carlo Rossi (teacher_id: 1) has a thesis with a title 'Deep Learning for Image Recognition' and Alessandro Moretti (teacher_id: 8) has a research area in Machine Learning."
+            }
+        ]
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "answer": [
+            {
+                "answer": [
+                    "Artificial Intelligence"
+                ],
+                "why": [
+                    "{{teachers_0, teacher_research_areas_0}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "answer": [
+            {
+                "answer": "5",
+                "context": "The research area of the teacher with id 5 is Data Mining."
+            }
+        ]
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "answer": [
+            {
+                "answer": "No question was provided.",
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "answer": [
+            "Giulia Bianchi",
+            "Lucas Schmidt"
+        ]
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "answer": [
+            {
+                "answer": [
+                    "28"
+                ],
+                "why": [
+                    "{{grades_0,students_0,courses_0}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "answer": [
+            {
+                "answer": "I don't know",
+                "confidence": 0.5,
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "answer": "[\n    {\n        \"answer\": [\"Machine Learning\", \"Data Mining\", \"Human-Computer Interaction\", \"Database Systems\", \"Digital Signal Processing\", \"Artificial Intelligence\"],\n        \"witness\": [\"csv_data/courses.csv\", \"row\": 0], [\"csv_data/courses.csv\", \"row\": 1], [\"csv_data/courses.csv\", \"row\": 2], [\"csv_data/courses.csv\", \"row\": 3], [\"csv_data/courses.csv\", \"row\": 4], [\"csv_data/courses.csv\", \"row\": 5]]\n    }\n]"
+    },
+    {
+        "question": "What is the department name in which Antonio Gallo teaches?",
+        "answer": [
+            {
+                "answer": [
+                    "Electronics"
+                ],
+                "why": [
+                    "teachers.csv row 4",
+                    "departments.csv row 1"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "answer": [
+            {
+                "answer": [
+                    "26"
+                ],
+                "why": [
+                    "{{courses_9,students_4,grades_6}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "answer": [
+            {
+                "answer": [
+                    "Engineering"
+                ],
+                "why": [
+                    "{{departments_1}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In which building will be the Embedded Systems exam?",
+        "answer": [
+            {
+                "answer": [
+                    "Electronics"
+                ],
+                "why": [
+                    "{{courses_2,classrooms_5,exams_2}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "answer": [
+            {
+                "answer": "Machine Learning for Natural Language Processing",
+                "context": "The title of the thesis supervised by Alessandro Rossi is Machine Learning for Natural Language Processing."
+            }
+        ]
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "answer": [
+            {
+                "answer": "Giulia Rossi",
+                "why": "The student Giulia Rossi is enrolled in the course Machine Learning (course_id: 101) and Advanced Algorithms (course_id: 104)."
+            },
+            {
+                "answer": "Elena Gonzalez",
+                "why": "The student Elena Gonzalez is enrolled in the course Human-Computer Interaction (course_id: 110)."
+            }
+        ]
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "answer": [
+            {
+                "answer": [
+                    "Science"
+                ],
+                "why": [
+                    "{{departments_5}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "answer": [
+            {
+                "answer": [
+                    "Giulia Rossi",
+                    "Sophie Durand"
+                ],
+                "why": [
+                    "{{courses_1,enrollments_1,students_0}}",
+                    "{{courses_1,enrollments_5,students_2}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "answer": [
+            "Artificial Intelligence",
+            "Data Science",
+            "Embedded Systems",
+            "Algorithms Optimization",
+            "Signal Processing",
+            "Software Engineering",
+            "Cybersecurity",
+            "Human-Computer Interaction"
+        ]
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "answer": [
+            {
+                "answer": "I don't know",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "answer": [
+            {
+                "answer": [
+                    "Marco Bianchi",
+                    "Elena Gonzalez"
+                ],
+                "context": "The students with a grade of 28 in the course 'Human-Computer Interaction' are Marco Bianchi and Elena Gonzalez."
+            }
+        ]
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "answer": [
+            {
+                "answer": [
+                    "301",
+                    "302"
+                ],
+                "why": [
+                    "{{classrooms_3, classrooms_4}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "answer": "I don't have enough information to answer your question. The context provided does not contain the necessary details to determine the day and time of the Software Engineering course exam."
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "answer": [
+            {
+                "answer": [
+                    "Advanced Algorithms",
+                    "Artificial Intelligence"
+                ],
+                "why": [
+                    "{{courses_3}}",
+                    "{{courses_7}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "answer": [
+            {
+                "answer": "Sophie",
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "answer": [
+            {
+                "answer": "Marco Bianchi, student_id: 1",
+                "witness": [
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 0
+                    },
+                    {
+                        "source": "csv_data/students.csv",
+                        "row": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "answer": [
+            {
+                "answer": [
+                    "Machine Learning",
+                    "Cybersecurity",
+                    "Embedded Systems",
+                    "Human-Computer Interaction",
+                    "Data Mining",
+                    "Software Engineering",
+                    "Digital Signal Processing"
+                ],
+                "context": "The question is asking for the courses with 6 credits."
+            },
+            {
+                "why": "These are the courses that have 6 credits according to the provided context."
+            }
+        ]
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "answer": [
+            {
+                "answer": "Lucas Gonzalez, Marco Bianchi, Giulia Rossi",
+                "why": "These students are enrolled in courses with exams scheduled."
+            }
+        ]
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "answer": [
+            {
+                "answer": [
+                    "101",
+                    "102"
+                ],
+                "why": [
+                    "{{classrooms_0}}",
+                    "{{classrooms_1}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "answer": [
+            {
+                "answer": [
+                    "Biology",
+                    "Physics",
+                    "Mathematics",
+                    "Chemistry"
+                ],
+                "why": [
+                    "{{departments_4}}",
+                    "{{departments_3}}",
+                    "{{departments_2}}",
+                    "{{departments_5}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "answer": [
+            {
+                "answer": [
+                    "Deep Learning for Image Recognition",
+                    "Autonomous Systems"
+                ],
+                "why": [
+                    "{{thesis_0}}",
+                    "{{thesis_3}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "answer": [
+            {
+                "answer": "Laura Esposito",
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "answer": [
+            {
+                "answer": "Machine Learning, Database Systems, Artificial Intelligence",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "answer": "I don't have enough information to answer the question. The context provided seems to be a collection of data from various CSV files, but there is no specific question being asked. Could you please provide a clear question or task that I can assist with?"
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "answer": [
+            {
+                "answer": [
+                    "Antonio Gallo",
+                    "Marco Verdi"
+                ],
+                "why": [
+                    "{{teachers_4, departments_1}}",
+                    "{{teachers_2, departments_1}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "answer": [
+            {
+                "answer": [
+                    "Big Data Processing",
+                    "User Experience Design in Web Apps"
+                ],
+                "why": [
+                    "{{thesis_1}}",
+                    "{{thesis_4}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "answer": [
+            {
+                "answer": [
+                    "Carlo Rossi",
+                    "Elisa Neri",
+                    "Laura Bianchi",
+                    "Giulia Colombo",
+                    "Francesco Conti",
+                    "Maria Ferrari",
+                    "Luca Esposito",
+                    "Alessandro Moretti"
+                ],
+                "why": [
+                    "{{teachers_0}}",
+                    "{{teachers_3}}",
+                    "{{teachers_1}}",
+                    "{{teachers_5}}",
+                    "{{teachers_6}}",
+                    "{{teachers_9}}",
+                    "{{teachers_8}}",
+                    "{{teachers_7}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "answer": [
+            {
+                "answer": "Giulia Bianchi and Antonio Gallo",
+                "context": "Who are the teachers with Italian surnames?"
+            },
+            {
+                "answer": "Giulia Colombo, Laura Bianchi, Maria Ferrari, Elisa Neri, Giulia Bianchi, Antonio Gallo",
+                "context": "What are the names of the teachers with Italian surnames?"
+            },
+            {
+                "answer": "Giulia Bianchi and Antonio Gallo",
+                "context": "Which teachers have Italian surnames?"
+            }
+        ]
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "answer": [
+            {
+                "answer": "Giulia Bianchi",
+                "context": []
+            },
+            {
+                "answer": "Lucas Esposito",
+                "context": []
+            },
+            {
+                "answer": "Francesco Conti",
+                "context": []
+            },
+            {
+                "answer": "Alessandro Moretti",
+                "context": []
+            },
+            {
+                "answer": "Carlo Rossi",
+                "context": []
+            },
+            {
+                "answer": "Elisa Neri",
+                "context": []
+            },
+            {
+                "answer": "Antonio Gallo",
+                "context": []
+            },
+            {
+                "answer": "Laura Bianchi",
+                "context": []
+            },
+            {
+                "answer": "Luca Esposito",
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "answer": [
+            {
+                "answer": "Giulia Rossi and Marco Bianchi",
+                "context": "The question is likely asking for the names of students who are enrolled in a specific course. Based on the provided context, we can see that Giulia Rossi (student_id: 1) is enrolled in course 104 (enrollment_date: 2022-09-01), and Marco Bianchi (student_id: 2) is also enrolled in course 102 (enrollment_date: 2022-10-15).",
+                "question": "Who are the students enrolled in a specific course?"
+            }
+        ]
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "answer": [
+            {
+                "answer": "30",
+                "context": "grade for course 103",
+                "witness": "{'source': 'csv_data/grades.csv', 'row': 2} grade_id: 3 student_id: 3 course_id: 103 grade: 30"
+            },
+            {
+                "answer": "29",
+                "context": "no grade for course 102",
+                "witness": ""
+            },
+            {
+                "answer": "25",
+                "context": "grade for course 102",
+                "witness": "{'source': 'csv_data/grades.csv', 'row': 1} grade_id: 2 student_id: 2 course_id: 102 grade: 25"
+            },
+            {
+                "answer": "30",
+                "context": "grade for course 103",
+                "witness": "{'source': 'csv_data/grades.csv', 'row': 2} grade_id: 3 student_id: 3 course_id: 103 grade: 30"
+            }
+        ]
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "answer": [
+            {
+                "answer": "Lucas",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "answer": [
+            "Advanced Database Systems",
+            "Software Engineering"
+        ]
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "answer": [
+            {
+                "answer": [
+                    "201",
+                    "401"
+                ],
+                "why": [
+                    "{{classrooms_2}}",
+                    "{{classrooms_5}}"
+                ]
+            }
+        ]
+    }
+]
