@@ -1,0 +1,588 @@
+[
+    {
+        "question": "Which is the email of Giulia Rossi?",
+        "answer": "Based on the provided context, I can help answer your question. Please go ahead and ask your question, and I'll do my best to provide a helpful response."
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "answer": "Based on the provided context, I can answer your question.\n\nSince you didn't ask a specific question, I'll assume you want me to provide an answer based on the given context. However, please feel free to ask a specific question if that's what you're looking for!\n\nFrom the context, it seems like there is no specific information provided about students or courses related to your question. If you could rephrase your question or provide more details, I'd be happy to help!"
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "answer": [
+            {
+                "answer": "Giulia, Marco",
+                "context": [
+                    {
+                        "source": "enrollments",
+                        "row": 0,
+                        "student_id": 1,
+                        "course_id": 101
+                    },
+                    {
+                        "source": "enrollments",
+                        "row": 3,
+                        "student_id": 1,
+                        "course_id": 104
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In which building is the class with room number 401?",
+        "answer": [
+            {
+                "answer": [
+                    [
+                        "Carlo Rossi",
+                        "Laura Bianchi"
+                    ]
+                ],
+                "context": [
+                    "The question is asking for the names of teachers who have taught courses in the department of Computer Science."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "answer": "Based on the provided context, I can answer your question.\n\nTo find the students who are enrolled in courses related to Artificial Intelligence (AI), we need to identify the courses that have AI as a research area. From the given data, we can see that:\n\n* Course ID 101 is related to Deep Learning for Image Recognition, which falls under the research area of Artificial Intelligence.\n* Course ID 103 has Embedded Systems as its research area, but it's not directly related to AI.\n\nThe students who are enrolled in these courses are:\n\n1. Student ID 1 (Marco Bianchi) - Enrolled in Course ID 101\n2. Student ID 4 (Sophie Durand) - Not explicitly mentioned as enrolled in a course related to AI, but she is enrolled in Course ID 110, which has Human-Computer Interaction as its research area.\n\nSo, the answer is:\n\n* Marco Bianchi (Student ID 1)\n* Sophie Durand (Student ID 4)\n\nPlease note that this answer is based on the provided context and might not be exhaustive or accurate if more information is available."
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "answer": "[\n    {\n        \"answer\": [\n            {\n                \"text\": \"Students who are enrolled in the course Machine Learning and have a grade of at least 25.\"\n            }\n        ],\n        \"context\": [\n            {\"source\": \"csv_data/enrollments.csv\", \"row\": 0, \"enrollment_id\": 1, \"student_id\": 1, \"course_id\": 101, \"enrollment_date\": 2022-09-01},\n            {\"source\": \"csv_data/grades.csv\", \"row\": 0, \"grade_id\": 1, \"student_id\": 1, \"course_id\": 101, \"grade\": 28}\n        ]\n    }\n]"
+    },
+    {
+        "question": "In which area is the 'User Experience Design in Web Apps' thesis?",
+        "answer": "Based on the provided context, I can answer your question.\n\nTo find students who have taken courses in Machine Learning or Advanced Algorithms, we need to analyze the course enrollment data. From the given information, we know that:\n\n1. Giulia Rossi (student_id = 1) has enrolled in Course 101: Machine Learning.\n2. Lucas Schmidt (student_id = 4) has not taken any courses mentioned in the context.\n3. Sophie Durand (student_id = 3) has not taken any courses mentioned in the context.\n4. Elena Gonzalez (student_id = 5) has not taken any courses mentioned in the context.\n\nSince only Giulia Rossi has enrolled in Machine Learning, we can conclude that she is the only student who has taken a course related to Machine Learning or Advanced Algorithms.\n\nTherefore, the answer is:\n\n* Giulia Rossi"
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "answer": "Based on the provided context, I can help answer your question.\n\nTo clarify, you are asking for students who are enrolled in courses related to \"Human-Computer Interaction\" or \"Cybersecurity\". \n\nFrom the given data, we have two students: Giulia Rossi (student_id 1) and Lucas Schmidt (student_id 4). Both of them are enrolled in different courses.\n\nGiulia Rossi is enrolled in course \"110 - Human-Computer Interaction\" with teacher \"10\".\n\nLucas Schmidt is not directly enrolled in a course related to \"Cybersecurity\", but he is enrolled in course \"109 - Cybersecurity\" with teacher \"9\"."
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "context": "Machine Learning",
+                        "entities": [
+                            "Machine Learning"
+                        ],
+                        "relation": "Course"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "answer": "Based on the provided context, I can answer your question.\n\nTo find students enrolled in Machine Learning (Course ID: 101) or Advanced Algorithms (Course ID: 104), we need to look at the enrollment records. \n\nFrom the given data, we have two students enrolled in these courses:\n\n1. Giulia Rossi (Student ID: 1) - Enrolled in Machine Learning (Course ID: 101)\n2. Marco Bianchi (Student ID: 2) - Enrolled in Advanced Algorithms (Course ID: 104)\n\nSo, the answer is: Giulia Rossi and Marco Bianchi are enrolled in Machine Learning or Advanced Algorithms courses."
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "answer": "Based on the provided context, I can answer your question.\n\nTo find students who are enrolled in courses related to Artificial Intelligence (AI) or Machine Learning (ML), we need to identify the course IDs associated with these topics. After analyzing the data, I found that:\n\n* Course ID 101 is \"Introduction to AI\"\n* Course ID 104 is \"Machine Learning\"\n\nNow, let's find students who are enrolled in these courses.\n\nFrom the enrollments data, I found the following students enrolled in AI/ML-related courses:\n\n1. Student ID 1 (enrolled in Course ID 101)\n2. Student ID 4 (enrolled in Course ID 104)\n\nTo provide a complete answer, let's also retrieve their names and surnames from the students data.\n\nFrom the students data, I found the following information for these students:\n\n1. Student ID 1: name = \"Giulia\", surname = \"Rossi\"\n2. Student ID 4: name = \"Lucas\", surname = \"Schmidt\"\n\nSo, the answer is:\n\n* Giulia Rossi (Student ID 1)\n* Lucas Schmidt (Student ID 4)\n\nThese students are enrolled in AI/ML-related courses and can be considered as having an interest in these topics."
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "answer": "Based on the provided context, I can answer your question.\n\nTo find students enrolled in courses \"Advanced Algorithms\" (course_id = 104) and \"Database Systems\" (course_id = 102), we need to look at the enrollments.csv file. \n\nFrom this file, we can see that student_id = 1 is enrolled in course_id = 104 (\"Advanced Algorithms\") with enrollment_date = 2022-02-14.\n\nWe also know from the grades.csv file that student_id = 1 has a grade of 27 for course_id = 104 (\"Advanced Algorithms\").\n\nTherefore, the answer to your question is:\n\nStudent 1 (Lucas Schmidt) is enrolled in \"Advanced Algorithms\" (course_id = 104)."
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "answer": "Here is the answer:\n\n**Question:** What are the pieces of retrieved context?\n\n**Answer:** The pieces of retrieved context are the various CSV files containing data about students, teachers, courses, grades, and research areas.\n\nLet me know if you have any further questions or if there's anything else I can help with!"
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "answer": "Based on the provided context, I'll do my best to answer your question.\n\nPlease go ahead and ask your question. I'll use the retrieved context to provide an accurate response."
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"table\": \"enrollments\",\n        \"condition\": \"course_id = 104 and student_id = 1\"\n    }\n]\n\nNote: The answer is a list of objects, each representing a table and condition that satisfies the given context. In this case, there is only one object in the list, which corresponds to the enrollment record where the course ID is 104 and the student ID is 1."
+    },
+    {
+        "question": "What is the department name in which Antonio Gallo teaches?",
+        "answer": [
+            {
+                "answer": "There is no answer provided in the given context."
+            }
+        ]
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "answer": [
+            {
+                "student_id": 1,
+                "name": "Giulia",
+                "surname": "Rossi"
+            }
+        ]
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "student_id": 1,
+                        "name": "Alice",
+                        "surname": "Johnson"
+                    },
+                    {
+                        "student_id": 2,
+                        "name": "Bob",
+                        "surname": "Smith"
+                    }
+                ],
+                "context": "Students who are enrolled in the course 'Machine Learning' and have a birth date after 1995."
+            }
+        ]
+    },
+    {
+        "question": "In which building will be the Embedded Systems exam?",
+        "answer": "Here is the answer:\n\n[\n  {\n    \"id\": 0,\n    \"name\": \"Machine Learning\",\n    \"department\": \"Computer Science\",\n    \"credits\": 6,\n    \"semester\": \"Fall\"\n  }\n]\n\nExplanation:\nThe question asks for students who are enrolled in a course with the name \"Machine Learning\". Based on the provided context, we can find that there is only one student (with id 1) who is enrolled in this course."
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "answer": "Based on the provided context, I'll do my best to answer your question.\n\nPlease go ahead and ask your question. I'll use the given context to provide an accurate response."
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "answer": "Based on the provided context, I can help you answer your question.\n\nTo find the students enrolled in the \"Machine Learning\" and \"Advanced Algorithms\" courses, we need to look at the enrollment data. Unfortunately, there is no explicit information about course enrollments in the provided context. However, we can use the grades data to infer which students are enrolled in these courses.\n\nFrom the grades data, we know that:\n\n* Student 1 has a grade of 28 in Course 101 (Machine Learning).\n* Student 4 has a grade of 27 in Course 110 (Human-Computer Interaction), but this course is not \"Advanced Algorithms\". We need to look for another student who has a grade in Course 104 (Advanced Algorithms).\n\nFrom the grades data, we also know that:\n\n* Student 3 has a grade of 29 in Course 106 (Software Engineering). This course is not \"Machine Learning\" or \"Advanced Algorithms\", but it's possible that this student is enrolled in one of these courses.\n\nUnfortunately, without more information about course enrollments, we cannot determine which students are actually enrolled in the \"Machine Learning\" and \"Advanced Algorithms\" courses. However, based on the available data, we can conclude that:\n\n* Student 1 is likely enrolled in Course 101 (Machine Learning).\n* Student 3 might be enrolled in one of these courses, but we need more information to determine which course they are actually taking.\n* We don't have enough information about other students who might be enrolled in these courses.\n\nI hope this helps! Let me know if you have any further questions."
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "student_id": 2,
+                        "name": "Marco",
+                        "surname": "Bianchi"
+                    }
+                ],
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "name": "Marco Bianchi",
+                        "surname": "Bianchi"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "answer": [
+            {
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 0,
+                        "course_id": 101,
+                        "course_name": "Machine Learning",
+                        "department": 1,
+                        "credits": 6,
+                        "teacher": 1,
+                        "semester": "Fall"
+                    },
+                    {
+                        "source": "csv_data/students.csv",
+                        "row": 0,
+                        "student_id": 2,
+                        "name": "Marco",
+                        "surname": "Bianchi",
+                        "birth_date": "1995-11-22",
+                        "nationality": "Italian",
+                        "gender": "Male",
+                        "enrollment_date": "2022-10-15",
+                        "email": "marco.bianchi@student.edu"
+                    },
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 3,
+                        "course_id": 104,
+                        "course_name": "Advanced Algorithms",
+                        "department": 1,
+                        "credits": 8,
+                        "teacher": 4,
+                        "semester": "Spring"
+                    }
+                ],
+                "answer": [
+                    {
+                        "student_id": 2,
+                        "name": "Marco",
+                        "surname": "Bianchi"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "text": "Laura",
+                        "score": 0.9
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "answer": "Based on the provided context, I can help answer your question.\n\nPlease go ahead and ask your question, and I'll do my best to provide a helpful response."
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "answer": [
+            {
+                "answer": "Room 101, Room 103, and Room 105",
+                "context": [
+                    {
+                        "source": "csv_data/exams.csv",
+                        "row": 2
+                    },
+                    {
+                        "source": "csv_data/exams.csv",
+                        "row": 4
+                    }
+                ]
+            },
+            {
+                "answer": "Machine Learning, Data Mining, Digital Signal Processing, Embedded Systems, Cybersecurity, Human-Computer Interaction",
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 0
+                    },
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 2
+                    },
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 5
+                    },
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 9
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "answer": "Based on the provided context, I understand that you want me to answer a question about students who have enrolled in courses related to Human-Computer Interaction (HCI). \n\nTo provide an accurate answer, I will analyze the data and identify the students who have taken courses with HCI as their research area or have written theses on HCI-related topics. \n\nAfter analyzing the data, I found that the following students have been involved in HCI-related activities:\n\n1. Student 3: Has enrolled in Course ID 110 (Human-Computer Interaction) and has also written a thesis titled \"IoT Security Challenges\" with research area Cybersecurity.\n2. Student 10: Has enrolled in Course ID 110 (Human-Computer Interaction).\n\nThese students have demonstrated an interest in Human-Computer Interaction, either through their course enrollment or thesis topics.\n\nPlease let me know if you would like me to provide more information or clarify any of the findings."
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "student_name": "Student 1",
+                        "courses": [
+                            "Course 101",
+                            "Course 104"
+                        ]
+                    },
+                    {
+                        "student_name": "Student 3",
+                        "courses": [
+                            "Course 103",
+                            "Course 106"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "answer": "Based on the provided context, I'll do my best to answer your question.\n\nPlease go ahead and ask your question. I'll use the retrieved context to provide an accurate response."
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "answer": "Based on the provided context, I can answer your question.\n\nThe question is not specified, but based on the context, it seems that you are asking for students who have enrolled in courses related to Machine Learning. \n\nFrom the context, we can see that there are two students who have enrolled in courses related to Machine Learning: Marco Bianchi (student_id = 2) and Elena Gonzalez (student_id = 5). They both have enrolled in course_id = 101 which is \"Machine Learning\".\n\nHere's the answer:\n\n* Student 1: Marco Bianchi (student_id = 2)\n* Student 2: Elena Gonzalez (student_id = 5)\n\nPlease let me know if you need further assistance or clarification."
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "student_id": 1,
+                        "course_id": 101,
+                        "enrollment_date": "2022-09-01"
+                    },
+                    {
+                        "student_id": 3,
+                        "course_id": 103,
+                        "enrollment_date": "2021-01-10"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 0
+                    },
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "answer": "Based on the provided context, I can help answer your question.\n\nTo find the students who have taken exams in courses \"Machine Learning\" and \"Data Structures\", we need to identify the exam IDs that correspond to these courses. \n\nFrom the retrieved context, we know that:\n\n- Course ID 104 corresponds to \"Machine Learning\".\n- Course ID 106 corresponds to \"Data Structures\".\n\nWe also know the exam IDs that correspond to these courses:\n\n- Exam ID 4 corresponds to course ID 104 (\"Machine Learning\").\n- Exam ID 5 corresponds to course ID 106 (\"Data Structures\").\n\nNow, we need to find the students who have taken exams with these IDs. \n\nFrom the retrieved context, we know the student IDs and their corresponding grades for each exam:\n\n- Student ID 1 has taken exam ID 4 (Machine Learning) and received a grade of 27.\n- Student ID 4 has taken exam ID 5 (Data Structures) and received a grade of 26.\n\nTherefore, the students who have taken exams in courses \"Machine Learning\" and \"Data Structures\" are:\n\n- Student ID 1\n- Student ID 4\n\nThese students have taken exams in these specific courses."
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "text": "Students who have taken courses in Human-Computer Interaction and Cybersecurity",
+                        "context": [
+                            {
+                                "source": "csv_data/courses.csv",
+                                "row": 9,
+                                "course_id": 110,
+                                "course_name": "Human-Computer Interaction"
+                            },
+                            {
+                                "source": "csv_data/courses.csv",
+                                "row": 8,
+                                "course_id": 109,
+                                "course_name": "Cybersecurity"
+                            }
+                        ]
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/grades.csv",
+                        "row": 7,
+                        "student_id": 3,
+                        "course_id": 110,
+                        "grade": 28
+                    },
+                    {
+                        "source": "csv_data/grades.csv",
+                        "row": 8,
+                        "student_id": 4,
+                        "course_id": 110,
+                        "grade": 27
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "answer": [
+            {
+                "department": "1",
+                "name": "Machine Learning"
+            },
+            {
+                "department": "1",
+                "name": "Advanced Algorithms"
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "answer": [
+            {
+                "context": "You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question.",
+                "answer": [
+                    {
+                        "source": "csv_data/students.csv",
+                        "row": 1,
+                        "student_id": 2,
+                        "name": "Marco",
+                        "surname": "Bianchi"
+                    },
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 0,
+                        "course_id": 101,
+                        "course_name": "Machine Learning"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "answer": "Based on the provided context, I can answer your question.\n\nTo find students who have enrolled in courses related to Machine Learning or Advanced Algorithms, we need to look at the course information and student enrollment data. \n\nFrom the given data, we can see that:\n\n* Course 104 (Advanced Algorithms) has been taken by student with ID 1 (Giulia Rossi).\n* Course 107 (Data Mining) has been taken by student with ID 1 (Giulia Rossi).\n* Course 109 (Cybersecurity) has been taken by student with ID 5 (Elena Gonzalez).\n\nSo, the students who have enrolled in courses related to Machine Learning or Advanced Algorithms are:\n\n1. Giulia Rossi (student ID: 1)\n2. Elena Gonzalez (student ID: 5)\n\nPlease note that this answer is based on the provided context and might not be exhaustive as there could be more students enrolled in these courses."
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "answer": "Here is the answer:\n\nThe students who are enrolled in courses \"Computer Science\" or \"Mathematics\" are:\n\n* Marco Bianchi (student_id: 2)\n* Lucas Schmidt (student_id: 4)\n\nThese students are enrolled in courses that belong to departments \"Computer Science\" and \"Mathematics\", respectively."
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "answer": "Based on the provided context, I can help answer your question.\n\nTo clarify, you want me to provide an answer based on the given pieces of retrieved context. Please go ahead and ask your question, and I'll do my best to assist you!"
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "answer": [
+            {
+                "answer": "Antonio Gallo, Francesco Conti, Maria Ferrari, Luca Esposito",
+                "context": [
+                    "The teachers in the Computer Science department are Antonio Gallo, Francesco Conti, Maria Ferrari, and Luca Esposito."
+                ],
+                "type": "list"
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "answer": [
+            {
+                "answer": "Marco Bianchi",
+                "context": [
+                    {
+                        "source": "csv_data/students.csv",
+                        "row": 1,
+                        "student_id": 2,
+                        "name": "Marco",
+                        "surname": "Bianchi"
+                    },
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 0,
+                        "course_id": 101,
+                        "course_name": "Machine Learning"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "answer": [
+            {
+                "answer": "[Giulia, Alessandro]",
+                "context": [
+                    {
+                        "source": "courses",
+                        "id": 101,
+                        "name": "Machine Learning"
+                    },
+                    {
+                        "source": "teachers",
+                        "id": 1,
+                        "name": "Giulia"
+                    }
+                ]
+            },
+            {
+                "answer": "[Alessandro]",
+                "context": [
+                    {
+                        "source": "courses",
+                        "id": 104,
+                        "name": "Advanced Algorithms"
+                    },
+                    {
+                        "source": "teachers",
+                        "id": 4,
+                        "name": "Alessandro"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "answer": "Based on the provided context, I can answer your question.\n\nTo find the students enrolled in the \"Machine Learning\" course (course_id: 101), we need to look at the enrollments.csv file. \n\nFrom the retrieved context, we have the following enrollment:\n\n{'source': 'csv_data/enrollments.csv', 'row': 0}\nenrollment_id: 1\nstudent_id: 1\ncourse_id: 101\nenrollment_date: 2023-09-01\n\nThis indicates that student with id 1 is enrolled in the \"Machine Learning\" course.\n\nAnother enrollment:\n\n{'source': 'csv_data/enrollments.csv', 'row': 2}\nenrollment_id: 3\nstudent_id: 2\ncourse_id: 101\nenrollment_date: 2023-09-01\n\nThis indicates that student with id 2 is also enrolled in the \"Machine Learning\" course.\n\nTherefore, the students enrolled in the \"Machine Learning\" course are:\n\n1. Student with id 1\n2. Student with id 2"
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "answer": "Based on the retrieved context, I can answer your question.\n\nThe question is: What are the students who have enrolled in courses \"101\" and/or \"104\"?\n\nFrom the context, we can see that:\n\n* Student 1 has enrolled in course \"101\" (enrollment_id = 1) and also in course \"104\" (enrollment_id = 0).\n* Student 4 has enrolled in course \"105\" (enrollment_id = 5), but not in courses \"101\" or \"104\".\n\nTherefore, the answer is: Only student 1 has enrolled in both courses \"101\" and \"104\"."
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "answer": "Based on the provided context, I can answer your question.\n\nTo find the students who are enrolled in courses with \"Database Systems\" or \"Data Science\" as their research area, we need to look at the students' enrollment information and the research areas of the teachers teaching those courses.\n\nFrom the given data, we know that Marco Bianchi is a student (student_id: 2) and Giulia Rossi is another student (student_id: 1). Both are enrolled in the \"Database Systems\" course (course_id: 102).\n\nAdditionally, Laura Bianchi is a teacher (teacher_id: 2) who teaches the \"Data Science\" research area. Since there is no information about students being directly enrolled in research areas, we can't determine which students are specifically enrolled in this research area.\n\nHowever, based on the provided data, we can conclude that Giulia Rossi and Marco Bianchi are the students who are enrolled in courses with either \"Database Systems\" or \"Data Science\" as their research area."
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "answer": "Based on the provided context, I can answer your question.\n\nThe question is: What are the students who have enrolled in courses \"Digital Signal Processing\" or \"Data Mining\"?\n\nFrom the retrieved context, we know that:\n\n* Student 1 (Giulia Rossi) has enrolled in course 104 (\"Embedded Systems\") with enrollment date 2022-09-01.\n* Student 4 (Lucas Schmidt) has enrolled in course 105 (\"Digital Signal Processing\") with enrollment date 2020-08-25.\n\nSince there is no information about students enrolling in course \"Data Mining\", we can only provide the names of students who have enrolled in courses \"Digital Signal Processing\" or \"Embedded Systems\".\n\nThe answer is:\n\n* Giulia Rossi\n* Lucas Schmidt"
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "answer": "Based on the provided context, I can help answer your question.\n\nTo find the students who are enrolled in courses related to \"Advanced Algorithms\" or \"Data Mining\", we need to look at the enrollments data. \n\nFrom the enrollments data, we can see that student_id 1 is enrolled in course_id 104 (Advanced Algorithms), and student_id 5 is enrolled in course_id 110 (Data Mining).\n\nSo, the students who are enrolled in courses related to \"Advanced Algorithms\" or \"Data Mining\" are:\n\n* Giulia Rossi (student_id 1)\n* Elena Gonzalez (student_id 5)\n\nPlease let me know if you have any further questions!"
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "answer": [
+            {
+                "student_id": 1,
+                "courses": [
+                    "101",
+                    "104"
+                ]
+            },
+            {
+                "student_id": 2,
+                "courses": [
+                    "102"
+                ]
+            },
+            {
+                "student_id": 3,
+                "courses": [
+                    "103",
+                    "106"
+                ]
+            },
+            {
+                "student_id": 4,
+                "courses": [
+                    "105",
+                    "110"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "rooms": [
+                            {
+                                "id": 1,
+                                "name": "Room 101"
+                            },
+                            {
+                                "id": 3,
+                                "name": "Room 103"
+                            }
+                        ]
+                    }
+                ],
+                "context": ""
+            }
+        ]
+    }
+]

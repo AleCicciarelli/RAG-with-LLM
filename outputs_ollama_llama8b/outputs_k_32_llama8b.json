@@ -1,0 +1,3906 @@
+[
+    {
+        "question": "Which is the email of Giulia Rossi?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "name": "Elena Gonzalez",
+                        "surname": "Gonzalez"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/students.csv",
+                        "row": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "answer": [
+            {
+                "answer": "Computer Science",
+                "context": [
+                    "The department of the course is mentioned in the context.",
+                    "The department name is Computer Science."
+                ],
+                "scores": {
+                    "relevance": 0.8,
+                    "confidence": 0.9
+                }
+            },
+            {
+                "answer": "Machine Learning",
+                "context": [
+                    "The course name is mentioned in the context.",
+                    "The course name is Machine Learning."
+                ],
+                "scores": {
+                    "relevance": 0.7,
+                    "confidence": 0.8
+                }
+            },
+            {
+                "answer": "Artificial Intelligence",
+                "context": [
+                    "The research area of the teacher is mentioned in the context.",
+                    "The research area is Artificial Intelligence."
+                ],
+                "scores": {
+                    "relevance": 0.6,
+                    "confidence": 0.7
+                }
+            }
+        ]
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "answer": "I'm not sure what you're asking. Please provide more context or clarify your question so I can better assist you."
+    },
+    {
+        "question": "In which building is the class with room number 401?",
+        "answer": [
+            {
+                "answer": "Electronics Engineering",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "student_id": 1,
+                        "name": "Lucas",
+                        "surname": "Schmidt"
+                    },
+                    {
+                        "student_id": 2,
+                        "name": "Marco",
+                        "surname": "Bianchi"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "answer": [
+            {
+                "answer": [
+                    "401"
+                ],
+                "why": [
+                    "{{courses.csv}} row 1, {{enrollments.csv}} row 0"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In which area is the 'User Experience Design in Web Apps' thesis?",
+        "answer": [
+            {
+                "student_id": 2,
+                "name": "Marco",
+                "surname": "Bianchi"
+            }
+        ]
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "answer": [
+            {
+                "answer": [
+                    "Alessandro Moretti"
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/teachers.csv",
+                        "row": 7,
+                        "name": "Alessandro",
+                        "surname": "Moretti",
+                        "department_id": 1,
+                        "email": "a.moretti@university.edu"
+                    },
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 9,
+                        "course_name": "Human-Computer Interaction",
+                        "teacher": 10
+                    },
+                    {
+                        "source": "csv_data/thesis.csv",
+                        "row": 0,
+                        "research_area": "Artificial Intelligence"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "answer": [
+            {
+                "answer": "Machine Learning",
+                "context": [
+                    {
+                        "source": "csv_data/teacher_research_areas.csv",
+                        "row": 7,
+                        "research_area": "Machine Learning",
+                        "number_of_project": 3
+                    }
+                ],
+                "score": 1.0
+            }
+        ]
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "answer": "Here is the answer:\n\n[\n{\n\"student_id\": 1,\n\"name\": \"Giulia\",\n\"surname\": \"Rossi\"\n},\n{\n\"student_id\": 2,\n\"name\": \"Marco\",\n\"surname\": \"Bianchi\"\n}\n]\n\nThese are the students who have enrolled in the courses mentioned in the question."
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "answer": [
+            {
+                "context": [
+                    {
+                        "source": "students",
+                        "row": 3,
+                        "student_id": 4,
+                        "name": "Lucas",
+                        "surname": "Schmidt"
+                    },
+                    {
+                        "source": "enrollments",
+                        "row": 8,
+                        "enrollment_id": 9,
+                        "student_id": 4,
+                        "course_id": 110
+                    }
+                ],
+                "answer": [
+                    {
+                        "course_name": "Human-Computer Interaction"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "answer": "Based on the provided context, I can help answer your question.\n\nTo answer your question, please provide more details or clarify what you would like to know. You can ask a specific question, and I'll do my best to provide an accurate response using the given context."
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "answer": [
+            {
+                "answer": "There is no information about the student's grade in the course 'Human-Computer Interaction' (Course ID: 110).",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "answer": [
+            {
+                "answer": "Giulia Rossi, Marco Bianchi",
+                "context": [
+                    {
+                        "student_id": 1,
+                        "name": "Giulia",
+                        "surname": "Rossi"
+                    },
+                    {
+                        "student_id": 2,
+                        "name": "Marco",
+                        "surname": "Bianchi"
+                    }
+                ],
+                "reasoning": "The students who have taken the course 'Machine Learning' are Giulia Rossi and Marco Bianchi."
+            }
+        ]
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "text": "Introduction to Computer Science",
+                        "score": 0.5,
+                        "context": [
+                            "Computer Science",
+                            "Introduction"
+                        ]
+                    },
+                    {
+                        "text": "Data Structures and Algorithms",
+                        "score": 0.4,
+                        "context": [
+                            "Computer Science",
+                            "Data Structures",
+                            "Algorithms"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the department name in which Antonio Gallo teaches?",
+        "answer": [
+            {
+                "answer": "Electronics",
+                "context": "The retrieved context is that the assistant is an assistant for question-answering tasks. The context includes pieces of information about departments, courses, teachers, and students."
+            }
+        ]
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "answer": [
+            {
+                "answer": "There is no information about the grade of Elena in the provided context.",
+                "context": [
+                    "Elena",
+                    "grade"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "answer": [
+            {
+                "answer": [
+                    "Electronics"
+                ],
+                "why": [
+                    "{{departments_1}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In which building will be the Embedded Systems exam?",
+        "answer": [
+            {
+                "answer": "Building 1, Room 101",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "answer": [
+            {
+                "context": [
+                    {
+                        "source": "students",
+                        "row": 1,
+                        "student_id": 1,
+                        "name": "John",
+                        "surname": "Doe",
+                        "birth_date": "1995-06-15",
+                        "nationality": "American",
+                        "gender": "Male",
+                        "enrollment_date": "2018-09-01",
+                        "email": "john.doe@student.edu"
+                    },
+                    {
+                        "source": "students",
+                        "row": 2,
+                        "student_id": 2,
+                        "name": "Jane",
+                        "surname": "Smith",
+                        "birth_date": "1996-03-22",
+                        "nationality": "British",
+                        "gender": "Female",
+                        "enrollment_date": "2019-01-15",
+                        "email": "jane.smith@student.edu"
+                    },
+                    {
+                        "source": "students",
+                        "row": 3,
+                        "student_id": 4,
+                        "name": "Lucas",
+                        "surname": "Schmidt",
+                        "birth_date": "1997-03-18",
+                        "nationality": "German",
+                        "gender": "Male",
+                        "enrollment_date": "2020-08-25",
+                        "email": "lucas.schmidt@student.edu"
+                    },
+                    {
+                        "source": "students",
+                        "row": 4,
+                        "student_id": 5,
+                        "name": "Elena",
+                        "surname": "Gonzalez",
+                        "birth_date": "1999-09-05",
+                        "nationality": "Spanish",
+                        "gender": "Female",
+                        "enrollment_date": "2022-02-14",
+                        "email": "elena.gonzalez@student.edu"
+                    }
+                ],
+                "answer": [
+                    {
+                        "student_id": 1,
+                        "name": "John Doe"
+                    },
+                    {
+                        "student_id": 4,
+                        "name": "Lucas Schmidt"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "answer": "Based on the provided context, I can help answer your question.\n\nTo answer your question, please provide the specific query or question you would like me to assist with. I'll do my best to retrieve relevant information from the given context and provide a helpful response."
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "answer": [
+            {
+                "answer": "Computer Science",
+                "context": "The context is about the department of a course. The course with id 101 has department 1, which corresponds to Computer Science."
+            }
+        ]
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "answer": [
+            {
+                "answer": [
+                    "Marco",
+                    "Bianchi"
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/students.csv",
+                        "row": 1,
+                        "student_id": 2,
+                        "name": "Marco",
+                        "surname": "Bianchi"
+                    },
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 5,
+                        "enrollment_id": 6,
+                        "student_id": 3,
+                        "course_id": 106
+                    },
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 7,
+                        "enrollment_id": 8,
+                        "student_id": 3,
+                        "course_id": 110
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "answer": "Here is the answer:\n\nThe students who have enrolled in Machine Learning course are Giulia Rossi and Marco Bianchi."
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "answer": [
+            {
+                "answer": "Giulia Rossi and Elena Gonzalez",
+                "context": [
+                    {
+                        "source": "csv_data/students.csv",
+                        "row": 0,
+                        "student_id": 1,
+                        "name": "Giulia",
+                        "surname": "Rossi"
+                    },
+                    {
+                        "source": "csv_data/students.csv",
+                        "row": 4,
+                        "student_id": 5,
+                        "name": "Elena",
+                        "surname": "Gonzalez"
+                    }
+                ],
+                "explanation": "The question asks for students who are enrolled in courses related to Artificial Intelligence. Giulia Rossi and Elena Gonzalez are the only two students mentioned in the context."
+            }
+        ]
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "student_id": 1,
+                        "name": "Giulia",
+                        "surname": "Rossi"
+                    },
+                    {
+                        "student_id": 5,
+                        "name": "Elena",
+                        "surname": "Gonzalez"
+                    }
+                ],
+                "context": [
+                    "The students who have taken courses in Artificial Intelligence or Cybersecurity are Giulia Rossi and Elena Gonzalez."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "answer": [
+            {
+                "answer": [
+                    "301",
+                    "302"
+                ],
+                "why": [
+                    "{{classrooms_3,}}",
+                    "{{classrooms_4,}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "name": "Giulia",
+                        "id": 1,
+                        "thesis_title": "IoT Security Challenges"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/thesis.csv",
+                        "row": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "courses": [
+                            "104",
+                            "105"
+                        ],
+                        "students": [
+                            "1"
+                        ]
+                    }
+                ],
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "student_id": 1,
+                        "name": "Giulia",
+                        "surname": "Rossi"
+                    },
+                    {
+                        "student_id": 2,
+                        "name": "Marco",
+                        "surname": "Bianchi"
+                    }
+                ],
+                "context": "Students who are enrolled in the course 'Artificial Intelligence' and have a birth date before 2000."
+            }
+        ]
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "student_id": 1,
+                        "name": "Marco",
+                        "surname": "Bianchi"
+                    }
+                ],
+                "context": [
+                    "The students who are enrolled in the course with id 101."
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "name": "Machine Learning",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8,
+                        "semester": "Spring"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv data/enrollments.csv",
+                        "row": 7
+                    }
+                ]
+            },
+            {
+                "answer": [
+                    {
+                        "name": "Artificial Intelligence",
+                        "credits": 8
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "answer": [
+            {
+                "name": "Giulia Rossi",
+                "surname": "Rossi"
+            }
+        ]
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "answer": [
+            {
+                "answer": [
+                    "101"
+                ],
+                "why": [
+                    "{{classrooms_0}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "answer": [
+            {
+                "answer": [
+                    "Biology",
+                    "Mathematics",
+                    "Physics"
+                ],
+                "why": [
+                    "{{departments_4,source_departments}}",
+                    "{{departments_2,source_departments}}",
+                    "{{departments_3,source_departments}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "answer": "I'm not sure what you're asking me. Can you please clarify your question or provide more context?"
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "answer": "[\n{\n\"answer\": \"Giulia Rossi and Lucas Schmidt\",\n\"context\": [\"The students who are enrolled in the course Advanced Algorithms are Giulia Rossi and Lucas Schmidt.\"]\n},\n]"
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "answer": [
+            {
+                "answer": "Marco Bianchi and Lucas Schmidt",
+                "context": [
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 3,
+                        "enrollment_id": 4,
+                        "student_id": 1,
+                        "course_id": 104
+                    },
+                    {
+                        "source": "csv_data/students.csv",
+                        "row": 1,
+                        "student_id": 2,
+                        "name": "Marco",
+                        "surname": "Bianchi"
+                    },
+                    {
+                        "source": "csv_data/enrollments.csv",
+                        "row": 8,
+                        "enrollment_id": 9,
+                        "student_id": 4,
+                        "course_id": 110
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "answer": [
+            {
+                "answer": "[\"Giulia Bianchi\", \"Lucas Schmidt\"]",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "answer": [
+            {
+                "answer": [
+                    "Antonio Gallo"
+                ],
+                "why": [
+                    "{{departments_2, teachers_4, csv_data/teachers.csv_4}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "answer": [
+            {
+                "answer": "None",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "answer": [
+            {
+                "answer": [
+                    "Carlo Rossi",
+                    "Elisa Neri"
+                ],
+                "why": [
+                    "{{departments_0, teachers_3, courses_3}}",
+                    "{{departments_0, teachers_1, courses_0}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "context": "Machine Learning",
+                        "entities": [
+                            "Machine Learning"
+                        ],
+                        "score": 0.9,
+                        "type": "course"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "answer": [
+            {
+                "answer": [
+                    [
+                        "Marco",
+                        "Rossi"
+                    ]
+                ],
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "answer": "Here is the answer:\n\n[\n  {\n    \"student_id\": 1,\n    \"name\": \"Giulia\",\n    \"surname\": \"Rossi\"\n  },\n  {\n    \"student_id\": 4,\n    \"name\": \"Lucas\",\n    \"surname\": \"Schmidt\"\n  }\n]\n\nThese are the students who have enrolled in courses that match the given context."
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "student_id": 1,
+                        "name": "Giulia",
+                        "surname": "Rossi"
+                    },
+                    {
+                        "student_id": 2,
+                        "name": "Marco",
+                        "surname": "Bianchi"
+                    }
+                ],
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "answer": "Here is the answer:\n\n[\n  {\n    \"context\": \"Machine Learning\",\n    \"students\": [\"Giulia Rossi\", \"Marco Bianchi\"]\n  }\n]\n\nNote: The context is based on the retrieved pieces of information, and the students are those who have enrolled in the \"Machine Learning\" course."
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "name": "Student1",
+                        "id": 1,
+                        "courses": [
+                            "Database Systems",
+                            "Digital Signal Processing"
+                        ]
+                    },
+                    {
+                        "name": "Student2",
+                        "id": 2,
+                        "courses": [
+                            "Artificial Intelligence",
+                            "Cybersecurity"
+                        ]
+                    }
+                ],
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "answer": [
+            {
+                "answer": [
+                    "201",
+                    "401"
+                ],
+                "why": [
+                    "{{classrooms_2,}}",
+                    "{{classrooms_5,}}"
+                ]
+            }
+        ]
+    }
+]
