@@ -29,7 +29,7 @@ def main():
     question_types = load_json("questions.json")
 
     # Cartella contenente i file di output predetti
-    pred_folder = "outputs_ollama_llama8b"
+    pred_folder = "outputs_ollama_mixtral8x7b/"
     global_metrics_file = os.path.join(pred_folder, "global_metrics_all_k.csv")
     type_metrics_file = os.path.join(pred_folder, "metrics_by_type_all_k.csv")
 
@@ -55,7 +55,7 @@ def main():
 
         # Itera su tutti i file con pattern k da 10 a 69 (come esempio)
         for k_val in range(10, 70):
-            pred_file = os.path.join(pred_folder, f"outputs_ollama_llama8b_outputs_k_{k_val}llama8b.json")
+            pred_file = os.path.join(pred_folder, f"outputs_k_{k_val}_mixtral8x7b.json")
             if not os.path.isfile(pred_file):
                 print(f"[k={k_val}] File {pred_file} non trovato, salto...")
                 continue
@@ -93,7 +93,16 @@ def main():
                 else:
                     true_answer = [str(x) for x in true_answer]
 
-                pred_answer = [str(x) for x in pred["answer"][0]["answer"]]
+                try:
+                    pred_answer_raw = pred.get("answer", [])
+                    if isinstance(pred_answer_raw, list) and len(pred_answer_raw) > 0 and isinstance(pred_answer_raw[0], dict):
+                        pred_answer = [str(x) for x in pred_answer_raw[0].get("answer", [])]
+                    else:
+                        raise ValueError("Invalid prediction format")
+                except Exception as e:
+                    # In caso di errore, considera la risposta completamente sbagliata
+                    print(f"[k={k_val}] Errore nel parsing della risposta per la domanda '{question}': {e}")
+                    pred_answer = []
 
                 # Calcola TP, FP, FN per risposta
                 tp_ans, fp_ans, fn_ans = evaluate_lists(true_answer, pred_answer)
@@ -113,7 +122,16 @@ def main():
                         parts = [ss.strip("{} ") for ss in s.split("}}") if ss.strip()]
                         true_expl.update(parts)
 
-                pred_expl = set([x.strip("{} ") for x in pred["answer"][0].get("why", [])])
+                try:
+                    pred_expl_raw = pred.get("answer", [])
+                    if isinstance(pred_expl_raw, list) and len(pred_expl_raw) > 0 and isinstance(pred_expl_raw[0], dict):
+                        pred_expl = set(x.strip("{} ") for x in pred_expl_raw[0].get("why", []))
+                    else:
+                        raise ValueError("Invalid prediction format")
+                except Exception as e:
+                    # In caso di errore, considera la spiegazione completamente sbagliata
+                    print(f"[k={k_val}] Errore nel parsing della spiegazione per la domanda '{question}': {e}")
+                    pred_expl = set()
 
                 # Calcola TP, FP, FN per spiegazione
                 # Valuta solo se risposta corretta (intersection non vuota)
