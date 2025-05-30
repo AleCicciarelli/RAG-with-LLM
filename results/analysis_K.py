@@ -29,7 +29,7 @@ def main():
     question_types = load_json("questions.json")
 
     # Cartella contenente i file di output predetti
-    pred_folder = "outputs_ollama_mixtral8x7b/"
+    pred_folder = "outputs_ollama_llama70b/"
     global_metrics_file = os.path.join(pred_folder, "global_metrics_all_k.csv")
     type_metrics_file = os.path.join(pred_folder, "metrics_by_type_all_k.csv")
 
@@ -54,8 +54,8 @@ def main():
             ])
 
         # Itera su tutti i file con pattern k da 10 a 69 (come esempio)
-        for k_val in range(10, 70):
-            pred_file = os.path.join(pred_folder, f"outputs_k_{k_val}_mixtral8x7b.json")
+        for k_val in range(10, 71):
+            pred_file = os.path.join(pred_folder, f"outputs_k_{k_val}_llama70b.json")
             if not os.path.isfile(pred_file):
                 print(f"[k={k_val}] File {pred_file} non trovato, salto...")
                 continue
