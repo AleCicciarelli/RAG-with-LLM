@@ -14,19 +14,22 @@ from langchain_core.output_parsers import JsonOutputParser
 from pydantic import BaseModel, Field
 from typing import List
 import time
+from langchain_community.chat_models import ChatOllama
 
 os.environ["LANGSMITH_TRACING"] = "true" 
-os.environ["LANGSMITH_API_KEY"] = "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"
+os.environ["LANGSMITH_API_KEY"] = "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"
+#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
 #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 old old token langsmith
 #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 olt token langsmith
 if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 
 # LLM: Llama3-8b by Groq
-llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
+#llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
 # MISTRAL by Groq
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
+llm = ChatOllama(model="llama3:70b", temperature=0)
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
@@ -175,7 +178,7 @@ graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
 
-for k in range(19, 70):  # k da 0 a 20
+for k in range(60,71):  # k da 0 a 20
     print(f"\n=== Running evaluation with k={k} ===")
     all_results = []
 
@@ -188,7 +191,7 @@ for k in range(19, 70):  # k da 0 a 20
         }
         all_results.append(result)
 
-    output_filename = f"outputs_llama8b/outputs_k_{k}_llama8b.json"
+    output_filename = f"outputs_ollama_llama70b/outputs_k_{k}_llama70b.json"
     # Save the results for the current value of k to a JSON file for later analysis
     with open(output_filename, "w") as output_file:
         json.dump(all_results, output_file, indent=4, ensure_ascii=False)

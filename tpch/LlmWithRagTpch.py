@@ -24,7 +24,7 @@ if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 
 # LLM: Llama3-8b by Groq
-llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
+#llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
 # MISTRAL by Groq
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
@@ -35,9 +35,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 """ Indexing part """
 
-csv_folder = "csv_data_tpch"
-faiss_index_folder = "faiss_index"
-
+batch_size = 200
 # Verify if the FAISS files already exist
 if os.path.exists(faiss_index_folder):
     # Load the FAISS index folder ( allow_dangerous_deserialization=True just because we create the files and so we can trust them)
@@ -46,24 +44,39 @@ if os.path.exists(faiss_index_folder):
 else:
     # if don't exist, load the csv files
     documents = []
+    vector_store = None
     for file in os.listdir(csv_folder):
-        if file.endswith(".csv"):
-            file_path = os.path.join(csv_folder, file)
-            loader = CSVLoader(file_path=file_path)
-            docs = loader.load()
-            documents.extend(docs)
+   	 if file.endswith(".csv"):
+		file_path = os.path.join(csv_folder, file)
+		print(f"Loading: {file_path}")
+		loader = CSVLoader(file_path=file_path)
+		docs = loader.load()
+		documents_buffer.extend(docs)
 
-    print(f"Loaded {len(documents)} documents from {len(os.listdir(csv_folder))} CSV files.")
+		# Processa in batch
+		while len(documents_buffer) >= batch_size:
+		    current_batch = documents_buffer[:batch_size]
+		    documents_buffer = documents_buffer[batch_size:]
 
-    # Create vector store with the embedding model 
-    # (if we want other similarity strategies: distance_strategy = DistanceStrategy.COSINE, the default is L2 distance)
-    vector_store = FAISS.from_documents(documents=documents, embedding=embedding_model)
+		    print(f"Processing batch of {len(current_batch)} documents...")
 
-    # Save FAISS vector store 
+		    if vector_store is None:
+		        vector_store = FAISS.from_documents(current_batch, embedding=embedding_model)
+		    else:
+		        vector_store.add_documents(current_batch)
+
+	# Processa eventuali documenti residui
+	if documents_buffer:
+	    print(f"Processing final batch of {len(documents_buffer)} documents...")
+	    if vector_store is None:
+	        vector_store = FAISS.from_documents(documents_buffer, embedding=embedding_model)
+	    else:
+		vector_store.add_documents(documents_buffer)
+     # Save FAISS vector store 
     vector_store.save_local(faiss_index_folder)
     print("FAISS vector store created and saved successfully!")
 
-""" Retrieve and Generate part """
+fb8h*^VZTL3BSW""" Retrieve and Generate part """
 # Define prompt for question-answering
 prompt = hub.pull("rlm/rag-prompt")
 # Step 1: Define Explanation Class: composed by file and row
