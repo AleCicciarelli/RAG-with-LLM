@@ -35,6 +35,8 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 """ Indexing part """
 
+csv_folder = "csv_data_tpch"
+faiss_index_folder = "faiss_index"
 batch_size = 200
 # Verify if the FAISS files already exist
 if os.path.exists(faiss_index_folder):
@@ -46,37 +48,36 @@ else:
     documents = []
     vector_store = None
     for file in os.listdir(csv_folder):
-   	 if file.endswith(".csv"):
-		file_path = os.path.join(csv_folder, file)
-		print(f"Loading: {file_path}")
-		loader = CSVLoader(file_path=file_path)
-		docs = loader.load()
-		documents_buffer.extend(docs)
+        if file.endswith(".csv"):
+            file_path = os.path.join(csv_folder, file)
+            print(f"Loading: {file_path}")
+            loader = CSVLoader(file_path=file_path)
+            docs = loader.load()
+            documents_buffer.extend(docs)
 
-		# Processa in batch
-		while len(documents_buffer) >= batch_size:
-		    current_batch = documents_buffer[:batch_size]
-		    documents_buffer = documents_buffer[batch_size:]
+            # Processa in batch
+            while len(documents_buffer) >= batch_size:
+                current_batch = documents_buffer[:batch_size]
+                documents_buffer = documents_buffer[batch_size:]
 
-		    print(f"Processing batch of {len(current_batch)} documents...")
+                print(f"Processing batch of {len(current_batch)} documents...")
 
-		    if vector_store is None:
-		        vector_store = FAISS.from_documents(current_batch, embedding=embedding_model)
-		    else:
-		        vector_store.add_documents(current_batch)
+                if vector_store is None:
+                    vector_store = FAISS.from_documents(current_batch, embedding=embedding_model)
+                else:
+                    vector_store.add_documents(current_batch)
 
 	# Processa eventuali documenti residui
-	if documents_buffer:
-	    print(f"Processing final batch of {len(documents_buffer)} documents...")
-	    if vector_store is None:
-	        vector_store = FAISS.from_documents(documents_buffer, embedding=embedding_model)
-	    else:
-		vector_store.add_documents(documents_buffer)
-     # Save FAISS vector store 
+    if documents_buffer:
+        print(f"Processing final batch of {len(documents_buffer)} documents...")
+        if vector_store is None:
+            vector_store = FAISS.from_documents(documents_buffer, embedding=embedding_model)
+        else:
+            vector_store.add_documents(documents_buffer)
+    # Save FAISS vector store 
     vector_store.save_local(faiss_index_folder)
     print("FAISS vector store created and saved successfully!")
-
-fb8h*^VZTL3BSW""" Retrieve and Generate part """
+""" Retrieve and Generate part """
 # Define prompt for question-answering
 prompt = hub.pull("rlm/rag-prompt")
 # Step 1: Define Explanation Class: composed by file and row
