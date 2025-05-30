@@ -14,6 +14,7 @@ from langchain_core.output_parsers import JsonOutputParser
 from pydantic import BaseModel, Field
 from typing import List
 import time
+from langchain_community.chat_models import ChatOllama
 
 os.environ["LANGSMITH_TRACING"] = "true" 
 os.environ["LANGSMITH_API_KEY"] = "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"
@@ -27,6 +28,7 @@ llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
 # MISTRAL by Groq
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
+llm = ChatOllama(model="llama3:8b", temperature=0)
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
@@ -163,7 +165,7 @@ def generate(state: State):
     return {
         "answer": parsed if parsed else response.content.strip()
     }
-'''k analysis'''
+
 # Create a dictionary to store results for each k
 results_by_k = {}
 # Leggi le domande dal file JSON
@@ -197,4 +199,3 @@ for k in range(10, 70):  # k da 0 a 20
     with open(output_filename, "w") as output_file:
         json.dump(all_results, output_file, indent=4, ensure_ascii=False)
     print(f"Results for k={k} saved to {output_filename}")
-
