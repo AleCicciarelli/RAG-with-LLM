@@ -37,44 +37,30 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 csv_folder = "csv_data_tpch"
 faiss_index_folder = "faiss_index"
-batch_size = 200
+
 # Verify if the FAISS files already exist
 if os.path.exists(faiss_index_folder):
     # Load the FAISS index folder ( allow_dangerous_deserialization=True just because we create the files and so we can trust them)
     vector_store = FAISS.load_local(faiss_index_folder, embedding_model, allow_dangerous_deserialization=True)
     print("FAISS index successfully loaded")
 else:
-    # if don't exist, load the csv files
+    batch_size = 200  # Adjust as needed
     documents = []
-    vector_store = None
-    for file in os.listdir(csv_folder):
-        if file.endswith(".csv"):
-            file_path = os.path.join(csv_folder, file)
-            print(f"Loading: {file_path}")
-            loader = CSVLoader(file_path=file_path)
-            docs = loader.load()
-            documents_buffer.extend(docs)
+    all_files = [f for f in os.listdir(csv_folder) if f.endswith(".csv")]
 
-            # Processa in batch
-            while len(documents_buffer) >= batch_size:
-                current_batch = documents_buffer[:batch_size]
-                documents_buffer = documents_buffer[batch_size:]
+    for file in all_files:
+        file_path = os.path.join(csv_folder, file)
+        loader = CSVLoader(file_path=file_path)
+        docs = loader.load()
+        
+        for i in range(0, len(docs), batch_size):
+            batch_docs = docs[i:i+batch_size]
+            if not documents:
+                vector_store = FAISS.from_documents(batch_docs, embedding=embedding_model)
+            else:
+                vector_store.add_documents(batch_docs)
 
-                print(f"Processing batch of {len(current_batch)} documents...")
-
-                if vector_store is None:
-                    vector_store = FAISS.from_documents(current_batch, embedding=embedding_model)
-                else:
-                    vector_store.add_documents(current_batch)
-
-	# Processa eventuali documenti residui
-    if documents_buffer:
-        print(f"Processing final batch of {len(documents_buffer)} documents...")
-        if vector_store is None:
-            vector_store = FAISS.from_documents(documents_buffer, embedding=embedding_model)
-        else:
-            vector_store.add_documents(documents_buffer)
-    # Save FAISS vector store 
+    # Save after full processing
     vector_store.save_local(faiss_index_folder)
     print("FAISS vector store created and saved successfully!")
 """ Retrieve and Generate part """
