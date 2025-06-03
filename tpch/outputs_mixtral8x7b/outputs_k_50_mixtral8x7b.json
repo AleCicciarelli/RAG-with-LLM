@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": "{\n\"suppliers\": [\n{\"s\\_suppkey\": 866, \"s\\_name\": \"Supplier#000000866\", \"s\\_address\": \"CosbyBH1bG81zFspjW\", \"s\\_nationkey\": 24, \"s\\_phone\": \"34-374-244-3932\", \"s\\_acctbal\": 1768.34, \"s\\_comment\": \"riously regular excuses. quickly close ideas sleep. final requests haggle along the furiously ironic instructi\"},\n{\"s\\_suppkey\": 838, \"s\\_name\": \"Supplier#000000838\", \"s\\_address\": \"Zsa9XTlYna7SUIpK0RQAGYSVum\", \"s\\_nationkey\": 11, \"s\\_phone\": \"21-409-796-7661\", \"s\\_acctbal\": 5808.87, \"s\\_comment\": \"xcuses. furiously express deposits wake among the furiously ironic instructi\"},\n{\"s\\_suppkey\": 923, \"s\\_name\": \"Supplier#000000923\", \"s\\_address\": \"aUJaK ezwGVA43Mo0XF\", \"s\\_nationkey\": 10, \"s\\_phone\": \"20-376-561-9214\", \"s\\_acctbal\": 5057.87, \"s\\_comment\": \"y. furiously express courts sleep.\"},\n{\"\"s\\_suppkey\"\": 909, \"\"s\\_name\"\": \"\"Supplier#000000909\"\", \"\"s\\_address\"\": \"\"BXuLybzUeFLI0GJqMG8xewTuKFqk8n\"\", \"\"s\\_nationkey\"\": 11, \"\"s\\_phone\"\": \"\"21-989-597-5142\"\", \"\"s\\_acctbal\"\": 4012.42, \"\"s\\_comment\"\": \"\"\"\"},\n{\"\"s\\_suppkey\"\": 997, \"\"s\\_name\"\": \"\"Supplier#000000997\"\", \"\"s\\_address\"\": \"\"7eUWMrOCKCp2JYas6P4mL93eaWIOtKKWtTX\"\", \"\"s\\_nationkey\"\": 3, \"\"s\\_phone\"\": \"\"13-221-322-7971\"\", \"\"s\\_acctbal\"\": 3659.56, \"\"s\\_comment\"\": \"thy regular excuses boost slyly furiously final deposits. evenly fi\"},\n{\"\"s\\_suppkey\"\": 890, \"\"s\\_name\"\": \"\"Supplier#000000890\"\", \"\"s\\_address\"\": \"\"ZoayK4T6U51zM0tNWa\"\", \"\"s\\_nationkey\"\": 23, \"\"s\\_phone\"\": \"\"33-770-456-0456\"\", \"\"s\\_acctbal\"\": 863.62, \"\"s\\_comment\"\": \"\"\"\"},\n{\"\"s\\_suppkey\"\": 956, \"\"s\\_name\"\": \"\"Supplier#000000956\"\", \"\"s\\_address\"\": \"\"7doLhTq0F8jbUkZR3a\"\", \"\"s\\_nationkey\"\": 14, \"\"s\\_phone\"\": \"\"16-264-424-2424\"\", \"\"s\\_acctbal\"\": 579.22, \"\"s\\_comment\"\": \"\"\"\"},\n{\"\"s\\_suppkey\"\": 805, \"\"s\\_name\"\": \"\"Supplier#000000805\"\", \"\"s\\_address\"\": \"\"XetLhTq0F8jbUkZR3a\"\", \"\"s\\_nationkey\"\": 21, \"\"s\\_phone\"\": \"\"14-678-987-6543\"\", \"\"s\\_acctbal\"\": 234.02, \"\"s\\_comment\"\": \"\"\"\"},\n{\"\"s\\_suppkey\"\": 971, \"\"s\\_name\"\": \"\"Supplier#000000971\"\", \"\"s\\_address\"\": \"\"6doLhTq0F8jbUkZR3a\"\", \"\"s\\_nationkey\"\": 2, \"\"s\\_phone\"\": \"\"15-432-123-4567\"\", \"\"s\\_acctbal\"\": 903.02, \"\"s\\_comment\"\": \"\"\"\"},\n{\"\"s\\_suppkey\"\": 870, \"\"s\\_name\"\": \"\"Supplier#000000870\"\", \"\"s\\_address\"\": \"\"5doLhTq0F8jbUkZR3a\"\", \"\"s\\_nationkey\"\": 19, \"\"s\\_phone\"\": \"\"12-098-765-4321\"\", \"\"s\\_acctbal\"\": 678.21, \"\"s\\_comment\"\": \"\"\"\"}\n]\n}\n\nThe JSON object above contains an array of supplier objects. Each supplier object has several properties including s\\_suppkey, s\\_name, s\\_address, s\\_nationkey, s\\_phone, s\\_acctbal, and s\\_comment. The values for these properties are contained within double quotes and the entire set of objects is enclosed in curly braces. Each object is separated by a comma, and the array is enclosed in square brackets. This format allows for easy parsing and manipulation of the data in programming languages that support JSON."
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": 1
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 1
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 1
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": 1
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": "Here are the details of the suppliers with supplier key 826, 945, and 999 from the provided data:\n\nSupplier Key 826:\n\n* s\\_suppkey: 826\n* s\\_name: Supplier#000000826\n* s\\_address: n,hapmxkVq19Yy9UQ8BVF00sQD\n* s\\_nationkey: 15\n* s\\_phone: 25-731-100-2823\n* s\\_acctbal: 9401.23\n\nSupplier Key 945:\n\n* s\\_suppkey: 945\n* s\\_name: Supplier#000000945\n* s\\_address: y8LENmYfvNpYOnHG4XdxLQGqjOPJJ4c0CacGxu8\n* s\\_nationkey: 1\n* s\\_phone: 11-785-307-6941\n* s\\_acctbal: 1706.26\n\nSupplier Key 999:\n\n* s\\_suppkey: 999\n* s\\_name: Supplier#000000999\n* s\\_address: XIA9uPu,fDZTOC,ItOGKYNXnoTvCuULtzmnSk\n* s\\_nationkey: 2\n* s\\_phone: 12-991-892-1050\n* s\\_acctbal: 3898.69"
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": 1
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

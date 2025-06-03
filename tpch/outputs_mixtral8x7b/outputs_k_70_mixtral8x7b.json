@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": 1
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 1
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 1
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": 1
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": "Here are the details of the suppliers from the data you provided, sorted by their account balance (`s_acctbal`):\n\n1. Supplier#000000882, Nationkey 14, Balance 9450.21\n   - s\\_suppkey: 882\n   - s\\_name: Supplier#000000882\n   - s\\_address: 5op1w94,JerNmOkyPfAVkZEtb7\n   - s\\_nationkey: 14\n   - s\\_phone: 24-437-170-2579\n   - s\\_acctbal: 9450.21\n\n2. Supplier#000000868, Nationkey 1, Balance 6239.02\n   - s\\_suppkey: 868\n   - s\\_name: Supplier#000000868\n   - s\\_address: dFPwNYsP 9xC\n   - s\\_nationkey: 1\n   - s\\_phone: 11-255-295-8702\n   - s\\_acctbal: 6239.02\n\n3. Supplier#000000818, Nationkey 16, Balance 9594.51\n   - s\\_suppkey: 818\n   - s\\_name: Supplier#000000818\n   - s\\_address: 78Rr rF8zcBGTSud4,5B\n   - s\\_nationkey: 16\n   - s\\_phone: 26-754-547-4185\n   - s\\_acctbal: 9594.51\n\n4. Supplier#000000839, Nationkey 6, Balance 2761.59\n   - s\\_suppkey: 839\n   - s\\_name: Supplier#000000839\n   - s\\_address: 1fSx9Sv6LraqnVP3u\n   - s\\_nationkey: 6\n   - s\\_phone: 16-845-687-7291\n   - s\\_acctbal: 2761.59\n\n5. Supplier#000"
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": "Here is the information for the first 5 suppliers in the text you provided:\n\n1. Supplier #833\n   - s\\_nationkey: 5\n   - s\\_suppkey: 833\n   - s\\_name: Video Tech\n   - s\\_address: Cybulski Enterprises\n   - s\\_phone: 13-406-269-5729\n   - s\\_acctbal: 3150.4\n   - s\\_comment: Null\n\n2. Supplier #834\n   - s\\_nationkey: 3\n   - s\\_suppkey: 834\n   - s\\_name: Shaw Clothing\n   - s\\_address: A-1 La Paz Plaza\n   - s\\_phone: 503-264-9417\n   - s\\_acctbal: 1181.2\n   - s\\_comment: Null\n\n3. Supplier #835\n   - s\\_nationkey: 3\n   - s\\_suppkey: 835\n   - s\\_name: Spinelli Imports\n   - s\\_address: Borghesi-Xian Trading\n   - s\\_phone: 415-296-7025\n   - s\\_acctbal: 239.68\n   - s\\_comment: Null\n\n4. Supplier #836\n   - s\\_nationkey: 2\n   - s\\_suppkey: 836\n   - s\\_name: Svenson Telescopes\n   - s\\_address: PF-Wieser Componentes\n   - s\\_phone: 44-170-959-8562\n   - s\\_acctbal: 952.06\n   - s\\_comment: Null\n\n5. Supplier #838\n   - s\\_nationkey: 11\n   - s\\_suppkey: 838\n   - s\\_name: Supracon Fabrics\n   - s\\_address: Zsa9XTlYna7SUIpK0RQAGYSVum\n   - s\\_phone: 21-409-796-7661\n   - s\\_acctbal: 5808.87\n   - s\\_comment: xcuses. furiously express deposits wake among the furiously ironic instructi\n\nPlease note that I have provided a snapshot of the data, you can follow the same format to get the information for other suppliers as well."
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]
