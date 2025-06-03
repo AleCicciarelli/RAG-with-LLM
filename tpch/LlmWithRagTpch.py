@@ -67,9 +67,10 @@ else:
 # Define prompt for question-answering
 prompt = hub.pull("rlm/rag-prompt")
 # Step 1: Define Explanation Class: composed by file and row
+
 class AnswerItem(BaseModel):
-    file: str
-    row: int
+    answer: List[str]
+    why: List[str]
 
 # Define state for application
 class State(TypedDict):
@@ -120,34 +121,35 @@ def generate(state: State):
         Example:
 
         CONTEXT:
-        - source: <table_1>, row: <row_idx_1>
-        (<col_a>:<val_a>, <col_b>:<val_b>, ...)
-        - source: <table_1>, row: <row_idx_2>
-        (<col_a>:<val_a1>, <col_b>:<val_b1>, ...)
-        - source: <table_2>, row: <row_idx_3>
-        (<col_c>:<val_c>, <col_d>:<val_d>, ...)
-        - source: <table_2>, row: <row_idx_4>
-        (<col_c>:<val_c1>, <col_d>:<val_d1>, ...)
-        - source: <table_3>, row: <row_idx_1>
-        (<col_e>:<val_e>, <col_f>:<val_f>, ...)
-        - source: <table_3>, row: <row_idx_2>
-        (<col_e>:<val_e1>, <col_f>:<val_f1>, ...)
+        - source: customer.csv , row: 14322
+        (<col_a>:<val_a>,..., c_nationkey : 2, ...)
+        - source: orders.csv, row: 137
+        (o_orderkey : 546, ..., o_totalprice : 20531.43, ...)
+        - source: customer.csv, row: 101
+        (<col_a>:<val_c>, ...,<c_nationkey : 2, ...)
+        - source: orders.csv, row: 78528
+        (o_orderkey : 314052, ..., o_totalprice : 20548.82, ...)
 
         QUESTION:
-            "Which are the <entity_type> (specify <col_a> and <col_b>) involved in <condition_1> or <condition_2>?"
+            "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?"
 
         EXPECTED ANSWER:
 
-        [
+        [  
             {{
-                "answer": ["<col_a_val> <col_b_val>", "<col_a_val> <col_b_val>"],
-                "why": [
-                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_3>,<table_3>_<row_idx_1>}},{{<table_1>_<row_idx_2>,<table_2>_<row_idx_4>,<table_3>_<row_idx_1>}}}}", 
-                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_4>,<table_3>_<row_idx_2>}}}}"
-                ]
-            }}
-        
-
+                "answer": [
+                {{
+                    "answer": [
+                    "546",
+                    "314052"
+                    ],
+                    "why": [
+                    "{{{{customer_14322,orders_137}}}}", 
+                    "{{{{customer_101,orders_78528}}}}"
+                    ]
+                }}
+                
+            }}           
         ]
 """
 
