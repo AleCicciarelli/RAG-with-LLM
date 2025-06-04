@@ -15,7 +15,7 @@ from pydantic import BaseModel, Field
 from typing import List
 import csv
 from langchain_community.chat_models import ChatOllama
-
+import re
 os.environ["LANGSMITH_TRACING"] = "true" 
 os.environ["LANGSMITH_API_KEY"] = "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"
 #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 old old token langsmith
