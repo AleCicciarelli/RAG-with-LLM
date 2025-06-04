@@ -16,7 +16,6 @@ from pydantic import BaseModel
 from typing import List, Dict
 import csv
 from langchain_community.chat_models import ChatOllama
-from langchain_core.output_parsers import JsonOutputParser
 
 os.environ["LANGSMITH_TRACING"] = "true"
 os.environ["LANGSMITH_API_KEY"] = "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"
