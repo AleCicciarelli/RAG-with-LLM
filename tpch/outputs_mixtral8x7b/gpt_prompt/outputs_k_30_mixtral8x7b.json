@@ -1,0 +1,201 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 813
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 5.2
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": 1
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": "In the given data, there are multiple records for suppliers with various details. Here's a summary of some of the key fields:\n\n* `s_suppkey`: A unique identifier for each supplier. The values range from 830 to 999 in this dataset.\n* `s_name`: The name of the supplier.\n* `s_address`: The address of the supplier.\n* `s_nationkey`: A foreign key referencing the nation table, which categorizes suppliers based on their country.\n* `s_phone`: The phone number of the supplier.\n* `s_acctbal`: The account balance or credit limit for each supplier. This value can be positive (credit limit) or negative (amount owed).\n\nHere are some interesting observations from this dataset:\n\n1. Supplier 951 has a negative account balance (-511.17), which means they owe money to the company.\n2. Supplier 830, NkkeNeVsWdw8U SeVBnUX 2GB, is from nation key 15 and has an account balance of 1536.13.\n3. Supplier 963, s3WbU6w31FgnuZVtwGnH6PkyZFg, is also from nation key 11 and has a positive account balance (4152.04).\n4. Suppliers with the highest credit limits include:\n\t* Supplier 899, oLlkiVghtro IwzcwFuzwMCG94rRpux, with a credit limit of 7741.42\n\t* Supplier 980, jfgiJfywBW88ZEYM 5V, with a credit limit of 2783.33\n\t* Supplier 945, y8LENmYfvNpYOnHG4XdxLQGqjOPJJ4c0CacGxu8, with a credit limit of 1706.26\n5. The supplier with the lowest (or possibly negative) credit limit is Supplier 951, Tuh3kFB,zCuI,jtPmV,IMcXQF, with an account balance of -511.17.\n\nThese observations can help a company understand its financial relationships with suppliers and identify potential areas for improvement or negotiation."
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": 17
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 1
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 1
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": "Here is the information for the first 10 suppliers in the text you provided, sorted by their supplier key (s\\_suppkey):\n\n| s\\_suppkey | s\\_name | s\\_address | s\\_nationkey | s\\_phone | s\\_acctbal | s\\_comment |\n| --- | --- | --- | --- | --- | --- | --- |\n| 811 | Supplier#000000812 | 8qh4tezyScl5bidLAysvutB,,ZI2dn6xP | 6 | 16-585-724-6633 | 8615.50 | quickly pending packages after the careful... |\n| 812 | Supplier#000000813 |  |  |  |  |  |\n| 853 | Supplier#000000854 | omM4Df4DWXSTKmenaUUSr | 16 | 26-346-921-7567 | 6082.22 | n requests believe fluffily. carefully special... |\n| 854 | Supplier#000000855 |  |  |  |  |  |\n| 873 | Supplier#000000874 | xsGhP46dDeavM6wnREIi7Q09jfAUTzucwp | 16 | 26-826-579-8300 | 7755.50 | beans. deposits haggle after the blithely express... |\n| 874 | Supplier#000000875 |  |  |  |  |  |\n| 875 | Supplier#000000876 |  |  |  |  |  |\n| 881 | Supplier#000000882 | 5op1w94,JerNmOkyPfAVkZEtb7 | 14 | 24-437-170-2579 | 9450.21 | ly final requests haggle furiously final, regular... |\n| 884 | Supplier#000000885 | aJUXiGC6qSAWr0Dl0VBahtF | 7 | 17-578-639-8695 | 1736.47 | furiously. carefully pending pin... |\n| 885 | Supplier#000000886 |  |  |  |  |  |\n\nI have left the second row of each supplier's information blank because it appears to be incomplete in the text you provided. If you have the complete information for those suppliers, you can add it in to the table above."
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": 1
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": 1
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": "This appears to be a list of supplier records, where each record contains information about a supplier such as their supplier key (`s\\_suppkey`), name (`s\\_name`), address (`s\\_address`), nation key (`s\\_nationkey`), phone number (`s\\_phone`), account balance (`s\\_acctbal`), and comments (`s\\_comment`).\n\nHere is an example of how you might interpret one of the records:\n\n* Supplier #860: Supplier#000000860, C9FacsR,23JNHd8ioSI5qC7FfnR, 17, 27-547-426-7"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": "Here is a summary of the information for each supplier, based on the data provided:\n\n* Supplier #942: Sells packages that unwind fluff after making deposits and haggling. Address includes \"DtR\".\n* Supplier #816: Owes a small amount of money, and has an address with a missing first digit.\n* Supplier #941: Has a positive account balance and sells unusual items according to theodolites. Address includes \"jcaNsplI8Rleg\".\n* Supplier #814: Owes a significant amount of money, and has an address with missing letters.\n* Supplier #929: Has a small positive account balance and sells items according to doggedly even theodolites. Address includes \"XYQyy9rraHvHMCBQcoGnAvfw0iGG4jOCMENI\".\n* Supplier #357: Has a negative account balance and sells parts for rods.\n* Supplier #969: Has a small positive account balance and nags slyly across the line. Address includes \"thRdVx7vCajVFs7gsK8VKxzydPiHvIKK,DtR\".\n* Supplier #921: Has a large positive account balance and sells drums.\n* Supplier #930: Has a small positive account balance and sells items related to pumps.\n* Supplier #924: Has a moderate positive account balance and sells boxes for rods.\n* Supplier #813: Owes a small amount of money and has an address with missing letters.\n* Supplier #903: Has a large positive account balance and sells equipment.\n* Supplier #926: Has a moderate positive account balance and sells boxes for parts.\n* Supplier #810: Owes a significant amount of money and has an address with missing letters.\n* Supplier #935: Has a small positive account balance and sells items related to pumps.\n* Supplier #905: Has a large positive account balance and sells equipment.\n* Supplier #812: Owes a moderate amount of money and has an address with missing letters.\n* Supplier #936: Has a small positive account balance and sells items related to pumps.\n* Supplier #907: Has a large positive account balance and sells equipment.\n* Supplier #811: Owes a significant amount of money and has an address with missing letters.\n* Supplier #934: Has a small positive account balance and sells items related to pumps.\n* Supplier #902: Has a large positive account balance and sells equipment.\n* Supplier #809: Owes a significant amount of money and has an address with missing letters.\n* Supplier #937: Has a small positive account balance and sells items related to pumps.\n* Supplier #915: Has a moderate positive account balance and sells equipment.\n* Supplier #808: Owes a significant amount of money and has an address with missing letters.\n* Supplier #932: Has a small positive account balance and sells items related to pumps.\n* Supplier #916: Has a moderate positive account balance and sells equipment.\n* Supplier #807: Owes a significant amount of money and has an address with missing letters.\n* Supplier #931: Has a small positive account balance and sells items related to pumps.\n* Supplier #917: Has a moderate positive account balance and sells equipment.\n* Supplier #806: Owes a significant amount of money and has an address with missing letters.\n* Supplier #933: Has a small positive account balance and sells items related to pumps.\n* Supplier #914: Has a moderate positive account balance and sells equipment.\n* Supplier #805: Owes a significant amount of money and has an address with missing letters.\n* Supplier #938: Has a small positive account balance and sells items related to pumps.\n* Supplier #913: Has a large positive account balance and sells equipment.\n* Supplier #804: Owes a significant amount of money and has an address with missing letters.\n* Supplier #912: Has a large positive account balance and sells equipment.\n* Supplier #803: Owes a significant amount of money and has an address with missing letters.\n* Supplier #911: Has a large positive account balance and sells equipment.\n* Supplier #802: Owes a significant amount of money and has an address with missing letters.\n* Supplier #910: Has a large positive account balance and sells equipment.\n* Supplier #801: Owes a significant amount of money and has an address with missing letters.\n* Supplier #909: Has a large positive account balance and sells equipment.\n* Supplier #832: Owes a moderate amount of money.\n* Supplier #908: Has a large positive account balance and sells equipment.\n* Supplier #831: Owes a moderate amount of money.\n* Supplier #906: Has a large positive account balance and sells equipment.\n* Supplier #830: Owes a moderate amount of money.\n* Supplier #904: Has a large positive account balance and sells equipment.\n* Supplier #829: Owes a moderate amount of money.\n* Supplier #901: Has a large positive account balance and sells equipment.\n* Supplier #828: Owes a moderate amount of money.\n* Supplier #900: Has a large positive account balance and sells equipment.\n* Supplier #827: Owes a moderate amount of money.\n* Supplier #836: Owes a significant amount of money.\n* Supplier #835: Owes a moderate amount of money.\n* Supplier #834: Owes a significant amount of money.\n* Supplier #833: Owes a moderate amount of money.\n* Supplier #826: Owes a significant amount of money.\n* Supplier #825: Owes a moderate amount of money.\n* Supplier #824: Owes a significant amount of money.\n* Supplier #823: Owes a moderate amount of money.\n* Supplier #822: Owes a significant amount of money.\n* Supplier #821: Owes a moderate amount of money.\n* Supplier #820: Owes a significant amount of money.\n* Supplier #819: Owes a moderate amount of money.\n* Supplier #818: Owes a significant amount of money.\n* Supplier #817: Owes a moderate amount of money.\n* Supplier #816: Owes a small amount of money.\n* Supplier #800: Owes a significant amount of money.\n\nIt is worth noting that there are many suppliers with missing or incomplete information, as well as several suppliers who owe significant amounts of money. Additionally, the majority of suppliers sell equipment or items related to pumps."
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": {
+            "s_suppkey": 854,
+            "s_name": "Supplier#000"
+        }
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

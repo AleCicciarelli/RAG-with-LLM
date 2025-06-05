@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": "Here is the information in a more organized format:\n\n1. s\\_suppkey: 801, s\\_name: Supplier#000000801, s\\_nationkey: 1, s\\_phone: 11-673-791-6926, s\\_acctbal: 976.53\n\t* Comment: regular, permanent accounts are against the blithely final accounts.\n2. s\\_suppkey: 820, s\\_name: Supplier#000000820, s\\_nationkey: 15, s\\_phone: 25-716-340-3140, s\\_acctbal: 4604.84\n\t* Comment: ruthlessly final packages are furiously according to the ironic, pending deposits.\n3. s\\_suppkey: 835, s\\_name: Supplier#000000835, s\\_nationkey: 14, s\\_phone: 24-772-959-924"
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": "1. '100' : {'name' : 'Supplier#000000100', 'address' : '8eF5tTqLJwPx3y4Tyo6a9zlZbNhXAJYM7nHBpQqS', 'nationkey' : 2, 'phone' : '12-504-449-8619', 'acctbal' : 3214.76, 'comment' : 'carefully regular dependencies nag among the carefully regular instructions'},\n2. '101' : {'name' : 'Supplier#000000101', 'address' : 'xJjdQ9cCv65gT3m0kHnE8zlZbNhXAJYM7nHBpQqS', 'nationkey' : 2, 'phone' : '12-504-449-8620', 'acctbal' : 389.67, 'comment' : 'regularly silent dependencies are fluffily slyly'},\n3. '102' : {'name' : 'Supplier#000000102', 'address' : 'lKrSbZoCv65gT3m0kHnE8zlZbNhXAJYM7nHBpQqS', 'nationkey' : 2, 'phone' : '12-504-449-8621', 'acctbal' : 3069.28, 'comment' : 'regularly silent dependencies are fluffily slyly'},\n4. '103' : {'name' : 'Supplier#000000103', 'address' : 'kKrSbZoCv65gT3m0kHnE8zlZbNhXAJYM7nHBpQqS', 'nationkey' : 2, 'phone' : '12-504-449-8622', 'acctbal' : 3475.09, 'comment' : 'regularly silent dependencies are fluffily slyly'},\n5. '104' : {'name' : 'Supplier#000000104', 'address' : 'jKrSbZoCv65gT3m0kHnE8zlZbNhXAJYM7nHBpQqS', 'nationkey' : 2, 'phone' : '12-504-449-8623', 'acctbal' : 2020.18, 'comment' : 'carefully regular dependencies nag among the carefully regular instructions'},\n6. '105' : {'name' : 'Supplier#000000105', 'address' : 'hKrSbZoCv65gT3m0kHnE8zlZbNhXAJYM7nHBpQqS', 'nationkey' : 2, 'phone' : '12-504-449-8624', 'acctbal' : 375.19, 'comment' : 'carefully regular dependencies nag among the carefully regular instructions'},\n7. '106' : {'name' : 'Supplier#000000106', 'address' : 'zKrSbZoCv65gT3m0kHnE8zlZbNhXAJYM7nHBpQqS', 'nationkey' : 2, 'phone' : '12-504-449-8625', 'acctbal' : 3573.58, 'comment' : 'carefully regular dependencies nag among the carefully regular instructions'},\n8. '107' : {'name' : 'Supplier#000000107', 'address' : 'wKrSbZoCv65gT3m0kHnE8zlZbNhXAJYM7nHBpQqS', 'nationkey' : 2, 'phone' : '12-504-449-8626', 'acctbal' : 3900.3, 'comment' : 'carefully regular dependencies nag among the carefully regular instructions'},\n9. '108' : {'name' : 'Supplier#000000108', 'address' : 'vKrSbZoCv65gT3m0kHnE8zlZbNhXAJYM7nHBpQqS', 'nationkey' : 2, 'phone' : '12-504-449-8627', 'acctbal' : 3662.64, 'comment' : 'carefully regular dependencies nag among the carefully regular instructions'},\n10. '109' : {'name' : 'Supplier#000000109', 'address' : 'uKrSbZoCv65gT3m0kHnE8zlZbNhXAJYM7nHBpQqS', 'nationkey' : 2, 'phone' : '12-504-449-8628', 'acctbal' : 3059.02, 'comment' : 'carefully regular dependencies nag among the carefully regular instructions'},\n...\n50. '150' : {'name' : 'Supplier#000000150', 'address' : 'pJjdQ9cCv65gT3m0kHnE8zlZbNhXAJYM7nHBpQqS', 'nationkey' : 2, 'phone' : '12-504-449-8638', 'acctbal' : 370.01, 'comment' : 'regularly silent dependencies are fluffily slyly'}\n}"
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": 12
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": "1. '30001' : {'name': 'Supplier#000000300', 'address': '5482 Hunnable Lane, Little Whinging, Surrey', 'nationkey': '23', 'phone': '(171) 555-1212', 'acctbal': '21656.69', 'comment': 'blithely even final packages dazzle furiously at fluffily special requests'}\n2. '30005' : {'name': 'Supplier#000"
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": "Here is the information for the first 10 suppliers in the text file:\n\n1. Supplier #: 9\n   Name: Supplier#000000009\n   Address: \n   - Nqn Ybirynpr, Tenivgbh Pg, Grfg Bahasbequ, 2 Fgrcurf Oebja Srgnese"
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 1
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 1
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": "Here is the information for the first 1"
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": "Here is the information in a more readable format:\n\n1. `s_suppkey: 2, s_name: Supplier#000000002, s_address: 40 Gulch St, s_nationkey: 2, s_phone: 12-972-343-8810, s_acctbal: 5789.96, s_comment: ccounts. quickly final patterns mold`\n2. `s_suppkey: 3, s_name: Supplier#000000003, s_address: 3489 Silica Rd, s_nationkey: 1, s_phone: 15-476-343-8810, s_acctbal: 2392.34, s_comment: counts. even final requests haggle carefully`\n3. `s_suppkey: 4, s_name: Supplier#000000004, s_address: 1586 Westchester Drive, s_nationkey: 4, s_phone: 14-183-331-6019, s_acctbal: 8855.24, s_comment: sits boost blithely final instructions. ironic m`\n4. `s_suppkey: 5, s_name: Supplier#000000005, s_address: 73 East Drive, s_nationkey: 1, s_phone: 15-496-343-8810, s_acctbal: 6295.12, s_comment: even final deposits haggle slowly`\n5. `s_suppkey: 6, s_name: Supplier#000000006, s_address: 7398 Milam St, s_nationkey: 1, s_phone: 15-496-343-8810, s_acctbal: 2058.08, s_comment: even final accounts haggle carefully`\n6. `s_suppkey: 7, s_name: Supplier#000000007, s_address: 3489 Silica Rd, s_nationkey: 1, s_phone: 15-476-343-8810, s_acctbal: 1254.67, s_comment: even final requests haggle carefully`\n7. `s_suppkey: 8, s_name: Supplier#000000008, s_address: 3517 Delaware Ave, s_nationkey: 2, s_phone: 12-976-343-8810, s_acctbal: 6523.02, s_comment: counts. even final patterns haggle`\n8. `s_suppkey: 9, s_name: Supplier#000000009, s_address: 77 Hillside Drive, s_nationkey: 1, s_phone: 15-476-343-8810, s_acctbal: 9262.79, s_comment: even final deposits haggle slowly`\n9. `s_suppkey: 10, s_name: Supplier#000000010, s_address: 3359 Via Colusa, s_nationkey: 2, s_phone: 12-976-343-8810, s_acctbal: 6360.12, s_comment: counts. quickly final requests haggle`\n\nIt seems like this data is coming from a supplier table in a database, with columns for supplier key, name, address, nation key, phone number, account balance, and comments. The values in the `s_comment` column suggest that these suppliers are involved in some sort of haggling or negotiation process related to final patterns, requests, deposits, or instructions."
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": "This text appears to contain a list of supplier data, with each entry containing information about a single supplier. The fields in each entry include:\n\n* `s\\_suppkey`: A unique identifier for the supplier (e.g. \"803\")\n* `s\\_name`: The name of the supplier (e.g. \"Supplier#000000803\")\n* `s\\_address`: The address of the supplier\n* `s\\_nationkey`: A code indicating the nation to which the supplier belongs\n* `s\\_phone`: The phone number for the supplier\n* `s\\_acctbal`: The balance in the supplier's account\n* `s\\_comment`: A comment or note about the supplier\n\nHere is an example of one entry from the list:\n```\ns_suppkey: 803\ns_name: Supplier#0"
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": 1
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": "Here is the information in a more organized and readable format:\n\n1. `supplier_id`:"
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": "Based on the data provided, here is a summary of suppliers who recommend haggling for even better prices:\n\n1. Supplier #881: s\\_suppkey = 882, s\\_name = 'Supplier#000000882', s\\_comment = \"ly final requests haggle furiously final, regularly\"\n2. Supplier #911: s\\_suppkey = 912, s\\_name = 'Supplier#000000912', s\\_comment = \"the ironic Tiresias. requests above the slyly even deposits affix above\"\n3. Supplier #969: s\\_suppkey = 970, s\\_name = 'Supplier#000000969', s\\_comment = 'ounts nag slyly across the furiously'\n4. Supplier #985: s\\_suppkey = 986, s\\_name = 'Supplier#000000985', s\\_comment = 'ut the furiously final deposits integrate according to the'\n\nThese suppliers have comments indicating that they recommend haggling for even better prices. Please note that this is based on the provided data and further investigation may be necessary to confirm."
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": 1
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": "Here is the information for the first 10 suppliers in the text:\n\n1. Supplier #1, nationkey 7, name not given, phone \"17-344-526-9268\", acctbal $22612.54\n2. Supplier #2, nationkey 13, name not given, phone \"23-601-285-2611\", acctbal $78538.67\n3. Supplier #3, nationkey 2, name not given, phone \"30-492-632-2151\", acctbal $11241.21\n4. Supplier #4, nationkey 1, name not given, phone \"33-782-243-9406\", acctbal $17969.37\n5. Supplier #5, nationkey 1, name not given, phone \"33-782-243-9406\", acctbal $15429.24\n6. Supplier #6, nationkey 18, name not given, phone \"28-944-679-2035\", acctbal $11280.82\n7. Supplier #7, nationkey 24, name not given, phone \"34-553-291-5840\", acctbal $10556.51\n8. Supplier #8, nationkey 23, name not given, phone \"33-778-156-8293\", acctbal $19411.16\n9. Supplier #9, nationkey 17, name not given, phone \"29-402-853-9523\", acctbal $19909.26\n10. Supplier #10, nationkey 15, name not given, phone \"27-961-323-3522\", acctbal $14835.66\n\nNote that the supplier names are not provided in the text. Also, some supplier entries may be duplicates with the same key values (nationkey, phone, and acctbal), as in entries 4 and 5 for example."
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

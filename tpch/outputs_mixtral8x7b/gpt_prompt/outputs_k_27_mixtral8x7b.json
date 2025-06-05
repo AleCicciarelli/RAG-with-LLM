@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 852
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": "Here is the information for the first 10 suppliers in the text:\n\n1. Supplier #856, s\\_address: \"EkqG2\", s\\_nationkey: 3, s\\_acctbal: 3219.99\n2. Supplier #857, s\\_address: \"CtYJK\", s\\_nationkey: 10, s\\_acctbal: 692.29\n3. Supplier #858, s\\_address: \"Iiwxq\", s\\_nationkey: 14, s\\_acctbal: 7864.17\n4. Supplier #859, s\\_address: \"FoXZb\", s\\_nationkey: 2, s\\_acctbal: 3808.52\n5. Supplier #860, s\\_address: \"vj9yxpOqUdt3HIxfOWbA9\", s\\_nationkey: 7, s\\_acctbal: 1747.35\n6. Supplier #861, s\\_address: \"pXq0K\", s\\_nationkey: 1, s\\_acctbal: 2119.44\n7. Supplier #862, s\\_address: \"IjyGd\", s\\_nationkey: 5, s\\_acctbal: 3280.02\n8. Supplier #863, s\\_address: \"ZMJKc\", s\\_nationkey: 1, s\\_acctbal: 9742.01\n9. Supplier #864, s\\_address: \"RILC0\", s\\_nationkey: 15, s\\_acctbal: 3808.52\n10. Supplier #865, s\\_address: \"BtUWy\", s\\_nationkey: 9, s\\_acctbal: 749.01\n\nPlease note that the 's\\_name' field is not provided in the text, so I can't include it in the information above."
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": "This appears to be a list of supplier records, where each record contains information about a supplier such as their supplier key (s\\_suppkey), name, address, nation key (s\\_nationkey), phone number, balance, and comments. The records seem to be in a dictionary-like format, with keys and values separated by colons and different records separated by commas.\n\nHere is an example of how the first record could be translated into a Python dictionary:\n\n{'s\\_suppkey': 10, 's\\_name': 'Supplier #10', 's\\_address': '123 Main St.\\nSome City\\nCA 12345', 's\\_nationkey': 1, 's\\_phone': '(123) 456-7890', 's\\_acctbal': 3141.59, 's\\_comment': 'Some comment about Supplier #10'}\n\nIt's worth noting that some of the balance values are negative, which could indicate a debt owed by the supplier rather than a credit. The comments in the records contain various observations or recommendations about each supplier."
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": "Here is the information in a more readable format:\n\n1. `supplier_id': 807,\n   'name': 'Supplier#000000807',\n   'address': 'ClHvM1nuPUESGg35Ls',\n   'nationkey': 14,\n   'phone': '24-255-894-5069',\n   'account_balance': 1077.97,\n   'comment': 'lly. even, pending requests boost furiously furious'\n2. `supplier_id': 815,\n   'name': 'Supplier#000000815',\n   'address': 'uCvvad6NCkXBUkr28t dtq swXPtu',\n   'nationkey': 23,\n   'phone': '33-830-680-6168',\n   'account_balance': 361.01,\n   'comment': 'lve furiously according to the final accounts. even accounts on the'\n3. `supplier_id': 816,\n   'name': 'Supplier#000000816',\n   'address': 'uCvvad6NCkXBUkr28t dtq swXPtu',\n   'nationkey': 23,\n   'phone': '33-830-680-6168',\n   'account_balance': 361.01,\n   'comment': 'lve furiously according to the final accounts. even accounts on the'\n4. `supplier_id': 834,\n   'name': 'Supplier#000000834',\n   'address': 'a7ZBr9561n7CHzwtrfoZnpNWf71uKtH',\n   'nationkey': 14,\n   'phone': '24-772-959-9240',\n   'account_balance': 1348.35,\n   'comment': 'final asymptotes are furiously bold deposits: unusual, even accounts across the blithely'\n5. `supplier_id': 835,\n   'name': 'Supplier#000000835',\n   'address': 'a7ZBr9561n7CHzwtrfoZnpNWf71uKtH',\n   'nationkey': 14,\n   'phone': '24-772-959-9240',\n   'account_balance': 1348.35,\n   'comment': 'final asymptotes are furiously bold deposits: unusual, even accounts across the blithely'\n6. `supplier_id': 838,\n   'name': 'Supplier#000000838',\n   'address': '1fSx9Sv6LraqnVP3u',\n   'nationkey': 6,\n   'phone': '16-845-687-7291',\n   'account_balance': 2761.59,\n   'comment': 'ess, regular accounts haggle slyly across the carefully'\n7. `supplier_id': 839,\n   'name': 'Supplier#000000839',\n   'address': '1fSx9Sv6LraqnVP3u',\n   'nationkey': 6,\n   'phone': '16-845-687-7291',\n   'account_balance': 2761.59,\n   'comment': 'ess, regular accounts haggle slyly across the carefully'\n8. `supplier_id': 902,\n   'name': 'Supplier#000000902',\n   'address': 'fQVbA9,L6tB9iFrCfk4Yt1dwT0kRWg9DV',\n   'nationkey': 22,\n   'phone': '32-277-492-3117',\n   'account_balance': 856.37,\n   'comment': 'The account balance is enough to cover the order, but they are based in a high-risk country'\n9. `supplier_id': 903,\n   'name': 'Supplier#000000903',\n   'address': 'iJUnS42bRyMKOeNhx5ZkGseeMNMaHVuX',\n   'nationkey': 22,\n   'phone': '32-277-492-3117',\n   'account_balance': 856.37,\n   'comment': 'The account balance is enough to cover the order, but they are based in a high-risk country'\n10. `supplier_id': 942,\n`name`: 'Supplier#000000942',\n`address`: '8Xi3U6aVNFOoWnZ6nmiE5mJiY6vQTnjd',\n`nationkey`: 14,\n`phone`: '24-255-894-5069',\n`account_balance`: 134.7,\n`comment`: 'The account balance is not enough to cover the order'\n11. `supplier_id': 943,\n`name`: 'Supplier#000000943',\n`address`: '8Xi3U6aVNFOoWnZ6nmiE5mJiY6vQTnjd',\n`nationkey`: 14,\n`phone`: '24-255-894-5069',\n`account_balance`: 134.7,\n`comment`: 'The account balance is not enough to cover the order'\n12. `supplier_id': 945,\n`name`: 'Supplier#000000945',\n`address`: '8Xi3U6aVNFOoWnZ6nmiE5mJiY6vQTnjd',\n`nationkey`: 14,\n`phone`: '24-255-894-5069',\n`account_balance`: 134.7,\n`comment`: 'The account balance is not enough to cover the order'\n13. `supplier_id': 956,\n`name`: 'Supplier#000000956',\n`address`: '8Xi3U6aVNFOoWnZ6nmiE5mJiY6vQTnjd',\n`nationkey`: 14,\n`phone`: '24-255-894-5069',\n`account_balance`: 134.7,\n`comment`: 'The account balance is not enough to cover the order'\n14. `supplier_id': 957,\n`name`: 'Supplier#000000957',\n`address`: '8Xi3U6aVNFOoWnZ6nmiE5mJiY6vQTnjd',\n`nationkey`: 14,\n`phone`: '24-255-894-5069',\n`account_balance`: 134.7,\n`comment`: 'The account balance is not enough to cover the order'\n15. `supplier_id': 958,\n`name`: 'Supplier#000000958',\n`address`: '8Xi3U6aVNFOoWnZ6nmiE5mJiY6vQTnjd',\n`nationkey`: 14,\n`phone`: '24-255-894-5069',\n`account_balance`: 134.7,\n`comment`: 'The account balance is not enough to cover the order'\n16. `supplier_id': 959,\n`name`: 'Supplier#000000959',\n`address`: '8Xi3U6aVNFOoWnZ6nmiE5mJiY6vQTnjd',\n`nationkey`: 14,\n`phone`: '24-255-894-5069',\n`account_balance`: 134.7,\n`comment`: 'The account balance is not enough to cover the order'\n\nIt seems like you are looking for a supplier for your company's needs. Here are some suppliers that you can consider, along with their relevant information:\n\n1. Supplier 1: `supplier_id` = 123, `name` = \"SupplierName1\", `address` = \"street address 1\", `nationkey` = 14, `phone` = \"555-555-5555\", `account_balance` = 5000, `credit_limit` = 7000, `comment` = \"This supplier has a good track record and has been reliable in the past. They have a high credit limit, which indicates that they are financially stable.\"\n2. Supplier 2: `supplier_id` = 456, `name` = \"SupplierName2\", `address` = \"street address 2\", `nationkey` = 13, `phone` = \"555-555-5555\", `account_balance` = 8000, `credit_limit` = 9000, `comment` = \"This supplier is also financially stable and has a good track record. However, they are based in a different country, which may affect shipping times and costs.\"\n3. Supplier 3: `supplier_id` = 789, `name` = \"SupplierName3\", `address` = \"street address 3\", `nationkey` = 14, `phone` = \"555-555-5555\", `account_balance` = 3000, `credit_limit` = 4000, `comment` = \"This supplier has a lower credit limit and account balance, which may indicate financial instability. However, they have been reliable in the past and may be worth considering if they offer better prices or lead times.\"\n\nI hope this helps! Let me know if you have any other questions."
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 1
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": "This appears to be a list of supplier records, where each record contains information about a supplier such as its key (`s\\_suppkey`), name (`s\\_name`), address (`s\\_address`), nation key (`s\\_nationkey`), phone number (`s\\_phone`), account balance (`s\\_acctbal`), and comments (`s\\_comment`).\n\nHere is an example of how you might parse and display the first record in this list:\n```python\nrecord = {\n    \"s_suppkey\": 1,\n    \"s_name\": \"Supplier#000000001\",\n    \"s_address\": \" 4806- 1234 North great street\",\n    \"s\\_nationkey\": 1,\n    \"s\\_phone\": \"11-574-892-3228\",\n    \"s\\_acctbal\": 213.41,\n    \"s\\_comment\": \"Customer s. even asympRecommends haggl\"\n}\n\nprint(f\"Supplier Key: {record['s_suppkey']}\")\nprint(f\"Supplier Name: {record['s_name']}\")\nprint(f\"Supplier Address: {record['s_address']}\")\nprint(f\"Nation Key: {record['s_nationkey']}\")\nprint(f\"Phone Number: {record['s_phone']}\")\nprint(f\"Account Balance: {record['s_acctbal']:.2f}\")\nprint(f\"Comments: {record['s_comment']}\\n\")\n```\nOutput:\n```yaml\nSupplier Key: 1\nSupplier Name: Supplier#000000001\nSupplier Address:  4806-  1234 North great street\nNation Key: 1\nPhone Number: 11-574-892-3228\nAccount Balance: 213.41\nComments: Customer s. even asympRecommends haggl\n```\nYou can use a loop to parse and display all the records in this list."
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": "These are records from a supplier table, with columns for supplier details such as:\n\n* `s_suppkey`: supplier key, unique identifier for each supplier (integer)\n* `s_name`: name of the supplier (string)\n* `s_address`: business address of the supplier (string)\n* `s_nationkey`: nation key, foreign key referencing the nation table (integer)\n* `s_phone`: phone number of the supplier (string)\n* `s_acctbal`: current account balance of the supplier (money)\n* `s_comment`: additional notes or comments about the supplier (string)\n\nHere are some examples from this data:\n```vbnet\ns_suppkey:"
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": "Here is a summary of the information for each supplier, based on the data you provided:\n\n1. Supplier #901: No information provided.\n2. Supplier #902: s\\_suppkey = 903, s\\_name = \"Supplier#000000903\", s\\_address = \"fQVbA9,L6tB9iFrCfk4Yt1dwT0kRWg9DV\", s\\_nationkey = 22, s\\_phone = \"32-277-492-3117\", s\\_acctbal = 3238.01, s\\_comment = \"sometimes across the furiously express accounts. unusual accou\"\n3. Supplier #903: s\\_suppkey = 904, s\\_name = \"Supplier#000000904\", s\\_address = \"FgT9U6zBtYJKrXqL0YxJlStiQ7izWm\", s\\_nationkey = 12, s\\_phone = \"18-546-342-2260\", s\\_acctbal = 696.36, s\\_comment = \"carefully according to the fluffily regular requests. ironic\"\n4. Supplier #904: s\\_suppkey = 905, s\\_name = \"Supplier#000"
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": "Here is a summary of the information in the text you provided, organized in a more readable format:\n\n1. **Supplier 12**:\n   - `s_suppkey`: 12\n   - `s_name`: Supplier #12\n   - `s_address`: 456 Main St.\n   - `s_phone`: 800-123-4567\n   - `s_acctbal`: 3379.00\n\n2. **Supplier with key 1**:\n   - `s_suppkey`: 1\n   - `s_name`: Supplier #1\n   - `s_address`: 123 Maple Ave.\n   - `s_phone`: 800-555-5555\n   - `s_acctbal`: 4159.00\n\n3. **Supplier with key 6**:\n   - `s_suppkey`: 6\n   - `s_name`: Supplier #6\n   - `s_address`: 789 Oak St.\n   - `s_phone`: 800-543-2121\n   - `s_acctbal`: 2056.00\n\n4. **Supplier with key 10**:\n   - `s_suppkey`: 10\n   - `s_name`: Supplier #10\n   - `s_address`: 321 Pine Ave.\n   - `s_phone`: 800-987-6543\n   - `s_acctbal`: 6784.00\n\n5. **Supplier with key 15**:\n   - `s_suppkey`: 15\n   - `s_name`: Supplier #15\n   - `s_address`: 567 Elm St.\n   - `s_phone`: 800-321-7654\n   - `s_acctbal`: 9832.00\n\nIt looks like this text describes five different suppliers, with each supplier having a unique key, name, address, phone number, and account balance."
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": "08/10/2021 16:00:00 - Starting data extraction for 'supplier' table...\n08/10/2021 16:00:00 - Extracted the following record for 'supplier':\n| s\\_suppkey | s\\_name       | s\\_address            | s\\_nationkey | s\\_phone      | s\\_acctbal | s\\_comment          |\n|------------|--------------|----------------------|-------------|--------------|------------|--------------------|\n| 16         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 19         | Dawn Group   | 3557 Delaware Ave   | 17          | 650.2934-2222 | 23416.00   | need quicker shipments|\n| 10         | Video Ezy    | 4546 Kimberly Ave   | 1           | 617.555.1212 | 83415.00   | 30 day terms ok     |\n| 11         | Sound of Music| 2456 Broadway      | 1            | 617.555.6363 | 12394.00   | net 30             |\n| 12         | Silver Screen | 56 Franklin St     | 1            | 617.555.1616 | 98432.00   | ship now           |\n| 13         | 4 Seasons    | 3456 Delaware Ave   | 17          | 650.2934-2222 | 23021.00   | need quicker shipments|\n| 14         | Action Films | 56 Franklin St     | 1            | 617.555.1616 | 84392.00   | ship now           |\n| 15         | Adventure    | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 16         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 17         | Comedy       | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 18         | Drama        | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 19         | Dawn Group   | 3557 Delaware Ave   | 17          | 650.2934-2222 | 23416.00   | need quicker shipments|\n| 20         | Cartoon      | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 21         | Children's   | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 22         | Documentary  | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 23         | Educational  | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 24         | Foreign      | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 25         | Horror       | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 26         | Music        | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 27         | News         | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 28         | Romance      | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 29         | Sci-Fi       | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 30         | Soap Opera   | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 31         | Variety      | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 32         | War         | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 33         | Western      | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 34         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 35         | Action       | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 36         | Fantasy      | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 37         | Game Show    | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 38         | Talk Show    | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 39         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 40         | Children's   | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 41         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 42         | News         | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 43         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 44         | Documentary  | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 45         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 46         | Drama        | 56 Franklin St     | 1            | 617.555.1616 | 12394.00   | net 30             |\n| 47         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 48         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 49         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 50         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 51         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 52         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 53         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 54         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 55         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 56         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 57         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 58         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 59         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 60         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 61         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 62         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 63         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 64         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 65         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 66         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 67         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 68         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 69         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 70         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 71         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 72         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 73         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 74         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 75         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 76         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 77         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 78         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 79         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 80         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 81         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 82         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 83         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 84         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 85         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 86         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 87         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 88         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 89         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 90         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 91         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 92         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 93         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 94         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 95         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 96         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 97         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 98         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 99         | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n| 100        | Film Stars    | 47 Bacon Street     | 3           | 11.2543-2345 | 90384.00   | on time delivery    |\n\nIt seems like you've listed the same entity, \"Film Stars\" with the same address (presumably a place of business), and the same service/product (presumably film star-related services) 100 times. I'm assuming this is not a mistake, but rather an intentional action. If you meant to provide additional information about Film Stars or its address/services, please provide that information in a more clear and concise way. If you intended to list Film Stars 100 times for some other reason, please let me know the reason so I can assist you better."
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": 1
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": "Based on the provided data, \"final payments\" or \"settlement payments\" can be referred to as \"final payments\" since it is a common term used in business and finance to describe the final payment made to settle a debt or an obligation.\n\nIn the context of the given data, it appears that each record represents information about a supplier, including their account balance (s_acctbal). Therefore, \"final payments\" could potentially refer to the last payment made by a supplier to settle their account balance. However, this is just an interpretation based on the limited information provided. To determine the exact meaning of \"final payments\" in this context, additional information and context would be required."
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 100000
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 17
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": 27
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": "Here is the information in a more organized and readable format:\n\n1. Supplier 1 (nationkey = 1):\n* s\\_suppkey: 886\n* s\\_name: Supplier#000000886\n* s\\_address: R52IgT6b0yBuU r8,dNRZVWRY\n* s\\_phone: 11-329-720-1904\n* s\\_acctbal: -158.08\n* s\\_comment: Pending instructions hang during the blithely silent packages.\n2. Supplier 2 (nationkey = 2): None found.\n3. Supplier 3 (nationkey = 3): None found.\n4. Supplier 4 (nationkey = 4): None found.\n5. Supplier 5 (nationkey = 5): None found.\n6. Supplier 6 (nationkey = 6): None found.\n7. Supplier 7 (nationkey = 7): None found.\n8. Supplier 8 (nationkey = 8): None found.\n9. Supplier 9 (nationkey = 9): None found.\n10. Supplier 10 (nationkey = 10): None found.\n11. Supplier 11 (nationkey = 11): None found.\n12. Supplier 12 (nationkey = 12): None found.\n13. Supplier 13 (nationkey = 13): None found.\n14. Supplier 14 (nationkey = 14): None found.\n15. Supplier 15 (nationkey = 15):\n* s\\_suppkey: 961\n* s\\_name: Supplier#000000961\n* s\\_address: jlfkD00x6r0M34ctcSTY3cABv4yWKcjvHV\n* s\\_phone: 25-911-416-1546\n* s\\_acctbal: 4139.88\n* s\\_comment: Bold packages wake stealthily.\n16. Supplier 16 (nationkey = 16):\n* s\\_suppkey: 854\n* s\\_name: Supplier#000000854\n* s\\_address: omM4Df4DWXSTKmenaUUSr\n* s\\_phone: 26-346-921-7567\n* s\\_acctbal: 6082.22\n* s\\_comment: Special dependencies believe fluffily during the silent packages.\n17. Supplier 17 (nationkey = 17):\n* s\\_suppkey: 860\n* s\\_name: Supplier#000000860\n* s\\_address: C9FacsR,23JNHd8ioSI5qC7FfnR\n* s\\_phone: 27-547-426-7236\n* s\\_acctbal: 8210.13\n* s\\_comment: Bold, unusual ideas.\n18. Supplier 18 (nationkey = 18):\n* s\\_suppkey: 883\n* s\\_name: Supplier#000000883\n* s\\_address: 5ppzWDz6xcMOO09LkrAOvHzFEMfP3CIpndr\n* s\\_phone: 28-614-756-7513\n* s\\_acctbal: 9746.01\n* s\\_comment: Pending instructions sleep quickly during the blithely silent packages.\n19. Supplier 19 (nationkey = 19): None found.\n20. Supplier 20 (nationkey = 20): None found.\n21. Supplier 21 (nationkey = 21):\n* s\\_suppkey: 984\n* s\\_name: Supplier#000000984\n* s\\_address: 6H6qqye iYbYzCmwtcSTY3cABv4yWKcjvHV\n* s\\_phone: 25-911-416-1546\n* s\\_acctbal: 4139.88\n* s\\_comment: Unusual dependencies expect fluffiness during the silent packages.\n22. Supplier 22 (nationkey = 22): None found.\n23. Supplier 23 (nationkey = 23): None found.\n24. Supplier 24 (nationkey = 24): None found.\n25. Supplier 25 (nationkey = 25): None found.\n26. Supplier 26 (nationkey = 26): None found.\n\nThis list includes the supplier number, name, address, phone number, account balance, and any comments associated with each supplier for a given nationkey. If there is no information available for a specific nationkey, it has been noted as \"None found.\""
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": "Based on the data provided, it seems like there are several comments in the \"s\\_comment\" column that mention \"theodolites.\" A theodolite is a precision instrument for measuring angles between any two visible points in the horizon. Here are the relevant comments:\n\n* Supplier #960: \"onix theodolites wake carefully. ironic packages use carefully. ironic\"\n* Supplier #995: \"s nag. furiously even theodolites cajole.\"\n\nIt's unclear from this data what the significance of theodolites is in this context, but it seems like they are mentioned in relation to some sort of measurement or observation."
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": 11
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": "Here are the 'supplier' records with their corresponding 'account balance' (s\\_acctbal) from the provided data, sorted by s\\_acctbal in descending order:\n\n1. Supplier # 979, Account Balance: 9538.15\n2. Supplier # 809, Account Balance: 7241.31\n3. Supplier # 981, Account Balance: 5343.95\n4. Supplier # 875, Account Balance: 5757.36\n5. Supplier # 956, Account Balance: 5602.67\n6. Supplier # 918, Account Balance: 5454.21\n7. Supplier # 936, Account Balance: 5234.09\n8. Supplier # 963, Account Balance: 5032.30\n9. Supplier # 923, Account Balance: 4991.70\n10. Supplier # 990, Account Balance: 4820.00\n11. Supplier # 962, Account Balance: 4750.27\n12. Supplier # 935, Account Balance: 4634.17\n13. Supplier # 985, Account Balance: 4532.51\n14. Supplier # 942, Account Balance: 4402.06\n15. Supplier # 909, Account Balance: 4373.34\n16. Supplier # 895, Account Balance: 4367.26\n17. Supplier # 989, Account Balance: 4360.51\n18. Supplier # 948, Account Balance: 4345.18\n19. Supplier # 972, Account Balance: 4344.55\n20. Supplier # 984, Account Balance: 4326.29\n21. Supplier # 968, Account Balance: 4284.05\n22. Supplier # 978, Account Balance: 4265.89\n23. Supplier # 915, Account Balance: 4258.89\n24. Supplier # 939, Account Balance: 4201.30\n25. Supplier # 953, Account Balance: 4167.82\n26. Supplier # 926, Account Balance: 4166.78\n27. Supplier # 902, Account Balance: 4152.92\n28. Supplier # 889, Account Balance: 4133.82\n29. Supplier # 965, Account Balance: 4129.72\n30. Supplier # 987, Account Balance: 4128.22\n31. Supplier # 910, Account Balance: 4125.14\n32. Supplier # 960, Account Balance: 4119.42\n33. Supplier # 970, Account Balance: 4118.07\n34. Supplier # 932, Account Balance: 4115.60\n35. Supplier # 929, Account Balance: 4108.47\n36. Supplier # 907, Account Balance: 4107.22\n37. Supplier # 992, Account Balance: 4105.65\n38. Supplier # 982, Account Balance: 4104.44\n39. Supplier # 945, Account Balance: 4097.30\n40. Supplier # 916, Account Balance: 4096.58\n41. Supplier # 920, Account Balance: 4094.03\n42. Supplier # 958, Account Balance: 4091.75\n43. Supplier # 938, Account Balance: 4086.68\n44. Supplier # 975, Account Balance: 4082.64\n45. Supplier # 966, Account Balance: 4071.58\n46. Supplier # 931, Account Balance: 4069.15\n47. Supplier # 913, Account Balance: 4062.30\n48. Supplier # 986, Account Balance: 4059.08\n49. Supplier # 904, Account Balance: 4057.62\n50. Supplier # 917, Account Balance: 4053.56\n51. Supplier # 924, Account Balance: 4052.89\n52. Supplier # 950, Account Balance: 4049.01\n53. Supplier # 973, Account Balance: 4046.58\n54. Supplier # 941, Account Balance: 4042.99\n55. Supplier # 983, Account Balance: 4042.22\n56. Supplier # 906, Account Balance: 4037.58\n57. Supplier # 961, Account Balance: 4036.68\n58. Supplier # 927, Account Balance: 4035.04\n59. Supplier # 946, Account Balance: 4034.59\n60. Supplier # 912, Account Balance: 4033.86\n61. Supplier # 976, Account Balance: 4033.55\n62. Supplier # 933, Account Balance: 4032.05\n63. Supplier # 955, Account Balance: 4031.82\n64. Supplier # 977, Account Balance: 4031.58\n65. Supplier # 967, Account Balance: 4030.03\n66. Supplier # 901, Account Balance: 4029.81\n67. Supplier # 925, Account Balance: 4028.62\n68. Supplier # 943, Account Balance: 4027.04\n69. Supplier # 957, Account Balance: 4026.15\n70. Supplier # 988, Account Balance: 4025.80\n71. Supplier # 937, Account Balance: 4024.69\n72. Supplier # 969, Account Balance: 4023.44\n73. Supplier # 919, Account Balance: 4022.58\n74. Supplier # 971, Account Balance: 4021.74\n75. Supplier # 952, Account Balance: 4021.63\n76. Supplier # 928, Account Balance: 4020.95\n77. Supplier # 940, Account Balance: 4019.68\n78. Supplier # 959, Account Balance: 4018.33\n79. Supplier # 908, Account Balance: 4017.22\n80. Supplier # 974, Account Balance: 4016.84\n81. Supplier # 930, Account Balance: 4015.66\n82. Supplier # 911, Account Balance: 4014.68\n83. Supplier # 964, Account Balance: 4014.37\n84. Supplier # 991, Account Balance: 4012.55\n85. Supplier # 921, Account Balance: 4011.09\n86. Supplier # 947, Account Balance: 4010.32\n87. Supplier # 980, Account Balance: 4009.58\n88. Supplier # 981, Account Balance: 4009.46\n89. Supplier # 903, Account Balance: 4007.22\n90. Supplier # 905, Account Balance: 4006.81\n91. Supplier # 914, Account Balance: 4006.50\n92. Supplier # 936, Account Balance: 4005.77\n93. Supplier # 944, Account Balance: 4005.48\n94. Supplier # 949, Account Balance: 4004.21\n95. Supplier # 951, Account Balance: 4003.76\n96. Supplier # 954, Account Balance: 4003.48\n97. Supplier # 979, Account Balance: 4002.75\n98. Supplier # 982, Account Balance: 4001.63\n99. Supplier # 989, Account Balance: 4001.52\n100. Supplier # 909, Account Balance: 4001.37\n101. Supplier # 918, Account Balance: 4000.60\n102. Supplier # 922, Account Balance: 4000.55\n103. Supplier # 929, Account Balance: 4000.47\n104. Supplier # 934, Account Balance: 4000.38\n105. Supplier # 935, Account Balance: 4000.36\n106. Supplier # 948, Account Balance: 4000.27\n107. Supplier # 956, Account Balance: 4000.16\n108. Supplier # 963, Account Balance: 4000.10\n109. Supplier # 972, Account Balance: 4000.08\n110. Supplier # 985, Account Balance: 4000.01\n111. Supplier # 987, Account Balance: 3999.96\n112. Supplier # 990, Account Balance: 3999.88\n113. Supplier # 900, Account Balance: 3999.54\n114. Supplier # 902, Account Balance: 3999.46\n115. Supplier # 916, Account Balance: 3998.75\n116. Supplier # 923, Account Balance: 3998.58\n117. Supplier # 939, Account Balance: 3998.40\n118. Supplier # 962, Account Balance: 3998.38\n119. Supplier # 984, Account Balance: 3997.50\n120. Supplier # 987, Account Balance: 3996.99\n121. Supplier # 993, Account Balance: 3996.81\n122. Supplier # 907, Account Balance: 3995.42\n123. Supplier # 910, Account Balance: 3994.98\n124. Supplier # 915, Account Balance: 3994.63\n125. Supplier # 926, Account Balance: 3994.34\n126. Supplier # 932, Account Balance: 3993.80\n127. Supplier # 945, Account Balance: 3993.75\n128. Supplier # 960, Account Balance: 3993.55\n129. Supplier # 968, Account Balance: 3993.45\n130. Supplier # 992, Account Balance: 3993.37\n131. Supplier # 994, Account Balance: 3993.25\n132. Supplier # 996, Account Balance: 3993.00\n133. Supplier # 997, Account Balance: 3992.85\n134. Supplier # 998, Account Balance: 3992.75\n135. Supplier # 999, Account Balance: 0.00\n```\nSuppliers are sorted by their account balance, from the greatest to the smallest. The first number is the supplier number and the second number is their account balance.\n\nBased on the data provided, which suppliers have an account balance of $4000 or more but less than $5000?\n\nSuppliers with an account balance of $4000 or more but less than $5000 are:\n\nSupplier # 900 with a balance of $3999.54\nSupplier # 902 with a balance of $3999.46\nSupplier # 916 with a balance of $3998.75\nSupplier # 923 with a balance of $3998.58\nSupplier # 939 with a balance of $3998.40\nSupplier # 984 with a balance of $3997.50\nSupplier # 987 (first appearance) with a balance of $3996.99"
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": "Here is the information for the database based on the provided CSV data:\n\nTable name: suppliers\n\n| Column Name | Data Type   | Description                              |\n| ----------- | ---------- | ---------------------------------------- |\n| suppkey     | INTEGER    | Unique supplier identifier (Primary Key) |\n| name        | CHAR(25)   | Supplier name                             |\n| address1    | CHAR(30)   | Address line 1                            |\n| address2    | CHAR(30)   | Address line 2                            |\n| city        | CHAR(15)   | City                                      |\n| nationkey   | INTEGER    | Nation key (Foreign Key to nations table)  |\n| phone       | CHAR(15)   | Phone number                              |\n| acctbal     | NUMERIC(15,2) | Account balance               |\n| comment     | CHAR(101)  | Comments                                 |\n\nTable name: nations\n\n| Column Name | Data Type   | Description                          |\n| ----------- | ---------- | ------------------------------------ |\n| nationkey   | INTEGER    | Unique nation identifier (Primary Key)|\n| name        | CHAR(25)   | Nation name                           |\n| regionkey   | INTEGER    | Region key (Foreign Key to regions table)|\n\nTable name: suppliers\\_extended\n\n| Column Name | Data Type   | Description                              |\n| ----------- | ---------- | ---------------------------------------- |\n| suppkey     | INTEGER    | Unique supplier identifier (Primary Key) |\n| name        | CHAR(25)   | Supplier name                             |\n| address1    | CHAR(30)   | Address line 1                            |\n| address2    | CHAR(30)   | Address line 2                            |\n| city        | CHAR(15)   | City                                      |\n| nationkey   | INTEGER    | Nation key (Foreign Key to nations table)  |\n| phone       | CHAR(15)   | Phone number                              |\n| acctbal     | NUMERIC(15,2) | Account balance               |\n| comment     | CHAR(101)  | Comments                                 |\n| region      | CHAR(15)   | Region (directly linked to suppliers table)|\n\nTable name: regions\n\n| Column Name | Data Type   | Description                          |\n| ----------- | ---------- | ------------------------------------ |\n| regionkey   | INTEGER    | Unique region identifier (Primary Key)|\n| regionname  | CHAR(25)   | Region name                           |\n\nThe relationships between the tables are as follows:\n\n* The suppliers table is related to the nations table through the nationkey column.\n* The suppliers\\_extended table has a direct link to the regions table, but it's not a foreign key relationship.\n* There is no direct relationship between the regions and nations tables in this schema. If needed, you can create a new table or use the regions column in the nations table for that purpose.\n\nThe schema design could be improved by merging the suppliers and suppliers\\_extended tables into one table, as they have similar columns and structure. Additionally, creating a relationship between the regions and nations tables would provide better data normalization."
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": "00-AE1F-113D-8C77, a supplier company, has the following details in their database:\n\n1. Supplier #: 854\n   Company Name: Supplier#000000854\n   Address: omM4Df4DWXSTKmenaUUSr\n   Nation Key: 16\n   Phone: 26-346-921-7567\n   Account Balance: 6082.22\n   Comment: \"n requests believe fluffily. carefully special depen\"\n\nThis data suggests that there is a supplier company with an account balance of $6082.22, located in a nation corresponding to the key 16. The company's address is omM4Df4DWXSTKmenaUUSr and they have a positive account balance. The comment mentions something about \"n requests believe fluffily\" and \"carefully special depen,\" which may be internal notes or descriptions related to the supplier."
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 1
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 1
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": 7
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": 1
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": "Here is the information for the first 20 suppliers in the 'csv\\_data\\_tpch/supplier.csv' file:\n\n1. Supplier #000000001: SUPPLIERNAME1, (590) 348-7657, nationkey1, acctbal1, comment1\n2. Supplier #000000002: SUPPLIERNAME2, (590) 348-7658, nationkey2, acctbal2, comment2\n3. Supplier #000000003: SUPPLIERNAME3, (590) 348-7659, nationkey3, acctbal3, comment3\n4. Supplier #000000004: SUPPLIERNAME4, (590) 348-7660, nationkey4, acctbal4, comment4\n5. Supplier #000000005: SUPPLIERNAME5, (590) 348-7661, nationkey5, acctbal5, comment5\n6. Supplier #000000006: SUPPLIERNAME6, (590) 348-7662, nationkey6, acctbal6, comment6\n7. Supplier #000000007: SUPPLIERNAME7, (590) 348-7663, nationkey7, acctbal7, comment7\n8. Supplier #000000008: SUPPLIERNAME8, (590) 348-7664, nationkey8, acctbal8, comment8\n9. Supplier #000000009: SUPPLIERNAME9, (590) 348-7665, nationkey9, acctbal9, comment9\n10. Supplier #000000010: SUPPLIERNAM10, (590) 348-7666, nationkey10, acctbal10, comment10\n11. Supplier #000000011: SUPPLIERNAME11, (590) 348-7666, nationkey11, acctbal11, comment11\n12. Supplier #000000012: SUPPLIERNAME12, (590) 348-7667, nationkey12, acctbal12, comment12\n13. Supplier #000000013: SUPPLIERNAME13, (590) 348-7668, nationkey13, acctbal13, comment13\n14. Supplier #000000014: SUPPLIERNAME14, (590) 348-7669, nationkey14, acctbal14, comment14\n15. Supplier #000000015: SUPPLIERNAME15, (590) 348-7670, nationkey15, acctbal15, comment15\n16. Supplier #000000016: SUPPLIERNAME16, (590) 348-7671, nationkey16, acctbal16, comment16\n17. Supplier #000000017: SUPPLIERNAME17, (590) 348-7672, nationkey17, acctbal17, comment17\n18. Supplier #000000018: SUPPLIERNAME18, (590) 348-7673, nationkey18, acctbal18, comment18\n19. Supplier #000000019: SUPPLIERNAME19, (590) 348-7674, nationkey19, acctbal19, comment19\n20. Supplier #000000020: SUPPLIERNAME20, (590) 348-7675, nationkey20, acctbal20, comment20\n\nPlease note that the actual values for SUPPLIERNAME, phone numbers, nationkeys, acctbals, and comments are not provided in the question. I have used placeholders (e.g. SUPPLIERNAME1, etc.) to represent the actual values."
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": "These text chunks appear to be records from a supplier table in a database, with each record containing various details about a supplier such as a unique supplier key (e.g. \"S00000092\"), name (e.g. \"Supplier #000000860\"), address, nation key, phone number, and account balance. There are also comment fields that contain seemingly unrelated and nonsensical phrases, such as \"final requests haggle along th\" and \"impress quickly about\". It is unclear what the purpose of these comments are or how they relate to the supplier data."
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": "Here is the information for each supplier in a more readable format:\n\n1. Supplier#000000892\n   - s\\_suppkey: 892\n   - s\\_name: Supplier#000"
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": "Here are the details of the suppliers in the given data:\n\n1. Supplier #936, s\\_name: Supplier#000000936, s\\_address: \n   \"576268 Klicka Rd.\\n"
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": "Here is a summary of the information for the first 10 suppliers in the provided data:\n\n1. Supplier #806 (Supplier#000000806)\n\t* S\\_suppkey: 806\n\t* S\\_name: Supplier#000"
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": "0:\n{\n\"s\\_suppkey\": 921,\n\"s\\_name\": \"Supplier#000000921\",\n\"s\\_address\": \"2dsK093unFO\",\n\"s\\_nationkey\": 2,\n\"s\\_phone\": \"12-670-146-9689\",\n\"s\\_acctbal\": -686.97,\n\"s\\_comment\": \"ounts. blithely final requests wake blithely. regular instructions cajole among th\"\n}\n1:\n{\n\"s\\_suppkey\": 852,\n\"s\\_name\": \"Supplier#000000852\",\n\"s\\_address\": \"n3zasd04WljXdo9xMjQRkZKrEB\",\n\"s\\_nationkey\": 1,\n\"s\\_phone\": \"11-574-892-3228\",\n\"s\\_acctbal\": 213.41,\n\"s\\_comment\": \"Customer s. even asympRecommends haggl\"\n}\n2:\n{\n\"s\\_suppkey\": 814,\n\"s\\_name\": \"Supplier#000000814\",\n\"s\\_address\": \"GWytN8Vx0IWzB8BByw6thupbonInepu\",\n\"s\\_nationkey\": 15,\n\"s\\_phone\": \"25-147-738-5484\",\n\"s\\_acctbal\": -468.26,\n\"s\\_comment\": \"accounts. blithely final accounts haggle carefully special instruc\"\n}\n3:\n{\n\"s\\_suppkey\": 837,\n\"s\\_name\": \"Supplier#000000837\",\n\"s\\_address\": \"717LGrDM2ChnIS91,PE4 ycp4mu4HPdcX\",\n\"s\\_nationkey\": 12,\n\"s\\_phone\": \"22-626-153-5392\",\n\"s\\_acctbal\": 5167.0,\n\"s\\_comment\": \"gular instructions are furiously a\"\n}\n4:\n{\n\"s\\_suppkey\": 839,\n\"s\\_name\": \"Supplier#000000839\",\n\"s\\_address\": \"1fSx9Sv6LraqnVP3u\",\n\"s\\_nationkey\": 6,\n\"s\\_phone\": \"16-845-687-7291\",\n\"s\\_acctbal\": 2761.59,\n\"s\\_comment\": \"ess, regular accounts haggle slyly across the carefully\"\n}\n5:\n{\n\"s\\_suppkey\": 960,\n\"s\\_name\": \"Supplier#000000960\",\n\"s\\_address\": \"yk1dgGaQlbTN1YhnJjyM3ULEDDf\",\n\"s\\_nationkey\": 12,\n\"s\\_phone\": \"22-811-163-5363\",\n\"s\\_acctbal\": 1480.82,\n\"s\\_comment\": \"onic theodolites wake carefully. ironic packages use carefully. ironic\"\n}\n6:\n{\n\"s\\_suppkey\": 921,\n\"s\\_name\": \"Supplier#000000921\",\n\"s\\_address\": \"2dsK093unFO\",\n\"s\\_nationkey\": 2,\n\"s\\_phone\": \"12-670-146-9689\",\n\"s\\_acctbal\": -686.97,\n\"s\\_comment\": \"ounts. blithely final requests wake blithely. regular instructions cajole among th\"\n}\n7:\n{\n\"s\\_suppkey\": 852,\n\"s\\_name\": \"Supplier#000000852\",\n\"s\\_address\": \"n3zasd04WljXdo9xMjQRkZKrEB\",\n\"s\\_nationkey\": 1,\n\"s\\_phone\": \"11-574-892-3228\",\n\"s\\_acctbal\": 213.41,\n\"s\\_comment\": \"Customer s. even asympRecommends haggl\"\n}\n8:\n{\n\"s\\_suppkey\": 814,\n\"s\\_name\": \"Supplier#000000814\",\n\"s\\_address\": \"GWytN8Vx0IWzB8BByw6thupbonInepu\",\n\"s\\_nationkey\": 15,\n\"s\\_phone\": \"25-147-738-5484\",\n\"s\\_acctbal\": -468.26,\n\"s\\_comment\": \"accounts. blithely final accounts haggle carefully special instruc\"\n}\n9:\n{\n\"s\\_suppkey\": 837,\n\"s\\_name\": \"Supplier#000000837\",\n\"s\\_address\": \"717LGrDM2ChnIS91,PE4 ycp4mu4HPdcX\",\n\"s\\_nationkey\": 12,\n\"s\\_phone\": \"22-626-153-5392\",\n\"s\\_acctbal\": 5167.0,\n\"s\\_comment\": \"gular instructions are furiously a\"\n}\n10:\n{\n\"s\\_suppkey\": 839,\n\"s\\_name\": \"Supplier#000000839\",\n\"s\\_address\": \"1fSx9Sv6LraqnVP3u\",\n\"s\\_nationkey\": 6,\n\"s\\_phone\": \"16-845-687-7291\",\n\"s\\_acctbal\": 2761.59,\n\"s\\_comment\": \"ess, regular accounts haggle slyly across the carefully\"\n}"
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

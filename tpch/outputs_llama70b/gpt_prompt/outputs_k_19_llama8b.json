@@ -1,0 +1,231 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": "I'm ready to answer your questions based on the CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": "I'm ready to answer your questions based on this CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": "Here is the output in CSV format:\n\n\"s_suppkey\",\"s_name\",\"s_address\",\"s_nationkey\",\"s_phone\",\"s_acctbal\",\"s_comment\"\n\"814\",\"Supplier#000000814\",\"GWytN8Vx0IWzB8BByw6thupbonInepu\",\"15\",\"25-147-738-5484\",\"-468.26\",\"accounts. blithely final accounts haggle carefully special instruc\"\n\"847\",\"Supplier#000000848\",\"tx44JAuF,Jnw1\",\"3\",\"13-169-466-8402\",\"4404.29\",\"olphins. pending packages are during the regular packages. furiously regular requests haggle c\"\n\"873\",\"Supplier#000000874\",\"xsGhP46dDeavM6wnREIi7Q09jfAUTzucwp\",\"16\",\"26-826-579-8300\",\"7755.5\",\"beans. deposits haggle after the blithely express deposi\"\n\"881\",\"Supplier#000000882\",\"5op1w94,JerNmOkyPfAVkZEtb7\",\"14\",\"24-437-170-2579\",\"9450.21\",\"ly final requests haggle furiously final, regula\"\n\"899\",\"Supplier#000000900\",\",6RXmcRyA48c0yvZ2I\",\"5\",\"15-926-534-2005\",\"165.26\",\"counts cajole carefully pending foxes. bold packages mold carefully unusual\"\n\"908\",\"Supplier#000000909\",\"BXuLybzUeFLI0GJqMG8xewTuKFqk8n\",\"11\",\"21-989-597-5142\",\"4012.42\",\"ss requests. even packages haggle furiously.\"\n\"930\",\"Supplier#000000931\",\"CqslHrffpOBxqMDxiGH8nz7scX,i3HmUhNlwBBU6\",\"8\",\"18-174-741-5563\",\"4398.36\",\"t carefully. express accounts sleep. ironic, final theodolites haggle regul\"\n\"968\",\"Supplier#000000968\",\"6idVVWn8RbFoZgPeyVJlQOJ\",\"4\",\"14-431-296-9521\",\"4487.96\",\"final accounts. slyly regular deposits wake fluffily after the\"\n\"985\",\"Supplier#000000985\",\"kzI8mk3jN9F67EStJ 8dlpx 6GwZYwzXPFOKJ5R\",\"1\",\"11-131-656-2612\",\"3524.1\",\"ut the furiously final deposits integrate according to th\""
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": "I'm ready to answer your questions based on the CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": "I'm ready to answer your questions based on the CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": "I'm ready to answer your questions based on the provided CSV dataset.\n\nPlease go ahead and ask your question, and I'll do my best to provide a helpful response!"
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": "I'm ready to answer your questions based on the provided CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": [
+            {
+                "answer": 205,
+                "question": "How many rows are in the CSV dataset?"
+            }
+        ]
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": "I apologize, but the provided CSV dataset appears to be related to suppliers, and it does not contain any information about orders or customers. Therefore, I cannot answer a question about orders based on this dataset.\n\nHowever, if you meant to ask a different question or provide a different dataset, please feel free to do so, and I'll be happy to assist you."
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": [
+            {
+                "answer": 20500,
+                "question": "What is the sum of s_acctbal for all rows in the dataset?"
+            }
+        ]
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": "I'm ready to answer your questions based on the provided CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": "I'm ready to answer your questions based on this CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": "I'm ready to answer your questions based on the provided CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": "Based on the provided CSV dataset, I found two suppliers with an account balance between $20,500 and $21,000:\n\n[\n    {\n        \"supplier_key\": 838,\n        \"account_balance\": 5808.87\n    },\n    {\n        \"supplier_key\": 854,\n        \"account_balance\": 6082.22\n    }\n]\n\nThese suppliers have an account balance within the specified range."
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 20523.46
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": "Based on the provided CSV dataset, I can generate a response to your question.\n\nHowever, since you didn't provide a specific question, I'll assume you want me to generate a random total from the `s_acctbal` column. Here's a response:\n\nThe total is: **20505.11**\n\nThis value is calculated by randomly selecting values from the `s_acctbal` column and summing them up. If you have a specific question or request, feel free to ask!"
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": "I'm ready to answer your questions based on the provided CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": [
+            {
+                "answer": 205,
+                "question": "What is the count of rows in this dataset?"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": [
+            {
+                "answer": 546,
+                "question": "What is the total number of suppliers?"
+            }
+        ]
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": "I'm happy to help! However, I notice that you didn't provide a CSV dataset for me to work with. Could you please share the dataset or provide more context about what kind of questions you'd like me to answer? \n\nIf you meant to ask a question based on a different dataset, could you please rephrase or provide more information about the question you're trying to ask? I'll do my best to assist you!"
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": "I'm ready to answer your questions based on the provided CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": "I'm happy to help! However, I notice that the question is not provided. Could you please provide the question related to the CSV dataset? I'll do my best to answer it based on the data.\n\nIf you meant to ask a general question like \"What can you tell me about this dataset?\", I can provide some basic information. The dataset appears to be a list of suppliers, each with a unique identifier (s_suppkey), name, address, nation key, phone number, account balance, and a comment field. There are 25 records in the dataset.\n\nPlease let me know if there's anything specific you'd like to know or if you have a particular question in mind!"
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": "I'm happy to help! However, I notice that you didn't provide a specific question for me to answer based on the CSV dataset. Could you please ask a question or specify what information you would like me to retrieve from the dataset?"
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": [
+            {
+                "answer": "785, 786"
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": "I apologize, but it seems that you provided a dataset of suppliers, which doesn't seem to be related to answering questions about customers with specific nation keys and total orders.\n\nHowever, if you meant to ask me to find customers with a specific nation key (in this case, 2) and a certain range of total orders (in this case, between 20500 and 20550), I would need a different dataset that contains customer information.\n\nIf you could provide the correct dataset or clarify your question, I'll do my best to assist you."
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": "I'm ready to answer your questions based on the provided CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": "I apologize, but the provided CSV dataset appears to be a list of suppliers with their respective information. However, I don't see any orders or transactions that would allow me to answer questions about customers who have placed an order.\n\nCould you please provide more context or clarify what kind of questions you would like me to answer based on this dataset?"
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": "What would you like to know from this dataset? You can ask me a question, and I'll do my best to provide an answer based on the data."
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": 20521.7
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": "I'm ready to answer your questions based on the CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": "I'm ready to answer your questions based on this CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": "I'm ready to answer your questions based on the provided CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": "Why are you asking me to output a valid response based on the CSV dataset? \n\nHowever, I can provide a response in the format you requested. Here is an example:\n\n\"Why are suppliers' addresses so complex? \nAnswer: The suppliers' addresses are complex because they have multiple locations and warehouses across different regions and countries. This complexity is reflected in their addresses which include various details such as street names, building numbers, postal codes, cities, states, and countries.\n\nWhy do suppliers have high account balances?\nAnswer: Suppliers have high account balances because they deal with large quantities of goods and materials, and their transactions involve significant amounts of money. As a result, their account balances tend to be higher than those of individual customers or small businesses.\""
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": "I'm happy to help! However, I notice that there is no CSV dataset provided. Could you please provide the CSV dataset or clarify which dataset you would like me to use? Additionally, what specific question would you like me to answer based on the dataset?"
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": "I'm happy to help! However, I notice that you didn't provide a CSV dataset for me to work with. Could you please share the dataset or provide more context about the question you'd like me to answer?"
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": "I'm ready to answer your questions based on this CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": "I'm ready to answer your questions based on the provided CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": "I'm ready to answer your questions based on this CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": "A valid question!\n\nUnfortunately, I don't see a specific question in your message. Could you please ask a question related to the CSV dataset? For example, you could ask about the average account balance, the number of suppliers from a certain nation, or the distribution of phone numbers by area code.\n\nI'll do my best to answer your question based on the provided dataset!"
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": "The answer is:\n\n5461"
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": "I'm ready to answer your questions based on this CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": "I'm ready to answer your questions based on this CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": "Based on the provided CSV dataset, I will calculate the total `s_acctbal` value and provide a valid output.\n\nHere is the calculation:\n\n1. s_suppkey: 818, s_acctbal: 9594.51\n2. s_suppkey: 854, s_acctbal: 6082.22\n3. s_suppkey: 889, s_acctbal: 8570.93\n4. s_suppkey: 976, s_acctbal: 4744.07\n5. s_suppkey: 968, s_acctbal: 4487.96\n\nTotal `s_acctbal` value:\n9594.51 + 6082.22 + 8570.93 + 4744.07 + 4487.96 = **34480.69**\n\nRounded to the nearest whole number, the total `s_acctbal` value is: **34481**"
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": "I'm ready to answer your questions based on the provided CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": "I apologize, but it seems that you provided a dataset of suppliers, not orders or transactions. Therefore, I cannot answer your question about orders with a total amount between 2000 and 3000.\n\nHowever, if you meant to ask about finding specific suppliers based on certain conditions, I'd be happy to help. Please rephrase your question, and I'll do my best to assist you."
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": [
+            {
+                "answer": "No suppliers have a total business value between 20500 and 20550."
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": "I'm ready to answer your questions based on this CSV dataset. What would you like to know?"
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": "I apologize, but it seems that the provided CSV dataset is only for suppliers and does not contain any information about orders or customers. Therefore, I cannot answer questions related to orders or customers.\n\nHowever, if you have a different CSV dataset containing the necessary information, I'd be happy to help you with your queries. Please provide the new dataset, and I'll do my best to assist you.\n\nIn this case, since there is no relevant data, the answer would be:\n\n\"No matching records found.\""
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": {
+            "answer": [
+                "546",
+                "customer s. even asympRecommends haggl"
+            ]
+        }
+    }
+]
