@@ -29,9 +29,9 @@ def main():
     question_types = load_json("tpch/questions.json")
 
     # Cartella contenente i file di output predetti
-    pred_folder = "tpch/outputs_mixtral8x7b"
-    global_metrics_file = os.path.join(pred_folder, "global_metrics_EC.csv")
-    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_EC.csv")
+    pred_folder = "tpch/outputs_llama8b/full_context/"
+    global_metrics_file = os.path.join(pred_folder, "global_metrics_FC.csv")
+    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_FC.csv")
 
     # Scrivi header CSV solo se i file non esistono
     write_header_global = not os.path.exists(global_metrics_file)
@@ -55,7 +55,7 @@ def main():
 
         # Itera su tutti i file con pattern k da 10 a 69 (come esempio)
        
-        pred_file = os.path.join(pred_folder, f"emptyContext.json")
+        pred_file = os.path.join(pred_folder, f"outputs_llama8b.json")
 
 
         pred_data = load_json(pred_file)

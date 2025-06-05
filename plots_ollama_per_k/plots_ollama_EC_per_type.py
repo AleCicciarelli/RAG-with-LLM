@@ -7,7 +7,7 @@ import os
 
 metrics = ['Answer F1', 'Explanation F1']
 base_path = 'tpch/outputs_'
-output_dir = 'tpch/plots_EC/plots_EC_per_type'
+output_dir = 'tpch/plots_FC/plots_FC_per_type'
 os.makedirs(output_dir, exist_ok=True)
 
 models = ['llama8b', 'llama70b', 'mixtral8x7b']
@@ -16,7 +16,7 @@ palette = {'llama8b': 'blue', 'llama70b': 'green', 'mixtral8x7b': 'orange'}
 # === CARICAMENTO DATI ===
 all_data = []
 for model in models:
-    file_path = os.path.join(base_path + model, 'metrics_by_type_EC.csv')
+    file_path = os.path.join(base_path + model + '/full_context/metrics_by_type_FC.csv')
     df = pd.read_csv(file_path)
     df['Model'] = model
     all_data.append(df)

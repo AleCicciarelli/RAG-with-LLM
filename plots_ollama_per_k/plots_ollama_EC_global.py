@@ -5,7 +5,7 @@ import os
 
 # Imposta percorso principale e di output
 base_path = 'tpch/outputs_'
-output_path = 'tpch/plots_EC'
+output_path = 'tpch/plots_FC'
 os.makedirs(output_path, exist_ok=True)
 
 # Lista dei modelli = nomi delle cartelle
@@ -18,7 +18,7 @@ palette = {'llama8b': 'blue', 'llama70b': 'green', 'mixtral8x7b': 'orange'}
 # Caricamento dati
 all_data = []
 for model in models:
-    file_path = os.path.join(base_path + model, 'global_metrics_EC.csv')
+    file_path = os.path.join(base_path + model +  '/full_context/global_metrics_FC.csv')
     df = pd.read_csv(file_path)
     df['Model'] = model
     all_data.append(df)
