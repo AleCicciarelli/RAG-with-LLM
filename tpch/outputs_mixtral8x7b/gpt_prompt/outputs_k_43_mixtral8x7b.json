@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": "Here is the information for each supplier in a more readable format:\n\n1. Supplier #806, name not available, nationkey = 5, account balance = 793.42, comment = \""
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": "Here is the information for the first 10 suppliers in the text you provided:\n\n1. Supplier #000000001, s\\_acctbal: 33241.78\n\t* s\\_name: Supplier#000000001\n\t* s\\_address: Distinctive Producers Unltd.\n\t* s\\_nationkey: 1\n\t* s\\_phone: 1-505-562-4386\n\t* s\\_comment: null\n2. Supplier #000000002, s\\_acctbal: 11725.33\n\t* s\\_name: Supplier#000000002\n\t* s\\_address: Nationwide Wrought Iron Inc.\n\t* s\\_nationkey: 2\n\t* s\\_phone: (165) 566-2288\n\t* s\\_comment: null\n3. Supplier #000000005, s\\_acctbal: 7861.86\n\t* s\\_name: Supplier#000000005\n\t* s\\_address: Elegant Fashion Ent.\n\t* s\\_nationkey: 5\n\t* s\\_phone: 15-926-534-2005\n\t* s\\_comment: null\n4. Supplier #000000006, s\\_acctbal: 719.81\n\t* s\\_name: Supplier#000000006\n\t* s\\_address: Savvy Fashions Inc.\n\t* s\\_nationkey: 6\n\t* s\\_phone: (191) 582-4512\n\t* s\\_comment: null\n5. Supplier #000000007, s\\_acctbal: 3926.27\n\t* s\\_name: Supplier#000000007\n\t* s\\_address: Posh Furriers Inc.\n\t* s\\_nationkey: 7\n\t* s\\_phone: 17-447-811-3282\n\t* s\\_comment: null\n6. Supplier #000000008, s\\_acctbal: 596.52\n\t* s\\_name: Supplier#000000008\n\t* s\\_address: Couture Imports Inc.\n\t* s\\_nationkey: 8\n\t* s\\_phone: (134) 774-6498\n\t* s\\_comment: null\n7. Supplier #000000009, s\\_acctbal: 2573.21\n\t* s\\_name: Supplier#000000009\n\t* s\\_address: Suave Imports Inc.\n\t* s\\_nationkey: 9\n\t* s\\_phone: (168) 446-5592\n\t* s\\_comment: null\n8. Supplier #000000010, s\\_acctbal: 3752.51\n\t* s\\_name: Supplier#000000010\n\t* s\\_address: Magnificent Tailors Inc.\n\t* s\\_nationkey: 10\n\t* s\\_phone: 20-435-373-1909\n\t* s\\_comment: null\n9. Supplier #000000011, s\\_acctbal: 16389.2\n\t* s\\_name: Supplier#000000011\n\t* s\\_address: Han's Import Emporium\n\t* s\\_nationkey: 11\n\t* s\\_phone: (170) 564-9478\n\t* s\\_comment: null\n10. Supplier #000000012, s\\_acctbal: 3569.67\n* s\\_name: Supplier#000000012\n* s\\_address: Rodeo Traders Inc.\n* s\\_nationkey: 12\n* s\\_phone: (184) 489-3541\n* s\\_comment: null"
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": 12
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": "Here are the summarized records for suppliers with a supply cost of over 20,000:\n\n* Supplier #000000053: Nationkey 3, $21642.07 cost, supply costs 0f $20892.55, $749.52 profit\n* Supplier #000000120: Nationkey 15, $33536.18 cost, supply costs of $31524.62, $2011.56 profit\n* Supplier #000000175: Nationkey 2, $29208.20 cost, supply costs of $27372.56, $1835.64 profit\n* Supplier #000000203: Nationkey 1, $22468.37 cost, supply costs of $21291.01, $1177.36 profit\n* Supplier #000000258: Nationkey 18, $20111.56 cost, supply costs of $18948.84, $1162.72 profit\n* Supplier #000000335: Nationkey 18, $21002.65 cost, supply costs of $19758.81, $1243.84 profit\n* Supplier #000000363: Nationkey 15, $20023.22 cost, supply costs of $18818.18, $1205.04 profit\n* Supplier #000000470: Nationkey 18, $20965.62 cost, supply costs of $19699.39, $1266.23 profit\n* Supplier #000000505: Nationkey 15, $24719.15 cost, supply costs of $23284.41, $1434.74 profit\n* Supplier #000000668: Nationkey 18, $20086.68 cost, supply costs of $18929.55, $1157.13 profit\n* Supplier #000000724: Nationkey 15, $20063.71 cost, supply costs of $18896.38, $1167.33 profit\n* Supplier #000000779: Nationkey 18, $20045.48 cost, supply costs of $18877.05, $1168.43 profit\n* Supplier #000000834: Nationkey 15, $20901.48 cost, supply costs of $19635.86, $1265.62 profit\n* Supplier #000000889: Nationkey 18, $20078.05 cost, supply costs of $18900.43, $1177.62 profit\n* Supplier #000000944: Nationkey 15, $20028.88 cost, supply costs of $18892.34, $1136.54 profit\n* Supplier #000000999: Nationkey 18, $20070.01 cost, supply costs of $18881.40, $1188.61 profit\n\nSuppliers with a supply cost of over 20,000 but less than 30,000:\n\n* Supplier #000000053, Nationkey 3, with a supply cost of $21,642.07 and a profit of $749.52\n* Supplier #000000120, Nationkey 15, with a supply cost of $33,536.18 and a profit of $2,011.56\n* Supplier #000000175, Nationkey 2, with a supply cost of $29,208.20 and a profit of $1,835.64\n* Supplier #000000203, Nationkey 1, with a supply cost of $22,468.37 and a profit of $1,177.36\n* Supplier #000000258, Nationkey 18, with a supply cost of $20,111.56 and a profit of $1,162.72\n* Supplier #000000335, Nationkey 18, with a supply cost of $21,002.65 and a profit of $1,243.84\n* Supplier #000000363, Nationkey 15, with a supply cost of $20,023.22 and a profit of $1,205.04\n* Supplier #000000470, Nationkey 18, with a supply cost of $20,965.62 and a profit of $1,266.23\n* Supplier #000000505, Nationkey 15, with a supply cost of $24,719.15 and a profit of $1,434.74\n* Supplier #000000668, Nationkey 18, with a supply cost of $20,086.68 and a profit of $1,157.13\n* Supplier #000000724, Nationkey 15, with a supply cost of $20,063.71 and a profit of $1,167.33\n* Supplier #000000779, Nationkey 18, with a supply cost of $20,045.48 and a profit of $1,168.43\n* Supplier #000000834, Nationkey 15, with a supply cost of $20,901.48 and a profit of $1,265.62\n* Supplier #000000889, Nationkey 18, with a supply cost of $20,078.05 and a profit of $1,177.62\n* Supplier #000000944, Nationkey 15, with a supply cost of $20,028.88 and a profit of $1,136.54\n* Supplier #000000999, Nationkey 18, with a supply cost of $20,070.01 and a profit of $1,188.61"
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": "Here are the first 20 records from the \"supplier\" table with properly formatted values:\n\n| s\\_suppkey | s\\_name       | s\\_address          | s\\_nationkey | s\\_phone1      | s\\_acctbal | n\\_name     | c\\_comment          |\n|------------|--------------|--------------------|--------------|---------------|------------|------------|---------------------|\n| 1          | Supplier #01 | 123 Main St.       | US           |  (111) 555-1212|    2000.00 | USA        | Accepts POs and credit cards|\n| 2          | Supplier #02 | 456 Elm St.        | CA           |  (111) 555-3434|    1000.00 | Canada    |                     |\n| 3          | Supplier #03 | 789 Oak St.        | UK           |  +44 111 555 1212|     500.00 | UK         |                     |\n| 4          | Supplier #04 | 321 Pine St.       | DE           |  +49 111 555 1212|    8000.00 | Germany   |                     |\n| 5          | Supplier #05 | Boulevard Tianmei | CN           |  +86 10 1234 5678|     2000.00 | China     |                     |\n| 6          | Supplier #06 | Rua do Matadouro   | BR           |  +55 11 1234 5678|     3000.00 | Brazil    |                     |\n| 7          | Supplier #07 | 99 example St.     | AU           |  +61 11 1234 5678|     4000.00 | Australia |                     |\n| 8          | Supplier #08 | 1 Example Av.      | FR           |  +33 11 1234 5678|    10000.00 | France    |                     |\n| 9          | Supplier #09 | Via Piave          | IT           |  +39 11 1234 5678|     6000.00 | Italy     |                     |\n| 10         | Supplier #10 | 555 5th Av.        | US           |  (111) 555-5678|    2500.00 | USA       | Accepts POs only      |\n| 11         | Supplier #11 | 345 Oak St.        | CA           |  (111) 555-7890|     1500.00 | Canada    |                     |\n| 12         | Supplier #12 | 890 Elm St.        | UK           |  +44 111 555 7890|    1000.00 | UK        |                     |\n| 13         | Supplier #13 | 654 Pine St.       | DE           |  +49 111 555 7890|    2000.00 | Germany   |                     |\n| 14         | Supplier #14 | 231 Tianmei Blvd.  | CN           |  +86 10 5678 1234|    1000.00 | China     |                     |\n| 15         | Supplier #15 | Av. Matadouro      | BR           |  +55 11 5678 1234|     500.00 | Brazil    |                     |\n| 16         | Supplier #16 | 8 Exampl\n\ne St.       | AU           |  +61 11 5678 1234|    1000.00  | Australia |                     |\n| 17         | Supplier #17 | 15 Rue Piave      | FR           |  +33 11 5678 1234|    5000.00 | France    |                     |\n| 18         | Supplier #18 | Via Dell'Olmo     | IT           |  +39 11 5678 1234|    4000.00 | Italy     |                     |\n| 19         | Supplier #19 | 222 5th Av.        | US           |  (111) 555-9012|    1000.00 | USA       |                     |\n| 20         | Supplier #20 | 777 Oak St.        | CA           |  (111) 555-9012|     750.00 | Canada    |                     |\n\nNote: The \"n\\_name\" column represents the name of the nation, and the \"c\\_comment\" column contains comments related to the supplier."
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": "00:00:00,0 Supplier Report Started\n00:00:00,1 Loading data from csv file...\n00:00:00,2 1000 records loaded\n0"
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": "The data provided appears to be a series of records from a supplier table in a database. Each record contains various fields related to a supplier, including a supplier key (s\\_suppkey), supplier name (s\\_name), supplier address (s\\_address), nation key (s\\_nationkey), phone number (s\\_phone), account balance (s\\_acctbal), and a comment field (s\\_comment).\n\nThe s\\_comment field contains various comments about the suppliers, which seem to be scrambled or nonsensical. For example, some of the comments include \"deas wake blithely,\" \"quickly fluffy accounts are quickly about the ironic,\" and \"furiously ironic dependencies wake carefull.\" It is unclear what these comments are intended to convey, as they do not appear to be related to the other fields in the record.\n\nThe other fields in the records contain more typical supplier information, such as names, addresses, phone numbers, and account balances. The nation key field suggests that each supplier is associated with a particular nation or country, although this field is also scrambled and may not be accurate.\n\nOverall, it is difficult to draw any meaningful conclusions from the data provided without additional context or information about its source and intended use."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 1
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 1
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": "Here is the information for the first 10 suppliers in the text you provided:\n\n1. Supplier # -122: No other information provided.\n2. Supplier # 0: No other information provided.\n3. Supplier # 50: No other information provided.\n4. Supplier # 886: No other information provided.\n5. Supplier # 901: No other information provided.\n6. Supplier # 927: No other information provided.\n7. Supplier # 938: No other information provided.\n8. Supplier # 950: No other information provided.\n9. Supplier # 959: No other information provided.\n10. Supplier # 962: No other information provided.\n\nIt looks like there is no further information available for these suppliers in the text you provided."
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": 929
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": 1
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": "Here are the summarized records for the given supplier data in Python:\n```python\nsupplier_data = [\n    {\"suppkey\": 5, \"name\": \"Supplier#000000005\", \"address\": \",IXoixqcMluU5OEK7RhD,mDrBE2E3ygs\", \"nationkey\": 15, \"phone\": \"25-347-400-8216\", \"acctbal\": 1887.55, \"comment\": \"uiet ideas. even packages haggle carefully according to the fluffily slow requests. furiously ironi\"},\n    {\"suppkey\": 13, \"name\": \"Supplier#000000013\", \"address\": \"02RRXg45CBGhuzwpKKz3fi4ewYv\", \"nationkey\": 13, \"phone\": \"23-877-378-2281\", \"acctbal\": 4423.06, \"comment\": \"ounts are according to the express theodolites. silent instructions above the d\"},\n    {\"suppkey\": 21, \"name\": \"Supplier#000000021\", \"address\": \"6H6qqye iYbYzCmwWhj\", \"nationkey\": 21, \"phone\": \"31-519-879-5266\", \"acctbal\": 1444.79, \"comment\": \"iously except the blithely unusual packages. c\"},\n    {\"suppkey\": 24, \"name\": \"Supplier#000000024\", \"address\": \"JA,f8nt64wdZ4XkiHCYHC0r2FJ\", \"nationkey\": 24, \"phone\": \"34-606-153-4636\", \"acctbal\": 3420.34, \"comment\": \"deas wake blithely. regular, special id\"},\n    {\"suppkey\": 57, \"name\": \"Supplier#000000057\", \"address\": \"Ciudad Bolivar, Avenida 1 Sur Calle 12 16 apartamento 45\", \"nationkey\": 2, \"phone\": \"58-2-281-3843\", \"acctbal\": 769.42, \"comment\": \"\"},\n    {\"suppkey\": 71, \"name\": \"Supplier#000000071\", \"address\": \"Obere Strasse 57\", \"nationkey\": 0, \"phone\": \"49-71-234-5674\", \"acctbal\": 856.26, \"comment\": \"\"},\n    {\"suppkey\": 83, \"name\": \"Supplier#000000083\", \"address\": \"Avenida Independencia 1255 Suite 111\", \"nationkey\": 3, \"phone\": \"54-95-654-3210 x56\", \"acctbal\": 2334.08, \"comment\": \"\"},\n    {\"suppkey\": 90, \"name\": \"Supplier#000000090\", \"address\": \"Leverkusen, Heinrich-von-Stephan-Strasse 12\", \"nationkey\": 0, \"phone\": \"49-2-175-6314\", \"acctbal\": 2023.64, \"comment\": \"\"},\n    {\"suppkey\": 91, \"name\": \"Supplier#000000091\", \"address\": \"Salzburg, Schwarzstrasse 5\", \"nationkey\": 1, \"phone\": \"43-6-524-321\", \"acctbal\": 7864.12, \"comment\": \"\"},\n    {\"suppkey\": 92, \"name\": \"Supplier#000000092\", \"address\": \"California St 22 125\", \"nationkey\": 2, \"phone\": \"58-57-654-3210 x23\", \"acctbal\": 232.32, \"comment\": \"\"},\n    {\"suppkey\": 98, \"name\": \"Supplier#000000098\", \"address\": \"Hauptstrasse 56\", \"nationkey\": 0, \"phone\": \"49-89-323-456\", \"acctbal\": 1756.28, \"comment\": \"\"},\n    {\"suppkey\": 120, \"name\": \"Supplier#000000120\", \"address\": \"Regionalnpark Karawanken, Klopeiner See Strasse 73\", \"nationkey\": 4, \"phone\": \"43-664-5768432\", \"acctbal\": 981.49, \"comment\": \"\"},\n    {\"suppkey\": 121, \"name\": \"Supplier#000000121\", \"address\": \"Rua do Mercado, 456\", \"nationkey\": 3, \"phone\": \"55-11-555-1212\", \"acctbal\": 258.32, \"comment\": \"\"},\n    {\"suppkey\": 122, \"name\": \"Supplier#000000122\", \"address\": \"Av. das Nacoes Unidas, 4091\", \"nationkey\": 3, \"phone\": \"55-11-555-1212 x300\", \"acctbal\": 682.32, \"comment\": \"\"},\n    {\"suppkey\": 123, \"name\": \"Supplier#000000123\", \"address\": \"Av. das Nacoes Unidas, 5577\", \"nationkey\": 3, \"phone\": \"55-11-555-1212 x400\", \"acctbal\": 891.32, \"comment\": \"\"},\n    {\"suppkey\": 124, \"name\": \"Supplier#000000124\", \"address\": \"Rua da Panamericana, 155\", \"nationkey\": 3, \"phone\": \"55-11-555-1212 x600\", \"acctbal\": 872.32, \"comment\": \"\"},\n    {\"suppkey\": 125, \"name\": \"Supplier#000000125\", \"address\": \"Estrada do Itaim Bibi, 200\", \"nationkey\": 3, \"phone\": \"55-11-555-1212 x700\", \"acctbal\": 984.32, \"comment\": \"\"},\n    {\"suppkey\": 126, \"name\": \"Supplier#000000126\", \"address\": \"Av. Brigadeiro Faria Lima, 357\", \"nationkey\": 3, \"phone\": \"55-11-555-1212 x800\", \"acctbal\": 942.32, \"comment\": \"\"},\n    {\"suppkey\": 127, \"name\": \"Supplier#000000127\", \"address\": \"Rua do Aviador Silvio name II, 156\", \"nationkey\": 3, \"phone\": \"55-11-555-1212 x900\", \"acctbal\": 482.32, \"comment\": \"\"},\n    {\"suppkey\": 128, \"name\": \"Supplier#000000128\", \"address\": \"Av. Santos Dumont, 255\", \"nationkey\": 3, \"phone\": \"55-11-555-1212 x950\", \"acctbal\": 476.32, \"comment\": \"\"},\n    {\"suppkey\": 129, \"name\": \"Supplier#000000129\", \"address\": \"Rua do Comendador Araujo, 87\", \"nationkey\": 3, \"phone\": \"55-11-555-1212 x1000\", \"acctbal\": 462.32, \"comment\": \"\"},\n    {\"suppkey\": 130, \"name\": \"Supplier#000000130\", \"address\": \"Av. Engenheiro Luiz Carlos Berrini, 905\", \"nationkey\": 3, \"phone\": \"55-11-555-1212 x1100\", \"acctbal\": 462.32, \"comment\": \"\"},\n    {\"suppkey\": 131, \"name\": \"Supplier#000000131\", \"address\": \"Av. Engenheiro Oscar Americano, 255\", \"nationkey\": 3, \"phone\": \"55-11-555-1212 x1200\", \"acctbal\": 462.32, \"comment\": \"\"},\n    {\"suppkey\": 132, \"name\": \"Supplier#000000132\", \"address\": \"Av. Engenheiro Luis Carlos Berrini, 1575\", \"nationkey\": 3, \"phone\": \"55-11-555-1212 x1300\", \"acctbal\": 462.32, \"comment\": \"\"},\n    {\"suppkey\": 133, \"name\": \"Supplier#000000133\", \"address\": \"Av. Brigadeiro Faria Lima, 4587\", \"nationkey\": 3, \"phone\": \"55-11-555-1212 x1400\", \"acctbal\": 462.32, \"comment\": \"\"},\n    {\"suppkey\": 134, \"name\": \"Supplier#000000134\", \"address\": \"Av. Engenheiro Luiz Carlos Berrini, 957\", \"nationkey\": 3, \"phone\": \"55-11-555-1212 x1500\", \"acctbal\": 462.32, \"comment\": \"\"}\n] \nThis is a list of supplier data, where each supplier is identified by a unique suppkey. The other fields provide information about the supplier's name, address, and account balance (acctbal). Convert this list into a pandas DataFrame.\n\nTo convert the given list into a pandas DataFrame, first import the pandas library, then create a DataFrame using the from_records() function, passing the list as an argument.\n\nHere is the code to do so:\n\n```python\nimport pandas as pd\n\nsuppliers_df = pd.DataFrame.from_records(your_list)\n```\n\nReplace `your_list` with the actual list of supplier data."
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": 1
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": "Here is the information for the first 10 suppliers in the text:\n\n1. Supplier #:"
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": 4
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 4
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": "This appears to be a portion of a database table for suppliers, with each row representing a single supplier. The columns in the table include:\n\n* `s\\_suppkey`: A unique identifier for the supplier (integer)\n* `s\\_name`: The name of the supplier (string)\n* `s\\_address`: The address of the supplier (string)\n* `s\\_nationkey`: The nation key associated with the supplier's country (integer)\n* `s\\_phone`: The phone number for the supplier (string)\n* `s\\_acctbal`: The supplier's account balance (float)\n* `s\\_comment`: A comment or note about the supplier (string)\n\nHere are the first 10 rows of the table in a more tabular format:\n\n| s\\_suppkey | s\\_name            | s\\_address                              | s\\_nationkey | s\\_phone          | s\\_acctbal | s\\_comment |\n|------------|-------------------|------------------------------------------|--------------|------------------|------------|-------------|\n| 1          | Supplier #000001  | 3089 Wellington Drive                    | 2            | (507) 555-6364   | 22414.00   |             |\n| 2          | Supplier #000002  | 3456 Hillside Drive                      | 9            | (508) 555-7440   | -411.25    |             |\n| 3          | Supplier #000003  | 2360 Lakeview Terrace                     | 17           | (503) 555-2948   | 10526.00   |             |\n| 4          | Supplier #000004  | 2467 Greenbriar Lane                      | 20           | (505) 555-9326   | -4811.00   |             |\n| 5          | Supplier #000005  | 2117 Oak Street                           | 2            | (507) 555-2640   | 3328.00    |             |\n| 6          | Supplier #000006  | 2673 Woodland Drive                       | 9            | (508) 555-2121   | -4737.00   |             |\n| 7          | Supplier #000007  | 1492 Park Avenue                          | 17           | (503) 555-5668   | 19035.00   |             |\n| 8          | Supplier #000008  | 1332 Hamilton Lane                         | 20           | (505) 555-7844   | -1622.00   |             |\n| 9          | Supplier #000009  | 2750 Blue Spruce Road                     | 13           | (506) 555-2428   | 15262.00   |             |\n| 10         | Supplier #000010  | 112 Carter Lane                            | 7            | (504) 555-9398   | -1352.00   |             |\n\nIt's worth noting that the `s\\_comment` column appears to be mostly empty or contain irrelevant information, so it might not be useful for analysis purposes."
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": "Here is the information for the first 5 suppliers in the text:\n\n1. Supplier 0:\n\t* s\\_suppkey: 0\n\t* s\\_name: Supplier#000000000\n\t* s\\_address: Not Available\n\t* s\\_nationkey: 3\n\t* s\\_phone: 21-876-444-1234\n\t* s\\_acctbal: 0.00\n\t* s\\_comment: Not Available\n2. Supplier 1:\n\t* s\\_suppkey: 1\n\t* s\\_name: Supplier#000000001\n\t* s\\_address: Not Available\n\t* s\\_nationkey: 3\n\t* s\\_phone: 21-876-444-1235\n\t* s\\_acctbal: 11379.68\n\t* s\\_comment: Not Available\n3. Supplier 2:\n\t* s\\_suppkey: 2\n\t* s\\_name: Supplier#000000002\n\t* s\\_address: Not Available\n\t* s\\_nationkey: 15\n\t* s\\_phone: 33-987-654-3214\n\t* s\\_acctbal: 8570.91\n\t* s\\_comment: Not Available\n4. Supplier 3:\n\t* s\\_suppkey: 3\n\t* s\\_name: Supplier#000000003\n\t* s\\_address: Not Available\n\t* s\\_nationkey: 15\n\t* s\\_phone: 33-987-654-3215\n\t* s\\_acctbal: 1129.69\n\t* s\\_comment: Not Available\n5. Supplier 4:\n\t* s\\_suppkey: 4\n\t* s\\_name: Supplier#000000004\n\t* s\\_address: Not Available\n\t* s\\_nationkey: 21\n\t* s\\_phone: 55-678-901-2345\n\t* s\\_acctbal: -1389.21\n\t* s\\_comment: Not Available\n\nPlease note that the s\\_address field is labeled as \"Not Available\" because the text does not provide any address information for the suppliers."
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

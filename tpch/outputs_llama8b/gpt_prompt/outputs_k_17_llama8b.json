@@ -1,0 +1,626 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": [
+            {
+                "question": "",
+                "answer": []
+            }
+        ]
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": "[\n    {\n        \"nationkey\": 1,\n        \"phone\": 11-131-656-2612,\n        \"comment\": \"ut the furiously final deposits integrate according to th\"\n    },\n    {\n        \"nationkey\": 5,\n        \"phone\": 15-960-448-6633,\n        \"comment\": \"arefully unusual deposits.\"\n    },\n    {\n        \"nationkey\": 7,\n        \"phone\": 17-790-100-9143,\n        \"comment\": \"regular deposits. carefully unusual accounts haggle ironic,\"\n    },\n    {\n        \"nationkey\": 8,\n        \"phone\": 18-541-281-5118,\n        \"comment\": \"deposits. slyly final accounts are fluffily slyly\"\n    },\n    {\n        \"nationkey\": 11,\n        \"phone\": 21-989-597-5142,\n        \"comment\": \"ss requests. even packages haggle furiously.\"\n    }\n]\n\nNote: The output is a list of dictionaries, where each dictionary represents a supplier with their nationkey, phone number, and comment."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": "Answering your question based on the CSV dataset...\n\n**Question:** What are the details of suppliers with nationkey 1?\n\n**Output:**\n\n* Supplier #000000985:\n\t+ Nationkey: 1\n\t+ Phone number: 11-131-656-2612\n\t+ Account balance: 3524.10\n\nNote: There is only one supplier with nationkey 1 in the dataset."
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": [
+            {
+                "question": "",
+                "answer": ""
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": "Instructions not provided. Please provide the instructions or the question you'd like me to answer based on the CSV dataset."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": [
+            {
+                "nationkey": 1,
+                "phone": "11-574-892-3228"
+            },
+            {
+                "nationkey": 2,
+                "phone": "12-926-664-9785"
+            },
+            {
+                "nationkey": 5,
+                "phone": "15-960-448-6633"
+            },
+            {
+                "nationkey": 7,
+                "phone": "17-541-281-5118"
+            },
+            {
+                "nationkey": 8,
+                "phone": "18-541-281-5118"
+            },
+            {
+                "nationkey": 14,
+                "phone": "24-437-170-2579"
+            },
+            {
+                "nationkey": 15,
+                "phone": "25-430-605-1180"
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": [
+            {
+                "nationkey": 1,
+                "acctbal": 3524.1
+            },
+            {
+                "nationkey": 2,
+                "acctbal": 7888.41
+            }
+        ]
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": [
+            {
+                "nationkey": 1,
+                "phone": "11-329-720-1904",
+                "comment": "ts during the blithely silent packages c"
+            },
+            {
+                "nationkey": 2,
+                "phone": "12-991-892-1050",
+                "comment": "ironic requests snooze? unusual depths alongside of the furiously"
+            },
+            {
+                "nationkey": 7,
+                "phone": "17-447-811-3282",
+                "comment": "ironic forges cajole blithely again"
+            },
+            {
+                "nationkey": 8,
+                "phone": "18-286-624-2526",
+                "comment": "iously. bold accounts cajo"
+            },
+            {
+                "nationkey": 15,
+                "phone": "25-147-738-5484",
+                "comment": "accounts. blithely final accounts haggle carefully special instructions"
+            }
+        ]
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": [
+            {
+                "answer": [],
+                "Why": []
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": [
+            {
+                "answer": [
+                    ""
+                ],
+                "comment": ""
+            }
+        ]
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": [
+            {
+                "nationkey": 0,
+                "comment": "blithely even requests. blithely ironic deposits wake slyly. ideas haggle! quickly i"
+            },
+            {
+                "nationkey": 2,
+                "comment": "regular packages can haggle acro"
+            },
+            {
+                "nationkey": 6,
+                "comment": "ly even packages shall cajole up the carefull"
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": "Answer: \n\nThe output will be a list of valid questions based on the CSV dataset, along with their corresponding answers.\n\nHere are some examples:\n\n1. What is the average account balance for suppliers in nationkey 8?\n\nAnswer: The average account balance for suppliers in nationkey 8 is approximately $2284.88.\n\n2. Which supplier has the highest account balance?\n\nAnswer: Supplier #000000975 has the highest account balance, which is approximately $7577.42.\n\n3. What is the median phone number for suppliers in nationkey 6?\n\nAnswer: The median phone number for suppliers in nationkey 6 is approximately 16-585-724-6633.\n\n4. Which supplier has the lowest account balance?\n\nAnswer: Supplier #000000812 has the lowest account balance, which is approximately $8615.5.\n\n5. What is the average comment length for suppliers in nationkey 14?\n\nAnswer: The average comment length for suppliers in nationkey 14 is approximately 134 characters.\n\n6. Which supplier has the most comments?\n\nAnswer: Supplier #000000975 has the most comments, with a total of 1 comment.\n\n7. What is the median account balance for suppliers in nationkey 16?\n\nAnswer: The median account balance for suppliers in nationkey 16 is approximately $5428.44.\n\n8. Which supplier has the highest phone number?\n\nAnswer: Supplier #000000975 has the highest phone number, which is approximately 13-892-333-9275.\n\n9. What is the average nationkey for suppliers with an account balance above $5000?\n\nAnswer: The average nationkey for suppliers with an account balance above $5000 is approximately 14.\n\n10. Which supplier has the lowest phone number?\n\nAnswer: Supplier #000000812 has the lowest phone number, which is approximately 16-585-724-6633.\n\nThese are just a few examples of valid questions based on the CSV dataset, along with their corresponding answers."
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": "Answer: There is no data in the CSV dataset that matches the query."
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": [
+            {
+                "answer": [
+                    ""
+                ],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": [
+            {
+                "answer": [],
+                "comment": []
+            }
+        ]
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": [
+            {
+                "answer": [
+                    "890",
+                    "891"
+                ],
+                "comment": "deas wake blithely. regular, special id"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": [
+            {
+                "question": "",
+                "answer": ""
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": [
+            {
+                "answer": [
+                    "906"
+                ],
+                "why": [
+                    "{{source}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": [
+            {
+                "nationkey": 2,
+                "phone": "12-926-664-9785",
+                "comment": "ructions. slyly final req"
+            },
+            {
+                "nationkey": 7,
+                "phone": "17-359-161-6634",
+                "comment": "final accounts unwind furiously among the furiously pending req"
+            },
+            {
+                "nationkey": 8,
+                "phone": "18-541-281-5118",
+                "comment": "deposits. slyly final accounts are fluffily slyly"
+            },
+            {
+                "nationkey": 14,
+                "phone": "24-437-170-2579",
+                "comment": "ly final requests haggle furiously final, regula"
+            },
+            {
+                "nationkey": 15,
+                "phone": "25-430-605-1180",
+                "comment": "hs against the unusual accounts haggle r"
+            }
+        ]
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": "Answer: \n\nThere is no nationkey that matches the query. The nationkeys in the dataset are: 0, 1, 4, 8, 11, 13, 23."
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": [
+            {
+                "nationkey": 1,
+                "phone": "11-329-720-1904",
+                "comment": "ts during the blithely silent packages c"
+            },
+            {
+                "nationkey": 6,
+                "phone": "16-795-236-9887",
+                "comment": "ly even packages shall cajole up the carefull"
+            },
+            {
+                "nationkey": 6,
+                "phone": "16-537-341-8517",
+                "comment": "ect blithely blithely final acco"
+            },
+            {
+                "nationkey": 7,
+                "phone": "17-108-642-3106",
+                "comment": "nding dependencies nag furiou"
+            },
+            {
+                "nationkey": 8,
+                "phone": "18-286-624-2526",
+                "comment": "iously. bold accounts cajo"
+            },
+            {
+                "nationkey": 10,
+                "phone": "20-884-330-2979",
+                "comment": "deas cajole carefully furiously regula"
+            },
+            {
+                "nationkey": 11,
+                "phone": "21-221-554-8461",
+                "comment": "y final requests. blithely final instructions will haggle fluffily. iron"
+            },
+            {
+                "nationkey": 20,
+                "phone": "30-283-261-2020",
+                "comment": "thely special deposits was furious"
+            },
+            {
+                "nationkey": 23,
+                "phone": "33-830-680-6168",
+                "comment": "lve furiously according to the final accounts. even accounts on the"
+            }
+        ]
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": [
+            {
+                "answer": [
+                    ""
+                ],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": [
+            {
+                "answer": [
+                    "546",
+                    "314052"
+                ],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": [
+            {
+                "answer": [
+                    "546",
+                    "314052"
+                ],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": "What question would you like me to answer based on this CSV dataset?"
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": [
+            {
+                "answer": [
+                    ""
+                ],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": "The CSV dataset contains information about suppliers, including their supplier key (s_suppkey), name (s_name), address (s_address), nation key (s_nationkey), phone number (s_phone), and account balance (s_acctbal). \n\nTo answer your question based on this dataset, I will assume that you are asking for the suppliers with a nation key of 2."
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": [
+            {
+                "answer": [
+                    "546",
+                    "314"
+                ],
+                "comment": "The suppliers with nation key 6 and phone number containing the digit 1"
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": "Answer: \n\nThere are no suppliers with nation key 4 in the dataset."
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": [
+            {
+                "nationkey": 1,
+                "phone": "11-329-720-1904",
+                "comment": "ts during the blithely silent packages c"
+            },
+            {
+                "nationkey": 6,
+                "phone": "16-795-236-9887",
+                "comment": "ly even packages shall cajole up the carefull"
+            },
+            {
+                "nationkey": 11,
+                "phone": "21-221-554-8461",
+                "comment": "y final requests. blithely final instructions will haggle fluffily. iron"
+            },
+            {
+                "nationkey": 16,
+                "phone": "26-346-921-7567",
+                "comment": "n requests believe fluffily. carefully special depen"
+            },
+            {
+                "nationkey": 20,
+                "phone": "30-283-261-2020",
+                "comment": "thely special deposits was furious"
+            },
+            {
+                "nationkey": 22,
+                "phone": "32-754-782-6474",
+                "comment": "r dugouts? final, ironic packages breach furiously f"
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": "Answer: \n\nNo answer found in the dataset."
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": "[]"
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": [
+            {
+                "answer": [
+                    "1"
+                ],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": [
+            {
+                "answer": [
+                    "546",
+                    "314052"
+                ],
+                "why": [
+                    "{{supplier_866_orders_137}}",
+                    "{{supplier_955_orders_314052}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": [
+            {
+                "nationkey": 2,
+                "comment": "pinto beans. quickly express requests haggle"
+            },
+            {
+                "nationkey": 1,
+                "comment": "the furiously daring dependencies wake blithely blithely regular braids. ironic ac"
+            }
+        ]
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": [
+            {
+                "nationkey": 4,
+                "phone": "14-685-851-5424"
+            },
+            {
+                "nationkey": 11,
+                "phone": "21-989-597-5142"
+            },
+            {
+                "nationkey": 15,
+                "phone": "25-430-605-1180"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": "Answer: \n\nThere is no data in the CSV dataset that matches the query."
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": [
+            {
+                "nationkey": 0,
+                "comment": "according to the ironic packages."
+            },
+            {
+                "nationkey": 1,
+                "comment": "Customer s. even asympRecommends haggle"
+            },
+            {
+                "nationkey": 3,
+                "comment": "olphins. pending packages are during the regular packages. furiously regular requests haggle c"
+            }
+        ]
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": [
+            {
+                "nationkey": 0,
+                "phone": "10-630-928-4130"
+            },
+            {
+                "nationkey": 7,
+                "phone": "17-108-642-3106"
+            },
+            {
+                "nationkey": 11,
+                "phone": "21-221-554-8461"
+            }
+        ]
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": [
+            {
+                "answer": []
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": [
+            {
+                "nation_key": 11,
+                "account_balance": 7741.42
+            },
+            {
+                "nation_key": 3,
+                "account_balance": 4404.29
+            },
+            {
+                "nation_key": 20,
+                "account_balance": 7122.9
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": [
+            {
+                "answer": [
+                    ""
+                ],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "nationkey": 2,
+                        "phone": "12-926-664-9785",
+                        "comment": "ructions. slyly final req"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": [
+            {
+                "answer": [
+                    "546",
+                    "7893.58"
+                ],
+                "comment": "slyly final requirements"
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": [
+            {
+                "answer": [
+                    "",
+                    ""
+                ],
+                "s_suppkey": "",
+                "s_name": "",
+                "s_address": "",
+                "s_nationkey": "",
+                "s_phone": "",
+                "s_acctbal": ""
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": [
+            {
+                "answer": "No suppliers have an account balance of 0"
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": [
+            {
+                "ocean": "Tuh3kFB,zCuI,jtPmV,IMcXQF",
+                "nationkey": 2,
+                "phone": "12-561-627-9752"
+            },
+            {
+                "ocean": "hQuhL6zQSZmVifUzpnKvRLNEfJhShDomdbGC",
+                "nationkey": 8,
+                "phone": "18-286-624-2526"
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": [
+            {
+                "nationkey": 1,
+                "phone": "11-574-892-3228"
+            },
+            {
+                "nationkey": 5,
+                "phone": "15-960-448-6633"
+            },
+            {
+                "nationkey": 2,
+                "phone": "12-316-384-2073"
+            }
+        ]
+    }
+]

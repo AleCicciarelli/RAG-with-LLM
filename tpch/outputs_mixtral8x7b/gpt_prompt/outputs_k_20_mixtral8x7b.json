@@ -1,0 +1,206 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": "Here is the information in a more readable format:\n\n1. `s_suppkey: 6`\n2. `s_name: Supplier#0000000006`\n3. `s_address: 4857 Nagle Street`\n4. `s_nationkey: 2`\n5. `s_phone: 1-505-503-8865`\n6. `s_acctbal: 3142.47`\n7. `s_comment: hs against the unusual accounts haggle r`\n\nThis looks like a record from a supplier table in a database. It includes the supplier's key (`s_suppkey`), name (`s_name`), address (`s_address`), nation key (`s_nationkey`), phone number (`s_phone`), account balance (`s_acctbal`), and comments (`s_comment`).\n\nThe `s_suppkey` is 6, the name of the supplier is \"Supplier #0000000006\", their address is \"4857 Nagle Street\", they are located in nation key 2, their phone number is \"1-505-503-8865\", their account balance is $3142.47, and the comment for this supplier is \"hs against the unusual accounts haggle r\"."
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": {
+            "s_suppkey": 807,
+            "s_name": "Supplier#000000807",
+            "s_address": "ClHvM1nuPUESGg35Ls",
+            "s_nationkey": 14,
+            "s_phone": "24-255-894-5069",
+            "s_acctbal": 1077.97,
+            "s_comment": "lly. even, pending requests boost furiously furious"
+        }
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 1
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 1
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": 852
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": "Here is the information for the first 10 suppliers in the text you provided:\n\n1. Supplier #: 1, Name: Supplier#10, Address: ,BAwz5cOYT3v2F,QqJEi, Nation Key: 8, Phone: 16-749-628-52, Account Balance: 2234.72\n2. Supplier #: 2, Name: Supplier#11, Address: 0,IhbilfGfxCJSa, Nation Key: 3, Phone: 13-960-819-59, Account Balance: 4247.17\n3. Supplier #: 3, Name: Supplier#12, Address: ,KnRs0DrT, Nation Key: 5, Phone: 15-836-525-61, Account Balance: 9361.14\n4. Supplier #: 4, Name: Supplier#13, Address: ,p7XqdrB0l, Nation Key: 7, Phone: 17-802-629-57, Account Balance: 6385.52\n5. Supplier #: 5, Name: Supplier#14, Address: ,ZjU,JGbMHQ, Nation Key: 2, Phone: 12-806-950-70, Account Balance: 3334.9\n6. Supplier #: 6, Name: Supplier#15, Address: ,BgFzcVOSCWoRh, Nation Key: 1, Phone: 11-825-570-66, Account Balance: 4837.82\n7. Supplier #: 7, Name: Supplier#1, Address: ,yw9cwQR, Nation Key: 1, Phone: 11-528-633-05, Account Balance: 13685.41\n8. Supplier #: 8, Name: Supplier#2, Address: ,7eKJNWm, Nation Key: 2, Phone: 12-946-761-20, Account Balance: 16349.68\n9. Supplier #: 9, Name: Supplier#3, Address: ,xhQqTIHrCWoR, Nation Key: 3, Phone: 13-571-620-25, Account Balance: 4812.23\n10. Supplier #: 10, Name: Supplier#4, Address: ,JGbMHQqTIHWoR, Nation Key: 4, Phone: 14-769-405-26, Account Balance: 8780.31\n\nPlease note that the supplier names are not provided in the text, I have used the word \"Supplier\" followed by the supplier number as the name. Also, the addresses are truncated and may be incomplete."
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": "001: Supplier #000000001, s\\_nationkey=1, s\\_acctbal=-158.08\n002: Supplier #000000002, s\\_nationkey=2, s\\_acctbal=7888.41\n003: Supplier #000000003, s\\_nationkey=3, s\\_acctbal=4404.29\n004: Supplier #000000004, s\\_nationkey=6, s\\_acctbal=6721.7\n005: Supplier #000000005, s\\_nationkey=7, s\\_acctbal=2843.8\n006: Supplier #000000006, s\\_nationkey=1, s\\_acctbal=9594.51\n007: Supplier #000000007, s\\_nationkey=20, s\\_acctbal=7122.9\n008: Supplier #000000008, s\\_nationkey=2, s\\_acctbal=7886.4\n009: Supplier #000000009, s\\_nationkey=18, s\\_acctbal=5130.06\n010: Supplier #000000010, s\\_nationkey=17, s\\_acctbal=4219.61\n...\n\nThis text lists supplier information, with 10 entries per line. Each entry contains the supplier number (s\\_suppkey), nation key (s\\_nationkey), balance (s\\_acctbal), and sometimes includes a comment. The list is sorted by s\\_acctbal in descending order."
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 8
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": "Here is the information for the first 5 suppliers in the text:\n\n1. Supplier #:"
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": 1
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": "0:\n{\n\"s\\_suppkey\": 4,\n\"s\\_name\": \"Supplier #4\",\n\"s\\_address\": \"707 Oxford Road\",\n\"s\\_city\": \"Atlanta\",\n\"s\\_nation\": \"USA\",\n\"s\\_region\": \"SOUTHERN\",\n\"s\\_phone\": \"(171) 555-4444\",\n\"s\\_comment\": \"\"\n}\n\n1:\n{\n\"s\\_suppkey\": 13,\n\"s\\_name\": \"Supplier #13\",\n\"s\\_address\": \"23456 Industrial Drive\",\n\"s\\_city\": \"Los Angeles\",\n\"s\\_nation\": \"USA\",\n\"s\\_region\": \"WESTERN\",\n\"s\\_phone\": \"(213) 555-3691\",\n\"s\\_comment\": \"\"\n}\n\n2:\n{\n\"s\\_suppkey\": 20,\n\"s\\_name\": \"Supplier #20\",\n\"s\\_address\": \"8042 Main Street\",\n\"s\\_city\": \"New York\",\n\"s\\_nation\": \"USA\",\n\"s\\_region\": \"EASTERN\",\n\"s\\_phone\": \"(212) 555-6345\",\n\"s\\_comment\": \"\"\n}\n\n3:\n{\n\"s\\_suppkey\": 27,\n\"s\\_name\": \"Supplier #27\",\n\"s\\_address\": \"808 5th Avenue\",\n\"s\\_city\": \"Seattle\",\n\"s\\_nation\": \"USA\",\n\"s\\_region\": \"NORTHERN\",\n\"s\\_phone\": \"(206) 555-1234\",\n\"s\\_comment\": \"\"\n}\n\n4:\n{\n\"s\\_suppkey\": 34,\n\"s\\_name\": \"Supplier #34\",\n\"s\\_address\": \"1452 Westheimer\",\n\"s\\_city\": \"Houston\",\n\"s\\_nation\": \"USA\",\n\"s\\_region\": \"SOUTHERN\",\n\"s\\_phone\": \"(713) 555-1456\",\n\"s\\_comment\": \"\"\n}\n\n5:\n{\n\"s\\_suppkey\": 51,\n\"s\\_name\": \"Supplier #51\",\n\"s\\_address\": \"123 Maple Street\",\n\"s\\_city\": \"Cleveland\",\n\"s\\_nation\": \"USA\",\n\"s\\_region\": \"EASTERN\",\n\"s\\_phone\": \"(216) 555-4567\",\n\"s\\_comment\": \"\"\n}\n\n6:\n{\n\"s\\_suppkey\": 59,\n\"s\\_name\": \"Supplier #59\",\n\"s\\_address\": \"309 4th Avenue\",\n\"s\\_city\": \"New York\",\n\"s\\_nation\": \"USA\",\n\"s\\_region\": \"EASTERN\",\n\"s\\_phone\": \"(212) 555-6345\",\n\"s\\_comment\": \"\"\n}\n\n7:\n{\n\"s\\_suppkey\": 65,\n\"s\\_name\": \"Supplier #65\",\n\"s\\_address\": \"848 Brannan Street\",\n\"s\\_city\": \"San Francisco\",\n\"s\\_nation\": \"USA\",\n\"s\\_region\": \"WESTERN\",\n\"s\\_phone\": \"(415) 555-3624\",\n\"s\\_comment\": \"\"\n}\n\n8:\n{\n\"s\\_suppkey\": 76,\n\"s\\_name\": \"Supplier #76\",\n\"s\\_address\": \"1 Hallidie Plaza\",\n\"s\\_city\": \"San Francisco\",\n\"s\\_nation\": \"USA\",\n\"s\\_region\": \"WESTERN\",\n\"s\\_phone\": \"(415) 555-3624\",\n\"s\\_comment\": \"\"\n}\n\n9:\n{\n\"s\\_suppkey\": 77,\n\"s\\_name\": \"Supplier #77\",\n\"s\\_address\": \"300 California Street\",\n\"s\\_city\": \"San Francisco\",\n\"s\\_nation\": \"USA\",\n\"s\\_region\": \"WESTERN\",\n\"s\\_phone\": \"(415) 555-2222\",\n\"s\\_comment\": \"\"\n}\n\n10:\n{\n\"s\\_suppkey\": 81,\n\"s\\_name\": \"Supplier #81\",\n\"s\\_address\": \"100 Pine Street\",\n\"s\\_city\": \"Seattle\",\n\"s\\_nation\": \"USA\",\n\"s\\_region\": \"NORTHERN\",\n\"s\\_phone\": \"(206) 555-1234\",\n\"s\\_comment\": \"\"\n}"
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": "Here are the details of the suppliers from the provided data:\n\n1. Supplier #884, named Supplier#000000884, located in nationkey 21, has a balance of 1444.79 and a phone number of 31-519-879-5266.\n2. Supplier #885, named Supplier#000000885, located in nationkey 7, has a balance of 1736.47 and a phone number of 17-578-639-8695.\n3. Supplier #886, named Supplier#000000886, located in nationkey 1, has a balance of -158.08 and a phone number of 11-329-720-1904.\n4. Supplier #889, named Supplier#000000889, located in nationkey 20, has a balance of 8570.93 and a phone number of 30-566-872-3482.\n5. Supplier #812, named Supplier#000000812, located in nationkey 15, has a balance of 2179.51 and a phone number of 15-761-222-433.\n6. Supplier #813, named Supplier#000000813, located in nationkey 22, has a balance of 5793.63 and a phone number of 32-887-679-3561.\n7. Supplier #815, named Supplier#000000815, located in nationkey 10, has a balance of 4057.27 and a phone number of 10-215-792-3612.\n8. Supplier #816, named Supplier#000000816, located in nationkey 23, has a balance of 361.01 and a phone number of 33-830-680-6168.\n9. Supplier #905, named Supplier#000000905, located in nationkey 2, has a balance of 7888.41 and a phone number of 12-926-664-9785.\n10. Supplier #906, named Supplier#000000906, located in nationkey 2, has a balance of -321.62 and a phone number of 12-926-664-9785.\n\nPlease note that there are more suppliers in the provided data, and you can use the same format to extract their details."
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

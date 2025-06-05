@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": "This appears to be a list of supplier records, with each record containing various details about a supplier such as their key (`s\\_suppkey`), name (`s\\_name`), address (`s\\_address`), nation key (`s\\_nationkey`), phone number (`s\\_phone`), account balance (`s\\_acctbal`), and comments (`s\\_comment`).\n\nHere is an example of how you might parse and display some of this information using Python:\n```python\nimport json\n\n# Assume the records are passed in as a string in JSON format\nrecords_json = '''\n[\n  ... <the list of records you provided> ...\n]\n'''\n\n# Parse the JSON string to get a list of records\nrecords = json.loads(records_json)\n\n# Loop through the list of records and print out some of the fields\nfor record in records:\n    suppkey = record['s_suppkey']\n    name = record['s_name']\n    address = record['s_address']\n    acctbal = record['s_acctbal']\n    comment = record['s_comment']\n\n    print(f'Supplier Key: {suppkey}')\n    print(f'Name: {name}')\n    print(f'Address: {address}')\n    print(f'Account Balance: {acctbal}')\n    print(f'Comment: {comment}\\n')\n```\nThis would produce output similar to the following:\n```vbnet\nSupplier Key: 1\nName: Supplier#000000001\nAddress: 300 44th Ave. - 3rd Floor\nAccount Balance: 21619.47\nComment: \n\nSupplier Key: 2\nName: Supplier#000000002\nAddress: 2391 Richmond St.\nAccount Balance: 15032.24\nComment: \n\n...\n```\nNote that the `s_comment` field contains a mix of different types of comments, some of which may not make sense out of context."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": "Here is the information for the first 10 suppliers in the text file:\n\n1. Supplier #000000818\n\t* Address: 5iBtCX9E,pjSJOw2f6n3QbvGjxLx4CDcDW\n\t* Nation Key: 17\n\t* Phone: 16-726-600-8151\n\t* Account Balance: 7861.93\n\t* Comments: regular accounts sleep furiously among the ironic, final dolphins\n2. Supplier #000000819\n\t* Address: 4kfcijEJ,hHxvTQcVGjWbYzD6\n\t* Nation Key: 13\n\t* Phone: 27-509-464-5852\n\t* Account Balance: -234.08\n\t* Comments: final requests haggle blithely with the furiously express, regular packages\n3. Supplier #000000820\n\t* Address: 1soEaDX5U,vNxVeZTZwPQkGcF9i"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": "Here is the information for the first 5 suppliers in the provided data:\n\n1. Supplier # 856, Nation Key: 15, Name: Supplier#000000856, Address: pfvwX7jBGKtT3FvNn, Phone: 25-430-605-1179, Account Balance: 3282.62, Comment: hs against the unusual accounts haggle r\n2. Supplier # 867, Nation Key: 14, Name: Supplier#000000867, Address: 5op1w94,JerNmOkyPfAVkZEtb7, Phone: 24-437-170-2579, Account Balance: 9450.21, Comment: ly final requests haggle furiously final, regula\n3. Supplier # 868, Nation Key: 14, Name: Supplier#000000868, Address: 7vVHrBT6ZaJ9CWGtB, Phone: 24-437-170-2579, Account Balance: 7820.93, Comment: ditional final accounts haggle furiously final\n4. Supplier # 872, Nation Key: 14, Name: Supplier#000000872, Address: 5WYrD8Z6,qfQFk9AaJ, Phone: 24-437-170-2579, Account Balance: 6907.49, Comment: ngs carefully final accounts haggle ironicall\n5. Supplier # 881, Nation Key: 14, Name: Supplier#000000881, Address: 5op1w94,JerNmOkyPfAVkZEtb7, Phone: 24-437-170-2579, Account Balance: 6709.03, Comment: arefully unusual deposits.\n\nPlease note that the address and phone number fields contain arbitrary strings and may not represent valid addresses or phone numbers."
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": "Here is the information for supplier with key \"11\":\n\n{\n\"s\\_suppkey\": \"11\",\n\"s\\_name\": \"Supplier#00000011\",\n\"s\\_address\": \" 2563 Hwy 265 S Suite 4J\",\n\"s\\_nationkey\": \"2\",\n\"s\\_phone\": \"12-985-621-8827\",\n\"s\\_acctbal\": \"3305.00\",\n\"s\\_comment\": \"usual requests snooze? unusual depths alongside of the furiously\"\n}\n\nThis supplier is named \"Supplier#00000011\" and is located at \"2563 Hwy 2"
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": "These are data entries for suppliers in a database, with each entry containing the supplier's ID number (s\\_suppkey), name, address, nation key (indicating the country where the supplier is located), phone number, balance, and comment. The suppliers are identified by a unique key (s\\_suppkey) and have various levels of balance, ranging from positive to negative values. The comments vary for each supplier, and the phone numbers indicate the supplier's country code. This information could be used in a range of applications, such as inventory management or procurement, where it is important to keep track of suppliers and their details."
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": "It seems like you have provided me with a list of supplier data, where each entry contains information about a supplier such as their supplier key (`s_suppkey`), name, address, nation key, phone number, account balance (`s_acctbal`), and comment field. The comment fields in many of the entries contain text that seems to have been truncated or cut off prematurely.\n\nWithout a specific question or task, it's difficult for me to provide a meaningful response. However, I can give you an idea of how you might analyze or use this data. For example, you could:\n\n1. Filter the data to include only suppliers with a balance above a certain threshold.\n2. Sort the data by account balance in descending order to see who your biggest suppliers are.\n3. Use text analysis techniques to analyze the comment fields and identify common themes or issues.\n4. Geocode the address field to create a map of supplier locations.\n5. Use network analysis techniques to explore relationships between suppliers and other entities in your dataset.\n\nLet me know if you have any specific questions about this data or if there's something specific you would like me to do with it!"
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": 1
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 4
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": "Here is the information for the first 10 suppliers in the text you provided:\n\n1. Supplier key: 369, Supplier name: Supplier#000000369, Account balance: 284.57\n2. Supplier key: 310, Supplier name: Supplier#000000310, Account balance: 1013.21\n3. Supplier key: 624, Supplier name: Supplier#000000624, Account balance: -95.78\n4. Supplier key: 467, Supplier name: Supplier#000000467, Account balance: 323.19\n5. Supplier key: 680, Supplier name: Supplier#000000680, Account balance: -142.67\n6. Supplier key: 951, Supplier name: Supplier#000000951, Account balance: 1323.29\n7. Supplier key: 303, Supplier name: Supplier#000000303, Account balance: 468.32\n8. Supplier key: 668, Supplier name: Supplier#000000668, Account balance: -116.97\n9. Supplier key: 548, Supplier name: Supplier#000000548, Account balance: 2332.45\n10. Supplier key: 969, Supplier name: Supplier#000000969, Account balance: 1723.81\n\nPlease note that the account balance is in dollars."
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": "Here are the details for the first 10 suppliers in the text you provided:\n\n1. Supplier #823, s\\_nationkey = 17, s\\_name = \"QADAC\", s\\_address = \"QADAC\", s\\_phone = \"27-475-560-5951\", s\\_acctbal = 8159.44\n2. Supplier #824, s\\_nationkey = 1, s\\_name = \"SIANA\", s\\_address = \"SIANA\", s\\_phone = \"1-769-304-5221\", s\\_acctbal = 1948.46\n3. Supplier #825, s\\_nationkey = 1, s\\_name = \"LILAS-PLC\", s\\_address = \"LILAS-PLC\", s\\_phone = \"1-709-320-8568\", s\\_acctbal = 494.4\n4. Supplier #826, s\\_nationkey = 15, s\\_name = \"FOLKSONG-PLC\", s\\_address = \"FOLKSONG-PLC\", s\\_phone = \"30-754-794-6926\", s\\_acctbal = 869.63\n5. Supplier #827, s\\_nationkey = 15, s\\_name = \"GOSCORP\", s\\_address = \"GOSCORP\", s\\_phone = \"30-741-586-5851\", s\\_acctbal = 95.1\n6. Supplier #828, s\\_nationkey = 15, s\\_name = \"GOSHOP\", s\\_address = \"GOSHOP\", s\\_phone = \"30-741-586-5851\", s\\_acctbal = 294.64\n7. Supplier #829, s\\_nationkey = 15, s\\_name = \"GOFORWARD\", s\\_address = \"GOFORWARD\", s\\_phone = \"30-741-586-5851\", s\\_acctbal = 115.21\n8. Supplier #830, s\\_nationkey = 15, s\\_name = \"GOLIM\", s\\_address = \"GOLIM\", s\\_phone = \"30-741-586-5851\", s\\_acctbal = 294.64\n9. Supplier #831, s\\_nationkey = 15, s\\_name = \"GOFIRE\", s\\_address = \"GOFIRE\", s\\_phone = \"30-741-586-5851\", s\\_acctbal = 294.64\n10. Supplier #832, s\\_nationkey = 17, s\\_name = \"IG2VYXU\", s\\_address = \"ig2vYxu,8xwEzl0UfA4t5VJ\", s\\_phone = \"27-470-524-5760\", s\\_acctbal = 6604.79\n\nPlease note that the s\\_address column seems to contain abbreviated or corrupt data for some suppliers, which I have provided as-is."
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": "It seems like you have provided me with a list of supplier records, where each record contains information about a supplier such as their name, contact details, and account balance. However, I notice that some records contain disjointed and seemingly unrelated words or phrases in the \"s_comment\" field.\n\nIf we focus on the first record you provided, here is a breakdown of the different fields:\n```sql\ns_suppkey: 105\ns_name: Supplier#105\ns_address: 1342 Ridgelake Rd.\ns_city: Atlanta\ns_nation: USA\ns_region: GA\ns_postal: 30324\ns_phone: (404) 484-6579\ns_contact: Laura Callahan\ns_comment:"
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": "These text data you've provided appears to be a list of supplier records, with each record containing various pieces of information about a supplier such as their supplier key (`s_suppkey`), name (`s_name`), nation key (`s_nationkey`), phone number (`s_phone`), and account balance (`s_acctbal`). Additionally, many of the records also contain comment fields (`s_comment`) that include various phrases and words, often repeated with slight variations.\n\nIt's not entirely clear what you would like to do with this data, but I'll do my best to provide a helpful response. Here are a few possible ways you could analyze or use this data:\n\n1. **Data cleaning and normalization:** Before doing any analysis, it may be necessary to clean and normalize the data. For example, you might want to remove extraneous whitespace from the `s_name` field, or ensure that all phone numbers are formatted consistently. You could also consider converting the `s_acctbal` field to a numerical data type, if it's not already.\n2. **Descriptive statistics:** Once the data is clean and normalized, you can calculate various descriptive statistics to get a sense of the overall distribution of values. For example, you might want to calculate the mean, median, and mode of the `s_acctbal` field to understand the typical account balance for suppliers in this dataset.\n3. **Data visualization:** Visualizing the data can help you identify trends and patterns that might not be immediately apparent from the raw numbers. For example, you could create a bar chart showing the distribution of `s_nationkey` values to see which countries are most heavily represented in this dataset.\n4. **Text analysis:** Given the rich comment fields included in many of these records, there may be opportunities to perform text analysis to identify common themes or patterns. For example, you might use natural language processing techniques to extract keywords from the `s_comment` field and analyze their frequency and co-occurrence.\n5. **Machine learning:** Depending on your ultimate goals, you might consider using machine learning algorithms to make predictions or identify patterns in the data. For example, you could use clustering algorithms to group suppliers together based on shared characteristics, or build a regression model to predict account balances based on other variables.\n\nI hope this gives you some ideas for how to work with this data! Let me know if you have any further questions or need more specific guidance."
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": 1
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": "The text provided contains several records from a 'supplier' table in a database, with each record containing information about a supplier such as their supplier key (s\\_suppkey), name, address, nation key (s\\_nationkey), phone number, balance, and comments.\nIt is not clear what specific analysis or question you would like to perform with this data. However, here are some general insights that can be obtained from it:\n\n* The suppliers seem to be from different nations, as indicated by the s\\_nationkey attribute. This suggests that the company has a global supply chain.\n* The balance of the suppliers varies greatly, with some having a high positive balance (e.g. s\\_suppkey 818, balance 9594.51) and others having a low or negative balance (e.g. s\\_suppkey 975, balance -2350.62). This may indicate different levels of financial stability among the suppliers.\n* The comments field contains various notes about the suppliers, such as \"final accounts\" and \"express deposits\". These comments may provide additional context about the business relationships between the company and its suppliers.\n\nIf you could specify a question or analysis you would like to perform with this data, I could give a more specific answer."
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": "000800: Supplier Details\n----------------------\n\n- ID: `000800`\n- Suppkey: `800`\n- Name: `Supplier800`\n- Nationkey: `1`\n- Address: `E5uVwP46K7hZoQr`\n- City: `Cunewalde`\n- State: `SA`\n- Postalcode: `01307`\n- Phone: `03583-0321`\n- Phax: `03583-0469`\n- Misc: ``\n- Comment: `silent packages cajole up the careful ones`\n\nThis JSON data represents a supplier with an ID of `000800`, a supplier key of `800`, and a name of `Supplier800`. The supplier is located in `Cunewalde, SA`, `01307` postal code, and can be reached by phone at `03583-0321` and fax at `03583-0469`. There is no additional information in the `Address` field, but there is a comment that says `silent packages cajole up the careful ones`."
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": "Here is the information for the first 10 suppliers in the text:\n\n1. Supplier#000000001, s\\_nationkey = 3, s\\_acctbal = 21642.17\n2. Supplier#000000002, s\\_nationkey = 3, s\\_acctbal = 51309.37\n3. Supplier#00000"
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": 1
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 27
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": "Here is the information in a more readable format:\n\n1. Source: 'csv\\_data\\_tpch/supplier.csv', Row: 827\n   * s\\_suppkey: 828\n   * s\\_name: Supplier#000000828\n   * s\\_address: e2IbXZC6,1GvQ5aJYnHwDqLAvMxKi9WBbPV\n   * s\\_nationkey: 13\n   * s\\_phone: 24-780-767-5982\n   * s\\_acctbal: 6803.00\n   * s\\_comment: ecommends careful regular requests among the regular accounts.\n\n2. Source: 'csv\\_data\\_tpch/supplier.csv', Row: 828\n   * s\\_suppkey: 829\n   * s\\_name: Supplier#000000829\n   * s\\_address: 3KoWZCb6,1GvQ5aJYnHwDqLAvMxKi9WBbPV\n   * s\\_nationkey: 10\n   * s\\_phone: 24-780-767-5982\n   * s\\_acctbal: 3318.00\n   * s\\_comment: argets carefully among the e\n\n3. Source: 'csv\\_data\\_tpch/supplier.csv', Row: 829\n   * s\\_suppkey: 830\n   * s\\_name: Supplier#000000830\n   * s\\_address: 5JjXTDa6,1GvQ5aJYnHwDqLAvMxKi9WBbPV\n   * s\\_nationkey: 2\n   * s\\_phone: 24-780-767-5982\n   * s\\_acctbal: 1394.00\n   * s\\_comment: y carefully among the regular accounts.\n\n...\n\n(Note: I have only included a small portion of the data provided.)\n\nBased on this information, it appears to be a list of suppliers with various attributes such as supplier key, name, address, nation key, phone number, account balance, and comments. Each supplier is identified by a unique supplier key, and has a corresponding name, address, and other attributes. The nation key may indicate the country or region in which the supplier is located. The phone number appears to be in a format where the first two digits represent the area code, followed by the main number. The account balance likely represents the amount of money owed to or by the supplier. The comments field contains various remarks about the suppliers, such as recommendations for careful handling of requests or accounts."
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": "Here is the information for the first 10 suppliers in the text file:\n\n1. Supplier #000000001:\n\t* s\\_suppkey: 1\n\t* s\\_name: Supplier#000000001\n\t* s\\_address: 123 Main St.\n\t* s\\_nationkey: 1\n\t* s\\_phone: 555-555-1212\n\t* s\\_acctbal: 9414.68\n\t* s\\_comment: This is the first supplier.\n2. Supplier #000000002:\n\t* s\\_suppkey: 2\n\t* s\\_name: Supplier#0"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 12
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": "00-000: Supplier Data\n\n| Field | Value |\n|---|---|\n| s\\_suppkey | 0 |\n| s\\_name | Supplier Name Not Provided |\n| s\\_address | Not Provided |\n| s\\_nationkey | 0 |\n| s\\_phone | None |\n| s\\_acctbal | 0.00 |\n\nNote: The first line starting with '00-000' is a header added for clarity and does not exist in the original data.\n\nThe following lines contain the actual supplier records, where each record has the following fields:\n\n* s\\_suppkey (Supplier Key)\n* s\\_name (Supplier Name)\n* s\\_address (Street Address)\n* s\\_nationkey (Nation Key)\n* s\\_phone (Phone Number)\n* s\\_acctbal (Account Balance)\n\nHere is a sample of the supplier data:\n\n00-001: Supplier Data\n\n| Field | Value |\n|---|---|\n| s\\_suppkey | 1 |\n| s\\_name | Supplier #1 |\n| s\\_address | 123 Supplier St. |\n| s\\_nationkey | 1 |\n| s\\_phone | 555-555-1212 |\n| s\\_acctbal | 1000.00 |\n\n...\n\n00-100: Supplier Data\n\n| Field | Value |\n|---|---|\n| s\\_suppkey | 100 |\n| s\\_name | Supplier #100 |\n| s\\_address | 12345 Supplier Ave. |\n| s\\_nationkey | 10 |\n| s\\_phone | 555-555-1000 |\n| s\\_acctbal | 100000.00 |\n\nPlease note that the actual data may contain more or fewer records depending on the source of your dataset."
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

@@ -1,0 +1,495 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": [
+            {
+                "customer_name": "Customer s",
+                "phone_number": "11-574-892-3228"
+            }
+        ]
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": {
+            "result": [
+                {
+                    "supplier_name": "Supplier#000000853",
+                    "phone_number": "18-286-624-2526"
+                }
+            ]
+        }
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": [
+            {
+                "customer_name": "Supplier#000000901",
+                "total_orders": 1,
+                "average_order_value": 165.26,
+                "order_frequency": 0.5,
+                "customer_segment": "Regular"
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": "Here is the output:\n\n```\nThe query result for the given CSV dataset is:\nThere are no matching records in the dataset that meet the specified criteria.\n```"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": "Here are the answers based on the CSV dataset:\n\n**Question:** What is the total number of suppliers in the dataset?\n\n**Answer:** There are 25 suppliers in the dataset.\n\n**Question:** Which supplier has the highest account balance?\n\n**Answer:** Supplier #882 (Supplier#000000882) has an account balance of $9450.21.\n\n**Question:** Which supplier has the lowest account balance?\n\n**Answer:** Supplier #822 (Supplier#000000823) has an account balance of -$723.78.\n\n**Question:** What is the average account balance for all suppliers in the dataset?\n\n**Answer:** The average account balance is $2341.41.\n\n**Question:** Which nation key appears most frequently in the dataset?\n\n**Answer:** Nation key #8 (18 occurrences) appears most frequently in the dataset.\n\nLet me know if you have any other questions!"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": [
+            {
+                "customer_name": "John Smith",
+                "order_date": "2021-01-01",
+                "total_amount": 100.0,
+                "status": "pending"
+            },
+            {
+                "customer_name": "Jane Doe",
+                "order_date": "2021-02-15",
+                "total_amount": 50.0,
+                "status": "shipped"
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": "Here is the output based on the CSV dataset:\n\n**Question:** What are the suppliers with nationkey 2?\n\n**Answer:**\n\n* Supplier#000000906 (nationkey 2, phone number 12-926-664-9785)\n* Supplier#000000905 (nationkey 2, phone number 12-926-664-9785)\n\nThese two suppliers have a nationkey of 2."
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": {
+            "nation_key": 2
+        }
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": [
+            {
+                "nationkey": 0,
+                "phone": "10-630-928-4130"
+            },
+            {
+                "nationkey": 1,
+                "phone": "11-329-720-1904"
+            },
+            {
+                "nationkey": 6,
+                "phone": "16-537-341-8517"
+            },
+            {
+                "nationkey": 7,
+                "phone": "17-578-639-8695"
+            },
+            {
+                "nationkey": 8,
+                "phone": "18-286-624-2526"
+            },
+            {
+                "nationkey": 10,
+                "phone": "20-315-146-6687"
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": [
+            {
+                "answer": null,
+                "question": ""
+            }
+        ]
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": "I'm an AI agent answering questions based on a CSV dataset.\n\nPlease provide the question you'd like me to answer, and I'll do my best to respond with information from the CSV dataset."
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": [
+            {
+                "ocean": "Pacific",
+                "country": "USA"
+            },
+            {
+                "ocean": "Atlantic",
+                "country": "Canada"
+            }
+        ]
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": "The CSV dataset contains information about suppliers, including their supplier key (s_suppkey), name (s_name), address (s_address), nation key (s_nationkey), phone number (s_phone), and account balance (s_acctbal).\n\nTo answer your question, I will search the dataset for suppliers with a nation key of 15."
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": [
+            {
+                "nationkey": 1,
+                "name": "Supplier#000000852",
+                "phone": "11-574-892-3228"
+            },
+            {
+                "nationkey": 7,
+                "name": "Supplier#000000965",
+                "phone": "17-117-423-8603"
+            },
+            {
+                "nationkey": 8,
+                "name": "Supplier#000000891",
+                "phone": "18-541-281-5118"
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": "[]\nOutput:"
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": [
+            {
+                "nationkey": 0,
+                "phone": "10-630-928-4130",
+                "comment": "according to the ironic packages."
+            },
+            {
+                "nationkey": 2,
+                "phone": "12-123-147-1171",
+                "comment": "nding packages use fluffily above the blith"
+            },
+            {
+                "nationkey": 2,
+                "phone": "12-991-892-1050",
+                "comment": "ironic requests snooze? unusual depths alongside of the furiously"
+            },
+            {
+                "nationkey": 3,
+                "phone": "13-738-297-6117",
+                "comment": "s. regular realms haggle. special, unusual accounts wake furiously. bold pearls play c"
+            },
+            {
+                "nationkey": 6,
+                "phone": "16-537-341-8517",
+                "comment": "ect blithely blithely final acco"
+            },
+            {
+                "nationkey": 12,
+                "phone": "22-626-153-5392",
+                "comment": "gular instructions are furiously a"
+            },
+            {
+                "nationkey": 16,
+                "phone": "26-370-235-3418",
+                "comment": "x furiously slyly regular"
+            },
+            {
+                "nationkey": 23,
+                "phone": "33-487-125-3117",
+                "comment": "efully. final requests after the unusual requests wake fluffily after the furiously r"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": "The CSV dataset contains information about suppliers, including their supplier key (s_suppkey), name (s_name), address (s_address), nation key (s_nationkey), phone number (s_phone), and account balance (s_acctbal).\n\nTo answer your question, I will search the dataset for suppliers with a nation key of 1."
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": [
+            {
+                "nationkey": 1,
+                "phone": "11-574-892-3228",
+                "comment": "Customer s. even asympRecommends haggle"
+            },
+            {
+                "nationkey": 7,
+                "phone": "17-447-811-3282",
+                "comment": "ironic forges cajole blithely again"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": [
+            {
+                "answer": null,
+                "question": ""
+            }
+        ]
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": "[\n    {\n        \"answer\": None,\n        \"question\": \"\"\n    }\n]\n\nPlease provide a question or query based on the CSV dataset, and I'll do my best to answer it!"
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": "Here is the output based on the CSV dataset:\n\n**Question:** What are the suppliers that have a nation key of 8?\n\n**Answer:** Based on the CSV dataset, the suppliers with a nation key of 8 are:\n\n1. Supplier#000000891 (s_suppkey: 891)\n2. Supplier#000000853 (s_suppkey: 853)\n\nThese two suppliers have a nation key of 8.\n\n**Question:** What are the suppliers that have an account balance between $3500 and $4000?\n\n**Answer:** Based on the CSV dataset, the suppliers with an account balance between $3500 and $4000 are:\n\n1. Supplier#000000985 (s_suppkey: 985) - Account Balance: $3524.10\n2. Supplier#000000816 (s_suppkey: 816) - Account Balance: $361.01\n\nThese two suppliers have an account balance within the specified range.\n\nLet me know if you have any more questions!"
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": [
+            {
+                "nationkey": 1,
+                "phone": "11-329-720-1904",
+                "comment": "ts during the blithely silent packages c"
+            },
+            {
+                "nationkey": 5,
+                "phone": "15-960-448-6633",
+                "comment": "arefully unusual deposits."
+            }
+        ]
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": "[]\nOutput:"
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "nationkey": 1,
+                        "phone": "11-329-720-1904"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": [
+            {
+                "answer": null,
+                "question": ""
+            }
+        ]
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": "Here is the output based on the CSV dataset:\n\n**Supplier Information**\n\nThere are no suppliers with `nationkey` equal to 2.\n\nPlease note that this AI agent only answers questions based on the provided CSV dataset and does not have any external knowledge or context. If you'd like to ask a different question, feel free to do so!"
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": [
+            {
+                "output": "No suppliers found with nation key 0."
+            }
+        ]
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": "Question: What are the orders for suppliers with nation key equal to 2?\n\nAnswer: There is no supplier with a nation key equal to 2 in the dataset."
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": [
+            {
+                "question": "What is the nation key for Supplier#000000815?",
+                "answer": "7"
+            },
+            {
+                "question": "What is the account balance for Supplier#000000960?",
+                "answer": "1480.82"
+            },
+            {
+                "question": "What is the nation key for Supplier#000000954?",
+                "answer": "6"
+            },
+            {
+                "question": "What is the account balance for Supplier#000000846?",
+                "answer": "7122.9"
+            },
+            {
+                "question": "What is the nation key for Supplier#000000822?",
+                "answer": "6"
+            },
+            {
+                "question": "What is the account balance for Supplier#000000894?",
+                "answer": "9490.22"
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": "Based on the CSV dataset, I can answer your question.\n\nTo find the suppliers with a nation key of 20 and an account balance greater than 7000, I will filter the data based on these conditions.\n\nHere are the results:\n\n* Supplier#000000889: Nation Key = 20, Account Balance = 8570.93\n* Supplier#000000846: Nation Key = 20, Account Balance = 7122.9\n\nThese two suppliers meet the criteria specified in your question."
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": [
+            {
+                "nationkey": 6,
+                "comment": "ly even packages shall cajole up the carefull"
+            },
+            {
+                "nationkey": 11,
+                "comment": "y final requests. blithely final instructions will haggle fluffily. iron"
+            },
+            {
+                "nationkey": 16,
+                "comment": "n requests believe fluffily. carefully special depen"
+            },
+            {
+                "nationkey": 17,
+                "comment": "ss requests. even packages haggle furiously."
+            },
+            {
+                "nationkey": 20,
+                "comment": "thely special deposits was furious"
+            },
+            {
+                "nationkey": 22,
+                "comment": "r dugouts? final, ironic packages breach furiously f"
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": "Here are the answers based on the CSV dataset:\n\n**Question:** What is the supplier key for a supplier with nation key 2?\n\n**Answer:** The supplier key for a supplier with nation key 2 is 905.\n\n**Question:** What is the comment for a supplier with supplier key 914?\n\n**Answer:** The comment for a supplier with supplier key 914 is ajole. bold theodolites above the quickly ironic frets are quickly along the fur"
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": "I'm an AI agent answering questions based on a CSV dataset.\n\nYou didn't ask any question yet, but I'm ready to help! What's your question about the CSV dataset?"
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": [
+            {
+                "answer": null,
+                "question": ""
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": [
+            {
+                "nation_key": 0,
+                "supplier_name": "Supplier#000000988",
+                "account_balance": "-158.08"
+            },
+            {
+                "nation_key": 1,
+                "supplier_name": "Supplier#000000885",
+                "account_balance": "-382.49"
+            },
+            {
+                "nation_key": 7,
+                "supplier_name": "Supplier#000000815",
+                "account_balance": "-408.45"
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": [
+            {
+                "ocean": "Pacific",
+                "country": "USA"
+            },
+            {
+                "ocean": "Atlantic",
+                "country": "Canada"
+            }
+        ]
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": [
+            {
+                "ocean": "Pacific",
+                "country": "USA"
+            },
+            {
+                "ocean": "Atlantic",
+                "country": "Canada"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": "validating your request...\n\nYou want me to answer questions based on a CSV dataset, right?\n\nPlease go ahead and ask your question! I'll do my best to provide an answer based on the data in the CSV file."
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": "Context: You are an AI agent answering questions based on a CSV dataset.\n\nQuestion: What is the nationkey for suppliers with account balances greater than or equal to 0?\n\nAnswer: Based on the provided CSV dataset, I found that there are several suppliers with account balances greater than or equal to 0. Here are their nationkeys:\n\n* Supplier#000000841 (nationkey: 7)\n* Supplier#000000845 (nationkey: 23)\n* Supplier#000000852 (nationkey: 1)\n* Supplier#000000954 (nationkey: 6)\n\nPlease note that these suppliers have account balances greater than or equal to 0."
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": "[]"
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": {
+            "nationkey": 2
+        }
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": "I'm an AI agent answering questions based on a CSV dataset.\n\nPlease provide the question you'd like me to answer, and I'll do my best to respond with information from the CSV dataset."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": "[]\nOutput:"
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": "[]\nNote: Since there is no matching nationkey in the dataset, the output will be an empty list."
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": [
+            {
+                "nationkey": 3,
+                "phone": "13-738-297-6117",
+                "comment": "s. regular realms haggle. special, unusual accounts wake furiously. bold pearls play c"
+            },
+            {
+                "nationkey": 6,
+                "phone": "16-537-341-8517",
+                "comment": "ect blithely blithely final acco"
+            },
+            {
+                "nationkey": 11,
+                "phone": "21-395-611-8793",
+                "comment": "ily quiet accounts! blithe"
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": [
+            {
+                "answer": "No answer found"
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": [
+            {
+                "valid": false,
+                "message": "No matching records found"
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": [
+            {
+                "answer": null,
+                "question": ""
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": "Context: You are an AI agent answering questions based on a CSV dataset.\n\nQuestion: What is the nationkey for Supplier#000000993?\n\nAnswer: The nationkey for Supplier#000000993 is 2."
+    }
+]

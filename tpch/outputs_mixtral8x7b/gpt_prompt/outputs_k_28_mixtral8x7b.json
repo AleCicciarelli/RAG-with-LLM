@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": "Here is the information for the first 20 suppliers in the text you provided:\n\n1. Supplier #: 830, Name: SwUNp9Yyt5pe 6i5EYiV3hHU9RWJnd3VzBjsbtvO, Nation Key: 15, Accrued Balance: 7234.52\n2. Supplier #: 831, Name: Supplier#000000832, Nation Key: 15, Accrued Balance: 9747.16\n3. Supplier #: 832, Name: Supplier#000000833, Nation Key: 15, Accrued Balance: 6074.21\n4. Supplier #: 860, Name: vj9yxpOqUdt3HIxfOWbA9, Nation Key: 7, Accrued Balance: 1747.35\n5. Supplier #: 861, Name: Supplier#000000862, Nation Key: 7, Accrued Balance: 8439.53\n6. Supplier #: 862, Name: Supplier#000000863, Nation Key: 7, Accrued Balance: 6314.26\n7. Supplier #: 866, Name: WTM7RpRoZPk5MKGEtE2dsh, Nation Key: 11, Accrued Balance: 7476.72\n8. Supplier #: 867, Name: Supplier#000000868, Nation Key: 11, Accrued Balance: 7476.72\n9. Supplier #: 875, Name: PYBAM85Nrb2cuXH8VDrX 3TjZbsIAlIQ,,xA, Nation Key: 11, Accrued Balance: 5979.92\n10. Supplier #: 876, Name: Supplier#000000877, Nation Key: 11, Accrued Balance: 5979.92\n11. Supplier #: 960, Name: 3ozoU,4hCnGwP,NfQxgT,BpJH, Nation Key: 18, Accrued Balance: 11552.72\n12. Supplier #: 961, Name: Supplier#000000963, Nation Key: 18, Accrued Balance: 4939.3\n13. Supplier #: 962, Name: 0udWpU30ecw3XMLiEVhaM7I,BhufyzF4i, Nation Key: 18, Accrued Balance: 1898.39\n14. Supplier #: 965, Name: Supplier#000000966, Nation Key: 18, Accrued Balance: 7290.77\n15. Supplier #: 997, Name: lgaoC,43IUbHf3Ar5odS8wQKp, Nation Key: 15, Accrued Balance: 3282.62\n16. Supplier #: 998, Name: Supplier#000000999, Nation Key: 15, Accrued Balance: 4732.08\n17. Supplier #: 805, Name: mYSUX4mem2, Nation Key: 13, Accrued Balance: 5054.15\n18. Supplier #: 806, Name: Supplier#000000807, Nation Key: 13, Accrued Balance: 2921.47\n19. Supplier #: 833, Name: Supplier#000000834, Nation Key: 15, Accrued Balance: 6074.21\n20. Supplier #: 834, Name: Supplier#000000835, Nation Key: 15, Accrued Balance: 9022.86\n\nPlease note that the supplier names in the text you provided were not in a consistent format, so I have used the unique identifier (e.g. \"Supplier#000000832\") as the name for those suppliers."
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": 1
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": "Here is the information for the first 10 suppliers in the data:\n\n1. Supplier #856, s\\_suppkey = 856, s\\_name = S supplier, s\\_address = S supplier address, s\\_nationkey = 22, s\\_phone = 49 - 30 - ..... , s\\_acctbal = 1716.61\n2. Supplier #857, s\\_suppkey = 857, s\\_name = Supplier K, s\\_address = Street address for Supplier K, s\\_nationkey = 23, s\\_phone = 33 - 616 - ..... , s\\_acctbal = 4324.51\n3. Supplier #858, s\\_suppkey = 858, s\\_name = L supplier, s\\_address = Address for L supplier, s\\_nationkey = 17, s\\_phone = 27 - 547 - ..... , s\\_acctbal = 8210.13\n4. Supplier #859, s\\_suppkey = 860, s\\_name = M supplier, s\\_address = Address for M supplier, s\\_nationkey = 17, s\\_phone = 27 - 547 - ..... , s\\_acctbal = 8210.13\n5. Supplier #860, s\\_suppkey = 860, s\\_name = N supplier, s\\_address = Address for N supplier, s\\_nationkey = 17, s\\_phone = 27 - 547 - ..... , s\\_acctbal = 8210.13\n6. Supplier #861, s\\_suppkey = 861, s\\_name = O supplier, s\\_address = Address for O supplier, s\\_nationkey = 17, s\\_phone = 27 - 547 - ..... , s\\_acctbal = 8210.13\n7. Supplier #862, s\\_suppkey = 862, s\\_name = P supplier, s\\_address = Address for P supplier, s\\_nationkey = 17, s\\_phone = 27 - 547 - ..... , s\\_acctbal = 8210.13\n8. Supplier #863, s\\_suppkey = 863, s\\_name = Q supplier, s\\_address = Address for Q supplier, s\\_nationkey = 17, s\\_phone = 27 - 547 - ..... , s\\_acctbal = 8210.13\n9. Supplier #864, s\\_suppkey = 864, s\\_name = R supplier, s\\_address = Address for R supplier, s\\_nationkey = 17, s\\_phone = 27 - 547 - ..... , s\\_acctbal = 8210.13\n10. Supplier #865, s\\_suppkey = 865, s\\_name = S supplier, s\\_address = Address for S supplier, s\\_nationkey = 17, s\\_phone = 27 - 547 - ..... , s\\_acctbal = 8210.13\n\nSupplier #856 has the lowest account balance of all the suppliers at 1716.61. Supplier #865 has the highest account balance of all the suppliers at 14911.23. The average account balance for all suppliers is 6020.42."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 1
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 1
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": "These appear to be records from a suppliers table, with columns for supplier key (`s_suppkey`), name (`s_name`), address (`s_address`), nation key (`s_nationkey`), phone (`s_phone`), account balance (`s_acctbal`), and comments (`s_comment`). Here are the first 10 records:\n\n1. `s_suppkey: 1, s_name: Supplier#000000001, s_address: 100 Change St., s_nationkey: 1, s_phone: 515-123-4567, s_acctbal: 29284.41, s_comment:`\n2. `s_suppkey: 2, s_name: Supplier#000000002, s_address: 2306 Skinner Blvd., s_nationkey: 1, s_phone: 515-482-1111, s_acctbal: 98147.09, s_comment:`\n3. `s_suppkey: 3, s_name: Supplier#000000003, s_address: 2306 Skinner Blvd., s_nationkey: 1, s_phone: 515-482-1111, s_acctbal: 97002.17, s_comment:`\n4. `s_suppkey: 4, s_name: Supplier#000000004, s_address: 2306 Skinner Blvd., s_nationkey: 1, s_phone: 515-482-1111, s_acctbal: 96740.89, s_comment:`\n5. `s_suppkey: 5, s_name: Supplier#000000005, s_address: 2306 Skinner Blvd., s_nationkey: 1, s_phone: 515-482-1111, s_acctbal: 96570.95, s_comment:`\n6. `s_suppkey: 6, s_name: Supplier#000000006, s_address: 2306 Skinner Blvd., s_nationkey: 1, s_phone: 515-482-1111, s_acctbal: 96378.19, s_comment:`\n7. `s_suppkey: 7, s_name: Supplier#000000007, s_address: 2306 Skinner Blvd., s_nationkey: 1, s_phone: 515-482-1111, s_acctbal: 96162.62, s_comment:`\n8. `s_suppkey: 8, s_name: Supplier#000000008, s_address: 2306 Skinner Blvd., s_nationkey: 1, s_phone: 515-482-1111, s_acctbal: 95923.73, s_comment:`\n9. `s_suppkey: 9, s_name: Supplier#000000009, s_address: 2306 Skinner Blvd., s_nationkey: 1, s_phone: 515-482-1111, s_acctbal: 95653.37, s_comment:`\n10. `s_suppkey: 10, s_name: Supplier#000000010, s_address: 2306 Skinner Blvd., s_nationkey: 1, s_phone: 515-482-1111, s_acctbal: 95353.74, s_comment:`\n\nIt looks like there may be some missing data in the `s_comment` column, as many of the records have an empty string for this field."
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": "Here is the information in a more organized and readable format:\n\n1. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pending req'`\n2. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n3. `supplier_id: 7, nationkey: 7, comment: 'ut the express packages. ironic sentiments are qui'`\n4. `supplier_id: 21, nationkey: 21, comment: 'ounts nag slyly across the furiously'`\n5. `supplier_id: 20, nationkey: 20, comment: 'ependencies wake carefull'`\n6. `supplier_id: 24, nationkey: 24, comment: 'posits haggle. regular packages unwind fluf'`\n7. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n8. `supplier_id: 20, nationkey: 20, comment: 'leep carefully among the e'`\n9. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n10. `supplier_id: 21, nationkey: 21, comment: 'ounts nag slyly across the furiously'`\n11. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n12. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n13. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n14. `supplier_id: 20, nationkey: 20, comment: 'ependencies wake carefull'`\n15. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n16. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n17. `supplier_id: 24, nationkey: 24, comment: 'posits haggle. regular packages unwind fluf'`\n18. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n19. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n20. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n21. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n22. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n23. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n24. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n25. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n26. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n27. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n28. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n29. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n30. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n31. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n32. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n33. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n34. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n35. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n36. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n37. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n38. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n39. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n40. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n41. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n42. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n43. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n44. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n45. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n46. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n47. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n48. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n49. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n50. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n51. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n52. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n53. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n54. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n55. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n56. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n57. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n58. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n59. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n60. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n61. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n62. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n63. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n64. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n65. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n66. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n67. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n68. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n69. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n70. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n71. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n72. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n73. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n74. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n75. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n76. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n77. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n78. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n79. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n80. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n81. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n82. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n83. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n84. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n85. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n86. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n87. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n88. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n89. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n90. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n91. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n92. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n93. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n94. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n95. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n96. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n97. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n98. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n99. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n100. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n101. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n102. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n103. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n104. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n105. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n106. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n107. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n108. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n109. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n110. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n111. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n112. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n113. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n114. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n115. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n116. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n117. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n118. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n119. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n120. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n121. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n122. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n123. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n124. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n125. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n126. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n127. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n128. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n129. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n130. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n131. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n132. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n133. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiously pendin'`\n134. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n135. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n136. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n137. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n138. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n139. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n140. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n141. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n142. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n143. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n144. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n145. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n146. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n147. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n148. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n149. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n150. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n151. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n152. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n153. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n154. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n155. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n156. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n157. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n158. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n159. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n160. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n161. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n162. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n163. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n164. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n165. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n166. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n167. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n168. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n169. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n170. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n171. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n172. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n173. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n174. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n175. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n176. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n177. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n178. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n179. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n180. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n181. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n182. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n183. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n184. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n185. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n186. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n187. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n188. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n189. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n190. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n191. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n192. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n193. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n194. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n195. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n196. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n197. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n198. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n199. `supplier_id: 7, nationkey: 7, comment: 'final accounts unwind furiously among the furiousliy pendin'`\n200. `supplier_id: 7, nationkey: 7, comment: 'carefully pending pin'`\n\nIt seems like you're trying to assign the same supplier ID and nation key to many records. If these numbers are meant to be unique for each record, you should make sure that they are generated uniquely. If they are supposed to be the same for multiple records, then it's fine. However, having the same values for all 200 records seems unusual and may indicate a problem with your data or your code."
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": 1
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": "Based on the data provided, there are several suppliers that have a high account balance (`s_acctbal`) and might be considered as having \"large\" balances. Here are some examples, sorted by `s_acctbal` in descending order:\n\n* Supplier #952, with an account balance of 8621.52\n* Supplier #956, with an account balance of 8068.26\n* Supplier #826, with an account balance of 9401.23\n* Supplier #992, with an account balance of 7619.13\n* Supplier #921, with an account balance of 7523.34\n\nNote that the definition of \"large\" may vary depending on the context and the overall scale of the business."
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": "Here is the information for the first 5 suppliers in the text:\n\n1. Supplier #:"
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": 42
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": "This appears to be a list of supplier records, where each record contains information about a supplier such as their key (`s\\_suppkey`), name (`s\\_name`), nation key (`s\\_nationkey`), phone number (`s\\_phone`), and account balance (`s\\_acctbal`). There are also various comments in the records, which seem to be unrelated to the supplier information.\n\nHere is an example of how you might parse one of these records using Python:\n```python\nrecord = {\n    \"s_suppkey\": 123,\n    \"s_name\": \"Supplier Name\",\n    \"s\\_nationkey\": 456,\n    \"s\\_phone\": \"555-555-5555\",\n    \"s\\_acctbal\": 1000.00,\n    \"comment\": \"This is a comment about the supplier.\"\n}\n\nsuppkey = record[\"s_suppkey\"]\nname = record[\"s_name\"]\nnation_key = record[\"s_nationkey\"]\nphone = record[\"s_phone\"]\nacctbal = record[\"s_acctbal\"]\ncomment = record[\"comment\"]\n```\nThis code creates a dictionary to represent the supplier record, and then extracts the various pieces of information from the dictionary using their keys. You could use this approach to parse all of the records in the list and process them as needed.\n\nIt is not clear from the provided data what you are trying to do with the supplier records or how the comments are relevant. Could you please provide more context or clarify your question?"
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": "Here is the information for the first two suppliers in the text:\n\n1. Supplier #000000812\n   - Supplier Name: Supplier#000"
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]
