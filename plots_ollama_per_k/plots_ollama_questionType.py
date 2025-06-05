@@ -7,8 +7,8 @@ import os
 
 metrics = ['Answer F1', 'Explanation F1']
 
-base_path = 'outputs_ollama_'
-output_dir = 'plots_ollama_per_k/plots_ollama_per_k_questionType'
+base_path = 'tpch/outputs_'
+output_dir = 'tpch/plots_ollama_per_k/plots_ollama_per_k_questionType'
 os.makedirs(output_dir, exist_ok=True)
 # Lista dei modelli = nomi delle cartelle
 models = ['llama8b', 'llama70b', 'mixtral8x7b']
@@ -43,7 +43,7 @@ for qtype in question_types:
             # Punto con valore massimo
             best_row = df_model.loc[df_model[metric].idxmax()]
             plt.plot(best_row['K'], best_row[metric], 'o', color=palette[model], markersize=10,
-                     label=f'{model} Best K={int(best_row["K"])} {metric}={best_row[metric]:.2f}')
+                     label=f'{model} Best K={int(best_row["K"])} {metric}={best_row[metric]:.3f}')
         
         plt.title(f'{metric} vs K\nQuestion type: {qtype}')
         plt.xlabel('Top-K')

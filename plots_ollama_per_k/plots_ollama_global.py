@@ -4,8 +4,8 @@ import seaborn as sns
 import os
 
 # Imposta percorso principale dove ci sono le cartelle dei modelli
-base_path = 'outputs_ollama_'
-output_path = 'plots_ollama_per_k'
+base_path = 'tpch/outputs_'
+output_path = 'tpch/plots_ollama_per_k'
 os.makedirs(output_path, exist_ok=True)
 
 # Lista dei modelli = nomi delle cartelle
@@ -40,7 +40,7 @@ for category in ['Answer', 'Explanation']:
             best_row = df_model.loc[df_model[metric].idxmax()]
             plt.plot(best_row['K'], best_row[metric], 'o', 
                      color=palette[model], markersize=8, 
-                     label=f'Best {model} (k={int(best_row["K"])} {metric}={best_row[metric]:.2f})')
+                     label=f'Best {model} (k={int(best_row["K"])} {metric}={best_row[metric]:.3f})')
 
         plt.title(f'{metric} per K - Category: {category}')
         plt.xlabel('Top-K')
