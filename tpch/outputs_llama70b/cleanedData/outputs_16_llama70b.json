@@ -1,0 +1,534 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": [
+            {
+                "answer": "Supplier#000000919",
+                "why": "supplier.csv, row 919"
+            },
+            {
+                "answer": "Supplier#000000886",
+                "why": "supplier.csv, row 885"
+            },
+            {
+                "answer": "Supplier#000000987",
+                "why": "supplier.csv, row 987"
+            }
+        ]
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": "[]"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": "[]"
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": "[]"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": "[]"
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": [
+            {
+                "answer": [],
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": [
+            {
+                "answer": [
+                    "1"
+                ],
+                "why": [
+                    "{{supplier.csv, row=872}}",
+                    "{{supplier.csv, row=848}}",
+                    "{{supplier.csv, row=885}}",
+                    "{{supplier.csv, row=872}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": [
+            {
+                "answer": [
+                    "Supplier#000000951"
+                ],
+                "why": [
+                    "{{supplier_951}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": [
+            {
+                "answer": [],
+                "why": "There is no supplier with the name 'Supplier#0000010' in the provided context."
+            }
+        ]
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": [
+            {
+                "answer": null,
+                "context": "There is no specific part that answers the question."
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": [
+            {
+                "answer": [
+                    "4140.02"
+                ],
+                "context": "There is no customer with ID 456, so the question doesn't make sense in this context."
+            }
+        ]
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": [
+            {
+                "answer": [
+                    "2"
+                ],
+                "why": [
+                    "{{supplier_951}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": [
+            {
+                "answer": "811, 814, 826, 833, 874, 890, 907, 929",
+                "context": "supplier.csv"
+            }
+        ]
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": [
+            {
+                "answer": [
+                    "21",
+                    "13",
+                    "8",
+                    "20",
+                    "14",
+                    "18",
+                    "7",
+                    "17",
+                    "1",
+                    "9"
+                ],
+                "why": [
+                    "supplier.csv row 947",
+                    "supplier.csv row 820",
+                    "supplier.csv row 895",
+                    "supplier.csv row 821",
+                    "supplier.csv row 807",
+                    "supplier.csv row 987",
+                    "supplier.csv row 896",
+                    "supplier.csv row 955",
+                    "supplier.csv row 809"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": [
+            {
+                "answer": "906",
+                "context": "supplier"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": [
+            {
+                "answer": [],
+                "why": "There are no customers mentioned in the provided context."
+            }
+        ]
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": [
+            805,
+            804,
+            803,
+            802,
+            801,
+            949,
+            936,
+            903,
+            957,
+            894,
+            886,
+            950,
+            956,
+            953
+        ]
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": [
+            {
+                "answer": null,
+                "why": "The question is not provided."
+            }
+        ]
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": [
+            {
+                "answer": "3",
+                "context": "nation key of Supplier#000000975"
+            }
+        ]
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": [
+            {
+                "answer": "4",
+                "context": "supplier"
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": [
+            {
+                "answer": "Supplier#000000857",
+                "context": "{'source': 'csv_data_tpch/supplier.csv', 'row': 856}",
+                "question": "(s)he is an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question: You are asked to find the supplier name where s_nationkey = 2 and s_suppkey = 857"
+            },
+            {
+                "answer": "Supplier#000000970",
+                "context": "",
+                "question": ""
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": [
+            {
+                "answer": [
+                    856,
+                    857
+                ],
+                "why": [
+                    "supplier.csv row 855",
+                    "supplier.csv row 857"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": [
+            {
+                "answer": "869, 874, 905",
+                "context": "What are the supplier keys for nation key 13 and nation key 2?"
+            },
+            {
+                "answer": "",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": [
+            {
+                "answer": [],
+                "why": "There is no supplier with the name 'Supplier#000000005' in the provided context."
+            }
+        ]
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": [
+            {
+                "answer": "Supplier#000000999",
+                "why": "supplier.csv, row 999"
+            }
+        ]
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": [
+            {
+                "answer": "323",
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": [
+            {
+                "answer": "2",
+                "context": "The nation key of the supplier with suppkey 456 is 2."
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": [
+            {
+                "answer": [
+                    "Europe"
+                ],
+                "why": [
+                    "{{supplier_905}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": [
+            {
+                "answer": [
+                    "4"
+                ],
+                "why": [
+                    "{{supplier_876}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": [
+            {
+                "answer": "906",
+                "context": "supplier.csv",
+                "question": "What is the supplier key for the supplier with row 905?"
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": [
+            {
+                "answer": "I don't know",
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": [
+            {
+                "answer": "I don't have enough information to answer this question."
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": "[]"
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": [
+            {
+                "answer": [
+                    "Supplier#000000898",
+                    "Supplier#000000907"
+                ],
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": [
+            {
+                "answer": [
+                    "Supplier#000000906"
+                ],
+                "why": "The question asked for the comment of a supplier with order 1, and the answer is Supplier#000000906."
+            }
+        ]
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": [
+            "Supplier#000000905",
+            "Supplier#000000886"
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": "I don't know the answer to this question because there is no information about customers or orders in the provided context, which only contains data about suppliers. The question asks for the customer(s) who placed an order on a specific date, but there is no mention of customers or orders in the given data."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": [
+            {
+                "answer": [
+                    "856",
+                    "898"
+                ],
+                "why": [
+                    "supplier.csv row 855",
+                    "supplier.csv row 897"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": [
+            {
+                "answer": "Supplier#000000849",
+                "context": "supplier.csv row 848"
+            },
+            {
+                "answer": "Supplier#000000985",
+                "context": "supplier.csv row 985"
+            },
+            {
+                "answer": "Supplier#000000944",
+                "context": "supplier.csv row 944 (not provided)"
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": [
+            {
+                "answer": [
+                    "951",
+                    "862"
+                ],
+                "why": [
+                    "supplier.csv row 951 nationkey is 2",
+                    "supplier.csv row 861 nationkey is 2"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": [
+            {
+                "answer": [
+                    "Supplier#000000862"
+                ],
+                "context": "Which supplier has nation key 0?",
+                "explanation": "There is no supplier with nation key 0."
+            },
+            {
+                "answer": [],
+                "context": "Which suppliers have nation key 0?",
+                "explanation": "There are no suppliers with nation key 0."
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": [
+            {
+                "answer": "Supplier#000000862",
+                "why": "supplier.csv row 861"
+            },
+            {
+                "answer": "Supplier#000000951",
+                "why": "Not found in the provided context"
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": [
+            {
+                "answer": "Supplier#000000955",
+                "context": "{'source': 'csv_data_tpch/supplier.csv', 'row': 955}",
+                "witness": "s_nationkey: 17, s_acctbal: -408.45"
+            },
+            {
+                "answer": "Supplier#000000824",
+                "context": "{'source': 'csv_data_tpch/supplier.csv', 'row': 823}",
+                "witness": "s_nationkey: 13, s_acctbal: -609.59"
+            }
+        ]
+    }
+]

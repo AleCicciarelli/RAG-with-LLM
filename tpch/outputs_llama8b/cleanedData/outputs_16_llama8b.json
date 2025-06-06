@@ -1,0 +1,1381 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "supplier": "Supplier#000000899",
+                        "nationkey": 5,
+                        "phone": "15-926-534-2005",
+                        "acctestbal": 165.26
+                    },
+                    {
+                        "supplier": "Supplier#000000900",
+                        "nationkey": 5,
+                        "phone": "15-926-534-2005",
+                        "acctestbal": 165.26
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 899
+                    },
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 900
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": "[\n    {\n        \"answer\": null,\n        \"context\": [\n            {\"source\": \"csv_data_tpch/supplier.csv\", \"row\": 819, \"s_suppkey\": 820, \"s_name\": \"Supplier#000000820\", \"s_address\": \"QoduMcALdP\", \"s_nationkey\": 15, \"s_phone\": \"25-716-340-3140\", \"s_acctbal\": 4604.84},\n            {\"source\": \"csv_data_tpch/supplier.csv\", \"row\": 987, \"s_suppkey\": 987, \"s_name\": \"Supplier#000000987\", \"s_address\": \"DAWJ1lDhybbSO3mngqD28aX\", \"s_nationkey\": 18, \"s_phone\": \"28-375-179-1732\", \"s_acctbal\": -40.3},\n            {\"source\": \"csv_data_tpch/supplier.csv\", \"row\": 858, \"s_suppkey\": 859, \"s_name\": \"Supplier#000000859\", \"s_address\": \"OJ7rr38hbK1BlZSRXKojpIho8QazivUtIh0\", \"s_nationkey\": 16, \"s_phone\": \"26-731-166-4296\", \"s_acctbal\": 9296.31},\n            {\"source\": 'csv_data_tpch/supplier.csv', \"row\": 915, \"s_suppkey\": 916, \"s_name\": \"Supplier#000000916\", \"s_address\": \"tD 9oW5VNUWTBQCpsISJO2TZCwFzKLdqIZoTWV6\", \"s_nationkey\": 11, \"s_phone\": \"21-185-427-4872\", \"s_acctbal\": 1852.85},\n            {\"source\": 'csv_data_tpch/supplier.csv', \"row\": 826, \"s_suppkey\": 827, \"s_name\": \"Supplier#000000827\", \"s_address\": \"AlFjWDq6jDtaSUKnxn54OwQzt8CPUItYbCGztPQ,\", \"s_nationkey\": 9, \"s_phone\": \"19-131-253-5697\", \"s_acctbal\": 515.22},\n            {\"source\": 'csv_data_tpch/supplier.csv', \"row\": 916, \"s_suppkey\": 917, \"s_name\": \"Supplier#000000917\", \"s_address\": \"tMr5motk0IFyIXJDwCr98Q O5\", \"s_nationkey\": 22, \"s_phone\": \"32-754-782-6474\", \"s_acctbal\": 8877.42},\n            {\"source\": 'csv_data_tpch/supplier.csv', \"row\": 906, \"s_suppkey\": 907, \"s_name\": \"Supplier#000000907\", \"s_address\": \"Y79rRfd5UhgXi6Ahj9ooM0vNHts\", \"s_nationkey\": 12, \"s_phone\": \"22-595-604-3254\", \"s_acctbal\": 6558.92},\n            {\"source\": 'csv_data_tpch/supplier.csv', \"row\": 955, \"s_suppkey\": 955, \"s_name\": \"Supplier#000000955\", \"s_address\": \"7OFLXDHjSgGrFlHTg8VHFS4glUuN\", \"s_nationkey\": 17, \"s_phone\": \"27-839-781-6125\", \"s_acctbal\": -408.45},\n            {\"source\": 'csv_data_tpch/supplier.csv', \"row\": 862, \"s_suppkey\": 863, \"s_name\": \"Supplier#000000863\", \"s_address\": \"TsC9OuodnybJhWXq4PFNdEJf9jx2y181N3ilV\", \"s_nationkey\": 21, \"s_phone\": \"31-589-608-3508\", \"s_acctbal\": 487.31},\n            {\"source\": 'csv_data_tpch/supplier.csv', \"row\": 842, \"s_suppkey\": 843, \"s_name\": \"Supplier#000000843\", \"s_address\": \"iguHIr15YUL9RMmH7U3XsDfdyEg1441\", \"s_nationkey\": 18, \"s_phone\": \"28-503-987-8146\", \"s_acctbal\": 10.33}\n        ]\n    }\n]\n\nPlease provide an answer to the question: What is the average account balance of suppliers with nation key 15 or 18?"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": [
+            {
+                "answer": [
+                    "pBjvc 55kMxfQ3gtYUiuy5TNRyd"
+                ],
+                "context": "You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question."
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": [
+            {
+                "answer": []
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": [
+            {
+                "answer": null,
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": [
+            {
+                "answer": null,
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 821
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": [
+            {
+                "answer": [
+                    "2"
+                ],
+                "why": [
+                    "{{supplier_951}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": [
+            {
+                "answer": [
+                    "14-685-721-2281"
+                ],
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": [
+            {
+                "answer": null,
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 840
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": [
+            {
+                "answer": [
+                    "4140.02"
+                ],
+                "answer_type": "number"
+            }
+        ]
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": [
+            {
+                "answer": null,
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 814
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": [
+            {
+                "answer": null,
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 881,
+                        "s_suppkey": 882,
+                        "s_name": "Supplier#000000882",
+                        "s_address": "5op1w94,JerNmOkyPfAVkZEtb7",
+                        "s_nationkey": 14,
+                        "s_phone": "24-437-170-2579",
+                        "s_acctbal": "9450.21"
+                    },
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 882,
+                        "s_suppkey": 883,
+                        "s_name": "Supplier#000000883",
+                        "s_address": "5ppzWDz6xcMOO09LkrAOvHzFEMfP3CIpndr",
+                        "s_nationkey": 18,
+                        "s_phone": "28-614-756-7513",
+                        "s_acctbal": "9746.01"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": [
+            {
+                "answer": null,
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 819
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": [
+            {
+                "answer": null,
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 957,
+                        "s_suppkey": 957,
+                        "s_name": "Supplier#000000957",
+                        "s_address": "mSpFa,4jJ5R40k10YOvGEtl4KYjo",
+                        "s_nationkey": 23,
+                        "s_phone": "33-616-674-6155",
+                        "s_acctbal": 4324.51
+                    },
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 950,
+                        "s_name": "Supplier#000000950",
+                        "s_address": "MukfcGGpbbRXp5v52Rx43QpPjU8RFB",
+                        "s_nationkey": 1,
+                        "s_phone": "11-888-171-3390",
+                        "s_acctbal": 4992.53
+                    },
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 935,
+                        "s_suppkey": 936,
+                        "s_name": "Supplier#000000936",
+                        "s_address": "CuIXj6RYaHGQ5SOkmhu8ZDRt5IU",
+                        "s_nationkey": 17,
+                        "s_phone": "27-555-580-3995",
+                        "s_acctbal": 7304.3
+                    },
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 948,
+                        "s_suppkey": 949,
+                        "s_name": "Supplier#000000949",
+                        "s_address": "a,UE,6nRVl2fCphkOoetR1ajIzAEJ1Aa1G1HV",
+                        "s_nationkey": 23,
+                        "s_phone": "33-332-697-2768",
+                        "s_acctbal": 91.39
+                    },
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 957,
+                        "s_suppkey": 957,
+                        "s_name": "Supplier#000000957",
+                        "s_address": "mSpFa,4jJ5R40k10YOvGEtl4KYjo",
+                        "s_nationkey": 23,
+                        "s_phone": "33-616-674-6155",
+                        "s_acctbal": 4324.51
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": [
+            {
+                "answer": null,
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 908
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": [
+            {
+                "answer": "Supplier#000000975",
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 975,
+                        "s_suppkey": 975,
+                        "s_name": "Supplier#000000975",
+                        "s_address": ",AC e,tBpNwKb5xMUzeohxlRn, hdZJo73gFQF8y",
+                        "s_nationkey": 3,
+                        "s_phone": "13-892-333-9275",
+                        "s_acctbal": 7577.42
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": [
+            {
+                "answer": "4",
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": "885"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": [
+            {
+                "answer": "part of the context",
+                "context": "the retrieved context"
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": [
+            {
+                "answer": null,
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 876
+                    }
+                ],
+                "question": ""
+            }
+        ]
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": [
+            {
+                "answer": null,
+                "context": [
+                    {
+                        "source": "supplier.csv",
+                        "row": 812,
+                        "s_suppkey": 813,
+                        "s_name": "Supplier#000000813",
+                        "s_address": "6EfZUjqLY8G28PhtbPGfz9FjWIXLx",
+                        "s_nationkey": 22,
+                        "s_phone": "32-887-679-3561",
+                        "s_acctbal": 5793.63
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 956,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 950,
+                        "s_name": "Supplier#000000950",
+                        "s_address": "MukfcGGpbbRXp5v52Rx43QpPjU8RFB",
+                        "s_nationkey": 1,
+                        "s_phone": "11-888-171-3390",
+                        "s_acctbal": 4992.53
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 849,
+                        "s_suppkey": 850,
+                        "s_name": "Supplier#000000850",
+                        "s_address": "l6KnHycBhdFcz58UReuEe1Jf2R40ZICoQ5Qpjh6f",
+                        "s_nationkey": 4,
+                        "s_phone": "14-161-130-9091",
+                        "s_acctbal": 3891.72
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 840,
+                        "s_suppkey": 841,
+                        "s_name": "Supplier#000000841",
+                        "s_address": "dvQXS7Wi29wVuSUWsknpHVQWVrJ6cUvB8V",
+                        "s_nationkey": 7,
+                        "s_phone": "17-359-161-6634",
+                        "s_acctbal": 1685.95
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                        "s_nationkey": 21,
+                        "s_phone": "31-642-490-3022",
+                        "s_acctbal": 7916.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 905,
+                        "s_suppkey": 906,
+                        "s_name": "Supplier#000000906",
+                        "s_address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                        "s_nationkey": 2,
+                        "s_phone": "12-926-664-9785",
+                        "s_acctbal": 7888.41
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 950,
+                        "s_suppkey": 956,
+                        "s_name": "Supplier#000000956",
+                        "s_address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                        "s_nationkey": 18,
+                        "s_phone": "28-741-846-4826",
+                        "s_acctbal": 8068.26
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 953,
+                        "s_suppkey": 953,
+                        "s_name": "Supplier#000000953",
+                        "s_address": "wTTb0ilU6Nba1VLsHj6k0assistant"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": [
+            {
+                "answer": [
+                    "14-685-311-3390"
+                ],
+                "context": null
+            }
+        ]
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": "[\n    {\n        \"answer\": null,\n        \"context\": [\n            {\"source\": \"csv_data_tpch/supplier.csv\", \"row\": 865, \"s_suppkey\": 866, \"s_name\": \"Supplier#000000866\", \"s_address\": \"CosbyBH1bG81zFspjW\", \"s_nationkey\": 24, \"s_phone\": \"34-374-244-3932\", \"s_acctbal\": 1768.34},\n            {\"source\": \"csv_data_tpch/supplier.csv\", \"row\": 935, \"s_suppkey\": 936, \"s_name\": \"Supplier#000000936\", \"s_address\": \"CuIXj6RYaHGQ5SOkmhu8ZDRt5IU\", \"s_nationkey\": 17, \"s_phone\": \"27-555-580-3995\", \"s_acctbal\": 7304.3},\n            {\"source\": \"csv_data_tpch/supplier.csv\", \"row\": 872, \"s_suppkey\": 873, \"s_name\": \"Supplier#000000873\", \"s_address\": \"jBfvdFseU7cz315kGbbocXnCwDKW,3iRlyaj3wn0\", \"s_nationkey\": 1, \"s_phone\": \"11-253-186-4222\", \"s_acctbal\": -951.7},\n            {\"source\": 'csv_data_tpch/supplier.csv', \"row\": 823, \"s_suppkey\": 824, \"s_name\": \"Supplier#000000824\", \"s_address\": \"wJnn6YrLnzsQWLOZNdMSBz1utk9EFS6icrvQyy\", \"s_nationkey\": 13, \"s_phone\": \"23-197-596-6598\", \"s_acctbal\": -609.59},\n            {\"source\": 'csv_data_tpch/supplier.csv', \"row\": 978, \"s_suppkey\": 978, \"s_name\": \"Supplier#000000978\", \"s_address\": \"XzhDlm7Mr3RyWZL7PV6ush\", \"s_nationkey\": 16, \"s_phone\": \"26-135-110-8202\", \"s_acctbal\": 6104.45},\n            {\"source\": 'csv_data_tpch/supplier.csv', \"row\": 956, \"s_suppkey\": 956, \"s_name\": \"Supplier#000000956\", \"s_address\": \"dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L\", \"s_nationkey\": 18, \"s_phone\": \"28-741-846-4826\", \"s_acctbal\": 8068.26},\n            {\"source\": 'csv_data_tpch/supplier.csv', \"row\": 983, \"s_suppkey\": 983, \"s_name\": \"Supplier#000000983\", \"s_address\": \"XOYb xohl2j0U7wTTUaT4F6DShKfH4Hv3p,hnP\", \"s_nationkey\": 0, \"s_phone\": \"10-384-209-1825\", \"s_acctbal\": 2576.28},\n            {\"source\": 'csv_data_tpch/supplier.csv', \"row\": 964, \"s_suppkey\": 964, \"s_name\": \"Supplier#000000964\", \"s_address\": \"JpH9YUQjGXD1GChWcPj9LEGMN8xwZkCzpdG8HlNb\", \"s_nationkey\": 7, \"s_phone\": \"17-693-102-9498\", \"s_acctbal\": 8411.78},\n            {\"source\": 'csv_data_tpch/supplier.csv', \"row\": 874, \"s_suppkey\": 875, \"s_name\": \"Supplier#000000875\", \"s_address\": \"pBjvc 55kMxfQ3gtYUiuy5TNRyd\", \"s_nationkey\": 13, \"s_phone\": \"23-165-986-6088\", \"s_acctbal\": 5757.36}\n        ]\n    }\n]\n\nThe answer is: null"
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": [
+            {
+                "answer": null,
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 869
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": [
+            {
+                "answer": null,
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 884
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": [
+            {
+                "answer": [
+                    "1"
+                ],
+                "why": [
+                    "{{supplier_835}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "part": "You are an assistant for question-answering tasks.",
+                        "type": "text"
+                    }
+                ],
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 812
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": [
+            {
+                "answer": "I'm not able to find the phone number for this supplier.",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": [
+            {
+                "answer": [
+                    ""
+                ],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": [
+            {
+                "answer": "The cost of the supplier is $7888.41.",
+                "context": "{'source': 'csv_data_tpch/supplier.csv', 'row': 905, 's_suppkey': 906, 's_name': 'Supplier#000000906', 's_address': 'KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY', 's_nationkey': 2, 's_phone': '12-926-664-9785', 's_acctbal': 7888.41}"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": [
+            {
+                "answer": [
+                    "877",
+                    "875"
+                ],
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": [
+            {
+                "answer": null,
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 833
+                    }
+                ]
+            },
+            {
+                "answer": null,
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 817
+                    }
+                ]
+            },
+            {
+                "answer": null,
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 826
+                    }
+                ]
+            },
+            {
+                "answer": null,
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 854
+                    }
+                ]
+            },
+            {
+                "answer": null,
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 978
+                    }
+                ]
+            },
+            {
+                "answer": null,
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 948
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "supplier_key": 905,
+                        "nation_key": 1
+                    }
+                ],
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": [
+            {
+                "answer": [],
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 985,
+                        "s_suppkey": 985,
+                        "s_name": "Supplier#000000985",
+                        "s_address": "kzI8mk3jN9F67EStJ 8dlpx 6GwZYwzXPFOKJ5R",
+                        "s_nationkey": 1,
+                        "s_phone": "11-131-656-2612",
+                        "s_acctbal": 3524.1
+                    },
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 848,
+                        "s_suppkey": 849,
+                        "s_name": "Supplier#000000849",
+                        "s_address": "uy a2rQl1Bag,cFo5GRTZigHtqh Gguuj2xtlz",
+                        "s_nationkey": 1,
+                        "s_phone": "11-608-566-4693",
+                        "s_acctbal": 1955.97
+                    },
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 951,
+                        "s_suppkey": 951,
+                        "s_name": "Supplier#000000951",
+                        "s_address": "Tuh3kFB,zCuI,jtPmV,IMcXQF",
+                        "s_nationkey": 2,
+                        "s_phone": "12-561-627-9752",
+                        "s_acctbal": -511.17
+                    },
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 985,
+                        "s_suppkey": 985,
+                        "s_name": "Supplier#000000985",
+                        "s_address": "kzI8mk3jN9F67EStJ 8dlpx 6GwZYwzXPFOKJ5R",
+                        "s_nationkey": 1,
+                        "s_phone": "11-131-656-2612",
+                        "s_acctbal": 3524.1
+                    },
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 848,
+                        "s_suppkey": 849,
+                        "s_name": "Supplier#000000849",
+                        "s_address": "uy a2rQl1Bag,cFo5GRTZigHtqh Gguuj2xtlz",
+                        "s_nationkey": 1,
+                        "s_phone": "11-608-566-4693",
+                        "s_acctbal": 1955.97
+                    },
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 951,
+                        "s_suppkey": 951,
+                        "s_name": "Supplier#000000951",
+                        "s_address": "Tuh3kFB,zCuI,jtPmV,IMcXQF",
+                        "s_nationkey": 2,
+                        "s_phone": "12-561-627-9752",
+                        "s_acctbal": -511.17
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": [
+            {
+                "answer": [
+                    "951"
+                ],
+                "why": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": "951"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": [
+            {
+                "answer": [],
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": "I'm not able to find any relevant information in the provided context that would allow me to answer your question. The context appears to be a list of supplier records, but it does not contain any information about nation keys or their values. If you could provide more context or clarify what you are trying to ask, I'll do my best to assist you."
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": [
+            {
+                "answer": [],
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 823,
+                        "s_suppkey": 824,
+                        "s_name": "Supplier#000000824",
+                        "s_address": "wJnn6YrLnzsQWLOZNdMSBz1utk9EFS6icrvQyy",
+                        "s_nationkey": 13,
+                        "s_phone": "23-197-596-6598",
+                        "s_acctbal": "-609.59"
+                    },
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 906,
+                        "s_suppkey": 907,
+                        "s_name": "Supplier#000000907",
+                        "s_address": "Y79rRfd5UhgXi6Ahj9ooM0vNHts",
+                        "s_nationkey": 12,
+                        "s_phone": "22-595-604-3254",
+                        "s_acctbal": "6558.92"
+                    },
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 931,
+                        "s_suppkey": 932,
+                        "s_name": "Supplier#000000932",
+                        "s_address": "2Ke5SDwuwZ1y7H2QROIfgQ1d7",
+                        "s_nationkey": 10,
+                        "s_phone": "20-315-146-6687",
+                        "s_acctbal": "1278.74"
+                    },
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 955,
+                        "s_suppkey": 955,
+                        "s_name": "Supplier#000000955",
+                        "s_address": "7OFLXDHjSgGrFlHTg8VHFS4glUuN",
+                        "s_nationkey": 17,
+                        "s_phone": "27-839-781-6125",
+                        "s_acctbal": "-408.45"
+                    },
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 999,
+                        "s_suppkey": 1000,
+                        "s_name": "Supplier#000001000",
+                        "s_address": "sep4GQHrXe",
+                        "s_nationkey": 17,
+                        "s_phone": "27-971-649-2792",
+                        "s_acctbal": "7307.62"
+                    }
+                ]
+            }
+        ]
+    }
+]

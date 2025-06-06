@@ -17,9 +17,9 @@ import time
 from langchain_community.chat_models import ChatOllama
 
 os.environ["LANGSMITH_TRACING"] = "true" 
-os.environ["LANGSMITH_API_KEY"] = "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"
+os.environ["LANGSMITH_API_KEY"] = "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"
 #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 old old token langsmith
-#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 olt token langsmith 
+# olt token langsmith  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
 if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 
@@ -96,8 +96,8 @@ def generate(state: State):
         Question: {state["question"]}
 
         Your task is to:
-        1. Provide the correct answer(s) based only on the context.
-        2. For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
+        Provide the correct answer(s) based only on the context. The answer MUST be only the value required like in the example below, don't add explanation or extra text.
+        For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
 
         Each Witness Set must be a string like:
             "{{{{<table_name>_<row>}}}}"
@@ -106,7 +106,7 @@ def generate(state: State):
 
         If an answer has multiple Witness Sets, list each one in the `"why"` array "{{{{WitnessSet1}}, {{WitnessSet2}}}}". A result is valid if at least one Witness Set supports it.
 
-        Return the output as a **stringified JSON array**, with NO extra text: (avoid the comments, or the additional information)
+        Return the output as a **stringified JSON array**, with NO extra text: (avoid the comments, or the additional information), using this format template:
 
         [
             {{
@@ -139,10 +139,7 @@ def generate(state: State):
             {{
                 "answer": [
                 {{
-                    "answer": [
-                    "546",
-                    "314052"
-                    ],
+                    "answer": [ "546","314052" ],
                     "why": [
                     "{{{{customer_14322,orders_137}}}}", 
                     "{{{{customer_101,orders_78528}}}}"
@@ -152,13 +149,16 @@ def generate(state: State):
             }}           
         ]
 """
-
-
-
+    '''
+    print("\n[DEBUG] CONTEXT USED:")
+    for doc in state["context"]:
+        print(f"- Source: {doc.metadata} \n  Content: {doc.page_content[:300]}...\n")
+    '''
     docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
     messages = prompt.invoke({"question": prompt_with_explanation, "context": docs_content})
     response = llm.invoke(messages)
-     
+    print("RAW RESPONSE")
+    print(response.content) 
     try:
         parsed = parser.parse(response.content)
     except Exception as e:
@@ -184,7 +184,7 @@ graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
 
-for k in range(31, 71):  # k da 0 a 20
+for k in range(13, 40):  # k da 0 a 20
     print(f"\n=== Running evaluation with k={k} ===")
     all_results = []
 
@@ -197,7 +197,7 @@ for k in range(31, 71):  # k da 0 a 20
         }
         all_results.append(result)
 
-    output_filename = f"outputs_mixtral8x7b/outputs_k_{k}_mixtral8x7b.json"
+    output_filename = f"outputs_mixtral8x7b/cleanedData/outputs_{k}_mixtral8x7b.json"
     # Save the results for the current value of k to a JSON file for later analysis
     with open(output_filename, "w") as output_file:
         json.dump(all_results, output_file, indent=4, ensure_ascii=False)

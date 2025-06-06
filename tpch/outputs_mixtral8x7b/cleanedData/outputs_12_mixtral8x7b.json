@@ -1,0 +1,592 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": "{\n\"version\": \"0.1\",\n\"category\": \"com.redhat.rhn.frontend.action.systems.SystemProfileQuestionnaire\",\n\"questionInterviewId\": \"85e9aefc-6b4d-437d-bbb2-fbf6fd80817f\",\n\"questions\": [  {\n      \"questionId\": \"7d6a590e-6b8d-4201-8064-cddaaa8e1da3\",\n      \"answer\": \"The s\\_suppkey value for the row with a matching s\\_nationkey value of 5 is 907 and 899.\"\n    },\n    {\n      \"questionId\": \"d6f4bef2-a1f0-4e3c-bbec-8aa9b5dbcfbc\",\n      \"answer\": \"The s\\_suppkey value for the row with a matching s\\_nationkey value of 18 is 883 and 987.\"\n    },\n    {\n      \"questionId\": \"6a20a4c8-e5b7-4d8f-bb69-61aec7aa886a\",\n      \"answer\": \"The s\\_suppkey value for the row with a matching s\\_nationkey value of 10 is 926.\"\n    },\n    {\n      \"questionId\": \"4b3f5c7e-d6bc-418a-bb88-6e86cda0a94e\",\n      \"answer\": \"The s\\_suppkey value for the row with a matching s\\_nationkey value of 23 is 949.\"\n    },\n    {\n      \"questionId\": \"1d5f7bfe-8c62-4a0e-bbf0-3f688b7cda3e\",\n      \"answer\": \"The s\\_suppkey value for the row with a matching s\\_nationkey value of 12 is 907.\"\n    },\n    {\n      \"questionId\": \"a542d2b2-6f86-4c3e-bbf5-efc6dd2cbec1\",\n      \"answer\": \"The s\\_suppkey value for the row with a matching s\\_nationkey value of 4 is 877.\"\n    },\n    {\n      \"questionId\": \"b0a3e9a6-d5f0-4c21-bbec-6aa9b5dbcfbc\",\n      \"answer\": \"The s\\_suppkey value for the row with a matching s\\_nationkey value of 6 is 822.\"\n    },\n    {\n      \"questionId\": \"3d0a7cfe-8c62-4a0e-bbf0-3f688b7cdad3\",\n      \"answer\": \"There are multiple s\\_suppkey values for the row with a matching s\\_nationkey value of 18: 883 and 987.\"\n    },\n    {\n      \"questionId\": \"2d5f7bfe-8c62-4a0e-bbf0-3f688b7cdad3\",\n      \"answer\": \"There are no rows with a s\\_nationkey value of 9.\"\n    },\n    {\n      \"questionId\": \"5d0a7cfe-8c62-4a0e-bbf0-3f688b7cdad3\",\n      \"answer\": \"There are no rows with a s\\_nationkey value of 2.\"\n    }\n  ]\n}\n```python\n\nThis JSON object contains the answer to the question:\n\"What are the s_suppkey values for the rows with the following s_nationkey values: 5, 18, 10, 23, 12, 4, 6, 9, and 2?\"\n\nThe answer is represented as a JSON object with the following properties:\n- version: The version of the answer format. Currently set to \"0.1\".\n- category: The category of the question. In this case, it is a system profile questionnaire.\n- questionInterviewId: A unique identifier for the question interview.\n- questions: An array of question objects, each containing a questionId and an answer.\n\nThe questions array contains 10 question objects, each representing a sub-question related to the s_nationkey values mentioned in the main question. The answer property in each question object contains the s\\_suppkey value(s) for the row(s) with a matching s\\_nationkey value. If there are multiple s\\_suppkey values for a given s\\_nationkey, they will be separated by the word \"and\".\n\nFor example, the answer for s\\_nationkey value 5 is \"The s\\_suppkey value for the row with a matching s\\_nationkey value of 5 is 907 and 899.\" This indicates that there are two rows in the table with s\\_nationkey value 5, and they have s\\_suppkey values 907 and 899, respectively.\n```"
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": "[\n  {\n    \"supplier\\_name\": \"Supplier#000000859\",\n    \"nation\\_key\": 16,\n    \"witnesses\": [\"Witness#2019-01-03-01\", \"Witness#2019-01-03-02\"]\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000917\",\n    \"nation\\_key\": 22,\n    \"witnesses\": [\"Witness#2019-01-03-01\", \"Witness#2019-01-03-02\"]\n  }\n]"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": "[\n{\n\"supplier\\_name\": \"Supplier#000000915\",\n\"nationkey\": 18,\n\"acctbal\": 687.45\n},\n{\n\"supplier\\_name\": \"Supplier#000000937\",\n\"nationkey\": 15,\n\"acctbal\": 1463.21\n},\n{\n\"supplier\\_name\": \"Supplier#000000929\",\n\"nationkey\": 20,\n\"acctbal\": 1235.72\n},\n{\n\"supplier\\_name\": \"Supplier#000000936\",\n\"nationkey\": 17,\n\"acctbal\": 7304.3\n}\n]\n\nExplanation:\nThe question asks for suppliers with an account balance greater than 1000 and a nation key not equal to 5 or 12. The data is provided in a list of supplier records, where each record contains the supplier name, nation key, and account balance. To find the answer, you can iterate through the list and check each record's nation key and account balance. If both conditions are met, add the record to the answer array. Here is some sample code in Python:\n```python\nanswer = []\nfor supplier in suppliers:\n    if supplier['acctbal'] > 1000 and supplier['nationkey'] not in [5, 12]:\n        answer.append(supplier)\nprint(answer)\n```\nThe resulting answer array is:\n```json\n[\n    {\n        \"supplier_name\": \"Supplier#000000915\",\n        \"nationkey\": 18,\n        \"acctbal\": 687.45\n    },\n    {\n        \"supplier_name\": \"Supplier#000000937\",\n        \"nationkey\": 15,\n        \"acctbal\": 1463.21\n    },\n    {\n        \"supplier_name\": \"Supplier#000000929\",\n        \"nationkey\": 20,\n        \"acctbal\": 1235.72\n    },\n    {\n        \"supplier_name\": \"Supplier#000000936\",\n        \"nationkey\": 17,\n        \"acctbal\": 7304.3\n    }\n]\n```"
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": [
+            {
+                "supplier_name": "Supplier#000000857",
+                "nationkey": 2,
+                "phone": "12-715-212-6604"
+            },
+            {
+                "supplier_name": "Supplier#000000975",
+                "nationkey": 3,
+                "phone": "13-892-333-9275"
+            },
+            {
+                "supplier_name": "Supplier#000000904",
+                "nationkey": 15,
+                "phone": "25-960-333-1191"
+            },
+            {
+                "supplier_name": "Supplier#000000881",
+                "nationkey": 13,
+                "phone": "23-877-378-2281"
+            },
+            {
+                "supplier_name": "Supplier#000000886",
+                "nationkey": 1,
+                "phone": "11-329-720-1904"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": [
+            {
+                "suppkey": 844,
+                "name": "Supplier#000000844",
+                "address": "COb5r2WsvJ0zf 58tJJLgYvEZHJb74EBdp",
+                "nationkey": 24,
+                "phone": "34-454-417-4967",
+                "acctbal": 6538.01
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": "[\n{\n\"supplier\\_name\": \"Supplier#000000922\",\n\"witnesses\": [\"V2KIQXPxtYnOkul\"]\n}\n]"
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": "[\n  {\n    \"supplier\\_name\": \"Supplier#000000819\",\n    \"supportkey\": 820,\n    \"nationkey\": 15,\n    \"address\": \"QoduMcALdP\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000826\",\n    \"supportkey\": 827,\n    \"nationkey\": 9,\n    \"address\": \"AlFjWDq6jDtaSUKnxn54OwQzt8CPUItYbCGztPQ,\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000842\",\n    \"supportkey\": 843,\n    \"nationkey\": 18,\n    \"address\": \"iguHIr15YUL9RMmH7U3XsDfdyEg1441\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000876\",\n    \"supportkey\": 877,\n    \"nationkey\": 4,\n    \"address\": \"4yN9i5CbQ8Tw1X5InsMlOjjhGg8MAciTG\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000877\",\n    \"supportkey\": 877,\n    \"nationkey\": 4,\n    \"address\": \"4yN9i5CbQ8Tw1X5InsMlOjjhGg8MAciTG\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000898\",\n    \"supportkey\": 899,\n    \"nationkey\": 7,\n    \"address\": \"5F6vu3HbTqXJKjL1ZxoUrQ2Y4hGkOy\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000908\",\n    \"supportkey\": 909,\n    \"nationkey\": 11,\n    \"address\": \"BXuLybzUeFLI0GJqMG8xewTuKFqk8n\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000923\",\n    \"supportkey\": 924,\n    \"nationkey\": 1,\n    \"address\": \"ZCz6lKgRkPJGmQqH5uW7jhXrT8Nxo\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000938\",\n    \"supportkey\": 939,\n    \"nationkey\": 12,\n    \"address\": \"6FvWiUrGjJTqHlSxMQqDUuXrLhKkP\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000953\",\n    \"supportkey\": 954,\n    \"nationkey\": 6,\n    \"address\": \"8GJ1lDHybbSO3mngqD28aX\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000968\",\n    \"supportkey\": 969,\n    \"nationkey\": 14,\n    \"address\": \"7F6vu3HbTqXJKjL1ZxoUrQ2Y4hGkOy\"\n  }\n]"
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": "[\n{\n\"supplier\\_name\": \"Supplier#000000873\",\n\"nationkey\": 1,\n\"acctbal\": -951.7\n}\n]"
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": "[\n{\n\"supplier\\_name\": \"Supplier#000000946\",\n\"nationkey\": 15,\n\"acctbal\": 9093.75\n}\n]"
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": [
+            {
+                "suppkey": 808,
+                "name": "Supplier#000000808",
+                "address": "B3zlGM54ECUk5MgRzKI9f7F bB8",
+                "nationkey": 15,
+                "phone": "25-297-954-4894",
+                "acctbal": 9438.28
+            }
+        ]
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": [
+            {
+                "suppkey": 856,
+                "name": "Supplier#000000856",
+                "address": "U,GH2ZjlmA78JRbjWhbf7jCgrU7a0Dx",
+                "nationkey": 4,
+                "phone": "14-216-125-2920",
+                "acctbal": 2763.95
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": "[\n  {\n    \"supplier\\_name\": \"Supplier#000000875\",\n    \"nationkey\": 13,\n    \"phone\": \"23-165-986-6088\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000917\",\n    \"nationkey\": 22,\n    \"phone\": \"32-754-782-6474\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000941\",\n    \"nationkey\": 21,\n    \"phone\": \"31-412-752-5573\"\n  }\n]\n\nThe suppliers with a nationkey of 13, 21, or 22 have the highest account balance. Here are their details:\n\n* Supplier#000000875 (nationkey = 13) has an account balance of 5757.36 and phone number \"23-165-986-6088\".\n* Supplier#000000917 (nationkey = 22) has an account balance of 8877.42 and phone number \"32-754-782-6474\".\n* Supplier#000000941 (nationkey = 21) has an account balance of 3846.91 and phone number \"31-412-752-5573\"."
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": [
+            {
+                "selection": "Suppliers with a balance greater than 5000 where the supplier is located in nationkey 13",
+                "witnesses": [
+                    {
+                        "witness": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": "[\n{\n\"supplier\\_name\": \"Supplier#000000866\",\n\"nationkey\": 24,\n\"acctbal\": 1768.34\n},\n{\n\"supplier\\_name\": \"Supplier#000000910\",\n\"nationkey\": 5,\n\"acctbal\": 4763.2\n},\n{\n\"supplier\\_name\": \"Supplier#000000951\",\n\"nationkey\": 2,\n\"acctbal\": -511.17\n},\n{\n\"supplier\\_name\": \"Supplier#000000975\",\n\"nationkey\": 3,\n\"acctbal\": 7577.42\n},\n{\n\"supplier\\_name\": \"Supplier#000000978\",\n\"nationkey\": 16,\n\"acctbal\": 6104.45\n},\n{\n\"supplier\\_name\": \"Supplier#000000983\",\n\"nationkey\": 0,\n\"acctbal\": 2576.28\n}\n]\n\nThe above JSON array is the answer to your question. It contains supplier names, their nation keys, and account balances for those suppliers with a nation key of 24, 5, 2, 3, 16, or 0 and have an absolute account balance greater than 1500."
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": [
+            {
+                "supplier_id": 810,
+                "name": "Supplier#000000810",
+                "address": "47 Twin Pines Rd.",
+                "nationkey": 23,
+                "phone": "40-155-692-5702 x324",
+                "acctbal": 3141.64
+            }
+        ]
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": "[\n{\n\"supplier\\_name\": \"Supplier#000000821\",\n\"nation\\_key\": 20,\n\"balance\": 6497.93\n}\n]"
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": [
+            {
+                "suppkey": 910,
+                "name": "Supplier#000000910",
+                "address": "0X S 2E55,maqch",
+                "nationkey": 5,
+                "phone": "15-960-448-6633",
+                "acctbal": 4763.2
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": [
+            {
+                "query": "Find the suppliers in nationkey 2",
+                "result": [
+                    813,
+                    918,
+                    875
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": [
+            {}
+        ]
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": [
+            {
+                "joinedTable": "supplier",
+                "conditionColumnValues": {
+                    "nationkey": 9
+                },
+                "additionalInfo": ""
+            }
+        ]
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": "[\n{\n\"supplier\\_name\": \"Supplier#000000982\",\n\"nation\\_key\": 10,\n\"acct\\_bal\": 9763.28\n}\n]"
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": [
+            {
+                "supplier_number": 875,
+                "name": "Supplier#000000875",
+                "address": "pBjvc 55kMxfQ3gtYUiuy5TNRyd",
+                "nation_key": 13,
+                "phone": "23-165-986-6088",
+                "account_balance": 5757.36
+            }
+        ]
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": "[\n  {\n    \"supplier\\_name\": \"Supplier#000000827\",\n    \"nationkey\": 9,\n    \"row\": 827\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000817\",\n    \"nationkey\": 0,\n    \"row\": 817\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000874\",\n    \"nationkey\": 16,\n    \"row\": 874\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000973\",\n    \"nationkey\": 21,\n    \"row\": 973\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000886\",\n    \"nationkey\": 1,\n    \"row\": 886\n  }\n]"
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": "[\n  {\n    \"supplier\\_name\": \"Supplier#000000857\",\n    \"nation\\_key\": 2,\n    \"acct\\_bal\": \"9761.92\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000855\",\n    \"nation\\_key\": 9,\n    \"acct\\_bal\": \"9964.88\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000834\",\n    \"nation\\_key\": 9,\n    \"acct\\_bal\": \"3732.75\"\n  }\n]"
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": "SELECT JSON_ARRAYAGG(JSON_OBJECT(\n    \"suppkey\", suppkey,\n    \"name\", name,\n    \"address\", address,\n    \"nationkey\", nationkey,\n    \"phone\", phone,\n    \"acctbal\", acctbal\n))\nFROM supplier\nWHERE nationkey IN (1, 4, 9, 13, 15, 23)\n\n\n[\n  {\n    \"suppkey\": 852,\n    \"name\": \"Supplier#000000852\",\n    \"address\": \"n3zasd04WljXdo9xMjQRkZKrEB\",\n    \"nationkey\": 1,\n    \"phone\": \"11-574-892-3228\",\n    \"acctbal\": 213.41\n  },\n  {\n    \"suppkey\": 856,\n    \"name\": \"Supplier#000000856\",\n    \"address\": \"U,GH2ZjlmA78JRbjWhbf7jCgrU7a0Dx\",\n    \"nationkey\": 4,\n    \"phone\": \"14-216-125-2920\",\n    \"acctbal\": 2763.95\n  },\n  {\n    \"suppkey\": 858,\n    \"name\": \"Supplier#000000858\",\n    \"address\": \"aA2g9NPEljznwqrZp4Fdw1Z\",\n    \"nationkey\": 9,\n    \"phone\": \"19-525-296-9901\",\n    \"acctbal\": 1671.59\n  },\n  {\n    \"suppkey\": 881,\n    \"name\": \"Supplier#000000881\",\n    \"address\": \"02RRXg45CBGhuzwpKKz3fi4ewYv\",\n    \"nationkey\": 13,\n    \"phone\": \"23-877-378-2281\",\n    \"acctbal\": 4423.06\n  },\n  {\n    \"suppkey\": 859,\n    \"name\": \"Supplier#000000859\",\n    \"address\": \"aB7hGnQZCzRcGSihskKUOe3Mt1X\",\n    \"nationkey\": 15,\n    \"phone\": \"25-460-409-5782\",\n    \"acctbal\": 1129.49\n  },\n  {\n    \"suppkey\": 949,\n    \"name\": \"Supplier#000000949\",\n    \"address\": \"a,UE,6nRVl2fCphkOoetR1ajIzAEJ1Aa1G1HV\",\n    \"nationkey\": 23,\n    \"phone\": \"33-332-697-2768\",\n    \"acctbal\": 91.39\n  }\n]"
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": [
+            {
+                "suppkey": 841,
+                "name": "Supplier#000000841",
+                "address": "dvQXS7Wi29wVuSUWsknpHVQWVrJ6cUvB8V",
+                "nationkey": 7,
+                "phone": "17-359-161-6634",
+                "acctbal": "1685.95"
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": [
+            {
+                "Witness": {
+                    "RowNumber": 8,
+                    "CellValues": {
+                        "s_suppkey": "803",
+                        "s_name": "Supplier#000000803",
+                        "s_address": ",IXoixqcMluU5OEK7RhD,mDrBE2E3ygs",
+                        "s_nationkey": "15",
+                        "s_phone": "25-347-400-8216",
+                        "s_acctbal": "1887.55"
+                    }
+                },
+                "Statement": {
+                    "RowNumber": 8,
+                    "CellValues": {
+                        "s_suppkey": "803",
+                        "s_name": "Supplier#0"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": [
+            {
+                "suppkey": 978,
+                "name": "Supplier#000000978",
+                "address": "XzhDlm7Mr3RyWZL7PV6ush",
+                "nationkey": 16,
+                "phone": "26-135-110-8202",
+                "acctbal": 6104.45
+            },
+            {
+                "suppkey": 936,
+                "name": "Supplier#000000936",
+                "address": "CuIXj6RYaHGQ5SOkmhu8ZDRt5IU",
+                "nationkey": 17,
+                "phone": "27-555-580-3995",
+                "acctbal": 7304.3
+            }
+        ]
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": [
+            {
+                "supplier_name": "Supplier#000000917",
+                "nationkey": 22,
+                "acctbal": 8877.42
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": [
+            {
+                "suppkey": 872,
+                "name": "Supplier#000000872",
+                "address": "oJQEy8xyrptE",
+                "nationkey": 11,
+                "phone": "21-271-893-1965",
+                "acctbal": 6571.13
+            },
+            {
+                "suppkey": 875,
+                "name": "Supplier#000000875",
+                "address": "pBjvc 55kMxfQ3gtYUiuy5TNRyd",
+                "nationkey": 13,
+                "phone": "23-165-986-6088",
+                "acctbal": 5757.36
+            },
+            {
+                "suppkey": 813,
+                "name": "Supplier#000000813",
+                "address": "6EfZUjqLY8G28PhtbPGfz9FjWIXLx",
+                "nationkey": 22,
+                "phone": "32-887-679-3561",
+                "acctbal": 5793.63
+            },
+            {
+                "suppkey": 941,
+                "name": "Supplier#000000941",
+                "address": "gqG2XEnVlzUhjjfQGYGlwk,jcaNsplI8Rleg",
+                "nationkey": 21,
+                "phone": "31-412-752-5573",
+                "acctbal": 3846.91
+            },
+            {
+                "suppkey": 820,
+                "name": "Supplier#000000820",
+                "address": "QoduMcALdP",
+                "nationkey": 15,
+                "phone": "25-716-340-3140",
+                "acctbal": 4604.84
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": [
+            "[{'suppkey': 975, 'name': 'Supplier#000000975', 'address': ',AC e,tBpNwKb5xMUzeohxlRn, hdZJo73gFQF8y', 'nationkey': 3, 'phone': '13-892-333-9275', 'acctbal': 7577.42}]"
+        ]
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": [
+            {
+                "suppkey": 906,
+                "name": "Supplier#000000906",
+                "address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                "nationkey": 2,
+                "phone": "12-926-664-9785",
+                "acctbal": 7888.41
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": [
+            {
+                "suppkey": 875,
+                "name": "Supplier#000000875",
+                "address": "pBjvc 55kMxfQ3gtYUiuy5TNRyd",
+                "nationkey": 13,
+                "phone": "23-165-986-6088",
+                "acctbal": 5757.36
+            }
+        ]
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": "holmium [(s\\_suppkey, s\\_name, s\\_address, s\\_nationkey, s\\_phone, s\\_acctbal)\n=(813, 'Supplier#000000813', '6EfZUjqLY8G28PhtbPGfz9FjWIXLx', 22, '32-887-679-3561', 5793.63),\n(834, 'Supplier#000000834', 'fwX0Z5,PgFaauaEXlVQX6UmHM0RDKS4EXe,Tn3nJ', 9, '19-419-490-3356', 3732.75),\n(875, 'Supplier#000000875', 'pBjvc 55kMxfQ3gtYUiuy5TNRyd', 13, '23-165-986-6088', 5757.36),\n(894, 'Supplier#000000894', 'T,9KqHZzFlFVvesdyzvzs9FHOQZjLk', 9, '19-875-711-4227', 9490.22),\n(978, 'Supplier#000000978', 'XzhDlm7Mr3RyWZL7PV6ush', 16, '26-135-110-8202', 6104.45),\n(985, 'Supplier#000000985', 'kzI8mk3jN9F67EStJ 8dlpx 6GwZYwzXPFOKJ5R', 1, '11-131-656-2612', 3524.1)]"
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": [
+            {
+                "suppkey": 808,
+                "name": "Supplier#000000808",
+                "address": "B3zlGM54ECUk5MgRzKI9f7F bB8",
+                "nationkey": 15,
+                "phone": "25-297-954-4894",
+                "acctbal": 9438.28
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": [
+            {
+                "suppkey": 905,
+                "name": "Supplier#000000905",
+                "address": "WAGJHr1OUm95U5",
+                "nationkey": 17,
+                "phone": "27-266-689-2728",
+                "acctbal": 2415.66
+            }
+        ]
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": [
+            {
+                "suppkey": 856,
+                "name": "Supplier#000000856",
+                "nationkey": 4
+            },
+            {
+                "suppkey": 906,
+                "name": "Supplier#000000906",
+                "nationkey": 2
+            },
+            {
+                "suppkey": 918,
+                "name": "Supplier#000000918",
+                "nationkey": 20
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": "[\n  {\n    \"supplier\\_name\": \"Supplier#000000910\",\n    \"nationkey\": 5,\n    \"acctbal\": 4763.2\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000840\",\n    \"nationkey\": 19,\n    \"acctbal\": 2963.09\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000911\",\n    \"nationkey\": 11,\n    \"acctbal\": 6026.09\n  }\n]"
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": [
+            {
+                "suppkey": 875,
+                "name": "Supplier#000000875",
+                "address": "pBjvc 55kMxfQ3gtYUiuy5TNRyd",
+                "nationkey": 13,
+                "phone": "23-165-986-6088",
+                "acctbal": 5757.36
+            },
+            {
+                "suppkey": 874,
+                "name": "Supplier#000000874",
+                "address": null,
+                "nationkey": 13,
+                "phone": "23-892-333-9275",
+                "acctbal": 7577.42
+            },
+            {
+                "suppkey": 881,
+                "name": "Supplier#000000881",
+                "address": "02RRXg45CBGhuzwpKKz3fi4ewYv",
+                "nationkey": 13,
+                "phone": "23-877-378-2281",
+                "acctbal": 4423.06
+            }
+        ]
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": "[\n{\n\"supplier\\_name\": \"Supplier#000000906\",\n\"nationkey\": 2,\n\"phone\": \"12-926-664-9785\",\n\"acctbal\": 7888.41\n}\n]"
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": "[\n  {\n    \"supplier\\_name\": \"Supplier#000000905\",\n    \"nationkey\": 17,\n    \"phone\": \"27-266-689-2728\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000906\",\n    \"nationkey\": 2,\n    \"phone\": \"12-926-664-9785\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000930\",\n    \"nationkey\": 10,\n    \"phone\": \"20-435-373-1909\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000834\",\n    \"nationkey\": 9,\n    \"phone\": \"19-419-490-3356\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000937\",\n    \"nationkey\": 15,\n    \"phone\": \"25-410-699-7522\"\n  }\n]\n\nThe query to get this result is:\n```\nSELECT s.supplier_name, n.nationkey, s.phone\nFROM supplier s\nJOIN nation n ON s.nationkey = n.nationkey\nWHERE s.acctbal > (SELECT AVG(s2.acctbal) FROM supplier s2 WHERE s2.nationkey = s.nationkey)\nORDER BY n.nationkey;\n```"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": [
+            {
+                "suppkey": 803,
+                "name": "Supplier#000000803",
+                "address": ",IXoixqcMluU5OEK7RhD,mDrBE2E3ygs",
+                "nationkey": 15,
+                "phone": "25-347-400-8216",
+                "acctbal": 1887.55
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": [
+            {
+                "supplier_name": "Supplier#000000916",
+                "witness_count": 1,
+                "witnesses": [
+                    {
+                        "nationkey": 11,
+                        "phone": "21-185-427-4872"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": [
+            {
+                "suppkey": 947,
+                "name": "Supplier#000000947",
+                "address": "6xS,tBAgcKGW,nXNhfm2Hv26uYicU3",
+                "nationkey": 18,
+                "phone": "28-277-111-4291",
+                "acctbal": 2699.78
+            },
+            {
+                "suppkey": 915,
+                "name": "Supplier#000000915",
+                "address": "hzB2437Op7JLYX73d3,qU2",
+                "nationkey": 18,
+                "phone": "28-191-772-5459",
+                "acctbal": 687.45
+            },
+            {
+                "suppkey": 930,
+                "name": "Supplier#000000930",
+                "address": "jYRHnCNnk55 CODbFLqby,ewwOQa1M",
+                "nationkey": 10,
+                "phone": "20-435-373-1909",
+                "acctbal": 9740.48
+            },
+            {
+                "suppkey": 891,
+                "name": "Supplier#000000891",
+                "address": "cv64gZAB3Ax5XblZ19gNA zOHb9q2nGjtvUzLm9P",
+                "nationkey": 8,
+                "phone": "18-541-281-5118",
+                "acctbal": 2284.88
+            },
+            {
+                "suppkey": 875,
+                "name": "Supplier#000000875",
+                "address": "pBjvc 55kMxfQ3gtYUiuy5TNRyd",
+                "nationkey": 13,
+                "phone": "23-165-986-6088",
+                "acctbal": 5757.36
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": "[\n{\n\"supplier\\_name\": \"Supplier#000000825\",\n\"nationkey\": 20,\n\"phone\": \"30-486-346-1320\",\n\"acctbal\": 4461.68\n},\n{\n\"supplier\\_name\": \"Supplier#000000862\",\n\"nationkey\": 2,\n\"phone\": \"12-159-806-3875\",\n\"acctbal\": 6698.84\n},\n{\n\"supplier\\_name\": \"Supplier#000000948\",\n\"nationkey\": 21,\n\"phone\": \"31-562-389-2753\",\n\"acctbal\": 9219.26\n},\n{\n\"supplier\\_name\": \"Supplier#000000956\",\n\"nationkey\": 18,\n\"phone\": \"28-741-846-4826\",\n\"acctbal\": 8068.26\n}\n]\n\nThe answer is a list of 4 dictionaries, each representing a supplier with the highest 'acctbal' for each 'nationkey'. The keys in each dictionary are \"supplier\\_name\", \"nationkey\", \"phone\", and \"acctbal\"."
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": [
+            {
+                "suppkey": 806,
+                "name": "Supplier#000000806",
+                "address": "mYSUX4mem2",
+                "nationkey": 13,
+                "phone": "23-702-985-4737",
+                "acctbal": 5054.15
+            },
+            {
+                "suppkey": 862,
+                "name": "Supplier#000000862",
+                "address": "JAH3,OdzNzdiWYK2ODrKfLLR2IQ8YVNJcsds",
+                "nationkey": 2,
+                "phone": "12-159-806-3875",
+                "acctbal": 6698.84
+            },
+            {
+                "suppkey": 956,
+                "name": "Supplier#000000956",
+                "address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                "nationkey": 18,
+                "phone": "28-741-846-4826",
+                "acctbal": 8068.26
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": [
+            {
+                "suppkey": 824,
+                "name": "Supplier#000000824",
+                "address": ",9nqq,JWR0ztG0qp4rlDHgtShbP7AViBj",
+                "nationkey": 20,
+                "phone": "30-486-346-1320",
+                "acctbal": 4461.68
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": [
+            {
+                "suppkey": 862,
+                "name": "Supplier#000000862",
+                "address": "JAH3,OdzNzdiWYK2ODrKfLLR2IQ8YVNJcsds",
+                "nationkey": 2,
+                "phone": "12-159-806-3875",
+                "acctbal": 6698.84
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": [
+            {
+                "suppkey": 907,
+                "name": "Supplier#000000907",
+                "address": "Y79rRfd5UhgXi6Ahj9ooM0vNHts",
+                "nationkey": 12,
+                "phone": "22-595-604-3254",
+                "acctbal": 6558.92
+            }
+        ]
+    }
+]

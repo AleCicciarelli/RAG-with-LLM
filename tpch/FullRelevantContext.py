@@ -28,7 +28,7 @@ if not os.environ.get("GROQ_API_KEY"):
 # MISTRAL by Groq
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
-llm = ChatOllama(model="mixtral:8x7b", temperature=0)
+llm = ChatOllama(model="llama3:8b", temperature=0)
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
@@ -214,7 +214,7 @@ for i, question in enumerate(questions):
     }
     all_results.append(result)
 
-output_filename = f"outputs_mixtral8x7b/full_context/outputs_mixtral8x7b.json"
+output_filename = f"outputs_llama8b/full_context/outputs_llama8b.json"
 # Save the results for the current value of k to a JSON file for later analysis
 with open(output_filename, "w") as output_file:
     json.dump(all_results, output_file, indent=4, ensure_ascii=False)
