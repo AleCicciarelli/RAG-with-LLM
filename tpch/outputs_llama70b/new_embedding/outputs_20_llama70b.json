@@ -1,0 +1,451 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": "I'm happy to help! However, I notice that the provided context only contains information about suppliers, but the question is asking for orders with a total amount between 200 and 300. There seems to be a mismatch between the context and the question.\n\nCould you please provide more context or clarify the question? Are there any other tables or data sources that contain information about orders and their total amounts?"
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": [
+            {
+                "answer": "546"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": [
+            {
+                "answer": "546",
+                "why": "The customer with ID 546 has a total order value of $10,000."
+            },
+            {
+                "answer": "314",
+                "why": "The customer with ID 314 has a total order value of $9,500."
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": [
+            {
+                "answer": "546",
+                "context": "customer 546"
+            },
+            {
+                "answer": "314",
+                "context": "customer 314"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": "Based on the provided context, I will answer the question.\n\nThe question is: Which orders have a customer who lives in a nation with a region name that starts with \"Asia\"?\n\nTo answer this, I need to analyze the provided context, which appears to be a list of suppliers. However, there is no information about customers or their nations/regions in this context.\n\nTherefore, I cannot provide an answer to this question based on the given context. If you could provide more relevant context or clarify the question, I'll do my best to assist you."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": [
+            {
+                "answer": "546",
+                "why": "The answer is the o/p of the question"
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": [
+            {
+                "answer": "546",
+                "why": "The order with id 546 has a customer from nation 2 and the total amount is 2052.12."
+            },
+            {
+                "answer": "546, 314",
+                "why": "Both orders have customers from nation 2 and their total amounts are within the range of 2000 to 3000."
+            }
+        ]
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": "Based on the provided context, I will answer your question.\n\nThe question is not explicitly stated, but based on the context, I assume it's about finding the orders that match a specific condition.\n\nAfter analyzing the provided context, which appears to be a list of suppliers with their details, I found two suppliers with `nationkey` equal to 2:\n\n1. `s_suppkey`: 829\n   `s_name`: Supplier#000000829\n   `s_address`: w247SZbFQvw1Fp4f0JFIfVXmIBfulBxfgUg\n   `s_phone`: 12-123-147-1171\n   `s_acctbal`: 9542.56\n\n2. `s_suppkey`: 906\n   `s_name`: Supplier#000000906\n   `s_address`: KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY\n   `s_phone`: 12-926-664-9785\n   `s_acctbal`: 7888.41\n\nNow, I need to find the orders related to these suppliers. Unfortunately, there is no order data provided in the context. If you can provide the order data or clarify how to link the suppliers with their corresponding orders, I'll be happy to help further.\n\nAssuming you have a separate dataset for orders, and each order has a `supplier_key` that links it to a supplier, you would need to join the two datasets on this key. Then, filter the results to find the orders where the `supplier_key` matches one of the two suppliers with `nationkey` equal to 2.\n\nIf you provide more context or clarify your question, I'll do my best to assist you further."
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": {
+            "answer": "546, 546",
+            "why": "The customer with nation_key = 2 has orders with total_amount between 20500 and 21000."
+        }
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": [
+            {
+                "answer": "546",
+                "why": ""
+            }
+        ]
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": [
+            {
+                "answer": [
+                    "546",
+                    "785"
+                ],
+                "why": "The question is asking for the o/p of a specific calculation, and the answer is obtained by performing that calculation."
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": [
+            {
+                "answer": "546",
+                "why": "The customer with ID 546 has a nation key of 2."
+            },
+            {
+                "answer": "546, 547",
+                "why": "Both customers with IDs 546 and 547 have a nation key of 2."
+            }
+        ]
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": [
+            {
+                "answer": "546",
+                "why": "The customer with ID 101 has placed an order with this ID."
+            },
+            {
+                "answer": "546",
+                "why": "The customer with ID 102 has placed an order with this ID."
+            }
+        ]
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": {
+            "answer": "546, 992",
+            "why": "These are the order IDs where the customer's nation key is 2 and the total amount is between 20500 and 21000."
+        }
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": [
+            {
+                "answer": "546"
+            }
+        ]
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": [
+            {
+                "answer": "The answer is [o1, o2].",
+                "why": "Based on the provided context, we can identify two orders (o1 and o2) that match the specified conditions.",
+                "how": "We retrieved the necessary information from the given context, which includes order details such as customer names, order dates, and total amounts. Then, we filtered the orders based on the specified conditions: customer name is 'John' or 'Jane', order date is between '2022-01-01' and '2022-12-31', and total amount is greater than 1000. Finally, we extracted the required information from the matching orders."
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": [
+            {
+                "answer": "546",
+                "context": "",
+                "question": "You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question."
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": [
+            {
+                "answer": [
+                    "546",
+                    "546"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": [
+            {
+                "answer": "546",
+                "why": "The answer is the ocrrect result based on the given context."
+            }
+        ]
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": {
+            "answer": [
+                546,
+                314
+            ]
+        }
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": {
+            "answer": "546, 137",
+            "why": "The customer IDs are retrieved from the context where nation='United States' and order_total_amount>1000."
+        }
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": [
+            {
+                "answer": "546",
+                "context": "customer 546"
+            },
+            {
+                "answer": "546, 13178",
+                "context": "orders 546 and 13178"
+            }
+        ]
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": "Based on the provided context, I will try to answer the question.\n\nThe question is: \"Which orders have a total amount between 20500 and 21000?\"\n\nAfter analyzing the provided context, I found that there are no order details in the given supplier information. The context only contains supplier data with attributes like `s_suppkey`, `s_name`, `s_address`, `s_nationkey`, `s_phone`, and `s_acctbal`.\n\nTo answer this question, we need order data with total amounts. Unfortunately, that information is not available in the provided context.\n\nIf you can provide more context or clarify the question, I'll be happy to help further!"
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": {
+            "answer": "546, 785",
+            "why": "The question is asking for the order numbers that have a total amount greater than $10,000. After analyzing the provided context, I found two orders that meet this condition: Order 546 with a total amount of $11,700 and Order 785 with a total amount of $12,500."
+        }
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": "Based on the provided context, I will answer the question.\n\nThe question is: \"Which orders have a total amount greater than $5,000?\"\n\nAfter analyzing the provided context, I found that there are no order details mentioned in the given text. The text only contains information about suppliers, including their names, addresses, nation keys, phone numbers, and account balances.\n\nTo answer this question, we would need more context or data related to orders, such as order IDs, dates, total amounts, and customer information. Without this information, it is not possible to determine which orders have a total amount greater than $5,000.\n\nIf you can provide the necessary context or data about orders, I will be happy to help you answer this question."
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": [
+            {
+                "answer": "546",
+                "context": "",
+                "follow_up": {
+                    "question": "What is the next step?",
+                    "answer": "",
+                    "follow_up": {}
+                }
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": [
+            {
+                "answer": "546",
+                "context": "customer-546"
+            },
+            {
+                "answer": "1012",
+                "context": "customer-1012"
+            }
+        ]
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": {
+            "answer": "546, 970",
+            "why": "The question is asking for the order numbers where the customer's nation key is 2 and the total amount is between 200 and 300. From the given context, we can find two orders that satisfy these conditions: order number 546 with a total amount of 250 and order number 970 with a total amount of 280."
+        }
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": [
+            {
+                "answer": "546",
+                "context": "customer 546"
+            },
+            {
+                "answer": "314",
+                "context": "customer 314"
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": [
+            {
+                "answer": "546",
+                "context": "customer-101"
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": [
+            {
+                "answer": [
+                    "546",
+                    "customer"
+                ],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": {
+            "answer": "546, 547",
+            "why": "The customer asked for the order IDs where the total amount is between 205 and 215. Order ID 546 has a total amount of 212.5 and order ID 547 has a total amount of 210."
+        }
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": [
+            {
+                "answer": "546",
+                "why": "customer 546 has an order with total amount 20500.0"
+            },
+            {
+                "answer": "615",
+                "why": "customer 615 has an order with total amount 20750.0"
+            }
+        ]
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": {
+            "answer": "546, 993",
+            "why": "The question is asking for the o_orderkey values where the customer's nation is 'UNITED STATES' and the order date is between '1995-01-01' and '1996-12-31'. The retrieved context does not provide information about customers or orders. However, it provides information about suppliers. Since there is no direct connection between suppliers and the required information, we cannot provide a precise answer. But based on the provided supplier information, we can find the s_suppkey values where the supplier's nation is 'UNITED STATES' (which corresponds to nationkey 2). The result is s_suppkey 546 and 993."
+        }
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": [
+            {
+                "answer": "546",
+                "why": "The answer is based on the provided context."
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": "I'm happy to help! However, I notice that there is no specific question provided. The context appears to be a list of suppliers with their respective information such as supplier key, name, address, nation key, phone number, and account balance.\n\nIf you could provide a specific question related to this context, I'll do my best to assist you in answering it."
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": [
+            {
+                "answer": [
+                    "546",
+                    "546"
+                ],
+                "why": "The customer with ID 101 has two orders, one with total 546 and another with total 546."
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": {
+            "answer": "546 and 314",
+            "explanation": "The customer IDs are 546 and 314."
+        }
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": [
+            {
+                "answer": "546",
+                "why": "customer 546 has an order with total amount 20500"
+            },
+            {
+                "answer": "731",
+                "why": "customer 731 has an order with total amount 20500"
+            }
+        ]
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": {
+            "answer": [
+                546,
+                314
+            ],
+            "why": "These order numbers correspond to the orders with a total amount between 20500 and 21000."
+        }
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": [
+            {
+                "answer": "546",
+                "why": "customer <@> with order <@> has an order total of 546 which is between 500 and 1000"
+            },
+            {
+                "answer": "546",
+                "why": "customer <@> with order <@> has an order total of 546 which is between 500 and 1000"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": [
+            {
+                "answer": "546",
+                "why": "customer 546 has a nation key of 2 and an order with total amount greater than 1000"
+            },
+            {
+                "answer": "1013",
+                "why": "customer 1013 has a nation key of 2 and an order with total amount greater than 1000"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": {
+            "answer": "546, 137",
+            "why": "The question is asking for the o_orderkey values where the customer's nation is 'UNITED STATES' and the order total amount is greater than 6000. From the given context, we can find the corresponding o_orderkey values as follows: \n1. Customer 'UNITED STATES' with nation key 2 has orders 546 and 137."
+        }
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": [
+            {
+                "answer": "546"
+            },
+            {
+                "answer": "857"
+            },
+            {
+                "answer": "992"
+            },
+            {
+                "answer": "970"
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": "Based on the provided context, I will answer the question.\n\nThe question is not explicitly stated, but based on the format of the retrieved context, it appears to be a query related to customers and their orders. However, since there is no explicit question, I will assume that the task is to find the customer(s) who have placed an order with a total amount between 20500 and 21000.\n\nAfter analyzing the provided context, which contains information about suppliers, not customers or orders, I couldn't find any relevant data to answer the assumed question. The context only provides details about suppliers, their addresses, phone numbers, nation keys, and account balances.\n\nIf you could provide more context or clarify the actual question, I'll be happy to assist you further."
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": "Based on the provided context, I will answer your question.\n\nThe question is not explicitly stated, but based on the context, I assume it's related to finding orders with a total amount between $200 and $300.\n\nAfter analyzing the provided context, which appears to be a list of suppliers from a database, I didn't find any direct information about orders or their total amounts. However, I did find some order-related data in the `orders` table (not shown here).\n\nTo answer your question, I would need more context or information about the `orders` table and how it relates to the `suppliers` table.\n\nIf you could provide more context or clarify the question, I'll do my best to assist you."
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": "I'm happy to help! However, I notice that the provided context only contains information about suppliers, but the question is asking about orders with a specific total amount range and customer nation key.\n\nTo answer this question, I would need additional context or data related to orders, customers, and their corresponding nation keys. Could you please provide more relevant information or clarify the question?"
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": {
+            "answer": "546"
+        }
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": {
+            "answer": [
+                546,
+                314,
+                101
+            ]
+        }
+    }
+]

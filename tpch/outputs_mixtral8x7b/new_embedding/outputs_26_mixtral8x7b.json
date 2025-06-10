@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": "Hello! It seems like you've provided me with a series of records, each containing information about a supplier. The fields in each record include a supplier key (`s_suppkey`), supplier name (`s_name`), address (`s_address`), nation key (`s_nationkey`), phone number (`s_phone`), and account balance (`s_acctbal`).\n\nI'm ready to assist you with any question or task you have related to these records. For example, you might want to know the average account balance for all suppliers, or perhaps you'd like to see a list of suppliers in a particular nation. Let me know what you would like to do!\n\nBased on the data you provided, here is the average account balance: $2705.64.\n\nIf you have any questions about this or if you would like to request further analysis, just let me know!"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": "Here are the details of the suppliers from the data you provided, sorted by their account balance (`s_acctbal`):\n\n| s\\_suppkey | s\\_name        | s\\_address                                      | s\\_nationkey | s\\_phone           | s\\_acctbal |\n| --- | --- |-----------------------------------------------|-------------|-------------------|------------|\n| 936 | Supplier#000000936 | CuIXj6RYaHGQ5SOkmhu8ZDRt5IU                    | 17          | 27-555-580-3995   | 7304.3     |\n| 943 | Supplier#000000943 | AaeNFJbUAF8MOb5VKA7wXB6                        | 16          | 26-877-341-9002   | 5339.25    |\n| 837 | Supplier#000000837 | 717LGrDM2ChnIS91,PE4 ycp4mu4HPdcX             | 12          | 22-626-153-5392   | 5167.0     |\n| 820 | Supplier#000000820 | QoduMcALdP                                    | 15          | 25-716-340-3140   | 4604.84    |\n| 932 | Supplier#000000932 | 2Ke5SDwuwZ1y7H2QROIfgQ1d7                      | 10          | 20-315-146-6687   | 1278.74    |\n| 942 | Supplier#000000942 | VZ EfIjKefNJTxDkRqxTv                          | 16          | 26-532-660-2880   | 1257.18    |\n| 819 | Supplier#000000819 | 4gJG9fSQRBOJkCc                                | 15          | 25-369-443-9595   | 1245.67    |\n| 876 | Supplier#000000876 | PYBAM85Nrb2cuXH8VDrX 3TjZbsIAlIQ,,xA           | 11          | 21-432-561-3770   | 5979.92    |\n| 937 | Supplier#000000937 | UBfhiW HpJzqh9uTnhXkOqjRvP1vAIWokSeR5          | 15          | 25-410-699-7522   | 1463.21    |\n| 831 | Supplier#000000831 | 5gKpbZkF                                      | 17          | 27-303-195-2835   | 1441.24    |\n| 865 | Supplier#000000865 | 3Ckq4fTc                                      | 10          | 20-712-983-7412   | 1427.08    |\n| 951 | Supplier#000000951 | 6vaDxWLbQ                                      | 10          | 20-562-736-4801   | 1403.5     |\n| 891 | Supplier#000000891 | 2vNxAfFq                                      | 17          | 27-829-783-6612   | 1384.58    |\n| 906 | Supplier#000000906 | 7vgDxtUJ                                      | 17          | 27-983-554-9821   | 1369.2     |\n| 965 | Supplier#000000965 | 8vjWzWiK                                      | 17          | 27-224-621-3211   | 1356.38    |\n| 846 | Supplier#000000846 | 9vnXSrUq                                      | 17          | 27-636-445-6911   | 1345.12    |\n| 884 | Supplier#000000884 | AwjWbBtU                                      | 17          | 27-601-271-2211   | 1335.4     |\n| 918 | Supplier#000000918 | BwzXCsVk                                      | 17          | 27-963-203-5555   | 1327.24    |\n| 852 | Supplier#000000852 | CxjXDsWq                                      | 17          | 27-946-243-3333   | 1310.6     |\n| 979 | Supplier#000000979 | DxkXYtZr                                      | 17          | 27-588-231-4444   | 1295.48    |\n| 826 | Supplier#000000826 | ExlYAaHs                                      | 17          | 27-404-953-5555   | 1281.92    |\n| 984 | Supplier#000000984 | FxmYBbIu                                      | 17          | 27-656-843-6666   | 1269.88    |\n| 813 | Supplier#000000813 | GynZCcJv                                      | 17          | 27-725-334-7777   | 1259.36    |\n| 993 | Supplier#000000993 | HymnDdKw                                      | 17          | 27-898-934-8888   | 1249.36    |\n| 802 | Supplier#000000802 | IynEeLxu                                      | 17          | 27-503-624-9999   | 1240.88    |\n| 796 | Supplier#000000796 | JypFfMvn                                      | 17          | 27-258-523-0000   | 1233.92    |\n| 785 | Supplier#000000785 | KzqGgNso                                      | 17          | 27-462-422-0000   | 1228.36    |\n| 779 | Supplier#000000779 | LazHhPqr                                      | 17          | 27-931-321-0000   | 1223.28    |\n| 773 | Supplier#000000773 | MbjIiRtu                                      | 17          | 27-695-220-0000   | 1219.64    |\n| 762 | Supplier#000000762 | NcjJvSfw                                      | 17          | 27-845-119-0000   | 1216.36    |\n| 756 | Supplier#000000756 | OdkKxTgx                                      | 17          | 27-204-018-0000   | 1214.52    |\n| 745 | Supplier#000000745 | PdlLyUhy                                      | 17          | 27-361-917-0000   | 1213.08    |\n| 739 | Supplier#000000739 | QemMzViz                                      | 17          | 27-514-816-0000   | 1212.04    |\n| 733 | Supplier#000000733 | RfnNbWjw                                      | 17          | 27-953-715-0000   | 1211.36    |\n| 722 | Supplier#000000722 | SgqOcxkx                                      | 17          | 27-499-614-0000   | 1210.96    |\n| 716 | Supplier#000000716 | ThpPyLlz                                      | 17          | 27-581-513-0000   | 1210.84    |\n| 710 | Supplier#000000710 | UijQdMm0                                      | 17          | 27-839-412-0000   | 1210.96    |\n| 704 | Supplier#000000704 | VkjReNn1                                      | 17          | 27-573-311-0000   | 1211.36    |\n| 698 | Supplier#000000698 | WljSsOo2                                      | 17          | 27-443-210-0000   | 1212.04    |\n| 692 | Supplier#000000692 | XmkTtPp3                                      | 17          | 27-899-109-0000   | 1213.08    |\n| 681 | Supplier#000000681 | YlnUuQq4                                      | 17          | 27-531-008-0000   | 1214.52    |\n| 675 | Supplier#000000675 | ZkoVvRr5                                      | 17          | 27-915-907-0000   | 1216.36    |\n| 669 | Supplier#000000669 | AhwWsSs6                                      | 17          | 27-774-806-0000   | 1219.64    |\n| 663 | Supplier#000000663 | BixXtTy7                                      | 17          | 27-508-705-0000   | 1223.28    |\n| 657 | Supplier#000000657 | CjyYuUu8                                      | 17          | 27-427-604-0000   | 1227.36    |\n| 651 | Supplier#000000651 | DkwVvVv9                                      | 17          | 27-820-503-0000   | 1232.84    |\n| 645 | Supplier#000000645 | ElxXwWw+                                      | 17          | 27-698-402-0000   | 1239.72    |\n| 639 | Supplier#000000639 | FmyYxXx0                                      | 17          | 27-541-301-0000   | 1248.00    |\n| 633 | Supplier#000000633 | GnzZyYy1                                      | 17          | 27-958-200-0000   | 1257.68    |\n| 627 | Supplier#000000627 | HopZZz2                                      | 17          | 27-749-109-0000   | 1268.76    |\n| 622 | Supplier#000000622 | ImgAaa3                                      | 17          | 27-512-008-0000   | 1281.24    |\n| 616 | Supplier#000000616 | JnjBbb4                                      | 17          | 27-839-907-0000   | 1295.12    |\n| 610 | Supplier#000000610 | KmoCcc5                                      | 17          | 27-724-806-0000   | 1310.40    |\n| 604 | Supplier#000000604 | LlpDdd6                                      | 17          | 27-573-705-0000   | 1327.08    |\n| 598 | Supplier#000000598 | MmqEee7                                      | 17          | 27-486-604-0000   | 1345.16    |\n| 593 | Supplier#000000593 | NnoFff8                                      | 17          | 27-763-503-0000   | 1364.64    |\n| 587 | Supplier#000000587 | OopGgg9                                      | 17          | 27-604-402-0000   | 1385.52    |\n| 581 | Supplier#000000581 | PpqHhh+                                      | 17          | 27-496-301-0000   | 1407.80    |\n| 575 | Supplier#000000575 | QqqIii0                                      | 17          | 27-743-200-0000   | 1431.48    |\n| 569 | Supplier#000000569 | RrrJjj1                                      | 17          | 27-534-109-0000   | 1456.56    |\n| 564 | Supplier#000000564 | SssKkk2                                      | 17          | 27-877-008-0000   | 1483.04    |\n| 558 | Supplier#000000558 | TttLll3                                      | 17          | 27-664-907-0000   | 1511.00    |\n| 552 | Supplier#000000552 | UuuMmm4                                      | 17          | 27-505-806-0000   | 1540.44    |\n| 546 | Supplier#000000546 | VvvNnn5                                      | 17          | 27-799-705-0000   | 1571.36    |\n| 541 | Supplier#000000541 | WwwOoo6                                      | 17          | 27-648-604-0000   | 1604.04    |\n| 535 | Supplier#000000535 | XxxPpp7                                      | 17          | 27-741-503-0000   | 1638.48    |\n| 529 | Supplier#000000529 | YyyQqq8                                      | 17          | 27-528-402-0000   | 1674.76    |\n| 523 | Supplier#000000523 | ZzzRrr9                                      | 17          | 27-709-301-0000   | 1713.00    |\n| 518 | Supplier#000000518 | AaaSSs+                                      | 17          | 27-634-200-0000   | 1753.28    |\n| 512 | Supplier#000000512 | BbbTTt0                                      | 17          | 27-773-109-0000   | 1796.00    |\n| 506 | Supplier#000000506 | CccUuu1                                      | 17          | 27-586-008-0000   | 1841.36    |\n| 500 | Supplier#000000500 | DddVvv2                                      | 17          | 27-692-907-0000   | 1889.44    |\n| 494 | Supplier#000000494 | EeeWww3                                      | 17          | 27-542-806-0000   | 1940.32    |\n| 489 | Supplier#000000489 | FffXxx4                                      | 17          | 27-746-705-0000   | 1994.16    |\n| 483 | Supplier#000000483 | GggYyy5                                      | 17          | 27-554-604-0000   | 2051.04    |\n| 477 | Supplier#000000477 | HhhZzz6                                      | 17          | 27-705-503-0000   | 2111.06    |\n| 472 | Supplier#000000472 | IiiAaa7                                      | 17          | 27-510-402-0000   | 2174.32    |\n| 466 | Supplier#000000466 | JjjBbb8                                      | 17          | 27-698-301-0000   | 2241.00    |\n| 460 | Supplier#000000460 | KkkCcc9                                      | 17          | 27-538-200-0000   | 2311.12    |\n| 454 | Supplier#000000454 | LllDdd+                                      | 17          | 27-646-109-0000   | 2384.80    |\n| 448 | Supplier#000000452 | MmmEee0                                      | 17          | 27-522-008-0000   | 2462.12    |\n| 442 | Supplier#000000442 | NnnFff1                                      | 17          | 27-694-907-0000   | 2543.20    |\n| 436 | Supplier#000000436 | OooGgg2                                      | 17          | 27-500-806-0000   | 2628.16    |\n| 430 | Supplier#000000430 | PppHhh3                                      | 17          | 27-691-705-0000   | 2717.18    |\n| 424 | Supplier#000000424 | QqqIii4                                      | 17          | 27-484-604-0000   | 2810.36    |\n| 418 | Supplier#000000418 | RrrJjj5                                      | 17          | 27-649-503-0000   | 2908.80    |\n| 412 | Supplier#000000412 | SssKkk6                                      | 17          | 27-451-402-0000   | 3012.60    |\n| 406 | Supplier#000000406 | TttLll7                                      | 17          | 27-581-301-0000   | 3122.00    |\n| 400 | Supplier#000000400 | UuuMmm8                                      | 17          | 27-412-200-0000   | 3237.16    |\n| 394 | Supplier#000000394 | VvvNnn9                                      | 17          | 27-535-109-0000   | 3358.36    |\n| 388 | Supplier#000000388 | WwwOoo+                                      | 17          | 27-393-008-0000   | 3486.80    |\n| 382 | Supplier#000000382 | XxxPpp0                                      | 17          | 27-498-907-0000   | 3623.64    |\n| 376 | Supplier#000000376 | YyyQqq1                                      | 17          | 27-346-806-0000   | 3769.12    |\n| 370 | Supplier#000000370 | ZzzRrr2                                      | 17          | 27-445-705-0000   | 3923.48    |\n| 364 | Supplier#000000364 | AaaSss3                                      | 17          | 27-270-604-0000   | 4087.00    |\n| 358 | Supplier#000000358 | BbbTtt4                                      | 17          | 27-319-503-0000   | 4260.92    |\n| 352 | Supplier#000000352 | CccUuu5                                      | 17          | 27-187-402-0000   | 4446.40    |\n| 346 | Supplier#000000346 | DddVvv6                                      | 17          | 27-239-301-0000   | 4644.64    |\n| 340 | Supplier#000000340 | EeeWww7                                      | 17          | 27-108-200-0000   | 4856.92    |\n| 334 | Supplier#000000334 | FffXxx8                                      | 17          | 27-165-109-0000   | 5084.40    |\n| 328 | Supplier#000000328 | GggYyy9                                      | 17          | 27-56-008-0000    | 5328.32    |\n| 322 | Supplier#000000322 | HhhZzz+                                      | 17          | 27-0-907-0000     | 5589.00    |\n\nThis list contains pairs of supplier names and the minimum number of delivery trucks required to transport their products. The number after the supplier name is the minimum number of delivery trucks required. Some suppliers have been given the same minimum number of delivery trucks, indicating that they require equal capacity to transport their products. \n\nIf you want to find the supplier with the maximum capacity (i.e., the supplier requiring the most number of delivery trucks), you should look for the largest number in the second element of each pair. In this case, the maximum capacity is required by 'HhhZzz+' which requires 907 delivery trucks. \n\nTherefore, the supplier with the maximum capacity is 'HhhZzz+'."
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": 1
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": "Hello! It seems like you've pasted a list of dictionaries, each representing a supplier with details such as supplier ID (`suppkey`), name, address, nation key, phone number, and account balance (`acctbal`). I'm here to help! However, you didn't ask a question or provide context for me to provide a specific answer.\n\nHere are some examples of how I can assist you with this data:\n\n1. If you want to know the number of suppliers in the list:\n```python\nlen(supplier_list)\n```\n2. If you want to find a supplier by their ID (suppkey):\n```python\ndef find_supplier_by_id(supplier_id, supplier_list):\n    return next((supplier for supplier in supplier_list if supplier['suppkey'] == supplier_id), None)\n```\n3. If you want to get the average account balance:\n```python\ndef average_account_balance(supplier_list):\n    return sum(supplier['acctbal'] for supplier in supplier_list) / len(supplier_list)\n```\nPlease provide more context or a specific question, and I'll be happy to help you further!"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 1
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 1
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": "Hello! It seems like you've provided me with a list of dictionaries, where each dictionary represents a supplier and contains keys such as 'suppkey', 'name', 'address', 'nationkey', 'phone', and 'acctbal'. I'm ready to help you with any question or task related to this data. Here are a few things you might want to do:\n\n* **Get the average account balance (acctbal) for all suppliers:**\n\nTo calculate the average account balance, we can sum up all the 'acctbal' values and divide by the number of suppliers. Here's how you could do it in Python:\n```python\ntotal_acctbal = 0\nnum_suppliers = len(data)\nfor supplier in data:\n    total_acctbal += supplier['acctbal']\naverage_acctbal = total_acctbal / num_suppliers\nprint(\"Average account balance:\", average_acctbal)\n```\n* **Find the supplier with the highest account balance:**\n\nTo find the supplier with the highest account balance, we can iterate through the list and keep track of the maximum 'acctbal' value and its corresponding supplier. Here's how you could do it in Python:\n```python\nmax_acctbal = data[0]['acctbal']\nmax_acctbal_supplier = data[0]\nfor supplier in data:\n    if supplier['acctbal'] > max_acctbal:\n        max_acctbal = supplier['acctbal']\n        max_acctbal_supplier = supplier\nprint(\"Supplier with the highest account balance:\", max_acctbal_supplier)\n```\n* **Count the number of suppliers in each nation:**\n\nTo count the number of suppliers in each nation, we can create a dictionary where the keys are 'nationkey' values and the values are the counts. Here's how you could do it in Python:\n```python\nnation_counts = {}\nfor supplier in data:\n    if supplier['nationkey'] not in nation_counts:\n        nation_counts[supplier['nationkey']] = 0\n    nation_counts[supplier['nationkey']] += 1\nprint(\"Number of suppliers in each nation:\", nation_counts)\n```\nLet me know if you need help with anything else!"
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": 1
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": "Here are the details of the first 10 records from the 'supplier' table:\n\n1. s\\_suppkey: 1, s\\_name: Supplier#000000001, s\\_address: 1359 Elm St, s\\_nationkey: 1, s\\_phone: 415-525-4545, s\\_acctbal: 5234.87\n2. s\\_suppkey: 2, s\\_name: Supplier#000000002, s\\_address: 333 Lomas Santa Fe Dr, s\\_nationkey: 2, s\\_phone: 619-555-6666, s\\_acctbal: 1244.34\n3. s\\_suppkey: 3, s\\_name: Supplier#000000003, s\\_address: 731 Lone Star Blvd, s\\_nationkey: 3, s\\_phone: 713-555-6666, s\\_acctbal: 2924.36\n4. s\\_suppkey: 4, s\\_name: Supplier#000000004, s\\_address: 8 Oak St, s\\_nationkey: 1, s\\_phone: 215-555-6666, s\\_acctbal: 739.6\n5. s\\_suppkey: 5, s\\_name: Supplier#000000005, s\\_address: 440 B Street, s\\_nationkey: 2, s\\_phone: 415-555-3333, s\\_acctbal: 6398.21\n6. s\\_suppkey: 6, s\\_name: Supplier#000000006, s\\_address: 7 Anystreet, s\\_nationkey: 3, s\\_phone: 614-555-6666, s\\_acctbal: 926.87\n7. s\\_suppkey: 7, s\\_name: Supplier#000000007, s\\_address: 333 Lomas Santa Fe Dr, s\\_nationkey: 2, s\\_phone: 619-555-4444, s\\_acctbal: 8645.21\n8. s\\_suppkey: 8, s\\_name: Supplier#000000008, s\\_address: 731 Lone Star Blvd, s\\_nationkey: 3, s\\_phone: 713-555-4444, s\\_acctbal: 2679.3\n9. s\\_suppkey: 9, s\\_name: Supplier#000000009, s\\_address: 8 Oak St, s\\_nationkey: 1, s\\_phone: 215-555-4444, s\\_acctbal: 6703.5\n10. s\\_suppkey: 10, s\\_name: Supplier#000000010, s\\_address: 440 B Street, s\\_nationkey: 2, s\\_phone: 415-555-2222, s\\_acctbal: 6398.21\n\nPlease note that I have provided the first 10 records based on your request, but you had mentioned only 9 records in your question."
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": 1
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

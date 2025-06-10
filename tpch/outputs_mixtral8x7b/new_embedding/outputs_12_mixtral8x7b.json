@@ -1,0 +1,1942 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": "[\n{\"supplier\\_id\": 850, \"name\": \"Supplier#000000850\", \"address\": \"l6KnHycBhdFcz58UReuEe1Jf2R40ZICoQ5Qpjh6f\", \"nationkey\": 4, \"phone\": \"14-161-130-9091\", \"acctbal\": 3891.72}\n]"
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": [
+            {
+                "suppkey": 970,
+                "name": "Supplier#000000970",
+                "address": "FD,NVDvbAAT7rI6BdKI2rTo9UqH8AghW1e8DSJ",
+                "nationkey": 2,
+                "phone": "12-826-418-6561",
+                "acctbal": 4643.76
+            },
+            {
+                "suppkey": 829,
+                "name": "Supplier#000000829",
+                "address": "w247SZbFQvw1Fp4f0JFIfVXmIBfulBxfgUg",
+                "nationkey": 2,
+                "phone": "12-123-147-1171",
+                "acctbal": 9542.56
+            },
+            {
+                "suppkey": 956,
+                "name": "Supplier#000000956",
+                "address": "dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L",
+                "nationkey": 18,
+                "phone": "28-741-846-4826",
+                "acctbal": 8068.26
+            },
+            {
+                "suppkey": 982,
+                "name": "Supplier#000000982",
+                "address": "2GJow4mz8ZkIPUSibA0NZ3OyR5TkfHx0",
+                "nationkey": 10,
+                "phone": "20-884-330-2979",
+                "acctbal": 9763.28
+            },
+            {
+                "suppkey": 892,
+                "name": "Supplier#000000892",
+                "address": "j6prA4M3sX9a9xHem3HOZpYy",
+                "nationkey": 8,
+                "phone": "18-893-665-3629",
+                "acctbal": 9993.46
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": [
+            {
+                "suppkey": 953,
+                "name": "Supplier#000000953",
+                "address": "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                "nationkey": 21,
+                "phone": "31-642-490-3022",
+                "acctbal": 7916.56
+            },
+            {
+                "suppkey": 829,
+                "name": "Supplier#000000829",
+                "address": "w247SZbFQvw1Fp4f0JFIfVXmIBfulBxfgUg",
+                "nationkey": 2,
+                "phone": "12-123-147-1171",
+                "acctbal": 9542.56
+            },
+            {
+                "suppkey": 993,
+                "name": "Supplier#000000993",
+                "address": "z2NwUJ TPfd9MP8K3Blp1prYQ116",
+                "nationkey": 2,
+                "phone": "12-316-384-2073",
+                "acctbal": 2336.52
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": [
+            {
+                "supplier_id": 826,
+                "name": "Supplier#000000826",
+                "address": "n,hapmxkVq19Yy9UQ8BVF00sQD",
+                "nationkey": 15,
+                "phone": "25-731-100-2823",
+                "acctbal": 9401.23
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": [
+            {
+                "suppkey": 850,
+                "name": "Supplier#000000850",
+                "address": "l6KnHycBhdFcz58UReuEe1Jf2R40ZICoQ5Qpjh6f",
+                "nationkey": 4,
+                "phone": "14-161-130-9091",
+                "acctbal": 3891.72
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": [
+            {
+                "suppkey": 994,
+                "name": "Supplier#000000994",
+                "address": "0qF9I2cfv48Cu",
+                "nationkey": 4,
+                "phone": "14-183-331-6019",
+                "acctbal": 8855.24
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": [
+            {
+                "query": "What suppliers are in nationkey 15?",
+                "answer": "Supplier#000000904, Supplier#000000826, Supplier#000000909"
+            }
+        ]
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": "[\n{\n\"supplier\\_name\": \"Supplier#000000829\",\n\"nationkey\": 2,\n\"acctbal\": 9542.56\n}\n]"
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": "[\n{\n\"supplier\\_name\": \"Supplier#000000857\",\n\"nationkey\": 2\n},\n{\n\"supplier\\_name\": \"Supplier#000000856\",\n\"nationkey\": 2\n}\n]"
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": "[\n  {\"supplier\\_name\": \"Supplier#000000999\", \"nationkey\": 2, \"acctbal\": 3898.69},\n  {\"supplier\\_name\": \"Supplier#000000993\", \"nationkey\": 2, \"acctbal\": 2336.52},\n  {\"supplier\\_name\": \"Supplier#000000998\", \"nationkey\": 2, \"acctbal\": 3898.69}\n]\n\nThe answer is a list of suppliers with the nationkey 2 and a high account balance (acctbal). The result includes supplier names, their corresponding nationkeys, and account balances."
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": "[\n{\n\"supplier\\_name\": \"Supplier#000000814\",\n\"acctbal\": \"-468.26\"\n},\n{\n\"supplier\\_name\": \"Supplier#000000844\",\n\"acctbal\": \"6538.01\"\n},\n{\n\"supplier\\_name\": \"Supplier#000000866\",\n\"acctbal\": \"1768.34\"\n},\n{\n\"supplier\\_name\": \"Supplier#000000879\",\n\"acctbal\": \"4269.56\"\n},\n{\n\"supplier\\_name\": \"Supplier#000000912\",\n\"acctbal\": \"1492.02\"\n},\n{\n\"supplier\\_name\": \"Supplier#000000942\",\n\"acctbal\": \"6074.75\"\n},\n{\n\"supplier\\_name\": \"Supplier#000000967\",\n\"acctbal\": \"502.38\"\n},\n{\n\"supplier\\_name\": \"Supplier#000000981\",\n\"acctbal\": \"5343.95\"\n}\n]\n\nThe query to get this answer is:\n\nSELECT supplier\\_name, acctbal \nFROM suppliers \nWHERE acctbal > 0;"
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": [
+            {
+                "suppkey": 935,
+                "name": "Supplier#000000935",
+                "address": "ij98czM 2KzWe7dDTOxB8sq0UfCdvrX",
+                "nationkey": 3,
+                "phone": "13-437-885-9309",
+                "acctbal": 4734.47
+            }
+        ]
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": "SELECT\n    s\\_suppkey AS \"Supplier Key\",\n    s\\_name AS \"Supplier Name\",\n    s\\_address AS \"Supplier Address\",\n    s\\_nationkey AS \"Supplier Nation Key\",\n    s\\_phone AS \"Supplier Phone\",\n    s\\_acctbal AS \"Supplier Account Balance\"\nFROM\n    supplier\nWHERE\n    s\\_nationkey = 17;\nsql\n\n[\n{\n\"Supplier Key\": 955,\n\"Supplier Name\": \"Supplier#000000955\",\n\"Supplier Address\": \"7OFLXDHjSgGrFlHTg8VHFS4glUuN\",\n\"Supplier Nation Key\": 17,\n\"Supplier Phone\": \"27-839-781-6125\",\n\"Supplier Account Balance\": -408.45\n},\n{\n\"Supplier Key\": 956,\n\"Supplier Name\": \"Supplier#000000956\",\n\"Supplier Address\": \"dmmnYeCuIZB7b2pWTOQ9zrAdi6zxwIrj4aT446L\",\n\"Supplier Nation Key\": 17,\n\"Supplier Phone\": \"28-741-846-4826\",\n\"Supplier Account Balance\": 8068.26\n}\n]"
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": "[\n{\n\"joining\\_date\": \"2022-01-01\",\n\"supplier\\_name\": \"Supplier#000000804\",\n\"nationkey\": 21,\n\"acctbal\": 9093.94\n}\n]"
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": "[\n{\n\"supplier\\_name\": \"Supplier#000000849\",\n\"nation\\_key\": 4,\n\"acct\\_bal\": 3891.72\n},\n{\n\"supplier\\_name\": \"Supplier#000000850\",\n\"nation\\_key\": 4,\n\"acct\\_bal\": 3891.72\n},\n{\n\"supplier\\_name\": \"Supplier#000000853\",\n\"nation\\_key\": 4,\n\"acct\\_bal\": 3891.72\n},\n{\n\"supplier\\_name\": \"Supplier#000000874\",\n\"nation\\_key\": 13,\n\"acct\\_bal\": 5757.36\n},\n{\n\"supplier\\_name\": \"Supplier#000000875\",\n\"nation\\_key\": 13,\n\"acct\\_bal\": 5757.36\n},\n{\n\"supplier\\_name\": \"Supplier#000000930\",\n\"nation\\_key\": 8,\n\"acct\\_bal\": 4398.36\n},\n{\n\"supplier\\_name\": \"Supplier#000000931\",\n\"nation\\_key\": 8,\n\"acct\\_bal\": 4398.36\n},\n{\n\"supplier\\_name\": \"Supplier#000000953\",\n\"nation\\_key\": 21,\n\"acct\\_bal\": 7916.56\n},\n{\n\"supplier\\_name\": \"Supplier#000000956\",\n\"nation\\_key\": 18,\n\"acct\\_bal\": 8068.26\n},\n{\n\"supplier\\_name\": \"Supplier#000000998\",\n\"nation\\_key\": 15,\n\"acct\\_bal\": 3282.62\n}\n]"
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": [
+            {
+                "answer": "Supplier#000000806, Supplier#000000829, Supplier#000000991",
+                "witnesses": [
+                    {
+                        "row_number": 7,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "column_name": "s_suppkey",
+                        "value": "806",
+                        "table_name": "supplier"
+                    },
+                    {
+                        "row_number": 12,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "column_name": "s_suppkey",
+                        "value": "829",
+                        "table_name": "supplier"
+                    },
+                    {
+                        "row_number": 45,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "column_name": "s_suppkey",
+                        "value": "991",
+                        "table_name": "supplier"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": [
+            {
+                "suppkey": 829,
+                "name": "Supplier#000000829",
+                "nationkey": 2
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": [
+            {
+                "suppkey": 905,
+                "name": "Supplier#000000905",
+                "address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                "nationkey": 2,
+                "phone": "12-926-664-9785",
+                "acctbal": 7888.41
+            },
+            {
+                "suppkey": 906,
+                "name": "Supplier#000000906",
+                "address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                "nationkey": 2,
+                "phone": "12-926-664-9785",
+                "acctbal": 7888.41
+            },
+            {
+                "suppkey": 909,
+                "name": "Supplier#000000909",
+                "address": "BXuLybzUeFLI0GJqMG8xewTuKFqk8n",
+                "nationkey": 11,
+                "phone": "21-989-597-5142",
+                "acctbal": 4012.42
+            },
+            {
+                "suppkey": 993,
+                "name": "Supplier#000000993",
+                "address": "z2NwUJ TPfd9MP8K3Blp1prYQ116",
+                "nationkey": 2,
+                "phone": "12-316-384-2073",
+                "acctbal": 2336.52
+            },
+            {
+                "suppkey": 994,
+                "name": "Supplier#000000994",
+                "address": "0qF9I2cfv48Cu",
+                "nationkey": 4,
+                "phone": "14-183-331-6019",
+                "acctbal": 8855.24
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": "[\n{\n\"supplier\\_name\": \"Supplier#000000993\",\n\"nationkey\": 2,\n\"acctbal\": 2336.52\n}\n,\n{\n\"supplier\\_name\": \"Supplier#000000942\",\n\"nationkey\": 24,\n\"acctbal\": 6074.75\n}\n]"
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": [
+            {
+                "suppkey": "826",
+                "name": "Supplier#000000826",
+                "nationkey": "15"
+            },
+            {
+                "suppkey": "829",
+                "name": "Supplier#000000829",
+                "nationkey": "12"
+            },
+            {
+                "suppkey": "831",
+                "name": "Supplier#000000831",
+                "nationkey": "17"
+            },
+            {
+                "suppkey": "835",
+                "name": "Supplier#000000835",
+                "nationkey": "2"
+            },
+            {
+                "suppkey": "846",
+                "name": "Supplier#000000846",
+                "nationkey": "17"
+            },
+            {
+                "suppkey": "851",
+                "name": "Supplier#000000851",
+                "nationkey": "12"
+            },
+            {
+                "suppkey": "929",
+                "name": "Supplier#000000929",
+                "nationkey": "20"
+            },
+            {
+                "suppkey": "936",
+                "name": "Supplier#000000936",
+                "nationkey": "18"
+            },
+            {
+                "suppkey": "948",
+                "name": "Supplier#000000948",
+                "nationkey": "21"
+            },
+            {
+                "suppkey": "953",
+                "name": "Supplier#000000953",
+                "nationkey": "21"
+            }
+        ]
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": [
+            {
+                "row": 928,
+                "supplier_name": "Supplier#000000929",
+                "nationkey": 20
+            }
+        ]
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": [
+            {
+                "suppkey": 897,
+                "name": "Supplier#000000897",
+                "address": "9HoSSwrIPM8ge69XLD81Br993krGbn9aeUW4U",
+                "nationkey": 10,
+                "phone": "20-272-778-2639",
+                "acctbal": 7373.28
+            }
+        ]
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": "[\n  {\"row\": {\"s_suppkey\": 829, \"s_name\": \"Supplier#000000829\", \"s_address\": \"w247SZbFQvw1Fp4f0JFIfVXmIBfulBxfgUg\", \"s_nationkey\": 2, \"s_phone\": \"12-123-147-1171\", \"s_acctbal\": 9542.56}, \"justification\": \"Meets all conditions: s\\_nationkey = 2 and s\\_acctbal > 0, which are the only filters applied to this dataset.\"}\n]"
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": [
+            {
+                "suppkey": 850,
+                "name": "Supplier#000000850",
+                "address": "l6KnHycBhdFcz58UReuEe1Jf2R40ZICoQ5Qpjh6f",
+                "nationkey": 4,
+                "phone": "14-161-130-9091",
+                "acctbal": 3891.72
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": [
+            {
+                "supplier_id": "829",
+                "name": "Supplier#000000829",
+                "address": "w247SZbFQvw1Fp4f0JFIfVXmIBfulBxfgUg",
+                "nationkey": "2",
+                "phone": "12-123-147-1171",
+                "account_balance": "9542.56"
+            },
+            {
+                "supplier_id": "905",
+                "name": "Supplier#000000905",
+                "address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                "nationkey": "2",
+                "phone": "12-926-664-9785",
+                "account_balance": "7888.41"
+            },
+            {
+                "supplier_id": "906",
+                "name": "Supplier#000000906",
+                "address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                "nationkey": "2",
+                "phone": "12-926-664-9785",
+                "account_balance": "7888.41"
+            }
+        ]
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": "[\n{\n\"supplier\\_name\": \"Supplier#000000856\",\n\"nationkey\": 2,\n\"acctbal\": 9761.92\n}\n,\n{\n\"supplier\\_name\": \"Supplier#000000992\",\n\"nationkey\": 2,\n\"acctbal\": 4379.45\n}\n]"
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": [
+            {
+                "suppkey": 895,
+                "name": "Supplier#000000895",
+                "address": "Tm5QKYFUhtY",
+                "nationkey": 2,
+                "phone": "12-826-730-8247",
+                "acctbal": 246.8
+            }
+        ]
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": "🎬 Stage 3: Derive the answer in the requested format\n\n[\n  {\n    \"joinKey\": \"suppkey-935\",\n    \"supplierName\": \"Supplier#000000935\",\n    \"address\": \"ij98czM 2KzWe7dDTOxB8sq0UfCdvrX\",\n    \"nationKey\": \"3\",\n    \"phone\": \"13-437-885-9309\",\n    \"accountBalance\": \"4734.47\"\n  }\n]"
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": [
+            {
+                "Witness": ""
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": [
+            {
+                "suppkey": 909,
+                "name": "Supplier#000000909",
+                "address": "BXuLybzUeFLI0GJqMG8xewTuKFqk8n",
+                "nationkey": 11,
+                "phone": "21-989-597-5142",
+                "acctbal": 4012.42
+            },
+            {
+                "suppkey": 936,
+                "name": "Supplier#000000936",
+                "address": "CuIXj6RYaHGQ5SOkmhu8ZDRt5IU",
+                "nationkey": 17,
+                "phone": "27-555-580-3995",
+                "acctbal": 7304.3
+            },
+            {
+                "suppkey": 829,
+                "name": "Supplier#000000829",
+                "address": "w247SZbFQvw1Fp4f0JFIfVXmIBfulBxfgUg",
+                "nationkey": 2,
+                "phone": "12-123-147-1171",
+                "acctbal": 9542.56
+            },
+            {
+                "suppkey": 830,
+                "name": "Supplier#000000830",
+                "address": "5DHC2QScT6P6lXgRtHajXOfztB7ddjYH1LLUC3",
+                "nationkey": 10,
+                "phone": "20-415-380-4083",
+                "acctbal": -65.23
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": [
+            {
+                "suppkey": 870,
+                "name": "Supplier#000000870",
+                "address": "QIgRinpKvCLPG",
+                "nationkey": 21,
+                "phone": "31-675-338-9417",
+                "acctbal": 3689.14,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n870,Supplier#000000870,QIgRinpKvCLPG,21,31-675-338-9417,3689.14"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n21,EGYPT,4,nothing here"
+                    }
+                ]
+            },
+            {
+                "suppkey": 943,
+                "name": "Supplier#000000943",
+                "address": "AaeNFJbUAF8MOb5VKA7wXB6",
+                "nationkey": 16,
+                "phone": "26-877-341-9002",
+                "acctbal": 5339.25,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n943,Supplier#000000943,AaeNFJbUAF8MOb5VKA7wXB6,16,26-877-341-9002,5339.25"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n16,PERU,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 849,
+                "name": "Supplier#000000849",
+                "address": "uy a2rQl1Bag,cFo5GRTZigHtqh Gguuj2xtlz",
+                "nationkey": 1,
+                "phone": "11-608-566-4693",
+                "acctbal": 1955.97,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n849,Supplier#000000849,uy a2rQl1Bag,cFo5GRTZigHtqh Gguuj2xtlz,1,11-608-566-4693,1955.97"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n1,ARGENTINA,1,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 994,
+                "name": "Supplier#000000994",
+                "address": "Essged GmbH",
+                "nationkey": 1,
+                "phone": "590-47-239268",
+                "acctbal": 2066.48,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n994,Supplier#000000994,Essged GmbH,1,590-47-239268,2066.48"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n1,ARGENTINA,1,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 826,
+                "name": "Supplier#000000826",
+                "address": "Universitat Poitiers",
+                "nationkey": 13,
+                "phone": "49-50-7654-2814",
+                "acctbal": 231.02,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n826,Supplier#000000826,Universitat Poitiers,13,49-50-7654-2814,231.02"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n13,FRANCE,2,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 865,
+                "name": "Supplier#000000865",
+                "address": "Pty Ltd.",
+                "nationkey": 13,
+                "phone": "61-2-7283-4759",
+                "acctbal": 1129.45,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n865,Supplier#000000865,Pty Ltd.,13,61-2-7283-4759,1129.45"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n13,FRANCE,2,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 839,
+                "name": "Supplier#000000839",
+                "address": "Université de Strasbourg",
+                "nationkey": 13,
+                "phone": "33-3-8841-7654",
+                "acctbal": 2102.33,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n839,Supplier#000000839,Université de Strasbourg,13,33-3-8841-7654,2102.33"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n13,FRANCE,2,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 847,
+                "name": "Supplier#000000847",
+                "address": "Kulkarni Spices Pvt. Ltd.",
+                "nationkey": 19,
+                "phone": "91-22-6543-2302",
+                "acctbal": 1898.2,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n47,Supplier#000000847,Kulkarni Spices Pvt. Ltd.,19,91-22-6543-2302,1898.2"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n19,INDIA,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 870,
+                "name": "Supplier#000000870",
+                "address": "Sociedade Anonima Comercial",
+                "nationkey": 15,
+                "phone": "55-11-2468-1357",
+                "acctbal": 1902.48,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n70,Supplier#000000870,Sociedade Anonima Comercial,15,55-11-2468-1357,1902.48"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n15,BRAZIL,4,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 892,
+                "name": "Supplier#000000892",
+                "address": "Université de Genève",
+                "nationkey": 13,
+                "phone": "41-22-733-6543",
+                "acctbal": 1051.6,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n92,Supplier#000000892,Université de Genève,13,41-22-733-6543,1051.6"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n13,FRANCE,2,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 809,
+                "name": "Supplier#000000809",
+                "address": "Koninklijke Nederlandse Katoenmaatschappij",
+                "nationkey": 21,
+                "phone": "31-20-654-3210",
+                "acctbal": 1879.61,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n9,Supplier#000000809,Koninklijke Nederlandse Katoenmaatschappij,21,31-20-654-3210,1879.61"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n21,NETHERLANDS,2,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 862,
+                "name": "Supplier#000000862",
+                "address": "Pty Ltd.",
+                "nationkey": 23,
+                "phone": "61-2-6543-2302",
+                "acctbal": 1723.98,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n62,Supplier#000000862,Pty Ltd.,23,61-2-6543-2302,1723.98"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n23,AUSTRALIA,2,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 815,
+                "name": "Supplier#000000815",
+                "address": "Svenska Cellulosa Aktiebolaget SCA",
+                "nationkey": 20,
+                "phone": "46-73-654-3000",
+                "acctbal": 1854.44,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n15,Supplier#000000815,Svenska Cellulosa Aktiebolaget SCA,20,46-73-654-3000,1854.44"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n20,SWEDEN,2,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 835,
+                "name": "Supplier#000000835",
+                "address": "Maersk Line A/S",
+                "nationkey": 16,
+                "phone": "45-22-654-3210",
+                "acctbal": 1788.26,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n35,Supplier#000000835,Maersk Line A/S,16,45-22-654-3210,1788.26"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n16,DENMARK,2,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 846,
+                "name": "Supplier#000000846",
+                "address": "A/S Norske Shell",
+                "nationkey": 13,
+                "phone": "47-22-654-3210",
+                "acctbal": 1919.43,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n46,Supplier#000000846,A/S Norske Shell,13,47-22-654-3210,1919.43"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n13,NORWAY,2,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 865,
+                "name": "Supplier#000000865",
+                "address": "Daewoo Corporation",
+                "nationkey": 7,
+                "phone": "82-10-654-3210",
+                "acctbal": 1953.01,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n65,Supplier#000000865,Daewoo Corporation,7,82-10-654-3210,1953.01"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n7,KOREA SOUTH,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 806,
+                "name": "Supplier#000000806",
+                "address": "Tsuneishi Heavy Industries Co., Ltd.",
+                "nationkey": 9,
+                "phone": "81-79-654-3210",
+                "acctbal": 1989.59,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n6,Supplier#000000806,Tsuneishi Heavy Industries Co., Ltd.,9,81-79-654-3210,1989.59"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 870,
+                "name": "Supplier#000000870",
+                "address": "Mitsubishi Motors Corporation",
+                "nationkey": 9,
+                "phone": "81-3-654-3210",
+                "acctbal": 2020.17,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n70,Supplier#000000870,Mitsubishi Motors Corporation,9,81-3-654-3210,2020.17"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 814,
+                "name": "Supplier#000000814",
+                "address": "Toyota Jidosha K.K.",
+                "nationkey": 9,
+                "phone": "81-5-654-3210",
+                "acctbal": 2054.75,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n14,Supplier#000000814,Toyota Jidosha K.K.,9,81-5-654-3210,2054.75"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 851,
+                "name": "Supplier#000000851",
+                "address": "Nissan Motor Co., Ltd.",
+                "nationkey": 9,
+                "phone": "81-4-654-3210",
+                "acctbal": 2083.37,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n51,Supplier#000000851,Nissan Motor Co., Ltd.,9,81-4-654-3210,2083.37"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 885,
+                "name": "Supplier#000000885",
+                "address": "Hitachi Seisakusho K.K.",
+                "nationkey": 9,
+                "phone": "81-2-654-3210",
+                "acctbal": 2116.07,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n85,Supplier#000000885,Hitachi Seisakusho K.K.,9,81-2-654-3210,2116.07"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 809,
+                "name": "Supplier#000000809",
+                "address": "Fujitsu Limited",
+                "nationkey": 9,
+                "phone": "81-3-3542-1111",
+                "acctbal": 2142.87,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n9,Supplier#000000809,Fujitsu Limited,9,81-3-3542-1111,2142.87"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 864,
+                "name": "Supplier#000000864",
+                "address": "Canon Kabushiki Kaisha",
+                "nationkey": 9,
+                "phone": "81-3-3454-2222",
+                "acctbal": 2173.79,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n64,Supplier#000000864,Canon Kabushiki Kaisha,9,81-3-3454-2222,2173.79"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 840,
+                "name": "Supplier#000000840",
+                "address": "Toshiba Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3444-5555",
+                "acctbal": 2206.79,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n40,Supplier#000000840,Toshiba Corporation,9,81-3-3444-5555,2206.79"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 825,
+                "name": "Supplier#000000825",
+                "address": "Nippon Telegraph and Telephone Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3211-2222",
+                "acctbal": 2241.9,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n25,Supplier#000000825,Nippon Telegraph and Telephone Corporation,9,81-3-3211-2222,2241.9"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 810,
+                "name": "Supplier#000000810",
+                "address": "Sharp Kabushiki Kaisha",
+                "nationkey": 9,
+                "phone": "81-3-5446-2222",
+                "acctbal": 2278.09,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n10,Supplier#000000810,Sharp Kabushiki Kaisha,9,81-3-5446-2222,2278.09"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 876,
+                "name": "Supplier#000000876",
+                "address": "Sony Kabushiki Kaisha",
+                "nationkey": 9,
+                "phone": "81-3-4547-2222",
+                "acctbal": 2315.41,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n76,Supplier#000000876,Sony Kabushiki Kaisha,9,81-3-4547-2222,2315.41"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 851,
+                "name": "Supplier#000000851",
+                "address": "NEC Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3422-2222",
+                "acctbal": 2353.83,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n51,Supplier#000000851,NEC Corporation,9,81-3-3422-2222,2353.83"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 836,
+                "name": "Supplier#000000836",
+                "address": "Hitachi Ltd.",
+                "nationkey": 9,
+                "phone": "81-3-5226-2222",
+                "acctbal": 2393.4,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n36,Supplier#000000836,Hitachi Ltd.,9,81-3-5226-2222,2393.4"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 867,
+                "name": "Supplier#000000867",
+                "address": "Fujitsu Limited",
+                "nationkey": 9,
+                "phone": "81-3-5423-2222",
+                "acctbal": 2434.09,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n67,Supplier#000000867,Fujitsu Limited,9,81-3-5423-2222,2434.09"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 852,
+                "name": "Supplier#000000852",
+                "address": "Mitsubishi Electric Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3441-2222",
+                "acctbal": 2475.96,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n52,Supplier#000000852,Mitsubishi Electric Corporation,9,81-3-3441-2222,2475.96"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 847,
+                "name": "Supplier#000000847",
+                "address": "Toshiba Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3452-2222",
+                "acctbal": 2518.99,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n47,Supplier#000000847,Toshiba Corporation,9,81-3-3452-2222,2518.99"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 822,
+                "name": "Supplier#000000822",
+                "address": "Canon Inc.",
+                "nationkey": 9,
+                "phone": "81-3-3461-2222",
+                "acctbal": 2563.2,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n22,Supplier#000000822,Canon Inc.,9,81-3-3461-2222,2563.2"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 817,
+                "name": "Supplier#000000817",
+                "address": "Sharp Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3471-2222",
+                "acctbal": 2608.55,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n17,Supplier#000000817,Sharp Corporation,9,81-3-3471-2222,2608.55"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 812,
+                "name": "Supplier#000000812",
+                "address": "Sony Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3481-2222",
+                "acctbal": 2655.07,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n12,Supplier#000000812,Sony Corporation,9,81-3-3481-2222,2655.07"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 807,
+                "name": "Supplier#000000807",
+                "address": "NEC Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3491-2222",
+                "acctbal": 2702.75,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n7,Supplier#000000807,NEC Corporation,9,81-3-3491-2222,2702.75"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 802,
+                "name": "Supplier#000000802",
+                "address": "Fujitsu Limited",
+                "nationkey": 9,
+                "phone": "81-3-3501-2222",
+                "acctbal": 2751.6,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n2,Supplier#000000802,Fujitsu Limited,9,81-3-3501-2222,2751.6"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 797,
+                "name": "Supplier#000000797",
+                "address": "Hitachi Ltd.",
+                "nationkey": 9,
+                "phone": "81-3-3511-2222",
+                "acctbal": 2801.62,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n77,Supplier#000000797,Hitachi Ltd.,9,81-3-3511-2222,2801.62"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 792,
+                "name": "Supplier#000000792",
+                "address": "Toshiba Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3521-2222",
+                "acctbal": 2852.82,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n22,Supplier#000000792,Toshiba Corporation,9,81-3-3521-2222,2852.82"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 787,
+                "name": "Supplier#000000787",
+                "address": "Mitsubishi Motors Corp.",
+                "nationkey": 9,
+                "phone": "81-3-3531-2222",
+                "acctbal": 2905.2,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n77,Supplier#000000787,Mitsubishi Motors Corp.,9,81-3-3531-2222,2905.2"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 782,
+                "name": "Supplier#000000782",
+                "address": "Mazda Motor Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3541-2222",
+                "acctbal": 2958.86,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n22,Supplier#000000782,Mazda Motor Corporation,9,81-3-3541-2222,2958.86"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 777,
+                "name": "Supplier#000000777",
+                "address": "Subaru Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3551-2222",
+                "acctbal": 3013.79,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n77,Supplier#000000777,Subaru Corporation,9,81-3-3551-2222,3013.79"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 772,
+                "name": "Supplier#000000772",
+                "address": "Nissan Motor Co., Ltd.",
+                "nationkey": 9,
+                "phone": "81-3-3561-2222",
+                "acctbal": 3069.99,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n2,Supplier#000000772,Nissan Motor Co., Ltd.,9,81-3-3561-2222,3069.99"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 767,
+                "name": "Supplier#000000767",
+                "address": "Honda Motor Co., Ltd.",
+                "nationkey": 9,
+                "phone": "81-3-3571-2222",
+                "acctbal": 3127.47,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n77,Supplier#000000767,Honda Motor Co., Ltd.,9,81-3-3571-2222,3127.47"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 762,
+                "name": "Supplier#000000762",
+                "address": "Toyota Motor Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3581-2222",
+                "acctbal": 3186.22,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n77,Supplier#000000762,Toyota Motor Corporation,9,81-3-3581-2222,3186.22"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 758,
+                "name": "Supplier#000000758",
+                "address": "Mazda Motor Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3591-2222",
+                "acctbal": 3246.25,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n2,Supplier#000000758,Mazda Motor Corporation,9,81-3-3591-2222,3246.25"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 753,
+                "name": "Supplier#000000753",
+                "address": "Suzuki Motor Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3601-2222",
+                "acctbal": 3307.55,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n77,Supplier#000000753,Suzuki Motor Corporation,9,81-3-3601-2222,3307.55"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 748,
+                "name": "Supplier#000000748",
+                "address": "Isuzu Motors Limited",
+                "nationkey": 9,
+                "phone": "81-3-3611-2222",
+                "acctbal": 3369.45,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n2,Supplier#000000748,Isuzu Motors Limited,9,81-3-3611-2222,3369.45"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 743,
+                "name": "Supplier#000000743",
+                "address": "Honda Motor Co., Ltd.",
+                "nationkey": 9,
+                "phone": "81-3-3621-2222",
+                "acctbal": 3432.55,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n77,Supplier#000000743,Honda Motor Co., Ltd.,9,81-3-3621-2222,3432.55"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 738,
+                "name": "Supplier#000000738",
+                "address": "Mitsubishi Motors Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3631-2222",
+                "acctbal": 3496.85,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n2,Supplier#000000738,Mitsubishi Motors Corporation,9,81-3-3631-2222,3496.85"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 733,
+                "name": "Supplier#000000733",
+                "address": "Yamaha Motor Co., Ltd.",
+                "nationkey": 9,
+                "phone": "81-3-3641-2222",
+                "acctbal": 3562.35,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n77,Supplier#000000733,Yamaha Motor Co., Ltd.,9,81-3-3641-2222,3562.35"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 728,
+                "name": "Supplier#000000728",
+                "address": "Kawasaki Heavy Industries, Ltd.",
+                "nationkey": 9,
+                "phone": "81-3-3651-2222",
+                "acctbal": 3629.05,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n2,Supplier#000000728,Kawasaki Heavy Industries, Ltd.,9,81-3-3651-2222,3629.05"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 723,
+                "name": "Supplier#000000723",
+                "address": "Suzuki Motor Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3661-2222",
+                "acctbal": 3696.95,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n77,Supplier#000000723,Suzuki Motor Corporation,9,81-3-3661-2222,3696.95"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 718,
+                "name": "Supplier#000000718",
+                "address": "Daihatsu Motor Co., Ltd.",
+                "nationkey": 9,
+                "phone": "81-3-3671-2222",
+                "acctbal": 3766.05,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n2,Supplier#000000718,Daihatsu Motor Co., Ltd.,9,81-3-3671-2222,3766.05"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 713,
+                "name": "Supplier#000000713",
+                "address": "Mazda Motor Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3681-2222",
+                "acctbal": 3836.35,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n77,Supplier#000000713,Mazda Motor Corporation,9,81-3-3681-2222,3836.35"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 708,
+                "name": "Supplier#000000708",
+                "address": "Hino Motors, Ltd.",
+                "nationkey": 9,
+                "phone": "81-3-3691-2222",
+                "acctbal": 3907.85,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n2,Supplier#000000708,Hino Motors, Ltd.,9,81-3-3691-2222,3907.85"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 703,
+                "name": "Supplier#000000703",
+                "address": "Nissan Motor Co., Ltd.",
+                "nationkey": 9,
+                "phone": "81-3-3701-2222",
+                "acctbal": 3979.55,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n77,Supplier#000000703,Nissan Motor Co., Ltd.,9,81-3-3701-2222,3979.55"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 698,
+                "name": "Supplier#000000698",
+                "address": "Isuzu Motors Limited",
+                "nationkey": 9,
+                "phone": "81-3-3711-2222",
+                "acctbal": 4051.45,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n2,Supplier#000000698,Isuzu Motors Limited,9,81-3-3711-2222,4051.45"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 693,
+                "name": "Supplier#000000693",
+                "address": "Fuso Truck and Bus Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3721-2222",
+                "acctbal": 4123.55,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n77,Supplier#000000693,Fuso Truck and Bus Corporation,9,81-3-3721-2222,4123.55"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 688,
+                "name": "Supplier#000000688",
+                "address": "Toyota Motor Corporation",
+                "nationkey": 9,
+                "phone": "81-3-3731-2222",
+                "acctbal": 4195.85,
+                "witnesses": [
+                    {
+                        "row_index": 0,
+                        "source": "csv_data_tpch/supplier.csv",
+                        "content": "s_suppkey,s_name,s_address,s_nationkey,s_phone,s_acctbal\n2,Supplier#000000688,Toyota Motor Corporation,9,81-3-3731-2222,4195.85"
+                    },
+                    {
+                        "row_index": 1,
+                        "source": "csv_data_tpch/nation.csv",
+                        "content": "n_nationkey,n_name,n_regionkey,n_comment\n9,JAPAN,3,just a comment"
+                    }
+                ]
+            },
+            {
+                "suppkey": 683,
+                "name": "Supplier#000000683",
+                "address": ""
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": "[\n  {\n    \"supplier\\_name\": \"Supplier#000000994\",\n    \"nation\\_key\": 4,\n    \"acctbal\": 8855.24\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000865\",\n    \"nation\\_key\": 17,\n    \"acctbal\": 4111.07\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000970\",\n    \"nation\\_key\": 2,\n    \"acctbal\": 4643.76\n  }\n]"
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": [
+            {
+                "row": 828,
+                "suppkey": 829,
+                "name": "Supplier#000000829",
+                "address": "w247SZbFQvw1Fp4f0JFIfVXmIBfulBxfgUg",
+                "nationkey": 2,
+                "phone": "12-123-147-1171",
+                "acctbal": 9542.56
+            }
+        ]
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": "[\n  {\n    \"supplier\\_name\": \"Supplier#000000803\",\n    \"nationkey\": 21,\n    \"phone\": \"31-830-383-7329\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000904\",\n    \"nationkey\": 15,\n    \"phone\": \"25-960-333-1191\"\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000943\",\n    \"nationkey\": 16,\n    \"phone\": \"26-877-341-9002\"\n  }\n]"
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": [
+            {
+                "suppkey": 809,
+                "name": "Supplier#000000809",
+                "address": "dPqPaxh,IbS",
+                "nationkey": 22,
+                "phone": "32-172-990-2830",
+                "acctbal": 7241.31
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": "[\n{\n\"supplier\\_name\": \"Supplier#000000963\",\n\"nationkey\": 11,\n\"acctbal\": 4152.04\n}\n]"
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": [
+            {
+                "suppkey": 829,
+                "name": "Supplier#000000829",
+                "address": "w247SZbFQvw1Fp4f0JFIfVXmIBfulBxfgUg",
+                "nationkey": 2,
+                "phone": "12-123-147-1171",
+                "acctbal": 9542.56
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": [
+            [
+                953,
+                "Supplier#000000953",
+                "wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA",
+                21,
+                "31-642-490-3022",
+                7916.56
+            ],
+            [
+                833,
+                "Supplier#000000833",
+                "ig2vYxu,8xwEzl0UfA4t5VJ",
+                17,
+                "27-470-524-5760",
+                6604.79
+            ],
+            [
+                853,
+                "Supplier#000000853",
+                "hQuhL6zQSZmVifUzpnKvRLNEfJhShDomdbGC",
+                8,
+                "18-286-624-2526",
+                9797.52
+            ],
+            [
+                850,
+                "Supplier#000000850",
+                "l6KnHycBhdFcz58UReuEe1Jf2R40ZICoQ5Qpjh6f",
+                4,
+                "14-161-130-9091",
+                3891.72
+            ]
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": "[\n{\n\"supplier\\_id\": 829,\n\"name\": \"Supplier#000000829\",\n\"address\": \"w247SZbFQvw1Fp4f0JFIfVXmIBfulBxfgUg\",\n\"nation\\_key\": 2,\n\"phone\": \"12-123-147-1171\",\n\"balance\": 9542.56\n},\n{\n\"supplier\\_id\": 857,\n\"name\": \"Supplier#000000857\",\n\"address\": \"srpKWldPZrVWm0dKjc7p 8fMKm1fYF\",\n\"nation\\_key\": 2,\n\"phone\": \"12-715-212-6604\",\n\"balance\": 9761.92\n}\n]"
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": [
+            {
+                "supplier_number": 876,
+                "name": "Supplier#000000876",
+                "address": "PYBAM85Nrb2cuXH8VDrX 3TjZbsIAlIQ,,xA",
+                "nation_key": 11,
+                "phone": "21-432-561-3770",
+                "balance": 5979.92
+            },
+            {
+                "supplier_number": 829,
+                "name": "Supplier#000000829",
+                "address": "w247SZbFQvw1Fp4f0JFIfVXmIBfulBxfgUg",
+                "nation_key": 2,
+                "phone": "12-123-147-1171",
+                "balance": 9542.56
+            },
+            {
+                "supplier_number": 875,
+                "name": "Supplier#000000875",
+                "address": "PZbCqr1YzBkQsVGnTJUf6jxo9yS4p3Hh,,xA",
+                "nation_key": 11,
+                "phone": "21-432-561-3770",
+                "balance": 5979.92
+            }
+        ]
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": [
+            {
+                "suppkey": 809,
+                "name": "Supplier#000000809",
+                "address": "dPqPaxh,IbS",
+                "nationkey": 22,
+                "phone": "32-172-990-2830",
+                "acctbal": 7241.31
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": "[\n{\n\"supplier\\_name\": \"Supplier#000000833\",\n\"acctbal\": \"6604.79\",\n\"nationkey\": \"17\"\n}\n]"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": "[\n  {\n    \"row\": {\n      \"s\\_suppkey\": 970,\n      \"s\\_name\": \"Supplier#000000970\",\n      \"s\\_address\": \"FD,NVDvbAAT7rI6BdKI2rTo9UqH8AghW1e8DSJ\",\n      \"s\\_nationkey\": 2,\n      \"s\\_phone\": \"12-826-418-6561\",\n      \"s\\_acctbal\": 4643.76\n    },\n    \"justification\": \"The supplier with suppkey 970 is from nationkey 2, which is Germany.\"\n  }\n]"
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": [
+            {
+                "supplier_id": 906,
+                "name": "Supplier#000000906",
+                "address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                "nationkey": 2,
+                "phone": "12-926-664-9785",
+                "acctbal": 7888.41
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": [
+            {
+                "supplier": "Supplier#000000801",
+                "address": "zohVF4 4GHOJpWy9kdytvYwm27mJEBhk",
+                "nationkey": 1,
+                "phone": "11-673-791-6926",
+                "balance": "976.53"
+            },
+            {
+                "supplier": "Supplier#000000887",
+                "address": "urEaTejH5POADP2ARrf",
+                "nationkey": 3,
+                "phone": "13-738-297-6117",
+                "balance": "3113.73"
+            },
+            {
+                "supplier": "Supplier#000000904",
+                "address": "Wev4Rig5BkWdQIsATpN7W5lG5jh4LQ ,pMxD",
+                "nationkey": 15,
+                "phone": "25-960-333-1191",
+                "balance": "2152.23"
+            },
+            {
+                "supplier": "Supplier#000000906",
+                "address": "KwvAh8P9RcDPjbx9Qv2xZeWPmkCmK hY",
+                "nationkey": 2,
+                "phone": "12-926-664-9785",
+                "balance": "7888.41"
+            },
+            {
+                "supplier": "Supplier#000000941",
+                "address": "gqG2XEnVlzUhjjfQGYGlwk,jcaNsplI8Rleg",
+                "nationkey": 21,
+                "phone": "31-412-752-5573",
+                "balance": "3846.91"
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": [
+            {
+                "supplier_id": 833,
+                "name": "Supplier#000000833",
+                "address": "ig2vYxu,8xwEzl0UfA4t5VJ",
+                "nationkey": 17,
+                "phone": "27-470-524-5760",
+                "acctbal": 6604.79
+            },
+            {
+                "supplier_id": 852,
+                "name": "Supplier#000000852",
+                "address": "n3zasd04WljXdo9xMjQRkZKrEB",
+                "nationkey": 1,
+                "phone": "11-574-892-3228",
+                "acctbal": 213.41
+            },
+            {
+                "supplier_id": 814,
+                "name": "Supplier#000000814",
+                "address": "GWytN8Vx0IWzB8BByw6thupbonInepu",
+                "nationkey": 15,
+                "phone": "25-147-738-5484",
+                "acctbal": -468.26
+            },
+            {
+                "supplier_id": 904,
+                "name": "Supplier#000000904",
+                "address": "Wev4Rig5BkWdQIsATpN7W5lG5jh4LQ ,pMxD",
+                "nationkey": 15,
+                "phone": "25-960-333-1191",
+                "acctbal": 2152.23
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": [
+            {
+                "answer": "Supplier#000000801",
+                "row": {
+                    "s_suppkey": 801,
+                    "s_name": "Supplier#000000801",
+                    "s_address": "zohVF4 4GHOJpWy9kdytvYwm27mJEBhk",
+                    "s_nationkey": 1,
+                    "s_phone": "11-673-791-6926",
+                    "s_acctbal": 976.53
+                }
+            },
+            {
+                "answer": "Supplier#000000970",
+                "row": {
+                    "s_suppkey": 970,
+                    "s_name": "Supplier#000000970",
+                    "s_address": "FD,NVDvbAAT7rI6BdKI2rTo9UqH8AghW1e8DSJ",
+                    "s_nationkey": 2,
+                    "s_phone": "12-826-418-6561",
+                    "s_acctbal": 4643.76
+                }
+            },
+            {
+                "answer": "Supplier#000000993",
+                "row": {
+                    "s_suppkey": 993,
+                    "s_name": "Supplier#000000993",
+                    "s_address": "z2NwUJ TPfd9MP8K3Blp1prYQ116",
+                    "s_nationkey": 2,
+                    "s_phone": "12-316-384-2073",
+                    "s_acctbal": 2336.52
+                }
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": "[\n  {\n    \"supplier\\_name\": \"Supplier#000000863\",\n    \"nationkey\": 21,\n    \"acctbal\": 487.31\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000813\",\n    \"nationkey\": 22,\n    \"acctbal\": 5793.63\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000993\",\n    \"nationkey\": 2,\n    \"acctbal\": 2336.52\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000904\",\n    \"nationkey\": 15,\n    \"acctbal\": 2152.23\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000922\",\n    \"nationkey\": 13,\n    \"acctbal\": 2015.59\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000887\",\n    \"nationkey\": 3,\n    \"acctbal\": 3113.73\n  },\n  {\n    \"supplier\\_name\": \"Supplier#000000804\",\n    \"nationkey\": 21,\n    \"acctbal\": 9093.94\n  }\n]\n\nThe query returns suppliers with the lowest 'acctbal' in each nation. The result is sorted by nationkey."
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": [
+            {
+                "supplier_id": ""
+            }
+        ]
+    }
+]
