@@ -17,18 +17,18 @@ import csv
 from langchain_community.chat_models import ChatOllama
 import re
 os.environ["LANGSMITH_TRACING"] = "true" 
-os.environ["LANGSMITH_API_KEY"] = "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"
+os.environ["LANGSMITH_API_KEY"] = "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"
 #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 old old token langsmith
-#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 olt token langsmith 
+# olt token langsmith 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
 if not os.environ.get("GROQ_API_KEY"):
   os.environ["GROQ_API_KEY"] = "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"
 
 # LLM: Llama3-8b by Groq
 #llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
 # MISTRAL by Groq
-#llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
+llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
-llm = ChatOllama(model="llama3:8b", temperature=0)
+#llm = ChatOllama(model="llama3:8b", temperature=0)
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
@@ -122,44 +122,42 @@ def generate(state: State):
             {{
             "answer": ["<answer_1>","<answer_2>"],
             "why": [
-            "{{{{table_row_a, table_row_b}}, {{table_row_c, table_row_d}}}}",   //answer1 
-            "{{{{table_row_e, table_row_f}}}}"    //answer2
-            ]
+            "{{{{table_row_a, table_row_b}}}}",  
+            "{{{{table_row_e, table_row_f}}}}"    
             }}
         ]
 
         Example:
 
         CONTEXT:
-        - source: customer.csv , row: 14322
-        (<col_a>:<val_a>,..., c_nationkey : 2, ...)
-        - source: orders.csv, row: 137
-        (o_orderkey : 546, ..., o_totalprice : 20531.43, ...)
-        - source: customer.csv, row: 101
-        (<col_a>:<val_c>, ...,<c_nationkey : 2, ...)
-        - source: orders.csv, row: 78528
-        (o_orderkey : 314052, ..., o_totalprice : 20548.82, ...)
+        - source: <table_1>, row: <row_idx_1>
+        (<col_a>:<val_a>, <col_b>:<val_b>, ...)
+        - source: <table_1>, row: <row_idx_2>
+        (<col_a>:<val_a1>, <col_b>:<val_b1>, ...)
+        - source: <table_2>, row: <row_idx_3>
+        (<col_c>:<val_c>, <col_d>:<val_d>, ...)
+        - source: <table_2>, row: <row_idx_4>
+        (<col_c>:<val_c1>, <col_d>:<val_d1>, ...)
+        - source: <table_3>, row: <row_idx_1>
+        (<col_e>:<val_e>, <col_f>:<val_f>, ...)
+        - source: <table_3>, row: <row_idx_2>
+        (<col_e>:<val_e1>, <col_f>:<val_f1>, ...)
 
         QUESTION:
-            "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?"
+            "Which are the <entity_type> (specify <col_a> and <col_b>) involved in <condition_1> OR <condition_2>?"
 
         EXPECTED ANSWER:
 
-        [  
+        [
             {{
-                "answer": [
-                {{
-                    "answer": [
-                    "546",
-                    "314052"
-                    ],
-                    "why": [
-                    "{{{{customer_14322,orders_137}}}}", 
-                    "{{{{customer_101,orders_78528}}}}"
-                    ]
-                }}
-                
-            }}           
+                "answer": ["<col_a_val> <col_b_val>", "<col_a_val> <col_b_val>"],
+                "why": [
+                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_3>,<table_3>_<row_idx_1>}},{{<table_1>_<row_idx_2>,<table_2>_<row_idx_4>,<table_3>_<row_idx_1>}}}}", 
+                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_4>,<table_3>_<row_idx_2>}}}}"
+                ]
+            }}
+        
+
         ]
 """
 
@@ -182,13 +180,13 @@ def generate(state: State):
 # Create a dictionary to store results for each k
 results_by_k = {}
 # Leggi le domande dal file JSON
-with open("questions.json", "r") as f:
+with open("tpch/questions.json", "r") as f:
     data = json.load(f)
     questions = list(data.keys())
 # Ora 'questions' contiene solo le domande (le chiavi del dizionario)
 for q in questions:
     print(q)
-with open("ground_truthTpch.json", "r", encoding="utf-8") as f:
+with open("tpch/ground_truthTpch.json", "r", encoding="utf-8") as f:
     ground_truth = json.load(f)   
 
 all_results = []
@@ -199,7 +197,7 @@ for i, question in enumerate(questions):
     gt_source_info = gt["why"]
     
     # Step 2: Costruisci contesto perfetto a partire dalle righe vere
-    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="csv_data_tpch")
+    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="tpch/csv_data_tpch")
     
     # Step 3: Costruisci manualmente lo stato
     state = {
@@ -214,7 +212,7 @@ for i, question in enumerate(questions):
     }
     all_results.append(result)
 
-output_filename = f"outputs_llama8b/full_context/outputs_llama8b.json"
+output_filename = f"tpch/outputs_mixtral8x7b/full_context/outputs_mixtral8x7bGroq.json"
 # Save the results for the current value of k to a JSON file for later analysis
 with open(output_filename, "w") as output_file:
     json.dump(all_results, output_file, indent=4, ensure_ascii=False)

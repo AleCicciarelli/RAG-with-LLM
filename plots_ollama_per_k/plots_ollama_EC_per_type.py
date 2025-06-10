@@ -10,13 +10,13 @@ base_path = 'tpch/outputs_'
 output_dir = 'tpch/plots_FC/plots_FC_per_type'
 os.makedirs(output_dir, exist_ok=True)
 
-models = ['llama8b', 'llama70b', 'mixtral8x7b']
-palette = {'llama8b': 'blue', 'llama70b': 'green', 'mixtral8x7b': 'orange'}
+models = ['llama8b', 'llama70b', 'mistral24b']
+palette = {'llama8b': 'blue', 'llama70b': 'green', 'mistral24b': 'orange'}
 
 # === CARICAMENTO DATI ===
 all_data = []
 for model in models:
-    file_path = os.path.join(base_path + model + '/full_context/metrics_by_type_FC.csv')
+    file_path = os.path.join(base_path + model + '/full_context/metrics_by_type_FC_GROQ.csv')
     df = pd.read_csv(file_path)
     df['Model'] = model
     all_data.append(df)
@@ -42,7 +42,7 @@ for metric in metrics:
 
     # Salvataggio
     metric_slug = metric.replace(' ', '_').lower()
-    plt.savefig(os.path.join(output_dir, f"{metric_slug}_by_question_type.png"))
+    plt.savefig(os.path.join(output_dir, f"{metric_slug}_by_question_type_GROQ.png"))
     plt.close()
 
 # === COMPLETAMENTO ===

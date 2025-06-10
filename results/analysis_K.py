@@ -29,7 +29,7 @@ def main():
     question_types = load_json("tpch/questions.json")
 
     # Cartella contenente i file di output predetti
-    pred_folder = "tpch/outputs_mixtral8x7b/cleanedData/"
+    pred_folder = "tpch/outputs_llama70b/gpt_prompt/"
     global_metrics_file = os.path.join(pred_folder, "global_metrics_all_k.csv")
     type_metrics_file = os.path.join(pred_folder, "metrics_by_type_all_k.csv")
 
@@ -55,7 +55,7 @@ def main():
 
         # Itera su tutti i file con pattern k da 10 a 69 (come esempio)
         for k_val in range(10, 40):
-            pred_file = os.path.join(pred_folder, f"outputs_{k_val}_mixtral8x7b.json")
+            pred_file = os.path.join(pred_folder, f"outputs_k_{k_val}_llama8b.json")
             if not os.path.isfile(pred_file):
                 print(f"[k={k_val}] File {pred_file} non trovato, salto...")
                 continue

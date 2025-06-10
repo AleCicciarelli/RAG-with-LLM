@@ -9,16 +9,16 @@ output_path = 'tpch/plots_FC'
 os.makedirs(output_path, exist_ok=True)
 
 # Lista dei modelli = nomi delle cartelle
-models = ['llama8b', 'llama70b', 'mixtral8x7b']
+models = ['llama8b', 'llama70b', 'mistral24b']
 metrics_to_plot = ['Precision', 'Recall', 'F1', 'Accuracy']
 
 # Colori per modello
-palette = {'llama8b': 'blue', 'llama70b': 'green', 'mixtral8x7b': 'orange'}
+palette = {'llama8b': 'blue', 'llama70b': 'green', 'mistral24b': 'orange'}
 
 # Caricamento dati
 all_data = []
 for model in models:
-    file_path = os.path.join(base_path + model +  '/full_context/global_metrics_FC.csv')
+    file_path = os.path.join(base_path + model +  '/full_context/global_metrics_FC_GROQ.csv')
     df = pd.read_csv(file_path)
     df['Model'] = model
     all_data.append(df)
@@ -42,7 +42,7 @@ for metric in metrics_to_plot:
     plt.tight_layout()
 
     # Salvataggio grafico
-    filename = f"{metric}_barplot.png".replace(" ", "_")
+    filename = f"{metric}_barplot_GROQ.png".replace(" ", "_")
     plt.savefig(os.path.join(output_path, filename))
     plt.close()
 
