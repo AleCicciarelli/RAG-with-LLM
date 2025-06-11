@@ -1,20 +1,16 @@
 import os
-from langchain.chat_models import init_chat_model
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_community.document_loaders import CSVLoader
 from langchain_core.documents import Document
-from langchain_community.vectorstores import FAISS
-from langchain_community.vectorstores.utils import DistanceStrategy
-from langgraph.graph import START, StateGraph
 from typing_extensions import List, TypedDict, Set
 from langchain_core.documents import Document
-from langchain import hub
 import json
 from langchain_core.output_parsers import JsonOutputParser
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from typing import List
 import csv
 from langchain_community.chat_models import ChatOllama
+from langchain.chains import LLMChain
+from langchain_core.prompts import PromptTemplate
 import re
 os.environ["LANGSMITH_TRACING"] = "true" 
 os.environ["LANGSMITH_API_KEY"] = "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"
@@ -28,7 +24,7 @@ os.environ["LANGSMITH_API_KEY"] = "lsv2_pt_87133982193d4e3b8110cb9e3253eb17_7831
 # MISTRAL by Groq
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
-llm = ChatOllama(model="llama3:8b", temperature=0)
+llm = ChatOllama(model="llama3:70b", temperature=0)
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
@@ -39,8 +35,63 @@ csv_folder = "csv_data_tpch"
 
 
 """ Retrieve and Generate part """
-# Define prompt for question-answering
-prompt = hub.pull("rlm/rag-prompt")
+prompt = PromptTemplate.from_template("""
+         Your task is to:
+        1. Provide the correct answer(s) to this question: {question} based only on the context provided: {context}.
+        2. For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
+
+        Each Witness Set must be a string like:
+            "{{{{<table_name>_<row>}}}}"
+        (use `source`(return just the table_name which correspond to the name of the file,WITHOUT extension and path csv_data/TABLENAME.csv
+) and `row` metadata from the context).
+
+        If an answer has multiple Witness Sets, list each one in the `"why"` array "{{{{WitnessSet1}}, {{WitnessSet2}}}}". A result is valid if at least one Witness Set supports it.
+
+        Return the output as a **stringified JSON array**, with NO extra text: (avoid the comments, or the additional information)
+
+        [
+            {{
+            "answer": ["<answer_1>","<answer_2>"],
+            "why": [
+            "{{{{table_row_a, table_row_b}}}}",  
+            "{{{{table_row_e, table_row_f}}}}"    
+            }}
+        ]
+
+        Example:
+
+        CONTEXT:
+        - source: <table_1>, row: <row_idx_1>
+        (<col_a>:<val_a>, <col_b>:<val_b>, ...)
+        - source: <table_1>, row: <row_idx_2>
+        (<col_a>:<val_a1>, <col_b>:<val_b1>, ...)
+        - source: <table_2>, row: <row_idx_3>
+        (<col_c>:<val_c>, <col_d>:<val_d>, ...)
+        - source: <table_2>, row: <row_idx_4>
+        (<col_c>:<val_c1>, <col_d>:<val_d1>, ...)
+        - source: <table_3>, row: <row_idx_1>
+        (<col_e>:<val_e>, <col_f>:<val_f>, ...)
+        - source: <table_3>, row: <row_idx_2>
+        (<col_e>:<val_e1>, <col_f>:<val_f1>, ...)
+
+        QUESTION:
+            "Which are the <entity_type> (specify <col_a> and <col_b>) involved in <condition_1> OR <condition_2>?"
+
+        EXPECTED ANSWER:
+
+        [
+            {{
+                "answer": ["<col_a_val> <col_b_val>", "<col_a_val> <col_b_val>"],
+                "why": [
+                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_3>,<table_3>_<row_idx_1>}},{{<table_1>_<row_idx_2>,<table_2>_<row_idx_4>,<table_3>_<row_idx_1>}}}}", 
+                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_4>,<table_3>_<row_idx_2>}}}}"
+                ]
+            }}
+        
+
+        ]
+"""
+)
 # Step 1: Define Explanation Class: composed by file and row
 
 class AnswerItem(BaseModel):
@@ -102,71 +153,19 @@ def get_rows_from_ground_truth(ground_f2: str, csv_folder: str) -> List[Document
 
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
-    prompt_with_explanation = f"""
-        Question: {state["question"]}
-
-        Your task is to:
-        1. Provide the correct answer(s) based only on the context.
-        2. For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
-
-        Each Witness Set must be a string like:
-            "{{{{<table_name>_<row>}}}}"
-        (use `source`(return just the table_name which correspond to the name of the file,WITHOUT extension and path csv_data/TABLENAME.csv
-) and `row` metadata from the context).
-
-        If an answer has multiple Witness Sets, list each one in the `"why"` array "{{{{WitnessSet1}}, {{WitnessSet2}}}}". A result is valid if at least one Witness Set supports it.
-
-        Return the output as a **stringified JSON array**, with NO extra text: (avoid the comments, or the additional information)
-
-        [
-            {{
-            "answer": ["<answer_1>","<answer_2>"],
-            "why": [
-            "{{{{table_row_a, table_row_b}}}}",  
-            "{{{{table_row_e, table_row_f}}}}"    
-            }}
-        ]
-
-        Example:
-
-        CONTEXT:
-        - source: <table_1>, row: <row_idx_1>
-        (<col_a>:<val_a>, <col_b>:<val_b>, ...)
-        - source: <table_1>, row: <row_idx_2>
-        (<col_a>:<val_a1>, <col_b>:<val_b1>, ...)
-        - source: <table_2>, row: <row_idx_3>
-        (<col_c>:<val_c>, <col_d>:<val_d>, ...)
-        - source: <table_2>, row: <row_idx_4>
-        (<col_c>:<val_c1>, <col_d>:<val_d1>, ...)
-        - source: <table_3>, row: <row_idx_1>
-        (<col_e>:<val_e>, <col_f>:<val_f>, ...)
-        - source: <table_3>, row: <row_idx_2>
-        (<col_e>:<val_e1>, <col_f>:<val_f1>, ...)
-
-        QUESTION:
-            "Which are the <entity_type> (specify <col_a> and <col_b>) involved in <condition_1> OR <condition_2>?"
-
-        EXPECTED ANSWER:
-
-        [
-            {{
-                "answer": ["<col_a_val> <col_b_val>", "<col_a_val> <col_b_val>"],
-                "why": [
-                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_3>,<table_3>_<row_idx_1>}},{{<table_1>_<row_idx_2>,<table_2>_<row_idx_4>,<table_3>_<row_idx_1>}}}}", 
-                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_4>,<table_3>_<row_idx_2>}}}}"
-                ]
-            }}
-        
-
-        ]
-"""
-
+   
+    chain = LLMChain(
+        llm=llm,
+        prompt = prompt 
+    )
 
     docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
 
-    messages = prompt.invoke({"question": prompt_with_explanation, "context": docs_content})
-    response = llm.invoke(messages)
-     
+    response = chain.run({
+    "question": state["question"], 
+    "context": docs_content
+    })
+
     try:
         parsed = parser.parse(response.content)
     except Exception as e:

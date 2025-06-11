@@ -21,8 +21,8 @@ os.environ["LANGSMITH_TRACING"] = "false"
 os.environ["LANGSMITH_API_KEY"] = "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"
 #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 old old token langsmith
 # olt token langsmith  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
-if not os.environ.get("GROQ_API_KEY"):
-  os.environ["GROQ_API_KEY"] = "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"
+#if not os.environ.get("GROQ_API_KEY"):
+# os.environ["GROQ_API_KEY"] = "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"
 
 # LLM: Llama3-8b by Groq
 llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
@@ -32,12 +32,12 @@ llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
 #llm = ChatOllama(model="llama3:70b", temperature=0)
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
-#embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
-embedding_model = HuggingFaceEmbeddings(
-    model_name="BAAI/bge-small-en-v1.5",
-    model_kwargs={"device": "cuda"},  
-    encode_kwargs={"normalize_embeddings": True}
-)
+embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+#embedding_model = HuggingFaceEmbeddings(
+#    model_name="BAAI/bge-small-en-v1.5",
+#    model_kwargs={"device": "cuda"},  
+#    encode_kwargs={"normalize_embeddings": True}
+#)
 
 """ Indexing part """
 csv_folder = "tpch/csv_data_tpch"
@@ -116,9 +116,6 @@ def generate(state: State):
     2. For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
     3. Determine if the answer is **final** or if more information is needed.
 
-    **CONTEXT:**
-    {context_str}
-
     **QUESTION:**
     {state["current_question"]}
 
@@ -159,12 +156,13 @@ def generate(state: State):
     print("\n[DEBUG] PROMPT SENT TO LLM:")
     print(prompt_with_explanation)
 
-   
+    
+    prompt = hub.pull("rlm/rag-prompt")
     # Corrected line: Pass a list of BaseMessages
-    messages= [
-        SystemMessage(content="You are an expert at extracting information from CSV data."),
-        HumanMessage(content=prompt_with_explanation),
-    ]
+    messages = prompt.invoke({"question": prompt_with_explanation, "context": context_str})
+    print("\n[DEBUG] MESSAGES SENT TO LLM:")
+    for message in messages:
+        print(f"Role: {message.role}, Content: {message.content}")
     response = llm.invoke(messages)
 
     print("\nRAW LLM RESPONSE:")
