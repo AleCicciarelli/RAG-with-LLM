@@ -403,19 +403,6 @@
         ]
     },
     {
-        "question": "What is the comment of the customer with custkey 123?",
-        "answer": [
-            {
-                "answer": [
-                    "BUILDING"
-                ],
-                "why": [
-                    "{{customer_123}}"
-                ]
-            }
-        ]
-    },
-    {
         "question": "What is the order date of the order with order key 323?",
         "answer": [
             {
@@ -566,34 +553,6 @@
                     "{{lineitem_3, supplier_465}}",
                     "{{lineitem_1, supplier_732}}",
                     "{{lineitem_0, supplier_784}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
-        "answer": [
-            {
-                "answer": [
-                    "DELIVER IN PERSON",
-                    "TRUCK"
-                ],
-                "why": [
-                    "{{lineitem_0}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
-        "answer": [
-            {
-                "answer": [
-                    "TAKE BACK RETURN",
-                    "RAIL"
-                ],
-                "why": [
-                    "{{lineitem_6}}, {{part_10618}}"
                 ]
             }
         ]

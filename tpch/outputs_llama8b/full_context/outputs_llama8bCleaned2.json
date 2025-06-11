@@ -108,10 +108,6 @@
         "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"21-151-690-3663\"],\n        \"why\": [\n            \"{{supplier_4}}\"\n        ]\n    }\n]\n\nExplanation: The phone number of the supplier named \"Supplier#000000005\" is 21-151-690-3663. This can be justified by the context provided, which includes a tuple with source='supplier', row=4, and phone number 21-151-690-3663 for Supplier#000000005."
     },
     {
-        "question": "What is the comment of the customer with custkey 123?",
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"YsOnaaER8MkvK5cpf4VSlq\"],\n        \"why\": [\n            \"{{customer_123}}\"\n        ]\n    }\n]\n\nExplanation: The customer with custkey 123 has comment 'YsOnaaER8MkvK5cpf4VSlq'."
-    },
-    {
         "question": "What is the order date of the order with order key 323?",
         "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"1994-03-26\"],\n        \"why\": [\n            \"{{orders_82}}\"\n        ]\n    }\n]\n\nExplanation: The order date of the order with order key 323 is 1994-03-26. This can be justified by the following Witness Set: {{orders_82}}."
     },
@@ -154,14 +150,6 @@
     {
         "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
         "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Supplier#000000067\", \"Supplier#000000160\"],\n        \"why\": [\n            \"{{lineitem_5}\", \"{{supplier_66}\", \"{{lineitem_4}\", \"{{supplier_159}\"}\n        ]\n    }\n]\n\nExplanation:\nThe question asks which suppliers have supplied parts for the order with order key 1. The answer is Supplier#000000067 and Supplier#000000160.\n\nWitness Sets:\n\n* {{lineitem_5}}: This line item has an order key of 1, which matches the condition.\n* {{supplier_66}}: This supplier's row number (66) does not match the condition directly, but it supplies parts for the order with order key 1 (lineitem_5).\n* {{lineitem_4}}: This line item does not have an order key of 1, so it does not support the answer.\n* {{supplier_159}}: This supplier's row number (159) does not match the condition directly, but it supplies parts for the order with order key 1 (lineitem_5).\n\nThe other line items and suppliers do not supply parts for the order with order key 1, so they are not included in the witness sets."
-    },
-    {
-        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
-        "answer": "The question is asking for the comments (p_comment) of the parts supplied in the order with order key 1.\n\nFrom the given context, we can see that there are two types of orders: lineitem and part. The lineitem orders have an order key, but it's not specified which one has the value 1. However, we can look at the part orders to find the corresponding comments for each part.\n\nThe answer is:\n\n[\n    {\n        \"answer\": [\"powder wheat midnight mint salmon\", \"steel hot blue dodger ivory\"],\n        \"why\": [\n            \"{{lineitem_0},{part_15519},{part_6731}}\"\n        ]\n    }\n]\n\nExplanation: The order key 1 corresponds to the first lineitem, which has a part with p_comment \"powder wheat midnight mint salmon\". The second lineitem also has an order key of 1, but its corresponding part is \"steel hot blue dodger ivory\"."
-    },
-    {
-        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"10617\"],\n        \"why\": [\n            \"{{lineitem_6}}\"\n        ]\n    }\n]\n\nExplanation: The question asks for the comments (p_comment) of the parts supplied in the order with order key 2. Based on the context, we can see that the part with ID 10617 has a comment \"TAKE BACK RETURN         ,RAIL\". This is the only part that matches the condition, so it's the only answer.\n\nWitness Set: {{lineitem_6}}"
     },
     {
         "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",

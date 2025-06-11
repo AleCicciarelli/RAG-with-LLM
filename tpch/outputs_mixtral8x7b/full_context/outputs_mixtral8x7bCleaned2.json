@@ -1,7 +1,7 @@
 [
     {
         "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
-        "answer": "Based on the provided context, the question is: \"Which are the suppliers who supply part(s) that go into assembly of product(s) with retail price > 150?\""
+        "answer": "Based on the provided context, I have formulated an answer to the question: \"Which suppliers (specify <col_a> and <col_b>) have a total quantity (sum of <col_e> and <col_f>) greater than or equal to 200?\"\n\nThe answer is:\n[\n{\n\"answer\": [\"Supplier1 Quantity\", \"Supplier2 Quantity\"],\n\"why\": [\"{{csv_data/suppliers_1_past_year.csv_5}, {csv_data/quantities_1_past_year.csv_3}}\", \"{{csv_data/suppliers_1_past_year.csv_6}, {csv_data/quantities_1_past_year.csv_4}}\"]\n}\n]\n\nExplanation:\n1. Supplier1 Quantity: This answer is justified by the Witness Set {{csv\\_data/suppliers\\_1\\_past\\_year.csv\\_5}, {csv\\_data/quantities\\_1\\_past\\_year.csv\\_3}}. The supplier information in row 5 of the suppliers table and the quantity information in row 3 of the quantities table contribute to this answer, as their combined total quantity is greater than or equal to 200.\n2. Supplier2 Quantity: This answer is justified by the Witness Set {{csv\\_data/suppliers\\_1\\_past\\_year.csv\\_6}, {csv\\_data/quantities\\_1\\_past\\_year.csv\\_4}}. The supplier information in row 6 of the suppliers table and the quantity information in row 4 of the quantities table contribute to this answer, as their combined total quantity is greater than or equal to 200."
     },
     {
         "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
@@ -267,10 +267,6 @@
         ]
     },
     {
-        "question": "What is the comment of the customer with custkey 123?",
-        "answer": "Based on the context provided: {'source': 'customer', 'row': 123} in the string '123,Customer#000"
-    },
-    {
         "question": "What is the order date of the order with order key 323?",
         "answer": [
             {
@@ -380,29 +376,6 @@
                 ]
             }
         ]
-    },
-    {
-        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
-        "answer": [
-            {
-                "answer": [
-                    "N",
-                    "O"
-                ],
-                "why": [
-                    "{{part_15518}, {lineitem_0}}",
-                    "{{part_6732}, {lineitem_1}}",
-                    "{{part_6371}, {lineitem_2}}",
-                    "{{part_213}, {lineitem_3}}",
-                    "{{part_2404}, {lineitem_4}}",
-                    "{{part_1566}, {lineitem_5}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
-        "answer": "Based on the context provided, the correct answer to the question \"Which are the comments (p\\_comment) of the parts supplied in the order with order key 2?\" is:\n\n[\n{\n\"answer\": [\"cornflower tomato linen powder cyan\"],\n\"why\": [\"{{part_10618}}\"]\n}\n]\n\nExplanation:\n\nThe context includes two tuples, one from the 'lineitem' table with order key 2 and another from the 'part' table with row number 10618. The 'lineitem' tuple contains a reference to part key 10617, which corresponds to the row in the 'part' table.\n\nThe 'part' tuple includes the p\\_comment field, which has the value \"cornflower tomato linen powder cyan\". Therefore, this is the correct answer to the question.\n\nWitness Set:\n\n* The witness set for this answer is {{part\\_10618}}, as it contains the relevant information needed to derive the answer."
     },
     {
         "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
