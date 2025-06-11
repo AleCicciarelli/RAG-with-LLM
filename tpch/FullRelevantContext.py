@@ -1,14 +1,11 @@
 import os
-from langchain.chat_models import init_chat_model
+
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_community.document_loaders import CSVLoader
+
 from langchain_core.documents import Document
-from langchain_community.vectorstores import FAISS
-from langchain_community.vectorstores.utils import DistanceStrategy
-from langgraph.graph import START, StateGraph
 from typing_extensions import List, TypedDict, Set
 from langchain_core.documents import Document
-from langchain import hub
+from langchain_core.messages import HumanMessage, SystemMessage
 import json
 from langchain_core.output_parsers import JsonOutputParser
 from pydantic import BaseModel, Field
@@ -20,15 +17,15 @@ os.environ["LANGSMITH_TRACING"] = "true"
 os.environ["LANGSMITH_API_KEY"] = "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"
 #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 old old token langsmith
 # olt token langsmith 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
-if not os.environ.get("GROQ_API_KEY"):
-  os.environ["GROQ_API_KEY"] = "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"
+#if not os.environ.get("GROQ_API_KEY"):
+#  os.environ["GROQ_API_KEY"] = "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"
 
 # LLM: Llama3-8b by Groq
 #llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
 # MISTRAL by Groq
-llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
+#llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
-#llm = ChatOllama(model="llama3:8b", temperature=0)
+llm = ChatOllama(model="llama3:8b", temperature=0)
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
@@ -40,7 +37,7 @@ csv_folder = "csv_data_tpch"
 
 """ Retrieve and Generate part """
 # Define prompt for question-answering
-prompt = hub.pull("rlm/rag-prompt")
+#prompt = hub.pull("rlm/rag-prompt")
 # Step 1: Define Explanation Class: composed by file and row
 
 class AnswerItem(BaseModel):
@@ -163,10 +160,14 @@ def generate(state: State):
 
 
     docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
-
-    messages = prompt.invoke({"question": prompt_with_explanation, "context": docs_content})
+    print(f"PROMPT:\n{prompt_with_explanation}\n")
+    print(f"CONTEXT:\n{docs_content}\n")
+    messages= [
+        SystemMessage(content="You are an expert at extracting information from CSV data."),
+        HumanMessage(content=prompt_with_explanation),
+    ]
     response = llm.invoke(messages)
-     
+    print(f"LLM RESPONSE:\n{response.content}\n")
     try:
         parsed = parser.parse(response.content)
     except Exception as e:
@@ -212,7 +213,7 @@ for i, question in enumerate(questions):
     }
     all_results.append(result)
 
-output_filename = f"tpch/outputs_mixtral8x7b/full_context/outputs_mixtral8x7bGroq.json"
+output_filename = f"tpch/outputs_llama8b/full_context/outputs_llama8bCleaned.json"
 # Save the results for the current value of k to a JSON file for later analysis
 with open(output_filename, "w") as output_file:
     json.dump(all_results, output_file, indent=4, ensure_ascii=False)
