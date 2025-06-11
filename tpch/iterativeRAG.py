@@ -219,13 +219,18 @@ def generate(state: State):
     }
 # Node to decide whether to continue iterating or stop
 def decide_to_continue(state: State):
-    if not state["answer"] or not state["answer"][0].final_answer:
-        print("\nDECISION: Continue iterative retrieval.")
-        return "continue"
-    else:
-        print("\nDECISION: Final answer reached, stopping.")
-        return "end"
-
+    # Set a max number of iterations to prevent infinite loops
+    max_iterations = 3
+    for item_num in range(max_iterations):
+        print(f"\n--- Decision Check Iteration {item_num + 1} ---")
+        if not state["answer"] or not state["answer"][0].final_answer:
+            print("\nDECISION: Continue iterative retrieval.")
+            return "continue"
+        else:
+            print("\nDECISION: Final answer reached, stopping.")
+            return "end"
+    print("DECISION: Max iterations reached, stopping.")
+    return "end"
 # Create a dictionary to store results for each k
 results_by_k = {}
 # Read questions from the JSON file
@@ -264,7 +269,7 @@ for i, question in enumerate(questions):
     current_state = initial_state
     for iter_num in range(max_iterations):
         print(f"\n--- Iteration {iter_num + 1} for question n. {i+1} ---")
-        full_result = graph.invoke(current_state, config={"recursion_limit": 10})  # Set a recursion limit to avoid infinite loops
+        full_result = graph.invoke(current_state) 
 
         # Update current_state for the next iteration
         current_state = full_result
