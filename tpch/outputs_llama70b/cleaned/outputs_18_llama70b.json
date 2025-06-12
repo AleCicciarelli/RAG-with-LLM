@@ -1,0 +1,704 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": [
+            {
+                "answer": "829",
+                "why": "supplier with s_suppkey = 829 has nationkey = 2"
+            }
+        ]
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": [
+            {
+                "answer": [
+                    992,
+                    828,
+                    861,
+                    992
+                ],
+                "reasoning": [
+                    "supplier row 921 has nationkey 2 and suppkey 992",
+                    "supplier row 828 has nationkey 2 and suppkey 829",
+                    "supplier row 861 has nationkey 2 and suppkey 862",
+                    "supplier row 891 has nationkey 8 and suppkey 892"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": [
+            {
+                "answer": [
+                    826,
+                    993
+                ],
+                "context": "Which suppliers have nationkey equal to 2?",
+                "question": "Which suppliers have nationkey equal to 2?"
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": [
+            {
+                "answer": "829",
+                "why": "Supplier with s_suppkey = 829 has nationkey = 2."
+            },
+            {
+                "answer": "828",
+                "why": "Supplier with s_suppkey = 828 has nationkey = 2."
+            },
+            {
+                "answer": "999",
+                "why": "Supplier with s_suppkey = 999 has nationkey = 2."
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": [
+            {
+                "answer": "951",
+                "why": "supplier.csv row 951 has nationkey = 2"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": [
+            {
+                "answer": "992, 993",
+                "context": "Which suppliers have nationkey equal to 2?"
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": \"970\",\n        \"why\": \"supplier with s_suppkey = 970 has nationkey = 2\"\n    }\n]\n\nNote: Since there was no specific question provided, I assumed the task was to find a supplier with a specific nation key. In this case, I found that there is no supplier with nation key = 2. If you provide the actual question, I'll be happy to assist you further!"
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": [
+            {
+                "answer": "829, 906",
+                "why": "These are the s_suppkey values of suppliers with nationkey equal to 2."
+            }
+        ]
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": [
+            {
+                "answer": "857",
+                "why": "supplier with nation key 2"
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": [
+            {
+                "answer": [
+                    992,
+                    984,
+                    982,
+                    974,
+                    932,
+                    929,
+                    928,
+                    925,
+                    924,
+                    923,
+                    922,
+                    921,
+                    920,
+                    919,
+                    918,
+                    917,
+                    916,
+                    915,
+                    914,
+                    913,
+                    912,
+                    910,
+                    909,
+                    908,
+                    907,
+                    906,
+                    905,
+                    904,
+                    903,
+                    902,
+                    901
+                ],
+                "why": [
+                    "supplier.csv row 992",
+                    "supplier.csv row 984",
+                    "supplier.csv row 982",
+                    "supplier.csv row 974",
+                    "supplier.csv row 932",
+                    "supplier.csv row 929",
+                    "supplier.csv row 928",
+                    "supplier.csv row 925",
+                    "supplier.csv row 924",
+                    "supplier.csv row 923",
+                    "supplier.csv row 922",
+                    "supplier.csv row 921",
+                    "supplier.csv row 920",
+                    "supplier.csv row 919",
+                    "supplier.csv row 918",
+                    "supplier.csv row 917",
+                    "supplier.csv row 916",
+                    "supplier.csv row 915",
+                    "supplier.csv row 914",
+                    "supplier.csv row 913",
+                    "supplier.csv row 912",
+                    "supplier.csv row 910",
+                    "supplier.csv row 909",
+                    "supplier.csv row 908",
+                    "supplier.csv row 907",
+                    "supplier.csv row 906",
+                    "supplier.csv row 905",
+                    "supplier.csv row 904",
+                    "supplier.csv row 903",
+                    "supplier.csv row 902",
+                    "supplier.csv row 901"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": [
+            {
+                "answer": [],
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": [
+            {
+                "answer": [
+                    849,
+                    850,
+                    860,
+                    813,
+                    826,
+                    829,
+                    830,
+                    845,
+                    846,
+                    848,
+                    859,
+                    928,
+                    929,
+                    974,
+                    976
+                ],
+                "why": [
+                    "s_suppkey",
+                    "s_nationkey"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": [
+            {
+                "answer": [
+                    994,
+                    955,
+                    931,
+                    956,
+                    935,
+                    850,
+                    900
+                ],
+                "why": [
+                    "supplier row 994 has nationkey 4",
+                    "supplier row 955 has nationkey 17",
+                    "supplier row 931 has nationkey 8",
+                    "supplier row 956 has nationkey 18",
+                    "supplier row 935 has nationkey 3",
+                    "supplier row 850 has nationkey 4",
+                    "supplier row 900 has nationkey 5"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": [
+            {
+                "answer": [
+                    992,
+                    849,
+                    968
+                ],
+                "why": [
+                    "supplier row 992 has nationkey 2",
+                    "supplier row 849 has nationkey 4",
+                    "supplier row 968 has nationkey 4"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": [
+            {
+                "answer": "829",
+                "why": "supplier with s_suppkey = 829 has nationkey = 2"
+            }
+        ]
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": [
+            {
+                "answer": [
+                    828,
+                    951,
+                    905
+                ],
+                "witnesses": [
+                    "supplier.csv:828",
+                    "supplier.csv:951",
+                    "supplier.csv:905"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": [
+            {
+                "answer": "829",
+                "why": "Supplier with s_suppkey = 829 has nationkey = 2"
+            },
+            {
+                "answer": "993",
+                "why": "Supplier with s_suppkey = 993 has nationkey = 2"
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": [
+            {
+                "answer": [
+                    906,
+                    992,
+                    993,
+                    940,
+                    970
+                ],
+                "why": [
+                    "supplier.csv row 905",
+                    "supplier.csv row 992",
+                    "supplier.csv row 993",
+                    "supplier.csv row 939",
+                    "supplier.csv row 970"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": [
+            {
+                "answer": [
+                    993,
+                    992
+                ],
+                "why": [
+                    "supplier row 993 has nationkey 2",
+                    "supplier row 992 has nationkey 2"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": [
+            {
+                "answer": [
+                    829,
+                    970
+                ],
+                "context": "Which suppliers have nationkey equal to 2?"
+            }
+        ]
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": "Here is the answer in the required format:\n\n{\n\"answer\": [993, 829],\n\"explanation\": \"The question asks for supplier keys with nation key equal to 2. From the provided context, we can see that suppliers with keys 993 and 829 have a nation key of 2.\"\n}"
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": [
+            {
+                "answer": "992",
+                "context": "supplier.csv row 994"
+            },
+            {
+                "answer": "992",
+                "context": "supplier.csv row 992"
+            }
+        ]
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": "Based on the provided context, I understand that you want me to answer a question related to the given data.\n\nHowever, I don't see a specific question being asked. Could you please provide the question or clarify what you would like me to assist with? \n\nIf you're looking for suppliers with a specific nation key, I can help with that. For example, if you want to know the suppliers with nation key 2, the answer would be:\n\ns_suppkey: 828\ns_name: Supplier#000000828\n\ns_suppkey: 906\ns_name: Supplier#000000906"
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": [
+            {
+                "answer": "829, 850",
+                "why": "The question is asking for the s_suppkey of suppliers with nationkey equal to 4. From the context, we can see that supplier 829 and 850 have nationkey equal to 4."
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": [
+            {
+                "answer": "829, 906",
+                "context": "Which suppliers have nation key equal to 2?"
+            }
+        ]
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": [
+            {
+                "answer": [
+                    857,
+                    992
+                ],
+                "why": [
+                    "supplier row 856",
+                    "supplier row 992"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": [
+            {
+                "answer": "895, 992",
+                "why": [
+                    {
+                        "source": "supplier.csv",
+                        "row": 894,
+                        "s_suppkey": 895,
+                        "s_name": "Supplier#000000895",
+                        "s_address": "some address",
+                        "s_nationkey": 2,
+                        "s_phone": "12-123-456-7890",
+                        "s_acctbal": 1234.56
+                    },
+                    {
+                        "source": "supplier.csv",
+                        "row": 992,
+                        "s_suppkey": 992,
+                        "s_name": "Supplier#000000992",
+                        "s_address": "iZPAlGecV0uUsxMikQG7s",
+                        "s_nationkey": 2,
+                        "s_phone": "12-663-356-1288",
+                        "s_acctbal": 4379.45
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": [
+            {
+                "answer": "998, 808",
+                "explanation": "The question is asking for the s_suppkey of suppliers with a nationkey of 15 or 0."
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": [
+            {
+                "answer": [
+                    829,
+                    999
+                ],
+                "why": [
+                    "supplier.csv row 828",
+                    "supplier.csv row 998"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": [
+            {
+                "answer": [
+                    940,
+                    942,
+                    848,
+                    884,
+                    887
+                ],
+                "why": [
+                    "supplier.csv row 940",
+                    "supplier.csv row 942",
+                    "supplier.csv row 848",
+                    "supplier.csv row 884",
+                    "supplier.csv row 886"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": [
+            {
+                "answer": [
+                    970
+                ],
+                "why": [
+                    "supplier.csv row 970"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": [
+            {
+                "answer": [
+                    829,
+                    906
+                ],
+                "why": [
+                    "supplier row 828",
+                    "supplier row 905"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": [
+            {
+                "answer": "999",
+                "context": "supplier keys with nation key 2",
+                "question": "What are the supplier keys with nation key 2?"
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": [
+            {
+                "answer": [
+                    827,
+                    935
+                ],
+                "why": [
+                    "supplier.csv row 826 s_suppkey",
+                    "supplier.csv row 934 s_suppkey"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": [
+            {
+                "answer": [
+                    903,
+                    936,
+                    946,
+                    832,
+                    825,
+                    978,
+                    973,
+                    997,
+                    902,
+                    935
+                ],
+                "why": [
+                    "supplier",
+                    "nationkey"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": [
+            {
+                "answer": "829",
+                "why": "supplier with s_suppkey = 829 has nationkey = 2"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": [
+            {
+                "answer": "936, 907, 899, 853, 852, 850, 849, 828",
+                "why": "These are the supplier keys (s_suppkey) that have a nation key (s_nationkey) of 8, 11, 12, or 15."
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": [
+            {
+                "answer": [
+                    829,
+                    857
+                ],
+                "context": "Which suppliers have nationkey equal to 2?"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": [
+            {
+                "answer": "993",
+                "why": "supplier with nation key 2 is supplier number 993"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": [
+            {
+                "answer": "970",
+                "context": "{'source': 'csv_data_tpch/supplier.csv', 'row': 970}\ns_suppkey: 970\ns_name: Supplier#000000970\ns_address: FD,NVDvbAAT7rI6BdKI2rTo9UqH8AghW1e8DSJ\ns_nationkey: 2\ns_phone: 12-826-418-6561\ns_acctbal: 4643.76"
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": [
+            {
+                "answer": [
+                    829,
+                    856,
+                    828,
+                    992
+                ],
+                "why": [
+                    "supplier(supplier.csv, 828) - s_suppkey: 829",
+                    "supplier(supplier.csv, 856) - s_suppkey: 857",
+                    "supplier(supplier.csv, 828) - s_suppkey: 829",
+                    "supplier(supplier.csv, 992) - s_suppkey: 992"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": [
+            {
+                "answer": "829",
+                "why": "supplier with s_name = Supplier#000000829 and nationkey = 2"
+            },
+            {
+                "answer": "828",
+                "why": "supplier with s_name = Supplier#000000828 and nationkey = 2"
+            },
+            {
+                "answer": "970",
+                "why": "supplier with s_name = Supplier#000000970 and nationkey = 2"
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": [
+            {
+                "answer": [
+                    828,
+                    829,
+                    832,
+                    833,
+                    851,
+                    852,
+                    903,
+                    904,
+                    908,
+                    909
+                ],
+                "context": "Which suppliers have a nation key of 1, 15, or 17?"
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": [
+            {
+                "answer": "906",
+                "why": "supplier with s_suppkey = 906 has nationkey = 2"
+            },
+            {
+                "answer": "993",
+                "why": "supplier with s_suppkey = 993 has nationkey = 2"
+            },
+            {
+                "answer": "905",
+                "why": "supplier with s_suppkey = 905 has nationkey = 2"
+            },
+            {
+                "answer": "970",
+                "why": "supplier with s_suppkey = 970 has nationkey = 2"
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": [
+            {
+                "answer": [
+                    953,
+                    993
+                ],
+                "context": []
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": [
+            {
+                "answer": [
+                    829,
+                    905,
+                    828,
+                    993,
+                    861,
+                    906
+                ],
+                "why": [
+                    "supplier row 829 has nationkey 2",
+                    "supplier row 905 has nationkey 2",
+                    "supplier row 828 has nationkey 2",
+                    "supplier row 993 has nationkey 2",
+                    "supplier row 861 has nationkey 2",
+                    "supplier row 906 has nationkey 2"
+                ]
+            }
+        ]
+    }
+]
