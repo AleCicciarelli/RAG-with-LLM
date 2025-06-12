@@ -25,13 +25,13 @@ def evaluate_lists(true_list, pred_list):
     return tp, fp, fn
 
 def main():
-    gt_data = load_json("tpch/ground_truthTpch.json")
-    question_types = load_json("tpch/questions.json")
+    gt_data = load_json("ground_truth2.json")
+    question_types = load_json("questions.json")
 
     # Cartella contenente i file di output predetti
-    pred_folder = "tpch/outputs_mixtral8x7b/full_context/"
-    global_metrics_file = os.path.join(pred_folder, "global_metrics_FC_ollama_cleaned.csv")
-    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_FC_ollama_cleaned.csv")
+    pred_folder = "iterativeRag"
+    global_metrics_file = os.path.join(pred_folder, "global_metrics_iterative.csv")
+    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterative.csv")
 
     # Scrivi header CSV solo se i file non esistono
     write_header_global = not os.path.exists(global_metrics_file)
@@ -55,7 +55,7 @@ def main():
 
        
        
-        pred_file = os.path.join(pred_folder, f"outputs_mixtral8x7bCleaned.json")
+        pred_file = os.path.join(pred_folder, f"outputs_llama70bGroq_iterative.json")
 
 
         pred_data = load_json(pred_file)
@@ -78,7 +78,7 @@ def main():
         expl_exact = 0
 
         for gt, pred in zip(gt_data, pred_data):
-            question = pred["question"]
+            question = pred["original_question"]
             q_type = question_types.get(question, "unknown")
 
             # Normalizza risposte (sempre lista di stringhe)
@@ -89,7 +89,7 @@ def main():
                 true_answer = [str(x) for x in true_answer]
 
             try:
-                pred_answer_raw = pred.get("answer", [])
+                pred_answer_raw = pred.get("final_answer", [])
                 if isinstance(pred_answer_raw, list) and len(pred_answer_raw) > 0 and isinstance(pred_answer_raw[0], dict):
                     pred_answer = [str(x) for x in pred_answer_raw[0].get("answer", [])]
                 else:
@@ -118,7 +118,7 @@ def main():
                     true_expl.update(parts)
 
             try:
-                pred_expl_raw = pred.get("answer", [])
+                pred_expl_raw = pred.get("final_answer", [])
                 if isinstance(pred_expl_raw, list) and len(pred_expl_raw) > 0 and isinstance(pred_expl_raw[0], dict):
                     pred_expl = set(x.strip("{} ") for x in pred_expl_raw[0].get("why", []))
                 else:

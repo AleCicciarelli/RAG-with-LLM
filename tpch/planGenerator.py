@@ -1,21 +1,5 @@
 import os
 from langchain.chat_models import init_chat_model
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_community.document_loaders import CSVLoader
-from langchain_core.documents import Document
-from langchain_community.vectorstores import FAISS
-from langchain_community.vectorstores.utils import DistanceStrategy
-from langgraph.graph import START, StateGraph, END
-from typing_extensions import List, TypedDict, Optional, Dict, Any
-from langchain_core.documents import Document
-from langchain import hub
-import json
-from langchain_core.output_parsers import JsonOutputParser
-from pydantic import BaseModel, Field
-from typing import List
-import time
-from langchain_core.messages import HumanMessage, SystemMessage
-from langchain_community.chat_models import ChatOllama
 from langchain_core.prompts import PromptTemplate
 from langchain.chains import LLMChain
 os.environ["LANGSMITH_TRACING"] = "false" 
@@ -127,7 +111,7 @@ chain = LLMChain(
 
 
 response = chain.run({
-    "question": "What is the order date of the order with order key 323?"
+    "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?"
 })
 
 print(response)

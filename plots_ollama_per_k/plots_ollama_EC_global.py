@@ -18,7 +18,7 @@ palette = {'llama8b': 'blue', 'llama70b': 'green', 'mixtral8x7b': 'orange'}
 # Caricamento dati
 all_data = []
 for model in models:
-    file_path = os.path.join(base_path + model +  '/full_context/global_metrics_FC_ollama_cleaned.csv')
+    file_path = os.path.join(base_path + model +  '/full_context/global_metrics_FC_ollama_cleaned2.csv')
     df = pd.read_csv(file_path)
     df['Model'] = model
     all_data.append(df)
@@ -42,7 +42,7 @@ for metric in metrics_to_plot:
     plt.tight_layout()
 
     # Salvataggio grafico
-    filename = f"{metric}_barplot_ollama_cleaned.png".replace(" ", "_")
+    filename = f"{metric}_barplot_ollama_cleaned2.png".replace(" ", "_")
     plt.savefig(os.path.join(output_path, filename))
     plt.close()
 
