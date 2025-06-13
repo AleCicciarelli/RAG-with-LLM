@@ -176,7 +176,9 @@ def generate(state: State):
     "question": state["current_question"], 
     "context": context_str
     })
-
+    # Print the prompt received by the llm with the context and question
+    print(f"Prompt sent to LLM:\n{prompt.format(question=state['current_question'], context=context_str)}")
+    # Print the response from the LLM
     print(f"LLM response: {response}")
    
     try:
@@ -212,7 +214,7 @@ graph = workflow.compile()
 
 all_final_results = []
 # Iterate over each question and invoke the graph to get the answer
-for i, question in enumerate(questions):
+for i, question in enumerate(questions[:5]):
     print(f"\n=== Running evaluation for question n. {i+1}: {question} ===")
     initial_state = {
         "original_question": question,
