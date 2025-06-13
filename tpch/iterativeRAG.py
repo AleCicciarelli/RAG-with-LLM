@@ -27,11 +27,11 @@ if not os.environ.get("GROQ_API_KEY"):
  os.environ["GROQ_API_KEY"] = "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"
 
 # LLM: Llama3-8b by Groq
-llm = init_chat_model("llama3-70b-8192", model_provider="groq", temperature = 0)
+#llm = init_chat_model("llama3-70b-8192", model_provider="groq", temperature = 0)
 # MISTRAL by Groq
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
-#llm = ChatOllama(model="llama3:70b", temperature=0)
+llm = ChatOllama(model="llama3:70b", temperature=0)
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
@@ -41,10 +41,13 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 #    encode_kwargs={"normalize_embeddings": True}
 #)
 
-""" Indexing part """
 csv_folder = "csv_data"
 faiss_index_folder = "faiss_index"
+output_filename = f"iterativeRag/outputs_llama70b/outputs_llama70b_ollama_iterative.json"
+# Save the results for the current value of k to a JSON file for later analysis
+os.makedirs(os.path.dirname(output_filename), exist_ok=True)
 
+""" Indexing part """
 # Verify if the FAISS files already exist
 if os.path.exists(faiss_index_folder):
     # Load the FAISS index folder (allow_dangerous_deserialization=True just because we create the files and so we can trust them)
@@ -221,7 +224,7 @@ for i, question in enumerate(questions):
     }
 
     # Run the graph until it decides to stop (or a max iteration limit)
-    max_iterations = 3
+    max_iterations = 5
     current_state = initial_state
     for iter_num in range(max_iterations):
         print(f"\n--- Iteration {iter_num + 1} for question n. {i+1} ---")
@@ -238,16 +241,15 @@ for i, question in enumerate(questions):
         # Update current_state for the next iteration
         current_state = full_result
 
-    # Store the final result of the iterations for this question
-    all_final_results.append({
-        "original_question": current_state["original_question"],
-        "final_answer": current_state["answer"], # The last answer generated
-        #"full_iteration_history": current_state["iteration_history"] # All intermediate steps
-    })
+        # Store the final result of the iterations for this question
+        all_final_results.append({
+            "question": current_state["original_question"],
+            "iteration": iter_num + 1,
+            "answer": current_state["answer"], # The last answer generated
+            #"full_iteration_history": current_state["iteration_history"] # All intermediate steps
+        })
 
-output_filename = f"iterativeRag/outputs_llama8bGroq_iterative.json"
-# Save the results for the current value of k to a JSON file for later analysis
-os.makedirs(os.path.dirname(output_filename), exist_ok=True)
+
 with open(output_filename, "w", encoding='utf-8') as output_file:
     json.dump(all_final_results, output_file, indent=4, ensure_ascii=False)
 print(f"Results saved to {output_filename}")

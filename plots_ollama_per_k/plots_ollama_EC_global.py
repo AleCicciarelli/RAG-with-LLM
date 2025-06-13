@@ -4,8 +4,8 @@ import seaborn as sns
 import os
 
 # Imposta percorso principale e di output
-base_path = 'tpch/outputs_'
-output_path = 'tpch/plots_FC'
+base_path = 'iterativeRag/outputs_'
+output_path = base_path
 os.makedirs(output_path, exist_ok=True)
 
 # Lista dei modelli = nomi delle cartelle
@@ -18,7 +18,7 @@ palette = {'llama8b': 'blue', 'llama70b': 'green', 'mixtral8x7b': 'orange'}
 # Caricamento dati
 all_data = []
 for model in models:
-    file_path = os.path.join(base_path + model +  '/full_context/global_metrics_FC_ollama_cleaned2.csv')
+    file_path = os.path.join(base_path + model +  '/global_metrics_iterative.csv')
     df = pd.read_csv(file_path)
     df['Model'] = model
     all_data.append(df)
@@ -42,7 +42,7 @@ for metric in metrics_to_plot:
     plt.tight_layout()
 
     # Salvataggio grafico
-    filename = f"{metric}_barplot_ollama_cleaned2.png".replace(" ", "_")
+    filename = f"{metric}_barplot_ollama_iterative.png".replace(" ", "_")
     plt.savefig(os.path.join(output_path, filename))
     plt.close()
 
