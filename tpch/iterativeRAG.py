@@ -4,7 +4,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.document_loaders import CSVLoader
 from langchain_core.documents import Document
 from langchain_community.vectorstores import FAISS
-from langchain.retrievers import BM25Retriever
+from langchain_community.retrievers import BM25Retriever
 from langchain_community.vectorstores.utils import DistanceStrategy
 from langgraph.graph import START, StateGraph, END
 from typing_extensions import List, TypedDict, Optional, Dict, Any
@@ -245,7 +245,7 @@ graph = workflow.compile()
 
 all_final_results = []
 # Iterate over each question and invoke the graph to get the answer
-for i, question in enumerate(questions[:5]):
+for i, question in enumerate(questions):
     print(f"\n=== Running evaluation for question n. {i+1}: {question} ===")
     initial_state = {
         "original_question": question,
