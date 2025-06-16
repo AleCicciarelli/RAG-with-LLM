@@ -47,10 +47,10 @@
         "answer": [
             {
                 "answer": [
-                    "Data Science"
+                    "Department 1"
                 ],
                 "why": [
-                    "{{teachers_1}, {teacherResearchAreas_1}}"
+                    "{{teachers_1}}"
                 ]
             }
         ]
@@ -278,7 +278,7 @@
                     "teacher with id 1"
                 ],
                 "why": [
-                    "{{courses_0}, {teacherResearchAreas_0}}"
+                    "{{courses_0}, {thesis_0}}"
                 ]
             }
         ]
@@ -292,7 +292,7 @@
                     "teacher with id 1"
                 ],
                 "why": [
-                    "{{courses_0}, {teacherResearchAreas_0}}"
+                    "{{courses_0}, {thesis_0}}"
                 ]
             }
         ]
@@ -306,7 +306,7 @@
                     "teacher with id 1"
                 ],
                 "why": [
-                    "{{courses_0}, {teacherResearchAreas_0}}"
+                    "{{courses_0}, {thesis_0}}"
                 ]
             }
         ]
@@ -316,11 +316,10 @@
         "iteration": 1,
         "answer": [
             {
-                "answer": [
-                    "Artificial Intelligence"
-                ],
+                "answer": [],
                 "why": [
-                    "{{teacherResearchAreas_0}}"
+                    "{{teachers_0}}",
+                    "{{teacherResearchAreas_7, teacherResearchAreas_8, teacherResearchAreas_6, teacherResearchAreas_9}}"
                 ]
             }
         ]
@@ -330,11 +329,9 @@
         "iteration": 2,
         "answer": [
             {
-                "answer": [
-                    "Artificial Intelligence"
-                ],
+                "answer": [],
                 "why": [
-                    "{{teacherResearchAreas_0}}"
+                    "{{teachers_0}}"
                 ]
             }
         ]
@@ -344,11 +341,9 @@
         "iteration": 3,
         "answer": [
             {
-                "answer": [
-                    "Artificial Intelligence"
-                ],
+                "answer": [],
                 "why": [
-                    "{{teacherResearchAreas_0}}"
+                    "{{teachers_0}}"
                 ]
             }
         ]
@@ -359,10 +354,10 @@
         "answer": [
             {
                 "answer": [
-                    "4"
+                    "0"
                 ],
                 "why": [
-                    "{{teacherResearchAreas_4}}"
+                    "{{teachers_5}}, {{teacherResearchAreas}}"
                 ]
             }
         ]
@@ -373,10 +368,10 @@
         "answer": [
             {
                 "answer": [
-                    "4"
+                    "0"
                 ],
                 "why": [
-                    "{{teacherResearchAreas_4}}"
+                    "{{teachers_5}}, {{teacherResearchAreas}}"
                 ]
             }
         ]
@@ -387,10 +382,10 @@
         "answer": [
             {
                 "answer": [
-                    "4"
+                    "0"
                 ],
                 "why": [
-                    "{{teacherResearchAreas_4}}"
+                    "{{teachers_5}}, {{teacherResearchAreas}}"
                 ]
             }
         ]
@@ -513,7 +508,7 @@
         "answer": [
             {
                 "answer": [
-                    "teacher_id: 10"
+                    "teacher with id 10 and research area Human-Computer Interaction"
                 ],
                 "why": [
                     "{{students_2}, {thesis_4}, {teacherResearchAreas_9}}"
@@ -527,10 +522,10 @@
         "answer": [
             {
                 "answer": [
-                    "teacher_id: 10"
+                    "teacher with id 10 and research area Human-Computer Interaction"
                 ],
                 "why": [
-                    "{{students_2}, {thesis_4}, {teacherResearchAreas_9}}"
+                    "{{students_2}, {teacherResearchAreas_9}}"
                 ]
             }
         ]
@@ -541,10 +536,10 @@
         "answer": [
             {
                 "answer": [
-                    "teacher_id: 10"
+                    "teacher with id 10 and research area Human-Computer Interaction"
                 ],
                 "why": [
-                    "{{students_2}, {thesis_4}, {teacherResearchAreas_9}}"
+                    "{{students_2}, {teacherResearchAreas_9}}"
                 ]
             }
         ]
@@ -554,14 +549,8 @@
         "iteration": 1,
         "answer": [
             {
-                "answer": [
-                    "Data Science",
-                    "Software Engineering",
-                    "Cybersecurity"
-                ],
-                "why": [
-                    "{{teacherResearchAreas_1}, {teacherResearchAreas_5}, {teacherResearchAreas_8}}"
-                ]
+                "answer": [],
+                "why": []
             }
         ]
     },
@@ -570,14 +559,8 @@
         "iteration": 2,
         "answer": [
             {
-                "answer": [
-                    "Data Science",
-                    "Software Engineering",
-                    "Cybersecurity"
-                ],
-                "why": [
-                    "{{teacherResearchAreas_1}, {teacherResearchAreas_5}, {teacherResearchAreas_8}}"
-                ]
+                "answer": [],
+                "why": []
             }
         ]
     },
@@ -586,14 +569,8 @@
         "iteration": 3,
         "answer": [
             {
-                "answer": [
-                    "Data Science",
-                    "Software Engineering",
-                    "Cybersecurity"
-                ],
-                "why": [
-                    "{{teacherResearchAreas_1}, {teacherResearchAreas_5}, {teacherResearchAreas_8}}"
-                ]
+                "answer": [],
+                "why": []
             }
         ]
     },
@@ -603,10 +580,10 @@
         "answer": [
             {
                 "answer": [
-                    "Signal Processing"
+                    "Human-Computer Interaction"
                 ],
                 "why": [
-                    "{{teachers_4}, {teacherResearchAreas_4}}"
+                    "{{teachers_4}, {teacherResearchAreas_9}}"
                 ]
             }
         ]
@@ -648,7 +625,7 @@
                     "NULL"
                 ],
                 "why": [
-                    "{{students_4}, {courses_9}}"
+                    "{{students_4}, {courses_9}, {teacherResearchAreas_9}}"
                 ]
             }
         ]
@@ -732,7 +709,7 @@
                     "Unknown"
                 ],
                 "why": [
-                    "{{teacherResearchAreas_2}}, {{courses_2}}"
+                    "{{courses_2}}"
                 ]
             }
         ]
@@ -957,10 +934,11 @@
         "answer": [
             {
                 "answer": [
-                    "6"
+                    "0"
                 ],
                 "why": [
-                    "{{teacherResearchAreas_1}}"
+                    "{{teachers_1}, {teacherResearchAreas}}",
+                    "{{teachers_1}}"
                 ]
             }
         ]
@@ -971,10 +949,10 @@
         "answer": [
             {
                 "answer": [
-                    "6"
+                    "0"
                 ],
                 "why": [
-                    "{{teacherResearchAreas_1}}"
+                    "{{teachers_1}}, {{teacherResearchAreas}}}"
                 ]
             }
         ]
@@ -985,10 +963,10 @@
         "answer": [
             {
                 "answer": [
-                    "6"
+                    "0"
                 ],
                 "why": [
-                    "{{teacherResearchAreas_1}}"
+                    "{{teachers_1}}, {{teacherResearchAreas}}}"
                 ]
             }
         ]
@@ -1003,8 +981,8 @@
                     "Student 3"
                 ],
                 "why": [
-                    "{{grades_0}, {courses_9}}",
-                    "{{grades_7}, {courses_9}}"
+                    "{{grades_0}, {thesis_4}, {courses_9}}",
+                    "{{grades_7}, {thesis_4}, {courses_9}}"
                 ]
             }
         ]
@@ -1092,9 +1070,7 @@
         "answer": [
             {
                 "answer": [],
-                "why": [
-                    "{{courses_5}}, {{teacherResearchAreas_5}}"
-                ]
+                "why": []
             }
         ]
     },
@@ -1132,491 +1108,437 @@
         "answer": [
             {
                 "answer": [
+                    "Artificial Intelligence"
+                ],
+                "why": [
+                    "{{courses_7}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "iteration": 2,
+        "answer": [
+            {
+                "answer": [
+                    "Artificial Intelligence"
+                ],
+                "why": [
+                    "{{courses_7}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "iteration": 3,
+        "answer": [
+            {
+                "answer": [
+                    "Artificial Intelligence"
+                ],
+                "why": [
+                    "{{courses_7}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "iteration": 1,
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "iteration": 2,
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "iteration": 3,
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "iteration": 1,
+        "answer": [
+            {
+                "answer": [
+                    "Student 5",
+                    "Student 1"
+                ],
+                "why": [
+                    "{{courses_0}, {thesis_4}}",
+                    "{{courses_3}, {thesis_0}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "iteration": 2,
+        "answer": [
+            {
+                "answer": [
+                    "Student 1",
+                    "Student 5"
+                ],
+                "why": [
+                    "{{courses_0}, {thesis_0}}",
+                    "{{courses_0}, {thesis_4}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "iteration": 3,
+        "answer": [
+            {
+                "answer": [
+                    "Student 1",
+                    "Student 5"
+                ],
+                "why": [
+                    "{{courses_0}, {thesis_0}}",
+                    "{{courses_3}, {thesis_4}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "iteration": 1,
+        "answer": [
+            {
+                "answer": [
+                    "Data Mining"
+                ],
+                "why": [
+                    "{{courses_6}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "iteration": 2,
+        "answer": [
+            {
+                "answer": [
+                    "Data Mining"
+                ],
+                "why": [
+                    "{{courses_6}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "iteration": 3,
+        "answer": [
+            {
+                "answer": [
+                    "Data Mining"
+                ],
+                "why": [
+                    "{{courses_6}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "iteration": 1,
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "iteration": 2,
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "iteration": 3,
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "iteration": 1,
+        "answer": [
+            {
+                "answer": [
+                    "101",
+                    "102"
+                ],
+                "why": [
+                    "{{classrooms_0}}, {{classrooms_1}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "iteration": 2,
+        "answer": [
+            {
+                "answer": [
+                    "101",
+                    "102"
+                ],
+                "why": [
+                    "{{classrooms_0}}, {{classrooms_1}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "iteration": 3,
+        "answer": [
+            {
+                "answer": [
+                    "101",
+                    "102"
+                ],
+                "why": [
+                    "{{classrooms_0}}, {{classrooms_1}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "iteration": 1,
+        "answer": "[\n    {\n        \"answer\": [\"Chemistry\", \"Mathematics\", \"Biology\", \"Physics\"],\n        \"why\": [\n            \"{{departments_5}}, {{departments_2}}, {{departments_4}}, {{departments_3}}\",\n        ]\n    }\n]"
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "iteration": 2,
+        "answer": [
+            {
+                "answer": [
+                    "Chemistry",
+                    "Mathematics",
+                    "Biology",
+                    "Physics"
+                ],
+                "why": [
+                    "{{departments_5}, {departments_2}, {departments_4}, {departments_3}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "iteration": 3,
+        "answer": [
+            {
+                "answer": [
+                    "Chemistry",
+                    "Mathematics",
+                    "Biology",
+                    "Physics"
+                ],
+                "why": [
+                    "{{departments_5}, {departments_2}, {departments_4}, {departments_3}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "iteration": 1,
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "iteration": 2,
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "iteration": 3,
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "iteration": 1,
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "iteration": 2,
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "iteration": 3,
+        "answer": [
+            {
+                "answer": [],
+                "why": []
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "iteration": 1,
+        "answer": [
+            {
+                "answer": [
+                    "Cybersecurity",
+                    "Embedded Systems",
+                    "Data Mining",
+                    "Machine Learning"
+                ],
+                "why": [
+                    "{{courses_8}}, {{courses_2}}, {{courses_6}}, {{courses_0}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "iteration": 2,
+        "answer": [
+            {
+                "answer": [
+                    "Cybersecurity",
+                    "Embedded Systems",
+                    "Data Mining",
+                    "Machine Learning"
+                ],
+                "why": [
+                    "{{courses_8}, {courses_2}, {courses_6}, {courses_0}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "iteration": 3,
+        "answer": [
+            {
+                "answer": [
+                    "Cybersecurity",
+                    "Embedded Systems",
+                    "Data Mining",
+                    "Machine Learning"
+                ],
+                "why": [
+                    "{{courses_8}, {courses_2}, {courses_6}, {courses_0}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "iteration": 1,
+        "answer": [
+            {
+                "answer": [
                     "Artificial Intelligence",
+                    "Human-Computer Interaction",
+                    "Database Systems",
                     "Advanced Algorithms"
                 ],
                 "why": [
                     "{{courses_7}}",
+                    "{{courses_9}}",
+                    "{{courses_1}}",
                     "{{courses_3}}"
                 ]
             }
         ]
     },
     {
-        "question": "Which courses (name of courses) have 8 credits?",
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
         "iteration": 2,
         "answer": [
             {
                 "answer": [
                     "Artificial Intelligence",
+                    "Human-Computer Interaction",
+                    "Database Systems",
                     "Advanced Algorithms"
                 ],
                 "why": [
-                    "{{courses_7}}, {{courses_3}}"
+                    "{{courses_7}},{{courses_9}},{{courses_1}},{{courses_3}}"
                 ]
             }
         ]
     },
     {
-        "question": "Which courses (name of courses) have 8 credits?",
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
         "iteration": 3,
         "answer": [
             {
                 "answer": [
                     "Artificial Intelligence",
+                    "Human-Computer Interaction",
+                    "Database Systems",
                     "Advanced Algorithms"
                 ],
                 "why": [
-                    "{{courses_7}, {courses_3}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "What is the title of the thesis of Sophie Durand?",
-        "iteration": 1,
-        "answer": [
-            {
-                "answer": [],
-                "why": []
-            }
-        ]
-    },
-    {
-        "question": "What is the title of the thesis of Sophie Durand?",
-        "iteration": 2,
-        "answer": [
-            {
-                "answer": [],
-                "why": []
-            }
-        ]
-    },
-    {
-        "question": "What is the title of the thesis of Sophie Durand?",
-        "iteration": 3,
-        "answer": [
-            {
-                "answer": [],
-                "why": []
-            }
-        ]
-    },
-    {
-        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
-        "iteration": 1,
-        "answer": [
-            {
-                "answer": [
-                    "Student 5",
-                    "Student 1"
-                ],
-                "why": [
-                    "{{courses_0, thesis_4}, {thesis_0}}",
-                    "{{courses_3, thesis_0}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
-        "iteration": 2,
-        "answer": [
-            {
-                "answer": [
-                    "Student 5",
-                    "Student 1"
-                ],
-                "why": [
-                    "{{courses_0, thesis_4}}",
-                    "{{courses_3, thesis_0}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
-        "iteration": 3,
-        "answer": [
-            {
-                "answer": [
-                    "Student 5",
-                    "Student 1"
-                ],
-                "why": [
-                    "{{courses_0, thesis_4}}",
-                    "{{courses_3, thesis_0}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which courses (name of the courses) have 6 credits?",
-        "iteration": 1,
-        "answer": [
-            {
-                "answer": [
-                    "Data Mining"
-                ],
-                "why": [
-                    "{{courses_6}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which courses (name of the courses) have 6 credits?",
-        "iteration": 2,
-        "answer": [
-            {
-                "answer": [
-                    "Data Mining"
-                ],
-                "why": [
-                    "{{courses_6}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which courses (name of the courses) have 6 credits?",
-        "iteration": 3,
-        "answer": [
-            {
-                "answer": [
-                    "Data Mining"
-                ],
-                "why": [
-                    "{{courses_6}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which students (name, surname) enrolled in 2020?",
-        "iteration": 1,
-        "answer": [
-            {
-                "answer": [],
-                "why": []
-            }
-        ]
-    },
-    {
-        "question": "Which students (name, surname) enrolled in 2020?",
-        "iteration": 2,
-        "answer": [
-            {
-                "answer": [],
-                "why": []
-            }
-        ]
-    },
-    {
-        "question": "Which students (name, surname) enrolled in 2020?",
-        "iteration": 3,
-        "answer": [
-            {
-                "answer": [],
-                "why": []
-            }
-        ]
-    },
-    {
-        "question": "Which classrooms (room number) are located in the Main building?",
-        "iteration": 1,
-        "answer": [
-            {
-                "answer": [
-                    "101",
-                    "102"
-                ],
-                "why": [
-                    "{{classrooms_0}}, {{classrooms_1}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which classrooms (room number) are located in the Main building?",
-        "iteration": 2,
-        "answer": [
-            {
-                "answer": [
-                    "101",
-                    "102"
-                ],
-                "why": [
-                    "{{classrooms_0}}, {{classrooms_1}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which classrooms (room number) are located in the Main building?",
-        "iteration": 3,
-        "answer": [
-            {
-                "answer": [
-                    "101",
-                    "102"
-                ],
-                "why": [
-                    "{{classrooms_0}}, {{classrooms_1}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which departments (departments name) are in the Science faculty?",
-        "iteration": 1,
-        "answer": [
-            {
-                "answer": [
-                    "Biology",
-                    "Chemistry",
-                    "Mathematics",
-                    "Physics"
-                ],
-                "why": [
-                    "{{departments_4},{departments_5},{departments_2},{departments_3}}",
-                    "{{departments_4},{departments_5},{departments_2},{departments_3}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which departments (departments name) are in the Science faculty?",
-        "iteration": 2,
-        "answer": [
-            {
-                "answer": [
-                    "Biology",
-                    "Chemistry",
-                    "Mathematics",
-                    "Physics"
-                ],
-                "why": [
-                    "{{departments_4},{departments_5},{departments_2},{departments_3}}",
-                    "{{departments_4},{departments_5},{departments_2},{departments_3}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which departments (departments name) are in the Science faculty?",
-        "iteration": 3,
-        "answer": [
-            {
-                "answer": [
-                    "Biology",
-                    "Chemistry",
-                    "Mathematics",
-                    "Physics"
-                ],
-                "why": [
-                    "{{departments_4},{departments_5},{departments_2},{departments_3}}",
-                    "{{departments_4},{departments_5},{departments_2},{departments_3}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which thesis (title) have the status completed?",
-        "iteration": 1,
-        "answer": [
-            {
-                "answer": [],
-                "why": []
-            }
-        ]
-    },
-    {
-        "question": "Which thesis (title) have the status completed?",
-        "iteration": 2,
-        "answer": [
-            {
-                "answer": [],
-                "why": []
-            }
-        ]
-    },
-    {
-        "question": "Which thesis (title) have the status completed?",
-        "iteration": 3,
-        "answer": [
-            {
-                "answer": [],
-                "why": []
-            }
-        ]
-    },
-    {
-        "question": "What are the names of the courses taught by Laura Bianchi?",
-        "iteration": 1,
-        "answer": [
-            {
-                "answer": [
-                    "Data Science"
-                ],
-                "why": [
-                    "{{teachers_1}, {teacherResearchAreas_1}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "What are the names of the courses taught by Laura Bianchi?",
-        "iteration": 2,
-        "answer": [
-            {
-                "answer": [
-                    "Data Science"
-                ],
-                "why": [
-                    "{{teachers_1}, {teacherResearchAreas_1}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "What are the names of the courses taught by Laura Bianchi?",
-        "iteration": 3,
-        "answer": [
-            {
-                "answer": [
-                    "Data Science"
-                ],
-                "why": [
-                    "{{teachers_1}, {teacherResearchAreas_1}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which courses (name of courses) are taught in the Fall semester?",
-        "iteration": 1,
-        "answer": [
-            {
-                "answer": [
-                    "Cybersecurity",
-                    "Embedded Systems",
-                    "Data Mining",
-                    "Machine Learning",
-                    "Digital Signal Processing"
-                ],
-                "why": [
-                    "{{courses_8}}",
-                    "{{courses_2}}",
-                    "{{courses_6}}",
-                    "{{courses_0}}",
-                    "{{courses_4}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which courses (name of courses) are taught in the Fall semester?",
-        "iteration": 2,
-        "answer": [
-            {
-                "answer": [
-                    "Cybersecurity",
-                    "Embedded Systems",
-                    "Data Mining",
-                    "Machine Learning",
-                    "Digital Signal Processing"
-                ],
-                "why": [
-                    "{{courses_8}}, {{courses_2}}",
-                    "{{courses_6}}, {{courses_0}}",
-                    "{{courses_4}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which courses (name of courses) are taught in the Fall semester?",
-        "iteration": 3,
-        "answer": [
-            {
-                "answer": [
-                    "Cybersecurity",
-                    "Embedded Systems",
-                    "Data Mining",
-                    "Machine Learning",
-                    "Digital Signal Processing"
-                ],
-                "why": [
-                    "{{courses_8}}, {{courses_2}}",
-                    "{{courses_6}}, {{courses_0}}",
-                    "{{courses_4}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which courses (name of courses) are taught in the Spring semester?",
-        "iteration": 1,
-        "answer": [
-            {
-                "answer": [
-                    "Artificial Intelligence",
-                    "Human-Computer Interaction",
-                    "Database Systems",
-                    "Advanced Algorithms",
-                    "Software Engineering"
-                ],
-                "why": [
-                    "{{courses_7}}",
-                    "{{courses_9}}",
-                    "{{courses_1}}",
-                    "{{courses_3}}",
-                    "{{courses_5}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which courses (name of courses) are taught in the Spring semester?",
-        "iteration": 2,
-        "answer": [
-            {
-                "answer": [
-                    "Artificial Intelligence",
-                    "Human-Computer Interaction",
-                    "Database Systems",
-                    "Advanced Algorithms",
-                    "Software Engineering"
-                ],
-                "why": [
-                    "{{courses_7}}",
-                    "{{courses_9}}",
-                    "{{courses_1}}",
-                    "{{courses_3}}",
-                    "{{courses_5}}"
-                ]
-            }
-        ]
-    },
-    {
-        "question": "Which courses (name of courses) are taught in the Spring semester?",
-        "iteration": 3,
-        "answer": [
-            {
-                "answer": [
-                    "Artificial Intelligence",
-                    "Human-Computer Interaction",
-                    "Database Systems",
-                    "Advanced Algorithms",
-                    "Software Engineering"
-                ],
-                "why": [
-                    "{{courses_7}}",
-                    "{{courses_9}}",
-                    "{{courses_1}}",
-                    "{{courses_3}}",
-                    "{{courses_5}}"
+                    "{{courses_7},{courses_9},{courses_1},{courses_3}}"
                 ]
             }
         ]
@@ -1626,16 +1548,8 @@
         "iteration": 1,
         "answer": [
             {
-                "answer": [
-                    "teacher 8",
-                    "teacher 9",
-                    "teacher 5"
-                ],
-                "why": [
-                    "{{teacherResearchAreas_7}, {departments_1}}",
-                    "{{teacherResearchAreas_8}, {departments_1}}",
-                    "{{teacherResearchAreas_4}, {departments_1}}"
-                ]
+                "answer": [],
+                "why": []
             }
         ]
     },
@@ -1644,16 +1558,8 @@
         "iteration": 2,
         "answer": [
             {
-                "answer": [
-                    "teacher 5",
-                    "teacher 8",
-                    "teacher 9"
-                ],
-                "why": [
-                    "{{departments_1}, {teacherResearchAreas_4}}",
-                    "{{departments_1}, {teacherResearchAreas_7}}",
-                    "{{departments_1}, {teacherResearchAreas_8}}"
-                ]
+                "answer": [],
+                "why": []
             }
         ]
     },
@@ -1662,16 +1568,8 @@
         "iteration": 3,
         "answer": [
             {
-                "answer": [
-                    "teacher 5",
-                    "teacher 8",
-                    "teacher 9"
-                ],
-                "why": [
-                    "{{departments_1}, {teacherResearchAreas_4}}",
-                    "{{departments_1}, {teacherResearchAreas_7}}",
-                    "{{departments_1}, {teacherResearchAreas_8}}"
-                ]
+                "answer": [],
+                "why": []
             }
         ]
     },
@@ -1722,12 +1620,8 @@
         "iteration": 1,
         "answer": [
             {
-                "answer": [
-                    "Teacher 2"
-                ],
-                "why": [
-                    "{{teacherResearchAreas_1}, {departments_0}}"
-                ]
+                "answer": [],
+                "why": []
             }
         ]
     },
@@ -1735,14 +1629,6 @@
         "question": "Which teachers (name, surname) are part of the Computer Science department?",
         "iteration": 2,
         "answer": [
-            {
-                "answer": [
-                    "Teacher 2"
-                ],
-                "why": [
-                    "{{teacherResearchAreas_1}, {departments_0}}"
-                ]
-            },
             {
                 "answer": [],
                 "why": []
@@ -1754,12 +1640,8 @@
         "iteration": 3,
         "answer": [
             {
-                "answer": [
-                    "Teacher 2"
-                ],
-                "why": [
-                    "{{teacherResearchAreas_1}, {departments_0}}"
-                ]
+                "answer": [],
+                "why": []
             }
         ]
     },
@@ -1845,13 +1727,11 @@
             {
                 "answer": [
                     "Elena Gonzalez",
-                    "Giulia Rossi",
                     "Sophie Durand"
                 ],
                 "why": [
-                    "{{students_4}, {thesis_4}}",
-                    "{{students_0}, {thesis_4}}",
-                    "{{students_2}, {thesis_4}}"
+                    "{{students_4}, {thesis_0}}",
+                    "{{students_2}, {thesis_0}}"
                 ]
             }
         ]
@@ -1862,14 +1742,11 @@
         "answer": [
             {
                 "answer": [
-                    "Giulia Rossi",
                     "Elena Gonzalez",
                     "Sophie Durand"
                 ],
                 "why": [
-                    "{{students_0}, {thesis_4}}",
-                    "{{students_4}, {thesis_4}}",
-                    "{{students_2}, {thesis_4}}"
+                    "{{students_4}, {students_2}}"
                 ]
             }
         ]
@@ -1880,14 +1757,12 @@
         "answer": [
             {
                 "answer": [
-                    "Giulia Rossi",
                     "Elena Gonzalez",
-                    "Sophie Durand"
+                    "Sophie Durand",
+                    "Giulia Rossi"
                 ],
                 "why": [
-                    "{{students_0}, {thesis_4}}",
-                    "{{students_4}, {thesis_4}}",
-                    "{{students_2}, {thesis_4}}"
+                    "{{students_4}, {students_2}, {students_0}}"
                 ]
             }
         ]
@@ -1931,7 +1806,7 @@
                     "Student 5"
                 ],
                 "why": [
-                    "{{thesis_4, courses_9}}"
+                    "{{thesis_4}}"
                 ]
             }
         ]
@@ -1945,7 +1820,7 @@
                     "Student 5"
                 ],
                 "why": [
-                    "{{thesis_4, courses_9}}"
+                    "{{thesis_4}}"
                 ]
             },
             {
@@ -1963,8 +1838,12 @@
                     "Student 5"
                 ],
                 "why": [
-                    "{{courses_9, thesis_4}}"
+                    "{{thesis_4}}"
                 ]
+            },
+            {
+                "answer": [],
+                "why": []
             }
         ]
     },
@@ -2001,12 +1880,10 @@
         "answer": [
             {
                 "answer": [
-                    "401",
-                    "201"
+                    "401"
                 ],
                 "why": [
-                    "{{classrooms_5}}",
-                    "{{classrooms_2}}"
+                    "{{classrooms_5}}"
                 ]
             }
         ]
@@ -2017,11 +1894,10 @@
         "answer": [
             {
                 "answer": [
-                    "401",
-                    "201"
+                    "401"
                 ],
                 "why": [
-                    "{{classrooms_5}}, {{classrooms_2}}"
+                    "{{classrooms_5}}"
                 ]
             }
         ]
@@ -2032,11 +1908,10 @@
         "answer": [
             {
                 "answer": [
-                    "401",
-                    "201"
+                    "401"
                 ],
                 "why": [
-                    "{{classrooms_5}, {classrooms_2}}"
+                    "{{classrooms_5}}"
                 ]
             }
         ]

@@ -89,7 +89,7 @@ for file in all_files:
     docs = loader.load()
     documents.extend(docs)
 bm25_retriever = BM25Retriever.from_documents(documents)
-bm25_retriever.k = 10 
+bm25_retriever.k = 5 
 """ Retrieve and Generate part """
 # Define prompt for question-answering
 #prompt = hub.pull("rlm/rag-prompt")
