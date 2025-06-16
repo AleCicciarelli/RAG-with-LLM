@@ -94,60 +94,57 @@ bm25_retriever.k = 10
 # Define prompt for question-answering
 #prompt = hub.pull("rlm/rag-prompt")
 prompt = PromptTemplate.from_template("""
-        Your task is to:
-        1. Provide the correct answer(s) to this question: {question} based only on the context provided: {context}.
+        Your task is:
+
+        1. Provide the correct answer(s) to this question: {question}, based ONLY on the given context: {context}.
+
         2. For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
 
-        Each Witness Set must be a string like:
-            "{{{{<table_name>_<row>}}}}"
-        (use `source`(return just the table_name which correspond to the name of the file,WITHOUT extension and path csv_data/TABLENAME.csv
-        ) and `row` metadata from the context).
+        - Each Witness Set must be formatted as:
+        "{{{{<table_name>_<row>}}}}"
+        where:
+            - <table_name> is the name of the table used, from the `source` metadata field in the context.
+            - <row> is the corresponding `row` metadata value.
 
-        If an answer has multiple Witness Sets, list each one in the `"why"` array "{{{{WitnessSet1}}, {{WitnessSet2}}}}". A result is valid if at least one Witness Set supports it.
-        IMPORTANT: Return ONLY a valid JSON array with NO explanations or extra text.
-        Do NOT include any comments, explanations, or introductory phrases.
+        - If an answer has multiple Witness Sets, list each set separately inside the `"why"` array as a string, e.g.:
+        "{{{{WitnessSet1}}, {{WitnessSet2}}}}".
 
-        [
-            {{
-            "answer": ["<answer_1>","<answer_2>"],
-            "why": [
-            "{{{{table_row_a, table_row_b}}}}",  
-            "{{{{table_row_e, table_row_f}}}}"    
-            }}
-        ]
+        - A result is valid if at least one Witness Set supports it.
+
+        IMPORTANT:
+
+        - Return ONLY a valid JSON array, with NO explanations, comments, or extra text.
+        - Do NOT include introductory phrases.
+        - Format your response exactly as in the example below.
+
+        ---
 
         Example:
 
         CONTEXT:
-        - source: <table_1>, row: <row_idx_1>
-        (<col_a>:<val_a>, <col_b>:<val_b>, ...)
-        - source: <table_1>, row: <row_idx_2>
-        (<col_a>:<val_a1>, <col_b>:<val_b1>, ...)
-        - source: <table_2>, row: <row_idx_3>
-        (<col_c>:<val_c>, <col_d>:<val_d>, ...)
-        - source: <table_2>, row: <row_idx_4>
-        (<col_c>:<val_c1>, <col_d>:<val_d1>, ...)
-        - source: <table_3>, row: <row_idx_1>
-        (<col_e>:<val_e>, <col_f>:<val_f>, ...)
-        - source: <table_3>, row: <row_idx_2>
-        (<col_e>:<val_e1>, <col_f>:<val_f1>, ...)
+
+        - source: orders, row: 12  
+        (orderkey: 123, custkey: 456, totalprice: 789)  
+        - source: customer, row: 5  
+        (custkey: 456, name: "Alice")  
+        - source: lineitem, row: 7  
+        (orderkey: 123, partkey: 99, quantity: 10)
 
         QUESTION:
-            "Which are the <entity_type> (specify <col_a> and <col_b>) involved in <condition_1> OR <condition_2>?"
+
+        "Which customers placed orders with total price over 500?"
 
         EXPECTED ANSWER:
 
         [
-            {{
-                "answer": ["<col_a_val> <col_b_val>", "<col_a_val> <col_b_val>"],
-                "why": [
-                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_3>,<table_3>_<row_idx_1>}},{{<table_1>_<row_idx_2>,<table_2>_<row_idx_4>,<table_3>_<row_idx_1>}}}}", 
-                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_4>,<table_3>_<row_idx_2>}}}}"
-                ]
-            }}
-        
-
+        {
+            "answer": ["Alice"],
+            "why": [
+            "{{{{orders_12, customer_5}}}}"
+            ]
+        }
         ]
+
 """
 )
 # Step 1: Define Explanation Class: composed by file and row
@@ -214,11 +211,12 @@ def generate(state: State):
 
     return {
         "answer": parsed if parsed else response.strip(),
-        "current_question": (
-            f"Original question:\n{state['original_question']}\n\n"
-            f"Previous answer generated:\n{response}\n\n"
-            f"Based on this previous answer and the question, try to provide the correct answer and explanation."
-)
+        "current_question" : (
+            f"{state['original_question']}\n\n"
+            f"Previous answer: {parsed.answer if parsed else response}\n"
+            f"Use this to refine and expand your reasoning."
+
+        )
 
     }    # Update the state with the parsed answer and iteration history
     # current_answer_item should be an AnswerItem, not a dict.
