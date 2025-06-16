@@ -4,6 +4,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.document_loaders import CSVLoader
 from langchain_core.documents import Document
 from langchain_community.vectorstores import FAISS
+from langchain.retrievers import BM25Retriever
 from langchain_community.vectorstores.utils import DistanceStrategy
 from langgraph.graph import START, StateGraph, END
 from typing_extensions import List, TypedDict, Optional, Dict, Any
@@ -50,6 +51,7 @@ os.makedirs(os.path.dirname(debug_log_filename), exist_ok=True)
 os.makedirs(os.path.dirname(output_filename), exist_ok=True)
 
 """ Indexing part """
+'''
 # Verify if the FAISS files already exist
 if os.path.exists(faiss_index_folder):
     # Load the FAISS index folder (allow_dangerous_deserialization=True just because we create the files and so we can trust them)
@@ -77,7 +79,17 @@ else:
     # Save after full processing
     vector_store.save_local(faiss_index_folder)
     print("FAISS vector store created and saved successfully!")
+'''
+documents = []
+all_files = [f for f in os.listdir(csv_folder) if f.endswith(".csv")]
 
+for file in all_files:
+    file_path = os.path.join(csv_folder, file)
+    loader = CSVLoader(file_path=file_path)
+    docs = loader.load()
+    documents.extend(docs)
+bm25_retriever = BM25Retriever.from_documents(documents)
+bm25_retriever.k = 10 
 """ Retrieve and Generate part """
 # Define prompt for question-answering
 #prompt = hub.pull("rlm/rag-prompt")
@@ -162,9 +174,13 @@ parser = JsonOutputParser(pydantic_schema=AnswerItem)
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
     print(f"Retrieving for question: {state['original_question']}")
+    retrieved_docs = bm25_retriever.get_relevant_documents(state["current_question"])
+    return {"context": retrieved_docs}
+    '''
+    print(f"Retrieving for question: {state['original_question']}")
     retrieved_docs = vector_store.similarity_search(state["current_question"], k = state["k"])
     return {"context": retrieved_docs}
-
+'''
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
     # Construct a detailed prompt for the LLM
