@@ -92,82 +92,22 @@
     {
         "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
         "iteration": 2,
-        "answer": [
-            {
-                "answer": [
-                    "department_id: 1"
-                ],
-                "why": [
-                    "{{teachers_1}}",
-                    "{{teachers_8}}",
-                    "{{teachers_7}}",
-                    "{{teachers_3}}",
-                    "{{teachers_6}}",
-                    "{{teachers_9}}",
-                    "{{teachers_2}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"department_id: 1\"],\n        \"why\": [\n            \"{{teachers_1}}\",\n            \"{{teachers_0}}\",\n            \"{{teachers_9}}\",\n            \"{{teachers_8}}\",\n            \"{{teachers_7}}\",\n            \"{{teachers_6}}\",\n            \"{{teachers_3}}\"\n        ]\n    }\n]\n\nExplanation:\nThe teacher Laura Bianchi (teacher_id: 2) is in department_id: 1."
     },
     {
         "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
         "iteration": 3,
-        "answer": [
-            {
-                "answer": [
-                    "department_id: 1"
-                ],
-                "why": [
-                    "{{teachers_1}}",
-                    "{{teachers_8}}",
-                    "{{teachers_7}}",
-                    "{{teachers_3}}",
-                    "{{teachers_6}}",
-                    "{{teachers_9}}",
-                    "{{teachers_2}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"department_id: 1\"],\n        \"why\": [\n            \"{{departments_2}}\",\n            \"{{teachers_0}}\",\n            \"{{teachers_9}}\",\n            \"{{teachers_8}}\",\n            \"{{teachers_7}}\"\n        ]\n    }\n]\n\nExplanation:\nThe teacher Laura Bianchi (teacher_id: 2) is in department_id: 1."
     },
     {
         "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
         "iteration": 4,
-        "answer": [
-            {
-                "answer": [
-                    "department_id: 1"
-                ],
-                "why": [
-                    "{{teachers_1}}",
-                    "{{teachers_8}}",
-                    "{{teachers_7}}",
-                    "{{teachers_3}}",
-                    "{{teachers_6}}",
-                    "{{teachers_9}}",
-                    "{{teachers_2}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"department_id: 1\"],\n        \"why\": [\n            \"{{teachers_0}}\",\n            \"{{teachers_9}}\",\n            \"{{teachers_8}}\"\n        ]\n    }\n]\n\nExplanation:\nThe teacher Laura Bianchi (teacher_id: 2) is in department_id: 1."
     },
     {
         "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
         "iteration": 5,
-        "answer": [
-            {
-                "answer": [
-                    "department_id: 1"
-                ],
-                "why": [
-                    "{{teachers_1}}",
-                    "{{teachers_8}}",
-                    "{{teachers_7}}",
-                    "{{teachers_3}}",
-                    "{{teachers_6}}",
-                    "{{teachers_9}}",
-                    "{{teachers_2}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"department_id: 1\"],\n        \"why\": [\n            \"{{departments_2}}\",\n            \"{{teachers_0}}\",\n            \"{{teachers_9}}\",\n            \"{{teachers_8}}\"\n        ]\n    }\n]\n\nExplanation:\nThe teacher Laura Bianchi (teacher_id: 2) is in department_id: 1."
     },
     {
         "question": "How many credits has the course Software Engineering?",
@@ -193,8 +133,7 @@
                     "6"
                 ],
                 "why": [
-                    "{{courses_5}}",
-                    "{{courses_5}}"
+                    "{{grades_5}}"
                 ]
             }
         ]
@@ -208,8 +147,7 @@
                     "6"
                 ],
                 "why": [
-                    "{{courses_5}}",
-                    "{{courses_5}}"
+                    "{{grades_5}}"
                 ]
             }
         ]
@@ -223,8 +161,7 @@
                     "6"
                 ],
                 "why": [
-                    "{{courses_5}}",
-                    "{{courses_5}}"
+                    "{{grades_5}}"
                 ]
             }
         ]
@@ -238,8 +175,7 @@
                     "6"
                 ],
                 "why": [
-                    "{{courses_5}}",
-                    "{{courses_5}}"
+                    "{{grades_5}}"
                 ]
             }
         ]
@@ -262,17 +198,7 @@
     {
         "question": "In which building is the class with room number 401?",
         "iteration": 2,
-        "answer": [
-            {
-                "answer": [
-                    "Electronics"
-                ],
-                "why": [
-                    "{{classrooms_5}}",
-                    "{{classrooms_5}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Electronics\"],\n        \"why\": [\n            \"{{classrooms_Engineering_4}},{{classrooms_Electronics_5}}\"\n        ]\n    }\n]\n\nExplanation: The class with room number 401 is in the Electronics building. This can be justified by the following Witness Sets:\n\n- `{{classrooms_Engineering_4}}`: The row for Engineering building and room number 302, which has a different room number than 401.\n- `{{classrooms_Electronics_5}}`: The row for Electronics building and room number 401, which matches the given room number."
     },
     {
         "question": "In which building is the class with room number 401?",
@@ -283,8 +209,7 @@
                     "Electronics"
                 ],
                 "why": [
-                    "{{classrooms_5}}",
-                    "{{classrooms_5}}"
+                    "{{classrooms_Electronics_5}}"
                 ]
             }
         ]
@@ -298,8 +223,7 @@
                     "Electronics"
                 ],
                 "why": [
-                    "{{classrooms_5}}",
-                    "{{classrooms_5}}"
+                    "{{classrooms_Electronics_5}}"
                 ]
             }
         ]
@@ -313,8 +237,7 @@
                     "Electronics"
                 ],
                 "why": [
-                    "{{classrooms_5}}",
-                    "{{classrooms_5}}"
+                    "{{classrooms_Electronics_5}}"
                 ]
             }
         ]
@@ -343,8 +266,7 @@
                     "Fall"
                 ],
                 "why": [
-                    "{{courses_8}}",
-                    "{{}}"
+                    "{{courses_8}}"
                 ]
             }
         ]
@@ -352,32 +274,12 @@
     {
         "question": "In which semester is done the Cybersecurity course?",
         "iteration": 3,
-        "answer": [
-            {
-                "answer": [
-                    "Fall"
-                ],
-                "why": [
-                    "{{courses_8}}",
-                    "{{}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Fall\"],\n        \"why\": [\n            \"{{courses_8}}\"\n        ]\n    }\n]\n\nExplanation: The Cybersecurity course has a semester of Fall, which can be justified by the input tuple in row 8 of the courses table."
     },
     {
         "question": "In which semester is done the Cybersecurity course?",
         "iteration": 4,
-        "answer": [
-            {
-                "answer": [
-                    "Fall"
-                ],
-                "why": [
-                    "{{courses_8}}",
-                    "{{}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Fall\"],\n        \"why\": [\n            \"{{courses_8}}\"\n        ]\n    }\n]\n\nExplanation: The Cybersecurity course has a semester of Fall, which can be justified by the input tuple in row 8 of the courses table."
     },
     {
         "question": "In which semester is done the Cybersecurity course?",
@@ -388,8 +290,7 @@
                     "Fall"
                 ],
                 "why": [
-                    "{{courses_8}}",
-                    "{{}}"
+                    "{{courses_8}}"
                 ]
             }
         ]
@@ -402,22 +303,22 @@
     {
         "question": "In which classroom (room number) is the Database Systems exam?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"401\"],\n        \"why\": [\n            \"{{classrooms_5}}\"\n        ]\n    }\n]\n\nExplanation: The Database Systems exam is in classroom 6, but we are looking for the room number. We can find this by matching the `classroom_id` from the exams table (row 2) with the corresponding `room_number` from the classrooms table. In this case, `classroom_id` 3 corresponds to room number 401."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Engineering 302\"],\n        \"why\": [\n            \"{{classrooms_4}}\",\n            \"{{exams_2}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Database Systems exam is held in room number 302, which belongs to building Engineering. This information can be found in the `classrooms` table, row 4 (`classroom_id: 5`). The corresponding witness sets are `{{classrooms_4}}` and `{{exams_2}}`, as this information is present in both the `classrooms` and `exams` tables."
     },
     {
         "question": "In which classroom (room number) is the Database Systems exam?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"401\"],\n        \"why\": [\n            \"{{classrooms_5}}\"\n        ]\n    }\n]\n\nExplanation: The Database Systems exam is in classroom 6, but we are looking for the room number. We can find this by matching the `classroom_id` from the exams table (row 2) with the corresponding `room_number` from the classrooms table. In this case, `classroom_id` 3 corresponds to room number 401."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Engineering 302\"],\n        \"why\": [\n            \"{{classrooms_4}}\",\n            \"{{exams_2}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Database Systems exam is held in room number 302, which belongs to building Engineering. This information can be found in the `classrooms` table, row 4 (`classroom_id: 5`). The corresponding witness sets are `{{classrooms_4}}` and `{{exams_2}}`, as this information is present in both the `classrooms` and `exams` tables."
     },
     {
         "question": "In which classroom (room number) is the Database Systems exam?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"401\"],\n        \"why\": [\n            \"{{classrooms_5}}\"\n        ]\n    }\n]\n\nExplanation: The Database Systems exam is in classroom 6, but we are looking for the room number. We can find this by matching the `classroom_id` from the exams table (row 2) with the corresponding `room_number` from the classrooms table. In this case, `classroom_id` 3 corresponds to room number 401."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Engineering 302\"],\n        \"why\": [\n            \"{{classrooms_4}}\",\n            \"{{exams_2}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Database Systems exam is held in room number 302, which belongs to building Engineering. This information can be found in the `classrooms` table, row 4 (`classroom_id: 5`). The corresponding witness sets are `{{classrooms_4}}` and `{{exams_2}}`, as this information is present in both the `classrooms` and `exams` tables."
     },
     {
         "question": "In which classroom (room number) is the Database Systems exam?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"401\"],\n        \"why\": [\n            \"{{classrooms_5}}\"\n        ]\n    }\n]\n\nExplanation: The Database Systems exam is in classroom 6, but we are looking for the room number. We can find this by matching the `classroom_id` from the exams table (row 2) with the corresponding `room_number` from the classrooms table. In this case, `classroom_id` 3 corresponds to room number 401."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Engineering 302\"],\n        \"why\": [\n            \"{{classrooms_4}}\",\n            \"{{exams_2}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Database Systems exam is held in room number 302, which belongs to building Engineering. This information can be found in the `classrooms` table, row 4 (`classroom_id: 5`). The corresponding witness sets are `{{classrooms_4}}` and `{{exams_2}}`, as this information is present in both the `classrooms` and `exams` tables."
     },
     {
         "question": "In which area is the 'User Experience Design in Web Apps' thesis?",
@@ -427,22 +328,22 @@
     {
         "question": "In which area is the 'User Experience Design in Web Apps' thesis?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Human-Computer Interaction\"],\n        \"why\": [\n            \"{{thesis_<4>}\"\n        ]\n    }\n]\n\nExplanation: The thesis with ID 5 has a research area of Human-Computer Interaction, which is mentioned in the context."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Human-Computer Interaction\"],\n        \"why\": [\n            \"{{thesis_5}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with ID 5 has a research area of Human-Computer Interaction, which is mentioned in the context."
     },
     {
         "question": "In which area is the 'User Experience Design in Web Apps' thesis?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Human-Computer Interaction\"],\n        \"why\": [\n            \"{{thesis_<4>}\"\n        ]\n    }\n]\n\nExplanation: The thesis with ID 5 has a research area of Human-Computer Interaction, which is mentioned in the context."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Human-Computer Interaction\"],\n        \"why\": [\n            \"{{thesis_5}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with ID 5 has a research area of Human-Computer Interaction, which is mentioned in the context."
     },
     {
         "question": "In which area is the 'User Experience Design in Web Apps' thesis?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Human-Computer Interaction\"],\n        \"why\": [\n            \"{{thesis_<4>}\"\n        ]\n    }\n]\n\nExplanation: The thesis with ID 5 has a research area of Human-Computer Interaction, which is mentioned in the context."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Human-Computer Interaction\"],\n        \"why\": [\n            \"{{thesis_<4>}\"\n        ]\n    }\n]\n\nExplanation: The thesis with ID 4 has a research area of Human-Computer Interaction, which is mentioned in the context."
     },
     {
         "question": "In which area is the 'User Experience Design in Web Apps' thesis?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Human-Computer Interaction\"],\n        \"why\": [\n            \"{{thesis_<4>}\"\n        ]\n    }\n]\n\nExplanation: The thesis with ID 5 has a research area of Human-Computer Interaction, which is mentioned in the context."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Human-Computer Interaction\"],\n        \"why\": [\n            \"{{thesis_4}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with ID 4 has a research area of Human-Computer Interaction, which is mentioned in the context."
     },
     {
         "question": "Which instructor (name, surname) teaches Machine Learning course?",
@@ -461,22 +362,31 @@
     {
         "question": "Which instructor (name, surname) teaches Machine Learning course?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Carlo Rossi\"],\n        \"why\": [\n            \"{{teacher_research_areas_7}}\",\n            \"{{courses_0,courses_7}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Machine Learning course has instructor Carlo Rossi, who teaches it. This can be justified by the following witness sets:\n\n- `{{teacher_research_areas_7}}`: The row 7 in the `teacher_research_areas` table indicates that teacher_id 8 (Carlo Rossi) is involved in the research area of Machine Learning.\n- `{{courses_0,courses_7}}`: The rows 0 and 7 in the `courses` table indicate that Carlo Rossi teaches the course with id 101 (Machine Learning) and also teaches the course with id 108 (Artificial Intelligence), which is related to Machine Learning."
+        "answer": [
+            {
+                "answer": [
+                    "Carlo Rossi"
+                ],
+                "why": [
+                    "{{teacher_research_areas_7}}"
+                ]
+            }
+        ]
     },
     {
         "question": "Which instructor (name, surname) teaches Machine Learning course?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Carlo Rossi\"],\n        \"why\": [\n            \"{{teacher_research_areas_7}}\",\n            \"{{courses_0,courses_7}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Machine Learning course has instructor Carlo Rossi, who teaches it. This can be justified by the following witness sets:\n\n- `{{teacher_research_areas_7}}`: The row 7 in the `teacher_research_areas` table indicates that teacher_id 8 (Carlo Rossi) is involved in the research area of Machine Learning.\n- `{{courses_0,courses_7}}`: The rows 0 and 7 in the `courses` table indicate that Carlo Rossi teaches the course with id 101 (Machine Learning) and also teaches the course with id 108 (Artificial Intelligence), which is related to Machine Learning."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Carlo Rossi\"],\n        \"why\": [\n            \"{{teachers_0}}\"\n        ]\n    }\n]\n\nExplanation: The instructor who teaches the Machine Learning course is Carlo Rossi, as indicated by the `teacher` column in the `courses` table (row 0), which has a value of 1. This corresponds to the teacher_id in the `teachers` table (row 0), where the name and surname are Carlo Rossi."
     },
     {
         "question": "Which instructor (name, surname) teaches Machine Learning course?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Carlo Rossi\"],\n        \"why\": [\n            \"{{teacher_research_areas_7}}\",\n            \"{{courses_0,courses_7}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Machine Learning course has instructor Carlo Rossi, who teaches it. This can be justified by the following witness sets:\n\n- `{{teacher_research_areas_7}}`: The row 7 in the `teacher_research_areas` table indicates that teacher_id 8 (Carlo Rossi) is involved in the research area of Machine Learning.\n- `{{courses_0,courses_7}}`: The rows 0 and 7 in the `courses` table indicate that Carlo Rossi teaches the course with id 101 (Machine Learning) and also teaches the course with id 108 (Artificial Intelligence), which is related to Machine Learning."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Carlo Rossi\"],\n        \"why\": [\n            \"{{teachers_0}}\"\n        ]\n    }\n]\n\nExplanation: The instructor who teaches the Machine Learning course is Carlo Rossi, as indicated by the `teacher` column in the `courses` table (row 0), which has a value of 1. This corresponds to the teacher_id in the `teachers` table (row 0), where the name and surname are Carlo Rossi."
     },
     {
         "question": "Which instructor (name, surname) teaches Machine Learning course?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Carlo Rossi\"],\n        \"why\": [\n            \"{{teacher_research_areas_7}}\",\n            \"{{courses_0,courses_7}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Machine Learning course has instructor Carlo Rossi, who teaches it. This can be justified by the following witness sets:\n\n- `{{teacher_research_areas_7}}`: The row 7 in the `teacher_research_areas` table indicates that teacher_id 8 (Carlo Rossi) is involved in the research area of Machine Learning.\n- `{{courses_0,courses_7}}`: The rows 0 and 7 in the `courses` table indicate that Carlo Rossi teaches the course with id 101 (Machine Learning) and also teaches the course with id 108 (Artificial Intelligence), which is related to Machine Learning."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Carlo Rossi\"],\n        \"why\": [\n            \"{{teachers_0}}\"\n        ]\n    }\n]\n\nExplanation: The instructor who teaches the Machine Learning course is Carlo Rossi, as indicated by the `teacher` column in the `courses` table (row 0), which has a value of 1. This corresponds to the teacher_id in the `teachers` table (row 0), where the name and surname are Carlo Rossi."
     },
     {
         "question": "Which is the research area of the teacher Carlo Rossi?",
@@ -501,7 +411,7 @@
                     "Signal Processing"
                 ],
                 "why": [
-                    "{{teachers_9}}"
+                    "{{teacher_research_areas_9}}"
                 ]
             }
         ]
@@ -515,7 +425,7 @@
                     "Signal Processing"
                 ],
                 "why": [
-                    "{{teachers_9}}"
+                    "{{teacher_research_areas_9}}"
                 ]
             }
         ]
@@ -529,7 +439,7 @@
                     "Signal Processing"
                 ],
                 "why": [
-                    "{{teachers_9}}"
+                    "{{teacher_research_areas_9}}"
                 ]
             }
         ]
@@ -543,7 +453,7 @@
                     "Signal Processing"
                 ],
                 "why": [
-                    "{{teachers_9}}"
+                    "{{teacher_research_areas_9}}"
                 ]
             }
         ]
@@ -567,22 +477,22 @@
     {
         "question": "How many research project follows the teacher Giulia Colombo?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"5\"],\n        \"why\": [\n            \"{{teacher_research_areas_5}}\",\n            \"{{teacher_research_areas_0, teacher_research_areas_9, teacher_research_areas_8}}\"\n        ]\n    }\n]\n\nExplanation: The research project follows the teacher Giulia Colombo (id 6) if and only if there is a row in `teacher_research_areas` where `teacher_id` equals 6. In this case, we have one such row (`row: 5`). Additionally, we can also find supporting evidence in other rows of `teacher_research_areas`, specifically `row: 0`, `row: 9`, and `row: 8`."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"5\"],\n        \"why\": [\n            \"{{teacher_research_areas_5}}\",\n            \"{{teacher_research_areas_0, teacher_research_areas_5}}\",\n            \"{{teacher_research_areas_1, teacher_research_areas_8, teacher_research_areas_5}}\"\n        ]\n    }\n]\n\nExplanation:\n\nThe answer is 5 because Giulia Colombo (teacher_id: 6) has a research area \"Software Engineering\" with 5 projects in the `teacher_research_areas` table. The witness sets are:\n\n- `{{teacher_research_areas_5}}`: This set only includes the row for Giulia Colombo's research area, which has 5 projects.\n- `{{teacher_research_areas_0, teacher_research_areas_5}}`: This set includes the row for Artificial Intelligence (which has 5 projects) and Giulia Colombo's research area \"Software Engineering\" (which also has 5 projects).\n- `{{teacher_research_areas_1, teacher_research_areas_8, teacher_research_areas_5}}`: This set includes the rows for Data Science, Cybersecurity, and Giulia Colombo's research area \"Software Engineering\", all of which have 5 or fewer projects."
     },
     {
         "question": "How many research project follows the teacher Giulia Colombo?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"5\"],\n        \"why\": [\n            \"{{teacher_research_areas_5}}\",\n            \"{{teacher_research_areas_0, teacher_research_areas_9, teacher_research_areas_8}}\"\n        ]\n    }\n]\n\nExplanation: The research project follows the teacher Giulia Colombo (id 6) if and only if there is a row in `teacher_research_areas` where `teacher_id` equals 6. In this case, we have one such row (`row: 5`). Additionally, we can also find supporting evidence in other rows of `teacher_research_areas`, specifically `row: 0`, `row: 9`, and `row: 8`."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"5\"],\n        \"why\": [\n            \"{{teacher_research_areas_5}}\",\n            \"{{teacher_research_areas_0, teacher_research_areas_5}}\",\n            \"{{teacher_research_areas_1, teacher_research_areas_8, teacher_research_areas_5}}\"\n        ]\n    }\n]"
     },
     {
         "question": "How many research project follows the teacher Giulia Colombo?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"5\"],\n        \"why\": [\n            \"{{teacher_research_areas_5}}\",\n            \"{{teacher_research_areas_0, teacher_research_areas_9, teacher_research_areas_8}}\"\n        ]\n    }\n]\n\nExplanation: The research project follows the teacher Giulia Colombo (id 6) if and only if there is a row in `teacher_research_areas` where `teacher_id` equals 6. In this case, we have one such row (`row: 5`). Additionally, we can also find supporting evidence in other rows of `teacher_research_areas`, specifically `row: 0`, `row: 9`, and `row: 8`."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"5\"],\n        \"why\": [\n            \"{{teacher_research_areas_5}}\",\n            \"{{teacher_research_areas_0, teacher_research_areas_5}}\",\n            \"{{teacher_research_areas_1, teacher_research_areas_8, teacher_research_areas_5}}\"\n        ]\n    }\n]\n\nExplanation:\n\nThe answer is 5 because Giulia Colombo's research area is Software Engineering (row 5 in the `teacher_research_areas` table). The witness sets are:\n\n- `{{teacher_research_areas_5}}`: This set only includes row 5, which corresponds to Giulia Colombo's research area.\n- `{{teacher_research_areas_0, teacher_research_areas_5}}`: This set includes rows 0 and 5. Row 0 is Artificial Intelligence, which is not related to Giulia Colombo. Therefore, this set does not support the answer.\n- `{{teacher_research_areas_1, teacher_research_areas_8, teacher_research_areas_5}}`: This set includes rows 1 (Data Science), 8 (Cybersecurity), and 5 (Software Engineering). Although Data Science is not related to Giulia Colombo, Cybersecurity and Software Engineering are. Therefore, this set supports the answer.\n\nThe other sets do not support the answer because they include research areas that are not related to Giulia Colombo."
     },
     {
         "question": "How many research project follows the teacher Giulia Colombo?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"5\"],\n        \"why\": [\n            \"{{teacher_research_areas_5}}\",\n            \"{{teacher_research_areas_0, teacher_research_areas_9, teacher_research_areas_8}}\"\n        ]\n    }\n]\n\nExplanation: The research project follows the teacher Giulia Colombo (id 6) if and only if there is a row in `teacher_research_areas` where `teacher_id` equals 6. In this case, we have one such row (`row: 5`). Additionally, we can also find supporting evidence in other rows of `teacher_research_areas`, specifically `row: 0`, `row: 9`, and `row: 8`."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"5\"],\n        \"why\": [\n            \"{{teacher_research_areas_5}}\",\n            \"{{teacher_research_areas_1, teacher_research_areas_8, teacher_research_areas_5}}\"\n        ]\n    }\n]"
     },
     {
         "question": "When is the Machine Learning exam (date,time)?",
@@ -592,22 +502,22 @@
     {
         "question": "When is the Machine Learning exam (date,time)?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"2023-03-20 10:00\"],\n        \"why\": [\n            \"{{exams_2}}\",\n            \"{{exams_0}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Machine Learning exam date and time are specified in the exams table, row 2. The course_id for this exam is 103, which does not match the course_id of the Machine Learning course (course_id: 108). However, we can find another exam that matches the course_id of the Machine Learning course by looking at the courses table, row 7. This exam has a date and time of 2023-03-20 10:00. The witness sets are exams_2 and exams_0 because these rows provide the necessary information to determine the answer."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"2023-03-20 10:00\"],\n        \"why\": [\n            \"{{exams_2}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Machine Learning exam date and time are specified in the exams table, row 2. This is the only row that matches the course_id (108) from the courses table, row 7. Therefore, this is the only witness set needed to justify the result."
     },
     {
         "question": "When is the Machine Learning exam (date,time)?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"2023-03-20 10:00\"],\n        \"why\": [\n            \"{{exams_2}}\",\n            \"{{exams_0}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Machine Learning exam date and time are specified in the exams table, row 2. The course_id for this exam is 103, which does not match the course_id of the Machine Learning course (course_id: 108). However, we can find another exam that matches the course_id of the Machine Learning course by looking at the courses table, row 7. This exam has a date and time of 2023-03-20 10:00. The witness sets are exams_2 and exams_0 because these rows provide the necessary information to determine the answer."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"2023-03-20 10:00\"],\n        \"why\": [\n            \"{{exams_2}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Machine Learning exam date and time are specified in the exams table, row 2. This is the only row that matches the course_id (108) from the courses table, row 7. Therefore, this is the only witness set needed to justify the result."
     },
     {
         "question": "When is the Machine Learning exam (date,time)?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"2023-03-20 10:00\"],\n        \"why\": [\n            \"{{exams_2}}\",\n            \"{{exams_0}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Machine Learning exam date and time are specified in the exams table, row 2. The course_id for this exam is 103, which does not match the course_id of the Machine Learning course (course_id: 108). However, we can find another exam that matches the course_id of the Machine Learning course by looking at the courses table, row 7. This exam has a date and time of 2023-03-20 10:00. The witness sets are exams_2 and exams_0 because these rows provide the necessary information to determine the answer."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"2023-03-20 10:00\"],\n        \"why\": [\n            \"{{exams_2}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Machine Learning exam date and time are specified in the exams table, row 2. This is the only row that matches the course_id (108) from the courses table, row 7. Therefore, this is the only witness set needed to justify the result."
     },
     {
         "question": "When is the Machine Learning exam (date,time)?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"2023-03-20 10:00\"],\n        \"why\": [\n            \"{{exams_2}}\",\n            \"{{exams_0}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Machine Learning exam date and time are specified in the exams table, row 2. The course_id for this exam is 103, which does not match the course_id of the Machine Learning course (course_id: 108). However, we can find another exam that matches the course_id of the Machine Learning course by looking at the courses table, row 7. This exam has a date and time of 2023-03-20 10:00. The witness sets are exams_2 and exams_0 because these rows provide the necessary information to determine the answer."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"2023-03-20 10:00\"],\n        \"why\": [\n            \"{{exams_2}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Machine Learning exam date and time are specified in the exams table, row 2. This is the only row that matches the course_id (108) from the courses table, row 7. Therefore, this is the only witness set needed to justify the result."
     },
     {
         "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
@@ -627,22 +537,59 @@
     {
         "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Italian\"],\n        \"why\": [\n            \"{{students_0}}\",\n            \"{{-}}\"\n        ]\n    }\n]\n\nExplanation: Giulia Rossi's nationality is Italian, which can be justified by the following Witness Set: {{students_0}}."
+        "answer": [
+            {
+                "answer": [
+                    "Italian",
+                    "Female"
+                ],
+                "why": [
+                    "{{students_0}}"
+                ]
+            }
+        ]
     },
     {
         "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Italian\"],\n        \"why\": [\n            \"{{students_0}}\",\n            \"{{-}}\"\n        ]\n    }\n]\n\nExplanation: Giulia Rossi's nationality is Italian, which can be justified by the following Witness Set: {{students_0}}."
+        "answer": [
+            {
+                "answer": [
+                    "Italian"
+                ],
+                "why": [
+                    "{{students_0}}"
+                ]
+            }
+        ]
     },
     {
         "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Italian\"],\n        \"why\": [\n            \"{{students_0}}\",\n            \"{{-}}\"\n        ]\n    }\n]\n\nExplanation: Giulia Rossi's nationality is Italian, which can be justified by the following Witness Set: {{students_0}}."
+        "answer": [
+            {
+                "answer": [
+                    "Italian"
+                ],
+                "why": [
+                    "{{students_0}}"
+                ]
+            }
+        ]
     },
     {
         "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Italian\"],\n        \"why\": [\n            \"{{students_0}}\",\n            \"{{-}}\"\n        ]\n    }\n]\n\nExplanation: Giulia Rossi's nationality is Italian, which can be justified by the following Witness Set: {{students_0}}."
+        "answer": [
+            {
+                "answer": [
+                    "Italian"
+                ],
+                "why": [
+                    "{{students_0}}"
+                ]
+            }
+        ]
     },
     {
         "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
@@ -658,8 +605,7 @@
                     "A"
                 ],
                 "why": [
-                    "{{courses_7}}",
-                    "{{courses_0}}"
+                    "{{courses_7}}, {{teacher_research_areas_0}}"
                 ]
             }
         ]
@@ -673,8 +619,7 @@
                     "A"
                 ],
                 "why": [
-                    "{{courses_7}}",
-                    "{{courses_0}}"
+                    "{{courses_7}}, {{teacher_research_areas_0}}"
                 ]
             }
         ]
@@ -688,8 +633,8 @@
                     "A"
                 ],
                 "why": [
-                    "{{courses_7}}",
-                    "{{courses_0}}"
+                    "{{courses_0}}",
+                    "{{teacher_research_areas_7}}"
                 ]
             }
         ]
@@ -703,8 +648,8 @@
                     "A"
                 ],
                 "why": [
-                    "{{courses_7}}",
-                    "{{courses_0}}"
+                    "{{courses_0}}",
+                    "{{teacher_research_areas_7}}"
                 ]
             }
         ]
@@ -740,16 +685,7 @@
     {
         "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
         "iteration": 3,
-        "answer": [
-            {
-                "answer": [
-                    "Carlo Rossi"
-                ],
-                "why": [
-                    "{{teachers_0}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Carlo Rossi\"],\n        \"why\": [\n            \"{{teachers_0}}\"\n        ]\n    }\n]\n\nExplanation: The teacher following Sophie Durand in her thesis is Carlo Rossi. This can be justified by the witness set `{{teachers_0}}`, which refers to the first row of the `teachers` table, where Carlo Rossi's information is stored."
     },
     {
         "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
@@ -768,16 +704,7 @@
     {
         "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
         "iteration": 5,
-        "answer": [
-            {
-                "answer": [
-                    "Carlo Rossi"
-                ],
-                "why": [
-                    "{{teachers_0}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Carlo Rossi\"],\n        \"why\": [\n            \"{{teachers_0}}\"\n        ]\n    }\n]\n\nExplanation: The teacher following Sophie Durand in her thesis is Carlo Rossi. This can be justified by the witness set `{{teachers_0}}`, which refers to the first row of the `teachers` table, where Carlo Rossi's information is stored."
     },
     {
         "question": "What are all the courses (name of courses) offered by the Computer Science department?",
@@ -787,22 +714,22 @@
     {
         "question": "What are all the courses (name of courses) offered by the Computer Science department?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Machine Learning\", \"Data Mining\", \"Artificial Intelligence\", \"Cybersecurity\", \"Advanced Algorithms\", \"Software Engineering\", \"Database Systems\", \"Digital Signal Processing\"],\n        \"why\": [\n            \"{{courses_0},{courses_6},{courses_7},{courses_8},{courses_3},{courses_5},{courses_1},{courses_4}}\"\n        ]\n    }\n]\n\nExplanation: The Computer Science department offers the following courses:\n\n* Machine Learning (course_id 101)\n* Data Mining (course_id 107)\n* Artificial Intelligence (course_id 108)\n* Cybersecurity (course_id 109)\n* Advanced Algorithms (course_id 104)\n* Software Engineering (course_id 106)\n* Database Systems (course_id 102)\n* Digital Signal Processing (course_id 105)\n\nThese courses are justified by the following witness sets:\n\n{{courses_0},{courses_6},{courses_7},{courses_8},{courses_3},{courses_5},{courses_1},{courses_4}}"
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Machine Learning\", \"Data Mining\", \"Artificial Intelligence\", \"Cybersecurity\", \"Advanced Algorithms\", \"Software Engineering\", \"Database Systems\", \"Digital Signal Processing\"],\n        \"why\": [\n            \"{{courses_0},{courses_6},{courses_7},{courses_8},{courses_3},{courses_5},{courses_1},{courses_4}}\"\n        ]\n    }\n]\n\nExplanation: The Computer Science department offers the following courses:\n\n- Machine Learning (course_id 101)\n- Data Mining (course_id 107)\n- Artificial Intelligence (course_id 108)\n- Cybersecurity (course_id 109)\n- Advanced Algorithms (course_id 104)\n- Software Engineering (course_id 106)\n- Database Systems (course_id 102)\n- Digital Signal Processing (course_id 105)\n\nThese courses are justified by the following witness sets:\n\n{{courses_0},{courses_6},{courses_7},{courses_8},{courses_3},{courses_5},{courses_1},{courses_4}} based only on the context provided: - source: courses , row: 6\n(course_id: 107\ncourse_name: Data Mining\ndepartment: 1\ncredits: 6\nteacher: 6\nsemester: Fall)\n- source: courses , row: 7\n(course_id: 108\ncourse_name: Artificial Intelligence\ndepartment: 1\ncredits: 8\nteacher: 7\nsemester: Spring)\n- source: courses , row: 0\n(course_id: 101\ncourse_name: Machine Learning\ndepartment: 1\ncredits: 6\nteacher: 1\nsemester: Fall)\n- source: courses , row: 3\n(course_id: 104\ncourse_name: Advanced Algorithms\ndepartment: 1\ncredits: 8\nteacher: 4\nsemester: Spring)\n- source: courses , row: 9\n(course_id: 110\ncourse_name: Human-Computer Interaction\ndepartment: 1\ncredits: 6\nteacher: 10\nsemester: Spring)\n- source: departments , row: 0\n(department_id: 1\ndepartment_name: Computer Science\nfaculty: Engineering)\n- source: courses , row: 8\n(course_id: 109\ncourse_name: Cybersecurity\ndepartment: 1\ncredits: 6\nteacher: 9\nsemester: Fall)\n- source: courses , row: 1\n(course_id: 102\ncourse_name: Database Systems\ndepartment: 1\ncredits: 6\nteacher: 2\nsemester: Spring)\n- source: teacher_research_areas , row: 7\n(teacher_id: 8\nresearch_area: Machine Learning\nnumber_of_project: 3)\n- source: teacher_research_areas , row: 9\n(teacher_id: 10\nresearch_area: Human-Computer Interaction\nnumber_of_project: 6)."
     },
     {
         "question": "What are all the courses (name of courses) offered by the Computer Science department?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Machine Learning\", \"Data Mining\", \"Artificial Intelligence\", \"Cybersecurity\", \"Advanced Algorithms\", \"Software Engineering\", \"Database Systems\", \"Digital Signal Processing\"],\n        \"why\": [\n            \"{{courses_0},{courses_6},{courses_7},{courses_8},{courses_3},{courses_5},{courses_1},{courses_4}}\"\n        ]\n    }\n]\n\nExplanation: The Computer Science department offers the following courses:\n\n* Machine Learning (course_id 101)\n* Data Mining (course_id 107)\n* Artificial Intelligence (course_id 108)\n* Cybersecurity (course_id 109)\n* Advanced Algorithms (course_id 104)\n* Software Engineering (course_id 106)\n* Database Systems (course_id 102)\n* Digital Signal Processing (course_id 105)\n\nThese courses are justified by the following witness sets:\n\n{{courses_0},{courses_6},{courses_7},{courses_8},{courses_3},{courses_5},{courses_1},{courses_4}}"
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Machine Learning\", \"Data Mining\", \"Artificial Intelligence\", \"Cybersecurity\", \"Advanced Algorithms\", \"Software Engineering\", \"Database Systems\", \"Digital Signal Processing\"],\n        \"why\": [\n            \"{{courses_0},{courses_6},{courses_7},{courses_8},{courses_3},{courses_5},{courses_1},{courses_4}}\"\n        ]\n    }\n]\n\nExplanation: The Computer Science department offers the following courses:\n\n- Machine Learning (course_id 101)\n- Data Mining (course_id 107)\n- Artificial Intelligence (course_id 108)\n- Cybersecurity (course_id 109)\n- Advanced Algorithms (course_id 104)\n- Software Engineering (course_id 106)\n- Database Systems (course_id 102)\n- Digital Signal Processing (course_id 105)\n\nThese courses are justified by the following witness sets:\n\n{{courses_0},{courses_6},{courses_7},{courses_8},{courses_3},{courses_5},{courses_1},{courses_4}} based only on the context provided: - source: courses , row: 6\n(course_id: 107\ncourse_name: Data Mining\ndepartment: 1\ncredits: 6\nteacher: 6\nsemester: Fall)\n- source: courses , row: 7\n(course_id: 108\ncourse_name: Artificial Intelligence\ndepartment: 1\ncredits: 8\nteacher: 7\nsemester: Spring)\n- source: courses , row: 0\n(course_id: 101\ncourse_name: Machine Learning\ndepartment: 1\ncredits: 6\nteacher: 1\nsemester: Fall)\n- source: courses , row: 3\n(course_id: 104\ncourse_name: Advanced Algorithms\ndepartment: 1\ncredits: 6\nteacher: 3\nsemester: Spring)\n- source: courses , row: 5\n(course_id: 106\ncourse_name: Software Engineering\ndepartment: 1\ncredits: 6\nteacher: 5\nsemester: Fall)\n- source: courses , row: 1\n(course_id: 102\ncourse_name: Database Systems\ndepartment: 1\ncredits: 6\nteacher: 1\nsemester: Spring)\n- source: courses , row: 4\n(course_id: 105\ncourse_name: Digital Signal Processing\ndepartment: 1\ncredits: 6\nteacher: 4\nsemester: Fall)"
     },
     {
         "question": "What are all the courses (name of courses) offered by the Computer Science department?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Machine Learning\", \"Data Mining\", \"Artificial Intelligence\", \"Cybersecurity\", \"Advanced Algorithms\", \"Software Engineering\", \"Database Systems\", \"Digital Signal Processing\"],\n        \"why\": [\n            \"{{courses_0},{courses_6},{courses_7},{courses_8},{courses_3},{courses_5},{courses_1},{courses_4}}\"\n        ]\n    }\n]\n\nExplanation: The Computer Science department offers the following courses:\n\n* Machine Learning (course_id 101)\n* Data Mining (course_id 107)\n* Artificial Intelligence (course_id 108)\n* Cybersecurity (course_id 109)\n* Advanced Algorithms (course_id 104)\n* Software Engineering (course_id 106)\n* Database Systems (course_id 102)\n* Digital Signal Processing (course_id 105)\n\nThese courses are justified by the following witness sets:\n\n{{courses_0},{courses_6},{courses_7},{courses_8},{courses_3},{courses_5},{courses_1},{courses_4}}"
+        "answer": "Here is the correct answer:\n\n[\n    {\n        \"answer\": [\"Machine Learning\", \"Data Mining\", \"Artificial Intelligence\", \"Cybersecurity\", \"Advanced Algorithms\", \"Software Engineering\", \"Database Systems\", \"Digital Signal Processing\"],\n        \"why\": [\n            \"{{courses_0},{courses_6},{courses_7},{courses_8},{courses_3},{courses_5},{courses_1},{courses_4}}\"\n        ]\n    }\n]"
     },
     {
         "question": "What are all the courses (name of courses) offered by the Computer Science department?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Machine Learning\", \"Data Mining\", \"Artificial Intelligence\", \"Cybersecurity\", \"Advanced Algorithms\", \"Software Engineering\", \"Database Systems\", \"Digital Signal Processing\"],\n        \"why\": [\n            \"{{courses_0},{courses_6},{courses_7},{courses_8},{courses_3},{courses_5},{courses_1},{courses_4}}\"\n        ]\n    }\n]\n\nExplanation: The Computer Science department offers the following courses:\n\n* Machine Learning (course_id 101)\n* Data Mining (course_id 107)\n* Artificial Intelligence (course_id 108)\n* Cybersecurity (course_id 109)\n* Advanced Algorithms (course_id 104)\n* Software Engineering (course_id 106)\n* Database Systems (course_id 102)\n* Digital Signal Processing (course_id 105)\n\nThese courses are justified by the following witness sets:\n\n{{courses_0},{courses_6},{courses_7},{courses_8},{courses_3},{courses_5},{courses_1},{courses_4}}"
+        "answer": "Here is the correct answer:\n\n[\n    {\n        \"answer\": [\"Machine Learning\", \"Data Mining\", \"Artificial Intelligence\", \"Cybersecurity\", \"Advanced Algorithms\", \"Software Engineering\", \"Database Systems\", \"Digital Signal Processing\"],\n        \"why\": [\n            \"{{courses_0},{courses_6},{courses_7},{courses_8},{courses_3},{courses_5},{courses_1},{courses_4}}\"\n        ]\n    }\n]\n\nExplanation:\n\nThe answer is the list of course names offered by the Computer Science department. The witness sets are the rows from the \"courses\" table that justify each course name.\n\n* Machine Learning: {{courses_0}}\n* Data Mining: {{courses_6}}\n* Artificial Intelligence: {{courses_7}}\n* Cybersecurity: {{courses_8}}\n* Advanced Algorithms: {{courses_3}}\n* Software Engineering: (no witness set, as this is not explicitly mentioned in the context)\n* Database Systems: {{courses_1}}\n* Digital Signal Processing: (no witness set, as this is not explicitly mentioned in the context)\n\nNote that some courses do not have a corresponding witness set, as they are not directly mentioned in the provided context."
     },
     {
         "question": "What is the department name in which Antonio Gallo teaches?",
@@ -825,7 +752,7 @@
         "answer": [
             {
                 "answer": [
-                    "Antonio Gallo"
+                    "Department 2"
                 ],
                 "why": [
                     "{{teachers_4}}"
@@ -839,7 +766,7 @@
         "answer": [
             {
                 "answer": [
-                    "Antonio Gallo"
+                    "Department 2"
                 ],
                 "why": [
                     "{{teachers_4}}"
@@ -853,7 +780,7 @@
         "answer": [
             {
                 "answer": [
-                    "Antonio Gallo"
+                    "Department 2"
                 ],
                 "why": [
                     "{{teachers_4}}"
@@ -867,7 +794,7 @@
         "answer": [
             {
                 "answer": [
-                    "Antonio Gallo"
+                    "Department 2"
                 ],
                 "why": [
                     "{{teachers_4}}"
@@ -883,22 +810,22 @@
     {
         "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"26\"],\n        \"why\": [\n            \"{{teacher_research_areas_9}}, {{grades_6}}\"\n        ]\n    }\n]\n\nExplanation: The grade of Elena Gonzales for the Human-Computer Interaction exam is 26. This can be justified by the following Witness Sets:\n\n* `{{teacher_research_areas_9}}`: This row indicates that teacher_id 10 has a research area of Human-Computer Interaction, which matches the course_id 110 in the courses table.\n* `{{grades_6}}`: This row shows the grade of Elena Gonzales (student_id 5) for course_id 110 as 26."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"26\"],\n        \"why\": [\n            \"{{grades_6}}\"\n        ]\n    }\n]\n\nExplanation: The grade of Elena Gonzales for the Human-Computer Interaction exam is 26. This can be justified by the following witness sets:\n\n* {{grades_6}}: This row shows the grade of Elena Gonzales (student_id 5) for course_id 110 as 26."
     },
     {
         "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"26\"],\n        \"why\": [\n            \"{{teacher_research_areas_9}}, {{grades_6}}\"\n        ]\n    }\n]\n\nExplanation: The grade of Elena Gonzales for the Human-Computer Interaction exam is 26. This can be justified by the following Witness Sets:\n\n* `{{teacher_research_areas_9}}`: This row indicates that teacher_id 10 has a research area of Human-Computer Interaction, which matches the course_id 110 in the courses table.\n* `{{grades_6}}`: This row shows the grade of Elena Gonzales (student_id 5) for course_id 110 as 26."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"26\"],\n        \"why\": [\n            \"{{grades_6}}\"\n        ]\n    }\n]\n\nExplanation: The grade of Elena Gonzales for the Human-Computer Interaction exam is 26. This can be justified by the following witness sets:\n\n* {{grades_6}}: This row shows the grade of Elena Gonzales (student_id 5) for course_id 110 as 26."
     },
     {
         "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"26\"],\n        \"why\": [\n            \"{{teacher_research_areas_9}}, {{grades_6}}\"\n        ]\n    }\n]\n\nExplanation: The grade of Elena Gonzales for the Human-Computer Interaction exam is 26. This can be justified by the following Witness Sets:\n\n* `{{teacher_research_areas_9}}`: This row indicates that teacher_id 10 has a research area of Human-Computer Interaction, which matches the course_id 110 in the courses table.\n* `{{grades_6}}`: This row shows the grade of Elena Gonzales (student_id 5) for course_id 110 as 26."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"26\"],\n        \"why\": [\n            \"{{grades_6}}\"\n        ]\n    }\n]\n\nExplanation: The grade of Elena Gonzales for the Human-Computer Interaction exam is 26. This can be justified by the following witness sets:\n\n* {{grades_6}}: This row shows the grade of Elena Gonzales (student_id 5) for course_id 110 as 26."
     },
     {
         "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"26\"],\n        \"why\": [\n            \"{{teacher_research_areas_9}}, {{grades_6}}\"\n        ]\n    }\n]\n\nExplanation: The grade of Elena Gonzales for the Human-Computer Interaction exam is 26. This can be justified by the following Witness Sets:\n\n* `{{teacher_research_areas_9}}`: This row indicates that teacher_id 10 has a research area of Human-Computer Interaction, which matches the course_id 110 in the courses table.\n* `{{grades_6}}`: This row shows the grade of Elena Gonzales (student_id 5) for course_id 110 as 26."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"26\"],\n        \"why\": [\n            \"{{grades_6}}\"\n        ]\n    }\n]\n\nExplanation: The grade of Elena Gonzales for the Human-Computer Interaction exam is 26. This can be justified by the following witness sets:\n\n* {{grades_6}}: This row shows the grade of Elena Gonzales (student_id 5) for course_id 110 as 26."
     },
     {
         "question": "Which faculty does the Electronics department belong to?",
@@ -925,7 +852,7 @@
                 ],
                 "why": [
                     "{{departments_1}}",
-                    "{{departments_2}}"
+                    "{{departments_0}}"
                 ]
             }
         ]
@@ -940,7 +867,7 @@
                 ],
                 "why": [
                     "{{departments_1}}",
-                    "{{departments_2}}"
+                    "{{departments_0}}"
                 ]
             }
         ]
@@ -955,7 +882,7 @@
                 ],
                 "why": [
                     "{{departments_1}}",
-                    "{{departments_2}}"
+                    "{{departments_0}}"
                 ]
             }
         ]
@@ -970,7 +897,7 @@
                 ],
                 "why": [
                     "{{departments_1}}",
-                    "{{departments_2}}"
+                    "{{departments_0}}"
                 ]
             }
         ]
@@ -983,22 +910,22 @@
     {
         "question": "In which building will be the Embedded Systems exam?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Electronics\"],\n        \"why\": [\n            \"{{teacher_research_areas_2}}\"\n        ]\n    }\n]\n\nExplanation: The Embedded Systems exam will be held in the building where teacher_id 3 has a research area. This information can be found in the `teacher_research_areas` table, row 2."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Electronics\"],\n        \"why\": [\n            \"{{classrooms_5}}\"\n        ]\n    }\n]\n\nExplanation: The Embedded Systems exam will be held in the building where teacher_id 3 has a research area. This information can be found in the `teacher_research_areas` table, row 2. Additionally, classroom_id 6 is located in the Electronics building and room number 401, which matches the information provided in the `classrooms` table, row 5. Therefore, the Embedded Systems exam will be held in the Electronics building."
     },
     {
         "question": "In which building will be the Embedded Systems exam?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Electronics\"],\n        \"why\": [\n            \"{{teacher_research_areas_2}}\"\n        ]\n    }\n]\n\nExplanation: The Embedded Systems exam will be held in the building where teacher_id 3 has a research area. This information can be found in the `teacher_research_areas` table, row 2."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Electronics\"],\n        \"why\": [\n            \"{{classrooms_5}}\"\n        ]\n    }\n]\n\nExplanation: The Embedded Systems exam will be held in the building where teacher_id 3 has a research area. This information can be found in the `teacher_research_areas` table, row 2. Additionally, classroom_id 6 is located in the Electronics building and room number 401, which matches the information provided in the `classrooms` table, row 5. Therefore, the Embedded Systems exam will be held in the Electronics building."
     },
     {
         "question": "In which building will be the Embedded Systems exam?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Electronics\"],\n        \"why\": [\n            \"{{teacher_research_areas_2}}\"\n        ]\n    }\n]\n\nExplanation: The Embedded Systems exam will be held in the building where teacher_id 3 has a research area. This information can be found in the `teacher_research_areas` table, row 2."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Electronics\"],\n        \"why\": [\n            \"{{classrooms_5}}\"\n        ]\n    }\n]\n\nExplanation: The Embedded Systems exam will be held in the building where teacher_id 3 has a research area. This information can be found in the `teacher_research_areas` table, row 2. Additionally, classroom_id 6 is located in the Electronics building and room number 401, which matches the information provided in the `classrooms` table, row 5. Therefore, the Embedded Systems exam will be held in the Electronics building."
     },
     {
         "question": "In which building will be the Embedded Systems exam?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Electronics\"],\n        \"why\": [\n            \"{{teacher_research_areas_2}}\"\n        ]\n    }\n]\n\nExplanation: The Embedded Systems exam will be held in the building where teacher_id 3 has a research area. This information can be found in the `teacher_research_areas` table, row 2."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Electronics\"],\n        \"why\": [\n            \"{{classrooms_5}}\"\n        ]\n    }\n]\n\nExplanation: The Embedded Systems exam will be held in the building where teacher_id 3 has a research area. This information can be found in the `teacher_research_areas` table, row 2. Additionally, classroom_id 6 is located in the Electronics building and room number 401, which matches the information provided in the `classrooms` table, row 5. Therefore, the Embedded Systems exam will be held in the Electronics building."
     },
     {
         "question": "What is the title of the thesis followed by Alessandro Moretti?",
@@ -1023,7 +950,7 @@
                     "Deep Learning for Image Recognition"
                 ],
                 "why": [
-                    "{{teachers_7}}"
+                    "{{thesis_0}}"
                 ]
             }
         ]
@@ -1037,7 +964,7 @@
                     "Deep Learning for Image Recognition"
                 ],
                 "why": [
-                    "{{teachers_7}}"
+                    "{{thesis_0}}"
                 ]
             }
         ]
@@ -1051,7 +978,7 @@
                     "Deep Learning for Image Recognition"
                 ],
                 "why": [
-                    "{{teachers_7}}"
+                    "{{thesis_0}}"
                 ]
             }
         ]
@@ -1065,7 +992,7 @@
                     "Deep Learning for Image Recognition"
                 ],
                 "why": [
-                    "{{teachers_7}}"
+                    "{{thesis_0}}"
                 ]
             }
         ]
@@ -1078,22 +1005,61 @@
     {
         "question": "Which students (name,surname) have an enrollment date before 2022?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{enrollments_8}\", \"{{enrollments_4}}\"\n        ]\n    }\n]\n\nExplanation: The students who have an enrollment date before 2022 are Lucas Schmidt (student_id: 4) and another student with student_id: 3."
+        "answer": [
+            {
+                "answer": [
+                    "Lucas Schmidt"
+                ],
+                "why": [
+                    "{{enrollments_8}",
+                    "{{enrollments_0}"
+                ]
+            }
+        ]
     },
     {
         "question": "Which students (name,surname) have an enrollment date before 2022?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{enrollments_8}\", \"{{enrollments_4}}\"\n        ]\n    }\n]\n\nExplanation: The students who have an enrollment date before 2022 are Lucas Schmidt (student_id: 4) and another student with student_id: 3."
+        "answer": [
+            {
+                "answer": [
+                    "Lucas Schmidt"
+                ],
+                "why": [
+                    "{{enrollments_8}",
+                    "{{enrollments_0}"
+                ]
+            }
+        ]
     },
     {
         "question": "Which students (name,surname) have an enrollment date before 2022?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{enrollments_8}\", \"{{enrollments_4}}\"\n        ]\n    }\n]\n\nExplanation: The students who have an enrollment date before 2022 are Lucas Schmidt (student_id: 4) and another student with student_id: 3."
+        "answer": [
+            {
+                "answer": [
+                    "Lucas Schmidt"
+                ],
+                "why": [
+                    "{{enrollments_8}",
+                    "{{students_3}"
+                ]
+            }
+        ]
     },
     {
         "question": "Which students (name,surname) have an enrollment date before 2022?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{enrollments_8}\", \"{{enrollments_4}}\"\n        ]\n    }\n]\n\nExplanation: The students who have an enrollment date before 2022 are Lucas Schmidt (student_id: 4) and another student with student_id: 3."
+        "answer": [
+            {
+                "answer": [
+                    "Lucas Schmidt"
+                ],
+                "why": [
+                    "{{enrollments_8}"
+                ]
+            }
+        ]
     },
     {
         "question": "What is the faculty of the Chemistry department?",
@@ -1178,22 +1144,22 @@
     {
         "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Giulia Colombo\"],\n        \"why\": [\n            \"{{enrollments_3}}, {{teachers_5}}\"\n        ]\n    }\n]\n\nExplanation: The students enrolled in the Database Systems course are Giulia Colombo, who is also a teacher."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Giulia Colombo\"],\n        \"why\": [\n            \"{{enrollments_3}, {teachers_5}\"\n        ]\n    }\n]\n\nExplanation: The students enrolled in the Database Systems course are Giulia Colombo, who is also a teacher. This can be justified by the following Witness Set:\n\n{{enrollments_3}, {teachers_5}} based only on the context provided: - source: enrollments , row: 3\n(enrollment_id: 4\nstudent_id: 1\ncourse_id: 104\nenrollment_date: 2022-09-01)\n- source: teachers , row: 5\n(teacher_id: 6\nname: Giulia\nsurname: Colombo\ndepartment_id: 1\nemail: g.colombo@university.edu)"
     },
     {
         "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Giulia Colombo\"],\n        \"why\": [\n            \"{{enrollments_3}}, {{teachers_5}}\"\n        ]\n    }\n]\n\nExplanation: The students enrolled in the Database Systems course are Giulia Colombo, who is also a teacher."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Giulia Colombo\"],\n        \"why\": [\n            \"{{enrollments_3}, {teachers_5}\"\n        ]\n    }\n]\n\nExplanation: The students enrolled in the Database Systems course are Giulia Colombo, who is also a teacher. This can be justified by the following Witness Set:\n\n{{enrollments_3}, {teachers_5}} based only on the context provided: - source: enrollments , row: 3\n(enrollment_id: 4\nstudent_id: 1\ncourse_id: 104\nenrollment_date: 2022-09-01)\n- source: teachers , row: 5\n(teacher_id: 6\nname: Giulia\nsurname: Colombo\ndepartment_id: 1\nemail: g.colombo@university.edu)"
     },
     {
         "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Giulia Colombo\"],\n        \"why\": [\n            \"{{enrollments_3}}, {{teachers_5}}\"\n        ]\n    }\n]\n\nExplanation: The students enrolled in the Database Systems course are Giulia Colombo, who is also a teacher."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Giulia Colombo\"],\n        \"why\": [\n            \"{{enrollments_3}, {teachers_5}\"\n        ]\n    }\n]\n\nExplanation: The students enrolled in the Database Systems course are Giulia Colombo, who is also a teacher. This can be justified by the following Witness Set:\n\n{{enrollments_3}, {teachers_5}} based only on the context provided: - source: enrollments , row: 3\n(enrollment_id: 4\nstudent_id: 1\ncourse_id: 104\nenrollment_date: 2022-09-01)\n- source: teachers , row: 5\n(teacher_id: 6\nname: Giulia\nsurname: Colombo\ndepartment_id: 1\nemail: g.colombo@university.edu)"
     },
     {
         "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Giulia Colombo\"],\n        \"why\": [\n            \"{{enrollments_3}}, {{teachers_5}}\"\n        ]\n    }\n]\n\nExplanation: The students enrolled in the Database Systems course are Giulia Colombo, who is also a teacher."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Giulia Colombo\"],\n        \"why\": [\n            \"{{enrollments_3}, {teachers_5}\"\n        ]\n    }\n]\n\nExplanation: The students enrolled in the Database Systems course are Giulia Colombo, who is also a teacher. This can be justified by the following Witness Set:\n\n{{enrollments_3}, {teachers_5}} based only on the context provided: - source: enrollments , row: 3\n(enrollment_id: 4\nstudent_id: 1\ncourse_id: 104\nenrollment_date: 2022-09-01)\n- source: teachers , row: 5\n(teacher_id: 6\nname: Giulia\nsurname: Colombo\ndepartment_id: 1\nemail: g.colombo@university.edu)"
     },
     {
         "question": "What are the research areas of Maria Ferrari?",
@@ -1203,22 +1169,58 @@
     {
         "question": "What are the research areas of Maria Ferrari?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Artificial Intelligence\"],\n        \"why\": [\n            \"{{teachers_9}}\",\n            \"{{thesis_0}}\"\n        ]\n    }\n]\n\nExplanation:\nThe research area of Maria Ferrari can be found in two sources: `teachers` (row 9) and `thesis` (row 0). In the `teachers` table, row 9 has a teacher_id of 10, which matches the teacher_id of Maria Ferrari. In the `thesis` table, row 0 has a title of \"Deep Learning for Image Recognition\" and a teacher_id of 1, which also matches the teacher_id of Maria Ferrari."
+        "answer": [
+            {
+                "answer": [
+                    "Artificial Intelligence"
+                ],
+                "why": [
+                    "{{thesis_0}}"
+                ]
+            }
+        ]
     },
     {
         "question": "What are the research areas of Maria Ferrari?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Artificial Intelligence\"],\n        \"why\": [\n            \"{{teachers_9}}\",\n            \"{{thesis_0}}\"\n        ]\n    }\n]\n\nExplanation:\nThe research area of Maria Ferrari can be found in two sources: `teachers` (row 9) and `thesis` (row 0). In the `teachers` table, row 9 has a teacher_id of 10, which matches the teacher_id of Maria Ferrari. In the `thesis` table, row 0 has a title of \"Deep Learning for Image Recognition\" and a teacher_id of 1, which also matches the teacher_id of Maria Ferrari."
+        "answer": [
+            {
+                "answer": [
+                    "Artificial Intelligence"
+                ],
+                "why": [
+                    "{{thesis_0}}"
+                ]
+            }
+        ]
     },
     {
         "question": "What are the research areas of Maria Ferrari?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Artificial Intelligence\"],\n        \"why\": [\n            \"{{teachers_9}}\",\n            \"{{thesis_0}}\"\n        ]\n    }\n]\n\nExplanation:\nThe research area of Maria Ferrari can be found in two sources: `teachers` (row 9) and `thesis` (row 0). In the `teachers` table, row 9 has a teacher_id of 10, which matches the teacher_id of Maria Ferrari. In the `thesis` table, row 0 has a title of \"Deep Learning for Image Recognition\" and a teacher_id of 1, which also matches the teacher_id of Maria Ferrari."
+        "answer": [
+            {
+                "answer": [
+                    "Artificial Intelligence"
+                ],
+                "why": [
+                    "{{thesis_0}}"
+                ]
+            }
+        ]
     },
     {
         "question": "What are the research areas of Maria Ferrari?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Artificial Intelligence\"],\n        \"why\": [\n            \"{{teachers_9}}\",\n            \"{{thesis_0}}\"\n        ]\n    }\n]\n\nExplanation:\nThe research area of Maria Ferrari can be found in two sources: `teachers` (row 9) and `thesis` (row 0). In the `teachers` table, row 9 has a teacher_id of 10, which matches the teacher_id of Maria Ferrari. In the `thesis` table, row 0 has a title of \"Deep Learning for Image Recognition\" and a teacher_id of 1, which also matches the teacher_id of Maria Ferrari."
+        "answer": [
+            {
+                "answer": [
+                    "Artificial Intelligence"
+                ],
+                "why": [
+                    "{{thesis_0}}"
+                ]
+            }
+        ]
     },
     {
         "question": "How many research projects are led by Laura Bianchi?",
@@ -1244,7 +1246,6 @@
                     "6"
                 ],
                 "why": [
-                    "{{teacher_research_areas_1}}",
                     "{{teacher_research_areas_1}}"
                 ]
             }
@@ -1259,7 +1260,6 @@
                     "6"
                 ],
                 "why": [
-                    "{{teacher_research_areas_1}}",
                     "{{teacher_research_areas_1}}"
                 ]
             }
@@ -1274,7 +1274,6 @@
                     "6"
                 ],
                 "why": [
-                    "{{teacher_research_areas_1}}",
                     "{{teacher_research_areas_1}}"
                 ]
             }
@@ -1289,7 +1288,6 @@
                     "6"
                 ],
                 "why": [
-                    "{{teacher_research_areas_1}}",
                     "{{teacher_research_areas_1}}"
                 ]
             }
@@ -1303,22 +1301,22 @@
     {
         "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{teacher_research_areas_9}}\",\n            \"{{students_3}}\"\n        ]\n    }\n]\n\nExplanation: The student with a grade equal to 28 in Human-Computer Interaction is Lucas Schmidt. This can be justified by the following witness sets:\n\n* `{{teacher_research_areas_9}}`: This row indicates that teacher_id 10 has research_area \"Human-Computer Interaction\" and number_of_project 6, which matches the course with id 110.\n* `{{students_3}}`: This row provides information about student Lucas Schmidt, including his name and surname."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{grades_0}}\"\n        ]\n    }\n]\n\nExplanation: The student who had a grade equal to 28 in Human-Computer Interaction is Lucas Schmidt. This can be justified by the following Witness Set: `{{grades_0}}`, which corresponds to the row where grade_id=1, student_id=1, and course_id=101, indicating that this student received a grade of 28 in the course \"Human-Computer Interaction\"."
     },
     {
         "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{teacher_research_areas_9}}\",\n            \"{{students_3}}\"\n        ]\n    }\n]\n\nExplanation: The student with a grade equal to 28 in Human-Computer Interaction is Lucas Schmidt. This can be justified by the following witness sets:\n\n* `{{teacher_research_areas_9}}`: This row indicates that teacher_id 10 has research_area \"Human-Computer Interaction\" and number_of_project 6, which matches the course with id 110.\n* `{{students_3}}`: This row provides information about student Lucas Schmidt, including his name and surname."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{grades_0}}\"\n        ]\n    }\n]\n\nExplanation: The student who had a grade equal to 28 in Human-Computer Interaction is Lucas Schmidt. This can be justified by the following Witness Set: `{{grades_0}}`, which corresponds to the row where grade_id=1, student_id=1, and course_id=101, indicating that this student received a grade of 28 in the course \"Human-Computer Interaction\"."
     },
     {
         "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{teacher_research_areas_9}}\",\n            \"{{students_3}}\"\n        ]\n    }\n]\n\nExplanation: The student with a grade equal to 28 in Human-Computer Interaction is Lucas Schmidt. This can be justified by the following witness sets:\n\n* `{{teacher_research_areas_9}}`: This row indicates that teacher_id 10 has research_area \"Human-Computer Interaction\" and number_of_project 6, which matches the course with id 110.\n* `{{students_3}}`: This row provides information about student Lucas Schmidt, including his name and surname."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{grades_0}}\"\n        ]\n    }\n]\n\nExplanation: The student who had a grade equal to 28 in Human-Computer Interaction is Lucas Schmidt. This can be justified by the following Witness Set: `{{grades_0}}`, which corresponds to the row where grade_id=1, student_id=1, and course_id=101, indicating that this student received a grade of 28 in the course \"Human-Computer Interaction\"."
     },
     {
         "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{teacher_research_areas_9}}\",\n            \"{{students_3}}\"\n        ]\n    }\n]\n\nExplanation: The student with a grade equal to 28 in Human-Computer Interaction is Lucas Schmidt. This can be justified by the following witness sets:\n\n* `{{teacher_research_areas_9}}`: This row indicates that teacher_id 10 has research_area \"Human-Computer Interaction\" and number_of_project 6, which matches the course with id 110.\n* `{{students_3}}`: This row provides information about student Lucas Schmidt, including his name and surname."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{grades_0}}\"\n        ]\n    }\n]\n\nExplanation: The student who had a grade equal to 28 in Human-Computer Interaction is Lucas Schmidt. This can be justified by the following Witness Set: `{{grades_0}}`, which corresponds to the row where grade_id=1, student_id=1, and course_id=101, indicating that this student received a grade of 28 in the course \"Human-Computer Interaction\"."
     },
     {
         "question": "Which are the classrooms (room number) in the Engineering building?",
@@ -1328,22 +1326,22 @@
     {
         "question": "Which are the classrooms (room number) in the Engineering building?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"301\"],\n        \"why\": [\n            \"{{classrooms_3}}\",\n            \"{{classrooms_4}}\"\n        ]\n    }\n]\n\nExplanation: The classrooms in the Engineering building are 301 and 302. Witness sets that support this answer are rows 3 and 4 from the `classrooms` table, which specify the room numbers 301 and 302, respectively, as being located in the Engineering building."
+        "answer": "Here is the correct answer:\n\n[\n    {\n        \"answer\": [\"301\", \"302\"],\n        \"why\": [\n            \"{{classrooms_3}}\",\n            \"{{classrooms_4}}\"\n        ]\n    }\n]\n\nExplanation: The classrooms in the Engineering building are 301 and 302, which can be justified by the following Witness Sets:\n\n* {{classrooms_3}}: This Witness Set includes the tuple with classroom_id = 4, building = Engineering, and room_number = 301.\n* {{classrooms_4}}: This Witness Set includes the tuple with classroom_id = 5, building = Engineering, and room_number = 302."
     },
     {
         "question": "Which are the classrooms (room number) in the Engineering building?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"301\"],\n        \"why\": [\n            \"{{classrooms_3}}\",\n            \"{{classrooms_4}}\"\n        ]\n    }\n]\n\nExplanation: The classrooms in the Engineering building are 301 and 302. Witness sets that support this answer are rows 3 and 4 from the `classrooms` table, which specify the room numbers 301 and 302, respectively, as being located in the Engineering building."
+        "answer": "Here is the correct answer:\n\n[\n    {\n        \"answer\": [\"301\", \"302\"],\n        \"why\": [\n            \"{{classrooms_3}}\",\n            \"{{classrooms_4}}\"\n        ]\n    }\n]\n\nExplanation: The classrooms in the Engineering building are 301 and 302, which can be justified by the following Witness Sets:\n\n* {{classrooms_3}}: This Witness Set includes the tuple with classroom_id = 4, building = Engineering, and room_number = 301.\n* {{classrooms_4}}: This Witness Set includes the tuple with classroom_id = 5, building = Engineering, and room_number = 302."
     },
     {
         "question": "Which are the classrooms (room number) in the Engineering building?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"301\"],\n        \"why\": [\n            \"{{classrooms_3}}\",\n            \"{{classrooms_4}}\"\n        ]\n    }\n]\n\nExplanation: The classrooms in the Engineering building are 301 and 302. Witness sets that support this answer are rows 3 and 4 from the `classrooms` table, which specify the room numbers 301 and 302, respectively, as being located in the Engineering building."
+        "answer": "Here is the correct answer:\n\n[\n    {\n        \"answer\": [\"301\", \"302\"],\n        \"why\": [\n            \"{{classrooms_3}}\",\n            \"{{classrooms_4}}\"\n        ]\n    }\n]\n\nExplanation: The classrooms in the Engineering building are 301 and 302, which can be justified by the following Witness Sets:\n\n* {{classrooms_3}}: This Witness Set includes the tuple with classroom_id = 4, building = Engineering, and room_number = 301.\n* {{classrooms_4}}: This Witness Set includes the tuple with classroom_id = 5, building = Engineering, and room_number = 302."
     },
     {
         "question": "Which are the classrooms (room number) in the Engineering building?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"301\"],\n        \"why\": [\n            \"{{classrooms_3}}\",\n            \"{{classrooms_4}}\"\n        ]\n    }\n]\n\nExplanation: The classrooms in the Engineering building are 301 and 302. Witness sets that support this answer are rows 3 and 4 from the `classrooms` table, which specify the room numbers 301 and 302, respectively, as being located in the Engineering building."
+        "answer": "Here is the correct answer:\n\n[\n    {\n        \"answer\": [\"301\", \"302\"],\n        \"why\": [\n            \"{{classrooms_3}}\",\n            \"{{classrooms_4}}\"\n        ]\n    }\n]\n\nExplanation: The classrooms in the Engineering building are 301 and 302, which can be justified by the following Witness Sets:\n\n* {{classrooms_3}}: This Witness Set includes the tuple with classroom_id = 4, building = Engineering, and room_number = 301.\n* {{classrooms_4}}: This Witness Set includes the tuple with classroom_id = 5, building = Engineering, and room_number = 302."
     },
     {
         "question": "What is the day and time of the Software Engineering exam?",
@@ -1353,22 +1351,22 @@
     {
         "question": "What is the day and time of the Software Engineering exam?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"2023-03-20 10:00\"],\n        \"why\": [\n            \"{{exams_2}}\",\n            \"{{exams_3}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Software Engineering exam date and time are specified in rows 2 and 3 of the `exams` table. The witness sets for this answer are `{{exams_2}}` and `{{exams_3}}`, which correspond to these two rows."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"2023-03-20 10:00\"],\n        \"why\": [\n            \"{{exams_2}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Software Engineering exam is on March 20, 2023 at 10:00. This can be justified by the following witness set:\n\n* {{exams_2}}: The row with exam_id=3 and course_id=103 has date=2023-03-20 and time=10:00."
     },
     {
         "question": "What is the day and time of the Software Engineering exam?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"2023-03-20 10:00\"],\n        \"why\": [\n            \"{{exams_2}}\",\n            \"{{exams_3}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Software Engineering exam date and time are specified in rows 2 and 3 of the `exams` table. The witness sets for this answer are `{{exams_2}}` and `{{exams_3}}`, which correspond to these two rows."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"2023-03-20 10:00\"],\n        \"why\": [\n            \"{{exams_2}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Software Engineering exam is on March 20, 2023 at 10:00. This can be justified by the following witness set:\n\n* {{exams_2}}: The row with exam_id=3 and course_id=103 has date=2023-03-20 and time=10:00."
     },
     {
         "question": "What is the day and time of the Software Engineering exam?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"2023-03-20 10:00\"],\n        \"why\": [\n            \"{{exams_2}}\",\n            \"{{exams_3}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Software Engineering exam date and time are specified in rows 2 and 3 of the `exams` table. The witness sets for this answer are `{{exams_2}}` and `{{exams_3}}`, which correspond to these two rows."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"2023-03-20 10:00\"],\n        \"why\": [\n            \"{{exams_2}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Software Engineering exam is on March 20, 2023 at 10:00. This can be justified by the following witness set:\n\n* {{exams_2}}: The row with exam_id=3 and course_id=103 has date=2023-03-20 and time=10:00."
     },
     {
         "question": "What is the day and time of the Software Engineering exam?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"2023-03-20 10:00\"],\n        \"why\": [\n            \"{{exams_2}}\",\n            \"{{exams_3}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Software Engineering exam date and time are specified in rows 2 and 3 of the `exams` table. The witness sets for this answer are `{{exams_2}}` and `{{exams_3}}`, which correspond to these two rows."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"2023-03-20 10:00\"],\n        \"why\": [\n            \"{{exams_2}}\"\n        ]\n    }\n]\n\nExplanation:\nThe Software Engineering exam is on March 20, 2023 at 10:00. This can be justified by the following witness set:\n\n* {{exams_2}}: The row with exam_id=3 and course_id=103 has date=2023-03-20 and time=10:00."
     },
     {
         "question": "Which courses (name of courses) have 8 credits?",
@@ -1378,22 +1376,66 @@
     {
         "question": "Which courses (name of courses) have 8 credits?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Advanced Algorithms\", \"Artificial Intelligence\"],\n        \"why\": [\n            \"{{courses_3}}, {{courses_7}}\"\n        ]\n    }\n]\n\nExplanation: The courses with 8 credits are Advanced Algorithms (course_id: 104) and Artificial Intelligence (course_id: 108). These courses appear in the context because they have a credits value of 8, which is justified by the witness sets {{courses_3}} and {{courses_7}}, respectively."
+        "answer": [
+            {
+                "answer": [
+                    "Advanced Algorithms",
+                    "Artificial Intelligence"
+                ],
+                "why": [
+                    "{{courses_3}",
+                    "{{courses_7}}"
+                ]
+            }
+        ]
     },
     {
         "question": "Which courses (name of courses) have 8 credits?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Advanced Algorithms\", \"Artificial Intelligence\"],\n        \"why\": [\n            \"{{courses_3}}, {{courses_7}}\"\n        ]\n    }\n]\n\nExplanation: The courses with 8 credits are Advanced Algorithms (course_id: 104) and Artificial Intelligence (course_id: 108). These courses appear in the context because they have a credits value of 8, which is justified by the witness sets {{courses_3}} and {{courses_7}}, respectively."
+        "answer": [
+            {
+                "answer": [
+                    "Advanced Algorithms",
+                    "Artificial Intelligence"
+                ],
+                "why": [
+                    "{{courses_3}",
+                    "{{courses_7}}"
+                ]
+            }
+        ]
     },
     {
         "question": "Which courses (name of courses) have 8 credits?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Advanced Algorithms\", \"Artificial Intelligence\"],\n        \"why\": [\n            \"{{courses_3}}, {{courses_7}}\"\n        ]\n    }\n]\n\nExplanation: The courses with 8 credits are Advanced Algorithms (course_id: 104) and Artificial Intelligence (course_id: 108). These courses appear in the context because they have a credits value of 8, which is justified by the witness sets {{courses_3}} and {{courses_7}}, respectively."
+        "answer": [
+            {
+                "answer": [
+                    "Advanced Algorithms",
+                    "Artificial Intelligence"
+                ],
+                "why": [
+                    "{{courses_3}",
+                    "{{courses_7}}"
+                ]
+            }
+        ]
     },
     {
         "question": "Which courses (name of courses) have 8 credits?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Advanced Algorithms\", \"Artificial Intelligence\"],\n        \"why\": [\n            \"{{courses_3}}, {{courses_7}}\"\n        ]\n    }\n]\n\nExplanation: The courses with 8 credits are Advanced Algorithms (course_id: 104) and Artificial Intelligence (course_id: 108). These courses appear in the context because they have a credits value of 8, which is justified by the witness sets {{courses_3}} and {{courses_7}}, respectively."
+        "answer": [
+            {
+                "answer": [
+                    "Advanced Algorithms",
+                    "Artificial Intelligence"
+                ],
+                "why": [
+                    "{{courses_3}",
+                    "{{courses_7}}"
+                ]
+            }
+        ]
     },
     {
         "question": "What is the title of the thesis of Sophie Durand?",
@@ -1473,22 +1515,43 @@
     {
         "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{students_3}}\",\n            \"{{teacher_research_areas_0, courses_1}}\",\n            \"{{teacher_research_areas_7, courses_3}}\"\n        ]\n    }\n]\n\nExplanation:\nThe students enrolled in Machine Learning or Advanced Algorithm courses are Lucas Schmidt. The witness sets that justify this result are:\n\n- {{students_3}}: This is the student's information row.\n- {{teacher_research_areas_0, courses_1}}: This shows that teacher 1 (Lucas) has a research area of Artificial Intelligence and teaches course 101 (Machine Learning).\n- {{teacher_research_areas_7, courses_3}}: This shows that teacher 4 (Advanced Algorithm) has no research areas listed but teaches course 104 (Advanced Algorithms)."
+        "answer": [
+            {
+                "answer": [
+                    "Lucas Schmidt"
+                ],
+                "why": [
+                    "{{students_3}}",
+                    "{{teacher_research_areas_0, courses_1}}",
+                    "{{teacher_research_areas_7, courses_3}}"
+                ]
+            }
+        ]
     },
     {
         "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{students_3}}\",\n            \"{{teacher_research_areas_0, courses_1}}\",\n            \"{{teacher_research_areas_7, courses_3}}\"\n        ]\n    }\n]\n\nExplanation:\nThe students enrolled in Machine Learning or Advanced Algorithm courses are Lucas Schmidt. The witness sets that justify this result are:\n\n- {{students_3}}: This is the student's information row.\n- {{teacher_research_areas_0, courses_1}}: This shows that teacher 1 (Lucas) has a research area of Artificial Intelligence and teaches course 101 (Machine Learning).\n- {{teacher_research_areas_7, courses_3}}: This shows that teacher 4 (Advanced Algorithm) has no research areas listed but teaches course 104 (Advanced Algorithms)."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{courses_0}}\",\n            \"{{teacher_research_areas_7, courses_1}}\"\n        ]\n    }\n]\n\nExplanation:\nThe student enrolled in Machine Learning or Advanced Algorithm courses is Lucas Schmidt. This can be justified by the following witness sets:\n\n- The teacher with id 1 (research area: Artificial Intelligence) teaches a course on Machine Learning (course_id: 101), which matches Lucas Schmidt's enrollment.\n- The teacher with id 4 (research area: Algorithms Optimization) teaches a course on Advanced Algorithms (course_id: 104), which also matches Lucas Schmidt's enrollment.\n\nThese witness sets support the answer that Lucas Schmidt is enrolled in either Machine Learning or Advanced Algorithm courses."
     },
     {
         "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{students_3}}\",\n            \"{{teacher_research_areas_0, courses_1}}\",\n            \"{{teacher_research_areas_7, courses_3}}\"\n        ]\n    }\n]\n\nExplanation:\nThe students enrolled in Machine Learning or Advanced Algorithm courses are Lucas Schmidt. The witness sets that justify this result are:\n\n- {{students_3}}: This is the student's information row.\n- {{teacher_research_areas_0, courses_1}}: This shows that teacher 1 (Lucas) has a research area of Artificial Intelligence and teaches course 101 (Machine Learning).\n- {{teacher_research_areas_7, courses_3}}: This shows that teacher 4 (Advanced Algorithm) has no research areas listed but teaches course 104 (Advanced Algorithms)."
+        "answer": [
+            {
+                "answer": [
+                    "Lucas Schmidt"
+                ],
+                "why": [
+                    "{{courses_0}}",
+                    "{{teacher_research_areas_7, courses_1}}"
+                ]
+            }
+        ]
     },
     {
         "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{students_3}}\",\n            \"{{teacher_research_areas_0, courses_1}}\",\n            \"{{teacher_research_areas_7, courses_3}}\"\n        ]\n    }\n]\n\nExplanation:\nThe students enrolled in Machine Learning or Advanced Algorithm courses are Lucas Schmidt. The witness sets that justify this result are:\n\n- {{students_3}}: This is the student's information row.\n- {{teacher_research_areas_0, courses_1}}: This shows that teacher 1 (Lucas) has a research area of Artificial Intelligence and teaches course 101 (Machine Learning).\n- {{teacher_research_areas_7, courses_3}}: This shows that teacher 4 (Advanced Algorithm) has no research areas listed but teaches course 104 (Advanced Algorithms)."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{teacher_research_areas_7, courses_0}}\"\n        ]\n    }\n]\n\nExplanation:\nThe student enrolled in Machine Learning or Advanced Algorithm courses is Lucas Schmidt. This can be justified by the following Witness Set: `{{teacher_research_areas_7, courses_0}}`."
     },
     {
         "question": "Which courses (name of the courses) have 6 credits?",
@@ -1603,66 +1666,22 @@
     {
         "question": "Which classrooms (room number) are located in the Main building?",
         "iteration": 2,
-        "answer": [
-            {
-                "answer": [
-                    "101",
-                    "102"
-                ],
-                "why": [
-                    "{{classrooms_0}",
-                    "{{classrooms_1}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"101\", \"102\"],\n        \"why\": [\n            \"{{classrooms_0}}, {{classrooms_1}}\"\n        ]\n    }\n]\n\nExplanation: The classrooms with room numbers 101 and 102 are located in the Main building."
     },
     {
         "question": "Which classrooms (room number) are located in the Main building?",
         "iteration": 3,
-        "answer": [
-            {
-                "answer": [
-                    "101",
-                    "102"
-                ],
-                "why": [
-                    "{{classrooms_0}",
-                    "{{classrooms_1}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"101\", \"102\"],\n        \"why\": [\n            \"{{classrooms_0}}, {{classrooms_1}}\"\n        ]\n    }\n]\n\nExplanation: The classrooms with room numbers 101 and 102 are located in the Main building."
     },
     {
         "question": "Which classrooms (room number) are located in the Main building?",
         "iteration": 4,
-        "answer": [
-            {
-                "answer": [
-                    "101",
-                    "102"
-                ],
-                "why": [
-                    "{{classrooms_0}",
-                    "{{classrooms_1}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"101\", \"102\"],\n        \"why\": [\n            \"{{classrooms_0}}, {{classrooms_1}}\"\n        ]\n    }\n]\n\nExplanation: The classrooms with room numbers 101 and 102 are located in the Main building."
     },
     {
         "question": "Which classrooms (room number) are located in the Main building?",
         "iteration": 5,
-        "answer": [
-            {
-                "answer": [
-                    "101",
-                    "102"
-                ],
-                "why": [
-                    "{{classrooms_0}",
-                    "{{classrooms_1}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"101\", \"102\"],\n        \"why\": [\n            \"{{classrooms_0}}, {{classrooms_1}}\"\n        ]\n    }\n]\n\nExplanation: The classrooms with room numbers 101 and 102 are located in the Main building."
     },
     {
         "question": "Which departments (departments name) are in the Science faculty?",
@@ -1681,8 +1700,7 @@
                     "Chemistry"
                 ],
                 "why": [
-                    "{{departments_4}}, {{departments_3}}, {{departments_5}}, {{departments_2}}",
-                    "{{departments_4}}, {{departments_3}}, {{departments_5}}, {{departments_2}}"
+                    "{{departments_4}}, {{departments_3}}, {{departments_2}}, {{departments_5}}"
                 ]
             }
         ]
@@ -1699,8 +1717,7 @@
                     "Chemistry"
                 ],
                 "why": [
-                    "{{departments_4}}, {{departments_3}}, {{departments_5}}, {{departments_2}}",
-                    "{{departments_4}}, {{departments_3}}, {{departments_5}}, {{departments_2}}"
+                    "{{departments_4}}, {{departments_3}}, {{departments_2}}, {{departments_5}}"
                 ]
             }
         ]
@@ -1717,8 +1734,7 @@
                     "Chemistry"
                 ],
                 "why": [
-                    "{{departments_4}}, {{departments_3}}, {{departments_5}}, {{departments_2}}",
-                    "{{departments_4}}, {{departments_3}}, {{departments_5}}, {{departments_2}}"
+                    "{{departments_4}}, {{departments_3}}, {{departments_2}}, {{departments_5}}"
                 ]
             }
         ]
@@ -1735,8 +1751,7 @@
                     "Chemistry"
                 ],
                 "why": [
-                    "{{departments_4}}, {{departments_3}}, {{departments_5}}, {{departments_2}}",
-                    "{{departments_4}}, {{departments_3}}, {{departments_5}}, {{departments_2}}"
+                    "{{departments_4}}, {{departments_3}}, {{departments_2}}, {{departments_5}}"
                 ]
             }
         ]
@@ -1749,22 +1764,31 @@
     {
         "question": "Which thesis (title) have the status completed?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Deep Learning for Image Recognition\"],\n        \"why\": [\n            \"{{thesis_0}}\",\n            \"{{thesis_3}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with the status \"Completed\" is \"Deep Learning for Image Recognition\" (thesis_id 1). This can be justified by the following Witness Sets:\n\n- {{thesis_0}}: The first row in the thesis table indicates that thesis_id 1 has a status of \"Completed\".\n- {{thesis_3}}: The third row in the thesis table also indicates that thesis_id 4 has a status of \"Completed\"."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Deep Learning for Image Recognition\"],\n        \"why\": [\n            \"{{thesis, 0}}\",\n            \"{{thesis, 0}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with the status \"Completed\" is \"Deep Learning for Image Recognition\" (thesis_id 1). This can be justified by the following Witness Sets:\n\n- {{thesis, 0}}: The first row in the thesis table indicates that thesis_id 1 has a status of \"Completed\"."
     },
     {
         "question": "Which thesis (title) have the status completed?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Deep Learning for Image Recognition\"],\n        \"why\": [\n            \"{{thesis_0}}\",\n            \"{{thesis_3}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with the status \"Completed\" is \"Deep Learning for Image Recognition\" (thesis_id 1). This can be justified by the following Witness Sets:\n\n- {{thesis_0}}: The first row in the thesis table indicates that thesis_id 1 has a status of \"Completed\".\n- {{thesis_3}}: The third row in the thesis table also indicates that thesis_id 4 has a status of \"Completed\"."
+        "answer": [
+            {
+                "answer": [
+                    "Deep Learning for Image Recognition"
+                ],
+                "why": [
+                    "{{thesis, 0}}"
+                ]
+            }
+        ]
     },
     {
         "question": "Which thesis (title) have the status completed?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Deep Learning for Image Recognition\"],\n        \"why\": [\n            \"{{thesis_0}}\",\n            \"{{thesis_3}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with the status \"Completed\" is \"Deep Learning for Image Recognition\" (thesis_id 1). This can be justified by the following Witness Sets:\n\n- {{thesis_0}}: The first row in the thesis table indicates that thesis_id 1 has a status of \"Completed\".\n- {{thesis_3}}: The third row in the thesis table also indicates that thesis_id 4 has a status of \"Completed\"."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Deep Learning for Image Recognition\"],\n        \"why\": [\n            \"{{thesis, 0}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with title \"Deep Learning for Image Recognition\" has status \"Completed\". This can be justified by the witness set \"{{thesis, 0}}\", which corresponds to the first row of the \"thesis\" table."
     },
     {
         "question": "Which thesis (title) have the status completed?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Deep Learning for Image Recognition\"],\n        \"why\": [\n            \"{{thesis_0}}\",\n            \"{{thesis_3}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with the status \"Completed\" is \"Deep Learning for Image Recognition\" (thesis_id 1). This can be justified by the following Witness Sets:\n\n- {{thesis_0}}: The first row in the thesis table indicates that thesis_id 1 has a status of \"Completed\".\n- {{thesis_3}}: The third row in the thesis table also indicates that thesis_id 4 has a status of \"Completed\"."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Deep Learning for Image Recognition\"],\n        \"why\": [\n            \"{{thesis, 0}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with title \"Deep Learning for Image Recognition\" has status \"Completed\". This can be justified by the witness set \"{{thesis, 0}}\", which corresponds to the first row of the \"thesis\" table."
     },
     {
         "question": "What are the names of the courses taught by Laura Bianchi?",
@@ -1774,47 +1798,17 @@
     {
         "question": "What are the names of the courses taught by Laura Bianchi?",
         "iteration": 2,
-        "answer": [
-            {
-                "answer": [
-                    "Machine Learning"
-                ],
-                "why": [
-                    "{{teachers_1}}",
-                    "{{courses_0}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Machine Learning\"],\n        \"why\": [\n            \"{{teachers_1}}\",\n            \"{{teacher_research_areas_7}, {grades_0}\"\n        ]\n    }\n]\n\nExplanation: The course taught by Laura Bianchi is Machine Learning, which can be justified by the following witness sets:\n\n- {{teachers_1}}: This refers to the row in the teachers table where teacher_id = 2, name = Laura, and surname = Bianchi.\n- {{teacher_research_areas_7}, {grades_0}}: These refer to the rows in the teacher_research_areas and grades tables that support Machine Learning as a course taught by Laura Bianchi."
     },
     {
         "question": "What are the names of the courses taught by Laura Bianchi?",
         "iteration": 3,
-        "answer": [
-            {
-                "answer": [
-                    "Machine Learning"
-                ],
-                "why": [
-                    "{{teachers_1}}",
-                    "{{courses_0}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Machine Learning\"],\n        \"why\": [\n            \"{{teachers_1}}, {{teacher_research_areas_7}, {grades_0}}\"\n        ]\n    }\n]\n\nExplanation: The course taught by Laura Bianchi is Machine Learning, which can be justified by the following witness sets:\n\n- {{teachers_1}}: This refers to the row in the teachers table where teacher_id = 2, name = Laura, and surname = Bianchi.\n- {{teacher_research_areas_7}, {grades_0}}: These refer to the rows in the teacher_research_areas and grades tables that support Machine Learning as a course taught by Laura Bianchi."
     },
     {
         "question": "What are the names of the courses taught by Laura Bianchi?",
         "iteration": 4,
-        "answer": [
-            {
-                "answer": [
-                    "Machine Learning"
-                ],
-                "why": [
-                    "{{teachers_1}}",
-                    "{{courses_0}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Machine Learning\"],\n        \"why\": [\n            \"{{teachers_1}}, {{teacher_research_areas_7}, {grades_0}}\"\n        ]\n    }\n]\n\nExplanation: The course taught by Laura Bianchi is Machine Learning, which can be justified by the following witness sets:\n\n- {{teachers_1}}: This refers to the row in the teachers table where teacher_id = 2, name = Laura, and surname = Bianchi.\n- {{teacher_research_areas_7}, {grades_0}}: These refer to the rows in the teacher_research_areas and grades tables that support Machine Learning as a course taught by Laura Bianchi."
     },
     {
         "question": "What are the names of the courses taught by Laura Bianchi?",
@@ -1825,8 +1819,7 @@
                     "Machine Learning"
                 ],
                 "why": [
-                    "{{teachers_1}}",
-                    "{{courses_0}}"
+                    "{{teachers_1}}, {{teacher_research_areas_7}, {grades_0}}"
                 ]
             }
         ]
@@ -1839,22 +1832,74 @@
     {
         "question": "Which courses (name of courses) are taught in the Fall semester?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Machine Learning\", \"Data Mining\", \"Digital Signal Processing\", \"Cybersecurity\", \"Embedded Systems\"],\n        \"why\": [\n            \"{{courses_0}, {courses_6}, {courses_4}, {courses_2}, {courses_7}}\"\n        ]\n    }\n]\n\nExplanation: The courses taught in the Fall semester are Machine Learning, Data Mining, Digital Signal Processing, Cybersecurity, and Embedded Systems. These courses have a semester value of \"Fall\" in their respective rows."
+        "answer": [
+            {
+                "answer": [
+                    "Machine Learning",
+                    "Data Mining",
+                    "Digital Signal Processing",
+                    "Cybersecurity",
+                    "Embedded Systems"
+                ],
+                "why": [
+                    "{{courses_0}, {courses_6}, {courses_4}, {courses_2}, {courses_7}}"
+                ]
+            }
+        ]
     },
     {
         "question": "Which courses (name of courses) are taught in the Fall semester?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Machine Learning\", \"Data Mining\", \"Digital Signal Processing\", \"Cybersecurity\", \"Embedded Systems\"],\n        \"why\": [\n            \"{{courses_0}, {courses_6}, {courses_4}, {courses_2}, {courses_7}}\"\n        ]\n    }\n]\n\nExplanation: The courses taught in the Fall semester are Machine Learning, Data Mining, Digital Signal Processing, Cybersecurity, and Embedded Systems. These courses have a semester value of \"Fall\" in their respective rows."
+        "answer": [
+            {
+                "answer": [
+                    "Machine Learning",
+                    "Data Mining",
+                    "Cybersecurity",
+                    "Digital Signal Processing",
+                    "Embedded Systems"
+                ],
+                "why": [
+                    "{{courses_Fall_0}, {courses_Fall_6}, {courses_Fall_8}, {courses_Fall_4}, {courses_Fall_2}}"
+                ]
+            }
+        ]
     },
     {
         "question": "Which courses (name of courses) are taught in the Fall semester?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Machine Learning\", \"Data Mining\", \"Digital Signal Processing\", \"Cybersecurity\", \"Embedded Systems\"],\n        \"why\": [\n            \"{{courses_0}, {courses_6}, {courses_4}, {courses_2}, {courses_7}}\"\n        ]\n    }\n]\n\nExplanation: The courses taught in the Fall semester are Machine Learning, Data Mining, Digital Signal Processing, Cybersecurity, and Embedded Systems. These courses have a semester value of \"Fall\" in their respective rows."
+        "answer": [
+            {
+                "answer": [
+                    "Machine Learning",
+                    "Data Mining",
+                    "Cybersecurity",
+                    "Digital Signal Processing",
+                    "Embedded Systems"
+                ],
+                "why": [
+                    "{{courses_Fall_0}, {courses_Fall_6}, {courses_Fall_8}, {courses_Fall_4}, {courses_Fall_2}}"
+                ]
+            }
+        ]
     },
     {
         "question": "Which courses (name of courses) are taught in the Fall semester?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Machine Learning\", \"Data Mining\", \"Digital Signal Processing\", \"Cybersecurity\", \"Embedded Systems\"],\n        \"why\": [\n            \"{{courses_0}, {courses_6}, {courses_4}, {courses_2}, {courses_7}}\"\n        ]\n    }\n]\n\nExplanation: The courses taught in the Fall semester are Machine Learning, Data Mining, Digital Signal Processing, Cybersecurity, and Embedded Systems. These courses have a semester value of \"Fall\" in their respective rows."
+        "answer": [
+            {
+                "answer": [
+                    "Machine Learning",
+                    "Data Mining",
+                    "Cybersecurity",
+                    "Digital Signal Processing",
+                    "Embedded Systems"
+                ],
+                "why": [
+                    "{{courses_Fall_0}, {courses_Fall_6}, {courses_Fall_8}, {courses_Fall_4}, {courses_Fall_2}}"
+                ]
+            }
+        ]
     },
     {
         "question": "Which courses (name of courses) are taught in the Spring semester?",
@@ -1864,22 +1909,22 @@
     {
         "question": "Which courses (name of courses) are taught in the Spring semester?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Human-Computer Interaction\", \"Software Engineering\", \"Database Systems\", \"Advanced Algorithms\"],\n        \"why\": [\n            \"{{courses_9}}, {{courses_5}}, {{courses_1}}, {{courses_3}}\"\n        ]\n    }\n]\n\nExplanation: The courses taught in the Spring semester are Human-Computer Interaction (course_id 110), Software Engineering (course_id 106), Database Systems (course_id 102), and Advanced Algorithms (course_id 104). These courses have a semester of \"Spring\" in their metadata."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Human-Computer Interaction\", \"Software Engineering\", \"Database Systems\", \"Advanced Algorithms\"],\n        \"why\": [\n            \"{{enrollments_1_6}}, {{enrollments_5_8}}, {{enrollments_0_3}}, {{enrollments_2_1}}\"\n        ]\n    }\n]\n\nExplanation: The courses taught in the Spring semester are Human-Computer Interaction, Software Engineering, Database Systems, and Advanced Algorithms. These courses have a semester value of 'Spring' in their respective rows."
     },
     {
         "question": "Which courses (name of courses) are taught in the Spring semester?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Human-Computer Interaction\", \"Software Engineering\", \"Database Systems\", \"Advanced Algorithms\"],\n        \"why\": [\n            \"{{courses_9}}, {{courses_5}}, {{courses_1}}, {{courses_3}}\"\n        ]\n    }\n]\n\nExplanation: The courses taught in the Spring semester are Human-Computer Interaction (course_id 110), Software Engineering (course_id 106), Database Systems (course_id 102), and Advanced Algorithms (course_id 104). These courses have a semester of \"Spring\" in their metadata."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Human-Computer Interaction\", \"Software Engineering\", \"Database Systems\", \"Advanced Algorithms\"],\n        \"why\": [\n            \"{{enrollments_1_6}}, {{enrollments_5_8}}, {{enrollments_0_3}}, {{enrollments_2_1}}\"\n        ]\n    }\n]\n\nExplanation: The courses taught in the Spring semester are Human-Computer Interaction, Software Engineering, Database Systems, and Advanced Algorithms. These courses have a semester value of 'Spring' in their respective rows."
     },
     {
         "question": "Which courses (name of courses) are taught in the Spring semester?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Human-Computer Interaction\", \"Software Engineering\", \"Database Systems\", \"Advanced Algorithms\"],\n        \"why\": [\n            \"{{courses_9}}, {{courses_5}}, {{courses_1}}, {{courses_3}}\"\n        ]\n    }\n]\n\nExplanation: The courses taught in the Spring semester are Human-Computer Interaction (course_id 110), Software Engineering (course_id 106), Database Systems (course_id 102), and Advanced Algorithms (course_id 104). These courses have a semester of \"Spring\" in their metadata."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Human-Computer Interaction\", \"Software Engineering\", \"Database Systems\", \"Advanced Algorithms\"],\n        \"why\": [\n            \"{{enrollments_1_6}}, {{enrollments_5_8}}, {{enrollments_0_3}}, {{enrollments_2_1}}\"\n        ]\n    }\n]\n\nExplanation: The courses taught in the Spring semester are Human-Computer Interaction, Software Engineering, Database Systems, and Advanced Algorithms. These courses have a semester value of 'Spring' in their respective rows."
     },
     {
         "question": "Which courses (name of courses) are taught in the Spring semester?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Human-Computer Interaction\", \"Software Engineering\", \"Database Systems\", \"Advanced Algorithms\"],\n        \"why\": [\n            \"{{courses_9}}, {{courses_5}}, {{courses_1}}, {{courses_3}}\"\n        ]\n    }\n]\n\nExplanation: The courses taught in the Spring semester are Human-Computer Interaction (course_id 110), Software Engineering (course_id 106), Database Systems (course_id 102), and Advanced Algorithms (course_id 104). These courses have a semester of \"Spring\" in their metadata."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Human-Computer Interaction\", \"Software Engineering\", \"Database Systems\", \"Advanced Algorithms\"],\n        \"why\": [\n            \"{{enrollments_1_6}}, {{enrollments_5_8}}, {{enrollments_0_3}}, {{enrollments_2_1}}\"\n        ]\n    }\n]\n\nExplanation: The courses taught in the Spring semester are Human-Computer Interaction, Software Engineering, Database Systems, and Advanced Algorithms. These courses have a semester value of 'Spring' in their respective rows."
     },
     {
         "question": "Which teachers (name, surname) are part of the Electronics department?",
@@ -1904,8 +1949,7 @@
                     "Giulia Colombo"
                 ],
                 "why": [
-                    "{{departments_1}}",
-                    "{{teachers_5}}"
+                    "{{departments_1}}, {{teachers_5}}"
                 ]
             }
         ]
@@ -1919,8 +1963,7 @@
                     "Giulia Colombo"
                 ],
                 "why": [
-                    "{{departments_1}}",
-                    "{{teachers_5}}"
+                    "{{departments_1}}, {{teachers_5}}"
                 ]
             }
         ]
@@ -1934,8 +1977,7 @@
                     "Giulia Colombo"
                 ],
                 "why": [
-                    "{{departments_1}}",
-                    "{{teachers_5}}"
+                    "{{departments_1}}, {{teachers_5}}"
                 ]
             }
         ]
@@ -1949,8 +1991,7 @@
                     "Giulia Colombo"
                 ],
                 "why": [
-                    "{{departments_1}}",
-                    "{{teachers_5}}"
+                    "{{departments_1}}, {{teachers_5}}"
                 ]
             }
         ]
@@ -1963,22 +2004,22 @@
     {
         "question": "Which thesis (title) have the status in progress?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Big Data Processing\"],\n        \"why\": [\n            \"{{thesis_0}\", \n            \"{{thesis_1}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with status 'In Progress' are Big Data Processing (thesis_id 2) and User Experience Design in Web Apps (thesis_id 5). Witness sets for these theses are {{thesis_0}} and {{thesis_1}}, respectively."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Big Data Processing\"],\n        \"why\": [\n            \"{{thesis_0}}\", \n            \"{{thesis_1}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with status 'In Progress' are Big Data Processing (thesis_id 2) and User Experience Design in Web Apps (thesis_id 5). Witness sets for these theses are {{thesis_0}} and {{thesis_1}}, respectively."
     },
     {
         "question": "Which thesis (title) have the status in progress?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Big Data Processing\"],\n        \"why\": [\n            \"{{thesis_0}\", \n            \"{{thesis_1}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with status 'In Progress' are Big Data Processing (thesis_id 2) and User Experience Design in Web Apps (thesis_id 5). Witness sets for these theses are {{thesis_0}} and {{thesis_1}}, respectively."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Big Data Processing\"],\n        \"why\": [\n            \"{{thesis_0}}\", \n            \"{{thesis_1}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with status 'In Progress' are Big Data Processing (thesis_id 2) and User Experience Design in Web Apps (thesis_id 5). Witness sets for these theses are {{thesis_0}} and {{thesis_1}}, respectively."
     },
     {
         "question": "Which thesis (title) have the status in progress?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Big Data Processing\"],\n        \"why\": [\n            \"{{thesis_0}\", \n            \"{{thesis_1}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with status 'In Progress' are Big Data Processing (thesis_id 2) and User Experience Design in Web Apps (thesis_id 5). Witness sets for these theses are {{thesis_0}} and {{thesis_1}}, respectively."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Big Data Processing\"],\n        \"why\": [\n            \"{{thesis_0}}\", \n            \"{{thesis_1}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with status 'In Progress' are Big Data Processing (thesis_id 2) and User Experience Design in Web Apps (thesis_id 5). Witness sets for these theses are {{thesis_0}} and {{thesis_1}}, respectively."
     },
     {
         "question": "Which thesis (title) have the status in progress?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Big Data Processing\"],\n        \"why\": [\n            \"{{thesis_0}\", \n            \"{{thesis_1}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with status 'In Progress' are Big Data Processing (thesis_id 2) and User Experience Design in Web Apps (thesis_id 5). Witness sets for these theses are {{thesis_0}} and {{thesis_1}}, respectively."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Big Data Processing\"],\n        \"why\": [\n            \"{{thesis_0}}\", \n            \"{{thesis_1}}\"\n        ]\n    }\n]\n\nExplanation: The thesis with status 'In Progress' are Big Data Processing (thesis_id 2) and User Experience Design in Web Apps (thesis_id 5). Witness sets for these theses are {{thesis_0}} and {{thesis_1}}, respectively."
     },
     {
         "question": "Which teachers (name, surname) are part of the Computer Science department?",
@@ -1993,14 +2034,14 @@
                 "answer": [
                     "Elisa Neri",
                     "Carlo Rossi",
-                    "Laura Bianchi",
                     "Giulia Colombo",
                     "Francesco Conti",
+                    "Laura Bianchi",
                     "Maria Ferrari"
                 ],
                 "why": [
-                    "{{teachers_3},{departments_0, teachers_1, teachers_2, teachers_5, teachers_6, teachers_9}}",
-                    "{{}}"
+                    "{{teachers_3},{departments_0, teachers_1, teachers_5, teachers_6, teachers_7, teachers_8, teachers_9}}",
+                    "{{teachers_3,{departments_0, teachers_1, teachers_2, teachers_9}}}"
                 ]
             }
         ]
@@ -2013,14 +2054,12 @@
                 "answer": [
                     "Elisa Neri",
                     "Carlo Rossi",
-                    "Laura Bianchi",
-                    "Giulia Colombo",
                     "Francesco Conti",
                     "Maria Ferrari"
                 ],
                 "why": [
-                    "{{teachers_3},{departments_0, teachers_1, teachers_2, teachers_5, teachers_6, teachers_9}}",
-                    "{{}}"
+                    "{{teachers_3},{departments_0, teachers_1, teachers_5, teachers_6, teachers_9}}",
+                    "{{teachers_3,{departments_0, teachers_1, teachers_2, teachers_9}}}"
                 ]
             }
         ]
@@ -2033,14 +2072,12 @@
                 "answer": [
                     "Elisa Neri",
                     "Carlo Rossi",
-                    "Laura Bianchi",
-                    "Giulia Colombo",
                     "Francesco Conti",
                     "Maria Ferrari"
                 ],
                 "why": [
-                    "{{teachers_3},{departments_0, teachers_1, teachers_2, teachers_5, teachers_6, teachers_9}}",
-                    "{{}}"
+                    "{{teachers_3},{departments_0, teachers_1, teachers_5, teachers_6, teachers_9}}",
+                    "{{teachers_3,{departments_0, teachers_1, teachers_2, teachers_9}}}"
                 ]
             }
         ]
@@ -2053,14 +2090,12 @@
                 "answer": [
                     "Elisa Neri",
                     "Carlo Rossi",
-                    "Laura Bianchi",
-                    "Giulia Colombo",
                     "Francesco Conti",
                     "Maria Ferrari"
                 ],
                 "why": [
-                    "{{teachers_3},{departments_0, teachers_1, teachers_2, teachers_5, teachers_6, teachers_9}}",
-                    "{{}}"
+                    "{{teachers_3},{departments_0, teachers_1, teachers_5, teachers_6, teachers_9}}",
+                    "{{teachers_3,{departments_0, teachers_1, teachers_2, teachers_9}}}"
                 ]
             }
         ]
@@ -2181,10 +2216,12 @@
         "answer": [
             {
                 "answer": [
-                    "Student 5, Student 4"
+                    "Anna, Smith",
+                    "Emily, Johnson"
                 ],
                 "why": [
-                    "{{enrollments_6}}, {{enrollments_8}}"
+                    "{{enrollments_8}}",
+                    "{{enrollments_6}}"
                 ]
             }
         ]
@@ -2195,10 +2232,12 @@
         "answer": [
             {
                 "answer": [
-                    "Student 5, Student 4"
+                    "Anna, Smith",
+                    "Emily, Johnson"
                 ],
                 "why": [
-                    "{{enrollments_6}}, {{enrollments_8}}"
+                    "{{enrollments_7}}",
+                    "{{enrollments_8}}"
                 ]
             }
         ]
@@ -2209,10 +2248,12 @@
         "answer": [
             {
                 "answer": [
-                    "Student 5, Student 4"
+                    "Anna, Smith",
+                    "Emily, Johnson"
                 ],
                 "why": [
-                    "{{enrollments_6}}, {{enrollments_8}}"
+                    "{{enrollments_7}}",
+                    "{{enrollments_8}}"
                 ]
             }
         ]
@@ -2223,10 +2264,12 @@
         "answer": [
             {
                 "answer": [
-                    "Student 5, Student 4"
+                    "Anna, Smith",
+                    "Emily, Johnson"
                 ],
                 "why": [
-                    "{{enrollments_6}}, {{enrollments_8}}"
+                    "{{enrollments_7}}",
+                    "{{enrollments_8}}"
                 ]
             }
         ]
@@ -2249,62 +2292,22 @@
     {
         "question": "Which are all the grades obtained by the student Sophie Durand?",
         "iteration": 2,
-        "answer": [
-            {
-                "answer": [
-                    "29"
-                ],
-                "why": [
-                    "{{grades_5}}",
-                    "{{grades_6}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"29\"],\n        \"why\": [\n            \"{{grades_5}}\",\n            \"{{grades_6}}\"\n        ]\n    }\n]\n\nExplanation: The student Sophie Durand has a grade of 29 in course 106 (grade_id 6). This information is found in the `grades` table, row 5."
     },
     {
         "question": "Which are all the grades obtained by the student Sophie Durand?",
         "iteration": 3,
-        "answer": [
-            {
-                "answer": [
-                    "29"
-                ],
-                "why": [
-                    "{{grades_5}}",
-                    "{{grades_6}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"29\"],\n        \"why\": [\n            \"{{grades_5}}\"\n        ]\n    }\n]\n\nExplanation: The student Sophie Durand has a grade of 29 in course 106 (grade_id 6). This information is found in the `grades` table, row 5."
     },
     {
         "question": "Which are all the grades obtained by the student Sophie Durand?",
         "iteration": 4,
-        "answer": [
-            {
-                "answer": [
-                    "29"
-                ],
-                "why": [
-                    "{{grades_5}}",
-                    "{{grades_6}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"29\"],\n        \"why\": [\n            \"{{grades_5}}\"\n        ]\n    }\n]\n\nExplanation: The student Sophie Durand has a grade of 29 in course 106 (grade_id 6). This information is found in the `grades` table, row 5."
     },
     {
         "question": "Which are all the grades obtained by the student Sophie Durand?",
         "iteration": 5,
-        "answer": [
-            {
-                "answer": [
-                    "29"
-                ],
-                "why": [
-                    "{{grades_5}}",
-                    "{{grades_6}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"29\"],\n        \"why\": [\n            \"{{grades_5}}\"\n        ]\n    }\n]\n\nExplanation: The student Sophie Durand has a grade of 29 in course 106 (grade_id 6). This information is found in the `grades` table, row 5."
     },
     {
         "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
@@ -2314,22 +2317,31 @@
     {
         "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{students_3}}\",\n            \"{{}}\"\n        ]\n    }\n]\n\nExplanation: The students enrolled in Human-Computer Interaction are Lucas Schmidt, as shown by row 3 of the `students` table."
+        "answer": [
+            {
+                "answer": [
+                    "Lucas Schmidt"
+                ],
+                "why": [
+                    "{{students_3}}"
+                ]
+            }
+        ]
     },
     {
         "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{students_3}}\",\n            \"{{}}\"\n        ]\n    }\n]\n\nExplanation: The students enrolled in Human-Computer Interaction are Lucas Schmidt, as shown by row 3 of the `students` table."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{students_3}}\"\n        ]\n    }\n]\n\nExplanation: The student Lucas Schmidt is enrolled in Human-Computer Interaction, which is confirmed by the row 9 of the `teacher_research_areas` table and the row 3 of the `students` table."
     },
     {
         "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{students_3}}\",\n            \"{{}}\"\n        ]\n    }\n]\n\nExplanation: The students enrolled in Human-Computer Interaction are Lucas Schmidt, as shown by row 3 of the `students` table."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{students_3}}\"\n        ]\n    }\n]\n\nExplanation: The student Lucas Schmidt is enrolled in Human-Computer Interaction, which is confirmed by the row 9 of the `teacher_research_areas` table and the row 3 of the `students` table."
     },
     {
         "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{students_3}}\",\n            \"{{}}\"\n        ]\n    }\n]\n\nExplanation: The students enrolled in Human-Computer Interaction are Lucas Schmidt, as shown by row 3 of the `students` table."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Lucas Schmidt\"],\n        \"why\": [\n            \"{{students_3}}\"\n        ]\n    }\n]\n\nExplanation: The student Lucas Schmidt is enrolled in Human-Computer Interaction, which is confirmed by the row 9 of the `teacher_research_areas` table and the row 3 of the `students` table."
     },
     {
         "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
@@ -2339,22 +2351,22 @@
     {
         "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
         "iteration": 2,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"103\", \"106\"],\n        \"why\": [\n            \"{{exams_4}\", \n            \"{{exams_5}}\"\n        ]\n    }\n]\n\nExplanation:\nThe question asks for courses with an exam scheduled at 13:00 or 14:00 hours. The only two exams that meet this condition are course_id 103 (Embedded Systems) and course_id 106 (Data Mining)."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Embedded Systems\", \"Data Mining\"],\n        \"why\": [\n            \"{{exams_4}}, {{exams_1}}\"\n        ]\n    }\n]\n\nExplanation:\nThe courses with an exam scheduled at 13:00 or 14:00 hours are Embedded Systems (course_id: 103) and Data Mining (course_id: 107).\n\nWitness Sets:\n\n* exams_4 (row: 4): The course \"Data Mining\" has an exam scheduled at 13:00.\n* exams_1 (row: 2): The course \"Embedded Systems\" has an exam scheduled at 14:00."
     },
     {
         "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
         "iteration": 3,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"103\", \"106\"],\n        \"why\": [\n            \"{{exams_4}\", \n            \"{{exams_5}}\"\n        ]\n    }\n]\n\nExplanation:\nThe question asks for courses with an exam scheduled at 13:00 or 14:00 hours. The only two exams that meet this condition are course_id 103 (Embedded Systems) and course_id 106 (Data Mining)."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Embedded Systems\", \"Data Mining\"],\n        \"why\": [\n            \"{{exams_4}}, {{exams_1}}\"\n        ]\n    }\n]\n\nExplanation:\nThe courses with an exam scheduled at 13:00 or 14:00 hours are Embedded Systems (course_id: 103) and Data Mining (course_id: 107).\n\nWitness Sets:\n\n* exams_4 (row: 4): The course \"Data Mining\" has an exam scheduled at 13:00.\n* exams_1 (row: 2): The course \"Embedded Systems\" has an exam scheduled at 14:00."
     },
     {
         "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
         "iteration": 4,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"103\", \"106\"],\n        \"why\": [\n            \"{{exams_4}\", \n            \"{{exams_5}}\"\n        ]\n    }\n]\n\nExplanation:\nThe question asks for courses with an exam scheduled at 13:00 or 14:00 hours. The only two exams that meet this condition are course_id 103 (Embedded Systems) and course_id 106 (Data Mining)."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Embedded Systems\", \"Data Mining\"],\n        \"why\": [\n            \"{{exams_4}}, {{exams_1}}\"\n        ]\n    }\n]\n\nExplanation:\nThe courses with an exam scheduled at 13:00 or 14:00 hours are Embedded Systems (course_id: 103) and Data Mining (course_id: 107).\n\nWitness Sets:\n\n* exams_4 (row: 4): The course \"Data Mining\" has an exam scheduled at 13:00.\n* exams_1 (row: 2): The course \"Embedded Systems\" has an exam scheduled at 14:00."
     },
     {
         "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
         "iteration": 5,
-        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"103\", \"106\"],\n        \"why\": [\n            \"{{exams_4}\", \n            \"{{exams_5}}\"\n        ]\n    }\n]\n\nExplanation:\nThe question asks for courses with an exam scheduled at 13:00 or 14:00 hours. The only two exams that meet this condition are course_id 103 (Embedded Systems) and course_id 106 (Data Mining)."
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Embedded Systems\", \"Data Mining\"],\n        \"why\": [\n            \"{{exams_4}}, {{exams_1}}\"\n        ]\n    }\n]\n\nExplanation:\nThe courses with an exam scheduled at 13:00 or 14:00 hours are Embedded Systems (course_id: 103) and Data Mining (course_id: 107).\n\nWitness Sets:\n\n* exams_4 (row: 4): The course \"Data Mining\" has an exam scheduled at 13:00.\n* exams_1 (row: 2): The course \"Embedded Systems\" has an exam scheduled at 14:00."
     },
     {
         "question": "Which are the classrooms (room number) in Science or Electronics building?",
@@ -2373,16 +2385,7 @@
     {
         "question": "Which are the classrooms (room number) in Science or Electronics building?",
         "iteration": 2,
-        "answer": [
-            {
-                "answer": [
-                    "401"
-                ],
-                "why": [
-                    "{{classrooms_5}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"401\"],\n        \"why\": [\n            \"{{classrooms_5}}\"\n        ]\n    }\n]\n\nExplanation: The only classroom in the Science or Electronics building is room 401, which belongs to the Electronics building. This can be justified by the following Witness Set: `{{classrooms_5}}`, which corresponds to the row where the classroom with ID 6 and room number 401 is located."
     },
     {
         "question": "Which are the classrooms (room number) in Science or Electronics building?",
@@ -2401,16 +2404,7 @@
     {
         "question": "Which are the classrooms (room number) in Science or Electronics building?",
         "iteration": 4,
-        "answer": [
-            {
-                "answer": [
-                    "401"
-                ],
-                "why": [
-                    "{{classrooms_5}}"
-                ]
-            }
-        ]
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"401\"],\n        \"why\": [\n            \"{{classrooms_5}}\"\n        ]\n    }\n]\n\nExplanation: The only classroom in the Science or Electronics building is room 401, which belongs to the Electronics building. This can be justified by the following Witness Set: `{{classrooms_5}}`, which corresponds to the row where the classroom with ID 6 and room number 401 is located."
     },
     {
         "question": "Which are the classrooms (room number) in Science or Electronics building?",

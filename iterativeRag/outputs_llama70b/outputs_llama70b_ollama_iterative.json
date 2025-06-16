@@ -822,7 +822,8 @@
                     "NULL"
                 ],
                 "why": [
-                    "{{students_0}, {courses_0}}"
+                    "{{students_0}, {courses_7}, {grades}}",
+                    "{{teacher_research_areas_7}, {students_0}, {grades}}"
                 ]
             }
         ]
@@ -836,7 +837,8 @@
                     "NULL"
                 ],
                 "why": [
-                    "{{students_0}, {courses_0}}"
+                    "{{students_0}, {grades}}",
+                    "{{teacher_research_areas_7}, {students_0}, {grades}}"
                 ]
             }
         ]
@@ -850,7 +852,8 @@
                     "NULL"
                 ],
                 "why": [
-                    "{{students_0}, {courses_0}}"
+                    "{{students_0}, {grades}}",
+                    "{{teacher_research_areas_7}, {students_0}, {grades}}"
                 ]
             }
         ]
@@ -864,7 +867,8 @@
                     "NULL"
                 ],
                 "why": [
-                    "{{students_0}, {courses_0}}"
+                    "{{students_0}, {grades}}",
+                    "{{teacher_research_areas_7}, {students_0}, {grades}}"
                 ]
             }
         ]
@@ -980,13 +984,13 @@
                     "Software Engineering"
                 ],
                 "why": [
-                    "{{courses_0}}",
-                    "{{courses_6}}",
-                    "{{courses_9}}",
-                    "{{courses_7}}",
-                    "{{courses_8}}",
-                    "{{courses_1}}",
-                    "{{courses_5}}"
+                    "{{courses_0},{courses_6}}",
+                    "{{courses_6},{courses_9}}",
+                    "{{courses_9},{courses_7}}",
+                    "{{courses_7},{courses_8}}",
+                    "{{courses_8},{courses_3}}",
+                    "{{courses_3},{courses_2}}",
+                    "{{courses_2},{courses_5}}"
                 ]
             }
         ]
@@ -1006,13 +1010,13 @@
                     "Software Engineering"
                 ],
                 "why": [
-                    "{{courses_0}}",
-                    "{{courses_6}}",
-                    "{{courses_9}}",
-                    "{{courses_7}}",
-                    "{{courses_8}}",
-                    "{{courses_1}}",
-                    "{{courses_5}}"
+                    "{{courses_0},{courses_6}}",
+                    "{{courses_6},{courses_9}}",
+                    "{{courses_9},{courses_7}}",
+                    "{{courses_7},{courses_8}}",
+                    "{{courses_8},{courses_3}}",
+                    "{{courses_3},{courses_2}}",
+                    "{{courses_2},{courses_5}}"
                 ]
             }
         ]
@@ -1032,13 +1036,13 @@
                     "Software Engineering"
                 ],
                 "why": [
-                    "{{courses_0}}",
-                    "{{courses_6}}",
-                    "{{courses_9}}",
-                    "{{courses_7}}",
-                    "{{courses_8}}",
-                    "{{courses_1}}",
-                    "{{courses_5}}"
+                    "{{courses_0},{courses_6}}",
+                    "{{courses_6},{courses_9}}",
+                    "{{courses_9},{courses_7}}",
+                    "{{courses_7},{courses_8}}",
+                    "{{courses_8},{courses_3}}",
+                    "{{courses_3},{courses_2}}",
+                    "{{courses_2},{courses_5}}"
                 ]
             }
         ]
@@ -1058,13 +1062,13 @@
                     "Software Engineering"
                 ],
                 "why": [
-                    "{{courses_0}}",
-                    "{{courses_6}}",
-                    "{{courses_9}}",
-                    "{{courses_7}}",
-                    "{{courses_8}}",
-                    "{{courses_1}}",
-                    "{{courses_5}}"
+                    "{{courses_0},{courses_6}}",
+                    "{{courses_6},{courses_9}}",
+                    "{{courses_9},{courses_7}}",
+                    "{{courses_7},{courses_8}}",
+                    "{{courses_8},{courses_3}}",
+                    "{{courses_3},{courses_2}}",
+                    "{{courses_2},{courses_5}}"
                 ]
             }
         ]
@@ -1089,10 +1093,10 @@
         "answer": [
             {
                 "answer": [
-                    "Department 2"
+                    "Mathematics"
                 ],
                 "why": [
-                    "{{teachers_4}}, {{teachers_2}}"
+                    "{{teachers_4}}, {{departments_2}}"
                 ]
             }
         ]
@@ -1103,10 +1107,10 @@
         "answer": [
             {
                 "answer": [
-                    "Department 2"
+                    "Chemistry"
                 ],
                 "why": [
-                    "{{teachers_4}}, {{teachers_2}}"
+                    "{{teachers_4}}, {{departments_5}}"
                 ]
             }
         ]
@@ -1117,10 +1121,10 @@
         "answer": [
             {
                 "answer": [
-                    "Department 2"
+                    "Physics"
                 ],
                 "why": [
-                    "{{teachers_4}}, {{teachers_2}}"
+                    "{{teachers_4}, {{departments_2}}}"
                 ]
             }
         ]
@@ -1131,10 +1135,10 @@
         "answer": [
             {
                 "answer": [
-                    "Department 2"
+                    "Biology"
                 ],
                 "why": [
-                    "{{teachers_4}}, {{teachers_2}}"
+                    "{{teachers_4}, {{departments_4}}}"
                 ]
             }
         ]
@@ -1162,7 +1166,7 @@
                     "26"
                 ],
                 "why": [
-                    "{{grades_6}}"
+                    "{{grades_6}, {students_4}, {teacher_research_areas_9}}"
                 ]
             }
         ]
@@ -1176,7 +1180,7 @@
                     "26"
                 ],
                 "why": [
-                    "{{grades_6}}"
+                    "{{grades_6}, {students_4}, {teacher_research_areas_9}}"
                 ]
             }
         ]
@@ -1190,7 +1194,7 @@
                     "26"
                 ],
                 "why": [
-                    "{{grades_6}}"
+                    "{{grades_6}, {students_4}, {teacher_research_areas_9}}"
                 ]
             }
         ]
@@ -1204,7 +1208,7 @@
                     "26"
                 ],
                 "why": [
-                    "{{grades_6}}"
+                    "{{grades_6}, {students_4}, {teacher_research_areas_9}}"
                 ]
             }
         ]
@@ -1233,8 +1237,7 @@
                     "Engineering"
                 ],
                 "why": [
-                    "{{departments_1}}",
-                    "{{departments_0}}"
+                    "{{departments_1}}"
                 ]
             }
         ]
@@ -1248,8 +1251,7 @@
                     "Engineering"
                 ],
                 "why": [
-                    "{{departments_1}}",
-                    "{{departments_0}}"
+                    "{{departments_1}}"
                 ]
             }
         ]
@@ -1263,8 +1265,7 @@
                     "Engineering"
                 ],
                 "why": [
-                    "{{departments_1}}",
-                    "{{departments_0}}"
+                    "{{departments_1}}"
                 ]
             }
         ]
@@ -1278,8 +1279,7 @@
                     "Engineering"
                 ],
                 "why": [
-                    "{{departments_1}}",
-                    "{{departments_0}}"
+                    "{{departments_1}}"
                 ]
             }
         ]
@@ -1437,15 +1437,8 @@
                 ],
                 "why": [
                     "{{enrollments_8}, {students_3}}",
-                    "{{enrollments_4}, {students_3}}"
-                ]
-            },
-            {
-                "answer": [
-                    "Lucas Schmidt"
-                ],
-                "why": [
-                    "{{enrollments_4}, {students_3}}"
+                    "{{enrollments_4}, {students_3}}",
+                    "{{enrollments_4}, {enrollments_5}, {students_3}}"
                 ]
             }
         ]
@@ -1459,16 +1452,9 @@
                     "Lucas Schmidt"
                 ],
                 "why": [
-                    "{{enrollments_8}, {students_3}}",
-                    "{{enrollments_4}, {students_3}}"
-                ]
-            },
-            {
-                "answer": [
-                    "Lucas Schmidt"
-                ],
-                "why": [
-                    "{{enrollments_4}, {students_3}}"
+                    "{{students_3}, {enrollments_8}}",
+                    "{{students_3}, {enrollments_4}}",
+                    "{{students_3}, {enrollments_5}}"
                 ]
             }
         ]
@@ -1482,16 +1468,9 @@
                     "Lucas Schmidt"
                 ],
                 "why": [
-                    "{{enrollments_8}, {students_3}}",
-                    "{{enrollments_4}, {students_3}}"
-                ]
-            },
-            {
-                "answer": [
-                    "Lucas Schmidt"
-                ],
-                "why": [
-                    "{{enrollments_4}, {students_3}}"
+                    "{{students_3}, {enrollments_8}}",
+                    "{{students_3}, {enrollments_4}}",
+                    "{{students_3}, {enrollments_5}}"
                 ]
             }
         ]
@@ -1505,16 +1484,9 @@
                     "Lucas Schmidt"
                 ],
                 "why": [
-                    "{{enrollments_8}, {students_3}}",
-                    "{{enrollments_4}, {students_3}}"
-                ]
-            },
-            {
-                "answer": [
-                    "Lucas Schmidt"
-                ],
-                "why": [
-                    "{{enrollments_4}, {students_3}}"
+                    "{{students_3}, {enrollments_8}}",
+                    "{{students_3}, {enrollments_4}}",
+                    "{{students_3}, {enrollments_5}}"
                 ]
             }
         ]
@@ -1613,9 +1585,13 @@
                     "Student 1"
                 ],
                 "why": [
-                    "{{enrollments_3},{students_0}}",
-                    "{{enrollments_0},{students_0}}"
+                    "{{enrollments_3},{courses_1},{students_0}}",
+                    "{{enrollments_0},{courses_1},{students_0}}"
                 ]
+            },
+            {
+                "answer": [],
+                "why": []
             }
         ]
     },
@@ -1628,9 +1604,13 @@
                     "Student 1"
                 ],
                 "why": [
-                    "{{enrollments_3},{students_0}}",
-                    "{{enrollments_0},{students_0}}"
+                    "{{enrollments_0},{courses_1},{students_0}}",
+                    "{{enrollments_3},{courses_1},{students_0}}"
                 ]
+            },
+            {
+                "answer": [],
+                "why": []
             }
         ]
     },
@@ -1643,8 +1623,8 @@
                     "Student 1"
                 ],
                 "why": [
-                    "{{enrollments_3},{students_0}}",
-                    "{{enrollments_0},{students_0}}"
+                    "{{enrollments_0},{courses_1},{students_0}}",
+                    "{{enrollments_3},{courses_1},{students_0}}"
                 ]
             }
         ]
@@ -1658,9 +1638,13 @@
                     "Student 1"
                 ],
                 "why": [
-                    "{{enrollments_3},{students_0}}",
-                    "{{enrollments_0},{students_0}}"
+                    "{{enrollments_0},{courses_1},{students_0}}",
+                    "{{enrollments_3},{courses_1},{students_0}}"
                 ]
+            },
+            {
+                "answer": [],
+                "why": []
             }
         ]
     },
@@ -1686,12 +1670,12 @@
         "answer": [
             {
                 "answer": [
-                    "Artificial Intelligence",
-                    "Human-Computer Interaction"
+                    "Human-Computer Interaction",
+                    "Artificial Intelligence"
                 ],
                 "why": [
-                    "{{teacher_research_areas_0}, {thesis_0}}",
-                    "{{teacher_research_areas_9}}"
+                    "{{teachers_9}, {teacher_research_areas_9}}",
+                    "{{thesis_0}, {teacher_research_areas_0}}"
                 ]
             }
         ]
@@ -1702,12 +1686,12 @@
         "answer": [
             {
                 "answer": [
-                    "Artificial Intelligence",
-                    "Human-Computer Interaction"
+                    "Human-Computer Interaction",
+                    "Artificial Intelligence"
                 ],
                 "why": [
-                    "{{teacher_research_areas_0}, {thesis_0}}",
-                    "{{teacher_research_areas_9}}"
+                    "{{teachers_9}, {teacher_research_areas_9}}",
+                    "{{thesis_0}, {teacher_research_areas_0}}"
                 ]
             }
         ]
@@ -1718,12 +1702,12 @@
         "answer": [
             {
                 "answer": [
-                    "Artificial Intelligence",
-                    "Human-Computer Interaction"
+                    "Human-Computer Interaction",
+                    "Artificial Intelligence"
                 ],
                 "why": [
-                    "{{teacher_research_areas_0}, {thesis_0}}",
-                    "{{teacher_research_areas_9}}"
+                    "{{teachers_9}, {teacher_research_areas_9}}",
+                    "{{thesis_0}, {teacher_research_areas_0}}"
                 ]
             }
         ]
@@ -1734,12 +1718,12 @@
         "answer": [
             {
                 "answer": [
-                    "Artificial Intelligence",
-                    "Human-Computer Interaction"
+                    "Human-Computer Interaction",
+                    "Artificial Intelligence"
                 ],
                 "why": [
-                    "{{teacher_research_areas_0}, {thesis_0}}",
-                    "{{teacher_research_areas_9}}"
+                    "{{teachers_9}, {teacher_research_areas_9}}",
+                    "{{thesis_0}, {teacher_research_areas_0}}"
                 ]
             }
         ]
@@ -1767,7 +1751,7 @@
                     "6"
                 ],
                 "why": [
-                    "{{teacher_research_areas_1}}"
+                    "{{teachers_1}, {teacher_research_areas_1}}"
                 ]
             }
         ]
@@ -1781,7 +1765,7 @@
                     "6"
                 ],
                 "why": [
-                    "{{teacher_research_areas_1}}"
+                    "{{teachers_1}, {teacher_research_areas_1}}"
                 ]
             }
         ]
@@ -1795,7 +1779,7 @@
                     "6"
                 ],
                 "why": [
-                    "{{teacher_research_areas_1}}"
+                    "{{teachers_1}, {teacher_research_areas_1}}"
                 ]
             }
         ]
@@ -1809,7 +1793,7 @@
                     "6"
                 ],
                 "why": [
-                    "{{teacher_research_areas_1}}"
+                    "{{teachers_1}, {teacher_research_areas_1}}"
                 ]
             }
         ]
@@ -1834,10 +1818,12 @@
         "answer": [
             {
                 "answer": [
-                    "Lucas Schmidt"
+                    "Lucas Schmidt",
+                    "Student 3"
                 ],
                 "why": [
-                    "{{students_3, courses_9, thesis_4}}"
+                    "{{students_3, grades_7, courses_9}}",
+                    "{{students_3, grades_0, courses_0}}"
                 ]
             }
         ]
@@ -1848,10 +1834,12 @@
         "answer": [
             {
                 "answer": [
+                    "Student 3",
                     "Lucas Schmidt"
                 ],
                 "why": [
-                    "{{students_3, courses_9, thesis_4}}"
+                    "{{students_3, grades_7, courses_9}}",
+                    "{{students_3, grades_0, courses_0}}"
                 ]
             }
         ]
@@ -1862,10 +1850,10 @@
         "answer": [
             {
                 "answer": [
-                    "Lucas Schmidt"
+                    "Student 3"
                 ],
                 "why": [
-                    "{{students_3, courses_9, thesis_4}}"
+                    "{{grades_7, courses_9}}"
                 ]
             }
         ]
@@ -1876,10 +1864,10 @@
         "answer": [
             {
                 "answer": [
-                    "Lucas Schmidt"
+                    "Student 3"
                 ],
                 "why": [
-                    "{{students_3, courses_9, thesis_4}}"
+                    "{{grades_7, courses_9}}"
                 ]
             }
         ]
@@ -1909,8 +1897,7 @@
                     "302"
                 ],
                 "why": [
-                    "{{classrooms_3}, {classrooms_4}}",
-                    "{{classrooms_4}}, {{classrooms_3}}"
+                    "{{classrooms_3}, {classrooms_4}}"
                 ]
             }
         ]
@@ -1925,8 +1912,7 @@
                     "302"
                 ],
                 "why": [
-                    "{{classrooms_3}, {classrooms_4}}",
-                    "{{classrooms_4}}, {{classrooms_3}}"
+                    "{{classrooms_3}, {classrooms_4}}"
                 ]
             }
         ]
@@ -1941,8 +1927,7 @@
                     "302"
                 ],
                 "why": [
-                    "{{classrooms_3}, {classrooms_4}}",
-                    "{{classrooms_4}}, {{classrooms_3}}"
+                    "{{classrooms_3}, {classrooms_4}}"
                 ]
             }
         ]
@@ -1957,8 +1942,7 @@
                     "302"
                 ],
                 "why": [
-                    "{{classrooms_3}, {classrooms_4}}",
-                    "{{classrooms_4}}, {{classrooms_3}}"
+                    "{{classrooms_3}, {classrooms_4}}"
                 ]
             }
         ]
@@ -2123,8 +2107,12 @@
         "iteration": 2,
         "answer": [
             {
-                "answer": [],
-                "why": []
+                "answer": [
+                    "User Experience Design in Web Apps"
+                ],
+                "why": [
+                    "{{thesis_4}}"
+                ]
             }
         ]
     },
@@ -2133,8 +2121,12 @@
         "iteration": 3,
         "answer": [
             {
-                "answer": [],
-                "why": []
+                "answer": [
+                    "User Experience Design in Web Apps"
+                ],
+                "why": [
+                    "{{thesis_4}}, {{students_2}}"
+                ]
             }
         ]
     },
@@ -2143,8 +2135,12 @@
         "iteration": 4,
         "answer": [
             {
-                "answer": [],
-                "why": []
+                "answer": [
+                    "User Experience Design in Web Apps"
+                ],
+                "why": [
+                    "{{students_2}, {{thesis_4}}"
+                ]
             }
         ]
     },
@@ -2153,8 +2149,12 @@
         "iteration": 5,
         "answer": [
             {
-                "answer": [],
-                "why": []
+                "answer": [
+                    "User Experience Design in Web Apps"
+                ],
+                "why": [
+                    "{{students_2}, {{thesis_4}}"
+                ]
             }
         ]
     },
@@ -2265,19 +2265,16 @@
                     "Cybersecurity",
                     "Embedded Systems",
                     "Data Mining",
-                    "Software Engineering",
                     "Database Systems",
-                    "Human-Computer Interaction",
-                    "Digital Signal Processing"
+                    "Human-Computer Interaction"
                 ],
                 "why": [
                     "{{courses_0}}",
                     "{{courses_8}}",
                     "{{courses_2}}",
-                    "{{courses_9}}",
-                    "{{courses_5}}",
+                    "{{courses_6}}",
                     "{{courses_1}}",
-                    "{{courses_6}}"
+                    "{{courses_9}}"
                 ]
             }
         ]
@@ -2292,19 +2289,16 @@
                     "Cybersecurity",
                     "Embedded Systems",
                     "Data Mining",
-                    "Software Engineering",
                     "Database Systems",
-                    "Human-Computer Interaction",
-                    "Digital Signal Processing"
+                    "Human-Computer Interaction"
                 ],
                 "why": [
                     "{{courses_0}}",
                     "{{courses_8}}",
                     "{{courses_2}}",
-                    "{{courses_9}}",
-                    "{{courses_5}}",
+                    "{{courses_6}}",
                     "{{courses_1}}",
-                    "{{courses_6}}"
+                    "{{courses_9}}"
                 ]
             }
         ]
@@ -2319,19 +2313,16 @@
                     "Cybersecurity",
                     "Embedded Systems",
                     "Data Mining",
-                    "Software Engineering",
                     "Database Systems",
-                    "Human-Computer Interaction",
-                    "Digital Signal Processing"
+                    "Human-Computer Interaction"
                 ],
                 "why": [
                     "{{courses_0}}",
                     "{{courses_8}}",
                     "{{courses_2}}",
-                    "{{courses_9}}",
-                    "{{courses_5}}",
+                    "{{courses_6}}",
                     "{{courses_1}}",
-                    "{{courses_6}}"
+                    "{{courses_9}}"
                 ]
             }
         ]
@@ -2346,19 +2337,16 @@
                     "Cybersecurity",
                     "Embedded Systems",
                     "Data Mining",
-                    "Software Engineering",
                     "Database Systems",
-                    "Human-Computer Interaction",
-                    "Digital Signal Processing"
+                    "Human-Computer Interaction"
                 ],
                 "why": [
                     "{{courses_0}}",
                     "{{courses_8}}",
                     "{{courses_2}}",
-                    "{{courses_9}}",
-                    "{{courses_5}}",
+                    "{{courses_6}}",
                     "{{courses_1}}",
-                    "{{courses_6}}"
+                    "{{courses_9}}"
                 ]
             }
         ]
@@ -2540,8 +2528,10 @@
                     "Chemistry"
                 ],
                 "why": [
-                    "{{departments_3}, {departments_4}}",
-                    "{{departments_2}, {departments_5}}"
+                    "{{departments_4}, {departments_3}, {departments_5}}",
+                    "{{departments_4}, {departments_2}, {departments_5}}",
+                    "{{departments_3}, {departments_2}, {departments_5}}",
+                    "{{departments_3}, {departments_2}, {departments_4}}"
                 ]
             }
         ]
@@ -2558,8 +2548,10 @@
                     "Chemistry"
                 ],
                 "why": [
-                    "{{departments_3}, {departments_4}}",
-                    "{{departments_2}, {departments_5}}"
+                    "{{departments_4}, {departments_3}, {departments_5}}",
+                    "{{departments_4}, {departments_2}, {departments_5}}",
+                    "{{departments_3}, {departments_2}, {departments_5}}",
+                    "{{departments_3}, {departments_2}, {departments_4}}"
                 ]
             }
         ]
@@ -2576,8 +2568,10 @@
                     "Chemistry"
                 ],
                 "why": [
-                    "{{departments_3}, {departments_4}}",
-                    "{{departments_2}, {departments_5}}"
+                    "{{departments_4}, {departments_3}, {departments_5}}",
+                    "{{departments_4}, {departments_2}, {departments_5}}",
+                    "{{departments_3}, {departments_2}, {departments_5}}",
+                    "{{departments_3}, {departments_2}, {departments_4}}"
                 ]
             }
         ]
@@ -2594,8 +2588,10 @@
                     "Chemistry"
                 ],
                 "why": [
-                    "{{departments_3}, {departments_4}}",
-                    "{{departments_2}, {departments_5}}"
+                    "{{departments_4}, {departments_3}, {departments_5}}",
+                    "{{departments_4}, {departments_2}, {departments_5}}",
+                    "{{departments_3}, {departments_2}, {departments_5}}",
+                    "{{departments_3}, {departments_2}, {departments_4}}"
                 ]
             }
         ]
@@ -2626,8 +2622,7 @@
                     "Autonomous Systems"
                 ],
                 "why": [
-                    "{{thesis_0}}",
-                    "{{thesis_3}}"
+                    "{{thesis_0}}, {{thesis_3}}"
                 ]
             }
         ]
@@ -2642,8 +2637,7 @@
                     "Autonomous Systems"
                 ],
                 "why": [
-                    "{{thesis_0}}",
-                    "{{thesis_3}}"
+                    "{{thesis_0}}, {{thesis_3}}"
                 ]
             }
         ]
@@ -2658,8 +2652,7 @@
                     "Autonomous Systems"
                 ],
                 "why": [
-                    "{{thesis_0}}",
-                    "{{thesis_3}}"
+                    "{{thesis_0}}, {{thesis_3}}"
                 ]
             }
         ]
@@ -2674,8 +2667,7 @@
                     "Autonomous Systems"
                 ],
                 "why": [
-                    "{{thesis_0}}",
-                    "{{thesis_3}}"
+                    "{{thesis_0}}, {{thesis_3}}"
                 ]
             }
         ]
@@ -2702,12 +2694,12 @@
         "answer": [
             {
                 "answer": [
-                    "Machine Learning",
-                    "Artificial Intelligence"
+                    "Artificial Intelligence",
+                    "Machine Learning"
                 ],
                 "why": [
-                    "{{teachers_1}, {courses_0}}",
-                    "{{teachers_1}, {courses_7}}"
+                    "{{courses_7}, {teachers_1}}",
+                    "{{courses_0}, {teachers_1}}"
                 ]
             }
         ]
@@ -2718,12 +2710,10 @@
         "answer": [
             {
                 "answer": [
-                    "Machine Learning",
                     "Artificial Intelligence"
                 ],
                 "why": [
-                    "{{teachers_1}, {courses_0}}",
-                    "{{teachers_1}, {courses_7}}"
+                    "{{courses_7}, {teachers_1}}"
                 ]
             }
         ]
@@ -2734,12 +2724,10 @@
         "answer": [
             {
                 "answer": [
-                    "Machine Learning",
                     "Artificial Intelligence"
                 ],
                 "why": [
-                    "{{teachers_1}, {courses_0}}",
-                    "{{teachers_1}, {courses_7}}"
+                    "{{courses_7}, {teachers_1}}"
                 ]
             }
         ]
@@ -2750,12 +2738,10 @@
         "answer": [
             {
                 "answer": [
-                    "Machine Learning",
                     "Artificial Intelligence"
                 ],
                 "why": [
-                    "{{teachers_1}, {courses_0}}",
-                    "{{teachers_1}, {courses_7}}"
+                    "{{courses_7}, {teachers_1}}"
                 ]
             }
         ]
@@ -2903,9 +2889,9 @@
                 ],
                 "why": [
                     "{{courses_9}}",
-                    "{{courses_5}}",
+                    "{{courses_7}}",
                     "{{courses_1}}",
-                    "{{courses_7}}"
+                    "{{courses_2}},{{courses_6}}"
                 ]
             }
         ]
@@ -2923,9 +2909,9 @@
                 ],
                 "why": [
                     "{{courses_9}}",
-                    "{{courses_5}}",
+                    "{{courses_7}}",
                     "{{courses_1}}",
-                    "{{courses_7}}"
+                    "{{courses_2}},{{courses_6}}"
                 ]
             }
         ]
@@ -2943,9 +2929,9 @@
                 ],
                 "why": [
                     "{{courses_9}}",
-                    "{{courses_5}}",
+                    "{{courses_7}}",
                     "{{courses_1}}",
-                    "{{courses_7}}"
+                    "{{courses_2}},{{courses_6}}"
                 ]
             }
         ]
@@ -2963,9 +2949,9 @@
                 ],
                 "why": [
                     "{{courses_9}}",
-                    "{{courses_5}}",
+                    "{{courses_7}}",
                     "{{courses_1}}",
-                    "{{courses_7}}"
+                    "{{courses_2}},{{courses_6}}"
                 ]
             }
         ]
@@ -3138,12 +3124,12 @@
                     "Maria Ferrari"
                 ],
                 "why": [
-                    "{{teachers_0, departments_0}}",
-                    "{{teachers_3, departments_0}}",
-                    "{{teachers_1, departments_0}}",
-                    "{{teachers_5, departments_0}}",
-                    "{{teachers_6, departments_0}}",
-                    "{{teachers_9, departments_0}}"
+                    "{{teachers_0},{departments_0}}",
+                    "{{teachers_3},{departments_0}}",
+                    "{{teachers_1},{departments_0}}",
+                    "{{teachers_5},{departments_0}}",
+                    "{{teachers_6},{departments_0}}",
+                    "{{teachers_9},{departments_0}}"
                 ]
             }
         ]
@@ -3162,12 +3148,12 @@
                     "Maria Ferrari"
                 ],
                 "why": [
-                    "{{teachers_0, departments_0}}",
-                    "{{teachers_3, departments_0}}",
-                    "{{teachers_1, departments_0}}",
-                    "{{teachers_5, departments_0}}",
-                    "{{teachers_6, departments_0}}",
-                    "{{teachers_9, departments_0}}"
+                    "{{teachers_0},{departments_0}}",
+                    "{{teachers_3},{departments_0}}",
+                    "{{teachers_1},{departments_0}}",
+                    "{{teachers_5},{departments_0}}",
+                    "{{teachers_6},{departments_0}}",
+                    "{{teachers_9},{departments_0}}"
                 ]
             }
         ]
@@ -3186,12 +3172,12 @@
                     "Maria Ferrari"
                 ],
                 "why": [
-                    "{{teachers_0, departments_0}}",
-                    "{{teachers_3, departments_0}}",
-                    "{{teachers_1, departments_0}}",
-                    "{{teachers_5, departments_0}}",
-                    "{{teachers_6, departments_0}}",
-                    "{{teachers_9, departments_0}}"
+                    "{{teachers_0},{departments_0}}",
+                    "{{teachers_3},{departments_0}}",
+                    "{{teachers_1},{departments_0}}",
+                    "{{teachers_5},{departments_0}}",
+                    "{{teachers_6},{departments_0}}",
+                    "{{teachers_9},{departments_0}}"
                 ]
             }
         ]
@@ -3210,12 +3196,12 @@
                     "Maria Ferrari"
                 ],
                 "why": [
-                    "{{teachers_0, departments_0}}",
-                    "{{teachers_3, departments_0}}",
-                    "{{teachers_1, departments_0}}",
-                    "{{teachers_5, departments_0}}",
-                    "{{teachers_6, departments_0}}",
-                    "{{teachers_9, departments_0}}"
+                    "{{teachers_0},{departments_0}}",
+                    "{{teachers_3},{departments_0}}",
+                    "{{teachers_1},{departments_0}}",
+                    "{{teachers_5},{departments_0}}",
+                    "{{teachers_6},{departments_0}}",
+                    "{{teachers_9},{departments_0}}"
                 ]
             }
         ]
@@ -3403,10 +3389,10 @@
         "answer": [
             {
                 "answer": [
-                    "Student5"
+                    "Sophie Durand"
                 ],
                 "why": [
-                    "{{enrollments_6}}"
+                    "{{enrollments_7, students_2}}"
                 ]
             },
             {
@@ -3414,7 +3400,7 @@
                     "Student4"
                 ],
                 "why": [
-                    "{{enrollments_8}}"
+                    "{{enrollments_8, students_not_provided}}"
                 ]
             }
         ]
@@ -3425,18 +3411,10 @@
         "answer": [
             {
                 "answer": [
-                    "Student5"
+                    "Sophie Durand"
                 ],
                 "why": [
-                    "{{enrollments_6}}"
-                ]
-            },
-            {
-                "answer": [
-                    "Student4"
-                ],
-                "why": [
-                    "{{enrollments_8}}"
+                    "{{enrollments_7, students_2}}"
                 ]
             }
         ]
@@ -3447,18 +3425,11 @@
         "answer": [
             {
                 "answer": [
-                    "Student5"
+                    "Sophie Durand"
                 ],
                 "why": [
-                    "{{enrollments_6}}"
-                ]
-            },
-            {
-                "answer": [
-                    "Student4"
-                ],
-                "why": [
-                    "{{enrollments_8}}"
+                    "{{enrollments_7, students_2}}",
+                    "{{enrollments_8, students_2}}"
                 ]
             }
         ]
@@ -3469,18 +3440,11 @@
         "answer": [
             {
                 "answer": [
-                    "Student5"
+                    "Sophie Durand"
                 ],
                 "why": [
-                    "{{enrollments_6}}"
-                ]
-            },
-            {
-                "answer": [
-                    "Student4"
-                ],
-                "why": [
-                    "{{enrollments_8}}"
+                    "{{enrollments_7, students_2}}",
+                    "{{enrollments_8, students_2}}"
                 ]
             }
         ]
@@ -3508,10 +3472,11 @@
             {
                 "answer": [
                     29,
-                    28
+                    28,
+                    30
                 ],
                 "why": [
-                    "{{grades_5}}, {{grades_7}}"
+                    "{{grades_5}}, {{grades_7}}, {{grades_2}}"
                 ]
             }
         ]
@@ -3523,10 +3488,11 @@
             {
                 "answer": [
                     29,
-                    28
+                    28,
+                    30
                 ],
                 "why": [
-                    "{{grades_5}}, {{grades_7}}"
+                    "{{grades_5}}, {{grades_7}}, {{grades_2}}"
                 ]
             }
         ]
@@ -3538,10 +3504,11 @@
             {
                 "answer": [
                     29,
-                    28
+                    28,
+                    30
                 ],
                 "why": [
-                    "{{grades_5}}, {{grades_7}}"
+                    "{{grades_5}}, {{grades_7}}, {{grades_2}}"
                 ]
             }
         ]
@@ -3553,10 +3520,11 @@
             {
                 "answer": [
                     29,
-                    28
+                    28,
+                    30
                 ],
                 "why": [
-                    "{{grades_5}}, {{grades_7}}"
+                    "{{grades_5}}, {{grades_7}}, {{grades_2}}"
                 ]
             }
         ]
@@ -3584,8 +3552,12 @@
                     "Lucas Schmidt"
                 ],
                 "why": [
-                    "{{students_3}, {courses_9}, {teacher_research_areas_9}, {thesis_4}}"
+                    "{{students_3}, {teacher_research_areas_9}}"
                 ]
+            },
+            {
+                "answer": [],
+                "why": []
             }
         ]
     },
@@ -3598,8 +3570,12 @@
                     "Lucas Schmidt"
                 ],
                 "why": [
-                    "{{students_3}, {courses_9}, {teacher_research_areas_9}, {thesis_4}}"
+                    "{{students_3}, {teacher_research_areas_9}}"
                 ]
+            },
+            {
+                "answer": [],
+                "why": []
             }
         ]
     },
@@ -3612,8 +3588,12 @@
                     "Lucas Schmidt"
                 ],
                 "why": [
-                    "{{students_3}, {courses_9}, {teacher_research_areas_9}, {thesis_4}}"
+                    "{{students_3}, {teacher_research_areas_9}}"
                 ]
+            },
+            {
+                "answer": [],
+                "why": []
             }
         ]
     },
@@ -3626,8 +3606,12 @@
                     "Lucas Schmidt"
                 ],
                 "why": [
-                    "{{students_3}, {courses_9}, {teacher_research_areas_9}, {thesis_4}}"
+                    "{{students_3}, {teacher_research_areas_9}}"
                 ]
+            },
+            {
+                "answer": [],
+                "why": []
             }
         ]
     },
@@ -3653,12 +3637,12 @@
         "answer": [
             {
                 "answer": [
-                    "Embedded Systems",
-                    "Machine Learning"
+                    "Machine Learning",
+                    "Embedded Systems"
                 ],
                 "why": [
-                    "{{exams_4, courses_2}}",
-                    "{{exams_1, courses_0}}"
+                    "{{exams_4, courses_0}}",
+                    "{{exams_1, courses_2}}"
                 ]
             }
         ]
@@ -3685,12 +3669,12 @@
         "answer": [
             {
                 "answer": [
-                    "Embedded Systems",
-                    "Machine Learning"
+                    "Machine Learning",
+                    "Embedded Systems"
                 ],
                 "why": [
-                    "{{exams_4, courses_2}}",
-                    "{{exams_1, courses_0}}"
+                    "{{exams_4, courses_0}}",
+                    "{{exams_1, courses_2}}"
                 ]
             }
         ]
@@ -3736,8 +3720,7 @@
                     "401"
                 ],
                 "why": [
-                    "{{classrooms_0}, {classrooms_2}}",
-                    "{{classrooms_5}}"
+                    "{{classrooms_2},{classrooms_5}}"
                 ]
             }
         ]
@@ -3752,8 +3735,7 @@
                     "401"
                 ],
                 "why": [
-                    "{{classrooms_0}, {classrooms_2}}",
-                    "{{classrooms_5}}"
+                    "{{classrooms_2},{classrooms_5}}"
                 ]
             }
         ]
@@ -3768,8 +3750,7 @@
                     "401"
                 ],
                 "why": [
-                    "{{classrooms_0}, {classrooms_2}}",
-                    "{{classrooms_5}}"
+                    "{{classrooms_2},{classrooms_5}}"
                 ]
             }
         ]
@@ -3784,8 +3765,7 @@
                     "401"
                 ],
                 "why": [
-                    "{{classrooms_0}, {classrooms_2}}",
-                    "{{classrooms_5}}"
+                    "{{classrooms_2},{classrooms_5}}"
                 ]
             }
         ]
