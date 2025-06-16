@@ -192,7 +192,7 @@ def generate(state: State):
         "current_question": (
             f"Original question:\n{state['original_question']}\n\n"
             f"Previous answer generated:\n{response}\n\n"
-            f"Based on this answer, try to provide the correct answer and explanation."
+            f"Based on this previous answer and the question, try to provide the correct answer and explanation."
 )
 
     }    # Update the state with the parsed answer and iteration history
@@ -220,7 +220,7 @@ graph = workflow.compile()
 
 all_final_results = []
 # Iterate over each question and invoke the graph to get the answer
-for i, question in enumerate(questions):
+for i, question in enumerate(questions[:5]):
     print(f"\n=== Running evaluation for question n. {i+1}: {question} ===")
     initial_state = {
         "original_question": question,
@@ -236,7 +236,8 @@ for i, question in enumerate(questions):
     current_state = initial_state
     for iter_num in range(max_iterations):
         print(f"\n--- Iteration {iter_num + 1} for question n. {i+1} ---")
-        full_result = graph.invoke(current_state) 
+        full_result = graph.invoke(current_state)
+        print(current_state["context"])
         # Set the current question for the next iteration composed by original question and the last answer
         if full_result.get("answer"):
             # If the answer is a list, take the first item for the next question

@@ -36,7 +36,7 @@ def main():
     question_types = load_json("questions.json")
 
     # Cartella contenente i file di output predetti
-    pred_folder = "iterativeRag/outputs_mixtral8x7b/"
+    pred_folder = "iterativeRag/outputs_llama70b/"
     global_metrics_file = os.path.join(pred_folder, "global_metrics_iterative.csv")
     type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterative.csv")
     iteration_metrics_file = os.path.join(pred_folder, "metrics_per_iteration.csv")
@@ -71,7 +71,7 @@ def main():
 
        
        
-        pred_file = os.path.join(pred_folder, f"outputs_mixtral8x7b_ollama_iterative.json")
+        pred_file = os.path.join(pred_folder, f"outputs_llama70b_ollama_iterative.json")
 
 
         ungrouped_pred_data = load_json(pred_file)
