@@ -189,7 +189,12 @@ def generate(state: State):
 
     return {
         "answer": parsed if parsed else response.strip(),
-        "current_question" : f"{state['original_question']}\nPrevious answer: {response}"
+        "current_question": (
+            f"Original question:\n{state['original_question']}\n\n"
+            f"Previous answer generated:\n{response}\n\n"
+            f"Based on this answer, try to provide the correct answer and explanation."
+)
+
     }    # Update the state with the parsed answer and iteration history
     # current_answer_item should be an AnswerItem, not a dict.
     # Since parsed is now guaranteed to contain AnswerItem instances (or be empty),

@@ -42,7 +42,7 @@ for metric in metrics_to_plot:
     plt.tight_layout()
 
     # Salvataggio grafico
-    filename = f"{metric}_barplot_ollama_iterative.png".replace(" ", "_")
+    filename = f"{metric}_barplot_ollama_iterative5.png".replace(" ", "_")
     plt.savefig(os.path.join(output_path, filename))
     plt.close()
 

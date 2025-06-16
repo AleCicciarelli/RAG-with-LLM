@@ -42,7 +42,7 @@ for metric in metrics:
 
     # Salvataggio
     metric_slug = metric.replace(' ', '_').lower()
-    plt.savefig(os.path.join(output_dir, f"{metric_slug}_by_question_type_ollama_iterative.png"))
+    plt.savefig(os.path.join(output_dir, f"{metric_slug}_by_question_type_ollama_iterative5.png"))
     plt.close()
 
 # === COMPLETAMENTO ===
