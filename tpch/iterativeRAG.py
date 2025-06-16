@@ -44,7 +44,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 csv_folder = "csv_data"
 faiss_index_folder = "faiss_index"
-output_filename = f"iterativeRag/outputs_llama70b/outputs_llama70b_ollama_iterative.json"
+output_filename = f"iterativeRag/outputs_llama70b/outputs_llama70b_ollama_iterativeK10.json"
 debug_log_filename = f"iterativeRag/debug_log_llama70b_iterative.txt"
 os.makedirs(os.path.dirname(debug_log_filename), exist_ok=True)
 # Save the results for the current value of k to a JSON file for later analysis
@@ -89,7 +89,7 @@ for file in all_files:
     docs = loader.load()
     documents.extend(docs)
 bm25_retriever = BM25Retriever.from_documents(documents)
-bm25_retriever.k = 5 
+bm25_retriever.k = 10 
 """ Retrieve and Generate part """
 # Define prompt for question-answering
 #prompt = hub.pull("rlm/rag-prompt")
