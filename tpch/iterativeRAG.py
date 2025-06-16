@@ -44,6 +44,8 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 csv_folder = "csv_data"
 faiss_index_folder = "faiss_index"
 output_filename = f"iterativeRag/outputs_llama70b/outputs_llama70b_ollama_iterative.json"
+debug_log_filename = f"iterativeRag/debug_log_llama70b_iterative.txt"
+os.makedirs(os.path.dirname(debug_log_filename), exist_ok=True)
 # Save the results for the current value of k to a JSON file for later analysis
 os.makedirs(os.path.dirname(output_filename), exist_ok=True)
 
@@ -178,6 +180,13 @@ def generate(state: State):
     })
     # Print the prompt received by the llm with the context and question
     print(f"Prompt sent to LLM:\n{prompt.format(question=state['current_question'], context=context_str)}")
+    # Save to debug log
+    with open(debug_log_filename, "a", encoding="utf-8") as debug_file:
+        debug_file.write(f"\n=== Question {i+1}: {current_state['original_question']} ===\n")
+        debug_file.write(f"--- Iteration {iter_num + 1} ---\n")
+        debug_file.write(f"\nPrompt Sent to LLM:\n{prompt.format(question=state['current_question'], context=context_str)}\n")
+        debug_file.write(f"\nLLM Response:\n{response}\n")
+        debug_file.write("="*80 + "\n")
     # Print the response from the LLM
     print(f"LLM response: {response}")
    
@@ -237,7 +246,6 @@ for i, question in enumerate(questions[:5]):
     for iter_num in range(max_iterations):
         print(f"\n--- Iteration {iter_num + 1} for question n. {i+1} ---")
         full_result = graph.invoke(current_state)
-        print(current_state["context"])
         # Set the current question for the next iteration composed by original question and the last answer
         if full_result.get("answer"):
             # If the answer is a list, take the first item for the next question
