@@ -1,15 +1,13 @@
 import os
-from langchain.chat_models import init_chat_model
+
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.document_loaders import CSVLoader
 from langchain_core.documents import Document
 from langchain_community.vectorstores import FAISS
 from langchain_community.retrievers import BM25Retriever
-from langchain_community.vectorstores.utils import DistanceStrategy
 from langgraph.graph import START, StateGraph, END
 from typing_extensions import List, TypedDict, Optional, Dict, Any
 from langchain_core.documents import Document
-from langchain import hub
 import json
 from langchain_core.output_parsers import JsonOutputParser
 from pydantic import BaseModel, Field
@@ -120,49 +118,57 @@ prompt = PromptTemplate.from_template("""
         ---
 
         Example:
-
         CONTEXT:
+            - source: courses.csv, row: 0  
+            (course_id:101, course_name:Machine Learning, ...)  
+            - source: courses.csv, row: 3  
+            (course_id:104, course_name:Advanced Algorithms, ...)  
+            - source: enrollments.csv, row: 0  
+            (enrollment_id:1, student_id:1, course_id:101, ...)  
+            - source: enrollments.csv, row: 3  
+            (enrollment_id:4, student_id:1, course_id:104, ...)  
+            - source: enrollments.csv, row: 9  
+            (enrollment_id:10, student_id:2, course_id:101, ...)  
+            - source: students.csv, row: 0  
+            (student_id:1, name:Giulia, surname:Rossi, ...)  
+            - source: students.csv, row: 1  
+            (student_id:2, name:Marco, surname:Bianchi, ...)  
 
-        - source: orders, row: 12  
-        (orderkey: 123, custkey: 456, totalprice: 789)  
-        - source: customer, row: 5  
-        (custkey: 456, name: "Alice")  
-        - source: lineitem, row: 7  
-        (orderkey: 123, partkey: 99, quantity: 10)
-
-        QUESTION:
-
-        "Which customers placed orders with total price over 500?"
+        QUESTION:  
+            "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
 
         EXPECTED ANSWER:
-
-        [
-        {
-            "answer": ["Alice"],
-            "why": [
-            "{{{{orders_12, customer_5}}}}"
-            ]
-        }
-        ]
+        
+            {{
+                "answer": ["Giulia Rossi","Marco Bianchi"],
+                "why": [
+                    "{{{{courses_0,enrollments_0,students_0}},{{courses_3,enrollments_3,students_0}}}}",
+                    "{{{{courses_0,enrollments_9,students_1}}}}"
+                ]
+            }}
+ 
+        
 
 """
 )
 # Step 1: Define Explanation Class: composed by file and row
+'''
 class WitnessSet(BaseModel):
     tables_rows: List[str] = Field(description="List of table_row strings, e.g., ['customer_14322', 'orders_137']")
 
 class AnswerItem(BaseModel):
     answer: List[str] = Field(description="The final answer(s) to the question.")
     why: List[str] = Field(description="List of string of witness sets justifying the answer. Each witness set is a list of table_row strings.")
-   
-
+'''  
+class AnswerItem(BaseModel):
+    answer: List[str]
+    why: List[str]
 # Define state for application
 class State(TypedDict):
     original_question: str # To keep track of the initial question
     current_question: str  # The question used for retrieval in the current iteration
     context: List[Document]
     answer: List[AnswerItem]
-    k: int
     iteration_history: List[Dict[str, Any]] # To store previous answers and contexts for iterative refinement
 
 parser = JsonOutputParser(pydantic_schema=AnswerItem)
@@ -213,15 +219,12 @@ def generate(state: State):
         "answer": parsed if parsed else response.strip(),
         "current_question": (
             f"{state['original_question']}\n\n"
-            f"Previous answer: {parsed.answer if parsed else response}\n"
-            f"Use this to refine and expand your reasoning."
+            f"Previous answer generated: {parsed.answer if parsed.answer else response.strip()}\n"
+            f"Based on the original question, the previous answer, find the correct answer(s) to the question."
 
         )
 
-    }    # Update the state with the parsed answer and iteration history
-    # current_answer_item should be an AnswerItem, not a dict.
-    # Since parsed is now guaranteed to contain AnswerItem instances (or be empty),
-    # parsed[0] will be an AnswerItem or this condition will be skipped.
+    }    
    
 
     
