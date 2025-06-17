@@ -42,14 +42,14 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 csv_folder = "csv_data"
 faiss_index_folder = "faiss_index"
-output_filename = f"iterativeRag/outputs_llama70b/outputs_llama70b_ollama_iterativeK10.json"
+output_filename = f"iterativeRag/outputs_llama70b/outputs_llama70b_ollama_iterativeK10_faiss.json"
 debug_log_filename = f"iterativeRag/debug_log_llama70b_iterative.txt"
 os.makedirs(os.path.dirname(debug_log_filename), exist_ok=True)
 # Save the results for the current value of k to a JSON file for later analysis
 os.makedirs(os.path.dirname(output_filename), exist_ok=True)
 
 """ Indexing part """
-'''
+
 # Verify if the FAISS files already exist
 if os.path.exists(faiss_index_folder):
     # Load the FAISS index folder (allow_dangerous_deserialization=True just because we create the files and so we can trust them)
@@ -77,10 +77,10 @@ else:
     # Save after full processing
     vector_store.save_local(faiss_index_folder)
     print("FAISS vector store created and saved successfully!")
-'''
+
 documents = []
 all_files = [f for f in os.listdir(csv_folder) if f.endswith(".csv")]
-
+'''
 for file in all_files:
     file_path = os.path.join(csv_folder, file)
     loader = CSVLoader(file_path=file_path)
@@ -88,6 +88,7 @@ for file in all_files:
     documents.extend(docs)
 bm25_retriever = BM25Retriever.from_documents(documents)
 bm25_retriever.k = 10 
+'''
 """ Retrieve and Generate part """
 # Define prompt for question-answering
 #prompt = hub.pull("rlm/rag-prompt")
@@ -177,11 +178,12 @@ parser = JsonOutputParser(pydantic_schema=AnswerItem)
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
     print(f"Retrieving for question: {state['original_question']}")
-    retrieved_docs = bm25_retriever.get_relevant_documents(state["current_question"])
+    retrieved_docs = vector_store.similarity_search(state["current_question"], k = 10)
     return {"context": retrieved_docs}
     '''
     print(f"Retrieving for question: {state['original_question']}")
-    retrieved_docs = vector_store.similarity_search(state["current_question"], k = state["k"])
+
+        retrieved_docs = bm25_retriever.get_relevant_documents(state["current_question"])
     return {"context": retrieved_docs}
 '''
 # Generate the answer invoking the LLM with the context joined with the question
