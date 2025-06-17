@@ -210,9 +210,9 @@ def generate(state: State):
     print(f"LLM response: {response}")
    
     try:
-        parsed_dict = parser.parse(response)
-        parsed = AnswerItem(**parsed_dict)  
-        print(f"Previous answer generated: {parsed.answer if parsed.answer else response.strip()}")
+        parsed= parser.parse(response)
+          
+        print(f"Previous answer generated: {parsed if parsed else response.strip()}")
     except Exception as e:
         print(f"Errore nel parsing: {e}")
         parsed = None
@@ -221,7 +221,7 @@ def generate(state: State):
         "answer": parsed if parsed else response.strip(),
         "current_question": (
             f"{state['original_question']}\n\n"
-            f"Previous answer generated: {parsed.answer if parsed.answer else response.strip()}\n"
+            f"Previous answer generated: {parsed if parsed else response.strip()}\n"
             f"Based on the original question, the previous answer, find the correct answer(s) to the question."
 
         )
