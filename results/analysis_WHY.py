@@ -25,13 +25,13 @@ def evaluate_lists(true_list, pred_list):
     return tp, fp, fn
 
 def main():
-    gt_data = load_json("ground_truth2.json")
-    question_types = load_json("questions.json")
+    gt_data = load_json("tpch/ground_truthTpch.json")
+    question_types = load_json("tpch/questions.json")
 
     # Cartella contenente i file di output predetti
-    pred_folder = "iterativeRag/outputs_mixtral8x7b"
-    global_metrics_file = os.path.join(pred_folder, "global_metrics_iterative.csv")
-    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterative.csv")
+    pred_folder = "tpch/outputs_llama70b/cleaned/"
+    global_metrics_file = os.path.join(pred_folder, "global_metrics_bm25.csv")
+    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_bm25.csv")
 
     # Scrivi header CSV solo se i file non esistono
     write_header_global = not os.path.exists(global_metrics_file)
@@ -55,7 +55,7 @@ def main():
 
        
        
-        pred_file = os.path.join(pred_folder, f"outputs_mixtral8x7b_ollama_iterative.json")
+        pred_file = os.path.join(pred_folder, f"outputs_llama70b_bm25.json")
 
 
         pred_data = load_json(pred_file)
@@ -78,7 +78,7 @@ def main():
         expl_exact = 0
 
         for gt, pred in zip(gt_data, pred_data):
-            question = pred["original_question"]
+            question = pred["question"]
             q_type = question_types.get(question, "unknown")
 
             # Normalizza risposte (sempre lista di stringhe)
@@ -89,7 +89,7 @@ def main():
                 true_answer = [str(x) for x in true_answer]
 
             try:
-                pred_answer_raw = pred.get("final_answer", [])
+                pred_answer_raw = pred.get("answer", [])
                 if isinstance(pred_answer_raw, list) and len(pred_answer_raw) > 0 and isinstance(pred_answer_raw[0], dict):
                     pred_answer = [str(x) for x in pred_answer_raw[0].get("answer", [])]
                 else:
