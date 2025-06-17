@@ -25,13 +25,13 @@ def evaluate_lists(true_list, pred_list):
     return tp, fp, fn
 
 def main():
-    gt_data = load_json("tpch/ground_truthTpch.json")
-    question_types = load_json("tpch/questions.json")
+    gt_data = load_json("ground_truth2.json")
+    question_types = load_json("questions.json")
 
     # Cartella contenente i file di output predetti
-    pred_folder = "tpch/outputs_llama70b/cleaned/"
-    global_metrics_file = os.path.join(pred_folder, "global_metrics_bm25.csv")
-    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_bm25.csv")
+    pred_folder = "iterativeRag/outputs_llama70b/"
+    global_metrics_file = os.path.join(pred_folder, "global_metrics_iterative_bm25.csv")
+    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterative_bm25.csv")
 
     # Scrivi header CSV solo se i file non esistono
     write_header_global = not os.path.exists(global_metrics_file)
@@ -55,8 +55,8 @@ def main():
 
        
        
-        pred_file = os.path.join(pred_folder, f"outputs_llama70b_bm25.json")
-
+        pred_file = os.path.join(pred_folder, f"outputs_llama70b_ollama_iterativeK10.json")
+        print(pred_file)
 
         pred_data = load_json(pred_file)
         

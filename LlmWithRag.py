@@ -16,13 +16,13 @@ from typing import List
 import time
 from langchain_community.chat_models import ChatOllama
 
-os.environ["LANGSMITH_TRACING"] = "true" 
+os.environ["LANGSMITH_TRACING"] = "false" 
 os.environ["LANGSMITH_API_KEY"] = "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"
 #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
 #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 old old token langsmith
 #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 olt token langsmith
-if not os.environ.get("GROQ_API_KEY"):
-  os.environ["GROQ_API_KEY"] = "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"
+#if not os.environ.get("GROQ_API_KEY"):
+# os.environ["GROQ_API_KEY"] = "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"
 
 # LLM: Llama3-8b by Groq
 #llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
@@ -178,21 +178,21 @@ graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
 
-for k in range(60,71):  # k da 0 a 20
-    print(f"\n=== Running evaluation with k={k} ===")
-    all_results = []
 
-    for i, question in enumerate(questions):
-        print(f"[k={k}] Processing question n. {i+1}")
-        full_result = graph.invoke({"question": question, "k": k})
-        result = {
-            "question": question,
-            "answer": full_result.get("answer", []),
-        }
-        all_results.append(result)
 
-    output_filename = f"outputs_ollama_llama70b/outputs_k_{k}_llama70b.json"
-    # Save the results for the current value of k to a JSON file for later analysis
-    with open(output_filename, "w") as output_file:
-        json.dump(all_results, output_file, indent=4, ensure_ascii=False)
-    print(f"Results for k={k} saved to {output_filename}")
+all_results = []
+
+for i, question in enumerate(questions):
+    print(f" Processing question n. {i+1}")
+    full_result = graph.invoke({"question": question})
+    result = {
+        "question": question,
+        "answer": full_result.get("answer", []),
+    }
+    all_results.append(result)
+
+output_filename = f"outputs_ollama_llama70b/outputs_k10_llama70b_faiss.json"
+# Save the results for the current value of k to a JSON file for later analysis
+with open(output_filename, "w") as output_file:
+    json.dump(all_results, output_file, indent=4, ensure_ascii=False)
+print(f"Results  saved to {output_filename}")
