@@ -85,7 +85,7 @@ parser = JsonOutputParser(pydantic_schema=AnswerItem)
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
    
-    retrieved_docs = vector_store.similarity_search(state["question"], k = state["k"])
+    retrieved_docs = vector_store.similarity_search(state["question"], k = 10)
     #for doc in retrieved_docs:
     #    print(f"Source: {doc.metadata}\nContent: {doc.page_content}\n")
     return {"context": retrieved_docs}
