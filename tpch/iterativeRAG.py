@@ -211,7 +211,7 @@ def generate(state: State):
 
     return {
         "answer": parsed if parsed else response.strip(),
-        "current_question" : (
+        "current_question": (
             f"{state['original_question']}\n\n"
             f"Previous answer: {parsed.answer if parsed else response}\n"
             f"Use this to refine and expand your reasoning."
@@ -270,7 +270,7 @@ for i, question in enumerate(questions):
         else:
             current_state["current_question"] = current_state["original_question"]
         # Update current_state for the next iteration
-        current_state = full_result
+        current_state.update(full_result)
 
         # Store the final result of the iterations for this question
         all_final_results.append({
