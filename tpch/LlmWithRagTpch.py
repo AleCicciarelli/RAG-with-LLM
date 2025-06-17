@@ -62,7 +62,7 @@ bm25_retriever.k = 10
 """ Retrieve and Generate part """
 # Define prompt for question-answering
 prompt = PromptTemplate.from_template("""
-    Question: {state["question"]}
+    Question: {question}
 
     Your task is to:
     Provide the correct answer(s) based only on the context. The answer MUST be only the value required like in the example below, don't add explanation or extra text.
@@ -156,7 +156,7 @@ def generate(state: State):
         prompt = prompt 
     )
     response = chain.run({
-    "question": state["current_question"], 
+    "question": state["question"], 
     "context": docs_content
     })
     print(f"\n[DEBUG] LLM RESPONSE:\n{response}\n")
