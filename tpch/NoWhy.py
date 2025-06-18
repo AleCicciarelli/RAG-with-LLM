@@ -6,11 +6,13 @@ from langchain_core.documents import Document
 from langchain_community.vectorstores import FAISS
 from langchain_community.vectorstores.utils import DistanceStrategy
 from langgraph.graph import START, StateGraph
-from typing_extensions import List, TypedDict
+from typing_extensions import List, TypedDict, Set
 from langchain_core.documents import Document
 from langchain_community.retrievers import BM25Retriever
 from langchain import hub
 import json
+import csv
+import re
 from langchain_core.output_parsers import JsonOutputParser
 from pydantic import BaseModel, Field
 from typing import List
@@ -108,13 +110,58 @@ class State(TypedDict):
     answer: List[AnswerItem]
    
 parser = JsonOutputParser(pydantic_schema=AnswerItem)    
- 
+'''
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
     print(f"Retrieving for question: {state['question']}")
     retrieved_docs = vector_store.similarity_search(state["question"], k = 10)
     return {"context": retrieved_docs}
+'''
+def get_rows_from_ground_truth(ground_f2: str, csv_folder: str) -> List[Document]:
+    """
+    Estrae le righe specificate in f2, gestendo Witness Sets multipli e duplicati.
+    Supporta anche formati annidati come:
+    [
+        "{{courses_0,enrollments_0,students_0},{courses_3,enrollments_3,students_0}}",
+        "{{courses_0,enrollments_9,students_1}}"
+    ]
+    """
+    documents = []
+    seen_entries: Set[str] = set()
+
+    if isinstance(ground_f2, str):
+        ground_f2 = [ground_f2]
+
+    # Regex per catturare tutte le occorrenze tipo table_row
+    pattern = re.compile(r'(\w+_\d+)')
+
+    for witness_set in ground_f2:
+        matches = pattern.findall(witness_set)
+
+        for entry in matches:
+            if entry in seen_entries:
+                continue
+            seen_entries.add(entry)
+
+            try:
+                table_name, row_number = entry.rsplit("_", 1)
+                row_number = int(row_number)
+                csv_path = os.path.join(csv_folder, f"{table_name}.csv")
+                #print(table_name, row_number)   
+                with open(csv_path, "r", encoding="utf-8") as f:
+                    reader = csv.reader(f)
+                    header = next(reader)
+                    for idx, row in enumerate(reader):
+                        if idx == row_number:
+                            content = ",".join(row)
+                            metadata = {"source": table_name, "row": row_number}
+                            documents.append(Document(page_content=content, metadata=metadata))
+                            break
+            except Exception as e:
+                print(f"⚠️ Errore nel parsing di '{entry}': {e}")
+
+    return documents
 
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
@@ -149,17 +196,32 @@ def generate(state: State):
 with open("questions.json", "r") as f:
     data = json.load(f)
     questions = list(data.keys())
-
+'''
 # Build the graph structure once
 graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
-
+'''
 all_results = []
-
+with open("tpch/ground_truthTpch.json", "r", encoding="utf-8") as f:
+    ground_truth = json.load(f)   
 for i, question in enumerate(questions):
+    print(f"Processing question n. {i+1}")
+    gt = ground_truth[i]
+    gt_source_info = gt["why"]
+    
+    # Step 2: Costruisci contesto perfetto a partire dalle righe vere
+    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="tpch/csv_data_tpch")
+    '''
     print(f" Processing question n. {i+1}")
     full_result = graph.invoke({"question": question})
+    '''
+    state = {
+        "question": question,
+        "context": context_docs
+    }
+
+    full_result = generate(state)
     result = {
         "question": question,
         "answer": full_result,
@@ -170,8 +232,8 @@ for i, question in enumerate(questions):
 with open(output_filename, "w") as output_file:
     #json.dump(all_results, output_file, indent=4, ensure_ascii=False)
     for i,result in enumerate(all_results,1):
-    	output_file.write(f"----Results {i}---- \n")
-    	output_file.write(f"Question:{result['question']} \n")
-    	output_file.write(f"Answer:{result['answer']} \n")
-    	output_file.write("\n\n")			
+        output_file.write(f"----Results {i}---- \n")
+        output_file.write(f"Question:{result['question']} \n")
+        output_file.write(f"Answer:{result['answer']} \n")
+        output_file.write("\n\n")			
 print(f"Results saved to {output_filename}")
