@@ -40,9 +40,9 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 #    encode_kwargs={"normalize_embeddings": True}
 #)
 
-csv_folder = "csv_data"
-faiss_index_folder = "faiss_index"
-output_filename = f"iterativeRag/outputs_llama70b/outputs_llama70b_ollama_iterativeK10_faiss.json"
+csv_folder = "tpch/csv_data"
+faiss_index_folder = "tpch/faiss_index"
+output_filename = f"tpch/outputs_llama70b/iterative/outputs_llama70b_ollama_iterativeK10_faiss.json"
 debug_log_filename = f"iterativeRag/debug_log_llama70b_iterative.txt"
 os.makedirs(os.path.dirname(debug_log_filename), exist_ok=True)
 # Save the results for the current value of k to a JSON file for later analysis
@@ -116,40 +116,32 @@ prompt = PromptTemplate.from_template("""
         - Do NOT include introductory phrases.
         - Format your response exactly as in the example below.
 
-        ---
+        EXAMPLE:
+         CONTEXT:
+        - source: <table_1>, row: <row_idx_1>
+        (<col_a>:<val_a>, <col_b>:<val_b>, ...)
+        - source: <table_1>, row: <row_idx_2>
+        (<col_a>:<val_a1>, <col_b>:<val_b1>, ...)
+        - source: <table_2>, row: <row_idx_3>
+        (<col_c>:<val_c>, <col_d>:<val_d>, ...)
+        - source: <table_2>, row: <row_idx_4>
+        (<col_c>:<val_c1>, <col_d>:<val_d1>, ...)
+        - source: <table_3>, row: <row_idx_1>
+        (<col_e>:<val_e>, <col_f>:<val_f>, ...)
+        - source: <table_3>, row: <row_idx_2>
+        (<col_e>:<val_e1>, <col_f>:<val_f1>, ...)
 
-        Example:
-        CONTEXT:
-            - source: courses.csv, row: 0  
-            (course_id:101, course_name:Machine Learning, ...)  
-            - source: courses.csv, row: 3  
-            (course_id:104, course_name:Advanced Algorithms, ...)  
-            - source: enrollments.csv, row: 0  
-            (enrollment_id:1, student_id:1, course_id:101, ...)  
-            - source: enrollments.csv, row: 3  
-            (enrollment_id:4, student_id:1, course_id:104, ...)  
-            - source: enrollments.csv, row: 9  
-            (enrollment_id:10, student_id:2, course_id:101, ...)  
-            - source: students.csv, row: 0  
-            (student_id:1, name:Giulia, surname:Rossi, ...)  
-            - source: students.csv, row: 1  
-            (student_id:2, name:Marco, surname:Bianchi, ...)  
+        QUESTION:
+            "Which are the <entity_type> (specify <col_a> and <col_b>) involved in <condition_1> OR <condition_2>?"
 
-        QUESTION:  
-            "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
-
-        EXPECTED ANSWER:
-        
+        EXPECTED RESPONSE:
             {{
-                "answer": ["Giulia Rossi","Marco Bianchi"],
+                "answer": ["<col_a_val> <col_b_val>", "<col_a_val> <col_b_val>"],
                 "why": [
-                    "{{{{courses_0,enrollments_0,students_0}},{{courses_3,enrollments_3,students_0}}}}",
-                    "{{{{courses_0,enrollments_9,students_1}}}}"
+                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_3>,<table_3>_<row_idx_1>}},{{<table_1>_<row_idx_2>,<table_2>_<row_idx_4>,<table_3>_<row_idx_1>}}}}", 
+                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_4>,<table_3>_<row_idx_2>}}}}"
                 ]
             }}
- 
-        
-
 """
 )
 # Step 1: Define Explanation Class: composed by file and row
@@ -229,14 +221,9 @@ def generate(state: State):
         )
 
     }    
-   
 
-    
-
-# Create a dictionary to store results for each k
-results_by_k = {}
 # Read questions from the JSON file
-with open("questions.json", "r") as f:
+with open("tpch/questions.json", "r") as f:
     data = json.load(f)
     questions = list(data.keys())
 
