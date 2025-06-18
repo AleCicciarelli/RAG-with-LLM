@@ -99,7 +99,7 @@ prompt = PromptTemplate.from_template("""
 # Step 1: Define Explanation Class: composed by file and row
 
 class AnswerItem(BaseModel):
-    answer: List[str]
+    answer: str
 
 # Define state for application
 class State(TypedDict):
@@ -112,18 +112,18 @@ parser = JsonOutputParser(pydantic_schema=AnswerItem)
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
-    print(f"Retrieving for question: {state['original_question']}")
-    retrieved_docs = vector_store.similarity_search(state["current_question"], k = 10)
+    print(f"Retrieving for question: {state['question']}")
+    retrieved_docs = vector_store.similarity_search(state["question"], k = 10)
     return {"context": retrieved_docs}
 
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
 
-    '''
+   
     print("\n[DEBUG] CONTEXT USED:")
     for doc in state["context"]:
         print(f"- Source: {doc.metadata} \n  Content: {doc.page_content[:300]}...\n")
-    '''
+   
     docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
     chain = LLMChain(
         llm=llm,
@@ -134,14 +134,14 @@ def generate(state: State):
     "context": docs_content
     })
     print(f"\n[DEBUG] LLM RESPONSE:\n{response}\n")
-    try:
-        parsed = parser.parse(response)
-    except Exception as e:
-        print(f"Errore nel parsing: {e}")
-        parsed = None
+    #try:
+    #    parsed = parser.parse(response)
+    #except Exception as e:
+    #    print(f"Errore nel parsing: {e}")
+    #    parsed = None
 
     return {
-        "answer": parsed if parsed else response.strip()
+        "answer": response.strip()
     }
 
 
@@ -162,11 +162,16 @@ for i, question in enumerate(questions):
     full_result = graph.invoke({"question": question})
     result = {
         "question": question,
-        "answer": full_result.get("answer", []),
+        "answer": full_result,
     }
     all_results.append(result)
 
 # Save the results for the current value of k to a JSON file for later analysis
 with open(output_filename, "w") as output_file:
-    json.dump(all_results, output_file, indent=4, ensure_ascii=False)
+    #json.dump(all_results, output_file, indent=4, ensure_ascii=False)
+    for i,result in enumerate(all_results,1):
+    	output_file.write(f"----Results {i}---- \n")
+    	output_file.write(f"Question:{result['question']} \n")
+    	output_file.write(f"Answer:{result['answer']} \n")
+    	output_file.write("\n\n")			
 print(f"Results saved to {output_filename}")
