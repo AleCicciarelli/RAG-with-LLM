@@ -77,10 +77,10 @@ else:
     # Save after full processing
     vector_store.save_local(faiss_index_folder)
     print("FAISS vector store created and saved successfully!")
-
+'''
 documents = []
 all_files = [f for f in os.listdir(csv_folder) if f.endswith(".csv")]
-'''
+
 for file in all_files:
     file_path = os.path.join(csv_folder, file)
     loader = CSVLoader(file_path=file_path)
