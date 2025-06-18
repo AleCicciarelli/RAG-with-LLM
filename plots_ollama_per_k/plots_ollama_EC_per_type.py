@@ -16,7 +16,7 @@ palette = {'llama8b': 'blue', 'llama70b': 'green', 'mixtral8x7b': 'orange'}
 # === CARICAMENTO DATI ===
 all_data = []
 for model in models:
-    file_path = os.path.join(base_path + model + '/metrics_by_type_iterative.csv')
+    file_path = os.path.join(base_path + model + '/metrics_by_type_iterativefaiss.csv')
     df = pd.read_csv(file_path)
     df['Model'] = model
     all_data.append(df)
@@ -42,7 +42,7 @@ for metric in metrics:
 
     # Salvataggio
     metric_slug = metric.replace(' ', '_').lower()
-    plt.savefig(os.path.join(output_dir, f"{metric_slug}_by_question_type_ollama_iterative5.png"))
+    plt.savefig(os.path.join(output_dir, f"{metric_slug}_by_question_type_ollama_iterative3round.png"))
     plt.close()
 
 # === COMPLETAMENTO ===

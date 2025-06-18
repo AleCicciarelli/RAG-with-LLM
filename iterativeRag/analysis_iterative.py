@@ -34,10 +34,10 @@ def main():
     gt_data = load_json("ground_truth2.json")
     question_types = load_json("questions.json")
 
-    pred_folder = "iterativeRag/outputs_llama70b/"
-    global_metrics_file = os.path.join(pred_folder, "global_metrics_iterativebm25.csv")
-    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterativebm25.csv")
-    iteration_metrics_file = os.path.join(pred_folder, "metrics_per_iterationbm25.csv")
+    pred_folder = "iterativeRag/outputs_llama8b/"
+    global_metrics_file = os.path.join(pred_folder, "global_metrics_iterativefaiss.csv")
+    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterativefaiss.csv")
+    iteration_metrics_file = os.path.join(pred_folder, "metrics_per_iterationfaiss.csv")
 
     write_header_global = not os.path.exists(global_metrics_file)
     write_header_type = not os.path.exists(type_metrics_file)
@@ -67,7 +67,7 @@ def main():
                 "Explanation Precision", "Explanation Recall", "Explanation F1", "Exact Explanation"
             ])
 
-        pred_file = os.path.join(pred_folder, f"outputs_llama70b_ollama_iterativeK10.json")
+        pred_file = os.path.join(pred_folder, f"outputs_llama8b2_ollama_iterativeK10_faiss.json")
         ungrouped_pred_data = load_json(pred_file)
         pred_data = group_predictions_by_question(ungrouped_pred_data)
         assert len(gt_data) == len(pred_data), "Mismatch in number of questions"
@@ -109,7 +109,7 @@ def main():
                 for s in gt["why"]:
                     true_expl.update(ss.strip("{} ") for ss in s.split("}}") if ss.strip())
             '''
-            print(true_expl)  
+            print(f"True: '{true_answer,true_expl}'")  
             preds = pred_data[question]
             
             for pred in preds:
