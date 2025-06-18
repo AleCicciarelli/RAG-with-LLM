@@ -81,26 +81,22 @@ prompt = PromptTemplate.from_template("""
         - Format your response exactly as in the example below.
 
         EXAMPLE:
-         CONTEXT:
-        - source: <table_1>, row: <row_idx_1>
-        (<col_a>:<val_a>, <col_b>:<val_b>, ...)
-        - source: <table_1>, row: <row_idx_2>
-        (<col_a>:<val_a1>, <col_b>:<val_b1>, ...)
-        - source: <table_2>, row: <row_idx_3>
-        (<col_c>:<val_c>, <col_d>:<val_d>, ...)
-        - source: <table_2>, row: <row_idx_4>
-        (<col_c>:<val_c1>, <col_d>:<val_d1>, ...)
-        - source: <table_3>, row: <row_idx_1>
-        (<col_e>:<val_e>, <col_f>:<val_f>, ...)
-        - source: <table_3>, row: <row_idx_2>
-        (<col_e>:<val_e1>, <col_f>:<val_f1>, ...)
+        CONTEXT:
+        - source: customer.csv , row: 14322
+            (<col_a>:<val_a>,..., c_nationkey : 2, ...)
+        - source: orders.csv, row: 137
+            (o_orderkey : 546, ..., o_totalprice : 20531.43, ...)
+        - source: customer.csv, row: 101
+            (<col_a>:<val_c>, ...,<c_nationkey : 2, ...)
+        - source: orders.csv, row: 78528
+            (o_orderkey : 314052, ..., o_totalprice : 20548.82, ...)
 
         QUESTION:
-            "Which are the <entity_type> (specify <col_a> and <col_b>) involved in <condition_1> OR <condition_2>?"
+            "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?"
 
-        EXPECTED RESPONSE:
+        EXPECTED ANSWER:        
             {{
-                "answer": ["<col_a_val> <col_b_val>", "<col_a_val> <col_b_val>"],
+                "answer": [ "546","314052" ]
             }}
 """
 )
