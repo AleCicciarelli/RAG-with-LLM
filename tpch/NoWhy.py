@@ -203,7 +203,7 @@ graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
 '''
 all_results = []
-with open("tpch/ground_truthTpch.json", "r", encoding="utf-8") as f:
+with open("ground_truthTpch.json", "r", encoding="utf-8") as f:
     ground_truth = json.load(f)   
 for i, question in enumerate(questions):
     print(f"Processing question n. {i+1}")
@@ -211,7 +211,7 @@ for i, question in enumerate(questions):
     gt_source_info = gt["why"]
     
     # Step 2: Costruisci contesto perfetto a partire dalle righe vere
-    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="tpch/csv_data_tpch")
+    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="csv_data_tpch")
     '''
     print(f" Processing question n. {i+1}")
     full_result = graph.invoke({"question": question})
