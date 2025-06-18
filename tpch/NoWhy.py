@@ -76,10 +76,7 @@ prompt = PromptTemplate.from_template("""
     Your task is to provide the correct answer(s) to this question: {question}, based ONLY on the given context: {context}.
         IMPORTANT:
 
-        - Return ONLY a valid JSON array, with NO explanations, comments, or extra text.
-        - Do NOT include introductory phrases.
-        - Format your response exactly as in the example below.
-
+        - Do NOT include introductory phrases or explanations.
         EXAMPLE:
         CONTEXT:
         - source: customer.csv , row: 14322
@@ -95,9 +92,8 @@ prompt = PromptTemplate.from_template("""
             "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?"
 
         EXPECTED ANSWER:        
-            {{
-                "answer": [ "546","314052" ]
-            }}
+             546
+             314052
 """
 )
 # Step 1: Define Explanation Class: composed by file and row

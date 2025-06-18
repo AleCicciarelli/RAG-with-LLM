@@ -31,13 +31,13 @@ def evaluate_lists(true_list, pred_list):
     return tp, fp, fn
 
 def main():
-    gt_data = load_json("ground_truth2.json")
-    question_types = load_json("questions.json")
+    gt_data = load_json("tpch/ground_truthTpch.json")
+    question_types = load_json("tpch/questions.json")
 
-    pred_folder = "iterativeRag/outputs_llama8b/"
-    global_metrics_file = os.path.join(pred_folder, "global_metrics_iterativefaiss.csv")
-    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterativefaiss.csv")
-    iteration_metrics_file = os.path.join(pred_folder, "metrics_per_iterationfaiss.csv")
+    pred_folder = "tpch/outputs_llama70b/iterative"
+    global_metrics_file = os.path.join(pred_folder, "global_metrics_iterative.csv")
+    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterative.csv")
+    iteration_metrics_file = os.path.join(pred_folder, "metrics_per_iteration.csv")
 
     write_header_global = not os.path.exists(global_metrics_file)
     write_header_type = not os.path.exists(type_metrics_file)
@@ -67,7 +67,7 @@ def main():
                 "Explanation Precision", "Explanation Recall", "Explanation F1", "Exact Explanation"
             ])
 
-        pred_file = os.path.join(pred_folder, f"outputs_llama8b2_ollama_iterativeK10_faiss.json")
+        pred_file = os.path.join(pred_folder, f"outputs_llama70b_ollama_iterativeK10_faiss.json")
         ungrouped_pred_data = load_json(pred_file)
         pred_data = group_predictions_by_question(ungrouped_pred_data)
         assert len(gt_data) == len(pred_data), "Mismatch in number of questions"
