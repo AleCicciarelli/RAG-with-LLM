@@ -29,8 +29,8 @@ def main():
     question_types = load_json("tpch/questions.json")
     # Cartella contenente i file di output predetti
     pred_folder = "tpch/outputs_llama70b/no_why"
-    global_metrics_file = os.path.join(pred_folder, "global_metrics_k10.csv")
-    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_k10.csv")
+    global_metrics_file = os.path.join(pred_folder, "global_metrics_nowhyFC.csv")
+    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_nowhyFC.csv")
 
     # Scrivi header CSV solo se i file non esistono
     write_header_global = not os.path.exists(global_metrics_file)
@@ -54,7 +54,7 @@ def main():
 
        
        
-        pred_file = os.path.join(pred_folder, f"outputs_llama70b_nowhy_k25.json")
+        pred_file = os.path.join(pred_folder, f"outputs_llama70b_nowhy_FC.json")
         print(pred_file)
 
         pred_data = load_json(pred_file)
@@ -87,16 +87,19 @@ def main():
             else:
                 true_answer = [str(x) for x in true_answer]
             print(f"True answer: {true_answer}")
+            '''
             try:
                 pred_answer_raw = pred.get("answer", [])
                 if isinstance(pred_answer_raw, list) and len(pred_answer_raw) > 0 and isinstance(pred_answer_raw[0], dict):
-                    pred_answer = [str(x) for x in pred_answer_raw[0].get("answer", [])]
+                    pred_answer = [str(x) for x in pred_answer_raw]
                 else:
                     raise ValueError("Invalid prediction format")
             except Exception as e:
                 # In caso di errore, considera la risposta completamente sbagliata
                 print(f"Errore nel parsing della risposta per la domanda '{question}': {e}")
                 pred_answer = []
+            '''
+            pred_answer = [str(x).strip() for x in pred.get("answer", [])]
             print(f"Predicted answer: {pred_answer}")
             # Calcola TP, FP, FN per risposta
             tp_ans, fp_ans, fn_ans = evaluate_lists(true_answer, pred_answer)
