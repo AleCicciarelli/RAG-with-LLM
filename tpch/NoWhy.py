@@ -39,9 +39,9 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 #)
 """ Indexing part """
 
-csv_folder = "csv_data_tpch"
+csv_folder = "csv_data"
 faiss_index_folder = "faiss_index"
-output_filename = f"outputs_llama70b/no_why/outputs_llama70b_nowhy.json"
+output_filename = f"outputs_ollama_llama70b/no_why/outputs_llama70b_nowhy.json"
 
 # Verify if the FAISS files already exist
 if os.path.exists(faiss_index_folder):
@@ -81,21 +81,27 @@ prompt = PromptTemplate.from_template("""
         - Do NOT include introductory phrases or explanations.
         EXAMPLE:
         CONTEXT:
-        - source: customer.csv , row: 14322
-            (<col_a>:<val_a>,..., c_nationkey : 2, ...)
-        - source: orders.csv, row: 137
-            (o_orderkey : 546, ..., o_totalprice : 20531.43, ...)
-        - source: customer.csv, row: 101
-            (<col_a>:<val_c>, ...,<c_nationkey : 2, ...)
-        - source: orders.csv, row: 78528
-            (o_orderkey : 314052, ..., o_totalprice : 20548.82, ...)
+            - source: courses.csv, row: 0  
+            (course_id:101, course_name:Machine Learning, ...)  
+            - source: courses.csv, row: 3  
+            (course_id:104, course_name:Advanced Algorithms, ...)  
+            - source: enrollments.csv, row: 0  
+            (enrollment_id:1, student_id:1, course_id:101, ...)  
+            - source: enrollments.csv, row: 3  
+            (enrollment_id:4, student_id:1, course_id:104, ...)  
+            - source: enrollments.csv, row: 9  
+            (enrollment_id:10, student_id:2, course_id:101, ...)  
+            - source: students.csv, row: 0  
+            (student_id:1, name:Giulia, surname:Rossi, ...)  
+            - source: students.csv, row: 1  
+            (student_id:2, name:Marco, surname:Bianchi, ...)  
 
-        QUESTION:
-            "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?"
+        QUESTION:  
+            "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
 
-        EXPECTED ANSWER:        
-             546
-             314052
+        EXPECTED RESPONSE:
+            Giulia Rossi
+            Marco Bianchi    
 """
 )
 # Step 1: Define Explanation Class: composed by file and row
