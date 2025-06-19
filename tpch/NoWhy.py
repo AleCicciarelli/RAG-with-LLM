@@ -79,7 +79,30 @@ prompt = PromptTemplate.from_template("""
         IMPORTANT:
 
         - Do NOT include introductory phrases or explanations.
-        EXAMPLE:
+        EXAMPLE 1:
+        CONTEXT:
+            - source: courses.csv, row: 0  
+            (course_id:101, course_name:Machine Learning, ...)  
+            - source: courses.csv, row: 3  
+            (course_id:104, course_name:Advanced Algorithms, ...)  
+            - source: enrollments.csv, row: 0  
+            (enrollment_id:1, student_id:1, course_id:101, ...)  
+            - source: enrollments.csv, row: 3  
+            (enrollment_id:4, student_id:1, course_id:104, ...)  
+            - source: enrollments.csv, row: 9  
+            (enrollment_id:10, student_id:2, course_id:101, ...)  
+            - source: students.csv, row: 0  
+            (student_id:1, name:Giulia, surname:Rossi, ...)  
+            - source: students.csv, row: 1  
+            (student_id:2, name:Marco, surname:Bianchi, ...)  
+
+        QUESTION:  
+            "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
+
+        EXPECTED RESPONSE:
+            Giulia Rossi
+            Marco Bianchi  
+        EXAMPLE 2:    
         CONTEXT:
             - source: departments.csv, row: 0  
             (department_id:1, department_name:Computer Science, faculty: Engineering, ...)  
@@ -206,7 +229,7 @@ for i, question in enumerate(questions):
     gt_source_info = gt["why"]
     
     # Step 2: Costruisci contesto perfetto a partire dalle righe vere
-    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="csv_data")
+    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="csv_data_tpch")
     
     print(f" Processing question n. {i+1}")
     #full_result = graph.invoke({"question": question})

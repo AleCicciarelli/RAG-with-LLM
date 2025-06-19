@@ -29,8 +29,8 @@ def main():
     question_types = load_json("questions.json")
     # Cartella contenente i file di output predetti
     pred_folder = "outputs_ollama_llama70b/no_why"
-    global_metrics_file = os.path.join(pred_folder, "global_metrics_nowhyFC.csv")
-    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_nowhyFC.csv")
+    global_metrics_file = os.path.join(pred_folder, "global_metrics_nowhyFC_new.csv")
+    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_nowhyFC_new.csv")
 
     # Scrivi header CSV solo se i file non esistono
     write_header_global = not os.path.exists(global_metrics_file)
@@ -54,7 +54,7 @@ def main():
 
        
        
-        pred_file = os.path.join(pred_folder, f"outputs_ollama_llama70b_nowhy2.json")
+        pred_file = os.path.join(pred_folder, f"outputs_ollama_llama70b_nowhy_new.json")
         print(pred_file)
 
         pred_data = load_json(pred_file)
