@@ -41,7 +41,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 csv_folder = "csv_data"
 faiss_index_folder = "faiss_index"
-output_filename = f"outputs_ollama_llama70b/no_why/outputs_llama70b_why.json"
+output_filename = f"outputs_ollama_llama70b/no_why/outputs_llama70b_nowhy.json"
 
 # Verify if the FAISS files already exist
 if os.path.exists(faiss_index_folder):
@@ -77,7 +77,7 @@ else:
 prompt = PromptTemplate.from_template("""
     Your task is to provide the correct answer(s) to this question: {question}, based ONLY on the given context: {context}.
     For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
-    Witness Sets: "{{<table_name>_<row>}}"
+    Witness Sets: "{{{{<table_name>_<row>}}, {{<table_name>_<row>}}}}". If there is only one Witness Set, it is "{{<table_name>_<row>}}".
     <table_name> is in the source field of the context, and <row> is the row field of the context.
         IMPORTANT:
 
@@ -106,8 +106,8 @@ prompt = PromptTemplate.from_template("""
         EXPECTED RESPONSE:
             "answer": ["Giulia Rossi","Marco Bianchi"],
             "why": [
-            "{{courses_0,enrollments_0,students_0},{courses_3,enrollments_3,students_0}}",
-            "{{courses_0,enrollments_9,students_1}}"
+            "{{{{courses_0,enrollments_0,students_0}},{{courses_3,enrollments_3,students_0}}}}",
+            "{{{{courses_0,enrollments_9,students_1}}}}"
             ]
              
         EXAMPLE 2:    
