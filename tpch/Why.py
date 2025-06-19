@@ -76,64 +76,6 @@ else:
 # Define prompt for question-answering
 
 ''' old prompt'''
-
-prompt = PromptTemplate.from_template("""
-    Your task is to provide the correct answer(s) to this question: {question}, based ONLY on the given context: {context}.
-    For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
-    Witness Sets: "{{<table_name>_<row>}, {<table_name>_<row>}}". If there is only one Witness Set, it is "{{<table_name>_<row>}}".
-    <table_name> is in the source field of the context, and <row> is the row field of the context.
-        IMPORTANT:
-
-        Return the output as a **stringified JSON array**, with NO extra text: introductory phrases or explanations.
-        
-        EXAMPLE 1:
-        CONTEXT:
-            - source: courses.csv, row: 0  
-            (course_id:101, course_name:Machine Learning, ...)  
-            - source: courses.csv, row: 3  
-            (course_id:104, course_name:Advanced Algorithms, ...)  
-            - source: enrollments.csv, row: 0  
-            (enrollment_id:1, student_id:1, course_id:101, ...)  
-            - source: enrollments.csv, row: 3  
-            (enrollment_id:4, student_id:1, course_id:104, ...)  
-            - source: enrollments.csv, row: 9  
-            (enrollment_id:10, student_id:2, course_id:101, ...)  
-            - source: students.csv, row: 0  
-            (student_id:1, name:Giulia, surname:Rossi, ...)  
-            - source: students.csv, row: 1  
-            (student_id:2, name:Marco, surname:Bianchi, ...)  
-
-        QUESTION:  
-            "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
-
-        EXPECTED RESPONSE:
-            "answer": ["Giulia Rossi","Marco Bianchi"],
-            "why": [
-            "{{courses_0,enrollments_0,students_0},{courses_3,enrollments_3,students_0}}",
-            "{{courses_0,enrollments_9,students_1}}"
-            ]
-             
-        EXAMPLE 2:    
-        CONTEXT:
-            - source: departments.csv, row: 0  
-            (department_id:1, department_name:Computer Science, faculty: Engineering, ...)  
-            - source: teachers.csv, row: 1
-            (teacher_id:2, name:Laura, surname: Bianchi, department_id: 1, ...)  
-
-        QUESTION:  
-            "Which is the name of the department where the teacher Laura Bianchi teaches?"
-
-        EXPECTED RESPONSE:
-            "answer": [
-                "Computer Science"
-            ],
-            "why": [
-                "{{departments_0,teachers_1}}"
-            ]
-"""
-)
-
-
 class AnswerItem(BaseModel):
     answer: str
 
@@ -142,6 +84,65 @@ class State(TypedDict):
     question: str
     context: List[Document]
     answer: List[AnswerItem]
+def definePrompt(state: State):
+    prompt = """
+        Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
+        For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
+        Witness Sets: "{{<table_name>_<row>}, {<table_name>_<row>}}". If there is only one Witness Set, it is "{{<table_name>_<row>}}".
+        <table_name> is in the source field of the context, and <row> is the row field of the context.
+            IMPORTANT:
+
+            Return the output as a **stringified JSON array**, with NO extra text: introductory phrases or explanations.
+            
+            EXAMPLE 1:
+            CONTEXT:
+                - source: courses.csv, row: 0  
+                (course_id:101, course_name:Machine Learning, ...)  
+                - source: courses.csv, row: 3  
+                (course_id:104, course_name:Advanced Algorithms, ...)  
+                - source: enrollments.csv, row: 0  
+                (enrollment_id:1, student_id:1, course_id:101, ...)  
+                - source: enrollments.csv, row: 3  
+                (enrollment_id:4, student_id:1, course_id:104, ...)  
+                - source: enrollments.csv, row: 9  
+                (enrollment_id:10, student_id:2, course_id:101, ...)  
+                - source: students.csv, row: 0  
+                (student_id:1, name:Giulia, surname:Rossi, ...)  
+                - source: students.csv, row: 1  
+                (student_id:2, name:Marco, surname:Bianchi, ...)  
+
+            QUESTION:  
+                "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
+
+            EXPECTED RESPONSE:
+                "answer": ["Giulia Rossi","Marco Bianchi"],
+                "why": [
+                "{{courses_0,enrollments_0,students_0},{courses_3,enrollments_3,students_0}}",
+                "{{courses_0,enrollments_9,students_1}}"
+                ]
+                
+            EXAMPLE 2:    
+            CONTEXT:
+                - source: departments.csv, row: 0  
+                (department_id:1, department_name:Computer Science, faculty: Engineering, ...)  
+                - source: teachers.csv, row: 1
+                (teacher_id:2, name:Laura, surname: Bianchi, department_id: 1, ...)  
+
+            QUESTION:  
+                "Which is the name of the department where the teacher Laura Bianchi teaches?"
+
+            EXPECTED RESPONSE:
+                "answer": [
+                    "Computer Science"
+                ],
+                "why": [
+                    "{{departments_0,teachers_1}}"
+                ]
+    """
+    return prompt
+
+
+
 '''
 def definePrompt(state: State):
     prompt_text = f"""
@@ -271,16 +272,11 @@ def generate(state: State):
         print(f"- Source: {doc.metadata} \n  Content: {doc.page_content[:300]}...\n")
    
     docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
-    
-    chain = LLMChain(
-        llm=llm,
-        prompt = prompt  
-    )
-    response = chain.run({
-    "question": state["question"], 
-    "context": docs_content
-    })
-    print(f"\n[DEBUG] LLM RESPONSE:\n{response}\n")
+    raw_prompt = definePrompt(state)
+    final_prompt = raw_prompt.replace("QUESTION_HERE", {state["question"]}).replace("CONTEXT_HERE", docs_content)
+    response = llm.invoke(final_prompt)
+
+    print(f"\n[DEBUG] LLM RESPONSE:\n{response.content}\n")
     #try:
     #    parsed = parser.parse(response)
     #except Exception as e:
@@ -288,7 +284,7 @@ def generate(state: State):
     #    parsed = None
 
     return {
-        "answer": response.strip()
+        "answer": response.content.strip()
     }
 
 
