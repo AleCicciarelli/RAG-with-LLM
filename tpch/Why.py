@@ -41,7 +41,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 csv_folder = "csv_data"
 faiss_index_folder = "faiss_index"
-output_filename = f"outputs_ollama_llama70b/no_why/outputs_llama70b_why.json"
+output_filename = f"outputs_ollama_llama70b/no_why/outputs_llama70b_why_new.txt"
 
 # Verify if the FAISS files already exist
 if os.path.exists(faiss_index_folder):
@@ -133,66 +133,6 @@ prompt = PromptTemplate.from_template("""
 """
 )
 '''
-prompt = PromptTemplate.from_template("""
-    You are given a question: {question} and a set of context documents (extracted from CSV tables) : {context}.
-    Your task is to answer the question **only** using the information in the context.  
-    For each answer, include the corresponding **Witness Set(s)**: the minimal set(s) of rows needed to justify that answer.
-    ### FORMAT:
-    Return a valid JSON object as a string, with exactly two fields:
-    - "answer": a list of strings (or numbers)
-    - "why": a list of witness sets. Each witness set is a string:
-    - If only one set justifies the answer: "{{{{tablename_row,tablename_row,...}}}}"
-    - If multiple sets justify the answer: "{{{{set1}},{{set2}}}}"
-    - Each set is between one curly brace and the external set has another pair of curly braces.
-    <tablename> is in the source field of the context, and <row> is the row field of the context.
-    ⚠️ Important:
-    - Do NOT include the question or any explanation in the output.
-    EXAMPLE 1:
-    CONTEXT:
-        - source: courses.csv, row: 0  
-        (course_id:101, course_name:Machine Learning, ...)  
-        - source: courses.csv, row: 3  
-        (course_id:104, course_name:Advanced Algorithms, ...)  
-        - source: enrollments.csv, row: 0  
-        (enrollment_id:1, student_id:1, course_id:101, ...)  
-        - source: enrollments.csv, row: 3  
-        (enrollment_id:4, student_id:1, course_id:104, ...)  
-        - source: enrollments.csv, row: 9  
-        (enrollment_id:10, student_id:2, course_id:101, ...)  
-        - source: students.csv, row: 0  
-        (student_id:1, name:Giulia, surname:Rossi, ...)  
-        - source: students.csv, row: 1  
-        (student_id:2, name:Marco, surname:Bianchi, ...)  
-
-    QUESTION:  
-        "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
-
-    EXPECTED RESPONSE:
-        "answer": ["Giulia Rossi","Marco Bianchi"],
-        "why": [
-        "{{{{courses_0,enrollments_0,students_0}},{{courses_3,enrollments_3,students_0}}}}",
-        "{{{{courses_0,enrollments_9,students_1}}}}"
-        ]
-        
-    EXAMPLE 2:    
-    CONTEXT:
-        - source: departments.csv, row: 0  
-        (department_id:1, department_name:Computer Science, faculty: Engineering, ...)  
-        - source: teachers.csv, row: 1
-        (teacher_id:2, name:Laura, surname: Bianchi, department_id: 1, ...)  
-
-    QUESTION:  
-        "Which is the name of the department where the teacher Laura Bianchi teaches?"
-
-    EXPECTED RESPONSE:
-        "answer": [
-            "Computer Science"
-        ],
-        "why": [
-            "{{departments_0,teachers_1}}"
-        ]
-    """)
-# Step 1: Define Explanation Class: composed by file and row
 
 class AnswerItem(BaseModel):
     answer: str
@@ -202,7 +142,70 @@ class State(TypedDict):
     question: str
     context: List[Document]
     answer: List[AnswerItem]
-   
+
+def definePrompt(state: State):
+    prompt = PromptTemplate.from_template = f"""
+        You are given a question: {state["question"]} and a set of context documents (extracted from CSV tables) : {state["context"]}.
+        Your task is to answer the question **only** using the information in the context.  
+        For each answer, include the corresponding **Witness Set(s)**: the minimal set(s) of rows needed to justify that answer.
+        ### FORMAT:
+        Return a valid JSON object as a string, with exactly two fields:
+        - "answer": a list of strings (or numbers)
+        - "why": a list of witness sets. Each witness set is a string:
+        - If only one set justifies the answer: "{{{{tablename_row,tablename_row,...}}}}"
+        - If multiple sets justify the answer: "{{{{set1}},{{set2}}}}"
+        - Each set is between one curly brace and the external set has another pair of curly braces.
+        <tablename> is in the source field of the context, and <row> is the row field of the context.
+        ⚠️ Important:
+        - Do NOT include the question or any explanation in the output.
+        EXAMPLE 1:
+        CONTEXT:
+            - source: courses.csv, row: 0  
+            (course_id:101, course_name:Machine Learning, ...)  
+            - source: courses.csv, row: 3  
+            (course_id:104, course_name:Advanced Algorithms, ...)  
+            - source: enrollments.csv, row: 0  
+            (enrollment_id:1, student_id:1, course_id:101, ...)  
+            - source: enrollments.csv, row: 3  
+            (enrollment_id:4, student_id:1, course_id:104, ...)  
+            - source: enrollments.csv, row: 9  
+            (enrollment_id:10, student_id:2, course_id:101, ...)  
+            - source: students.csv, row: 0  
+            (student_id:1, name:Giulia, surname:Rossi, ...)  
+            - source: students.csv, row: 1  
+            (student_id:2, name:Marco, surname:Bianchi, ...)  
+
+        QUESTION:  
+            "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
+
+        EXPECTED RESPONSE:
+            "answer": ["Giulia Rossi","Marco Bianchi"],
+            "why": [
+            "{{{{courses_0,enrollments_0,students_0}},{{courses_3,enrollments_3,students_0}}}}",
+            "{{{{courses_0,enrollments_9,students_1}}}}"
+            ]
+            
+        EXAMPLE 2:    
+        CONTEXT:
+            - source: departments.csv, row: 0  
+            (department_id:1, department_name:Computer Science, faculty: Engineering, ...)  
+            - source: teachers.csv, row: 1
+            (teacher_id:2, name:Laura, surname: Bianchi, department_id: 1, ...)  
+
+        QUESTION:  
+            "Which is the name of the department where the teacher Laura Bianchi teaches?"
+
+        EXPECTED RESPONSE:
+            "answer": [
+                "Computer Science"
+            ],
+            "why": [
+                "{{departments_0,teachers_1}}"
+            ]
+        """
+    return prompt
+# Step 1: Define Explanation Class: composed by file and row
+
 parser = JsonOutputParser(pydantic_schema=AnswerItem)    
 '''
 # Define application steps
@@ -266,9 +269,10 @@ def generate(state: State):
         print(f"- Source: {doc.metadata} \n  Content: {doc.page_content[:300]}...\n")
    
     docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
+    
     chain = LLMChain(
         llm=llm,
-        prompt = prompt 
+        prompt = definePrompt(state)  
     )
     response = chain.run({
     "question": state["question"], 
