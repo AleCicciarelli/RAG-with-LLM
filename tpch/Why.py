@@ -273,7 +273,7 @@ def generate(state: State):
    
     docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
     raw_prompt = definePrompt(state)
-    final_prompt = raw_prompt.replace("QUESTION_HERE", {state["question"]}).replace("CONTEXT_HERE", docs_content)
+    final_prompt = raw_prompt.replace("QUESTION_HERE", state["question"]).replace("CONTEXT_HERE", docs_content)
     response = llm.invoke(final_prompt)
 
     print(f"\n[DEBUG] LLM RESPONSE:\n{response.content}\n")
