@@ -229,7 +229,7 @@ for i, question in enumerate(questions):
     gt_source_info = gt["why"]
     
     # Step 2: Costruisci contesto perfetto a partire dalle righe vere
-    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="csv_data_tpch")
+    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="csv_data")
     
     print(f" Processing question n. {i+1}")
     #full_result = graph.invoke({"question": question})
