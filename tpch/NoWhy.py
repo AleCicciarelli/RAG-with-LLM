@@ -116,7 +116,7 @@ class State(TypedDict):
     answer: List[AnswerItem]
    
 parser = JsonOutputParser(pydantic_schema=AnswerItem)    
-
+'''
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
@@ -168,7 +168,7 @@ def get_rows_from_ground_truth(ground_f2: str, csv_folder: str) -> List[Document
                 print(f"⚠️ Errore nel parsing di '{entry}': {e}")
 
     return documents
-'''
+
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
 
@@ -202,12 +202,12 @@ def generate(state: State):
 with open("questions.json", "r") as f:
     data = json.load(f)
     questions = list(data.keys())
-
+'''
 # Build the graph structure once
 graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
-
+'''
 all_results = []
 with open("ground_truth2.json", "r", encoding="utf-8") as f:
     ground_truth = json.load(f)   
@@ -217,18 +217,18 @@ for i, question in enumerate(questions):
     gt_source_info = gt["why"]
     
     # Step 2: Costruisci contesto perfetto a partire dalle righe vere
-    #context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="csv_data_tpch")
+    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="csv_data_tpch")
     
     print(f" Processing question n. {i+1}")
-    full_result = graph.invoke({"question": question})
-    '''
+    #full_result = graph.invoke({"question": question})
+    
     state = {
         "question": question,
         "context": context_docs
     }
     
     full_result = generate(state)
-    '''
+ 
     result = {
         "question": question,
         "answer": full_result,
