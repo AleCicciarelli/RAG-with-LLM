@@ -44,13 +44,13 @@ def parse_results_txt(txt):
     return results
 
 # Leggi da file
-with open("outputs_ollama_llama70b/no_why/outputs_llama70b_why.txt", "r", encoding="utf-8") as f:
+with open("outputs_ollama_llama70b/no_why/outputs_llama70b_why2.txt", "r", encoding="utf-8") as f:
     content = f.read()
 
 parsed = parse_results_txt(content)
 
 # Salva in JSON
-with open("outputs_ollama_llama70b/no_why/outputs_ollama_llama70b_why.json", "w", encoding="utf-8") as f:
+with open("outputs_ollama_llama70b/no_why/outputs_ollama_llama70b_why2.json", "w", encoding="utf-8") as f:
     json.dump(parsed, f, indent=2, ensure_ascii=False)
 
 print("✅ Conversione completata. Output salvato in 'outputs_ollama_llama70b_why.json'")

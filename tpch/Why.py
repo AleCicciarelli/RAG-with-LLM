@@ -143,6 +143,7 @@ prompt = PromptTemplate.from_template("""
     - "why": a list of witness sets. Each witness set is a string:
     - If only one set justifies the answer: "{{{{tablename_row,tablename_row,...}}}}"
     - If multiple sets justify the answer: "{{{{set1}},{{set2}}}}"
+    - Each set is between one curly brace and the external set has another pair of curly braces.
     <tablename> is in the source field of the context, and <row> is the row field of the context.
     ⚠️ Important:
     - Do NOT include the question or any explanation in the output.
