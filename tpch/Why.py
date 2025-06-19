@@ -76,11 +76,11 @@ else:
 # Define prompt for question-answering
 
 ''' old prompt'''
-'''
+
 prompt = PromptTemplate.from_template("""
     Your task is to provide the correct answer(s) to this question: {question}, based ONLY on the given context: {context}.
     For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
-    Witness Sets: "{{{{<table_name>_<row>}}, {{<table_name>_<row>}}}}". If there is only one Witness Set, it is "{{<table_name>_<row>}}".
+    Witness Sets: "{{<table_name>_<row>}, {<table_name>_<row>}}". If there is only one Witness Set, it is "{{<table_name>_<row>}}".
     <table_name> is in the source field of the context, and <row> is the row field of the context.
         IMPORTANT:
 
@@ -109,8 +109,8 @@ prompt = PromptTemplate.from_template("""
         EXPECTED RESPONSE:
             "answer": ["Giulia Rossi","Marco Bianchi"],
             "why": [
-            "{{{{courses_0,enrollments_0,students_0}},{{courses_3,enrollments_3,students_0}}}}",
-            "{{{{courses_0,enrollments_9,students_1}}}}"
+            "{{courses_0,enrollments_0,students_0},{courses_3,enrollments_3,students_0}}",
+            "{{courses_0,enrollments_9,students_1}}"
             ]
              
         EXAMPLE 2:    
@@ -132,7 +132,7 @@ prompt = PromptTemplate.from_template("""
             ]
 """
 )
-'''
+
 
 class AnswerItem(BaseModel):
     answer: str
@@ -142,7 +142,7 @@ class State(TypedDict):
     question: str
     context: List[Document]
     answer: List[AnswerItem]
-
+'''
 def definePrompt(state: State):
     prompt_text = f"""
         You are given a question: {state["question"]} and a set of context documents (extracted from CSV tables) : {state["context"]}.
@@ -203,7 +203,9 @@ def definePrompt(state: State):
                 "{{departments_0,teachers_1}}"
             ]
         """
+        
     return PromptTemplate.from_template(prompt_text)
+    '''
 # Step 1: Define Explanation Class: composed by file and row
 
 parser = JsonOutputParser(pydantic_schema=AnswerItem)    
@@ -272,7 +274,7 @@ def generate(state: State):
     
     chain = LLMChain(
         llm=llm,
-        prompt = definePrompt(state)  
+        prompt = prompt  
     )
     response = chain.run({
     "question": state["question"], 

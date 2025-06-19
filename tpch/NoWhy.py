@@ -41,7 +41,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 csv_folder = "csv_data"
 faiss_index_folder = "faiss_index"
-output_filename = f"outputs_ollama_llama70b/no_why/outputs_llama70b_nowhy.json"
+output_filename = f"outputs_ollama_llama70b/no_why/outputs_llama70b_nowhy2.json"
 
 # Verify if the FAISS files already exist
 if os.path.exists(faiss_index_folder):
@@ -78,7 +78,7 @@ prompt = PromptTemplate.from_template("""
     Your task is to provide the correct answer(s) to this question: {question}, based ONLY on the given context: {context}.
         IMPORTANT:
 
-        - Do NOT include introductory phrases or explanations.
+        - Do NOT include introductory phrases, explanations or any dots at the end.
         EXAMPLE 1:
         CONTEXT:
             - source: courses.csv, row: 0  
