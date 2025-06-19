@@ -144,7 +144,7 @@ class State(TypedDict):
     answer: List[AnswerItem]
 
 def definePrompt(state: State):
-    prompt = PromptTemplate.from_template = f"""
+    prompt_text = f"""
         You are given a question: {state["question"]} and a set of context documents (extracted from CSV tables) : {state["context"]}.
         Your task is to answer the question **only** using the information in the context.  
         For each answer, include the corresponding **Witness Set(s)**: the minimal set(s) of rows needed to justify that answer.
@@ -203,7 +203,7 @@ def definePrompt(state: State):
                 "{{departments_0,teachers_1}}"
             ]
         """
-    return prompt
+    return PromptTemplate.from_template(prompt_text)
 # Step 1: Define Explanation Class: composed by file and row
 
 parser = JsonOutputParser(pydantic_schema=AnswerItem)    
