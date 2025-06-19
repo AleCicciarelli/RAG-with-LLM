@@ -81,27 +81,16 @@ prompt = PromptTemplate.from_template("""
         - Do NOT include introductory phrases or explanations.
         EXAMPLE:
         CONTEXT:
-            - source: courses.csv, row: 0  
-            (course_id:101, course_name:Machine Learning, ...)  
-            - source: courses.csv, row: 3  
-            (course_id:104, course_name:Advanced Algorithms, ...)  
-            - source: enrollments.csv, row: 0  
-            (enrollment_id:1, student_id:1, course_id:101, ...)  
-            - source: enrollments.csv, row: 3  
-            (enrollment_id:4, student_id:1, course_id:104, ...)  
-            - source: enrollments.csv, row: 9  
-            (enrollment_id:10, student_id:2, course_id:101, ...)  
-            - source: students.csv, row: 0  
-            (student_id:1, name:Giulia, surname:Rossi, ...)  
-            - source: students.csv, row: 1  
-            (student_id:2, name:Marco, surname:Bianchi, ...)  
+            - source: departments.csv, row: 0  
+            (department_id:1, department_name:Computer Science, faculty: Engineering, ...)  
+            - source: teachers.csv, row: 1
+            (teacher_id:2, name:Laura, surname: Bianchi, department_id: 1, ...)  
 
         QUESTION:  
-            "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
+            "Which is the name of the department where the teacher Laura Bianchi teaches?"
 
         EXPECTED RESPONSE:
-            Giulia Rossi
-            Marco Bianchi    
+            Computer Science
 """
 )
 # Step 1: Define Explanation Class: composed by file and row

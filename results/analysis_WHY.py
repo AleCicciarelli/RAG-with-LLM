@@ -54,7 +54,7 @@ def main():
 
        
        
-        pred_file = os.path.join(pred_folder, f"outputs_ollama_llama70b_nowhy.json")
+        pred_file = os.path.join(pred_folder, f"outputs_ollama_llama70b_nowhy2.json")
         print(pred_file)
 
         pred_data = load_json(pred_file)
