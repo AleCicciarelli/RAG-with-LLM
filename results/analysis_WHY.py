@@ -29,8 +29,8 @@ def main():
     question_types = load_json("tpch/questions.json")
     # Cartella contenente i file di output predetti
     pred_folder = "tpch/outputs_llama70b/no_why"
-    global_metrics_file = os.path.join(pred_folder, "global_metrics_nowhyFC.csv")
-    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_nowhyFC.csv")
+    global_metrics_file = os.path.join(pred_folder, "global_metrics_nowhyk10.csv")
+    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_nowhyk10.csv")
 
     # Scrivi header CSV solo se i file non esistono
     write_header_global = not os.path.exists(global_metrics_file)
@@ -54,7 +54,7 @@ def main():
 
        
        
-        pred_file = os.path.join(pred_folder, f"outputs_llama70b_nowhy_FC.json")
+        pred_file = os.path.join(pred_folder, f"outputs_llama70b_nowhy_K10.json")
         print(pred_file)
 
         pred_data = load_json(pred_file)
@@ -99,6 +99,7 @@ def main():
                 print(f"Errore nel parsing della risposta per la domanda '{question}': {e}")
                 pred_answer = []
             '''
+            #pred_answer_raw = pred.get("answer", [])
             pred_answer = [str(x).strip() for x in pred.get("answer", [])]
             print(f"Predicted answer: {pred_answer}")
             # Calcola TP, FP, FN per risposta

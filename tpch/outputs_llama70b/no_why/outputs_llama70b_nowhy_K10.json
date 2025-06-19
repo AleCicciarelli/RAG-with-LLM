@@ -1,0 +1,295 @@
+[
+  {
+    "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+    "answer": [
+      "Supplier#000000678",
+      "Supplier#000000075",
+      "Supplier#000000162"
+    ]
+  },
+  {
+    "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+    "answer": [
+      "None"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+    "answer": [
+      "None"
+    ]
+  },
+  {
+    "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+    "answer": [
+      "4050"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+    "answer": [
+      "None"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+    "answer": [
+      "There are no customers that meet the specified conditions. None of the customers in the provided data have a nationkey equal to 1, and there is no information about orders or total prices in the customer data."
+    ]
+  },
+  {
+    "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+    "answer": [
+      "There is no order information provided in the given context. However, based on the customer data, we can identify the customers that belong to the nation with nationkey = 24.",
+      "The only customer that meets this condition is:",
+      "14619"
+    ]
+  },
+  {
+    "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+    "answer": [
+      "EUROPE"
+    ]
+  },
+  {
+    "question": "What is the name (r_name) of the region with region key 1?",
+    "answer": [
+      "AMERICA"
+    ]
+  },
+  {
+    "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+    "answer": [
+      "None of the given suppliers match the name 'Supplier#000000010'."
+    ]
+  },
+  {
+    "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+    "answer": [
+      "There is no part named 'forest brown coral puff cream' in the given context."
+    ]
+  },
+  {
+    "question": "Which customer (c_name) placed the order with order key 130?",
+    "answer": [
+      "None of the provided orders have an order key of 130."
+    ]
+  },
+  {
+    "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+    "answer": [
+      "None of the provided customers have a custkey of 456."
+    ]
+  },
+  {
+    "question": "What is the nation name of the customer Customer#000000004?",
+    "answer": [
+      "4"
+    ]
+  },
+  {
+    "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+    "answer": [
+      "p_partkey: 1904, 16961, 17810, 18749, 1705, 2061, 16236, 7403, 14401, 17250"
+    ]
+  },
+  {
+    "question": "Which regions (r_regionKey) have a region key greater than 2?",
+    "answer": [
+      "3",
+      "4"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+    "answer": [
+      "Customer#000001999"
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+    "answer": [
+      "None"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+    "answer": [
+      "There are no customers that meet the specified conditions. None of the provided customer data has a `c_nationkey` equal to 2, so it is not possible to find orders with a total price between 1000 and 1500 for these non-existent customers."
+    ]
+  },
+  {
+    "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+    "answer": [
+      "There is no information about line items or ship dates in the provided context. The context only contains order data from the \"orders.csv\" file, but it does not include any information about line items or their corresponding ship dates.",
+      "Therefore, it is not possible to determine the ship date of a specific line item based on this context."
+    ]
+  },
+  {
+    "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+    "answer": [
+      "1998-03-16"
+    ]
+  },
+  {
+    "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+    "answer": [
+      "7"
+    ]
+  },
+  {
+    "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+    "answer": [
+      "None"
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) provides the part with partkey 200?",
+    "answer": [
+      "None"
+    ]
+  },
+  {
+    "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+    "answer": [
+      "There is no available quantity for partkey 500 supplied by supplierkey 123."
+    ]
+  },
+  {
+    "question": "What is the total price of the order with orderkey 100?",
+    "answer": [
+      "There is no order with orderkey 100 in the provided context."
+    ]
+  },
+  {
+    "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+    "answer": [
+      "None of the given suppliers match the name \"Supplier#000000005\"."
+    ]
+  },
+  {
+    "question": "What is the order date of the order with order key 323?",
+    "answer": [
+      "None of the provided orders have an order key of 323."
+    ]
+  },
+  {
+    "question": "Which customer (c_name) placed the order with order key 323?",
+    "answer": [
+      "None of the customers placed an order with order key 323."
+    ]
+  },
+  {
+    "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+    "answer": [
+      "There is no supplier with suppkey 456 in the given context."
+    ]
+  },
+  {
+    "question": "What is the name of the region where the nation FRANCE is located?",
+    "answer": [
+      "EUROPE"
+    ]
+  },
+  {
+    "question": "What is the name of the nation of the customer who placed order 352?",
+    "answer": [
+      "4"
+    ]
+  },
+  {
+    "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+    "answer": [
+      "Nation key 4."
+    ]
+  },
+  {
+    "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+    "answer": [
+      "There is no information about partkey 275 in order 32 in the given context. The provided data only contains supplier information, but not line items or orders. Therefore, it's impossible to determine the phone number of the supplier that delivered a line item for part key 275 in order 32 based on this context."
+    ]
+  },
+  {
+    "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+    "answer": [
+      "0"
+    ]
+  },
+  {
+    "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+    "answer": [
+      "There is no information about the supply cost of any part in the given context. The provided data only includes information about parts, such as their names, manufacturers, brands, types, sizes, containers, and retail prices. There is no mention of suppliers or supply costs. Therefore, it is not possible to determine the supply cost of the part \"goldenrod lavender spring chocolate lace\" supplied by Supplier#000000002."
+    ]
+  },
+  {
+    "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+    "answer": [
+      "Customer#000009628",
+      "Customer#000002009",
+      "Customer#000014940",
+      "Customer#000001984"
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+    "answer": [
+      "None"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+    "answer": [
+      "None"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+    "answer": [
+      "None"
+    ]
+  },
+  {
+    "question": "Which parts (p_name) have a retail price lower than 902?",
+    "answer": [
+      "Here are the parts with a retail price lower than 902:",
+      "maroon forest lavender burlywood red",
+      "linen rose blue white honeydew",
+      "black mint olive drab medium"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 1?",
+    "answer": [
+      "UNITED STATES",
+      "CANADA"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 2?",
+    "answer": [
+      "INDONESIA",
+      "INDIA",
+      "CHINA"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 0?",
+    "answer": [
+      "ALGERIA"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 3?",
+    "answer": [
+      "RUSSIA",
+      "FRANCE",
+      "UNITED KINGDOM"
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+    "answer": [
+      "Supplier#000000678"
+    ]
+  }
+]
