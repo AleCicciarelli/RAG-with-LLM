@@ -1,0 +1,245 @@
+----Results 1---- 
+Question:Which is the email of Giulia Rossi? 
+Answer:{'answer': '"answer": ["giulia.rossi@student.edu"],\n"why": [\n    "{{students_0}"\n]'} 
+
+
+----Results 2---- 
+Question:Which is the name of the department where the teacher Laura Bianchi teaches? 
+Answer:{'answer': '"answer": ["Computer Science"],\n"why": [\n    "{{departments_0,teachers_1}}"\n]'} 
+
+
+----Results 3---- 
+Question:How many credits has the course Software Engineering? 
+Answer:{'answer': 'Based on the given context: {\'source\': \'courses\', \'row\': 5}, I provide the correct answer(s) to this question:\n\nHow many credits has the course Software Engineering?\n\nThe answer is:\n\n"answer": [4],\n"why": [\n    "{{courses_5}}"\n]\n\nExplanation:\nThe witness set {{courses_5}} justifies the result because it corresponds to the row with source \'courses\' and row 5, which contains the information about the course Software Engineering. The credits for this course are specified as 4 in that row.'} 
+
+
+----Results 4---- 
+Question:What is the name of building in which there is the class with room number 401? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'classrooms\', \'row\': 5}\n\n6,Electronics,401,30.\n\nThe answer is:\n\n"answer": ["Building in which there is the class with room number 401"],\n"why": [\n    "{{classrooms_5}}"\n]\n\nExplanation: The only row provided is for the classrooms table, and it corresponds to row 5. Therefore, we can conclude that the building associated with the class having room number 401 is the one described in this row.'} 
+
+
+----Results 5---- 
+Question:In which semester is done the Cybersecurity course? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'courses\', \'row\': 8}\n\n109,Cybersecurity,1,6,9,Fall.\n\nThe correct answer is:\n\n"answer": ["Fall"],\n"why": [\n    "{{courses_8}}"\n]\n\nExplanation: The Cybersecurity course is done in the Fall semester, as indicated by the row value "9" and the column value "Fall".'} 
+
+
+----Results 6---- 
+Question:In which classroom (room number) is the Database Systems exam? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'classrooms\', \'row\': 1}\n2,Main,102,60\n\n{\'source\': \'courses\', \'row\': 1}\n102,Database Systems,1,6,2,Spring\n\n{\'source\': \'exams\', \'row\': 1}\n2,102,2023-02-15,14:00,2.\n\nThe answer is:\n\n"answer": ["102"],\n"why": [\n    "{{classrooms_1,courses_1,exams_1}}"\n]\n\nExplanation:\nThe Database Systems exam is in classroom 102.'} 
+
+
+----Results 7---- 
+Question:In which research area is the 'User Experience Design in Web Apps' thesis? 
+Answer:{'answer': '"answer": ["Human-Computer Interaction"],\n"why": [\n    "{{thesis_4}"\n]'} 
+
+
+----Results 8---- 
+Question:Which instructor (name, surname) teaches Machine Learning course? 
+Answer:{'answer': '"answer": ["Carlo Rossi"],\n"why": [\n    "{{courses_0,teachers_0}}"\n]'} 
+
+
+----Results 9---- 
+Question:Which is the research area of the teacher Carlo Rossi? 
+Answer:{'answer': '"answer": ["Artificial Intelligence"],\n"why": [\n    "{{teachers_0,teacherResearchAreas_0}}"\n]'} 
+
+
+----Results 10---- 
+Question:How many research project follows the teacher Giulia Colombo? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'teachers\', \'row\': 5}\n6,Giulia,Colombo,1,g.colombo@university.edu\n\n{\'source\': \'teacherResearchAreas\', \'row\': 5}\n6,Software Engineering,5.\n\nThe research project follows the teacher Giulia Colombo because she is associated with Software Engineering in the "teacherResearchAreas" table.'} 
+
+
+----Results 11---- 
+Question:When is the Machine Learning exam (date,time)? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'courses\', \'row\': 0}\n101,Machine Learning,1,6,1,Fall\n\n{\'source\': \'exams\', \'row\': 0}\n1,101,2023-01-10,09:00,1.\n\nThe Machine Learning exam is on date "2023-01-10" and time "09:00".\n\nHere\'s the explanation using Witness Sets:\n\n{"answer": ["2023-01-10 09:00"], "why": ["{{exams_0,courses_0}}"]}'} 
+
+
+----Results 12---- 
+Question:In which courses (name of courses) Giulia Rossi is enrolled? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'courses\', \'row\': 0}\n101,Machine Learning,1,6,1,Fall\n\n{\'source\': \'enrollments\', \'row\': 0}\n1,1,101,2022-09-01\n\n{\'source\': \'students\', \'row\': 0}\n1,Giulia,Rossi,1998-05-14,Italian,Female,2022-09-01,giulia.rossi@student.edu\n\n{\'source\': \'courses\', \'row\': 3}\n104,Advanced Algorithms,1,8,4,Spring\n\n{\'source\': \'enrollments\', \'row\': 3}\n4,1,104,2022-09-01.\n\nThe answer is:\n\n"answer": ["Machine Learning"],\n"why": [\n    "{{courses_0,enrollments_0,students_0}}"\n]\n\nExplanation: Giulia Rossi is enrolled in course 101 (Machine Learning) as shown by the enrollment record with enrollment_id 1 and student_id 1.'} 
+
+
+----Results 13---- 
+Question:What is the grade of Giulia Rossi for the Machine Learning course? 
+Answer:{'answer': '"answer": ["Giulia Rossi"],\n"why": [\n    "{{students_0,courses_0,enrollments_0}"\n]'} 
+
+
+----Results 14---- 
+Question:Who is the teacher (name,surname) following Sophie Durand in her thesis? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'students\', \'row\': 2}\n3,Sophie,Durand,2000-07-30,French,Female,2021-01-10,sophie.durand@student.edu\n\n{\'source\': \'teachers\', \'row\': 8}\n9,Luca,Esposito,1,l.esposito@university.edu\n\n{\'source\': \'thesis\', \'row\': 2}\n3,IoT Security Challenges,3,9,2023-2024,Completed,Cybersecurity.\n\nThe question is: Who is the teacher (name,surname) following Sophie Durand in her thesis?\n\nAnswer:\n"answer": ["Luca Esposito"],\n"why": [\n    "{{thesis_2,teachers_8}}"\n]\n\nExplanation:\n\n* The thesis row 2 indicates that Sophie Durand\'s thesis has an ID of 3.\n* The teachers row 8 indicates that Luca Esposito is the teacher with ID 9.\n* Therefore, Luca Esposito is the teacher following Sophie Durand in her thesis.'} 
+
+
+----Results 15---- 
+Question:What are all the courses (name of courses) offered by the Computer Science department? 
+Answer:{'answer': '"answer": ["Machine Learning", "Database Systems", "Advanced Algorithms", "Software Engineering", "Data Mining", "Artificial Intelligence", "Cybersecurity", "Human-Computer Interaction"],\n"why": [\n{{courses_0,courses_1},{courses_2,courses_3},{courses_4,courses_5},{courses_6,courses_7},{courses_8,courses_9}}\n]'} 
+
+
+----Results 16---- 
+Question:What is the name of the department in which Antonio Gallo teaches? 
+Answer:{'answer': '"answer": ["Engineering"],\n"why": [\n    "{{departments_2,teachers_4}}"\n]'} 
+
+
+----Results 17---- 
+Question:What is the grade of Elena Gonzales for the Human-Computer Interaction exam? 
+Answer:{'answer': '"answer": ["A"],\n"why": [\n    "{{courses_9,grades_6,students_4}}"\n]'} 
+
+
+----Results 18---- 
+Question:Which faculty does the Electronics department belong to? 
+Answer:{'answer': 'Based on the given context: {\'source\': \'departments\', \'row\': 1}\n2,Electronics,Engineering.\n\nThe correct answer is:\n"answer": ["Engineering"],\n"why": [\n    "{{departments_departments_1}}"\n]\n\nExplanation:\n\n* The department name is "Electronics", which belongs to the faculty "Engineering".\n* The witness set is {{departments_departments_1}}, as it contains the row 1 from the departments.csv file, which provides the information about the Electronics department being part of the Engineering faculty.'} 
+
+
+----Results 19---- 
+Question:What is the name of the building in which will be the Embedded Systems exam? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'classrooms\', \'row\': 2}\n3,Science,201,40\n\n{\'source\': \'courses\', \'row\': 2}\n103,Embedded Systems,2,6,3,Fall\n\n{\'source\': \'exams\', \'row\': 2}\n3,103,2023-03-20,10:00,3.\n\nThe Embedded Systems exam will be held in the building named "Science", which is specified in the classrooms table with row number 2.\n\nHere\'s the expected response:\n\n"answer": [\n    "Science"\n],\n"why": [\n    "{{classrooms_2}}"\n]'} 
+
+
+----Results 20---- 
+Question:What is the title of the thesis followed by Alessandro Moretti? 
+Answer:{'answer': '"answer": ["User Experience Design in Web Apps"],\n"why": [\n    "{{thesis_4,teachers_7}}"\n]'} 
+
+
+----Results 21---- 
+Question:Which students (name,surname) have an enrollment date before 2022? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'students\', \'row\': 2}\n3,Sophie,Durand,2000-07-30,French,Female,2021-01-10,sophie.durand@student.edu\n\n{\'source\': \'students\', \'row\': 3}\n4,Lucas,Schmidt,1997-03-18,German,Male,2020-08-25,lucas.schmidt@student.edu.\n\nThe students with an enrollment date before 2022 are:\n\n"answer": ["Sophie Durand"],\n"why": [\n    "{{students_2}}"\n]\n\nExplanation: The only student with an enrollment date before 2022 is Sophie Durand, whose enrollment date is 2021-01-10.'} 
+
+
+----Results 22---- 
+Question:What is the faculty of the Chemistry department? 
+Answer:{'answer': 'Based on the given context: {\'source\': \'departments\', \'row\': 5}\n\nThe faculty of the Chemistry department is:\n\n"answer": ["Engineering"],\n"why": [\n    "{{departments_5,}"\n]\n\nExplanation:\nThe only row provided in the context is for the Chemistry department (row 5). The faculty field for this row is "Science". However, there is no direct connection between the Science department and the Engineering faculty. Therefore, we can conclude that the faculty of the Chemistry department is indeed "Engineering" based on the given information.\n\nNote: This answer might seem counterintuitive at first, but it\'s actually correct because the context only provides one row for the departments table, which happens to be the Chemistry department with a faculty of Science.'} 
+
+
+----Results 23---- 
+Question:Which are the students (name,surname) enrolled in the Database Systems course? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'courses\', \'row\': 1}\n102,Database Systems,1,6,2,Spring\n\n{\'source\': \'enrollments\', \'row\': 1}\n2,2,102,2022-10-15\n\n{\'source\': \'students\', \'row\': 1}\n2,Marco,Bianchi,1995-11-22,Italian,Male,2022-10-15,marco.bianchi@student.edu.\n\nThe answer is:\n\n"answer": ["Marco Bianchi"],\n"why": [\n    "{{courses_1,enrollments_1,students_1}}"\n]\n\nExplanation: The student with ID 2 (Marco Bianchi) is enrolled in the Database Systems course (course_id 102), as shown by the enrollment record.'} 
+
+
+----Results 24---- 
+Question:What are the research areas of Maria Ferrari? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'teachers\', \'row\': 9}\n10,Maria,Ferrari,1,m.ferrari@university.edu\n\n{\'source\': \'teacherResearchAreas\', \'row\': 9}\n10,Human-Computer Interaction,6.\n\nThe research areas of Maria Ferrari are:\n\n"answer": ["Human-Computer Interaction"],\n"why": [\n    "{{teachers_9,teacherResearchAreas_9}}"\n]\n\nExplanation: The witness set is {{teachers_9,teacherResearchAreas_9}} because it contains the row number 9 from both the \'teachers\' and \'teacherResearchAreas\' tables, which corresponds to Maria Ferrari\'s information.'} 
+
+
+----Results 25---- 
+Question:How many research projects are led by Laura Bianchi? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'teachers\', \'row\': 1}\n2,Laura,Bianchi,1,l.bianchi@university.edu\n\n{\'source\': \'teacherResearchAreas\', \'row\': 1}\n2,Data Science,6.\n\nThe answer is:\n\n"answer": ["1"],\n"why": [\n    "{{teachers_1, teacherResearchAreas_1}}"\n]\n\nExplanation: The only research project led by Laura Bianchi is the one with ID "1", which is mentioned in the \'teacherResearchAreas\' table.'} 
+
+
+----Results 26---- 
+Question:Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'courses\', \'row\': 9}\n110,Human-Computer Interaction,1,6,10,Spring\n\n{\'source\': \'grades\', \'row\': 7}\n8,3,110,28\n\n{\'source\': \'students\', \'row\': 2}\n3,Sophie,Durand,2000-07-30,French,Female,2021-01-10,sophie.durand@student.edu.\n\nThe answer is:\n\n"answer": ["Sophie Durand"],\n"why": [\n    "{{grades_7,courses_9,students_2}}"\n]\n\nExplanation: The student with the grade equal to 28 in Human-Computer Interaction (course_id 110) is Sophie Durand.'} 
+
+
+----Results 27---- 
+Question:Which are the classrooms (room number) in the Engineering building? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'classrooms\', \'row\': 3}\n4,Engineering,301,80\n{\'source\': \'classrooms\', \'row\': 4}\n5,Engineering,302,100.\n\nThe question is: Which are the classrooms (room number) in the Engineering building?\n\nAnswer:\n"answer": ["301", "302"],\n"why": [\n    "{{classrooms_3}}",\n    "{{classrooms_4}}"\n]\n\nExplanation:\n\n* The context provides information about two classrooms: one with room number 301 and another with room number 302, both located in the Engineering building.\n* The witness sets for each classroom are the corresponding rows in the "classrooms" table.'} 
+
+
+----Results 28---- 
+Question:What is the day and time of the Software Engineering exam? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'courses\', \'row\': 5}\n106,Software Engineering,1,6,4,Spring\n\n{\'source\': \'exams\', \'row\': 4}\n5,106,2023-05-30,13:00,5.\n\nThe day and time of the Software Engineering exam is:\n\n"answer": ["May 30, 2023", "13:00"],\n"why": [\n    "{{courses_5,exams_4}}"\n]\n\nExplanation:\nThe witness set {{courses_5,exams_4}} justifies the result because it links the course_id (106) in the courses table to the exam details (May 30, 2023 and 13:00) in the exams table.'} 
+
+
+----Results 29---- 
+Question:Which courses (name of courses) have 8 credits? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'courses\', \'row\': 3}\n104,Advanced Algorithms,1,8,4,Spring\n\n{\'source\': \'courses\', \'row\': 7}\n108,Artificial Intelligence,1,8,7,Spring.\n\nThe courses with 8 credits are:\n\n"answer": ["Advanced Algorithms", "Artificial Intelligence"],\n"why": [\n    "{{courses_3,courses_7}}",\n    "{{courses_3,courses_7}}"\n]\n\nExplanation:\nThe witness sets for each course are the same because both courses have the same information in the context: they both have 8 credits.'} 
+
+
+----Results 30---- 
+Question:What is the title of the thesis of Sophie Durand? 
+Answer:{'answer': '"answer": ["IoT Security Challenges"],\n"why": [\n    "{{students_2,thesis_2}"\n]'} 
+
+
+----Results 31---- 
+Question:Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses? 
+Answer:{'answer': 'Based on the given context, here are the answers to the question:\n\n"Which are the students (name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"\n\n"answer": ["Giulia Rossi", "Marco Bianchi"],\n"why": [\n    "{{courses_0,enrollments_0,students_0}}",\n    "{{courses_3,enrollments_3,students_0}}",\n    "{{courses_0,enrollments_9,students_1}}"\n]\n\nExplanation:\n\n* Giulia Rossi is enrolled in Machine Learning (course_id: 101) as shown by the enrollment record with enrollment_id: 1.\n* Marco Bianchi is also enrolled in Machine Learning (course_id: 101) as shown by the enrollment record with enrollment_id: 10.\n* The witness sets for each student are provided, showing the relevant records from the courses, enrollments, and students tables that justify their enrollment in the respective course.'} 
+
+
+----Results 32---- 
+Question:Which courses (name of the courses) have 6 credits? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'courses\', \'row\': 0}\n101,Machine Learning,1,6,1,Fall\n\n{\'source\': \'courses\', \'row\': 1}\n102,Database Systems,1,6,2,Spring\n\n{\'source\': \'courses\', \'row\': 2}\n103,Embedded Systems,2,6,3,Fall\n\n{\'source\': \'courses\', \'row\': 4}\n105,Digital Signal Processing,2,6,5,Fall\n\n{\'source\': \'courses\', \'row\': 5}\n106,Software Engineering,1,6,4,Spring\n\n{\'source\': \'courses\', \'row\': 6}\n107,Data Mining,1,6,6,Fall\n\n{\'source\': \'courses\', \'row\': 8}\n109,Cybersecurity,1,6,9,Fall\n\n{\'source\': \'courses\', \'row\': 9}\n110,Human-Computer Interaction,1,6,10,Spring.\n\nThe courses with 6 credits are:\n\n"answer": ["Machine Learning", "Database Systems", "Embedded Systems", "Digital Signal Processing", "Software Engineering", "Data Mining", "Cybersecurity", "Human-Computer Interaction"],\n"why": [\n{{courses_0},{courses_1},{courses_2},{courses_4},{courses_5},{courses_6},{courses_8},{courses_9}}'} 
+
+
+----Results 33---- 
+Question:Which students (name, surname) enrolled in 2020? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'students\', \'row\': 3}\n\nThe answer is:\n\n"answer": ["Lucas Schmidt"],\n"why": [\n    "{{students_3}}"\n]\n\nExplanation: The student Lucas Schmidt enrolled in 2020, as indicated by the row number 3 in the students.csv file.'} 
+
+
+----Results 34---- 
+Question:Which classrooms (room number) are located in the Main building? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'classrooms\', \'row\': 0}\n1,Main,101,50\n{\'source\': \'classrooms\', \'row\': 1}\n2,Main,102,60.\n\nThe question is: Which classrooms (room number) are located in the Main building?\n\nAnswer:\n"answer": ["101", "102"],\n"why": [\n    "{{classrooms_0,classrooms_1}}"\n]\n\nExplanation:\n\n* The context provides information about two classrooms: one with room number 101 and another with room number 102, both located in the Main building.\n* The witness set is a minimal set of input tuples that justify the result. In this case, it\'s a single tuple that combines the information from both classroom rows.\n\nNote: The answer is a stringified JSON array as required.'} 
+
+
+----Results 35---- 
+Question:Which departments (departments name) are in the Science faculty? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'departments\', \'row\': 2}\n3,Mathematics,Science\n\n{\'source\': \'departments\', \'row\': 3}\n4,Physics,Science\n\n{\'source\': \'departments\', \'row\': 4}\n5,Biology,Science\n\n{\'source\': \'departments\', \'row\': 5}\n6,Chemistry,Science.\n\nThe departments in the Science faculty are:\n\n"answer": ["Mathematics", "Physics", "Biology", "Chemistry"],\n"why": [\n{{departments_2,enrollments_3}},\n{{departments_3,enrollments_4}},\n{{departments_4,enrollments_5}},\n{{departments_5,enrollments_6}}\n]\n\nExplanation: The departments are classified as being in the Science faculty based on their corresponding rows (2, 3, 4, and 5) in the given context.'} 
+
+
+----Results 36---- 
+Question:Which thesis (title) have the status completed? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'thesis\', \'row\': 0}\n1,Deep Learning for Image Recognition,1,1,2023-2024,Completed,Artificial Intelligence\n\n{\'source\': \'thesis\', \'row\': 2}\n3,IoT Security Challenges,3,9,2023-2024,Completed,Cybersecurity\n\n{\'source\': \'thesis\', \'row\': 3}\n4,Autonomous Systems,4,3,2021-2022,Completed,Robotics.\n\nThe thesis with the status "completed" are:\n\nanswer: [1, 3]\nwhy: [\n{{\'thesis\'_0},{\'thesis\'_2}}\n]'} 
+
+
+----Results 37---- 
+Question:What are the names of the courses taught by Laura Bianchi? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'courses\', \'row\': 1}\n102,Database Systems,1,6,2,Spring\n\n{\'source\': \'teachers\', \'row\': 1}\n2,Laura,Bianchi,1,l.bianchi@university.edu.\n\nThe answer is:\n\n"answer": ["Database Systems"],\n"why": [\n    "{{courses_1,teachers_1}}"\n]\n\nExplanation: The course "Database Systems" is taught by Laura Bianchi, as indicated in the \'source\' and \'row\' fields of the context.'} 
+
+
+----Results 38---- 
+Question:Which courses (name of courses) are taught in the Fall semester? 
+Answer:{'answer': 'Here is the response:\n\n"answer": ["Machine Learning", "Embedded Systems", "Digital Signal Processing", "Data Mining", "Cybersecurity"],\n"why": [\n    "{{courses_0,courses_2,courses_4,courses_6,courses_8}}"\n]'} 
+
+
+----Results 39---- 
+Question:Which courses (name of courses) are taught in the Spring semester? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'courses\', \'row\': 1}\n102,Database Systems,1,6,2,Spring\n\n{\'source\': \'courses\', \'row\': 3}\n104,Advanced Algorithms,1,8,4,Spring\n\n{\'source\': \'courses\', \'row\': 5}\n106,Software Engineering,1,6,4,Spring\n\n{\'source\': \'courses\', \'row\': 7}\n108,Artificial Intelligence,1,8,7,Spring\n\n{\'source\': \'courses\', \'row\': 9}\n110,Human-Computer Interaction,1,6,10,Spring.\n\nThe answer is:\n\n"answer": ["Database Systems", "Advanced Algorithms", "Software Engineering", "Artificial Intelligence"],\n"why": [\n{{courses_1,courses_3,courses_5,courses_7}}\n]\n\nExplanation: The courses are taught in the Spring semester. Witness sets are created by combining tuples from the \'courses\' table with row numbers 1, 3, 5, and 7, which correspond to the courses "Database Systems", "Advanced Algorithms", "Software Engineering", and "Artificial Intelligence" respectively.'} 
+
+
+----Results 40---- 
+Question:Which teachers (name, surname) are part of the Electronics department? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'departments\', \'row\': 1}\n2,Electronics,Engineering\n\n{\'source\': \'teachers\', \'row\': 2}\n3,Marco,Verdi,2,m.verdi@university.edu\n\n{\'source\': \'teachers\', \'row\': 4}\n5,Antonio,Gallo,2,a.gallo@university.edu.\n\nThe answer is:\n\n"answer": ["Marco Verdi"],\n"why": [\n    "{{departments_1,teachers_2}}"\n]\n\nExplanation: The teacher Marco Verdi is part of the Electronics department (department_id: 2), which is specified in the departments.csv file.'} 
+
+
+----Results 41---- 
+Question:Which thesis (title) have the status in progress? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'thesis\', \'row\': 1}\n2,Big Data Processing,2,2,2022-2023,In Progress,Data Science\n\n{\'source\': \'thesis\', \'row\': 4}\n5,User Experience Design in Web Apps,5,8,2022-2023,In Progress,Human-Computer Interaction.\n\nThe thesis with the status "In Progress" is:\n\nanswer: ["Big Data Processing", "User Experience Design in Web Apps"]\nwhy: [\n{{thesis_1},{thesis_4}}\n]'} 
+
+
+----Results 42---- 
+Question:Which teachers (name, surname) are part of the Computer Science department? 
+Answer:{'answer': '"answer": ["Carlo Rossi", "Laura Bianchi"],\n"why": [\n{{departments_0,enrollments_0,teachers_0}},\n{{departments_0,enrollments_1,teachers_1}}\n]'} 
+
+
+----Results 43---- 
+Question:Which Students (name, surname) are Italian? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'students\', \'row\': 0}\n1,Giulia,Rossi,1998-05-14,Italian,Female,2022-09-01,giulia.rossi@student.edu\n\n{\'source\': \'students\', \'row\': 1}\n2,Marco,Bianchi,1995-11-22,Italian,Male,2022-10-15,marco.bianchi@student.edu.\n\nThe answer is:\n\n"answer": ["Giulia Rossi", "Marco Bianchi"],\n"why": [\n    "{{students_0},{students_1}}"\n]\n\nExplanation: The question asks which students are Italian. Based on the given context, we can see that both Giulia Rossi and Marco Bianchi have nationality as \'Italian\'. Therefore, they are the two students who meet the condition.'} 
+
+
+----Results 44---- 
+Question:Which are the Male students (name, surname) enrolled in the university? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'students\', \'row\': 1}\n2,Marco,Bianchi,1995-11-22,Italian,Male,2022-10-15,marco.bianchi@student.edu\n\n{\'source\': \'students\', \'row\': 3}\n4,Lucas,Schmidt,1997-03-18,German,Male,2020-08-25,lucas.schmidt@student.edu.\n\nThe answer is:\n\n"answer": ["Marco Bianchi"],\n"why": [\n    "{{students_1}}"\n]\n\nExplanation: The only male student enrolled in the university is Marco Bianchi.'} 
+
+
+----Results 45---- 
+Question:Which are the Female students (name, surname) enrolled in the university in the course with course_id 110? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'enrollments\', \'row\': 7}\n8,3,110,2021-01-10\n\n{\'source\': \'students\', \'row\': 2}\n3,Sophie,Durand,2000-07-30,French,Female,2021-01-10,sophie.durand@student.edu\n\n{\'source\': \'enrollments\', \'row\': 6}\n7,5,110,2022-02-14\n\n{\'source\': \'students\', \'row\': 4}\n5,Elena,Gonzalez,1999-09-05,Spanish,Female,2022-02-14,elena.gonzalez@student.edu.\n\nThe Female students enrolled in the course with course_id 110 are:\n\n"answer": ["Sophie Durand", "Elena Gonzalez"],\n"why": [\n    "{{enrollments_7,students_2}",\n    "{{enrollments_6,students_4}}"\n]'} 
+
+
+----Results 46---- 
+Question:Which are all the grades obtained by the student Sophie Durand? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'grades\', \'row\': 2}\n3,3,103,30\n\n{\'source\': \'students\', \'row\': 2}\n3,Sophie,Durand,2000-07-30,French,Female,2021-01-10,sophie.durand@student.edu\n\n{\'source\': \'grades\', \'row\': 5}\n6,3,106,29\n\n{\'source\': \'grades\', \'row\': 7}\n8,3,110,28.\n\nThe answer is:\n\n"answer": ["3"],\n"why": [\n    "{{grades_2},{students_2}}"\n]\n\nExplanation: The student Sophie Durand has grades with IDs 3 and 103, which corresponds to the row 2 in the \'grades\' table.'} 
+
+
+----Results 47---- 
+Question:Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'courses\', \'row\': 9}\n110,Human-Computer Interaction,1,6,10,Spring\n\n{\'source\': \'enrollments\', \'row\': 6}\n7,5,110,2022-02-14\n\n{\'source\': \'students\', \'row\': 4}\n5,Elena,Gonzalez,1999-09-05,Spanish,Female,2022-02-14,elena.gonzalez@student.edu\n\n{\'source\': \'courses\', \'row\': 4}\n105,Digital Signal Processing,2,6,5,Fall\n\n{\'source\': \'enrollments\', \'row\': 4}\n5,4,105,2020-08-25\n\n{\'source\': \'students\', \'row\': 3}\n4,Lucas,Schmidt,1997-03-18,German,Male,2020-08-25,lucas.schmidt@student.edu\n\n{\'source\': \'enrollments\', \'row\': 8}\n9,4,110,2020-08-25\n\n{\'source\': \'enrollments\', \'row\': 7}\n8,3,110,2021-01-10\n\n{\'source\': \'students\', \'row\': 2}\n3,Sophie,Durand,2000-07-30,French,Female,2021-01-10,sophie.durand@student.edu.\n\nThe students enrolled in Human-Computer Interaction or Digital Signal Processing are:\n\n"answer": ["Elena Gonzalez", "Lucas Schmidt"],\n"why": [\n    "{{courses_9,enrollments_6,students_4}",\n    "{{courses_4,enrollments_4,students_3}"\n]'} 
+
+
+----Results 48---- 
+Question:which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'courses\', \'row\': 1}\n102,Database Systems,1,6,2,Spring\n\n{\'source\': \'exams\', \'row\': 1}\n2,102,2023-02-15,14:00,2\n\n{\'source\': \'courses\', \'row\': 5}\n106,Software Engineering,1,6,4,Spring\n\n{\'source\': \'exams\', \'row\': 4}\n5,106,2023-05-30,13:00,5.\n\nThe courses with an exam scheduled at 13.00 or 14.00 hours are:\n\n"answer": ["Software Engineering", "Database Systems"],\n"why": [\n    "{{courses_5,exams_4}}",\n    "{{courses_1,exams_1}}"\n]\n\nExplanation:\n- Software Engineering has an exam scheduled at 13:00 ({{courses_5,exams_4}})\n- Database Systems has an exam scheduled at 14:00 ({{courses_1,exams_1}})'} 
+
+
+----Results 49---- 
+Question:Which are the classrooms (room number) in Science or Electronics building? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'classrooms\', \'row\': 2}\n3,Science,201,40\n\n{\'source\': \'classrooms\', \'row\': 5}\n6,Electronics,401,30.\n\nThe question is: Which are the classrooms (room number) in Science or Electronics building?\n\nAnswer:\n"answer": ["201", "401"],\n"why": [\n    "{{classrooms_2,classrooms_5}}"\n]\n\nExplanation:\n\n* The classroom with room number 201 belongs to the Science building.\n* The classroom with room number 401 belongs to the Electronics building.\n\nThe witness set is a combination of the two input tuples, one for each classroom.'} 
+
+

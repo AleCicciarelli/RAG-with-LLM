@@ -1,0 +1,245 @@
+----Results 1---- 
+Question:Which is the email of Giulia Rossi? 
+Answer:{'answer': 'Based on the given context, the email of Giulia Rossi is "giulia.rossi@student.edu". The witness set for this answer is "{{students\\_0}}", which indicates that this information comes from the first row of the \'students\' source.\n\n```json\n{\n  "answer": ["giulia.rossi@student.edu"],\n  "why": [\n    "{{students_0}}"\n  ]\n}\n```'} 
+
+
+----Results 2---- 
+Question:Which is the name of the department where the teacher Laura Bianchi teaches? 
+Answer:{'answer': 'Answer: ["Engineering"]\n Why: [ "[{\'source\': \'departments\', \'row\':'} 
+
+
+----Results 3---- 
+Question:How many credits has the course Software Engineering? 
+Answer:{'answer': 'Based on the given context, the course Software Engineering is in the 5th row of the \'courses\' source. The number of credits for this course can be found in the 4th column of the same row. Therefore, the answer to "How many credits has the course Software Engineering?" is:\n\n```json\n{\n    "answer": ["6"]\n}\n```\n\nThe witness set for this answer is:\n\n```json\n"why": [\n    "{{courses_5}}"\n]\n```'} 
+
+
+----Results 4---- 
+Question:What is the name of building in which there is the class with room number 401? 
+Answer:{'answer': 'Based on the given context, the answer to the question "What is the name of the building in which there is the class with room number 401?" is:\n\n```json\n"answer": ["classrooms"],\n"why": [\n    "{{classrooms_5}}"\n]\n```\n\nExplanation:\nThe context contains a tuple from a hypothetical `classrooms.csv` file, where the source field is set to `\'classrooms\'`, and the row field is 5. This tuple provides information about a class held in room number 401. Since this information comes from the `classrooms` table, it implies that the building name can be obtained from the same table, which is why the answer is `"answer": ["classrooms"]`. The witness set for this answer is `"{{classrooms_5}}"`, indicating that the specific tuple at row 5 of the `classrooms` table provides justification for this answer.'} 
+
+
+----Results 5---- 
+Question:In which semester is done the Cybersecurity course? 
+Answer:{'answer': '{\n\t\t"answer": ["Fall"],'} 
+
+
+----Results 6---- 
+Question:In which classroom (room number) is the Database Systems exam? 
+Answer:{'answer': '[\n    "102"\n],\n"why": [\n    "{{exams_1, courses_1, classrooms_1}}"\n]\n\nExplanation:\nThe \'exams\' table (row 1) tells us that the Database Systems exam is held in room 102. This information is contained in the \'classrooms\' table (row 1), which associates room number 102 with building Main and capacity 60. The fact that this is indeed the correct room for the Database Systems exam is confirmed by the \'courses\' table (row 1), which lists room 102 as the location for the Database Systems course.'} 
+
+
+----Results 7---- 
+Question:In which research area is the 'User Experience Design in Web Apps' thesis? 
+Answer:{'answer': '{\n    "answer": ["Human-Computer Interaction"],\n    "why": [\n        "{{thesis_4}}"\n    ]\n}'} 
+
+
+----Results 8---- 
+Question:Which instructor (name, surname) teaches Machine Learning course? 
+Answer:{'answer': 'Based on the given context, the answer to the question "Which instructor (name, surname) teaches Machine Learning course?" is:\n\n{\n"answer": ["Carlo Rossi"],\n"why": [\n"{{teachers\\_0, courses\\_1}}"\n]\n}\n\nExplanation:\nThe context contains two dictionaries, one for \'courses\' and another for \'teachers\'. The \'courses\' dictionary has an entry for \'Machine Learning\' course with course id 1. The \'teachers\' dictionary also has an entry at row 0, which corresponds to the instructor named \'Carlo\' with the surname \'Rossi\' and teacher id 1. Since the course id for \'Machine Learning\' is also 1, we can infer that Carlo Rossi teaches the Machine Learning course.'} 
+
+
+----Results 9---- 
+Question:Which is the research area of the teacher Carlo Rossi? 
+Answer:{'answer': 'Based on the given context, the research area of the teacher Carlo Rossi is Artificial Intelligence. The witness set for this answer is {{teacherResearchAreas\\_0}}.\n\nHere\'s the expected response in stringified JSON array format:\n\n`{"answer":["Artificial Intelligence"],"why":["{{teacherResearchAreas_0}}"]}`'} 
+
+
+----Results 10---- 
+Question:How many research project follows the teacher Giulia Colombo? 
+Answer:{'answer': 'Based on the given context, the answer to "How many research projects follow the teacher Giulia Colombo?" is:\n\n```json\n{"answer": [1 ],"why": ["{{teachers_5,teacherResearchAreas_5}}"]}\n```\n\nExplanation:\n\nThe `teachers` table contains a row (row 5) with the name "Giulia Colombo". This information is used as one part of the witness set. The other part of the witness set comes from the `teacherResearchAreas` table, where there is a row (also row 5) that associates research area ID 5 with the teacher in row 5 of the `teachers` table. Since this teacher\'s name is "Giulia Colombo", and since she has at least one associated research project (research area ID 5), the answer is 1.\n\nThe witness set for this answer consists of the two rows from the context: `{teachers_5, teacherResearchAreas_5}`.'} 
+
+
+----Results 11---- 
+Question:When is the Machine Learning exam (date,time)? 
+Answer:{'answer': '"answer": ["2023-01-10 09:0'} 
+
+
+----Results 12---- 
+Question:In which courses (name of courses) Giulia Rossi is enrolled? 
+Answer:{'answer': 'Answer: ["Machine Learning"]\nWhy: \n"{{courses_0, enrollments_0, students_0}}"\n\nExplanation: The answer is based on the information from the \'courses\', \'enrollments\', and \'students\' tables. Specifically, the course with ID 101 (Machine Learning) in the first row of the \'courses\' table has a student with ID 1 enrolled, as shown in the first row of the \'enrollments\' table. The \'students\' table then confirms that this student is named Giulia Rossi. Therefore, the witness set includes all three tables to justify why Giulia Rossi is enrolled in the Machine Learning course.'} 
+
+
+----Results 13---- 
+Question:What is the grade of Giulia Rossi for the Machine Learning course? 
+Answer:{'answer': '[\n   {\n      "answer": "6",\n      "why": "{{grades_0}}"\n   },\n   {\n      "answer": "Giulia Rossi",\n      "why": "{{students_0}}"\n   },\n   {\n      "answer": "Machine Learning",\n      "why": "{{courses_0}}"\n   }\n]'} 
+
+
+----Results 14---- 
+Question:Who is the teacher (name,surname) following Sophie Durand in her thesis? 
+Answer:{'answer': 'Answer: ["Luca Esposito"]\n Why: [{"thesis_2","teachers_8"}]'} 
+
+
+----Results 15---- 
+Question:What are all the courses (name of courses) offered by the Computer Science department? 
+Answer:{'answer': '```json\n[\n    {\n        "answer": ["Machine Learning", "Database Systems", "Advanced Algorithms", "Software Engineering", "Data Mining", "Artificial Intelligence", "Cybersecurity", "Human-Computer Interaction"],\n        "why": [\n            "{{courses_0}}",\n            "{{courses_1}}",\n            "{{courses_3}}",\n            "{{courses_5}}",\n            "{{courses_6}}",\n            "{{courses_7}}",\n            "{{courses_8}}",\n            "{{courses_9}}"\n        ]\n    }\n]\n```\nExplanation:\nThe context contains information about different courses offered by the Computer Science department. The course details are provided in multiple rows of the \'courses\' table. By analyzing all the rows from the \'courses\' table, we can extract the course names as they are present in each row\'s \'course\\_name\' field. This is why the answer array contains all the course names found in the given context.'} 
+
+
+----Results 16---- 
+Question:What is the name of the department in which Antonio Gallo teaches? 
+Answer:{'answer': '[\n    "Engineering"\n],\n"why": [\n    "{{teachers_4, departments_1}}"\n]\n\nExplanation:\nThe \'teachers\' table row (4) contains the name and surname of the teacher in question, Antonio Gallo. The \'department\\_id\' field for this teacher is 2, which corresponds to the \'Electronics\' department in the \'departments\' table row (1). Therefore, Antonio Gallo teaches in the Electrical Engineering department.'} 
+
+
+----Results 17---- 
+Question:What is the grade of Elena Gonzales for the Human-Computer Interaction exam? 
+Answer:{'answer': 'Answer: ["26"]\nWhy: "[{\'source\': \'grades\', \'row\': 6}]"\nExplanation: The \'grades\' table has a row (with index 6) that contains the grade (26) for student Elena Gonzales in the Human-Computer Interaction course, as indicated by the values 110 for course\\_id and 5 for student\\_id.'} 
+
+
+----Results 18---- 
+Question:Which faculty does the Electronics department belong to? 
+Answer:{'answer': '{\n    "answer": ["Engineering"],\n    "why": [\n        "{{departments_1}}"\n    ]\n}'} 
+
+
+----Results 19---- 
+Question:What is the name of the building in which will be the Embedded Systems exam? 
+Answer:{'answer': 'Based on the given context, the answer to the question "What is the name of the building in which will be the Embedded Systems exam?" is:\n\n```json\n{\n  "answer": ["3"],\n  "why": [\n    "{{exams_2, classrooms_2}}"\n  ]\n}\n```\n\nExplanation:\n\nThe `classrooms` table in row 2 has a value of \'3\' for its building number. This is associated with the Embedded Systems exam through the `exams` table in row 2, which lists \'3\' as the building number for the Embedded Systems exam on March 20, 2023 at 10:00. The `courses` table is not necessary to determine the answer to this question.'} 
+
+
+----Results 20---- 
+Question:What is the title of the thesis followed by Alessandro Moretti? 
+Answer:{'answer': 'Based on the given context, the title of Alessandro Moretti\'s thesis is "User Experience Design in Web Apps". The witness set for this answer is {{thesis\\_4}}. This is because the \'source\' field in the context indicates that the relevant data is contained in the \'thesis\' table, and the \'row\' field specifies that it is row 4. Row 4 of the thesis table contains the title of Alessandro Moretti\'s thesis.'} 
+
+
+----Results 21---- 
+Question:Which students (name,surname) have an enrollment date before 2022? 
+Answer:{'answer': '[\n    "Sophie Durand",\n    "Lucas Schmidt"\n],\n"why": [\n    "{{students_2}}"\n]\n}\n\nExplanation:\nThe answer is "Sophie Durand, Lucas Schmidt" because those are the students specified in the given context. The witness set for this answer is {{students\\_2}} and {{students\\_3}}, which indicate that the information about Sophie\'s and Lucas\' enrollment dates comes from rows 2 and 3 of the "students" table in the context, respectively.'} 
+
+
+----Results 22---- 
+Question:What is the faculty of the Chemistry department? 
+Answer:{'answer': '{\n\t\t"answer": ["Science"],'} 
+
+
+----Results 23---- 
+Question:Which are the students (name,surname) enrolled in the Database Systems course? 
+Answer:{'answer': 'Based on the given context, the students enrolled in the Database Systems course are Marco Bianchi. The witness set for this answer is {{students\\_1, enrollments\\_1, courses\\_1}}.\n\nHere is the output in the required format:\n\n```json\n{\n  "answer": ["Marco Bianchi"],\n  "why": [\n    "{{students_1, enrollments_1, courses_1}}"\n  ]\n}\n```\n\nExplanation of the witness set:\n\n* students\\_1: This is the row in the `students` table that contains the information about Marco Bianchi. The `enrollment_time` field in this row matches the `enrollment_time` field in the `enrollments` table (row 1), which indicates that Marco Bianchi was enrolled in a course at this time.\n* enrollments\\_1: This is the row in the `enrollments` table that contains the information about a student being enrolled in a course at a specific time. The `course_id` field in this row is 102, which matches the `course_id` field in the `courses` table (row 1), indicating that this is the Database Systems course.\n* courses\\_1: This is the row in the `courses` table that contains the information about the Database Systems course. The `course_id` field in this row is 102, which matches the `course_id` field in the `enrollments` table (row 1), indicating that this is indeed the Database Systems course.\n\nTherefore, we can conclude that Marco Bianchi is enrolled in the Database Systems course.'} 
+
+
+----Results 24---- 
+Question:What are the research areas of Maria Ferrari? 
+Answer:{'answer': '{\n\t\t"answer": ["Human-Computer Interaction"],'} 
+
+
+----Results 25---- 
+Question:How many research projects are led by Laura Bianchi? 
+Answer:{'answer': 'Answer: ["1"]\n Why: [ "[{teachers_1}]" ]\n Explanation: The row from the \'teachers\' source with index 1 (indicated by \'row\': 1) contains the name "Laura" and surname "Bianchi", which matches the person mentioned in the question. This row also contains a value "1" in the third column, indicating that this is the ID of the research project led by this person. However, there is no information provided about other research projects or their leaders, so we can only conclude that one project is led by Laura Bianchi.'} 
+
+
+----Results 26---- 
+Question:Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction? 
+Answer:{'answer': '[\n    "{\\"grades_7\\", \\"students_2\\"}"\n]\nExplanation:\nThe grades table with row 7 contains the student ID (110) and a grade of 28 in Human-Computer Interaction. The students table with row 2 has the student information for student ID 110, whose name is Sophie Durand. Therefore, Sophie Durand had a grade of 28 in Human-Computer Interaction.'} 
+
+
+----Results 27---- 
+Question:Which are the classrooms (room number) in the Engineering building? 
+Answer:{'answer': '[\n{"answer": ["301"], "why": ["{{classrooms_3}}"]},\n{"answer": ["302"], "why": ["{{classrooms_4}}"]}\n]'} 
+
+
+----Results 28---- 
+Question:What is the day and time of the Software Engineering exam? 
+Answer:{'answer': '{\n    "answer": ["2023-05-30 13:00:00"],\n    "why": [\n        "{{exams_4}}"\n    ]\n}\n\nExplanation:\nThe exam information is stored in the \'exams\' table, and the row that contains the Software Engineering course details is \'5\'. The context provides us with the exam date (2023-05-30) and time (13:00) for this row. Therefore, the Software Engineering exam will take place on May 30th, 2023, at 13:00.'} 
+
+
+----Results 29---- 
+Question:Which courses (name of courses) have 8 credits? 
+Answer:{'answer': '[\n\t\t"{\\{\'courses\'_3\\}}\\nWitness Set contains the row 3 from courses table which has \'Advanced Algorithms\' with 8 credits."\n\t]'} 
+
+
+----Results 30---- 
+Question:What is the title of the thesis of Sophie Durand? 
+Answer:{'answer': '"answer": ["IoT Security Challenges"],\n        "why": ["{{thesis_2}}"]'} 
+
+
+----Results 31---- 
+Question:Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses? 
+Answer:{'answer': 'Based on the given context, the students enrolled in Machine Learning or Advanced Algorithm courses are:\n\n```json\n{\n  "answer": ["Giulia Rossi", "Marco Bianchi"],\n  "why": [\n    "{{courses_0, enrollments_0, students_0}}",\n    "{{courses_3, enrollments_3, students_0}}",\n    "{{courses_0, enrollments_9, students_1}}"\n  ]\n}\n```\n\nExplanation:\n\n1. Giulia Rossi is enrolled in the Machine Learning course (course\\_id 101) as per the enrollment data in `enrollments_0` and her student information is available in `students_0`.\n2. Marco Bianchi is enrolled in the Machine Learning course (course\\_id 101) as per the enrollment data in `enrollments_9` and his student information is available in `students_1`.\n3. Although not explicitly mentioned, it can be inferred that there are no other courses offered with IDs 101 or 104, so all students enrolled in these courses should be included.'} 
+
+
+----Results 32---- 
+Question:Which courses (name of the courses) have 6 credits? 
+Answer:{'answer': '[\n  "Machine Learning",\n  "Database Systems",\n  "Embedded Systems",\n  "Software Engineering",\n  "Data Mining",\n  "Cybersecurity",\n  "Human-Computer Interaction"\n]\n\nWitness Sets:\n[\n  "[{\'source\': \'courses\', \'row\': 0}]",\n  "[{\'source\': \'courses\', \'row\': 1}]",\n  "[{\'source\': \'courses\', \'row\': 2}]",\n  "[{\'source\': \'courses\', \'row\': 5}]",\n  "[{\'source\': \'courses\', \'row\': 8}]",\n  "[{\'source\': \'courses\', \'row\': 9}]",\n  "[{\'source\': \'courses\', \'row\': 6}]"\n]\n\nExplanation: The courses with 6 credits are identified by the second element in each row being equal to 6. The above answer lists all courses that have 6 credits, and the witness sets justify which input tuples contribute to this result.'} 
+
+
+----Results 33---- 
+Question:Which students (name, surname) enrolled in 2020? 
+Answer:{'answer': 'JSON stringified array:\n\n[\n\t{"answer": "Lucas Schmidt", "why": "[{students_3}]"}\n]'} 
+
+
+----Results 34---- 
+Question:Which classrooms (room number) are located in the Main building? 
+Answer:{'answer': 'Answer: ["101","102"]\n Why: [{"classrooms": "0"}, {"classrooms": "1"}]'} 
+
+
+----Results 35---- 
+Question:Which departments (departments name) are in the Science faculty? 
+Answer:{'answer': 'Based on the given context, the departments in the Science faculty are Mathematics, Physics, Biology, and Chemistry. Here is the JSON response explaining why each department is included:\n```json\n{\n  "answer": ["Mathematics", "Physics", "Biology", "Chemistry"],\n  "why": [\n    "{{departments_2}}",\n    "{{departments_3}}",\n    "{{departments_4}}",\n    "{{departments_5}}"\n  ]\n}\n```\nExplanation:\n\n* The first department, Mathematics, is included because the row 2 of the `departments` table has a value in the `row` field of 2 and contains the values `3`, `Mathematics`, and `Science`.\n* Similarly, Physics (row 4), Biology (row 5), and Chemistry (row 6) are included because they appear in rows 3, 4, and 5 of the `departments` table, respectively.'} 
+
+
+----Results 36---- 
+Question:Which thesis (title) have the status completed? 
+Answer:{'answer': '{\n"answer": [\n"Deep Learning for Image Recognition",\n"IoT Security Challenges",\n"Autonomous Systems"\n],\n"why": [\n"{{thesis_1}}",\n"{{thesis_2}}",\n"{{thesis_3}}"\n]\n}'} 
+
+
+----Results 37---- 
+Question:What are the names of the courses taught by Laura Bianchi? 
+Answer:{'answer': 'Based on the given context, the name of the course taught by Laura Bianchi is "Database Systems". The witness set for this answer is {{teachers\\_1, courses\\_1}}. This means that the information about Laura Bianchi being a teacher (from row 1 in the \'teachers\' table) and the information about "Database Systems" being one of the courses taught by a teacher in row 1 (from the \'courses\' table) together contribute to this answer.'} 
+
+
+----Results 38---- 
+Question:Which courses (name of courses) are taught in the Fall semester? 
+Answer:{'answer': '[\n    {"answer": "Machine Learning", "why": "{{courses_0}}"},\n    {"answer": "Embedded Systems", "why": "{{courses_2}}"},\n    {"answer": "Digital Signal Processing", "why": "{{courses_4}}"},\n    {"answer": "Data Mining", "why": "{{courses_6}}"},\n    {"answer": "Cybersecurity", "why": "{{courses_8}}"}\n]'} 
+
+
+----Results 39---- 
+Question:Which courses (name of courses) are taught in the Spring semester? 
+Answer:{'answer': '[\n    "Database Systems",\n    "Software Engineering",\n    "Artificial Intelligence",\n    "Human-Computer Interaction"\n],\n"why": [\n    "{{courses_1}}",\n    "{{courses_5}}",\n    "{{courses_8}}",\n    "{{courses_11}}"\n]'} 
+
+
+----Results 40---- 
+Question:Which teachers (name, surname) are part of the Electronics department? 
+Answer:{'answer': 'Based on the given context, the teachers who are part of the Electronics department in the Engineering faculty are Marco Verdi and Antonio Gallo. The answer can be derived from the following witness sets:\n\n- For Marco Verdi: {(\'teachers\', 2)}\n- For Antonio Gallo: {(\'teachers\', 4)}\n\nThe \'teachers\' table rows 2 and 4 contain the names of the teachers who belong to department 2, which is Electronics in the Engineering faculty according to {\'source\': \'departments\', \'row\': 1}. Therefore, Marco Verdi and Antonio Gallo are part of the Electronics department.\n\nSo, the answer in the required format is:\n\n[\n  "Marco Verdi",\n  "Antonio Gallo"\n]'} 
+
+
+----Results 41---- 
+Question:Which thesis (title) have the status in progress? 
+Answer:{'answer': '[\n    "{\\"thesis_1\\",\\"thesis_4\\"}"\n]\nExplanation: The answer is "{\\"thesis_1\\",\\"thesis_4\\"}". According to the context, there are two rows of data for the source \'thesis\'. In row 1, the status is \'In Progress\' and in row 4, the status is also \'In Progress\'. Therefore, based on the question "Which thesis have the status in progress?", the witnesses sets are {{\'thesis_1\'}} and {{\'thesis_4\'}}, which justify that these two theses have the status \'In Progress\'.'} 
+
+
+----Results 42---- 
+Question:Which teachers (name, surname) are part of the Computer Science department? 
+Answer:{'answer': '[\n  \t"answer": [\n    \t"Carlo Rossi",\n\t"Laura Bianchi",\n\t"Elisa Neri",\n\t"Giulia Colombo",\n\t"Francesco Conti",\n\t"Alessandro Moretti",\n\t"Luca Esposito",\n\t"Maria Ferrari"\n  \t],\n  \t"why": [\n    \t"{{teachers_1, departments_0}}",\n\t"{{teachers_2, departments_0}}",\n\t"{{teachers_4, departments_0}}",\n\t"{{teachers_5, departments_0}}",\n\t"{{teachers_6, departments_0}}",\n\t"{{teachers_7, departments_0}}",\n\t"{{teachers_8, departments_0}}",\n\t"{{teachers_9, departments_0}}"\n  \t]\n\t]'} 
+
+
+----Results 43---- 
+Question:Which Students (name, surname) are Italian? 
+Answer:{'answer': '[\n    "{\\"source\\":\\"students\\",\\"row\\":0}"\n]\n\nThe witness set for this answer is:\n{\n"students_0"\n}\n\nThis means that the information to determine that the student in row 0 of the \'students\' table is Italian is contained solely within that row. The \'nationality\' field for that row has the value \'Italian\'.'} 
+
+
+----Results 44---- 
+Question:Which are the Male students (name, surname) enrolled in the university? 
+Answer:{'answer': '[\n    {\n        "answer": ["Marco Bianchi"],\n        "why": [\n            "{{students_1}}"\n        ]\n    },\n    {\n        "answer": ["Lucas Schmidt"],'} 
+
+
+----Results 45---- 
+Question:Which are the Female students (name, surname) enrolled in the university in the course with course_id 110? 
+Answer:{'answer': '[\n"Sophie Durand",\n"Elena Gonzalez"\n],\n"why": [\n"{{students\\_2, enrollments\\_7}}",\n"{{students\\_2, enrollments\\_6}}"\n]\n}\n\nExplanation:\nThe answer consists of the names and surnames of the female students with the course\\_id 110. The system found two such students: Sophie Durand and Elena Gonzalez.\n\nWitness Sets:\n\n* For Sophie Durand, the Witness Set is {{students\\_2, enrollments\\_7}} because the tuple in \'students\' with row number 2 contains her personal information, including her gender (Female), and the tuple in \'enrollments\' with row number 7 shows that she is enrolled in a course with course\\_id 110.\n* For Elena Gonzalez, the Witness Set is {{students\\_2, enrollments\\_6}} because the tuple in \'students\' with row number 4 contains her personal information, including her gender (Female), and the tuple in \'enrollments\' with row number 6 shows that she is enrolled in a course with course\\_id 110.'} 
+
+
+----Results 46---- 
+Question:Which are all the grades obtained by the student Sophie Durand? 
+Answer:{'answer': "Based on the given context, the grades obtained by the student Sophie Durand can be found in the 'grades' table with row number 2. Therefore, the correct answer is:\n\n[3, 3, 30]\n\nThe witness set for this answer is:\n{{'source': 'grades', 'row': 2}}"} 
+
+
+----Results 47---- 
+Question:Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing 
+Answer:{'answer': 'Answer: [\n"Elena Gonzalez",\n"Sophie Durand"\n]\nWhy: [\n"{{students_4, enrollments_6, courses_9}}",\n"{{students_3, enrollments_8, courses_9}}"\n]'} 
+
+
+----Results 48---- 
+Question:which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours? 
+Answer:{'answer': '[\n{\n"answer": ["Database Systems"],\n"why": [\n"{{exams_1,courses\\_1}}"\n]\n},\n{\n"answer": ["Software Engineering"],\n"why": [\n"{{exams_4,courses\\_5}}"\n]\n}\n]'} 
+
+
+----Results 49---- 
+Question:Which are the classrooms (room number) in Science or Electronics building? 
+Answer:{'answer': 'Based on the given context, the classrooms for the Science building are in row 2 of the source \'classrooms\', so the classroom is in the third element of that row:\n\n"answer": ["201"],\n"why": [\n"{{classrooms_2}}"\n]\n\nSimilarly, the classrooms for the Electronics building are in the fourth element of row 5 of the \'classrooms\' source:\n\n"answer": ["401"],\n"why": [\n"{{classrooms_5}}"\n]\n\nThe witness sets only include the relevant rows from the \'classrooms\' source, as they are the minimal sets of input tuples that justify the result.'} 
+
+
