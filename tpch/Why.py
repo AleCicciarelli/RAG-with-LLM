@@ -320,7 +320,7 @@ for i, question in enumerate(questions):
  
     result = {
         "question": question,
-        "answer": full_result,
+        "answer": full_result.get("answer", []),
     }
     all_results.append(result)
 
