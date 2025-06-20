@@ -1,0 +1,245 @@
+----Results 1---- 
+Question:Which is the email of Giulia Rossi? 
+Answer:{'answer': 'giulia.rossi@student.edu'} 
+
+
+----Results 2---- 
+Question:Which is the name of the department where the teacher Laura Bianchi teaches? 
+Answer:{'answer': 'Computer Science'} 
+
+
+----Results 3---- 
+Question:How many credits has the course Software Engineering? 
+Answer:{'answer': "Based on the given context: {'source': 'courses', 'row': 5}, I can answer that the course Software Engineering has 4 credits."} 
+
+
+----Results 4---- 
+Question:What is the name of building in which there is the class with room number 401? 
+Answer:{'answer': 'Electronics'} 
+
+
+----Results 5---- 
+Question:In which semester is done the Cybersecurity course? 
+Answer:{'answer': "Based on the given context {'source': 'courses', 'row': 8}, I can see that the course_id for Cybersecurity is 109, and the semester is Fall. Therefore, my answer is:\n\nFall"} 
+
+
+----Results 6---- 
+Question:In which classroom (room number) is the Database Systems exam? 
+Answer:{'answer': "Based on the given context:\n\n{'source': 'classrooms', 'row': 1}\n2,Main,102,60\n\n{'source': 'courses', 'row': 1}\n102,Database Systems,1,6,2,Spring\n\n{'source': 'exams', 'row': 1}\n2,102,2023-02-15,14:00,2.\n\nThe Database Systems exam is in room number **102**."} 
+
+
+----Results 7---- 
+Question:In which research area is the 'User Experience Design in Web Apps' thesis? 
+Answer:{'answer': 'Human-Computer Interaction.'} 
+
+
+----Results 8---- 
+Question:Which instructor (name, surname) teaches Machine Learning course? 
+Answer:{'answer': 'Carlo Rossi'} 
+
+
+----Results 9---- 
+Question:Which is the research area of the teacher Carlo Rossi? 
+Answer:{'answer': "Based on the given context:\n\n{'source': 'teachers', 'row': 0}\n1,Carlo,Rossi,1,c.rossi@university.edu\n\n{'source': 'teacherResearchAreas', 'row': 0}\n1,Artificial Intelligence,5.\n\nThe research area of the teacher Carlo Rossi is Artificial Intelligence."} 
+
+
+----Results 10---- 
+Question:How many research project follows the teacher Giulia Colombo? 
+Answer:{'answer': "Based on the given context:\n\n{'source': 'teachers', 'row': 5}\n6,Giulia,Colombo,1,g.colombo@university.edu\n\nAnd the fact that there is only one research project associated with Giulia Colombo, I can answer your question as follows:\n\nHow many research project follows the teacher Giulia Colombo?\n\nAnswer: 1"} 
+
+
+----Results 11---- 
+Question:When is the Machine Learning exam (date,time)? 
+Answer:{'answer': '2023-01-10,09:00'} 
+
+
+----Results 12---- 
+Question:In which courses (name of courses) Giulia Rossi is enrolled? 
+Answer:{'answer': 'Based on the given context, Giulia Rossi is enrolled in the course named "Machine Learning".'} 
+
+
+----Results 13---- 
+Question:What is the grade of Giulia Rossi for the Machine Learning course? 
+Answer:{'answer': '28'} 
+
+
+----Results 14---- 
+Question:Who is the teacher (name,surname) following Sophie Durand in her thesis? 
+Answer:{'answer': 'Luca Esposito'} 
+
+
+----Results 15---- 
+Question:What are all the courses (name of courses) offered by the Computer Science department? 
+Answer:{'answer': "Based on the given context:\n\n{'source': 'courses', 'row': 0}\n101,Machine Learning,1,6,1,Fall\n\n{'source': 'courses', 'row': 3}\n104,Advanced Algorithms,1,8,4,Spring\n\nThe courses offered by the Computer Science department are:\n\n* Machine Learning\n* Database Systems\n* Advanced Algorithms\n* Software Engineering\n* Data Mining\n* Artificial Intelligence\n* Cybersecurity\n* Human-Computer Interaction"} 
+
+
+----Results 16---- 
+Question:What is the name of the department in which Antonio Gallo teaches? 
+Answer:{'answer': 'Engineering'} 
+
+
+----Results 17---- 
+Question:What is the grade of Elena Gonzales for the Human-Computer Interaction exam? 
+Answer:{'answer': '26'} 
+
+
+----Results 18---- 
+Question:Which faculty does the Electronics department belong to? 
+Answer:{'answer': 'Engineering.'} 
+
+
+----Results 19---- 
+Question:What is the name of the building in which will be the Embedded Systems exam? 
+Answer:{'answer': 'Science'} 
+
+
+----Results 20---- 
+Question:What is the title of the thesis followed by Alessandro Moretti? 
+Answer:{'answer': 'User Experience Design in Web Apps'} 
+
+
+----Results 21---- 
+Question:Which students (name,surname) have an enrollment date before 2022? 
+Answer:{'answer': "Based on the given context:\n\n{'source': 'students', 'row': 2}\n3,Sophie,Durand,2000-07-30,French,Female,2021-01-10,sophie.durand@student.edu\n\n{'source': 'students', 'row': 3}\n4,Lucas,Schmidt,1997-03-18,German,Male,2020-08-25,lucas.schmidt@student.edu.\n\nThe students with an enrollment date before 2022 are:\n\nSophie Durand"} 
+
+
+----Results 22---- 
+Question:What is the faculty of the Chemistry department? 
+Answer:{'answer': "Based on the given context: {'source': 'departments', 'row': 5}, I can answer:\n\nThe faculty of the Chemistry department is: Science."} 
+
+
+----Results 23---- 
+Question:Which are the students (name,surname) enrolled in the Database Systems course? 
+Answer:{'answer': 'Marco Bianchi'} 
+
+
+----Results 24---- 
+Question:What are the research areas of Maria Ferrari? 
+Answer:{'answer': 'Human-Computer Interaction'} 
+
+
+----Results 25---- 
+Question:How many research projects are led by Laura Bianchi? 
+Answer:{'answer': "Based on the given context:\n\n{'source': 'teachers', 'row': 1}\n2,Laura,Bianchi,1,l.bianchi@university.edu\n\nThe answer is:\n\n1"} 
+
+
+----Results 26---- 
+Question:Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction? 
+Answer:{'answer': 'Sophie Durand'} 
+
+
+----Results 27---- 
+Question:Which are the classrooms (room number) in the Engineering building? 
+Answer:{'answer': '301,302'} 
+
+
+----Results 28---- 
+Question:What is the day and time of the Software Engineering exam? 
+Answer:{'answer': "Based on the given context:\n\n{'source': 'courses', 'row': 5}\n106,Software Engineering,1,6,4,Spring\n\n{'source': 'exams', 'row': 4}\n5,106,2023-05-30,13:00,5.\n\nThe day and time of the Software Engineering exam is:\n\nTuesday, May 30th, 1:00 PM"} 
+
+
+----Results 29---- 
+Question:Which courses (name of courses) have 8 credits? 
+Answer:{'answer': "Based on the given context {'source': 'courses', 'row': 3}, I can see that the course has 8 credits. Therefore, the answer is:\n\nAdvanced Algorithms"} 
+
+
+----Results 30---- 
+Question:What is the title of the thesis of Sophie Durand? 
+Answer:{'answer': 'IoT Security Challenges'} 
+
+
+----Results 31---- 
+Question:Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses? 
+Answer:{'answer': 'Based on the given context, the students enrolled in Machine Learning or Advanced Algorithm courses are:\n\n* Giulia Rossi (enrolled in course 101 - Machine Learning)\n* Marco Bianchi (enrolled in course 101 - Machine Learning)\n\nSo, the expected response is: Giulia Rossi, Marco Bianchi'} 
+
+
+----Results 32---- 
+Question:Which courses (name of the courses) have 6 credits? 
+Answer:{'answer': 'Based on the given context, the courses with 6 credits are:\n\n* Machine Learning (course_id:101)\n* Database Systems (course_id:102)\n* Embedded Systems (course_id:103)\n* Digital Signal Processing (course_id:105)\n* Software Engineering (course_id:106)\n* Data Mining (course_id:107)\n* Cybersecurity (course_id:109)\n\nThese courses all have a credit value of 6.'} 
+
+
+----Results 33---- 
+Question:Which students (name, surname) enrolled in 2020? 
+Answer:{'answer': 'Lucas Schmidt'} 
+
+
+----Results 34---- 
+Question:Which classrooms (room number) are located in the Main building? 
+Answer:{'answer': '101 and 102.'} 
+
+
+----Results 35---- 
+Question:Which departments (departments name) are in the Science faculty? 
+Answer:{'answer': 'Mathematics, Physics, Biology, Chemistry.'} 
+
+
+----Results 36---- 
+Question:Which thesis (title) have the status completed? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'thesis\', \'row\': 0}\n1,Deep Learning for Image Recognition,1,1,2023-2024,Completed,Artificial Intelligence\n\n{\'source\': \'thesis\', \'row\': 2}\n3,IoT Security Challenges,3,9,2023-2024,Completed,Cybersecurity\n\n{\'source\': \'thesis\', \'row\': 3}\n4,Autonomous Systems,4,3,2021-2022,Completed,Robotics.\n\nThe thesis with the status "completed" are:\n\nDeep Learning for Image Recognition\nIoT Security Challenges\nAutonomous Systems'} 
+
+
+----Results 37---- 
+Question:What are the names of the courses taught by Laura Bianchi? 
+Answer:{'answer': "Based on the given context:\n\n{'source': 'courses', 'row': 1}\n102,Database Systems,1,6,2,Spring\n\nAnd:\n\n{'source': 'teachers', 'row': 1}\n2,Laura,Bianchi,1,l.bianchi@university.edu.\n\nThe answer is:\n\nDatabase Systems"} 
+
+
+----Results 38---- 
+Question:Which courses (name of courses) are taught in the Fall semester? 
+Answer:{'answer': "Based on the given context:\n\n{'source': 'courses', 'row': 0}\n101,Machine Learning,1,6,1,Fall\n\n{'source': 'courses', 'row': 2}\n103,Embedded Systems,2,6,3,Fall\n\n{'source': 'courses', 'row': 4}\n105,Digital Signal Processing,2,6,5,Fall\n\n{'source': 'courses', 'row': 6}\n107,Data Mining,1,6,6,Fall\n\n{'source': 'courses', 'row': 8}\n109,Cybersecurity,1,6,9,Fall\n\nThe courses taught in the Fall semester are:\n\nMachine Learning\nEmbedded Systems\nDigital Signal Processing\nData Mining\nCybersecurity"} 
+
+
+----Results 39---- 
+Question:Which courses (name of courses) are taught in the Spring semester? 
+Answer:{'answer': "Based on the given context:\n\n{'source': 'courses', 'row': 1}\n102,Database Systems,1,6,2,Spring\n\n{'source': 'courses', 'row': 3}\n104,Advanced Algorithms,1,8,4,Spring\n\n{'source': 'courses', 'row': 5}\n106,Software Engineering,1,6,4,Spring\n\n{'source': 'courses', 'row': 7}\n108,Artificial Intelligence,1,8,7,Spring\n\n{'source': 'courses', 'row': 9}\n110,Human-Computer Interaction,1,6,10,Spring.\n\nThe courses taught in the Spring semester are:\n\n* Database Systems\n* Advanced Algorithms\n* Software Engineering\n* Artificial Intelligence\n* Human-Computer Interaction"} 
+
+
+----Results 40---- 
+Question:Which teachers (name, surname) are part of the Electronics department? 
+Answer:{'answer': 'Marco Verdi'} 
+
+
+----Results 41---- 
+Question:Which thesis (title) have the status in progress? 
+Answer:{'answer': 'Based on the given context:\n\n{\'source\': \'thesis\', \'row\': 1}\n2,Big Data Processing,2,2,2022-2023,In Progress,Data Science\n\n{\'source\': \'thesis\', \'row\': 4}\n5,User Experience Design in Web Apps,5,8,2022-2023,In Progress,Human-Computer Interaction.\n\nThe thesis with the status "In Progress" is:\n\nBig Data Processing\nUser Experience Design in Web Apps'} 
+
+
+----Results 42---- 
+Question:Which teachers (name, surname) are part of the Computer Science department? 
+Answer:{'answer': 'Carlo Rossi'} 
+
+
+----Results 43---- 
+Question:Which Students (name, surname) are Italian? 
+Answer:{'answer': "Based on the given context:\n\n{'source': 'students', 'row': 0}\n1,Giulia,Rossi,1998-05-14,Italian,Female,2022-09-01,giulia.rossi@student.edu\n\n{'source': 'students', 'row': 1}\n2,Marco,Bianchi,1995-11-22,Italian,Male,2022-10-15,marco.bianchi@student.edu.\n\nThe students who are Italian are:\n\nGiulia Rossi\nMarco Bianchi"} 
+
+
+----Results 44---- 
+Question:Which are the Male students (name, surname) enrolled in the university? 
+Answer:{'answer': "Based on the given context:\n\n{'source': 'students', 'row': 1}\n2,Marco,Bianchi,1995-11-22,Italian,Male,2022-10-15,marco.bianchi@student.edu\n\n{'source': 'students', 'row': 3}\n4,Lucas,Schmidt,1997-03-18,German,Male,2020-08-25,lucas.schmidt@student.edu.\n\nThe Male students (name, surname) enrolled in the university are:\n\nMarco Bianchi"} 
+
+
+----Results 45---- 
+Question:Which are the Female students (name, surname) enrolled in the university in the course with course_id 110? 
+Answer:{'answer': "Based on the given context:\n\n{'source': 'enrollments', 'row': 7}\n8,3,110,2021-01-10\n\n{'source': 'students', 'row': 2}\n3,Sophie,Durand,2000-07-30,French,Female,2021-01-10,sophie.durand@student.edu\n\n{'source': 'enrollments', 'row': 6}\n7,5,110,2022-02-14\n\n{'source': 'students', 'row': 4}\n5,Elena,Gonzalez,1999-09-05,Spanish,Female,2022-02-14,elena.gonzalez@student.edu.\n\nThe Female students enrolled in the course with course_id 110 are:\n\nSophie Durand\nElena Gonzalez"} 
+
+
+----Results 46---- 
+Question:Which are all the grades obtained by the student Sophie Durand? 
+Answer:{'answer': "Based on the given context:\n\n{'source': 'grades', 'row': 2}\n3,3,103,30\n\nThe student Sophie Durand has obtained a grade of 3."} 
+
+
+----Results 47---- 
+Question:Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing 
+Answer:{'answer': 'Based on the given context, the students enrolled in Human-Computer Interaction or Digital Signal Processing are:\n\n* Elena Gonzalez (enrolled in course 110, Human-Computer Interaction)\n* Lucas Schmidt (enrolled in course 105, Digital Signal Processing)\n\nNote that Sophie Durand is not enrolled in either of these courses.'} 
+
+
+----Results 48---- 
+Question:which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours? 
+Answer:{'answer': "Based on the given context:\n\n{'source': 'courses', 'row': 1}\n102,Database Systems,1,6,2,Spring\n\n{'source': 'exams', 'row': 1}\n2,102,2023-02-15,14:00,2\n\n{'source': 'courses', 'row': 5}\n106,Software Engineering,1,6,4,Spring\n\n{'source': 'exams', 'row': 4}\n5,106,2023-05-30,13:00,5.\n\nThe courses with an exam scheduled at 13.00 or 14.00 hours are:\n\n* Software Engineering (exam time: 13:00)\n* Database Systems (exam time: 14:00)\n\nSo, the expected response is:\n\nSoftware Engineering"} 
+
+
+----Results 49---- 
+Question:Which are the classrooms (room number) in Science or Electronics building? 
+Answer:{'answer': '201, 401'} 
+
+
