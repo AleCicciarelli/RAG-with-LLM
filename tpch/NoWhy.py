@@ -28,7 +28,7 @@ os.environ["LANGSMITH_API_KEY"] = "lsv2_pt_87133982193d4e3b8110cb9e3253eb17_7831
 # MISTRAL by Groq
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
-llm = ChatOllama(model="llama3:70b", temperature=0)
+llm = ChatOllama(model="llama3:8b", temperature=0)
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
@@ -41,7 +41,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 csv_folder = "csv_data"
 faiss_index_folder = "faiss_index"
-output_filename = f"outputs_ollama_llama70b/no_why/outputs_llama70b_nowhyk10.json"
+output_filename = f"tpch/outputs_llama8b/no_why/outputs_llama8b_nowhyFC.json"
 
 # Verify if the FAISS files already exist
 if os.path.exists(faiss_index_folder):
@@ -81,39 +81,32 @@ prompt = PromptTemplate.from_template("""
         - Do NOT include introductory phrases, explanations or any dots at the end.
         EXAMPLE 1:
         CONTEXT:
-            - source: courses.csv, row: 0  
-            (course_id:101, course_name:Machine Learning, ...)  
-            - source: courses.csv, row: 3  
-            (course_id:104, course_name:Advanced Algorithms, ...)  
-            - source: enrollments.csv, row: 0  
-            (enrollment_id:1, student_id:1, course_id:101, ...)  
-            - source: enrollments.csv, row: 3  
-            (enrollment_id:4, student_id:1, course_id:104, ...)  
-            - source: enrollments.csv, row: 9  
-            (enrollment_id:10, student_id:2, course_id:101, ...)  
-            - source: students.csv, row: 0  
-            (student_id:1, name:Giulia, surname:Rossi, ...)  
-            - source: students.csv, row: 1  
-            (student_id:2, name:Marco, surname:Bianchi, ...)  
+        - source: customer.csv , row: 14322
+        (<col_a>:<val_a>,..., c_nationkey : 2, ...)
+        - source: orders.csv, row: 137
+        (o_orderkey : 546, ..., o_totalprice : 20531.43, ...)
+        - source: customer.csv, row: 101
+        (<col_a>:<val_c>, ...,<c_nationkey : 2, ...)
+        - source: orders.csv, row: 78528
+        (o_orderkey : 314052, ..., o_totalprice : 20548.82, ...)
 
-        QUESTION:  
-            "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
+        QUESTION:
+            "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?"
 
-        EXPECTED RESPONSE:
-            Giulia Rossi
-            Marco Bianchi  
+        EXPECTED ANSWER:
+             "546",
+             "314052"
         EXAMPLE 2:    
         CONTEXT:
-            - source: departments.csv, row: 0  
-            (department_id:1, department_name:Computer Science, faculty: Engineering, ...)  
-            - source: teachers.csv, row: 1
-            (teacher_id:2, name:Laura, surname: Bianchi, department_id: 1, ...)  
+            - source: suppliers.csv, row: 4
+            (..s_name: "Supplier#000000005",...,s_phone: "21-151-690-3663")
+           
 
         QUESTION:  
-            "Which is the name of the department where the teacher Laura Bianchi teaches?"
+            "What is the phone number of the supplier named 'Supplier#000000005'?"
 
         EXPECTED RESPONSE:
-            Computer Science
+            "21-151-690-3663"
 """
 )
 # Step 1: Define Explanation Class: composed by file and row
@@ -131,6 +124,7 @@ parser = JsonOutputParser(pydantic_schema=AnswerItem)
 
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
+'''
 def retrieve(state: State):
     print(f"Retrieving for question: {state['question']}")
     retrieved_docs = vector_store.similarity_search(state["question"], k = 10)
@@ -180,7 +174,7 @@ def get_rows_from_ground_truth(ground_f2: str, csv_folder: str) -> List[Document
                 print(f"⚠️ Errore nel parsing di '{entry}': {e}")
 
     return documents
-'''
+
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
 
@@ -206,7 +200,7 @@ def generate(state: State):
     #    parsed = None
 
     return {
-        "answer": response.strip()
+        "answer": response.content.strip()
     }
 
 
@@ -214,36 +208,36 @@ def generate(state: State):
 with open("questions.json", "r") as f:
     data = json.load(f)
     questions = list(data.keys())
-
+'''
 # Build the graph structure once
 graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
-
+'''
 all_results = []
-#with open("ground_truth2.json", "r", encoding="utf-8") as f:
-#    ground_truth = json.load(f)   
+with open("ground_truth2.json", "r", encoding="utf-8") as f:
+    ground_truth = json.load(f)   
 for i, question in enumerate(questions):
     print(f"Processing question n. {i+1}")
-    #gt = ground_truth[i]
-    #gt_source_info = gt["why"]
+    gt = ground_truth[i]
+    gt_source_info = gt["why"]
     
     # Step 2: Costruisci contesto perfetto a partire dalle righe vere
-    #context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="csv_data")
+    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="csv_data")
     
     print(f" Processing question n. {i+1}")
-    full_result = graph.invoke({"question": question})
+    #full_result = graph.invoke({"question": question})
     
-    #state = {
-    #    "question": question,
-    #    "context": context_docs
-    #}
+    state = {
+        "question": question,
+        "context": context_docs
+    }
     
-    #full_result = generate(state)
+    full_result = generate(state)
  
     result = {
         "question": question,
-        "answer": full_result,
+        "answer": full_result.get("answer", []),
     }
     all_results.append(result)
 
