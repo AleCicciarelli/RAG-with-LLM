@@ -41,7 +41,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 csv_folder = "tpch/csv_data_tpch"
 faiss_index_folder = "tpch/faiss_index"
-output_filename = f"outputs_llama70b/why/outputs_llama70b_why_k10.json"
+output_filename = f"outputs_llama70b/why/outputs_llama70b_why_FC.json"
 # Ensure the output directory exists
 os.makedirs(os.path.dirname(output_filename), exist_ok=True)
 
@@ -94,7 +94,6 @@ def definePrompt(state: State):
         Format of Witness Sets (as strings):  
         - If there is ONE relevant tuple set: "{{<table_name>_<row>}}"  
         - If there are MULTIPLE: "{{<table_name>_<row>},{<table_name>_<row>},...}}"  
-        ⚠️ Use **double curly braces** (`{{` and `}}`) and wrap the entire witness set in **double quotes**.
         IMPORTANT:
         Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.
         If your output is not a valid JSON block in the format described, it will be discarded.
@@ -127,14 +126,14 @@ def definePrompt(state: State):
 
         EXPECTED OUTPUT:
         ```json
-        {{
+        {
             "answer": ["546", "314052"],
             "why": [
                 "{{customer_14322,orders_137}}",
                 "{{customer_101,orders_78528}}"
             ]
             
-        }}
+        }
         ```
         EXAMPLE 2:    
         CONTEXT:
@@ -147,12 +146,12 @@ def definePrompt(state: State):
 
         EXPECTED OUTPUT:
         ```json
-        {{
+        {
             "answer": ["21-151-690-3663"],
             "why": [
                 "{{supplier_4}}"
             ]
-        }}
+        }
         ```
     """
     return prompt
@@ -163,6 +162,7 @@ parser = JsonOutputParser(pydantic_schema=AnswerItem)
 
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
+'''
 def retrieve(state: State):
     print(f"Retrieving for question: {state['question']}")
     retrieved_docs = vector_store.similarity_search(state["question"], k = 10)
@@ -212,7 +212,7 @@ def get_rows_from_ground_truth(ground_f2: str, csv_folder: str) -> List[Document
                 print(f"⚠️ Errore nel parsing di '{entry}': {e}")
 
     return documents
-'''
+
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
   
@@ -278,35 +278,35 @@ def generate(state: State):
 
 
 # Leggi le domande dal file JSON
-with open("pch/questions.json", "r") as f:
+with open("tpch/questions.json", "r") as f:
     data = json.load(f)
     questions = list(data.keys())
 
 # Build the graph structure once
-graph_builder = StateGraph(State).add_sequence([retrieve, generate])
-graph_builder.add_edge(START, "retrieve")
-graph = graph_builder.compile()
+#graph_builder = StateGraph(State).add_sequence([retrieve, generate])
+#graph_builder.add_edge(START, "retrieve")
+#graph = graph_builder.compile()
 
 all_results = []
-#with open("tpch/ground_truthTpch.json", "r", encoding="utf-8") as f:
-#    ground_truth = json.load(f)   
+with open("tpch/ground_truthTpch.json", "r", encoding="utf-8") as f:
+    ground_truth = json.load(f)   
 for i, question in enumerate(questions):
     print(f"Processing question n. {i+1}")
-    #gt = ground_truth[i]
-    #gt_source_info = gt["why"]
+    gt = ground_truth[i]
+    gt_source_info = gt["why"]
     
     # Step 2: Costruisci contesto perfetto a partire dalle righe vere
-    #context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="csv_data")
+    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="csv_data")
     
     print(f" Processing question n. {i+1}")
-    full_result = graph.invoke({"question": question})
+    #full_result = graph.invoke({"question": question})
     
-    #state = {
-    #    "question": question,
-    #    "context": context_docs
-    #}
+    state = {
+        "question": question,
+        "context": context_docs
+    }
     
-    #full_result = generate(state)
+    full_result = generate(state)
  
     result = {
         "question": question,
