@@ -96,11 +96,14 @@ def definePrompt(state: State):
         - If there are MULTIPLE: "{{<table_name>_<row>},{<table_name>_<row>},...}}"  
         ⚠️ Use **double curly braces** (`{{` and `}}`) and wrap the entire witness set in **double quotes**.
         IMPORTANT:
-
-        - Do NOT include introductory phrases, explanations or any dots at the end.
-        - If the answer is not present in the context, return an empty array.
-        - Return the answer strictly in the following JSON format:
-
+        Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.
+        If your output is not a valid JSON block in the format described, it will be discarded.
+        If the answer is not present in the context, return an empty array.
+        
+        
+        INVALID OUTPUT EXAMPLE (will be discarded):
+        The answer is: {"answer": [...], "why": [...]}
+        VALID OUTPUT EXAMPLE (will be accepted):
         ```json
         {
             "answer": ["<answer_1>", "<answer_2>", ...],
@@ -260,11 +263,11 @@ def generate(state: State):
 
         if not isinstance(parsed_output["why"], list):
             raise ValueError("'why' must be a list.")
-
-        return {
-            "answer": parsed_output["answer"],
-            "why": parsed_output["why"]
-        }
+        if parsed_output:
+            return {
+                "answer": parsed_output["answer"],
+                "why": parsed_output["why"]
+            }
 
     except (json.JSONDecodeError, ValueError) as e:
         print(f"⚠️ Errore nel parsing del JSON: {e}")
