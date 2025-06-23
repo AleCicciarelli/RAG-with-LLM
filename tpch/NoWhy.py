@@ -206,29 +206,32 @@ def generate(state: State):
     )
        
     try:
-        # Esegui il modello LLM (già inizializzato con ChatOllama)
+    # Esegui il modello LLM con la catena
         response = chain.run({
             "question": state["question"], 
             "context": docs_content
         })
 
-        if not response or not hasattr(response, "content"):
-            raise ValueError("No valid response from LLM.")
+        if not response:
+            raise ValueError("Empty response from LLM.")
 
-        output_text = response.content.strip()
+        output_text = response.strip()
         print(f"\n[DEBUG] RAW LLM RESPONSE:\n{output_text}\n")
 
-        # Regex: estrae il primo oggetto JSON (tra ```json oppure semplicemente tra {})
-        json_match = re.search(r"\{[\s\S]*?\}", output_text)
-        if not json_match:
-            raise ValueError("No valid JSON found in LLM response.")
-        
-        json_str = json_match.group(0).strip()
+        # Regex: estrae il primo oggetto JSON, tra ```json ... ``` o solo {}
+        json_match = re.search(r"```json\s*([\s\S]*?)\s*```", output_text)
+        if json_match:
+            json_str = json_match.group(1).strip()
+        else:
+            # Fallback: qualsiasi blocco tra { }
+            json_match = re.search(r"\{[\s\S]*?\}", output_text)
+            if not json_match:
+                raise ValueError("No valid JSON found in LLM response.")
+            json_str = json_match.group(0).strip()
 
         # Parse JSON
         parsed_output = json.loads(json_str)
 
-        # Controlla presenza del campo "answer"
         if not isinstance(parsed_output, dict) or "answer" not in parsed_output:
             raise ValueError("Invalid JSON format. Missing 'answer'.")
 
