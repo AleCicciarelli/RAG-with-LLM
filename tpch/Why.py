@@ -91,13 +91,14 @@ def definePrompt(state: State):
     prompt = """
         Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
         For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
-        Witness Sets: "{{<table_name>_<row>}, {<table_name>_<row>}}". If there is only one Witness Set, it is "{{<table_name>_<row>}}".
-        <table_name> is in the source field of the context, and <row> is the row field of the context.
+        Format of Witness Sets (as strings):  
+        - If there is ONE relevant tuple set: "{{<table_name>_<row>}}"  
+        - If there are MULTIPLE: "{{<table_name>_<row>},{<table_name>_<row>},...}}"  
+        ⚠️ Use **double curly braces** (`{{` and `}}`) and wrap the entire witness set in **double quotes**.
         IMPORTANT:
 
         - Do NOT include introductory phrases, explanations or any dots at the end.
         - If the answer is not present in the context, return an empty array.
-        - Each Witness Set must be a string  wrapped in double quotes.
         - Return the answer strictly in the following JSON format:
 
         ```json
@@ -107,58 +108,49 @@ def definePrompt(state: State):
         }
         ```
             
-            EXAMPLE 1:
-            CONTEXT:
-                - source: courses.csv, row: 0  
-                (course_id:101, course_name:Machine Learning, ...)  
-                - source: courses.csv, row: 3  
-                (course_id:104, course_name:Advanced Algorithms, ...)  
-                - source: enrollments.csv, row: 0  
-                (enrollment_id:1, student_id:1, course_id:101, ...)  
-                - source: enrollments.csv, row: 3  
-                (enrollment_id:4, student_id:1, course_id:104, ...)  
-                - source: enrollments.csv, row: 9  
-                (enrollment_id:10, student_id:2, course_id:101, ...)  
-                - source: students.csv, row: 0  
-                (student_id:1, name:Giulia, surname:Rossi, ...)  
-                - source: students.csv, row: 1  
-                (student_id:2, name:Marco, surname:Bianchi, ...)  
+         EXAMPLE 1:
+        CONTEXT:
+        - source: customer.csv , row: 14322
+        (<col_a>:<val_a>,..., c_nationkey : 2, ...)
+        - source: orders.csv, row: 137
+        (o_orderkey : 546, ..., o_totalprice : 20531.43, ...)
+        - source: customer.csv, row: 101
+        (<col_a>:<val_c>, ...,<c_nationkey : 2, ...)
+        - source: orders.csv, row: 78528
+        (o_orderkey : 314052, ..., o_totalprice : 20548.82, ...)
 
-            QUESTION:  
-                "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
+        QUESTION:
+            "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?"
 
-            EXPECTED OUTPUT:
-            ```json
-            {
-                "answer": ["Giulia Rossi","Marco Bianchi"],
-                "why": [
-                "{{courses_0,enrollments_0,students_0},{courses_3,enrollments_3,students_0}}",
-                "{{courses_0,enrollments_9,students_1}}"
-                ]
-            }
-            ```
+        EXPECTED OUTPUT:
+        ```json
+        {{
+            "answer": ["546", "314052"],
+            "why": [
+                "{{customer_14322,orders_137}}",
+                "{{customer_101,orders_78528}}"
+            ]
+            
+        }}
+        ```
+        EXAMPLE 2:    
+        CONTEXT:
+            - source: suppliers.csv, row: 4
+            (..s_name: "Supplier#000000005",...,s_phone: "21-151-690-3663")
+           
 
-            EXAMPLE 2:    
-            CONTEXT:
-                - source: departments.csv, row: 0  
-                (department_id:1, department_name:Computer Science, faculty: Engineering, ...)  
-                - source: teachers.csv, row: 1
-                (teacher_id:2, name:Laura, surname: Bianchi, department_id: 1, ...)  
+        QUESTION:  
+            "What is the phone number of the supplier named 'Supplier#000000005'?"
 
-            QUESTION:  
-                "Which is the name of the department where the teacher Laura Bianchi teaches?"
-
-            EXPECTED OUTPUT:
-            ```json
-            {
-                "answer": [
-                    "Computer Science"
-                ],
-                "why": [
-                    "{{departments_0,teachers_1}}"
-                ]
-            }
-            ```
+        EXPECTED OUTPUT:
+        ```json
+        {{
+            "answer": ["21-151-690-3663"],
+            "why": [
+                "{{supplier_4}}"
+            ]
+        }}
+        ```
     """
     return prompt
 
