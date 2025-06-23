@@ -6,8 +6,8 @@ import os
 # === CONFIG ===
 
 metrics = ['Answer F1', 'Explanation F1']
-base_path = 'iterativeRag/outputs_'
-output_dir = base_path + 'plots_ollama_per_type/'
+base_path = 'outputs_ollama_'
+output_dir= base_path + 'plots/why/FC'
 os.makedirs(output_dir, exist_ok=True)
 
 models = ['llama8b', 'llama70b', 'mixtral8x7b']
@@ -16,7 +16,7 @@ palette = {'llama8b': 'blue', 'llama70b': 'green', 'mixtral8x7b': 'orange'}
 # === CARICAMENTO DATI ===
 all_data = []
 for model in models:
-    file_path = os.path.join(base_path + model + '/metrics_by_type_iterativefaiss.csv')
+    file_path = os.path.join(base_path + model + '/why/metrics_by_type_whyFC_new.csv')
     df = pd.read_csv(file_path)
     df['Model'] = model
     all_data.append(df)
@@ -42,7 +42,7 @@ for metric in metrics:
 
     # Salvataggio
     metric_slug = metric.replace(' ', '_').lower()
-    plt.savefig(os.path.join(output_dir, f"{metric_slug}_by_question_type_ollama_iterative3round.png"))
+    plt.savefig(os.path.join(output_dir, f"{metric_slug}_by_question_type_whyFC.png"))
     plt.close()
 
 # === COMPLETAMENTO ===

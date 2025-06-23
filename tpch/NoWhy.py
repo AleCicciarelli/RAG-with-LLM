@@ -41,7 +41,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 csv_folder = "tpch/csv_data_tpch"
 faiss_index_folder = "tpch/faiss_index"
-output_filename = f"tpch/outputs_mixtral8x7b/no_why/outputs_mixtral8x7b_nowhyk10.json"
+output_filename = f"tpch/outputs_mixtral8x7b/no_why/outputs_mixtral8x7b_nowhyk10_2.json"
 
 # Verify if the FAISS files already exist
 if os.path.exists(faiss_index_folder):
@@ -79,6 +79,14 @@ prompt = PromptTemplate.from_template("""
         IMPORTANT:
 
         - Do NOT include introductory phrases, explanations or any dots at the end.
+        - If the answer is not present in the context, return an empty array.
+        - Return the answer strictly in the following JSON format:
+
+        ```json
+        {
+            "answer": ["<answer_1>", "<answer_2>", ...]
+        }
+        ```
         EXAMPLE 1:
         CONTEXT:
         - source: customer.csv , row: 14322
@@ -93,9 +101,12 @@ prompt = PromptTemplate.from_template("""
         QUESTION:
             "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?"
 
-        EXPECTED ANSWER:
-             "546",
-             "314052"
+        EXPECTED OUTPUT:
+        ```json
+        {
+            "answer": ["546", "314052"]
+        }
+        ```
         EXAMPLE 2:    
         CONTEXT:
             - source: suppliers.csv, row: 4
@@ -105,8 +116,13 @@ prompt = PromptTemplate.from_template("""
         QUESTION:  
             "What is the phone number of the supplier named 'Supplier#000000005'?"
 
-        EXPECTED RESPONSE:
-            "21-151-690-3663"
+        EXPECTED OUTPUT:
+        ```json
+        {
+            "answer": ["21-151-690-3663"]
+        }
+        ```
+
 """
 )
 # Step 1: Define Explanation Class: composed by file and row
@@ -188,20 +204,43 @@ def generate(state: State):
         llm=llm,
         prompt = prompt 
     )
-    response = chain.run({
-    "question": state["question"], 
-    "context": docs_content
-    })
-    print(f"\n[DEBUG] LLM RESPONSE:\n{response}\n")
-    #try:
-    #    parsed = parser.parse(response)
-    #except Exception as e:
-    #    print(f"Errore nel parsing: {e}")
-    #    parsed = None
+       
+    try:
+        # Esegui il modello LLM (già inizializzato con ChatOllama)
+        response = chain.run({
+            "question": state["question"], 
+            "context": docs_content
+        })
 
-    return {
-        "answer": response.strip()
-    }
+        if not response or not hasattr(response, "content"):
+            raise ValueError("No valid response from LLM.")
+
+        output_text = response.content.strip()
+        print(f"\n[DEBUG] RAW LLM RESPONSE:\n{output_text}\n")
+
+        # Regex: estrae il primo oggetto JSON (tra ```json oppure semplicemente tra {})
+        json_match = re.search(r"\{[\s\S]*?\}", output_text)
+        if not json_match:
+            raise ValueError("No valid JSON found in LLM response.")
+        
+        json_str = json_match.group(0).strip()
+
+        # Parse JSON
+        parsed_output = json.loads(json_str)
+
+        # Controlla presenza del campo "answer"
+        if not isinstance(parsed_output, dict) or "answer" not in parsed_output:
+            raise ValueError("Invalid JSON format. Missing 'answer'.")
+
+        return {
+            "answer": parsed_output["answer"]
+        }
+
+    except (json.JSONDecodeError, ValueError) as e:
+        print(f"⚠️ Errore nel parsing del JSON: {e}")
+        return {
+            "answer": []
+        }
 
 
 # Leggi le domande dal file JSON
@@ -243,10 +282,10 @@ for i, question in enumerate(questions):
 
 # Save the results for the current value of k to a JSON file for later analysis
 with open(output_filename, "w") as output_file:
-    #json.dump(all_results, output_file, indent=4, ensure_ascii=False)
-    for i,result in enumerate(all_results,1):
-        output_file.write(f"----Results {i}---- \n")
-        output_file.write(f"Question:{result['question']} \n")
-        output_file.write(f"Answer:{result['answer']} \n")
-        output_file.write("\n\n")			
+    json.dump(all_results, output_file, indent=2, ensure_ascii=False)
+    #for i,result in enumerate(all_results,1):
+    #    output_file.write(f"----Results {i}---- \n")
+    #    output_file.write(f"Question:{result['question']} \n")
+    #    output_file.write(f"Answer:{result['answer']} \n")
+    #    output_file.write("\n\n")			
 print(f"Results saved to {output_filename}")
