@@ -212,7 +212,45 @@ def get_rows_from_ground_truth(ground_f2: str, csv_folder: str) -> List[Document
                 print(f"⚠️ Errore nel parsing di '{entry}': {e}")
 
     return documents
+def tryParseOutput(output_text: str):
+    try:
+        # Esegui il modello LLM con la catena
+        
+        # Regex: estrae il primo oggetto JSON, tra ```json ... ``` o solo {}
+        json_match = re.search(r"```json\s*([\s\S]*?)\s*```", output_text)
+        if json_match:
+            json_str = json_match.group(1).strip()
+        else:
+            # Fallback: qualsiasi blocco tra { }
+            json_match = re.search(r"\{[\s\S]*?\}", output_text)
+            if not json_match:
+                json_match = re.search(r"\{\s*\"answer\"\s*:\s*\[.*?\],\s*\"why\"\s*:\s*\[.*?\]\s*\}", output_text, re.DOTALL)
+            if json_match:
+                json_str = json_match.group(0).strip()
+            else:
+                return None
 
+        # Parse JSON
+        parsed_output = json.loads(json_str)
+
+         # Validazione: devono esserci entrambi i campi richiesti
+        if not isinstance(parsed_output, dict):
+            return None
+
+        if "answer" not in parsed_output:
+            return None
+        if "why" not in parsed_output:
+            return None
+        # Validazione finale: tipo corretto dei campi
+        if not isinstance(parsed_output["answer"], list):
+            return None
+        if not isinstance(parsed_output["why"], list):
+            return None
+        
+        return parsed_output
+    except Exception as e:
+        print(f"Error parsing output: {e}")
+        return None
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
   
@@ -227,54 +265,39 @@ def generate(state: State):
     output_text = response.content.strip()
     print(f"\n[DEBUG] LLM RESPONSE:\n{output_text}\n")
     
-    try:
-    # Esegui il modello LLM con la catena
-        
-        # Regex: estrae il primo oggetto JSON, tra ```json ... ``` o solo {}
-        json_match = re.search(r"```json\s*([\s\S]*?)\s*```", output_text)
-        if json_match:
-            json_str = json_match.group(1).strip()
-        else:
-            # Fallback: qualsiasi blocco tra { }
-            json_match = re.search(r"\{[\s\S]*?\}", output_text)
-            if not json_match:
-                json_match = re.search(r"\{\s*\"answer\"\s*:\s*\[.*?\],\s*\"why\"\s*:\s*\[.*?\]\s*\}", output_text, re.DOTALL)
-            if json_match:
-                json_str = json_match.group(0).strip()
-            else:
-                raise ValueError("No valid JSON block found in LLM response.")
+    
+    # Prova a parsare l'output JSON
+    parsed_output = tryParseOutput(output_text)
+    if parsed_output is None:
+        response = llm.invoke(correction_prompt = f"""
+                The previous output is not a valid JSON object. Please extract and return only a valid JSON with the following structure:
+                 ```json
+                    {{
+                        "answer": ["<answer_1>", "<answer_2>", ...],
+                        "why": ["{{{{<table_name>_<row>}},{{<table_name>_<row>}}}}", "{{{{<table_name>_<row>}}}}", ...]
+                    }}
+                    ```
 
-        # Parse JSON
-        parsed_output = json.loads(json_str)
+                Do not include any text outside the JSON block.
+                Here is the previous output:
 
-         # Validazione: devono esserci entrambi i campi richiesti
-        if not isinstance(parsed_output, dict):
-            raise ValueError("Output JSON is not a dictionary.")
-
-        if "answer" not in parsed_output:
-            raise ValueError("Missing key: 'answer' in JSON.")
-
-        if "why" not in parsed_output:
-            raise ValueError("Missing key: 'why' in JSON.")
-
-        # Validazione finale: tipo corretto dei campi
-        if not isinstance(parsed_output["answer"], list):
-            raise ValueError("'answer' must be a list.")
-
-        if not isinstance(parsed_output["why"], list):
-            raise ValueError("'why' must be a list.")
+                {output_text}
+                """
+            )
+        output_text = response.content.strip()
+        print(f"\n[DEBUG] LLM RESPONSE:\n{output_text}\n")
+    
+    
+        # Prova a parsare l'output JSON
+        parsed_output = tryParseOutput(output_text)
         if parsed_output:
+            return parsed_output
+        else:
+            print("Error: Failed to parse corrected output.")
             return {
-                "answer": parsed_output["answer"],
-                "why": parsed_output["why"]
+                "answer": [],
+                "why": []
             }
-
-    except (json.JSONDecodeError, ValueError) as e:
-        print(f"⚠️ Errore nel parsing del JSON: {e}")
-        return {
-            "answer": [],
-            "why": []
-        }
 
 
 # Leggi le domande dal file JSON
