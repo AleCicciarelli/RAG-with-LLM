@@ -39,9 +39,11 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 #)
 """ Indexing part """
 
-csv_folder = "csv_data"
-faiss_index_folder = "faiss_index"
-output_filename = f"outputs_ollama_llama70b/why/outputs_llama70b_why_k10.txt"
+csv_folder = "tpch/csv_data_tpch"
+faiss_index_folder = "tpch/faiss_index"
+output_filename = f"outputs_llama70b/why/outputs_llama70b_why_k10.json"
+# Ensure the output directory exists
+os.makedirs(os.path.dirname(output_filename), exist_ok=True)
 
 # Verify if the FAISS files already exist
 if os.path.exists(faiss_index_folder):
@@ -78,6 +80,7 @@ else:
 ''' old prompt'''
 class AnswerItem(BaseModel):
     answer: str
+    why: str 
 
 # Define state for application
 class State(TypedDict):
@@ -94,13 +97,14 @@ def definePrompt(state: State):
 
         - Do NOT include introductory phrases, explanations or any dots at the end.
         - If the answer is not present in the context, return an empty array.
+        - Each Witness Set must be a string  wrapped in double quotes.
         - Return the answer strictly in the following JSON format:
 
         ```json
-        {{
+        {
             "answer": ["<answer_1>", "<answer_2>", ...],
             "why": ["{{<table_name>_<row>},{<table_name>_<row>}}", "{{<table_name>_<row>}}", ...]
-        }}
+        }
         ```
             
             EXAMPLE 1:
@@ -125,13 +129,13 @@ def definePrompt(state: State):
 
             EXPECTED OUTPUT:
             ```json
-            {{
+            {
                 "answer": ["Giulia Rossi","Marco Bianchi"],
                 "why": [
                 "{{courses_0,enrollments_0,students_0},{courses_3,enrollments_3,students_0}}",
                 "{{courses_0,enrollments_9,students_1}}"
                 ]
-            }}
+            }
             ```
 
             EXAMPLE 2:    
@@ -146,14 +150,14 @@ def definePrompt(state: State):
 
             EXPECTED OUTPUT:
             ```json
-            {{
+            {
                 "answer": [
                     "Computer Science"
                 ],
                 "why": [
                     "{{departments_0,teachers_1}}"
                 ]
-            }}
+            }
             ```
     """
     return prompt
@@ -276,7 +280,7 @@ def generate(state: State):
 
 
 # Leggi le domande dal file JSON
-with open("questions.json", "r") as f:
+with open("pch/questions.json", "r") as f:
     data = json.load(f)
     questions = list(data.keys())
 
@@ -286,7 +290,7 @@ graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
 
 all_results = []
-#with open("ground_truth2.json", "r", encoding="utf-8") as f:
+#with open("tpch/ground_truthTpch.json", "r", encoding="utf-8") as f:
 #    ground_truth = json.load(f)   
 for i, question in enumerate(questions):
     print(f"Processing question n. {i+1}")
@@ -314,7 +318,7 @@ for i, question in enumerate(questions):
 
 # Save the results for the current value of k to a JSON file for later analysis
 with open(output_filename, "w") as output_file:
-    json.dump(all_results, output_file, indent=4, ensure_ascii=False)
+    json.dump(all_results, output_file, indent=2, ensure_ascii=False)
     #for i,result in enumerate(all_results,1):
     #    output_file.write(f"----Results {i}---- \n")
     #    output_file.write(f"Question:{result['question']} \n")
