@@ -204,20 +204,20 @@ def generate(state: State):
         llm=llm,
         prompt = prompt 
     )
-       
-    try:
-    # Esegui il modello LLM con la catena
-        response = chain.run({
+    response = chain.run({
             "question": state["question"], 
             "context": docs_content
         })
 
-        if not response:
-            raise ValueError("Empty response from LLM.")
+    if not response:
+        raise ValueError("Empty response from LLM.")
 
-        output_text = response.strip()
-        print(f"\n[DEBUG] RAW LLM RESPONSE:\n{output_text}\n")
+    output_text = response.strip()
+    print(f"\n[DEBUG] RAW LLM RESPONSE:\n{output_text}\n")
 
+    try:
+    # Esegui il modello LLM con la catena
+        
         # Regex: estrae il primo oggetto JSON, tra ```json ... ``` o solo {}
         json_match = re.search(r"```json\s*([\s\S]*?)\s*```", output_text)
         if json_match:
