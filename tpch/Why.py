@@ -243,8 +243,11 @@ def generate(state: State):
             # Fallback: qualsiasi blocco tra { }
             json_match = re.search(r"\{[\s\S]*?\}", output_text)
             if not json_match:
-                raise ValueError("No valid JSON found in LLM response.")
-            json_str = json_match.group(0).strip()
+                json_match = re.search(r"\{\s*\"answer\"\s*:\s*\[.*?\],\s*\"why\"\s*:\s*\[.*?\]\s*\}", output_text, re.DOTALL)
+            if json_match:
+                json_str = json_match.group(0).strip()
+            else:
+                raise ValueError("No valid JSON block found in LLM response.")
 
         # Parse JSON
         parsed_output = json.loads(json_str)
