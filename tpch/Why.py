@@ -90,9 +90,18 @@ def definePrompt(state: State):
         For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
         Witness Sets: "{{<table_name>_<row>}, {<table_name>_<row>}}". If there is only one Witness Set, it is "{{<table_name>_<row>}}".
         <table_name> is in the source field of the context, and <row> is the row field of the context.
-            IMPORTANT:
+        IMPORTANT:
 
-            Return the output as a **stringified JSON array**, with NO extra text: introductory phrases or explanations.
+        - Do NOT include introductory phrases, explanations or any dots at the end.
+        - If the answer is not present in the context, return an empty array.
+        - Return the answer strictly in the following JSON format:
+
+        ```json
+        {{
+            "answer": ["<answer_1>", "<answer_2>", ...],
+            "why": ["{{<table_name>_<row>},{<table_name>_<row>}}", "{{<table_name>_<row>}}", ...]
+        }}
+        ```
             
             EXAMPLE 1:
             CONTEXT:
@@ -114,13 +123,17 @@ def definePrompt(state: State):
             QUESTION:  
                 "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
 
-            EXPECTED RESPONSE:
+            EXPECTED OUTPUT:
+            ```json
+            {{
                 "answer": ["Giulia Rossi","Marco Bianchi"],
                 "why": [
                 "{{courses_0,enrollments_0,students_0},{courses_3,enrollments_3,students_0}}",
                 "{{courses_0,enrollments_9,students_1}}"
                 ]
-                
+            }}
+            ```
+
             EXAMPLE 2:    
             CONTEXT:
                 - source: departments.csv, row: 0  
@@ -131,13 +144,17 @@ def definePrompt(state: State):
             QUESTION:  
                 "Which is the name of the department where the teacher Laura Bianchi teaches?"
 
-            EXPECTED RESPONSE:
+            EXPECTED OUTPUT:
+            ```json
+            {{
                 "answer": [
                     "Computer Science"
                 ],
                 "why": [
                     "{{departments_0,teachers_1}}"
                 ]
+            }}
+            ```
     """
     return prompt
 
@@ -208,17 +225,54 @@ def generate(state: State):
     raw_prompt = definePrompt(state)
     final_prompt = raw_prompt.replace("QUESTION_HERE", state["question"]).replace("CONTEXT_HERE", docs_content)
     response = llm.invoke(final_prompt)
+    output_text = response.content.strip()
+    print(f"\n[DEBUG] LLM RESPONSE:\n{output_text}\n")
+    
+    try:
+    # Esegui il modello LLM con la catena
+        
+        # Regex: estrae il primo oggetto JSON, tra ```json ... ``` o solo {}
+        json_match = re.search(r"```json\s*([\s\S]*?)\s*```", output_text)
+        if json_match:
+            json_str = json_match.group(1).strip()
+        else:
+            # Fallback: qualsiasi blocco tra { }
+            json_match = re.search(r"\{[\s\S]*?\}", output_text)
+            if not json_match:
+                raise ValueError("No valid JSON found in LLM response.")
+            json_str = json_match.group(0).strip()
 
-    print(f"\n[DEBUG] LLM RESPONSE:\n{response.content}\n")
-    #try:
-    #    parsed = parser.parse(response)
-    #except Exception as e:
-    #    print(f"Errore nel parsing: {e}")
-    #    parsed = None
+        # Parse JSON
+        parsed_output = json.loads(json_str)
 
-    return {
-        "answer": response.content.strip()
-    }
+         # Validazione: devono esserci entrambi i campi richiesti
+        if not isinstance(parsed_output, dict):
+            raise ValueError("Output JSON is not a dictionary.")
+
+        if "answer" not in parsed_output:
+            raise ValueError("Missing key: 'answer' in JSON.")
+
+        if "why" not in parsed_output:
+            raise ValueError("Missing key: 'why' in JSON.")
+
+        # Validazione finale: tipo corretto dei campi
+        if not isinstance(parsed_output["answer"], list):
+            raise ValueError("'answer' must be a list.")
+
+        if not isinstance(parsed_output["why"], list):
+            raise ValueError("'why' must be a list.")
+
+        return {
+            "answer": parsed_output["answer"],
+            "why": parsed_output["why"]
+        }
+
+    except (json.JSONDecodeError, ValueError) as e:
+        print(f"⚠️ Errore nel parsing del JSON: {e}")
+        return {
+            "answer": [],
+            "why": []
+        }
 
 
 # Leggi le domande dal file JSON
@@ -260,10 +314,10 @@ for i, question in enumerate(questions):
 
 # Save the results for the current value of k to a JSON file for later analysis
 with open(output_filename, "w") as output_file:
-    #json.dump(all_results, output_file, indent=4, ensure_ascii=False)
-    for i,result in enumerate(all_results,1):
-        output_file.write(f"----Results {i}---- \n")
-        output_file.write(f"Question:{result['question']} \n")
-        output_file.write(f"Answer:{result['answer']} \n")
-        output_file.write("\n\n")			
+    json.dump(all_results, output_file, indent=4, ensure_ascii=False)
+    #for i,result in enumerate(all_results,1):
+    #    output_file.write(f"----Results {i}---- \n")
+    #    output_file.write(f"Question:{result['question']} \n")
+    #    output_file.write(f"Answer:{result['answer']} \n")
+    #    output_file.write("\n\n")			
 print(f"Results saved to {output_filename}")
