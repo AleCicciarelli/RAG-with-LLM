@@ -28,7 +28,7 @@ os.environ["LANGSMITH_API_KEY"] = "lsv2_pt_87133982193d4e3b8110cb9e3253eb17_7831
 # MISTRAL by Groq
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
-llm = ChatOllama(model="llama3:70b", temperature=0)
+llm = ChatOllama(model="llama3:8b", temperature=0)
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
@@ -41,7 +41,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 csv_folder = "tpch/csv_data_tpch"
 faiss_index_folder = "tpch/faiss_index"
-output_filename = f"tpch/outputs_llama8b/why/outputs_llama8b_why_FC.json"
+output_filename = f"tpch/outputs_llama8b/why/outputs_llama8b_why_k20.json"
 # Ensure the output directory exists
 os.makedirs(os.path.dirname(output_filename), exist_ok=True)
 
@@ -165,7 +165,7 @@ parser = JsonOutputParser(pydantic_schema=AnswerItem)
 
 def retrieve(state: State):
     print(f"Retrieving for question: {state['question']}")
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 10)
+    retrieved_docs = vector_store.similarity_search(state["question"], k = 20)
     return {"context": retrieved_docs}
 '''
 def get_rows_from_ground_truth(ground_f2: str, csv_folder: str) -> List[Document]:
