@@ -259,7 +259,7 @@ def generate(state: State):
         print(f"- Source: {doc.metadata} \n  Content: {doc.page_content[:300]}...\n")
    
     docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
-    raw_prompt = definePrompt(state)
+    raw_prompt = definePrompt()
     final_prompt = raw_prompt.replace("QUESTION_HERE", state["question"]).replace("CONTEXT_HERE", docs_content)
     response = llm.invoke(final_prompt)
     output_text = response.content.strip()
@@ -327,7 +327,7 @@ for i, question in enumerate(questions):
     gt_source_info = gt["why"]
     
     # Step 2: Costruisci contesto perfetto a partire dalle righe vere
-    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="csv_data")
+    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="tpch/csv_data_tpch")
     
     print(f" Processing question n. {i+1}")
     #full_result = graph.invoke({"question": question})
