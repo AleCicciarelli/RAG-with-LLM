@@ -41,7 +41,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 csv_folder = "tpch/csv_data_tpch"
 faiss_index_folder = "tpch/faiss_index"
-output_filename = f"outputs_llama70b/why/outputs_llama70b_why_FC.json"
+output_filename = f"tpch/outputs_llama8b/why/outputs_llama8b_why_FC.json"
 # Ensure the output directory exists
 os.makedirs(os.path.dirname(output_filename), exist_ok=True)
 
