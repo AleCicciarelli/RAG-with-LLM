@@ -22,8 +22,7 @@ os.environ["LANGSMITH_TRACING"] = "false"
 os.environ["LANGSMITH_API_KEY"] = "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"
 #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 old old token langsmith
 # olt token langsmith  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
-if not os.environ.get("GROQ_API_KEY"):
- os.environ["GROQ_API_KEY"] = "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"
+
 
 # LLM: Llama3-8b by Groq
 #llm = init_chat_model("llama3-70b-8192", model_provider="groq", temperature = 0)
@@ -34,15 +33,10 @@ llm = ChatOllama(model="llama3:70b", temperature=0)
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
-#embedding_model = HuggingFaceEmbeddings(
-#    model_name="BAAI/bge-small-en-v1.5",
-#    model_kwargs={"device": "cuda"},  
-#    encode_kwargs={"normalize_embeddings": True}
-#)
 
 csv_folder = "tpch/csv_data"
 faiss_index_folder = "tpch/faiss_index"
-output_filename = f"tpch/outputs_llama70b/iterative/outputs_llama70b_ollama_iterativeK10_faiss.json"
+output_filename = f"tpch/outputs_llama70b/iterative/outputs_llama70b_ollama_iterative_FC.json"
 debug_log_filename = f"iterativeRag/debug_log_llama70b_iterative.txt"
 os.makedirs(os.path.dirname(debug_log_filename), exist_ok=True)
 # Save the results for the current value of k to a JSON file for later analysis
@@ -77,82 +71,80 @@ else:
     # Save after full processing
     vector_store.save_local(faiss_index_folder)
     print("FAISS vector store created and saved successfully!")
-'''
-documents = []
-all_files = [f for f in os.listdir(csv_folder) if f.endswith(".csv")]
 
-for file in all_files:
-    file_path = os.path.join(csv_folder, file)
-    loader = CSVLoader(file_path=file_path)
-    docs = loader.load()
-    documents.extend(docs)
-bm25_retriever = BM25Retriever.from_documents(documents)
-bm25_retriever.k = 10 
-'''
 """ Retrieve and Generate part """
 # Define prompt for question-answering
 #prompt = hub.pull("rlm/rag-prompt")
-prompt = PromptTemplate.from_template("""
-        Your task is:
-
-        1. Provide the correct answer(s) to this question: {question}, based ONLY on the given context: {context}.
-
-        2. For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
-
-        - Each Witness Set must be formatted as:
-        "{{{{<table_name>_<row>}}}}"
-        where:
-            - <table_name> is the name of the table used, from the `source` metadata field in the context.
-            - <row> is the corresponding `row` metadata value.
-
-        - If an answer has multiple Witness Sets, list each set separately inside the `"why"` array as a string, e.g.:
-        "{{{{WitnessSet1}}, {{WitnessSet2}}}}".
-
-        - A result is valid if at least one Witness Set supports it.
-
+def definePrompt():
+    prompt = """
+        Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
+        For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
+        Format of Witness Sets (as strings):  
+        - If there is ONE relevant tuple set: "{{<table_name>_<row>}}"  
+        - If there are MULTIPLE: "{{<table_name>_<row>},{<table_name>_<row>},...}}"  
         IMPORTANT:
-
-        - Return ONLY a valid JSON array, with NO explanations, comments, or extra text.
-        - Do NOT include introductory phrases.
-        - Format your response exactly as in the example below.
-
-        EXAMPLE:
-         CONTEXT:
-        - source: <table_1>, row: <row_idx_1>
-        (<col_a>:<val_a>, <col_b>:<val_b>, ...)
-        - source: <table_1>, row: <row_idx_2>
-        (<col_a>:<val_a1>, <col_b>:<val_b1>, ...)
-        - source: <table_2>, row: <row_idx_3>
-        (<col_c>:<val_c>, <col_d>:<val_d>, ...)
-        - source: <table_2>, row: <row_idx_4>
-        (<col_c>:<val_c1>, <col_d>:<val_d1>, ...)
-        - source: <table_3>, row: <row_idx_1>
-        (<col_e>:<val_e>, <col_f>:<val_f>, ...)
-        - source: <table_3>, row: <row_idx_2>
-        (<col_e>:<val_e1>, <col_f>:<val_f1>, ...)
+        Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.
+        If your output is not a valid JSON block in the format described, it will be discarded.
+        If the answer is not present in the context, return an empty array.
+        
+        
+        INVALID OUTPUT EXAMPLE (will be discarded):
+        The answer is: {"answer": [...], "why": [...]}
+        VALID OUTPUT EXAMPLE (will be accepted):
+        ```json
+        {
+            "answer": ["<answer_1>", "<answer_2>", ...],
+            "why": ["{{<table_name>_<row>},{<table_name>_<row>}}", "{{<table_name>_<row>}}", ...]
+        }
+        ```
+            
+         EXAMPLE 1:
+        CONTEXT:
+        - source: customer.csv , row: 14322
+        (<col_a>:<val_a>,..., c_nationkey : 2, ...)
+        - source: orders.csv, row: 137
+        (o_orderkey : 546, ..., o_totalprice : 20531.43, ...)
+        - source: customer.csv, row: 101
+        (<col_a>:<val_c>, ...,<c_nationkey : 2, ...)
+        - source: orders.csv, row: 78528
+        (o_orderkey : 314052, ..., o_totalprice : 20548.82, ...)
 
         QUESTION:
-            "Which are the <entity_type> (specify <col_a> and <col_b>) involved in <condition_1> OR <condition_2>?"
+            "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?"
 
-        EXPECTED RESPONSE:
-            {{
-                "answer": ["<col_a_val> <col_b_val>", "<col_a_val> <col_b_val>"],
-                "why": [
-                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_3>,<table_3>_<row_idx_1>}},{{<table_1>_<row_idx_2>,<table_2>_<row_idx_4>,<table_3>_<row_idx_1>}}}}", 
-                    "{{{{<table_1>_<row_idx_1>,<table_2>_<row_idx_4>,<table_3>_<row_idx_2>}}}}"
-                ]
-            }}
-"""
-)
-# Step 1: Define Explanation Class: composed by file and row
-'''
-class WitnessSet(BaseModel):
-    tables_rows: List[str] = Field(description="List of table_row strings, e.g., ['customer_14322', 'orders_137']")
+        EXPECTED OUTPUT:
+        ```json
+        {
+            "answer": ["546", "314052"],
+            "why": [
+                "{{customer_14322,orders_137}}",
+                "{{customer_101,orders_78528}}"
+            ]
+            
+        }
+        ```
+        EXAMPLE 2:    
+        CONTEXT:
+            - source: suppliers.csv, row: 4
+            (..s_name: "Supplier#000000005",...,s_phone: "21-151-690-3663")
+           
 
-class AnswerItem(BaseModel):
-    answer: List[str] = Field(description="The final answer(s) to the question.")
-    why: List[str] = Field(description="List of string of witness sets justifying the answer. Each witness set is a list of table_row strings.")
-'''  
+        QUESTION:  
+            "What is the phone number of the supplier named 'Supplier#000000005'?"
+
+        EXPECTED OUTPUT:
+        ```json
+        {
+            "answer": ["21-151-690-3663"],
+            "why": [
+                "{{supplier_4}}"
+            ]
+        }
+        ```
+    """
+    return prompt
+
+
 class AnswerItem(BaseModel):
     answer: List[str]
     why: List[str]
@@ -161,8 +153,8 @@ class State(TypedDict):
     original_question: str # To keep track of the initial question
     current_question: str  # The question used for retrieval in the current iteration
     context: List[Document]
-    answer: List[AnswerItem]
-    iteration_history: List[Dict[str, Any]] # To store previous answers and contexts for iterative refinement
+    answer: AnswerItem
+    #iteration_history: List[Dict[str, Any]] # To store previous answers and contexts for iterative refinement
 
 parser = JsonOutputParser(pydantic_schema=AnswerItem)
 
@@ -181,30 +173,26 @@ def retrieve(state: State):
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
     # Construct a detailed prompt for the LLM
-    context_str = "\n".join([f"- source: {doc.metadata.get('source').split('/')[-1].replace('.csv', '')} , row: {doc.metadata.get('row')}\n({doc.page_content})" for doc in state["context"]])
+    #context_str = "\n".join([f"- source: {doc.metadata.get('source').split('/')[-1].replace('.csv', '')} , row: {doc.metadata.get('row')}\n({doc.page_content})" for doc in state["context"]])
 
-    chain = LLMChain(
-        llm=llm,
-        prompt = prompt 
-    )
-    response = chain.run({
-    "question": state["current_question"], 
-    "context": context_str
-    })
-    # Print the prompt received by the llm with the context and question
-    print(f"Prompt sent to LLM:\n{prompt.format(question=state['current_question'], context=context_str)}")
+    docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
+    raw_prompt = definePrompt()
+    final_prompt = raw_prompt.replace("QUESTION_HERE", state["question"]).replace("CONTEXT_HERE", docs_content)
+    response = llm.invoke(final_prompt)
+    output_text = response.content.strip()
+    print(f"\n[DEBUG] LLM RESPONSE:\n{output_text}\n")
     # Save to debug log
     with open(debug_log_filename, "a", encoding="utf-8") as debug_file:
         debug_file.write(f"\n=== Question {i+1}: {current_state['original_question']} ===\n")
         debug_file.write(f"--- Iteration {iter_num + 1} ---\n")
-        debug_file.write(f"\nPrompt Sent to LLM:\n{prompt.format(question=state['current_question'], context=context_str)}\n")
+        debug_file.write(f"\nPrompt Sent to LLM:\n{final_prompt.format(question=state['current_question'], context=docs_content)}\n")
         debug_file.write(f"\nLLM Response:\n{response}\n")
         debug_file.write("="*80 + "\n")
     # Print the response from the LLM
     print(f"LLM response: {response}")
    
     try:
-        parsed= parser.parse(response)
+        parsed= parser.parse(output_text)
           
         print(f"Previous answer generated: {parsed if parsed else response.strip()}")
     except Exception as e:
