@@ -28,7 +28,7 @@ os.environ["LANGSMITH_API_KEY"] = "lsv2_pt_87133982193d4e3b8110cb9e3253eb17_7831
 # MISTRAL by Groq
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
-llm = ChatOllama(model="mixtral:8x7b", temperature=0)
+llm = ChatOllama(model="llama3:70b", temperature=0)
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
@@ -41,7 +41,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 csv_folder = "tpch/csv_data_tpch"
 faiss_index_folder = "tpch/faiss_index"
-output_filename = f"tpch/outputs_mixtral8x7b/why/outputs_mixtral8x7b_why_FC.json"
+output_filename = f"tpch/outputs_llama8b/why/outputs_llama8b_why_FC.json"
 # Ensure the output directory exists
 os.makedirs(os.path.dirname(output_filename), exist_ok=True)
 
@@ -162,7 +162,7 @@ parser = JsonOutputParser(pydantic_schema=AnswerItem)
 
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
-'''
+
 def retrieve(state: State):
     print(f"Retrieving for question: {state['question']}")
     retrieved_docs = vector_store.similarity_search(state["question"], k = 10)
@@ -212,6 +212,7 @@ def get_rows_from_ground_truth(ground_f2: str, csv_folder: str) -> List[Document
                 print(f"⚠️ Errore nel parsing di '{entry}': {e}")
 
     return documents
+'''
 def tryParseOutput(output_text: str):
     try:
         # Esegui il modello LLM con la catena
@@ -314,30 +315,30 @@ with open("tpch/questions.json", "r") as f:
     questions = list(data.keys())
 
 # Build the graph structure once
-#graph_builder = StateGraph(State).add_sequence([retrieve, generate])
-#graph_builder.add_edge(START, "retrieve")
-#graph = graph_builder.compile()
+graph_builder = StateGraph(State).add_sequence([retrieve, generate])
+graph_builder.add_edge(START, "retrieve")
+graph = graph_builder.compile()
 
 all_results = []
-with open("tpch/ground_truthTpch.json", "r", encoding="utf-8") as f:
-    ground_truth = json.load(f)   
+#with open("tpch/ground_truthTpch.json", "r", encoding="utf-8") as f:
+#    ground_truth = json.load(f)   
 for i, question in enumerate(questions):
     print(f"Processing question n. {i+1}")
-    gt = ground_truth[i]
-    gt_source_info = gt["why"]
+    #gt = ground_truth[i]
+    #gt_source_info = gt["why"]
     
     # Step 2: Costruisci contesto perfetto a partire dalle righe vere
-    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="tpch/csv_data_tpch")
+    #context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="tpch/csv_data_tpch")
     
     print(f" Processing question n. {i+1}")
-    #full_result = graph.invoke({"question": question})
+    full_result = graph.invoke({"question": question})
     
-    state = {
-        "question": question,
-        "context": context_docs
-    }
+    #state = {
+    #    "question": question,
+    #    "context": context_docs
+    #}
     
-    full_result = generate(state)
+    #full_result = generate(state)
  
     result = {
         "question": question,
