@@ -79,15 +79,15 @@ else:
 
 ''' old prompt'''
 class AnswerItem(BaseModel):
-    answer: str
-    why: str 
+    answer: List[str]
+    why: List[str] 
 
 # Define state for application
 class State(TypedDict):
     question: str
     context: List[Document]
-    answer: List[AnswerItem]
-def definePrompt(state: State):
+    answer: AnswerItem
+def definePrompt():
     prompt = """
         Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
         For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
@@ -267,7 +267,15 @@ def generate(state: State):
     
     
     # Prova a parsare l'output JSON
-    parsed_output = tryParseOutput(output_text)
+    try:
+        parsed_output = parser.parse(output_text)
+    except Exception as e:
+        print(f"Error parsing output: {e}")
+        parsed_output = None
+    return {
+        "answer": parsed_output if parsed_output else []
+        }
+    '''
     if parsed_output is None:
         response = llm.invoke(correction_prompt = f"""
                 The previous output is not a valid JSON object. Please extract and return only a valid JSON with the following structure:
@@ -298,7 +306,7 @@ def generate(state: State):
                 "answer": [],
                 "why": []
             }
-
+'''
 
 # Leggi le domande dal file JSON
 with open("tpch/questions.json", "r") as f:
