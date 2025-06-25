@@ -2,13 +2,12 @@ import unsloth
 import torch
 import json
 import os
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer, TrainingArguments
 from unsloth import FastLanguageModel
 from unsloth import is_bfloat16_supported
 from trl import SFTTrainer
-from peft import LoraConfig, PeftModel
+from peft import LoraConfig, PeftModel, TaskType
 from datasets import load_dataset
-
 # --- CONFIG ---
 base_model_name = "meta-llama/Meta-Llama-3-8B-Instruct"  # oppure 70B
 dataset_path = "fineTuning/converted_dataset.jsonl"  # <-- il tuo dataset JSONL
@@ -30,18 +29,14 @@ model, tokenizer = FastLanguageModel.from_pretrained(
 
 # --- 2. Configurazione e applicazione LoRA ---
 print("✅ Configurazione LoRA...")
-lora_config = LoraConfig(
-    r=64,
-    lora_alpha=16,
-    target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
-    lora_dropout=0.05,
-    bias="none",
-    task_type="CAUSAL_LM",
-)
 
 model = FastLanguageModel.get_peft_model(
     model,
-    lora_config
+    r=64,
+    lora_alpha=16,
+    target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],
+    lora_dropout=0.05,
+    bias="none"
 )
 
 # --- 3. Caricamento e preprocessing dataset ---
@@ -82,8 +77,8 @@ trainer.train()
 print("✅ Fine-tuning completato!")
 
 # --- 7. Salvataggio adapter ---
-model.save_pretrained("./lora_adapter")
-print("✅ Adapter salvato in ./lora_adapter")
+model.save_pretrained(adapter_output)
+print("✅ Adapter salvato in ./output_lora")
 
 
 # --- 6. INFERENZA ---
@@ -92,8 +87,7 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     model_name=base_model_name,
     max_seq_length=max_seq_length,
     dtype=None,
-    load_in_4bit=True,
-    device_map="auto",
+    load_in_4bit=True
 )
 model = PeftModel.from_pretrained(model, adapter_output)
 FastLanguageModel.for_inference(model)
@@ -109,7 +103,7 @@ If the answer is not present in the context, return an empty array.
     "answer": ["<answer_1>", "<answer_2>", ...],
     "why": ["{{<table_name>_<row>},{<table_name>_<row>}}", "{{<table_name>_<row>}}", ...]
 }
-```<|end|>
+```
 """
 
 inputs = tokenizer(inference_prompt, return_tensors="pt", truncation=True, max_length=max_seq_length).to("cuda")
