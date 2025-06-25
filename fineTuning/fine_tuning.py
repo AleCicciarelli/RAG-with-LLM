@@ -110,6 +110,13 @@ QUESTION:
     "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
 Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.
 If the answer is not present in the context, return an empty array.
+VALID OUTPUT EXAMPLE (will be accepted):
+        ```json
+        {
+            "answer": ["<answer_1>", "<answer_2>", ...],
+            "why": ["{{<table_name>_<row>},{<table_name>_<row>}}", "{{<table_name>_<row>}}", ...]
+        }
+        ```
 """
 
 inputs = tokenizer(inference_prompt, return_tensors="pt", truncation=True, max_length=max_seq_length).to("cuda")
