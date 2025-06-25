@@ -1,3 +1,4 @@
+import unsloth
 import torch
 import json
 import os
@@ -7,7 +8,6 @@ from unsloth import is_bfloat16_supported
 from trl import SFTTrainer
 from peft import LoraConfig, PeftModel
 from datasets import load_dataset
-from unsloth.datasets import get_unsloth_dataset
 
 # --- CONFIG ---
 base_model_name = "meta-llama/Meta-Llama-3-8B-Instruct"  # oppure 70B
@@ -38,22 +38,28 @@ lora_config = LoraConfig(
     bias="none",
     task_type="CAUSAL_LM"
 )
-
-# --- 3. Carica dataset JSONL ---
-print("✅ Caricamento dataset JSONL...")
+# 3. Caricamento
 dataset = load_dataset("json", data_files=dataset_path, split="train")
 
-# --- 4. Formatta prompt e target per l'istruction tuning ---
+# 3.1. Formatting
 def formatting(example):
     return {
         "text": f"{example['prompt']}<|end|>\n{example['output']}"
     }
-
-print("✅ Preprocessing dataset...")
 dataset = dataset.map(formatting)
 
-# Converti in formato UnsLoTH
-dataset = get_unsloth_dataset(dataset, tokenizer, formatting_func=None)
+# 3.2. Tokenizzazione
+def tokenize(example):
+    tokenized = tokenizer(
+        example["text"],
+        truncation=True,
+        max_length=max_seq_length,
+        padding="max_length",
+        return_tensors=None,
+    )
+    tokenized["labels"] = tokenized["input_ids"].copy()
+    return tokenized
+dataset = dataset.map(tokenize, remove_columns=dataset.column_names)
 
 # --- 5. Fine-tuning con SFTTrainer ---
 print("🚀 Avvio fine-tuning LoRA...")
