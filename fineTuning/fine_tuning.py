@@ -19,64 +19,72 @@ load_in_4bit = True
 batch_size = 2
 epochs = 3
 
-# --- 1. Carica modello e tokenizer ---
+# --- 1. Caricamento modello base + tokenizer ---
 print("✅ Caricamento modello base...")
 model, tokenizer = FastLanguageModel.from_pretrained(
     model_name=base_model_name,
-    max_seq_length=max_seq_length,
+    max_seq_length=4096,
     dtype=None,
-    load_in_4bit=load_in_4bit,
-    device_map="auto"
+    load_in_4bit=True,
 )
-print("✅ Modello caricato.")
 
-# --- 2. Configura LoRA ---
+# --- 2. Configurazione e applicazione LoRA ---
+print("✅ Configurazione LoRA...")
 lora_config = LoraConfig(
     r=64,
     lora_alpha=16,
-    lora_dropout=0,
+    target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
+    lora_dropout=0.05,
     bias="none",
-    task_type="CAUSAL_LM"
+    task_type="CAUSAL_LM",
 )
-# 3. Caricamento
+
+model = FastLanguageModel.get_peft_model(
+    model,
+    lora_config
+)
+
+# --- 3. Caricamento e preprocessing dataset ---
+print("✅ Caricamento dataset JSONL...")
 dataset = load_dataset("json", data_files=dataset_path, split="train")
 
-# 3.1. Formatting
+# --- 4. Format dataset in instruction-style ---
 def formatting(example):
-    return {
-        "text": f"{example['prompt']}<|end|>\n{example['output']}"
-    }
+    return {"text": f"{example['prompt']}<|end|>\n{example['output']}"}
+
+print("✅ Formatting dataset...")
 dataset = dataset.map(formatting)
 
-# 3.2. Tokenizzazione
-def tokenize(example):
-    tokenized = tokenizer(
-        example["text"],
-        truncation=True,
-        max_length=max_seq_length,
-        padding="max_length",
-        return_tensors=None,
-    )
-    tokenized["labels"] = tokenized["input_ids"].copy()
-    return tokenized
-dataset = dataset.map(tokenize, remove_columns=dataset.column_names)
+# --- 5. Training Arguments ---
+training_args = TrainingArguments(
+    output_dir=adapter_output,
+    per_device_train_batch_size=1,
+    gradient_accumulation_steps=4,
+    num_train_epochs=3,
+    logging_steps=10,
+    save_strategy="epoch",
+    save_total_limit=2,
+    remove_unused_columns=False,
+    report_to="none",
+)
 
-# --- 5. Fine-tuning con SFTTrainer ---
+# --- 6. Fine-tuning ---
 print("🚀 Avvio fine-tuning LoRA...")
+print(f"Dataset format: {dataset[0]['text']}")
 trainer = SFTTrainer(
     model=model,
     tokenizer=tokenizer,
     train_dataset=dataset,
-    num_train_epochs=epochs,
-    per_device_train_batch_size=batch_size,
-    gradient_accumulation_steps=4,
-    output_dir=adapter_output,
-    save_total_limit=1,
+    args=training_args,
 )
 
 trainer.train()
-model.save_pretrained(adapter_output)
-print(f"✅ Adapter LoRA salvato in: {adapter_output}")
+print("✅ Fine-tuning completato!")
+
+# --- 7. Salvataggio adapter ---
+model.save_pretrained("./lora_adapter")
+print("✅ Adapter salvato in ./lora_adapter")
+
 
 # --- 6. INFERENZA ---
 print("🔁 Caricamento modello per inferenza...")
