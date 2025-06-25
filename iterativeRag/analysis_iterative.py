@@ -8,6 +8,40 @@ def group_predictions_by_question(pred_list):
     for item in pred_list:
         grouped[item["question"]].append(item)
     return grouped
+def parse_why_item(items):
+    if not items:
+        return []
+
+    result = []
+    
+    for item in items:
+        item = item.strip()
+        
+        if item == "{{}}":
+            continue
+
+        if not (item.startswith("{{") and item.endswith("}}")):
+            continue
+
+        # Rimuovi le doppie graffe esterne
+        inner = item[2:-2].strip()
+
+        # Caso con più gruppi dentro una singola stringa: contiene '},{'
+        if '},{' in inner:
+            # Divide tra i gruppi interni
+            group_strings = inner.split('},{')
+            for g in group_strings:
+                # Rimuovi eventuali graffe residue
+                g = g.strip("{} ")
+                subitems = [x.strip() for x in g.split(',') if x.strip()]
+                if subitems:
+                    result.append(subitems)
+        else:
+            subitems = [x.strip() for x in inner.split(',') if x.strip()]
+            if subitems:
+                result.append(subitems)
+
+    return result
 
 def load_json(path):
     with open(path, 'r', encoding='utf-8') as f:
@@ -29,15 +63,31 @@ def evaluate_lists(true_list, pred_list):
     fn = len(true_set - pred_set)
 
     return tp, fp, fn
+def evaluate_lists_why(true_list, pred_list):
+    true_parsed = parse_why_item(true_list)
+    pred_parsed = parse_why_item(pred_list)
+
+    # Converti in set di tuple
+    true_set = set(tuple(x) if isinstance(x, list) else (x,) for x in true_parsed)
+    pred_set = set(tuple(x) if isinstance(x, list) else (x,) for x in pred_parsed)
+
+    tp = len(true_set & pred_set)
+    fp = len(pred_set - true_set)
+    fn = len(true_set - pred_set)
+
+    print(f"TP: {tp}, FP: {fp}, FN: {fn}")
+    print(f"True set: {true_set}, Pred set: {pred_set}")
+
+    return tp, fp, fn
 
 def main():
     gt_data = load_json("tpch/ground_truthTpch.json")
     question_types = load_json("tpch/questions.json")
 
     pred_folder = "tpch/outputs_llama70b/iterative"
-    global_metrics_file = os.path.join(pred_folder, "global_metrics_iterative.csv")
-    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterative.csv")
-    iteration_metrics_file = os.path.join(pred_folder, "metrics_per_iteration.csv")
+    global_metrics_file = os.path.join(pred_folder, "global_metrics_iterative_k10.csv")
+    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterative_k10.csv")
+    iteration_metrics_file = os.path.join(pred_folder, "metrics_per_iteration_k10.csv")
 
     write_header_global = not os.path.exists(global_metrics_file)
     write_header_type = not os.path.exists(type_metrics_file)
@@ -67,7 +117,7 @@ def main():
                 "Explanation Precision", "Explanation Recall", "Explanation F1", "Exact Explanation"
             ])
 
-        pred_file = os.path.join(pred_folder, f"outputs_llama70b_ollama_iterativeK10_faiss.json")
+        pred_file = os.path.join(pred_folder, f"outputs_llama70b_ollama_iterative_k10.json")
         ungrouped_pred_data = load_json(pred_file)
         pred_data = group_predictions_by_question(ungrouped_pred_data)
         assert len(gt_data) == len(pred_data), "Mismatch in number of questions"
@@ -99,7 +149,11 @@ def main():
         for idx, gt in enumerate(gt_data):
             question = questions[idx]
             q_type = question_types.get(question, "unknown")
-            true_answer = [str(x) for x in gt["answer"]] if isinstance(gt["answer"], list) else [str(gt["answer"])]
+            true_answer = gt["answer"]
+            if not isinstance(true_answer, list):
+                true_answer = [str(true_answer)]
+            else:
+                true_answer = [str(x) for x in true_answer]
             true_expl = gt["why"]
             '''
             true_expl = set()
@@ -115,27 +169,24 @@ def main():
             for pred in preds:
                 iteration = pred["iteration"]
 
-                try:
-                    pred_answer = [str(x) for x in pred["answer"]["answer"]]
-                    print(f"Predicted answer raw for '{question}' (iteration {iteration}):", pred_answer)
-                    pred_expl = pred["answer"]["why"]
-                    print(f"Predicted explanation raw for '{question}' (iteration {iteration}):", pred_expl)
-                    #print(pred_answer_raw.get("answer", []))
-                    #if isinstance(pred_answer_raw, list) and len(pred_answer_raw) > 0 and isinstance(pred_answer_raw[0], dict):
-                    #    pred_answer = [str(x) for x in pred_answer_raw[0].get("answer", [])]
-                    #else:
-                    #    pred_answer = [str(x) for x in pred_answer_raw]
-                    #pred_answer = [str(x) for x in pred_answer_raw] if isinstance(pred_answer_raw, list) else [str(pred_answer_raw)]
-                except Exception as e:
-                    print(f"Errore parsing answer iter {iteration} per '{question}': {e}")
-                    pred_answer = []
-               
-            
+                
+                pred_answer_raw = pred.get("answer", [])
+                pred_answer = [str(x).strip() for x in pred_answer_raw.get("answer", [])]
+                print(f"Predicted answer: {pred_answer}")
+                pred_expl = [str(x).strip() for x in pred_answer_raw.get("why", [])]
+                print(f"Predicted explanation: {pred_expl}")
+                #print(pred_answer_raw.get("answer", []))
+                #if isinstance(pred_answer_raw, list) and len(pred_answer_raw) > 0 and isinstance(pred_answer_raw[0], dict):
+                #    pred_answer = [str(x) for x in pred_answer_raw[0].get("answer", [])]
+                #else:
+                #    pred_answer = [str(x) for x in pred_answer_raw]
+                #pred_answer = [str(x) for x in pred_answer_raw] if isinstance(pred_answer_raw, list) else [str(pred_answer_raw)]
+
                 tp_ans, fp_ans, fn_ans = evaluate_lists(true_answer, pred_answer)
                 exact_answer = 1 if set(true_answer) == set(pred_answer) else 0
                 ans_prec, ans_rec, ans_f1, _ = compute_metrics(tp_ans, fp_ans, fn_ans)
 
-                tp_expl, fp_expl, fn_expl = evaluate_lists(true_expl, pred_expl)
+                tp_expl, fp_expl, fn_expl = evaluate_lists_why(true_expl, pred_expl)
                 exact_expl = 1 if (true_expl == pred_expl) else 0
                 expl_prec, expl_rec, expl_f1, _ = compute_metrics(tp_expl, fp_expl, fn_expl)
 

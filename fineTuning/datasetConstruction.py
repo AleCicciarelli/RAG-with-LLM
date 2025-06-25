@@ -13,12 +13,6 @@ print(input_data[:2])
 PROMPT = (
     "Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.\n"
     "If the answer is not present in the context, return an empty array.\n\n"
-    "```json\n"
-    "{\n"
-    "    \"answer\": [\"<answer_1>\", \"<answer_2>\", ...],\n"
-    "    \"why\": [\"{{<table_name>_<row>},{<table_name>_<row>}}\", \"{{<table_name>_<row>}}\", ...]\n"
-    "}\n"
-    "```"
 )
 
 def main():
