@@ -93,17 +93,23 @@ model = PeftModel.from_pretrained(model, adapter_output)
 FastLanguageModel.for_inference(model)
 
 # --- 7. PROMPT DI TEST ---
-inference_prompt = """Metadata: OR present = NO, joins = 1
-
+inference_prompt = """
+CONTEXT:
+students.csv:
+- student_id:1, name:Giulia, surname:Rossi, age:20
+- student_id:2, name:Marco, surname:Bianchi, age:22
+courses.csv:
+- course_id:101, course_name:Machine Learning, credits:6
+- course_id:104, course_name:Advanced Algorithms, credits:6
+enrollments.csv:
+- enrollment_id:1, student_id:1, course_id:101, semester:2023
+- enrollment_id:4, student_id:1, course_id:104, semester:2023
+- enrollment_id:10, student_id:2, course_id:101, semester:2023
+Based on the context above, answer the following question:
+QUESTION:  
+    "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
 Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.
 If the answer is not present in the context, return an empty array.
-
-```json
-{
-    "answer": ["<answer_1>", "<answer_2>", ...],
-    "why": ["{{<table_name>_<row>},{<table_name>_<row>}}", "{{<table_name>_<row>}}", ...]
-}
-```
 """
 
 inputs = tokenizer(inference_prompt, return_tensors="pt", truncation=True, max_length=max_seq_length).to("cuda")
