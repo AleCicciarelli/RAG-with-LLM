@@ -105,20 +105,24 @@ enrollments.csv:
 - enrollment_id:1, student_id:1, course_id:101, semester:2023
 - enrollment_id:4, student_id:1, course_id:104, semester:2023
 - enrollment_id:10, student_id:2, course_id:101, semester:2023
-Based on the context above, answer the following question:
-QUESTION:  
-    "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
-Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.
-If the answer is not present in the context, return an empty array.
-VALID OUTPUT EXAMPLE (will be accepted):
-        ```json
-        {
-            "answer": ["<answer_1>", "<answer_2>", ...],
-            "why": ["{{<table_name>_<row>},{<table_name>_<row>}}", "{{<table_name>_<row>}}", ...]
-        }
-        ```
-"""
 
+QUESTION:
+Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?
+
+Return ONLY the JSON output, without any explanation or markdown formatting.
+
+Format:
+{
+  "answer": ["<name_1> <surname_1>", "<name_2> <surname_2>", ...],
+  "why": ["{<table>_<row>[,<table>_<row>...]}", ...]
+}
+If the answer is not present in the context, return:
+{
+  "answer": [],
+  "why": []
+}
+<|end|>
+"""
 inputs = tokenizer(inference_prompt, return_tensors="pt", truncation=True, max_length=max_seq_length).to("cuda")
 
 # --- 8. GENERAZIONE ---
