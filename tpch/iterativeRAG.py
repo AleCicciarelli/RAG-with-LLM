@@ -36,7 +36,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 csv_folder = "tpch/csv_data"
 faiss_index_folder = "tpch/faiss_index"
-output_filename = f"tpch/outputs_llama70b/iterative/outputs_llama70b_ollama_iterative_FC.json"
+output_filename = f"tpch/outputs_llama70b/iterative/outputs_llama70b_ollama_iterative_k10.json"
 debug_log_filename = f"iterativeRag/debug_log_llama70b_iterative.txt"
 os.makedirs(os.path.dirname(debug_log_filename), exist_ok=True)
 # Save the results for the current value of k to a JSON file for later analysis

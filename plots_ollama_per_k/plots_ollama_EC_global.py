@@ -4,13 +4,13 @@ import seaborn as sns
 import os
 
 # Imposta percorso principale e di output
-base_path = 'outputs_ollama_'
-output_path = base_path + 'plots/why/FC'
+base_path = 'tpch/outputs_'
+output_path = base_path + 'plots/no_why/global'
 os.makedirs(output_path, exist_ok=True)
 
 # Lista dei modelli = nomi delle cartelle
 models = ['llama8b', 'llama70b', 'mixtral8x7b']
-metrics_to_plot = ['Precision', 'Recall', 'F1', 'Accuracy']
+metrics_to_plot = ['F1']
 
 # Colori per modello
 palette = {'llama8b': 'blue', 'llama70b': 'green', 'mixtral8x7b': 'orange'}
@@ -18,7 +18,7 @@ palette = {'llama8b': 'blue', 'llama70b': 'green', 'mixtral8x7b': 'orange'}
 # Caricamento dati
 all_data = []
 for model in models:
-    file_path = os.path.join(base_path + model +  '/why/global_metrics_whyFC_new.csv')
+    file_path = os.path.join(base_path + model +  '/no_why/global_metrics_nowhy_k20.csv')
     df = pd.read_csv(file_path)
     df['Model'] = model
     all_data.append(df)
@@ -42,7 +42,7 @@ for metric in metrics_to_plot:
     plt.tight_layout()
 
     # Salvataggio grafico
-    filename = f"{metric}_barplot_ollama_whyFC.png".replace(" ", "_")
+    filename = f"{metric}_barplot_ollama_nowhyFC_k20.png".replace(" ", "_")
     plt.savefig(os.path.join(output_path, filename))
     plt.close()
 

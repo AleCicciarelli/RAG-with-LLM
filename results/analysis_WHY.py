@@ -79,12 +79,12 @@ def evaluate_lists_why(true_list, pred_list):
     return tp, fp, fn
 
 def main():
-    gt_data = load_json("ground_truth2.json")
-    question_types = load_json("questions.json")
+    gt_data = load_json("tpch/ground_truthTpch.json")
+    question_types = load_json("tpch/questions.json")
     # Cartella contenente i file di output predetti
-    pred_folder = "outputs_ollama_llama70b/no_why"
-    global_metrics_file = os.path.join(pred_folder, "global_metrics_nowhyFC_new.csv")
-    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_nowhyFC_new.csv")
+    pred_folder = "tpch/outputs_mixtral8x7b/why"
+    global_metrics_file = os.path.join(pred_folder, "global_metrics_why_k20.csv")
+    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_why_k20.csv")
 
     # Scrivi header CSV solo se i file non esistono
     write_header_global = not os.path.exists(global_metrics_file)
@@ -102,13 +102,13 @@ def main():
             type_writer.writerow([
                 "Question Type",
                 "Answer Precision", "Answer Recall", "Answer F1", "Answer Accuracy",
-                #"Explanation Precision", "Explanation Recall", "Explanation F1", "Explanation Accuracy",
+                "Explanation Precision", "Explanation Recall", "Explanation F1", "Explanation Accuracy",
                 "Count"
             ])
 
        
        
-        pred_file = os.path.join(pred_folder, f"outputs_ollama_llama70b_nowhy_new.json")
+        pred_file = os.path.join(pred_folder, f"outputs_mixtral8x7b_why_k20.json")
         print(pred_file)
 
         pred_data = load_json(pred_file)
@@ -120,8 +120,8 @@ def main():
         # Inizializza metriche per tipo domanda
         metrics_by_type = defaultdict(lambda: {
             "tp_ans": 0, "fp_ans": 0, "fn_ans": 0,
-            #"tp_expl": 0, "fp_expl": 0, "fn_expl": 0,
-            "exact_ans": 0, #"exact_expl": 0,
+            "tp_expl": 0, "fp_expl": 0, "fn_expl": 0,
+            "exact_ans": 0, "exact_expl": 0,
             "count": 0
         })
 
@@ -156,8 +156,8 @@ def main():
                 print(f"Errore nel parsing della risposta per la domanda '{question}': {e}")
                 pred_answer = []
             '''
-            #pred_answer_raw = pred.get("answer", [])
-            pred_answer = [str(x).strip() for x in pred.get("answer", [])]
+            pred_answer_raw = pred.get("answer", [])
+            pred_answer = [str(x).strip() for x in pred_answer_raw.get("answer", [])]
             print(f"Predicted answer: {pred_answer}")
             # Calcola TP, FP, FN per risposta
             tp_ans, fp_ans, fn_ans = evaluate_lists(true_answer, pred_answer)
@@ -166,9 +166,9 @@ def main():
             exact_answer = 1 if (set(true_answer) == set(pred_answer)) else 0
             
             # Estrai spiegazioni
-            #true_expl = gt["why"]
+            true_expl = gt["why"]
             
-            #print(f"True explanation: {true_expl}")
+            print(f"True explanation: {true_expl}")
             '''
             try:
                 pred_expl_raw = pred.get("answer", [])
@@ -181,17 +181,17 @@ def main():
                 print(f"Errore nel parsing della spiegazione per la domanda '{question}': {e}")
                 pred_expl = set()
             '''
-            #pred_expl = [str(x).strip() for x in pred.get("why", [])]
-            #print(f"Predicted explanation: {pred_expl}")
+            pred_expl = [str(x).strip() for x in pred_answer_raw.get("why", [])]
+            print(f"Predicted explanation: {pred_expl}")
             # Calcola TP, FP, FN per spiegazione
             # Valuta solo se risposta corretta (intersection non vuota)
             #if tp_ans > 0:
-            #tp_expl, fp_expl, fn_expl = evaluate_lists_why(true_expl, pred_expl)
+            tp_expl, fp_expl, fn_expl = evaluate_lists_why(true_expl, pred_expl)
             #else:
             #    tp_expl = fp_expl = fn_expl = 0
 
             # Calcola se spiegazione esatta
-            #exact_expl = 1 if (true_expl == pred_expl and exact_answer) else 0
+            exact_expl = 1 if (true_expl == pred_expl and exact_answer) else 0
             
             # Aggiorna metriche globali
             answer_tp += tp_ans
@@ -199,10 +199,10 @@ def main():
             answer_fn += fn_ans
             answer_exact += exact_answer
 
-            #expl_tp += tp_expl
-            #expl_fp += fp_expl
-            #expl_fn += fn_expl
-            #expl_exact += exact_expl
+            expl_tp += tp_expl
+            expl_fp += fp_expl
+            expl_fn += fn_expl
+            expl_exact += exact_expl
 
             # Aggiorna metriche per tipo domanda
             m = metrics_by_type[q_type]
@@ -212,32 +212,32 @@ def main():
             m["fn_ans"] += fn_ans
             m["exact_ans"] += exact_answer
 
-            #m["tp_expl"] += tp_expl
-            #m["fp_expl"] += fp_expl
-            #m["fn_expl"] += fn_expl
-            #m["exact_expl"] += exact_expl
+            m["tp_expl"] += tp_expl
+            m["fp_expl"] += fp_expl
+            m["fn_expl"] += fn_expl
+            m["exact_expl"] += exact_expl
 
         # Calcola metriche globali
         ans_prec, ans_rec, ans_f1, ans_acc = compute_metrics(
             answer_tp, answer_fp, answer_fn, answer_exact, len(gt_data)
         )
-        #expl_prec, expl_rec, expl_f1, expl_acc = compute_metrics(
-            #expl_tp, expl_fp, expl_fn, expl_exact, len(gt_data)
-        #)
+        expl_prec, expl_rec, expl_f1, expl_acc = compute_metrics(
+            expl_tp, expl_fp, expl_fn, expl_exact, len(gt_data)
+        )
 
         # Scrivi metriche globali nel CSV
         global_writer.writerow(["Answer", f"{ans_prec:.4f}", f"{ans_rec:.4f}", f"{ans_f1:.4f}", f"{ans_acc:.4f}"])
-        #global_writer.writerow(["Explanation", f"{expl_prec:.4f}", f"{expl_rec:.4f}", f"{expl_f1:.4f}", f"{expl_acc:.4f}"])
+        global_writer.writerow(["Explanation", f"{expl_prec:.4f}", f"{expl_rec:.4f}", f"{expl_f1:.4f}", f"{expl_acc:.4f}"])
 
         # Scrivi metriche per tipo domanda
         for q_type, stats in metrics_by_type.items():
             ans_m = compute_metrics(stats["tp_ans"], stats["fp_ans"], stats["fn_ans"], stats["exact_ans"], stats["count"])
-            #expl_m = compute_metrics(stats["tp_expl"], stats["fp_expl"], stats["fn_expl"], stats["exact_expl"], stats["count"])
+            expl_m = compute_metrics(stats["tp_expl"], stats["fp_expl"], stats["fn_expl"], stats["exact_expl"], stats["count"])
 
             type_writer.writerow([
                 q_type,
                 f"{ans_m[0]:.4f}", f"{ans_m[1]:.4f}", f"{ans_m[2]:.4f}", f"{ans_m[3]:.4f}",
-                #f"{expl_m[0]:.4f}", f"{expl_m[1]:.4f}", f"{expl_m[2]:.4f}", f"{expl_m[3]:.4f}",
+                f"{expl_m[0]:.4f}", f"{expl_m[1]:.4f}", f"{expl_m[2]:.4f}", f"{expl_m[3]:.4f}",
                 stats["count"]
             ])
 

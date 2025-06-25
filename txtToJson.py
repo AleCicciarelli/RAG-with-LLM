@@ -47,13 +47,13 @@ def parse_results_txt(txt):
     return results
 
 # Leggi da file
-with open("outputs_ollama_llama8b/no_why/outputs_llama8b_nowhyk10.txt", "r", encoding="utf-8") as f:
+with open("outputs_ollama_mixtral8x7b/no_why/outputs_mixtral8x7b_nowhyk10.txt", "r", encoding="utf-8") as f:
     content = f.read()
 
 parsed = parse_results_txt(content)
 
 # Salva in JSON
-with open("outputs_ollama_llama8b/no_why/outputs_ollama_llama8b_nowhyk10.json", "w", encoding="utf-8") as f:
+with open("outputs_ollama_mixtral8x7b/no_why/outputs_ollama_mixtral8x7b_nowhyk10.json", "w", encoding="utf-8") as f:
     json.dump(parsed, f, indent=2, ensure_ascii=False)
 
 print("✅ Conversione completata. {}'")
@@ -69,8 +69,8 @@ def parse_results_txt(txt):
     for block in blocks:
         if "Question:" in block and "Answer:" in block:
             question_match = re.search(r"Question:(.*?)Answer:", block, re.DOTALL)
-            answer_match = re.search(r"Answer:\s*(\S+)", block)           
-            #answer_match = re.search(r"Answer:\s*\{['\"]answer['\"]\s*:\s*['\"](.*?)['\"]\s*\}", block, re.DOTALL)
+            #answer_match = re.search(r"Answer:\s*(\S+)", block)           
+            answer_match = re.search(r"Answer:\s*\{['\"]answer['\"]\s*:\s*['\"](.*?)['\"]\s*\}", block, re.DOTALL)
 
             if question_match and answer_match:
                 question = question_match.group(1).strip()
@@ -87,13 +87,13 @@ def parse_results_txt(txt):
     return results
 
 # Leggi da file (modifica 'results.txt' con il tuo nome file)
-with open("outputs_ollama_llama8b/no_why/outputs_llama8b_nowhyk10.txt", "r", encoding="utf-8") as f:
+with open("outputs_ollama_mixtral8x7b/why/outputs_mixtral8x7b_why_k10.txt", "r", encoding="utf-8") as f:
     content = f.read()
 
 parsed = parse_results_txt(content)
 
 # Salva in JSON
-with open("outputs_ollama_llama8b/no_why/outputs_ollama_llama8b_nowhyk10.json", "w", encoding="utf-8") as f:
+with open("outputs_ollama_mixtral8x7b/why/outputs_ollama_mixtral8x7b_why_k10.json", "w", encoding="utf-8") as f:
     json.dump(parsed, f, indent=2, ensure_ascii=False)
 
 print("✅ Conversione completata. Output salvato in 'results.json'")
