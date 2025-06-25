@@ -36,7 +36,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 csv_folder = "tpch/csv_data"
 faiss_index_folder = "tpch/faiss_index"
-output_filename = f"tpch/outputs_llama70b/iterative/outputs_llama70b_ollama_iterative_FC.json"
+output_filename = f"tpch/outputs_llama70b/iterative/outputs_llama70b_ollama_iterative_k10.json"
 debug_log_filename = f"iterativeRag/debug_log_llama70b_iterative.txt"
 os.makedirs(os.path.dirname(debug_log_filename), exist_ok=True)
 # Save the results for the current value of k to a JSON file for later analysis
@@ -177,7 +177,7 @@ def generate(state: State):
 
     docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
     raw_prompt = definePrompt()
-    final_prompt = raw_prompt.replace("QUESTION_HERE", state["question"]).replace("CONTEXT_HERE", docs_content)
+    final_prompt = raw_prompt.replace("QUESTION_HERE", state["current_question"]).replace("CONTEXT_HERE", docs_content)
     response = llm.invoke(final_prompt)
     output_text = response.content.strip()
     print(f"\n[DEBUG] LLM RESPONSE:\n{output_text}\n")
@@ -203,7 +203,7 @@ def generate(state: State):
         "answer": parsed if parsed else response.strip(),
         "current_question": (
             f"{state['original_question']}\n\n"
-            f"Previous answer generated: {parsed if parsed else response.strip()}\n"
+            f"Previous answer generated: {json.dumps(parsed, indent = 2) if parsed else response.strip()}\n"
             f"Based on the original question, the previous answer, find the correct answer(s) to the question."
 
         )
@@ -253,7 +253,7 @@ for i, question in enumerate(questions):
             current_state["current_question"] = current_state["original_question"]
         # Update current_state for the next iteration
         current_state.update(full_result)
-
+        print("after current state update")
         # Store the final result of the iterations for this question
         all_final_results.append({
             "question": current_state["original_question"],
