@@ -4,12 +4,12 @@ import seaborn as sns
 import os
 
 # Percorsi
-base_path = 'iterativeRag/outputs_'
-output_path = base_path
+base_path = 'tpch/outputs_'
+output_path = base_path + 'plots/why/global/iterative/'
 os.makedirs(output_path, exist_ok=True)
 
 # Modelli
-models = ['llama8b', 'llama70b', 'mixtral8x7b']
+models = ['llama70b'] #['llama8b', 'llama70b', 'mixtral8x7b']
 metrics_to_plot = ['Precision', 'Recall', 'F1', 'Accuracy']
 
 # Colori
@@ -18,7 +18,7 @@ palette = {'llama8b': 'blue', 'llama70b': 'green', 'mixtral8x7b': 'orange'}
 # Caricamento e unione dati
 all_data = []
 for model in models:
-    file_path = os.path.join(base_path + model + '/global_metrics_iterativefaiss.csv')
+    file_path = os.path.join(base_path + model + '/iterative/global_metrics_iterative.csv')
     df = pd.read_csv(file_path)
     df['Model'] = model
     all_data.append(df)
@@ -48,7 +48,7 @@ for metric in metrics_to_plot:
         plt.legend(title='Model')
         plt.tight_layout()
 
-        filename = f"{metric}_{category}_lineplot_iterative3round.png".replace(" ", "_")
+        filename = f"{metric}_{category}_lineplot_iterative3round_previous.png".replace(" ", "_")
         plt.savefig(os.path.join(output_path, filename))
         plt.close()
 

@@ -5,7 +5,7 @@ import os
 
 # Imposta percorso principale e di output
 base_path = 'tpch/outputs_'
-output_path = base_path + 'plots/no_why/global'
+output_path = base_path + 'plots/why/global'
 os.makedirs(output_path, exist_ok=True)
 
 # Lista dei modelli = nomi delle cartelle
@@ -18,7 +18,7 @@ palette = {'llama8b': 'blue', 'llama70b': 'green', 'mixtral8x7b': 'orange'}
 # Caricamento dati
 all_data = []
 for model in models:
-    file_path = os.path.join(base_path + model +  '/no_why/global_metrics_nowhy_k20.csv')
+    file_path = os.path.join(base_path + model +  '/why/global_metrics_why_FC.csv')
     df = pd.read_csv(file_path)
     df['Model'] = model
     all_data.append(df)
@@ -42,7 +42,7 @@ for metric in metrics_to_plot:
     plt.tight_layout()
 
     # Salvataggio grafico
-    filename = f"{metric}_barplot_ollama_nowhyFC_k20.png".replace(" ", "_")
+    filename = f"{metric}_barplot_ollama_why_FC.png".replace(" ", "_")
     plt.savefig(os.path.join(output_path, filename))
     plt.close()
 

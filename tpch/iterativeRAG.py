@@ -1,12 +1,12 @@
 import os
-
+import re
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.document_loaders import CSVLoader
 from langchain_core.documents import Document
 from langchain_community.vectorstores import FAISS
 from langchain_community.retrievers import BM25Retriever
 from langgraph.graph import START, StateGraph, END
-from typing_extensions import List, TypedDict, Optional, Dict, Any
+from typing_extensions import List, TypedDict, Optional, Dict, Any, Set
 from langchain_core.documents import Document
 import json
 from langchain_core.output_parsers import JsonOutputParser
@@ -144,7 +144,26 @@ def definePrompt():
     """
     return prompt
 
+def get_k_to_add(previous_answer: str,) -> int:
 
+    seen_entries: Set[str] = set()
+    k = 0
+    if isinstance(previous_answer, str):
+        previous_answer = [previous_answer["why"]] if previous_answer else []  
+
+    # Regex per catturare tutte le occorrenze tipo table_row
+    pattern = re.compile(r'(\w+_\d+)')
+
+    for witness_set in previous_answer:
+        matches = pattern.findall(witness_set)
+
+        for entry in matches:
+            if entry in seen_entries:
+                continue
+            k += 1
+
+    print(f"Number of unique entries in previous answer: {k}")    
+    return k
 class AnswerItem(BaseModel):
     answer: List[str]
     why: List[str]
@@ -173,9 +192,9 @@ def retrieve(state: State):
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
     # Construct a detailed prompt for the LLM
-    #context_str = "\n".join([f"- source: {doc.metadata.get('source').split('/')[-1].replace('.csv', '')} , row: {doc.metadata.get('row')}\n({doc.page_content})" for doc in state["context"]])
+    docs_content = "\n".join([f"- source: {doc.metadata.get('source').split('/')[-1].replace('.csv', '')} , row: {doc.metadata.get('row')}\n({doc.page_content})" for doc in state["context"]])
 
-    docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
+    #docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
     raw_prompt = definePrompt()
     final_prompt = raw_prompt.replace("QUESTION_HERE", state["current_question"]).replace("CONTEXT_HERE", docs_content)
     response = llm.invoke(final_prompt)
@@ -185,7 +204,7 @@ def generate(state: State):
     with open(debug_log_filename, "a", encoding="utf-8") as debug_file:
         debug_file.write(f"\n=== Question {i+1}: {current_state['original_question']} ===\n")
         debug_file.write(f"--- Iteration {iter_num + 1} ---\n")
-        debug_file.write(f"\nPrompt Sent to LLM:\n{final_prompt.format(question=state['current_question'], context=docs_content)}\n")
+        #debug_file.write(f"\nPrompt Sent to LLM:\n{final_prompt.format(question=state['current_question'], context=docs_content)}\n")
         debug_file.write(f"\nLLM Response:\n{response}\n")
         debug_file.write("="*80 + "\n")
     # Print the response from the LLM
@@ -224,17 +243,17 @@ workflow.add_edge("retrieve", "generate")
 graph = workflow.compile()
 
 all_final_results = []
+
 # Iterate over each question and invoke the graph to get the answer
 for i, question in enumerate(questions):
     print(f"\n=== Running evaluation for question n. {i+1}: {question} ===")
     initial_state = {
-        "original_question": question,
-        "current_question": question, # Start with the original question
-        "k": 10,
-        "context": [], # Initial empty context
-        "answer": [], # Initial empty answer
-        "iteration_history": []
-    }
+    "original_question": question,
+    "current_question": question, # Start with the original question
+    "k": 10,
+    "context": [], # Initial empty context
+    "answer": [], # Initial empty answer
+}
 
     # Run the graph until it decides to stop (or a max iteration limit)
     max_iterations = 3
@@ -243,14 +262,14 @@ for i, question in enumerate(questions):
         print(f"\n--- Iteration {iter_num + 1} for question n. {i+1} ---")
         full_result = graph.invoke(current_state)
         # Set the current question for the next iteration composed by original question and the last answer
-        if full_result.get("answer"):
+        #if full_result.get("answer"):
             # If the answer is a list, take the first item for the next question
-            if isinstance(full_result["answer"], list) and full_result["answer"]:
-                current_state["current_question"] = f"{current_state['original_question']} {full_result['answer']}"
-            else:
-                current_state["current_question"] = current_state["original_question"]
-        else:
-            current_state["current_question"] = current_state["original_question"]
+            #if isinstance(full_result["answer"], list) and full_result["answer"]:
+                #current_state["current_question"] = f"{current_state['original_question']} {full_result['answer']}"
+            #else:
+                #current_state["current_question"] = current_state["original_question"]
+        #else:
+            #current_state["current_question"] = current_state["original_question"]
         # Update current_state for the next iteration
         current_state.update(full_result)
         print("after current state update")
