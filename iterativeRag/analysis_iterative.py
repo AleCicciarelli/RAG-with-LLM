@@ -85,9 +85,9 @@ def main():
     question_types = load_json("tpch/questions.json")
 
     pred_folder = "tpch/outputs_llama70b/iterative"
-    global_metrics_file = os.path.join(pred_folder, "global_metrics_iterative_k10.csv")
-    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterative_k10.csv")
-    iteration_metrics_file = os.path.join(pred_folder, "metrics_per_iteration_k10.csv")
+    global_metrics_file = os.path.join(pred_folder, "global_metrics_iterative_kdin.csv")
+    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterative_kdin.csv")
+    iteration_metrics_file = os.path.join(pred_folder, "metrics_per_iteration_kdin.csv")
 
     write_header_global = not os.path.exists(global_metrics_file)
     write_header_type = not os.path.exists(type_metrics_file)
@@ -117,7 +117,7 @@ def main():
                 "Explanation Precision", "Explanation Recall", "Explanation F1", "Exact Explanation"
             ])
 
-        pred_file = os.path.join(pred_folder, f"outputs_llama70b_ollama_iterative_k10.json")
+        pred_file = os.path.join(pred_folder, f"outputs_llama70b_ollama_iterative_kdin.json")
         ungrouped_pred_data = load_json(pred_file)
         pred_data = group_predictions_by_question(ungrouped_pred_data)
         assert len(gt_data) == len(pred_data), "Mismatch in number of questions"

@@ -260,6 +260,9 @@ for i, question in enumerate(questions):
     current_state = initial_state
     for iter_num in range(max_iterations):
         print(f"\n--- Iteration {iter_num + 1} for question n. {i+1} ---")
+        k = k + get_k_to_add(current_state["answer"]["why"]) if current_state["answer"] else 10
+        current_state["k"] = k
+        print(f"Current k value: {k}")
         full_result = graph.invoke(current_state)
         # Set the current question for the next iteration composed by original question and the last answer
         #if full_result.get("answer"):
