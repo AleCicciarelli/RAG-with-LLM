@@ -26,7 +26,15 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     dtype=None,
     load_in_4bit=True,
 )
-
+tokens = tokenizer.tokenize("<|eot_id|>")
+ids = tokenizer.convert_tokens_to_ids(tokens)
+print(f"Tokens: {tokens}")
+print(f"Token IDs: {ids}")
+print("Matches eos_token_id?", ids[0] == tokenizer.eos_token_id)
+tokens = tokenizer.tokenize("<|end|>")
+ids = tokenizer.convert_tokens_to_ids(tokens)
+print(f"<|end|> Tokens: {tokens}")
+print(f"Token IDs: {ids}")
 # --- 2. Configurazione e applicazione LoRA ---
 print("✅ Configurazione LoRA...")
 
@@ -45,7 +53,7 @@ dataset = load_dataset("json", data_files=dataset_path, split="train")
 
 # --- 4. Format dataset in instruction-style ---
 def formatting(example):
-    return {"text": f"{example['prompt']}<|end|>\n{example['output']}"}
+    return {"text": f"{example['prompt']}<|eot_id|>\n{example['output']}"}
 
 print("✅ Formatting dataset...")
 dataset = dataset.map(formatting)
@@ -121,7 +129,7 @@ If the answer is not present in the context, return:
   "answer": [],
   "why": []
 }
-<|end|>
+<|eot_id|>
 """
 inputs = tokenizer(inference_prompt, return_tensors="pt", truncation=True, max_length=max_seq_length).to("cuda")
 
