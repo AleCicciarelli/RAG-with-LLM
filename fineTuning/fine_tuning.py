@@ -102,6 +102,19 @@ FastLanguageModel.for_inference(model)
 
 # --- 7. PROMPT DI TEST ---
 inference_prompt = """
+Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
+For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
+Format of Witness Sets (as strings):  
+- If there is ONE relevant tuple set: "{{<table_name>_<row>}}"  
+- If there are MULTIPLE: "{{<table_name>_<row>},{<table_name>_<row>},...}}"  
+IMPORTANT:
+Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.
+If your output is not a valid JSON block in the format described, it will be discarded.
+If the answer is not present in the context, return an empty array.
+
+
+INVALID OUTPUT EXAMPLE (will be discarded):
+The answer is: {"answer": [...], "why": [...]}
 CONTEXT:
 students.csv:
 - student_id:1, name:Giulia, surname:Rossi, age:20
@@ -129,7 +142,7 @@ If the answer is not present in the context, return:
   "answer": [],
   "why": []
 }
-<|eot_id|>
+
 """
 inputs = tokenizer(inference_prompt, return_tensors="pt", truncation=True, max_length=max_seq_length).to("cuda")
 

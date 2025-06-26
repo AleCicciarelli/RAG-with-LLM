@@ -256,7 +256,7 @@ for i, question in enumerate(questions):
 }
 
     # Run the graph until it decides to stop (or a max iteration limit)
-    max_iterations = 3
+    max_iterations = 5
     current_state = initial_state
     for iter_num in range(max_iterations):
         print(f"\n--- Iteration {iter_num + 1} for question n. {i+1} ---")
