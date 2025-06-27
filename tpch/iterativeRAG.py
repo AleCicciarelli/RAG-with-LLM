@@ -30,14 +30,14 @@ os.environ["LANGSMITH_API_KEY"] = "lsv2_pt_87133982193d4e3b8110cb9e3253eb17_7831
 # MISTRAL by Groq
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
-llm = ChatOllama(model="llama3:70b", temperature=0)
+llm = ChatOllama(model="mixtral:8x7b", temperature=0)
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
 
 csv_folder = "tpch/csv_data"
 faiss_index_folder = "tpch/faiss_index"
-output_filename = f"tpch/outputs_llama70b/iterative/outputs_llama70b_ollama_iterative_k10.json"
+output_filename = f"tpch/outputs_mixtral8x7b/iterative/outputs_mixtral8x7b_iterative_k10_FC_3rounds.json"
 debug_log_filename = f"iterativeRag/debug_log_llama70b_iterative.txt"
 os.makedirs(os.path.dirname(debug_log_filename), exist_ok=True)
 # Save the results for the current value of k to a JSON file for later analysis
@@ -258,10 +258,10 @@ def generate(state: State):
         parsed = None
 
     return {
-        "answer": parsed if parsed else response.context.strip(),
+        "answer": parsed if parsed else response.content.strip(),
         "current_question": (
             f"{state['original_question']}\n\n"
-            f"Previous answer generated: {json.dumps(parsed, indent = 2) if parsed else response.context.strip()}\n"
+            f"Previous answer generated: {json.dumps(parsed, indent = 2) if parsed else response.content.strip()}\n"
             f"Based on the original question, the previous answer, find the correct answer(s) to the question."
 
         )
@@ -307,17 +307,18 @@ for i, question in enumerate(questions):
         "original_question": question,
         "current_question": question, # Start with the original question
         "k": 10,    
-        "context": context_docs
+        "context": context_docs,
+        "answer": [],
     }
 
     # Run the graph until it decides to stop (or a max iteration limit)
-    max_iterations = 5
+    max_iterations = 3
     current_state = state
     for iter_num in range(max_iterations):
         print(f"\n--- Iteration {iter_num + 1} for question n. {i+1} ---")
-        k = k + get_k_to_add(current_state["answer"]["why"]) if current_state["answer"] else 10
-        current_state["k"] = k
-        print(f"Current k value: {k}")
+        #k = k + get_k_to_add(current_state["answer"]["why"]) if current_state["answer"] else 10
+        #current_state["k"] = k
+        #print(f"Current k value: {k}")
         full_result = generate(state)
         #full_result = graph.invoke(current_state)
         # Set the current question for the next iteration composed by original question and the last answer
