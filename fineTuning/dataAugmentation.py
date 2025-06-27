@@ -45,6 +45,6 @@ def augment_data(examples):
 augmented_dataset = augment_data(dataset)
 
 
-# Salva il dataset aumentato in un file JSON
-with open('augmented_dataset.json', 'w') as f:
-    json.dump(augmented_dataset, f, indent=4)
+with open('augmented_dataset.jsonl', 'w') as f:
+    for example in augmented_dataset:
+        f.write(json.dumps(example) + "\n")
