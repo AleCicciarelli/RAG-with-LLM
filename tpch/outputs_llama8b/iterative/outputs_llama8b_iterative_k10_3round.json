@@ -4,26 +4,25 @@
         "iteration": 1,
         "answer": {
             "answer": [
-                "Supplier#000000678",
-                "Supplier#000000075",
-                "Supplier#000000162"
+                "678",
+                "74"
             ],
             "why": [
-                "{{supplier_677}}",
+                "{{supplier_677,supplier_74}}"
+            ]
+        }
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "74",
+                "678"
+            ],
+            "why": [
                 "{{supplier_74}}",
-                "{{supplier_161}}"
-            ]
-        }
-    },
-    {
-        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
-        "iteration": 2,
-        "answer": {
-            "answer": [
-                "Supplier#000000075"
-            ],
-            "why": [
-                "{{supplier_74}}"
+                "{{supplier_677,supplier_74}}"
             ]
         }
     },
@@ -32,10 +31,10 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "Supplier#000000075"
+                "74"
             ],
             "why": [
-                "{{supplier_74}}"
+                "{{supplier_11}"
             ]
         }
     },
@@ -43,48 +42,81 @@
         "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
         "iteration": 1,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "20099",
+                "201510"
+            ],
+            "why": [
+                "{{orders_5035}}",
+                "{{orders_50399}}"
+            ]
         }
     },
     {
         "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
         "iteration": 2,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "20099",
+                "201510"
+            ],
+            "why": [
+                "{{orders_5035}}",
+                "{{orders_50399}}"
+            ]
         }
     },
     {
         "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
         "iteration": 3,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "20099",
+                "201510"
+            ],
+            "why": [
+                "{{orders_5035}}",
+                "{{orders_50399}}"
+            ]
         }
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
         "iteration": 1,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "1990",
+                "1994"
+            ],
+            "why": [
+                "{{orders_49325,orders_501}"
+            ]
         }
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
         "iteration": 2,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "1990",
+                "1994"
+            ],
+            "why": [
+                "{{orders_49325,orders_501}"
+            ]
         }
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
         "iteration": 3,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "1990",
+                "1994"
+            ],
+            "why": [
+                "{{orders_49325,orders_501}"
+            ]
         }
     },
     {
@@ -92,10 +124,10 @@
         "iteration": 1,
         "answer": {
             "answer": [
-                "LARGE PLATED COPPER"
+                "4050"
             ],
             "why": [
-                "{{part_4051}}"
+                "{{part_4051}"
             ]
         }
     },
@@ -104,10 +136,10 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "LARGE PLATED COPPER"
+                "4050"
             ],
             "why": [
-                "{{part_4051}}"
+                "{{part_16088}"
             ]
         }
     },
@@ -116,10 +148,10 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "LARGE PLATED COPPER"
+                "4050"
             ],
             "why": [
-                "{{part_4051}}"
+                "{{part_16088}"
             ]
         }
     },
@@ -127,72 +159,125 @@
         "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
         "iteration": 1,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "1990",
+                "1303"
+            ],
+            "why": [
+                "{{orders_50419},{orders_49703}"
+            ]
         }
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
         "iteration": 2,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "1990"
+            ],
+            "why": [
+                "{{orders_501}"
+            ]
         }
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
         "iteration": 3,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "1990"
+            ],
+            "why": [
+                "{{orders_49325}"
+            ]
         }
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
         "iteration": 1,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "Customer#000001990",
+                "Customer#000014517"
+            ],
+            "why": [
+                "{{customer_1993}}",
+                "{{customer_14516}}"
+            ]
         }
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
         "iteration": 2,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "Customer#000001990",
+                "Customer#000014517"
+            ],
+            "why": [
+                "{{customer_1993}}",
+                "{{customer_14516}}"
+            ]
         }
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
         "iteration": 3,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "Customer#000001990",
+                "Customer#000014517"
+            ],
+            "why": [
+                "{{customer_1993}}",
+                "{{customer_14516}}"
+            ]
         }
     },
     {
         "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
         "iteration": 1,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "1987",
+                "14618",
+                "10994"
+            ],
+            "why": [
+                "{{customer_1987}}",
+                "{{customer_14618}}",
+                "{{customer_10994}}"
+            ]
         }
     },
     {
         "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
         "iteration": 2,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "1987",
+                "10994"
+            ],
+            "why": [
+                "{{customer_1987}",
+                "{{customer_1987,orders_4978}",
+                "{{customer_10994}"
+            ]
         }
     },
     {
         "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
         "iteration": 3,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "1987",
+                "10994"
+            ],
+            "why": [
+                "{{customer_1987}",
+                "{{customer_1987,orders_4978}",
+                "{{customer_10994}"
+            ]
         }
     },
     {
@@ -200,10 +285,10 @@
         "iteration": 1,
         "answer": {
             "answer": [
-                "EUROPE"
+                "3"
             ],
             "why": [
-                "{{nation_7},{region_3}}"
+                "{{nation_7}"
             ]
         }
     },
@@ -212,10 +297,10 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "EUROPE"
+                "3"
             ],
             "why": [
-                "{{nation_7},{region_3}}"
+                "{{nation_7}"
             ]
         }
     },
@@ -224,212 +309,231 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "EUROPE"
+                "3"
             ],
             "why": [
-                "{{nation_7},{region_3}}"
+                "{{nation_7}"
             ]
         }
     },
     {
         "question": "What is the name (r_name) of the region with region key 1?",
         "iteration": 1,
-        "answer": {
-            "answer": [
-                "AMERICA"
-            ],
-            "why": [
-                "{{region_1}}"
-            ]
-        }
+        "answer": "{\n\"answer\": [\"AMERICA\"],\n\"why\": [\"{{region_1}\"]}\n}"
     },
     {
         "question": "What is the name (r_name) of the region with region key 1?",
         "iteration": 2,
-        "answer": {
-            "answer": [
-                "AMERICA"
-            ],
-            "why": [
-                "{{region_1}}"
-            ]
-        }
+        "answer": "{\n\"answer\": [\"AMERICA\"],\n\"why\": [\"{{region_1}\"]}\n}"
     },
     {
         "question": "What is the name (r_name) of the region with region key 1?",
         "iteration": 3,
+        "answer": "{\n\"answer\": [\"AMERICA\"],\n\"why\": [\"{{region_1}\"]}\n}"
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "iteration": 1,
         "answer": {
             "answer": [
-                "AMERICA"
+                "14-685-851-5424"
             ],
             "why": [
-                "{{region_1}}"
+                "{{supplier_876}"
             ]
         }
     },
     {
         "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
-        "iteration": 1,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
         "iteration": 2,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "14-685-851-5424"
+            ],
+            "why": [
+                "{{supplier_876}}"
+            ]
         }
     },
     {
         "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
         "iteration": 3,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "14-685-851-5424"
+            ],
+            "why": [
+                "{{supplier_876}}"
+            ]
         }
     },
     {
         "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
-        "iteration": 1,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
-        "iteration": 2,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
-        "iteration": 3,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "Which customer (c_name) placed the order with order key 130?",
-        "iteration": 1,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "Which customer (c_name) placed the order with order key 130?",
-        "iteration": 2,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "Which customer (c_name) placed the order with order key 130?",
-        "iteration": 3,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
-        "iteration": 1,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
-        "iteration": 2,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
-        "iteration": 3,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the nation name of the customer Customer#000000004?",
-        "iteration": 1,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the nation name of the customer Customer#000000004?",
-        "iteration": 2,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the nation name of the customer Customer#000000004?",
-        "iteration": 3,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
         "iteration": 1,
         "answer": {
             "answer": [
-                "1904",
-                "1705",
-                "20615",
-                "7403",
-                "14401",
-                "17250"
+                "1148.22"
             ],
             "why": [
-                "{{lineitem_12345}}",
-                "{{lineitem_80789}}",
-                "{{lineitem_189249}}",
-                "{{lineitem_31349}}",
-                "{{lineitem_80789}}",
-                "{{lineitem_80789}}"
+                "{{part_19228}}"
+            ]
+        }
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "1148.22"
+            ],
+            "why": [
+                "{{part_19228}}"
+            ]
+        }
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "1148.22"
+            ],
+            "why": [
+                "{{part_19228}}"
+            ]
+        }
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "4436"
+            ],
+            "why": [
+                "{{orders_42053}}"
+            ]
+        }
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "4436"
+            ],
+            "why": [
+                "{{orders_130}}"
+            ]
+        }
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "4436"
+            ],
+            "why": [
+                "{{orders_130}}"
+            ]
+        }
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "456"
+            ],
+            "why": [
+                "{{customer_8485}"
+            ]
+        }
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "-246.69"
+            ],
+            "why": [
+                "{{customer_2445}"
+            ]
+        }
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "-246.69"
+            ],
+            "why": [
+                "{{customer_2445}"
+            ]
+        }
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Customer#000000004"
+            ],
+            "why": [
+                "{{customer_6778}"
+            ]
+        }
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Customer#000000004"
+            ],
+            "why": [
+                "{{customer_6778}}"
+            ]
+        }
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Customer#000000004"
+            ],
+            "why": [
+                "{{customer_6778}}"
             ]
         }
     },
     {
         "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "iteration": 1,
+        "answer": "{\n\"answer\": [\"1904\", \"16961\", \"17810\", \"14401\", \"17250\"],\n\"why\": [\n{{lineitem_189249},{lineitem_80789},{lineitem_31346},{lineitem_314146},{lineitem_189249}}\n]\n}"
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
         "iteration": 2,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
+        "answer": "{\n\"answer\": [\"17201\", \"9230\"],\n\"why\": [\n{{lineitem_138404},{lineitem_253302}}\n]\n}"
     },
     {
         "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
         "iteration": 3,
         "answer": {
             "answer": [
-                "9356",
-                "18971",
-                "9011"
+                "127396",
+                "86624",
+                "358054"
             ],
             "why": [
-                "{{lineitem_128136}}",
-                "{{lineitem_357782}}",
-                "{{lineitem_324760}}"
+                "{{lineitem_127857}}",
+                "{{lineitem_86869}}",
+                "{{lineitem_357782}}"
             ]
         }
     },
@@ -438,12 +542,10 @@
         "iteration": 1,
         "answer": {
             "answer": [
-                "4",
-                "3"
+                "4"
             ],
             "why": [
-                "{{region_4}}",
-                "{{region_3}}"
+                "{{region_4}"
             ]
         }
     },
@@ -452,12 +554,10 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "4",
-                "3"
+                "4"
             ],
             "why": [
-                "{{region_4}}",
-                "{{region_3}}"
+                "{{region_11}"
             ]
         }
     },
@@ -466,12 +566,10 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "4",
-                "3"
+                "4"
             ],
             "why": [
-                "{{region_4}}",
-                "{{region_3}}"
+                "{{region_11}"
             ]
         }
     },
@@ -479,21 +577,32 @@
         "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
         "iteration": 1,
         "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
-        "iteration": 2,
-        "answer": {
             "answer": [
+                "Customer#000001980",
+                "Customer#000002020",
                 "Customer#000001999",
-                "Customer#000010367"
+                "Customer#000010992",
+                "Customer#000010920",
+                "Customer#000001988",
+                "Customer#000001887",
+                "Customer#000000279",
+                "Customer#000000500"
             ],
             "why": [
-                "{{customer_2002}}",
-                "{{customer_10368}}"
+                "{{customer_1983},{customer_2023},{customer_2002},{customer_10993},{customer_10921},{customer_1991},{customer_1890},{customer_279},{customer_500}}"
+            ]
+        }
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Customer#000001980",
+                "Customer#000002020"
+            ],
+            "why": [
+                "{{customer_1983},{customer_2023}"
             ]
         }
     },
@@ -502,12 +611,11 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "Customer#000001999",
-                "Customer#000010856"
+                "Customer#000001980",
+                "Customer#000002020"
             ],
             "why": [
-                "{{customer_2002}}",
-                "{{customer_10857}}"
+                "{{customer_1983},{customer_2023}"
             ]
         }
     },
@@ -515,8 +623,13 @@
         "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
         "iteration": 1,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "Supplier#000000180",
+                "Supplier#000000182"
+            ],
+            "why": [
+                "{{supplier_179},{supplier_182}}"
+            ]
         }
     },
     {
@@ -524,44 +637,33 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "Supplier#000000929"
+                "Supplier#000000180",
+                "Supplier#000000182"
             ],
             "why": [
-                "{{supplier_928}}"
+                "{{supplier_11},{supplier_49}"
             ]
         }
     },
     {
         "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
         "iteration": 3,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
+        "answer": "{\n  \"answer\": [\"Supplier#000000180\", \"Supplier#000000182\"],\n  \"why\": [\"{{supplier_11},{supplier_49}\"]}\n}"
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
         "iteration": 1,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
+        "answer": "{\n\"answer\": [\"Customer#000012500\", \"Customer#000014619\"],\n\"why\": [\n{{customer_12499}},\n{{customer_247}}\n]\n}"
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
         "iteration": 2,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
+        "answer": "{\n\"answer\": [\"Customer#000012500\", \"Customer#000014619\"],\n\"why\": [\n{{customer_12499}},\n{{customer_247}}\n]\n}"
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
         "iteration": 3,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
+        "answer": "{\n\"answer\": [\"Customer#000012500\", \"Customer#000014619\"],\n\"why\": [\n{{customer_12499}},\n{{customer_247}}\n]\n}"
     },
     {
         "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
@@ -575,16 +677,24 @@
         "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
         "iteration": 2,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "324"
+            ],
+            "why": [
+                "{{orders_125432}}"
+            ]
         }
     },
     {
         "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
         "iteration": 3,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "324"
+            ],
+            "why": [
+                "{{orders_125432}}"
+            ]
         }
     },
     {
@@ -603,8 +713,12 @@
         "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
         "iteration": 2,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "1997-12-25"
+            ],
+            "why": [
+                "{{orders_5085,orders_22209,orders_52229,orders_133853,orders_52541,orders_30406,orders_76158,orders_83388}}"
+            ]
         }
     },
     {
@@ -612,229 +726,310 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "1997-12-25",
+                "1997-12-23"
+            ],
+            "why": [
+                "{{orders_52229}"
+            ]
+        }
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Supplier#000000007"
+            ],
+            "why": [
+                "{{supplier_876}}"
+            ]
+        }
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "23"
+            ],
+            "why": [
+                "{{supplier_6}}"
+            ]
+        }
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "23"
+            ],
+            "why": [
+                "{{supplier_6}}"
+            ]
+        }
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Supplier#000000005"
+            ],
+            "why": [
+                "{{supplier_1}"
+            ]
+        }
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "iteration": 2,
+        "answer": {
+            "answer": [],
+            "why": []
+        }
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Supplier#000000005"
+            ],
+            "why": [
+                "{{supplier_5}}"
+            ]
+        }
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "iteration": 1,
+        "answer": "{\n\"answer\": [\"Supplier#000000975\", \"Supplier#000000274\", \"Supplier#000000158\", \"Supplier#000000267\", \"Supplier#000000013\", \"Supplier#000000262\", \"Supplier#000000206\", \"Supplier#000000251\", \"Supplier#000000566\", \"Supplier#000000405\"],\n\"why\": [\n{{supplier_975}},\n{supplier_274,supplier_157,supplier_267,supplier_12,supplier_262,supplier_206,supplier_251,supplier_565,supplier_405}}\n]"
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "iteration": 2,
+        "answer": "{\n\"answer\": [\"Supplier#000000975\", \"Supplier#000000274\", \"Supplier#000000158\", \"Supplier#000000267\", \"Supplier#000000013\", \"Supplier#000000262\", \"Supplier#000000206\", \"Supplier#000000251\", \"Supplier#000000566\", \"Supplier#000000405\"],\n\"why\": [\n{{supplier_975,supplier_274,supplier_158,supplier_267,supplier_12,supplier_262,supplier_206,supplier_251,supplier_565,supplier_405}}\n]\n}"
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "iteration": 3,
+        "answer": "{\n\"answer\": [\"Supplier#000000109\", \"Supplier#000000012\"],\n\"why\": [\n{{supplier_108}}\n]\n}"
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "246"
+            ],
+            "why": [
+                "{{partsupp_8111}"
+            ]
+        }
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "246"
+            ],
+            "why": [
+                "{{partsupp_7810}}"
+            ]
+        }
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "246"
+            ],
+            "why": [
+                "{{partsupp_7810}}"
+            ]
+        }
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                112149.59
+            ],
+            "why": [
+                "{{orders_66069}}"
+            ]
+        }
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                112149.59
+            ],
+            "why": [
+                "{{orders_16205}}"
+            ]
+        }
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                112149.59
+            ],
+            "why": [
+                "{{orders_125838}}"
+            ]
+        }
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "14-685-851-5424"
+            ],
+            "why": [
+                "{{supplier_876}"
+            ]
+        }
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "14-685-851-5424"
+            ],
+            "why": [
+                "{{supplier_876}}"
+            ]
+        }
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "14-685-851-5424"
+            ],
+            "why": [
+                "{{supplier_876}}"
+            ]
+        }
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "323"
+            ],
+            "why": [
+                "{{orders_50875}}"
+            ]
+        }
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
                 "1997-03-03"
             ],
             "why": [
-                "{{orders_5085}}",
                 "{{orders_133853}}"
             ]
         }
     },
     {
-        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
-        "iteration": 1,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
-        "iteration": 2,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
-        "iteration": 3,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
-        "iteration": 1,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
-        "iteration": 2,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
-        "iteration": 3,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "Which suppliers (s_name) provides the part with partkey 200?",
-        "iteration": 1,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "Which suppliers (s_name) provides the part with partkey 200?",
-        "iteration": 2,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "Which suppliers (s_name) provides the part with partkey 200?",
-        "iteration": 3,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
-        "iteration": 1,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
-        "iteration": 2,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
-        "iteration": 3,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the total price of the order with orderkey 100?",
-        "iteration": 1,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the total price of the order with orderkey 100?",
-        "iteration": 2,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the total price of the order with orderkey 100?",
-        "iteration": 3,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
-        "iteration": 1,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
-        "iteration": 2,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
-        "iteration": 3,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the order date of the order with order key 323?",
-        "iteration": 1,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
-        "question": "What is the order date of the order with order key 323?",
-        "iteration": 2,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
-    },
-    {
         "question": "What is the order date of the order with order key 323?",
         "iteration": 3,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "1997-03-03"
+            ],
+            "why": [
+                "{{orders_133853}}"
+            ]
         }
     },
     {
         "question": "Which customer (c_name) placed the order with order key 323?",
         "iteration": 1,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "5353"
+            ],
+            "why": [
+                "{{orders_64230}"
+            ]
         }
     },
     {
         "question": "Which customer (c_name) placed the order with order key 323?",
         "iteration": 2,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "5353"
+            ],
+            "why": [
+                "{{orders_111658}"
+            ]
         }
     },
     {
         "question": "Which customer (c_name) placed the order with order key 323?",
         "iteration": 3,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "8003"
+            ],
+            "why": [
+                "{{orders_111658}}"
+            ]
         }
     },
     {
         "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
         "iteration": 1,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "1"
+            ],
+            "why": [
+                "{{supplier_538}"
+            ]
         }
     },
     {
         "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
         "iteration": 2,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "1"
+            ],
+            "why": [
+                "{{supplier_538}"
+            ]
         }
     },
     {
         "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
         "iteration": 3,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "1"
+            ],
+            "why": [
+                "{{supplier_538}"
+            ]
         }
     },
     {
@@ -877,96 +1072,123 @@
         "question": "What is the name of the nation of the customer who placed order 352?",
         "iteration": 1,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "Customer#000009786"
+            ],
+            "why": [
+                "{{customer_9787}"
+            ]
         }
     },
     {
         "question": "What is the name of the nation of the customer who placed order 352?",
         "iteration": 2,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "Customer#000009786"
+            ],
+            "why": [
+                "{{customer_9787}"
+            ]
         }
     },
     {
         "question": "What is the name of the nation of the customer who placed order 352?",
         "iteration": 3,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "Customer#000009786"
+            ],
+            "why": [
+                "{{customer_9787}"
+            ]
         }
     },
     {
         "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
         "iteration": 1,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
+        "answer": "{\n\"answer\": [\"Supplier#000000877\"],\n\"why\": [\n{{supplier_876}}\n]\n}"
     },
     {
         "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
         "iteration": 2,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
+        "answer": "{\n\"answer\": [\"Supplier#000000877\"],\n\"why\": [\n{{supplier_876}}\n]\n}"
     },
     {
         "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
         "iteration": 3,
-        "answer": {
-            "answer": [],
-            "why": []
-        }
+        "answer": "{\n\"answer\": [\"Supplier#000000877\"],\n\"why\": [\n{{supplier_876}}\n]\n}"
     },
     {
         "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
         "iteration": 1,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "18-876-287-5756"
+            ],
+            "why": [
+                "{{supplier_876}}"
+            ]
         }
     },
     {
         "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
         "iteration": 2,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "18-876-287-5756"
+            ],
+            "why": [
+                "{{supplier_667}}"
+            ]
         }
     },
     {
         "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
         "iteration": 3,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "18-876-287-5756"
+            ],
+            "why": [
+                "{{supplier_667}}"
+            ]
         }
     },
     {
         "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
         "iteration": 1,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "blush thistle blue yellow saddle"
+            ],
+            "why": [
+                "{{part_7020}"
+            ]
         }
     },
     {
         "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
         "iteration": 2,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "blush thistle blue yellow saddle"
+            ],
+            "why": [
+                "{{part_2596}}"
+            ]
         }
     },
     {
         "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
         "iteration": 3,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "blush thistle blue yellow saddle"
+            ],
+            "why": [
+                "{{part_2596}}"
+            ]
         }
     },
     {
@@ -974,10 +1196,10 @@
         "iteration": 1,
         "answer": {
             "answer": [
-                901.0
+                "901.0"
             ],
             "why": [
-                "{{part_0}}"
+                "{{part_0}"
             ]
         }
     },
@@ -986,7 +1208,7 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                901.0
+                "901.0"
             ],
             "why": [
                 "{{part_0}}"
@@ -998,7 +1220,7 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                901.0
+                "901.0"
             ],
             "why": [
                 "{{part_0}}"
@@ -1008,29 +1230,29 @@
     {
         "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
         "iteration": 1,
+        "answer": {
+            "answer": [
+                "Customer#000001990",
+                "Customer#000009628",
+                "Customer#000002009"
+            ],
+            "why": [
+                "{{customer_1993}}",
+                "{{customer_9629}}",
+                "{{customer_2012}}"
+            ]
+        }
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "iteration": 2,
         "answer": {
             "answer": [
                 "Customer#000002009",
-                "Customer#000014940",
-                "Customer#000001984"
+                "Customer#000001994"
             ],
             "why": [
-                "{{customer_2012}}",
-                "{{customer_14939}}",
-                "{{customer_1987}}"
-            ]
-        }
-    },
-    {
-        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
-        "iteration": 2,
-        "answer": {
-            "answer": [
-                "Customer#000001984",
-                "Customer#000001973"
-            ],
-            "why": [
-                "{{customer_1987}}",
+                "{{customer_1993}}",
                 "{{customer_1976}}"
             ]
         }
@@ -1040,12 +1262,12 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "Customer#000001984",
-                "Customer#000001973"
+                "Customer#000002009",
+                "Customer#000001994"
             ],
             "why": [
-                "{{customer_1987}}",
-                "{{customer_1976}}"
+                "{{customer_1976}}",
+                "{{customer_1993}}"
             ]
         }
     },
@@ -1053,72 +1275,164 @@
         "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
         "iteration": 1,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "Supplier#000000877",
+                "Supplier#000000216",
+                "Supplier#000000181",
+                "Supplier#000000121",
+                "Supplier#000000229",
+                "Supplier#000000834"
+            ],
+            "why": [
+                "{{supplier_876}}",
+                "{{supplier_216}}",
+                "{{supplier_181}}",
+                "{{supplier_120}}",
+                "{{supplier_229}}",
+                "{{supplier_834}}"
+            ]
         }
     },
     {
         "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
         "iteration": 2,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "Supplier#000000877",
+                "Supplier#000000216",
+                "Supplier#000000181",
+                "Supplier#000000121",
+                "Supplier#000000229",
+                "Supplier#000000834"
+            ],
+            "why": [
+                "{{supplier_876}}",
+                "{{supplier_216}}",
+                "{{supplier_181}}",
+                "{{supplier_120}}",
+                "{{supplier_229}}",
+                "{{supplier_834}}"
+            ]
         }
     },
     {
         "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
         "iteration": 3,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "Supplier#000000877",
+                "Supplier#000000216",
+                "Supplier#000000181",
+                "Supplier#000000121",
+                "Supplier#000000229",
+                "Supplier#000000834"
+            ],
+            "why": [
+                "{{supplier_876}}",
+                "{{supplier_216}}",
+                "{{supplier_181}}",
+                "{{supplier_120}}",
+                "{{supplier_229}}",
+                "{{supplier_834}}"
+            ]
         }
     },
     {
         "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
         "iteration": 1,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "2018",
+                "12662",
+                "14155",
+                "1999"
+            ],
+            "why": [
+                "{{orders_73486}",
+                "{{orders_50152}",
+                "{{orders_138993}",
+                "{{orders_68468}"
+            ]
         }
     },
     {
         "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
         "iteration": 2,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "12662",
+                "14155",
+                "1999"
+            ],
+            "why": [
+                "{{orders_50152}",
+                "{{orders_73486}",
+                "{{orders_138993}"
+            ]
         }
     },
     {
         "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
         "iteration": 3,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "12662",
+                "167"
+            ],
+            "why": [
+                "{{orders_50152}",
+                "{{orders_49772}"
+            ]
         }
     },
     {
         "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
         "iteration": 1,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "555365",
+                "202023",
+                "333222"
+            ],
+            "why": [
+                "{{orders_138846}}",
+                "{{orders_50528}}",
+                "{{orders_83322}}"
+            ]
         }
     },
     {
         "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
         "iteration": 2,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "32860",
+                "49262",
+                "49551",
+                "49730"
+            ],
+            "why": [
+                "{{orders_32860}}",
+                "{{orders_49262}}",
+                "{{orders_49551}}",
+                "{{orders_49730}}"
+            ]
         }
     },
     {
         "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
         "iteration": 3,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "49551",
+                "49730",
+                "49262"
+            ],
+            "why": [
+                "{{orders_49547}}",
+                "{{orders_48322}}",
+                "{{orders_49262}}"
+            ]
         }
     },
     {
@@ -1130,8 +1444,7 @@
                 "linen rose blue white honeydew"
             ],
             "why": [
-                "{{part_4566}}",
-                "{{part_6464}}"
+                "{{part_4566},{part_6464}}"
             ]
         }
     },
@@ -1140,12 +1453,19 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "honeydew red azure magenta brown",
-                "rosy olive cyan brown forest"
+                "honeydew",
+                "linen",
+                "rose",
+                "blue",
+                "red",
+                "white",
+                "lavender",
+                "maroon",
+                "forest",
+                "burlywood"
             ],
             "why": [
-                "{{part_46}}",
-                "{{part_19037}}"
+                "{{part_46}}"
             ]
         }
     },
@@ -1154,11 +1474,18 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "rosy olive cyan brown forest",
-                "honeydew red azure magenta brown"
+                "honeydew",
+                "linen",
+                "rose",
+                "blue",
+                "red",
+                "white",
+                "lavender",
+                "maroon",
+                "forest",
+                "burlywood"
             ],
             "why": [
-                "{{part_19037}}",
                 "{{part_46}}"
             ]
         }
@@ -1172,8 +1499,8 @@
                 "CANADA"
             ],
             "why": [
-                "{{nation_24}}",
-                "{{nation_3}}"
+                "{{nation_24}",
+                "{{nation_3}"
             ]
         }
     },
@@ -1186,8 +1513,8 @@
                 "CANADA"
             ],
             "why": [
-                "{{nation_24}}",
-                "{{nation_3}}"
+                "{{nation_24}",
+                "{{nation_3}"
             ]
         }
     },
@@ -1200,8 +1527,8 @@
                 "CANADA"
             ],
             "why": [
-                "{{nation_24}}",
-                "{{nation_3}}"
+                "{{nation_24}",
+                "{{nation_3}"
             ]
         }
     },
@@ -1226,16 +1553,14 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "INDONESIA",
                 "INDIA",
-                "CHINA",
-                "JAPAN"
+                "INDONESIA",
+                "CHINA"
             ],
             "why": [
-                "{{nation_9}}",
                 "{{nation_8}}",
-                "{{nation_18}}",
-                "{{nation_12}}"
+                "{{nation_9}}",
+                "{{nation_18}}"
             ]
         }
     },
@@ -1244,18 +1569,14 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "INDONESIA",
                 "INDIA",
-                "CHINA",
-                "JAPAN",
-                "VIETNAM"
+                "INDONESIA",
+                "CHINA"
             ],
             "why": [
-                "{{nation_9}}",
                 "{{nation_8}}",
-                "{{nation_18}}",
-                "{{nation_12}}",
-                "{{nation_21}}"
+                "{{nation_9}}",
+                "{{nation_18}"
             ]
         }
     },
@@ -1302,64 +1623,31 @@
     {
         "question": "Which nations (n_name) have a region key of 3?",
         "iteration": 1,
-        "answer": {
-            "answer": [
-                "RUSSIA",
-                "FRANCE",
-                "UNITED KINGDOM"
-            ],
-            "why": [
-                "{{nation_22}}",
-                "{{nation_6}}",
-                "{{nation_23}}"
-            ]
-        }
+        "answer": "{\n\"answer\": [\"RUSSIA\", \"FRANCE\", \"UNITED KINGDOM\"],\n\"why\": [\"{{nation_22}}\", \"{{nation_6}}\", \"{{nation_23}\"}]\n}"
     },
     {
         "question": "Which nations (n_name) have a region key of 3?",
         "iteration": 2,
-        "answer": {
-            "answer": [
-                "RUSSIA",
-                "FRANCE",
-                "GERMANY",
-                "UNITED KINGDOM"
-            ],
-            "why": [
-                "{{nation_22}}",
-                "{{nation_6}}",
-                "{{nation_7}}",
-                "{{nation_23}}"
-            ]
-        }
+        "answer": "{\n\"answer\": [\"RUSSIA\", \"FRANCE\", \"GERMANY\", \"UNITED KINGDOM\"],\n\"why\": [\"{{nation_22}}\", \"{{nation_6}}\", \"{{nation_7}}\", \"{{nation_23}\"}]\n}"
     },
     {
         "question": "Which nations (n_name) have a region key of 3?",
         "iteration": 3,
-        "answer": {
-            "answer": [
-                "RUSSIA",
-                "FRANCE",
-                "GERMANY",
-                "UNITED KINGDOM"
-            ],
-            "why": [
-                "{{nation_22}}",
-                "{{nation_6}}",
-                "{{nation_7}}",
-                "{{nation_23}}"
-            ]
-        }
+        "answer": "{\n\"answer\": [\"RUSSIA\", \"GERMANY\", \"UNITED KINGDOM\"],\n\"why\": [\"{{nation_22}}\", \"{{nation_7}}\", \"{{nation_23}\"}]\n}"
     },
     {
         "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
         "iteration": 1,
         "answer": {
             "answer": [
-                "Supplier#000000678"
+                "Supplier#000000012",
+                "Supplier#000000172",
+                "Supplier#000000929"
             ],
             "why": [
-                "{{supplier_677}}"
+                "{{supplier_11}}",
+                "{{supplier_171}}",
+                "{{supplier_928}}"
             ]
         }
     },
@@ -1368,10 +1656,14 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "Supplier#000000075"
+                "Supplier#000000012",
+                "Supplier#000000172",
+                "Supplier#000000929"
             ],
             "why": [
-                "{{supplier_74}}"
+                "{{supplier_11}}",
+                "{{supplier_171}}",
+                "{{supplier_928}}"
             ]
         }
     },
@@ -1380,10 +1672,14 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "Supplier#000000075"
+                "Supplier#000000012",
+                "Supplier#000000172",
+                "Supplier#000000929"
             ],
             "why": [
-                "{{supplier_74}}"
+                "{{supplier_11}}",
+                "{{supplier_171}}",
+                "{{supplier_928}}"
             ]
         }
     }
