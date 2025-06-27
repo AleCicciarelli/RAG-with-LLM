@@ -1,5 +1,6 @@
 import os
 import re
+import csv
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.document_loaders import CSVLoader
 from langchain_core.documents import Document
@@ -176,53 +177,91 @@ class State(TypedDict):
     #iteration_history: List[Dict[str, Any]] # To store previous answers and contexts for iterative refinement
 
 parser = JsonOutputParser(pydantic_schema=AnswerItem)
-
+'''
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
 def retrieve(state: State):
     print(f"Retrieving for question: {state['original_question']}")
     retrieved_docs = vector_store.similarity_search(state["current_question"], k = 10)
     return {"context": retrieved_docs}
-    '''
-    print(f"Retrieving for question: {state['original_question']}")
-
-        retrieved_docs = bm25_retriever.get_relevant_documents(state["current_question"])
-    return {"context": retrieved_docs}
 '''
+def get_rows_from_ground_truth(ground_f2: str, csv_folder: str) -> List[Document]:
+    """
+    Estrae le righe specificate in f2, gestendo Witness Sets multipli e duplicati.
+    Supporta anche formati annidati come:
+    [
+        "{{courses_0,enrollments_0,students_0},{courses_3,enrollments_3,students_0}}",
+        "{{courses_0,enrollments_9,students_1}}"
+    ]
+    """
+    documents = []
+    seen_entries: Set[str] = set()
+
+    if isinstance(ground_f2, str):
+        ground_f2 = [ground_f2]
+
+    # Regex per catturare tutte le occorrenze tipo table_row
+    pattern = re.compile(r'(\w+_\d+)')
+
+    for witness_set in ground_f2:
+        matches = pattern.findall(witness_set)
+
+        for entry in matches:
+            if entry in seen_entries:
+                continue
+            seen_entries.add(entry)
+
+            try:
+                table_name, row_number = entry.rsplit("_", 1)
+                row_number = int(row_number)
+                csv_path = os.path.join(csv_folder, f"{table_name}.csv")
+                #print(table_name, row_number)   
+                with open(csv_path, "r", encoding="utf-8") as f:
+                    reader = csv.reader(f)
+                    header = next(reader)
+                    for idx, row in enumerate(reader):
+                        if idx == row_number:
+                            content = ",".join(row)
+                            metadata = {"source": table_name, "row": row_number}
+                            documents.append(Document(page_content=content, metadata=metadata))
+                            break
+            except Exception as e:
+                print(f"⚠️ Errore nel parsing di '{entry}': {e}")
+
+    return documents
+
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
     # Construct a detailed prompt for the LLM
-    docs_content = "\n".join([f"- source: {doc.metadata.get('source').split('/')[-1].replace('.csv', '')} , row: {doc.metadata.get('row')}\n({doc.page_content})" for doc in state["context"]])
-
+    #docs_content = "\n".join([f"- source: {doc.metadata.get('source').split('/')[-1].replace('.csv', '')} , row: {doc.metadata.get('row')}\n({doc.page_content})" for doc in state["context"]])
+    for doc in state["context"]:
+        print(f"- Source: {doc.metadata} \n  Content: {doc.page_content[:300]}...\n")
+   
+    docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
     #docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
     raw_prompt = definePrompt()
     final_prompt = raw_prompt.replace("QUESTION_HERE", state["current_question"]).replace("CONTEXT_HERE", docs_content)
     response = llm.invoke(final_prompt)
     output_text = response.content.strip()
     print(f"\n[DEBUG] LLM RESPONSE:\n{output_text}\n")
-    # Save to debug log
-    with open(debug_log_filename, "a", encoding="utf-8") as debug_file:
-        debug_file.write(f"\n=== Question {i+1}: {current_state['original_question']} ===\n")
-        debug_file.write(f"--- Iteration {iter_num + 1} ---\n")
-        #debug_file.write(f"\nPrompt Sent to LLM:\n{final_prompt.format(question=state['current_question'], context=docs_content)}\n")
-        debug_file.write(f"\nLLM Response:\n{response}\n")
-        debug_file.write("="*80 + "\n")
+
+   
     # Print the response from the LLM
     print(f"LLM response: {response}")
    
     try:
         parsed= parser.parse(output_text)
           
-        print(f"Previous answer generated: {parsed if parsed else response.strip()}")
+        print(f"Previous answer generated: {parsed if parsed else response.content.strip()}")
     except Exception as e:
         print(f"Errore nel parsing: {e}")
         parsed = None
 
     return {
-        "answer": parsed if parsed else response.strip(),
+        "answer": parsed if parsed else response.context.strip(),
         "current_question": (
             f"{state['original_question']}\n\n"
-            f"Previous answer generated: {json.dumps(parsed, indent = 2) if parsed else response.strip()}\n"
+            f"Previous answer generated: {json.dumps(parsed, indent = 2) if parsed else response.context.strip()}\n"
             f"Based on the original question, the previous answer, find the correct answer(s) to the question."
 
         )
@@ -233,7 +272,7 @@ def generate(state: State):
 with open("tpch/questions.json", "r") as f:
     data = json.load(f)
     questions = list(data.keys())
-
+'''
 # Build the graph structure once
 workflow = StateGraph(State)
 workflow.add_node("retrieve", retrieve)
@@ -241,29 +280,46 @@ workflow.add_node("generate", generate)
 workflow.add_edge(START, "retrieve")
 workflow.add_edge("retrieve", "generate")
 graph = workflow.compile()
-
+'''
+with open("tpch/ground_truthTpch.json", "r", encoding="utf-8") as f:
+    ground_truth = json.load(f)  
 all_final_results = []
 
 # Iterate over each question and invoke the graph to get the answer
 for i, question in enumerate(questions):
     print(f"\n=== Running evaluation for question n. {i+1}: {question} ===")
-    initial_state = {
-    "original_question": question,
-    "current_question": question, # Start with the original question
-    "k": 10,
-    "context": [], # Initial empty context
-    "answer": [], # Initial empty answer
-}
+    #initial_state = {
+    #"original_question": question,
+    #"current_question": question, # Start with the original question
+    #"k": 10,
+    #"context": [], # Initial empty context
+    #"answer": [], # Initial empty answer
+#}
+
+    gt = ground_truth[i]
+    gt_source_info = gt["why"]
+    
+    # Step 2: Costruisci contesto perfetto a partire dalle righe vere
+    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="tpch/csv_data_tpch")
+    
+    
+    state = {
+        "original_question": question,
+        "current_question": question, # Start with the original question
+        "k": 10,    
+        "context": context_docs
+    }
 
     # Run the graph until it decides to stop (or a max iteration limit)
     max_iterations = 5
-    current_state = initial_state
+    current_state = state
     for iter_num in range(max_iterations):
         print(f"\n--- Iteration {iter_num + 1} for question n. {i+1} ---")
         k = k + get_k_to_add(current_state["answer"]["why"]) if current_state["answer"] else 10
         current_state["k"] = k
         print(f"Current k value: {k}")
-        full_result = graph.invoke(current_state)
+        full_result = generate(state)
+        #full_result = graph.invoke(current_state)
         # Set the current question for the next iteration composed by original question and the last answer
         #if full_result.get("answer"):
             # If the answer is a list, take the first item for the next question
