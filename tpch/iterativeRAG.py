@@ -76,7 +76,9 @@ else:
 """ Retrieve and Generate part """
 # Define prompt for question-answering
 #prompt = hub.pull("rlm/rag-prompt")
+
 def definePrompt():
+    '''
     prompt = """
         Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
         For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
@@ -143,6 +145,58 @@ def definePrompt():
         }
         ```
     """
+    '''
+    prompt = """
+    Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
+        IMPORTANT:
+
+        - Do NOT include introductory phrases, explanations or any dots at the end.
+        - If the answer is not present in the context, return an empty array.
+        - Return the answer strictly in the following JSON format:
+
+        ```json
+        {
+            "answer": ["<answer_1>", "<answer_2>", ...]
+        }
+        ```
+        EXAMPLE 1:
+        CONTEXT:
+        - source: customer.csv , row: 14322
+        (<col_a>:<val_a>,..., c_nationkey : 2, ...)
+        - source: orders.csv, row: 137
+        (o_orderkey : 546, ..., o_totalprice : 20531.43, ...)
+        - source: customer.csv, row: 101
+        (<col_a>:<val_c>, ...,<c_nationkey : 2, ...)
+        - source: orders.csv, row: 78528
+        (o_orderkey : 314052, ..., o_totalprice : 20548.82, ...)
+
+        QUESTION:
+            "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?"
+
+        EXPECTED OUTPUT:
+        ```json
+        {
+            "answer": ["546", "314052"]
+        }
+        ```
+        EXAMPLE 2:    
+        CONTEXT:
+            - source: suppliers.csv, row: 4
+            (..s_name: "Supplier#000000005",...,s_phone: "21-151-690-3663")
+           
+
+        QUESTION:  
+            "What is the phone number of the supplier named 'Supplier#000000005'?"
+
+        EXPECTED OUTPUT:
+        ```json
+        {
+            "answer": ["21-151-690-3663"]
+        }
+        ```
+
+"""
+
     return prompt
 
 def get_k_to_add(previous_answer: str,) -> int:
