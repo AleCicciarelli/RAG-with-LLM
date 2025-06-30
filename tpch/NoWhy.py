@@ -41,7 +41,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 csv_folder = "tpch/csv_data_tpch"
 faiss_index_folder = "tpch/faiss_index"
-output_filename = f"tpch/outputs_llama70b/no_why/outputs_llama70b_nowhy_FC.json"
+output_filename = f"tpch/outputs_llama70b/iterative/outputs_llama70b_nowhy_FC_3rounds.json"
 
 # Verify if the FAISS files already exist
 if os.path.exists(faiss_index_folder):
@@ -131,11 +131,15 @@ class AnswerItem(BaseModel):
     answer: str
 
 # Define state for application
+#class State(TypedDict):
+#    question: str
+#    context: List[Document]
+#    answer: List[AnswerItem]
 class State(TypedDict):
-    question: str
+    original_question: str # To keep track of the initial question
+    current_question: str  # The question used for retrieval in the current iteration
     context: List[Document]
-    answer: List[AnswerItem]
-   
+    answer: AnswerItem   
 parser = JsonOutputParser(pydantic_schema=AnswerItem)    
 
 # Define application steps
@@ -244,18 +248,95 @@ def generate(state: State):
         return {
             "answer": []
         }
-
-
-# Leggi le domande dal file JSON
+# Read questions from the JSON file
 with open("tpch/questions.json", "r") as f:
     data = json.load(f)
     questions = list(data.keys())
 '''
 # Build the graph structure once
+workflow = StateGraph(State)
+workflow.add_node("retrieve", retrieve)
+workflow.add_node("generate", generate)
+workflow.add_edge(START, "retrieve")
+workflow.add_edge("retrieve", "generate")
+graph = workflow.compile()
+'''
+with open("tpch/ground_truthTpch.json", "r", encoding="utf-8") as f:
+    ground_truth = json.load(f)  
+all_final_results = []
+
+# Iterate over each question and invoke the graph to get the answer
+for i, question in enumerate(questions):
+    print(f"\n=== Running evaluation for question n. {i+1}: {question} ===")
+    #initial_state = {
+    #"original_question": question,
+    #"current_question": question, # Start with the original question
+    #"k": 10,
+    #"context": [], # Initial empty context
+    #"answer": [], # Initial empty answer
+#}
+
+    gt = ground_truth[i]
+    gt_source_info = gt["why"]
+    
+    # Step 2: Costruisci contesto perfetto a partire dalle righe vere
+    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="tpch/csv_data_tpch")
+    
+    
+    state = {
+        "original_question": question,
+        "current_question": question, # Start with the original question
+        "k": 10,    
+        "context": context_docs,
+        "answer": [],
+    }
+
+    # Run the graph until it decides to stop (or a max iteration limit)
+    max_iterations = 5
+    current_state = state
+    for iter_num in range(max_iterations):
+        print(f"\n--- Iteration {iter_num + 1} for question n. {i+1} ---")
+        #k = k + get_k_to_add(current_state["answer"]["why"]) if current_state["answer"] else 10
+        #current_state["k"] = k
+        #print(f"Current k value: {k}")
+        full_result = generate(state)
+        
+        #full_result = graph.invoke(current_state)
+        # Set the current question for the next iteration composed by original question and the last answer
+        #if full_result.get("answer"):
+            # If the answer is a list, take the first item for the next question
+            #if isinstance(full_result["answer"], list) and full_result["answer"]:
+                #current_state["current_question"] = f"{current_state['original_question']} {full_result['answer']}"
+            #else:
+                #current_state["current_question"] = current_state["original_question"]
+        #else:
+            #current_state["current_question"] = current_state["original_question"]
+        # Update current_state for the next iteration
+        current_state.update(full_result)
+        print("after current state update")
+        # Store the final result of the iterations for this question
+        all_final_results.append({
+            "question": current_state["original_question"],
+            "iteration": iter_num + 1,
+            "answer": current_state["answer"], # The last answer generated
+            #"full_iteration_history": current_state["iteration_history"] # All intermediate steps
+        })
+
+
+with open(output_filename, "w", encoding='utf-8') as output_file:
+    json.dump(all_final_results, output_file, indent=4, ensure_ascii=False)
+print(f"Results saved to {output_filename}")
+'''
+# Leggi le domande dal file JSON
+with open("tpch/questions.json", "r") as f:
+    data = json.load(f)
+    questions = list(data.keys())
+
+# Build the graph structure once
 graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
-'''
+
 all_results = []
 with open("tpch/ground_truthTpch.json", "r", encoding="utf-8") as f:
     ground_truth = json.load(f)   
@@ -292,3 +373,4 @@ with open(output_filename, "w") as output_file:
     #    output_file.write(f"Answer:{result['answer']} \n")
     #    output_file.write("\n\n")			
 print(f"Results saved to {output_filename}")
+'''
