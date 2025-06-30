@@ -30,14 +30,14 @@ os.environ["LANGSMITH_API_KEY"] = "lsv2_pt_87133982193d4e3b8110cb9e3253eb17_7831
 # MISTRAL by Groq
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
-llm = ChatOllama(model="llama3:70b", temperature=0)
+llm = ChatOllama(model="mixtral:8x7b", temperature=0)
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
 
 csv_folder = "tpch/csv_data"
 faiss_index_folder = "tpch/faiss_index"
-output_filename = f"tpch/outputs_llama70b/iterative/outputs_llama70b_iterative_k10_FC_5rounds.json"
+output_filename = f"tpch/outputs_mixtral8x7b/iterative/outputs_mixtral8x7b_FC_5rounds_NOWHY.json"
 debug_log_filename = f"iterativeRag/debug_log_llama70b_iterative.txt"
 os.makedirs(os.path.dirname(debug_log_filename), exist_ok=True)
 # Save the results for the current value of k to a JSON file for later analysis

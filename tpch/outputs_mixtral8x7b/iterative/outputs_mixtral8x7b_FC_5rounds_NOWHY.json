@@ -2,72 +2,27 @@
     {
         "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
         "iteration": 1,
-        "answer": {
-            "answer": [
-                "Supplier#000000004",
-                "Supplier#000000987"
-            ],
-            "why": [
-                "{{supplier_4}}",
-                "{{supplier_987}}"
-            ]
-        }
+        "answer": 1
     },
     {
         "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
         "iteration": 2,
-        "answer": {
-            "answer": [
-                "Supplier#000000823",
-                "Supplier#000000987"
-            ],
-            "why": [
-                "{{supplier_822}}",
-                "{{supplier_987}}"
-            ]
-        }
+        "answer": 1
     },
     {
         "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
         "iteration": 3,
-        "answer": {
-            "answer": [
-                "Supplier#000000823",
-                "Supplier#000000987"
-            ],
-            "why": [
-                "{{supplier_822}}",
-                "{{supplier_987}}"
-            ]
-        }
+        "answer": 1
     },
     {
         "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
         "iteration": 4,
-        "answer": {
-            "answer": [
-                "Supplier#000000823",
-                "Supplier#000000987"
-            ],
-            "why": [
-                "{{supplier_822}}",
-                "{{supplier_987}}"
-            ]
-        }
+        "answer": 1
     },
     {
         "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
         "iteration": 5,
-        "answer": {
-            "answer": [
-                "Supplier#000000823",
-                "Supplier#000000987"
-            ],
-            "why": [
-                "{{supplier_822}}",
-                "{{supplier_987}}"
-            ]
-        }
+        "answer": 1
     },
     {
         "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
@@ -75,9 +30,6 @@
         "answer": {
             "answer": [
                 "546"
-            ],
-            "why": [
-                "{{customer_14322,orders_137}}"
             ]
         }
     },
@@ -86,12 +38,7 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "546",
-                "314052"
-            ],
-            "why": [
-                "{{customer_14322,orders_137}}",
-                "{{customer_101,orders_78528}}"
+                "546"
             ]
         }
     },
@@ -100,12 +47,7 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "546",
-                "314052"
-            ],
-            "why": [
-                "{{customer_14323,orders_137}}",
-                "{{customer_101,orders_78528}}"
+                "546"
             ]
         }
     },
@@ -114,12 +56,7 @@
         "iteration": 4,
         "answer": {
             "answer": [
-                "546",
-                "314052"
-            ],
-            "why": [
-                "{{customer_14323,orders_137}}",
-                "{{customer_101,orders_78528}}"
+                "546"
             ]
         }
     },
@@ -128,12 +65,7 @@
         "iteration": 5,
         "answer": {
             "answer": [
-                "546",
-                "314052"
-            ],
-            "why": [
-                "{{customer_14323,orders_137}}",
-                "{{customer_101,orders_78528}}"
+                "546"
             ]
         }
     },
@@ -142,14 +74,7 @@
         "iteration": 1,
         "answer": {
             "answer": [
-                "Customer#000011467",
-                "Customer#000000502",
-                "Customer#000009067"
-            ],
-            "why": [
-                "{{customer_11467,orders_58315}}",
-                "{{customer_502,orders_64565}}",
-                "{{customer_9067,orders_121190}}"
+                "11467"
             ]
         }
     },
@@ -158,14 +83,7 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "Customer#000011467",
-                "Customer#000009067",
-                "Customer#000000502"
-            ],
-            "why": [
-                "{{customer_11467,orders_58315}}",
-                "{{customer_9067,orders_121190}}",
-                "{{customer_502,orders_64565}}"
+                "11467"
             ]
         }
     },
@@ -174,14 +92,7 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "Customer#000011467",
-                "Customer#000009067",
-                "Customer#000000502"
-            ],
-            "why": [
-                "{{customer_11467,orders_58315}}",
-                "{{customer_9067,orders_121190}}",
-                "{{customer_502,orders_64565}}"
+                "11467"
             ]
         }
     },
@@ -190,14 +101,7 @@
         "iteration": 4,
         "answer": {
             "answer": [
-                "Customer#000011467",
-                "Customer#000009067",
-                "Customer#000000502"
-            ],
-            "why": [
-                "{{customer_11467,orders_58315}}",
-                "{{customer_9067,orders_121190}}",
-                "{{customer_502,orders_64565}}"
+                "11467"
             ]
         }
     },
@@ -206,14 +110,7 @@
         "iteration": 5,
         "answer": {
             "answer": [
-                "Customer#000011467",
-                "Customer#000009067",
-                "Customer#000000502"
-            ],
-            "why": [
-                "{{customer_11467,orders_58315}}",
-                "{{customer_9067,orders_121190}}",
-                "{{customer_502,orders_64565}}"
+                "11467"
             ]
         }
     },
@@ -222,82 +119,40 @@
         "iteration": 1,
         "answer": {
             "answer": [
-                "1037",
-                "9464",
-                "3045"
-            ],
-            "why": [
-                "{{part_1037,partsupp_4170,supplier_790}}",
-                "{{part_9465,partsupp_37901,supplier_723}}",
-                "{{part_3046,partsupp_12222,supplier_551}}"
+                "791"
             ]
         }
     },
     {
         "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
         "iteration": 2,
-        "answer": {
-            "answer": [
-                "1037",
-                "9464"
-            ],
-            "why": [
-                "{{part_1037,partsupp_4170,supplier_790}}",
-                "{{part_9464,partsupp_37901,supplier_723}}"
-            ]
-        }
+        "answer": "Based on the provided context, the correct answer to the question is:"
     },
     {
         "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
         "iteration": 3,
-        "answer": {
-            "answer": [
-                "1037",
-                "9464"
-            ],
-            "why": [
-                "{{part_1037,partsupp_4170,supplier_790}}",
-                "{{part_9464,partsupp_37901,supplier_723}}"
-            ]
-        }
+        "answer": "based on the given context, there are no parts with a size of 36 supplied by suppliers with a supply cost between 100 and 102.\n\n{\n\"answer\": []\n}"
     },
     {
         "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
         "iteration": 4,
         "answer": {
             "answer": [
-                "1037",
-                "9464"
-            ],
-            "why": [
-                "{{part_1037,partsupp_4170,supplier_790}}",
-                "{{part_9464,partsupp_37901,supplier_723}}"
+                1037
             ]
         }
     },
     {
         "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
         "iteration": 5,
-        "answer": {
-            "answer": [
-                "1037",
-                "9464"
-            ],
-            "why": [
-                "{{part_1037,partsupp_4170,supplier_790}}",
-                "{{part_9464,partsupp_37901,supplier_723}}"
-            ]
-        }
+        "answer": "Based on the provided context, the correct answer to the question is:"
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
         "iteration": 1,
         "answer": {
             "answer": [
-                "Customer#000005404"
-            ],
-            "why": [
-                "{{customer_5404,orders_116716}}"
+                "5404"
             ]
         }
     },
@@ -306,10 +161,7 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "Customer#000005404"
-            ],
-            "why": [
-                "{{customer_5404,orders_116716}}"
+                "5404"
             ]
         }
     },
@@ -318,10 +170,7 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "Customer#000005404"
-            ],
-            "why": [
-                "{{customer_5404,orders_116716}}"
+                "5404"
             ]
         }
     },
@@ -330,10 +179,7 @@
         "iteration": 4,
         "answer": {
             "answer": [
-                "Customer#000005404"
-            ],
-            "why": [
-                "{{customer_5404,orders_116716}}"
+                "5404"
             ]
         }
     },
@@ -342,10 +188,7 @@
         "iteration": 5,
         "answer": {
             "answer": [
-                "Customer#000005404"
-            ],
-            "why": [
-                "{{customer_5404,orders_116716}}"
+                "5404"
             ]
         }
     },
@@ -353,98 +196,42 @@
         "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
         "iteration": 1,
         "answer": {
-            "answer": [
-                "Customer#000004267",
-                "Customer#000005065",
-                "Customer#000006418",
-                "Customer#000007454",
-                "Customer#000008821",
-                "Customer#000008954"
-            ],
-            "why": [
-                "{{customer_4268,orders_66019}}",
-                "{{customer_5068,orders_20601}}",
-                "{{customer_6422,orders_9017}}",
-                "{{customer_7458,orders_22658}}",
-                "{{customer_8822,orders_79129}}",
-                "{{customer_8955,orders_8147}}"
-            ]
+            "answer": []
         }
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
         "iteration": 2,
         "answer": {
-            "answer": [
-                "Customer#000004267",
-                "Customer#000005065",
-                "Customer#000006418"
-            ],
-            "why": [
-                "{{customer_4267,orders_8147}}",
-                "{{customer_5065,orders_149096}}",
-                "{{customer_6418,orders_23864}}"
-            ]
+            "answer": []
         }
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
         "iteration": 3,
         "answer": {
-            "answer": [
-                "Customer#000004267",
-                "Customer#000005065",
-                "Customer#000006418"
-            ],
-            "why": [
-                "{{customer_4267,orders_66019}}",
-                "{{customer_5065,orders_20601}}",
-                "{{customer_6418,orders_9017}}"
-            ]
+            "answer": []
         }
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
         "iteration": 4,
         "answer": {
-            "answer": [
-                "Customer#000004267",
-                "Customer#000005065",
-                "Customer#000006418"
-            ],
-            "why": [
-                "{{customer_4267,orders_66019}}",
-                "{{customer_5065,orders_20601}}",
-                "{{customer_6418,orders_9017}}"
-            ]
+            "answer": []
         }
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
         "iteration": 5,
         "answer": {
-            "answer": [
-                "Customer#000004267",
-                "Customer#000005065",
-                "Customer#000006418"
-            ],
-            "why": [
-                "{{customer_4267,orders_66019}}",
-                "{{customer_5065,orders_20601}}",
-                "{{customer_6418,orders_9017}}"
-            ]
+            "answer": []
         }
     },
     {
         "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
         "iteration": 1,
         "answer": {
-            "answer": [
-                "6896"
-            ],
-            "why": [
-                "{{customer_6896,orders_149223}}"
-            ]
+            "answer": []
         }
     },
     {
@@ -453,9 +240,6 @@
         "answer": {
             "answer": [
                 "6896"
-            ],
-            "why": [
-                "{{customer_6896,orders_149223}}"
             ]
         }
     },
@@ -463,12 +247,7 @@
         "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
         "iteration": 3,
         "answer": {
-            "answer": [
-                "6896"
-            ],
-            "why": [
-                "{{customer_6896,orders_149223}}"
-            ]
+            "answer": []
         }
     },
     {
@@ -477,9 +256,6 @@
         "answer": {
             "answer": [
                 "6896"
-            ],
-            "why": [
-                "{{customer_6896,orders_149223}}"
             ]
         }
     },
@@ -487,12 +263,7 @@
         "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
         "iteration": 5,
         "answer": {
-            "answer": [
-                "6896"
-            ],
-            "why": [
-                "{{customer_6896,orders_149223}}"
-            ]
+            "answer": []
         }
     },
     {
@@ -500,10 +271,7 @@
         "iteration": 1,
         "answer": {
             "answer": [
-                "EUROPE"
-            ],
-            "why": [
-                "{{nation_7,region_3}}"
+                "3"
             ]
         }
     },
@@ -512,10 +280,7 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "EUROPE"
-            ],
-            "why": [
-                "{{nation_7,region_3}}"
+                "3"
             ]
         }
     },
@@ -524,10 +289,7 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "EUROPE"
-            ],
-            "why": [
-                "{{nation_7,region_3}}"
+                "3"
             ]
         }
     },
@@ -536,10 +298,7 @@
         "iteration": 4,
         "answer": {
             "answer": [
-                "EUROPE"
-            ],
-            "why": [
-                "{{nation_7,region_3}}"
+                "3"
             ]
         }
     },
@@ -548,10 +307,7 @@
         "iteration": 5,
         "answer": {
             "answer": [
-                "EUROPE"
-            ],
-            "why": [
-                "{{nation_7,region_3}}"
+                "3"
             ]
         }
     },
@@ -561,9 +317,6 @@
         "answer": {
             "answer": [
                 "AMERICA"
-            ],
-            "why": [
-                "{{region_1}}"
             ]
         }
     },
@@ -573,9 +326,6 @@
         "answer": {
             "answer": [
                 "AMERICA"
-            ],
-            "why": [
-                "{{region_1}}"
             ]
         }
     },
@@ -585,9 +335,6 @@
         "answer": {
             "answer": [
                 "AMERICA"
-            ],
-            "why": [
-                "{{region_1}}"
             ]
         }
     },
@@ -597,9 +344,6 @@
         "answer": {
             "answer": [
                 "AMERICA"
-            ],
-            "why": [
-                "{{region_1}}"
             ]
         }
     },
@@ -609,23 +353,13 @@
         "answer": {
             "answer": [
                 "AMERICA"
-            ],
-            "why": [
-                "{{region_1}}"
             ]
         }
     },
     {
         "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
         "iteration": 1,
-        "answer": {
-            "answer": [
-                "34-852-489-8585"
-            ],
-            "why": [
-                "{{supplier_9}}"
-            ]
-        }
+        "answer": ""
     },
     {
         "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
@@ -633,9 +367,6 @@
         "answer": {
             "answer": [
                 "34-852-489-8585"
-            ],
-            "why": [
-                "{{supplier_9}}"
             ]
         }
     },
@@ -645,9 +376,6 @@
         "answer": {
             "answer": [
                 "34-852-489-8585"
-            ],
-            "why": [
-                "{{supplier_9}}"
             ]
         }
     },
@@ -657,9 +385,6 @@
         "answer": {
             "answer": [
                 "34-852-489-8585"
-            ],
-            "why": [
-                "{{supplier_9}}"
             ]
         }
     },
@@ -669,9 +394,6 @@
         "answer": {
             "answer": [
                 "34-852-489-8585"
-            ],
-            "why": [
-                "{{supplier_9}}"
             ]
         }
     },
@@ -681,9 +403,6 @@
         "answer": {
             "answer": [
                 "905.0"
-            ],
-            "why": [
-                "{{part_5}}"
             ]
         }
     },
@@ -693,9 +412,6 @@
         "answer": {
             "answer": [
                 "905.0"
-            ],
-            "why": [
-                "{{part_4}}"
             ]
         }
     },
@@ -705,9 +421,6 @@
         "answer": {
             "answer": [
                 "905.0"
-            ],
-            "why": [
-                "{{part_4}}"
             ]
         }
     },
@@ -717,9 +430,6 @@
         "answer": {
             "answer": [
                 "905.0"
-            ],
-            "why": [
-                "{{part_4}}"
             ]
         }
     },
@@ -729,33 +439,20 @@
         "answer": {
             "answer": [
                 "905.0"
-            ],
-            "why": [
-                "{{part_4}}"
             ]
         }
     },
     {
         "question": "Which customer (c_name) placed the order with order key 130?",
         "iteration": 1,
-        "answer": {
-            "answer": [
-                "Customer#000003697"
-            ],
-            "why": [
-                "{{customer_3697,orders_33}}"
-            ]
-        }
+        "answer": ""
     },
     {
         "question": "Which customer (c_name) placed the order with order key 130?",
         "iteration": 2,
         "answer": {
             "answer": [
-                "Customer#000003697"
-            ],
-            "why": [
-                "{{customer_3697,orders_33}}"
+                "130"
             ]
         }
     },
@@ -764,10 +461,7 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "Customer#000003697"
-            ],
-            "why": [
-                "{{customer_3697,orders_33}}"
+                "130"
             ]
         }
     },
@@ -776,10 +470,7 @@
         "iteration": 4,
         "answer": {
             "answer": [
-                "Customer#000003697"
-            ],
-            "why": [
-                "{{customer_3697,orders_33}}"
+                "130"
             ]
         }
     },
@@ -788,36 +479,19 @@
         "iteration": 5,
         "answer": {
             "answer": [
-                "Customer#000003697"
-            ],
-            "why": [
-                "{{customer_3697,orders_33}}"
+                "130"
             ]
         }
     },
     {
         "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
         "iteration": 1,
-        "answer": {
-            "answer": [
-                "8815.78"
-            ],
-            "why": [
-                "{{customer_456}}"
-            ]
-        }
+        "answer": "Based on the given context, the account balance (c\\_acctbal) of the customer with custkey 4"
     },
     {
         "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
         "iteration": 2,
-        "answer": {
-            "answer": [
-                "8815.78"
-            ],
-            "why": [
-                "{{customer_456}}"
-            ]
-        }
+        "answer": ""
     },
     {
         "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
@@ -825,9 +499,6 @@
         "answer": {
             "answer": [
                 "8815.78"
-            ],
-            "why": [
-                "{{customer_456}}"
             ]
         }
     },
@@ -837,9 +508,6 @@
         "answer": {
             "answer": [
                 "8815.78"
-            ],
-            "why": [
-                "{{customer_456}}"
             ]
         }
     },
@@ -849,9 +517,6 @@
         "answer": {
             "answer": [
                 "8815.78"
-            ],
-            "why": [
-                "{{customer_456}}"
             ]
         }
     },
@@ -861,9 +526,6 @@
         "answer": {
             "answer": [
                 "EGYPT"
-            ],
-            "why": [
-                "{{nation_4}}"
             ]
         }
     },
@@ -873,9 +535,6 @@
         "answer": {
             "answer": [
                 "EGYPT"
-            ],
-            "why": [
-                "{{customer_3,nation_4}}"
             ]
         }
     },
@@ -885,9 +544,6 @@
         "answer": {
             "answer": [
                 "EGYPT"
-            ],
-            "why": [
-                "{{customer_3,nation_4}}"
             ]
         }
     },
@@ -897,9 +553,6 @@
         "answer": {
             "answer": [
                 "EGYPT"
-            ],
-            "why": [
-                "{{customer_3,nation_4}}"
             ]
         }
     },
@@ -909,9 +562,6 @@
         "answer": {
             "answer": [
                 "EGYPT"
-            ],
-            "why": [
-                "{{customer_3,nation_4}}"
             ]
         }
     },
@@ -921,19 +571,12 @@
         "answer": {
             "answer": [
                 "cyan papaya thistle dodger grey",
-                "gainsboro sienna beige peach chartreuse",
-                "orange navajo blanched cyan snow",
-                "midnight khaki medium linen peru",
-                "thistle burlywood smoke pink mint",
-                "wheat tomato forest floral light"
-            ],
-            "why": [
-                "{{lineitem_250,part_18586}}",
-                "{{lineitem_251,part_19490}}",
-                "{{lineitem_252,part_737}}",
-                "{{lineitem_253,part_917}}",
-                "{{lineitem_254,part_1893}}",
-                "{{lineitem_255,part_3394}}"
+                "Manufacturer#2",
+                "Brand#24",
+                "ECONOMY BURNISHED NICKEL",
+                "27",
+                "JUMBO BOX",
+                "1505.58"
             ]
         }
     },
@@ -943,86 +586,38 @@
         "answer": {
             "answer": [
                 "cyan papaya thistle dodger grey"
-            ],
-            "why": [
-                "{{lineitem_230,part_18587}}"
             ]
         }
     },
     {
         "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
         "iteration": 3,
-        "answer": {
-            "answer": [
-                "cyan papaya thistle dodger grey",
-                "gainsboro sienna beige peach chartreuse",
-                "orange navajo blanched cyan snow",
-                "midnight khaki medium linen peru",
-                "thistle burlywood smoke pink mint",
-                "wheat tomato forest floral light"
-            ],
-            "why": [
-                "{{lineitem_230,part_18587}}",
-                "{{lineitem_251,part_19490}}",
-                "{{lineitem_252,part_737}}",
-                "{{lineitem_253,part_917}}",
-                "{{lineitem_254,part_1893}}",
-                "{{lineitem_255,part_3393}}"
-            ]
-        }
+        "answer": "{}\n\nThe order with lineitem l\\_orderkey = 230 was not supplied any parts in the given context."
     },
     {
         "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
         "iteration": 4,
         "answer": {
             "answer": [
-                "cyan papaya thistle dodger grey",
-                "orange navajo blanched cyan snow",
-                "midnight khaki medium linen peru",
-                "thistle burlywood smoke pink mint",
-                "wheat tomato forest floral light"
-            ],
-            "why": [
-                "{{lineitem_230,part_18587}}",
-                "{{lineitem_252,part_737}}",
-                "{{lineitem_253,part_917}}",
-                "{{lineitem_254,part_1893}}",
-                "{{lineitem_255,part_3393}}"
+                "18587",
+                "737",
+                "19491",
+                "917",
+                "1893",
+                "3393"
             ]
         }
     },
     {
         "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
         "iteration": 5,
-        "answer": {
-            "answer": [
-                "cyan papaya thistle dodger grey",
-                "orange navajo blanched cyan snow",
-                "midnight khaki medium linen peru",
-                "thistle burlywood smoke pink mint",
-                "wheat tomato forest floral light"
-            ],
-            "why": [
-                "{{lineitem_230,part_18587}}",
-                "{{lineitem_252,part_737}}",
-                "{{lineitem_253,part_917}}",
-                "{{lineitem_254,part_1893}}",
-                "{{lineitem_255,part_3393}}"
-            ]
-        }
+        "answer": ""
     },
     {
         "question": "Which regions (r_regionKey) have a region key greater than 2?",
         "iteration": 1,
         "answer": {
-            "answer": [
-                "3",
-                "4"
-            ],
-            "why": [
-                "{{region_3}}",
-                "{{region_4}}"
-            ]
+            "answer": []
         }
     },
     {
@@ -1030,12 +625,7 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "3",
                 "4"
-            ],
-            "why": [
-                "{{region_3}}",
-                "{{region_4}}"
             ]
         }
     },
@@ -1044,12 +634,7 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "3",
                 "4"
-            ],
-            "why": [
-                "{{region_3}}",
-                "{{region_4}}"
             ]
         }
     },
@@ -1058,12 +643,7 @@
         "iteration": 4,
         "answer": {
             "answer": [
-                "3",
                 "4"
-            ],
-            "why": [
-                "{{region_3}}",
-                "{{region_4}}"
             ]
         }
     },
@@ -1072,110 +652,43 @@
         "iteration": 5,
         "answer": {
             "answer": [
-                "3",
                 "4"
-            ],
-            "why": [
-                "{{region_3}}",
-                "{{region_4}}"
             ]
         }
     },
     {
         "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
         "iteration": 1,
-        "answer": {
-            "answer": [
-                "Customer#000000017",
-                "Customer#000005315",
-                "Customer#000006179",
-                "Customer#000011681"
-            ],
-            "why": [
-                "{{customer_17}}",
-                "{{customer_5315}}",
-                "{{customer_6183}}",
-                "{{customer_11680}}"
-            ]
-        }
+        "answer": "{}\n\nThe context provided does not include any information about a customer with nationkey equal to 2 making orders between 20500 and 20550. Therefore, the answer is an empty array."
     },
     {
         "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
         "iteration": 2,
-        "answer": {
-            "answer": [
-                "Customer#000000017",
-                "Customer#000005315",
-                "Customer#000006179"
-            ],
-            "why": [
-                "{{customer_17}}",
-                "{{customer_5315}}",
-                "{{customer_6183}}"
-            ]
-        }
+        "answer": "{}\n\nThe context provided does not include any information about a customer with nationkey equal to 2 making orders between 20500 and 20550. Therefore, the answer is an empty array."
     },
     {
         "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
         "iteration": 3,
-        "answer": {
-            "answer": [
-                "Customer#000000017",
-                "Customer#000005315",
-                "Customer#000006179"
-            ],
-            "why": [
-                "{{customer_17}}",
-                "{{customer_5315}}",
-                "{{customer_6183}}"
-            ]
-        }
+        "answer": "{}\n\nThe context provided does not include any information about a customer with nationkey equal to 2 making orders between 20500 and 20550. Therefore, the answer is an empty array."
     },
     {
         "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
         "iteration": 4,
-        "answer": {
-            "answer": [
-                "Customer#000000017",
-                "Customer#000005315",
-                "Customer#000006179"
-            ],
-            "why": [
-                "{{customer_17}}",
-                "{{customer_5315}}",
-                "{{customer_6183}}"
-            ]
-        }
+        "answer": "{}\n\nThe context provided does not include any information about a customer with nationkey equal to 2 making orders between 20500 and 20550. Therefore, the answer is an empty array."
     },
     {
         "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
         "iteration": 5,
-        "answer": {
-            "answer": [
-                "Customer#000000017",
-                "Customer#000005315",
-                "Customer#000006179"
-            ],
-            "why": [
-                "{{customer_17}}",
-                "{{customer_5315}}",
-                "{{customer_6183}}"
-            ]
-        }
+        "answer": "{}\n\nThe context provided does not include any information about a customer with nationkey equal to 2 making orders between 20500 and 20550. Therefore, the answer is an empty array."
     },
     {
         "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
         "iteration": 1,
         "answer": {
             "answer": [
-                "Supplier#000000103",
                 "Supplier#000000223",
-                "Supplier#000000528"
-            ],
-            "why": [
-                "{{supplier_103}}",
-                "{{supplier_223}}",
-                "{{supplier_527}}"
+                "Supplier#000000528",
+                "Supplier#000000722"
             ]
         }
     },
@@ -1184,12 +697,9 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "Supplier#000000103",
-                "Supplier#000000223"
-            ],
-            "why": [
-                "{{supplier_102}}",
-                "{{supplier_223}}"
+                "Supplier#000000223",
+                "Supplier#000000528",
+                "Supplier#000000722"
             ]
         }
     },
@@ -1198,12 +708,9 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "Supplier#000000103",
-                "Supplier#000000223"
-            ],
-            "why": [
-                "{{supplier_103}}",
-                "{{supplier_223}}"
+                "Supplier#000000223",
+                "Supplier#000000528",
+                "Supplier#000000722"
             ]
         }
     },
@@ -1212,12 +719,9 @@
         "iteration": 4,
         "answer": {
             "answer": [
-                "Supplier#000000103",
-                "Supplier#000000223"
-            ],
-            "why": [
-                "{{supplier_103}}",
-                "{{supplier_223}}"
+                "Supplier#000000223",
+                "Supplier#000000528",
+                "Supplier#000000722"
             ]
         }
     },
@@ -1226,12 +730,9 @@
         "iteration": 5,
         "answer": {
             "answer": [
-                "Supplier#000000103",
-                "Supplier#000000223"
-            ],
-            "why": [
-                "{{supplier_103}}",
-                "{{supplier_223}}"
+                "Supplier#000000223",
+                "Supplier#000000528",
+                "Supplier#000000722"
             ]
         }
     },
@@ -1239,80 +740,35 @@
         "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
         "iteration": 1,
         "answer": {
-            "answer": [
-                "Customer#000001159",
-                "Customer#000003091",
-                "Customer#000009895"
-            ],
-            "why": [
-                "{{customer_1160,orders_60518}}",
-                "{{customer_3096,orders_61159}}",
-                "{{customer_9895,orders_34356}}"
-            ]
+            "answer": []
         }
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
         "iteration": 2,
         "answer": {
-            "answer": [
-                "Customer#000001159",
-                "Customer#000003091",
-                "Customer#000009895"
-            ],
-            "why": [
-                "{{customer_1159,orders_60518}}",
-                "{{customer_3091,orders_61159}}",
-                "{{customer_9895,orders_34356}}"
-            ]
+            "answer": []
         }
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
         "iteration": 3,
         "answer": {
-            "answer": [
-                "Customer#000001159",
-                "Customer#000003091",
-                "Customer#000009895"
-            ],
-            "why": [
-                "{{customer_1159,orders_60518}}",
-                "{{customer_3091,orders_61159}}",
-                "{{customer_9895,orders_34356}}"
-            ]
+            "answer": []
         }
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
         "iteration": 4,
         "answer": {
-            "answer": [
-                "Customer#000001159",
-                "Customer#000003091",
-                "Customer#000009895"
-            ],
-            "why": [
-                "{{customer_1159,orders_60518}}",
-                "{{customer_3091,orders_61159}}",
-                "{{customer_9895,orders_34356}}"
-            ]
+            "answer": []
         }
     },
     {
         "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
         "iteration": 5,
         "answer": {
-            "answer": [
-                "Customer#000001159",
-                "Customer#000003091",
-                "Customer#000009895"
-            ],
-            "why": [
-                "{{customer_1159,orders_60518}}",
-                "{{customer_3091,orders_61159}}",
-                "{{customer_9895,orders_34356}}"
-            ]
+            "answer": []
         }
     },
     {
@@ -1320,10 +776,7 @@
         "iteration": 1,
         "answer": {
             "answer": [
-                "1992-05-12"
-            ],
-            "why": [
-                "{{lineitem_334,orders_83}}"
+                "1992-04-19"
             ]
         }
     },
@@ -1332,10 +785,7 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "1992-05-12"
-            ],
-            "why": [
-                "{{lineitem_334,orders_83}}"
+                "1992-04-19"
             ]
         }
     },
@@ -1344,10 +794,7 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "1992-05-12"
-            ],
-            "why": [
-                "{{lineitem_334,orders_83}}"
+                "1992-04-19"
             ]
         }
     },
@@ -1356,10 +803,7 @@
         "iteration": 4,
         "answer": {
             "answer": [
-                "1992-05-12"
-            ],
-            "why": [
-                "{{lineitem_334,orders_83}}"
+                "1992-04-19"
             ]
         }
     },
@@ -1368,10 +812,7 @@
         "iteration": 5,
         "answer": {
             "answer": [
-                "1992-05-12"
-            ],
-            "why": [
-                "{{lineitem_334,orders_83}}"
+                "1992-04-19"
             ]
         }
     },
@@ -1389,17 +830,6 @@
                 "1994-10-17",
                 "1995-10-07",
                 "1997-08-01"
-            ],
-            "why": [
-                "{{orders_3746}}",
-                "{{orders_45277}}",
-                "{{orders_46223}}",
-                "{{orders_57068}}",
-                "{{orders_71169}}",
-                "{{orders_78887}}",
-                "{{orders_98506}}",
-                "{{orders_146338}}",
-                "{{orders_147240}}"
             ]
         }
     },
@@ -1415,19 +845,7 @@
                 "1995-01-17",
                 "1995-07-04",
                 "1994-10-17",
-                "1995-10-07",
-                "1997-08-01"
-            ],
-            "why": [
-                "{{orders_3746}}",
-                "{{orders_45277}}",
-                "{{orders_46223}}",
-                "{{orders_57068}}",
-                "{{orders_71169}}",
-                "{{orders_78887}}",
-                "{{orders_98506}}",
-                "{{orders_146338}}",
-                "{{orders_147240}}"
+                "1995-10-07"
             ]
         }
     },
@@ -1442,20 +860,7 @@
                 "1996-08-15",
                 "1995-01-17",
                 "1995-07-04",
-                "1994-10-17",
-                "1995-10-07",
-                "1997-08-01"
-            ],
-            "why": [
-                "{{orders_3746}}",
-                "{{orders_45277}}",
-                "{{orders_46223}}",
-                "{{orders_57068}}",
-                "{{orders_71169}}",
-                "{{orders_78887}}",
-                "{{orders_98506}}",
-                "{{orders_146338}}",
-                "{{orders_147240}}"
+                "1994-10-17"
             ]
         }
     },
@@ -1470,20 +875,7 @@
                 "1996-08-15",
                 "1995-01-17",
                 "1995-07-04",
-                "1994-10-17",
-                "1995-10-07",
-                "1997-08-01"
-            ],
-            "why": [
-                "{{orders_3746}}",
-                "{{orders_45277}}",
-                "{{orders_46223}}",
-                "{{orders_57068}}",
-                "{{orders_71169}}",
-                "{{orders_78887}}",
-                "{{orders_98506}}",
-                "{{orders_146338}}",
-                "{{orders_147240}}"
+                "1994-10-17"
             ]
         }
     },
@@ -1498,20 +890,7 @@
                 "1996-08-15",
                 "1995-01-17",
                 "1995-07-04",
-                "1994-10-17",
-                "1995-10-07",
-                "1997-08-01"
-            ],
-            "why": [
-                "{{orders_3746}}",
-                "{{orders_45277}}",
-                "{{orders_46223}}",
-                "{{orders_57068}}",
-                "{{orders_71169}}",
-                "{{orders_78887}}",
-                "{{orders_98506}}",
-                "{{orders_146338}}",
-                "{{orders_147240}}"
+                "1994-10-17"
             ]
         }
     },
@@ -1521,9 +900,6 @@
         "answer": {
             "answer": [
                 "UNITED KINGDOM"
-            ],
-            "why": [
-                "{{nation_23},{supplier_6}}"
             ]
         }
     },
@@ -1533,9 +909,6 @@
         "answer": {
             "answer": [
                 "UNITED KINGDOM"
-            ],
-            "why": [
-                "{{nation_23},{supplier_6}}"
             ]
         }
     },
@@ -1545,9 +918,6 @@
         "answer": {
             "answer": [
                 "UNITED KINGDOM"
-            ],
-            "why": [
-                "{{nation_23},{supplier_6}}"
             ]
         }
     },
@@ -1557,9 +927,6 @@
         "answer": {
             "answer": [
                 "UNITED KINGDOM"
-            ],
-            "why": [
-                "{{nation_23},{supplier_6}}"
             ]
         }
     },
@@ -1569,9 +936,6 @@
         "answer": {
             "answer": [
                 "UNITED KINGDOM"
-            ],
-            "why": [
-                "{{nation_23},{supplier_6}}"
             ]
         }
     },
@@ -1581,9 +945,6 @@
         "answer": {
             "answer": [
                 "MIDDLE EAST"
-            ],
-            "why": [
-                "{{nation_11},{region_4},{supplier_5}}"
             ]
         }
     },
@@ -1593,9 +954,6 @@
         "answer": {
             "answer": [
                 "MIDDLE EAST"
-            ],
-            "why": [
-                "{{nation_11},{region_4},{supplier_5}}"
             ]
         }
     },
@@ -1605,9 +963,6 @@
         "answer": {
             "answer": [
                 "MIDDLE EAST"
-            ],
-            "why": [
-                "{{nation_11},{region_4},{supplier_5}}"
             ]
         }
     },
@@ -1617,9 +972,6 @@
         "answer": {
             "answer": [
                 "MIDDLE EAST"
-            ],
-            "why": [
-                "{{nation_11},{region_4},{supplier_5}}"
             ]
         }
     },
@@ -1629,9 +981,6 @@
         "answer": {
             "answer": [
                 "MIDDLE EAST"
-            ],
-            "why": [
-                "{{nation_11},{region_4},{supplier_5}}"
             ]
         }
     },
@@ -1640,14 +989,10 @@
         "iteration": 1,
         "answer": {
             "answer": [
+                "Supplier#000000201",
                 "Supplier#000000451",
                 "Supplier#000000701",
                 "Supplier#000000951"
-            ],
-            "why": [
-                "{{partsupp_798,supplier_451}}",
-                "{{partsupp_799,supplier_700}}",
-                "{{partsupp_800,supplier_951}}"
             ]
         }
     },
@@ -1656,14 +1001,10 @@
         "iteration": 2,
         "answer": {
             "answer": [
+                "Supplier#000000201",
                 "Supplier#000000451",
                 "Supplier#000000701",
                 "Supplier#000000951"
-            ],
-            "why": [
-                "{{partsupp_798,supplier_451}}",
-                "{{partsupp_799,supplier_700}}",
-                "{{partsupp_800,supplier_951}}"
             ]
         }
     },
@@ -1672,14 +1013,10 @@
         "iteration": 3,
         "answer": {
             "answer": [
+                "Supplier#000000201",
                 "Supplier#000000451",
                 "Supplier#000000701",
                 "Supplier#000000951"
-            ],
-            "why": [
-                "{{partsupp_798,supplier_451}}",
-                "{{partsupp_799,supplier_700}}",
-                "{{partsupp_800,supplier_951}}"
             ]
         }
     },
@@ -1688,14 +1025,10 @@
         "iteration": 4,
         "answer": {
             "answer": [
+                "Supplier#000000201",
                 "Supplier#000000451",
                 "Supplier#000000701",
                 "Supplier#000000951"
-            ],
-            "why": [
-                "{{partsupp_798,supplier_451}}",
-                "{{partsupp_799,supplier_700}}",
-                "{{partsupp_800,supplier_951}}"
             ]
         }
     },
@@ -1704,14 +1037,10 @@
         "iteration": 5,
         "answer": {
             "answer": [
+                "Supplier#000000201",
                 "Supplier#000000451",
                 "Supplier#000000701",
                 "Supplier#000000951"
-            ],
-            "why": [
-                "{{partsupp_798,supplier_451}}",
-                "{{partsupp_799,supplier_700}}",
-                "{{partsupp_800,supplier_951}}"
             ]
         }
     },
@@ -1719,83 +1048,44 @@
         "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
         "iteration": 1,
         "answer": {
-            "answer": [
-                "11,762,321"
-            ],
-            "why": [
-                "{{partsupp_43}}"
-            ]
+            "answer": []
         }
     },
     {
         "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
         "iteration": 2,
-        "answer": {
-            "answer": [
-                "11,762,321"
-            ],
-            "why": [
-                "{{partsupp_43}}"
-            ]
-        }
+        "answer": "Based on the context provided, the available quantity for partkey 5"
     },
     {
         "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
         "iteration": 3,
         "answer": {
-            "answer": [
-                "11,762,321"
-            ],
-            "why": [
-                "{{partsupp_43}}"
-            ]
+            "answer": []
         }
     },
     {
         "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
         "iteration": 4,
-        "answer": {
-            "answer": [
-                "11,762,321"
-            ],
-            "why": [
-                "{{partsupp_43}}"
-            ]
-        }
+        "answer": "Based on the context provided, the available quantity for partkey 5"
     },
     {
         "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
         "iteration": 5,
         "answer": {
-            "answer": [
-                "11,762,321"
-            ],
-            "why": [
-                "{{partsupp_43}}"
-            ]
+            "answer": []
         }
     },
     {
         "question": "What is the total price of the order with orderkey 100?",
         "iteration": 1,
-        "answer": {
-            "answer": [
-                "204408.59"
-            ],
-            "why": [
-                "{{orders_27}}"
-            ]
-        }
+        "answer": ""
     },
     {
         "question": "What is the total price of the order with orderkey 100?",
         "iteration": 2,
         "answer": {
             "answer": [
-                "204408.59"
-            ],
-            "why": [
-                "{{orders_27}}"
+                "14701"
             ]
         }
     },
@@ -1804,10 +1094,7 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "204408.59"
-            ],
-            "why": [
-                "{{orders_27}}"
+                "14701"
             ]
         }
     },
@@ -1816,10 +1103,7 @@
         "iteration": 4,
         "answer": {
             "answer": [
-                "204408.59"
-            ],
-            "why": [
-                "{{orders_27}}"
+                "14701"
             ]
         }
     },
@@ -1828,36 +1112,19 @@
         "iteration": 5,
         "answer": {
             "answer": [
-                "204408.59"
-            ],
-            "why": [
-                "{{orders_27}}"
+                "14701"
             ]
         }
     },
     {
         "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
         "iteration": 1,
-        "answer": {
-            "answer": [
-                "21-151-690-3663"
-            ],
-            "why": [
-                "{{supplier_4}}"
-            ]
-        }
+        "answer": ""
     },
     {
         "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
         "iteration": 2,
-        "answer": {
-            "answer": [
-                "21-151-690-3663"
-            ],
-            "why": [
-                "{{supplier_4}}"
-            ]
-        }
+        "answer": ""
     },
     {
         "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
@@ -1865,9 +1132,6 @@
         "answer": {
             "answer": [
                 "21-151-690-3663"
-            ],
-            "why": [
-                "{{supplier_4}}"
             ]
         }
     },
@@ -1877,23 +1141,13 @@
         "answer": {
             "answer": [
                 "21-151-690-3663"
-            ],
-            "why": [
-                "{{supplier_4}}"
             ]
         }
     },
     {
         "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
         "iteration": 5,
-        "answer": {
-            "answer": [
-                "21-151-690-3663"
-            ],
-            "why": [
-                "{{supplier_4}}"
-            ]
-        }
+        "answer": ""
     },
     {
         "question": "What is the order date of the order with order key 323?",
@@ -1901,9 +1155,6 @@
         "answer": {
             "answer": [
                 "1994-03-26"
-            ],
-            "why": [
-                "{{orders_82}}"
             ]
         }
     },
@@ -1913,9 +1164,6 @@
         "answer": {
             "answer": [
                 "1994-03-26"
-            ],
-            "why": [
-                "{{orders_82}}"
             ]
         }
     },
@@ -1925,9 +1173,6 @@
         "answer": {
             "answer": [
                 "1994-03-26"
-            ],
-            "why": [
-                "{{orders_82}}"
             ]
         }
     },
@@ -1937,9 +1182,6 @@
         "answer": {
             "answer": [
                 "1994-03-26"
-            ],
-            "why": [
-                "{{orders_82}}"
             ]
         }
     },
@@ -1949,9 +1191,6 @@
         "answer": {
             "answer": [
                 "1994-03-26"
-            ],
-            "why": [
-                "{{orders_82}}"
             ]
         }
     },
@@ -1960,10 +1199,7 @@
         "iteration": 1,
         "answer": {
             "answer": [
-                "Customer#000003914"
-            ],
-            "why": [
-                "{{customer_3914,orders_82}}"
+                "323"
             ]
         }
     },
@@ -1972,10 +1208,7 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "Customer#000003914"
-            ],
-            "why": [
-                "{{customer_3914,orders_82}}"
+                "3914"
             ]
         }
     },
@@ -1984,10 +1217,7 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "Customer#000003914"
-            ],
-            "why": [
-                "{{customer_3914,orders_82}}"
+                "3914"
             ]
         }
     },
@@ -1996,10 +1226,7 @@
         "iteration": 4,
         "answer": {
             "answer": [
-                "Customer#000003914"
-            ],
-            "why": [
-                "{{customer_3914,orders_82}}"
+                "3914"
             ]
         }
     },
@@ -2008,10 +1235,7 @@
         "iteration": 5,
         "answer": {
             "answer": [
-                "Customer#000003914"
-            ],
-            "why": [
-                "{{customer_3914,orders_82}}"
+                "3914"
             ]
         }
     },
@@ -2021,9 +1245,6 @@
         "answer": {
             "answer": [
                 "ETHIOPIA"
-            ],
-            "why": [
-                "{{nation_5,supplier_456}}"
             ]
         }
     },
@@ -2033,9 +1254,6 @@
         "answer": {
             "answer": [
                 "ETHIOPIA"
-            ],
-            "why": [
-                "{{nation_5,supplier_456}}"
             ]
         }
     },
@@ -2045,9 +1263,6 @@
         "answer": {
             "answer": [
                 "ETHIOPIA"
-            ],
-            "why": [
-                "{{nation_5,supplier_456}}"
             ]
         }
     },
@@ -2057,9 +1272,6 @@
         "answer": {
             "answer": [
                 "ETHIOPIA"
-            ],
-            "why": [
-                "{{nation_5,supplier_456}}"
             ]
         }
     },
@@ -2069,9 +1281,6 @@
         "answer": {
             "answer": [
                 "ETHIOPIA"
-            ],
-            "why": [
-                "{{nation_5,supplier_456}}"
             ]
         }
     },
@@ -2081,9 +1290,6 @@
         "answer": {
             "answer": [
                 "EUROPE"
-            ],
-            "why": [
-                "{{nation_6,region_3}}"
             ]
         }
     },
@@ -2093,9 +1299,6 @@
         "answer": {
             "answer": [
                 "EUROPE"
-            ],
-            "why": [
-                "{{nation_6,region_3}}"
             ]
         }
     },
@@ -2105,9 +1308,6 @@
         "answer": {
             "answer": [
                 "EUROPE"
-            ],
-            "why": [
-                "{{nation_6,region_3}}"
             ]
         }
     },
@@ -2117,9 +1317,6 @@
         "answer": {
             "answer": [
                 "EUROPE"
-            ],
-            "why": [
-                "{{nation_6,region_3}}"
             ]
         }
     },
@@ -2129,9 +1326,6 @@
         "answer": {
             "answer": [
                 "EUROPE"
-            ],
-            "why": [
-                "{{nation_6,region_3}}"
             ]
         }
     },
@@ -2139,12 +1333,7 @@
         "question": "What is the name of the nation of the customer who placed order 352?",
         "iteration": 1,
         "answer": {
-            "answer": [
-                "MOZAMBIQUE"
-            ],
-            "why": [
-                "{{customer_10647},{nation_16}}"
-            ]
+            "answer": []
         }
     },
     {
@@ -2153,9 +1342,6 @@
         "answer": {
             "answer": [
                 "MOZAMBIQUE"
-            ],
-            "why": [
-                "{{customer_10647},{nation_16}}"
             ]
         }
     },
@@ -2163,12 +1349,7 @@
         "question": "What is the name of the nation of the customer who placed order 352?",
         "iteration": 3,
         "answer": {
-            "answer": [
-                "MOZAMBIQUE"
-            ],
-            "why": [
-                "{{customer_10647},{nation_16}}"
-            ]
+            "answer": []
         }
     },
     {
@@ -2177,9 +1358,6 @@
         "answer": {
             "answer": [
                 "MOZAMBIQUE"
-            ],
-            "why": [
-                "{{customer_10647},{nation_16}}"
             ]
         }
     },
@@ -2187,24 +1365,14 @@
         "question": "What is the name of the nation of the customer who placed order 352?",
         "iteration": 5,
         "answer": {
-            "answer": [
-                "MOZAMBIQUE"
-            ],
-            "why": [
-                "{{customer_10647},{nation_16}}"
-            ]
+            "answer": []
         }
     },
     {
         "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
         "iteration": 1,
         "answer": {
-            "answer": [
-                "KENYA"
-            ],
-            "why": [
-                "{{lineitem_7},{nation_14},{supplier_181}}"
-            ]
+            "answer": []
         }
     },
     {
@@ -2213,9 +1381,6 @@
         "answer": {
             "answer": [
                 "KENYA"
-            ],
-            "why": [
-                "{{lineitem_7},{nation_14},{supplier_181}}"
             ]
         }
     },
@@ -2225,9 +1390,6 @@
         "answer": {
             "answer": [
                 "KENYA"
-            ],
-            "why": [
-                "{{lineitem_7},{nation_14},{supplier_181}}"
             ]
         }
     },
@@ -2237,9 +1399,6 @@
         "answer": {
             "answer": [
                 "KENYA"
-            ],
-            "why": [
-                "{{lineitem_7},{nation_14},{supplier_181}}"
             ]
         }
     },
@@ -2249,9 +1408,6 @@
         "answer": {
             "answer": [
                 "KENYA"
-            ],
-            "why": [
-                "{{lineitem_7},{nation_14},{supplier_181}}"
             ]
         }
     },
@@ -2261,9 +1417,6 @@
         "answer": {
             "answer": [
                 "31-317-593-4029"
-            ],
-            "why": [
-                "{{lineitem_28,supplier_775,part_274}}"
             ]
         }
     },
@@ -2273,9 +1426,6 @@
         "answer": {
             "answer": [
                 "31-317-593-4029"
-            ],
-            "why": [
-                "{{lineitem_28,supplier_775}}"
             ]
         }
     },
@@ -2285,9 +1435,6 @@
         "answer": {
             "answer": [
                 "31-317-593-4029"
-            ],
-            "why": [
-                "{{lineitem_28,supplier_775}}"
             ]
         }
     },
@@ -2297,9 +1444,6 @@
         "answer": {
             "answer": [
                 "31-317-593-4029"
-            ],
-            "why": [
-                "{{lineitem_28,supplier_775}}"
             ]
         }
     },
@@ -2309,9 +1453,6 @@
         "answer": {
             "answer": [
                 "31-317-593-4029"
-            ],
-            "why": [
-                "{{lineitem_28,supplier_775}}"
             ]
         }
     },
@@ -2319,8 +1460,9 @@
         "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
         "iteration": 1,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "902.0"
+            ]
         }
     },
     {
@@ -2328,10 +1470,7 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "378.49"
-            ],
-            "why": [
-                "{{partsupp_4}}"
+                "902.0"
             ]
         }
     },
@@ -2340,10 +1479,7 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "378.49"
-            ],
-            "why": [
-                "{{partsupp_4}}"
+                "902.0"
             ]
         }
     },
@@ -2352,10 +1488,7 @@
         "iteration": 4,
         "answer": {
             "answer": [
-                "378.49"
-            ],
-            "why": [
-                "{{partsupp_4}}"
+                "902.0"
             ]
         }
     },
@@ -2364,10 +1497,7 @@
         "iteration": 5,
         "answer": {
             "answer": [
-                "378.49"
-            ],
-            "why": [
-                "{{partsupp_4}}"
+                "902.0"
             ]
         }
     },
@@ -2376,10 +1506,7 @@
         "iteration": 1,
         "answer": {
             "answer": [
-                "771.64"
-            ],
-            "why": [
-                "{{partsupp_0}}"
+                "4032.68"
             ]
         }
     },
@@ -2388,10 +1515,7 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "771.64"
-            ],
-            "why": [
-                "{{partsupp_0}}"
+                "4032.68"
             ]
         }
     },
@@ -2400,10 +1524,7 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "771.64"
-            ],
-            "why": [
-                "{{partsupp_0}}"
+                "4032.68"
             ]
         }
     },
@@ -2412,10 +1533,7 @@
         "iteration": 4,
         "answer": {
             "answer": [
-                "771.64"
-            ],
-            "why": [
-                "{{partsupp_0}}"
+                "4032.68"
             ]
         }
     },
@@ -2424,10 +1542,7 @@
         "iteration": 5,
         "answer": {
             "answer": [
-                "771.64"
-            ],
-            "why": [
-                "{{partsupp_0}}"
+                "4032.68"
             ]
         }
     },
@@ -2436,16 +1551,14 @@
         "iteration": 1,
         "answer": {
             "answer": [
-                "Customer#000000129",
-                "Customer#000000301",
+                "Customer#000001325",
                 "Customer#000003153",
-                "Customer#000009859"
-            ],
-            "why": [
-                "{{customer_129}}",
-                "{{customer_301}}",
-                "{{customer_3158}}",
-                "{{customer_9860}}"
+                "Customer#000003318",
+                "Customer#000005856",
+                "Customer#000009799",
+                "Customer#000009859",
+                "Customer#000011076",
+                "Customer#000014573"
             ]
         }
     },
@@ -2454,14 +1567,14 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "Customer#000000129",
-                "Customer#000000301",
-                "Customer#000009859"
-            ],
-            "why": [
-                "{{customer_129}}",
-                "{{customer_301}}",
-                "{{customer_9860}}"
+                "Customer#000001325",
+                "Customer#000003153",
+                "Customer#000003318",
+                "Customer#000005856",
+                "Customer#000009799",
+                "Customer#000009859",
+                "Customer#000011076",
+                "Customer#000014573"
             ]
         }
     },
@@ -2470,14 +1583,14 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "Customer#000000129",
-                "Customer#000000301",
-                "Customer#000009859"
-            ],
-            "why": [
-                "{{customer_129}}",
-                "{{customer_301}}",
-                "{{customer_9860}}"
+                "Customer#000001325",
+                "Customer#000003153",
+                "Customer#000003318",
+                "Customer#000005856",
+                "Customer#000009799",
+                "Customer#000009859",
+                "Customer#000011076",
+                "Customer#000014573"
             ]
         }
     },
@@ -2486,14 +1599,14 @@
         "iteration": 4,
         "answer": {
             "answer": [
-                "Customer#000000129",
-                "Customer#000000301",
-                "Customer#000009859"
-            ],
-            "why": [
-                "{{customer_129}}",
-                "{{customer_301}}",
-                "{{customer_9860}}"
+                "Customer#000001325",
+                "Customer#000003153",
+                "Customer#000003318",
+                "Customer#000005856",
+                "Customer#000009799",
+                "Customer#000009859",
+                "Customer#000011076",
+                "Customer#000014573"
             ]
         }
     },
@@ -2502,14 +1615,14 @@
         "iteration": 5,
         "answer": {
             "answer": [
-                "Customer#000000129",
-                "Customer#000000301",
-                "Customer#000009859"
-            ],
-            "why": [
-                "{{customer_129}}",
-                "{{customer_301}}",
-                "{{customer_9860}}"
+                "Customer#000001325",
+                "Customer#000003153",
+                "Customer#000003318",
+                "Customer#000005856",
+                "Customer#000009799",
+                "Customer#000009859",
+                "Customer#000011076",
+                "Customer#000014573"
             ]
         }
     },
@@ -2518,14 +1631,7 @@
         "iteration": 1,
         "answer": {
             "answer": [
-                "Supplier#000000067",
-                "Supplier#000000732",
-                "Supplier#000000785"
-            ],
-            "why": [
-                "{{lineitem_5,supplier_66}}",
-                "{{lineitem_1,supplier_731}}",
-                "{{lineitem_0,supplier_784}}"
+                "Supplier#000000067"
             ]
         }
     },
@@ -2534,14 +1640,7 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "Supplier#000000067",
-                "Supplier#000000732",
-                "Supplier#000000785"
-            ],
-            "why": [
-                "{{lineitem_5,supplier_66}}",
-                "{{lineitem_1,supplier_731}}",
-                "{{lineitem_0,supplier_784}}"
+                "Supplier#000000067"
             ]
         }
     },
@@ -2550,14 +1649,7 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "Supplier#000000067",
-                "Supplier#000000732",
-                "Supplier#000000785"
-            ],
-            "why": [
-                "{{lineitem_5,supplier_66}}",
-                "{{lineitem_1,supplier_731}}",
-                "{{lineitem_0,supplier_784}}"
+                "Supplier#000000067"
             ]
         }
     },
@@ -2566,14 +1658,7 @@
         "iteration": 4,
         "answer": {
             "answer": [
-                "Supplier#000000067",
-                "Supplier#000000732",
-                "Supplier#000000785"
-            ],
-            "why": [
-                "{{lineitem_5,supplier_66}}",
-                "{{lineitem_1,supplier_731}}",
-                "{{lineitem_0,supplier_784}}"
+                "Supplier#000000067"
             ]
         }
     },
@@ -2582,14 +1667,7 @@
         "iteration": 5,
         "answer": {
             "answer": [
-                "Supplier#000000067",
-                "Supplier#000000732",
-                "Supplier#000000785"
-            ],
-            "why": [
-                "{{lineitem_5,supplier_66}}",
-                "{{lineitem_1,supplier_731}}",
-                "{{lineitem_0,supplier_784}}"
+                "Supplier#000000067"
             ]
         }
     },
@@ -2598,26 +1676,7 @@
         "iteration": 1,
         "answer": {
             "answer": [
-                "Customer#000001327",
-                "Customer#000002974",
-                "Customer#000003322",
-                "Customer#000004681",
-                "Customer#000005948",
-                "Customer#000007141",
-                "Customer#000013040",
-                "Customer#000013462",
-                "Customer#000014962"
-            ],
-            "why": [
-                "{{customer_1327,orders_16154}}",
-                "{{customer_2979,orders_117740}}",
-                "{{customer_3327,orders_49412}}",
-                "{{customer_4684,orders_66646}}",
-                "{{customer_5951,orders_21571}}",
-                "{{customer_7145,orders_23273}}",
-                "{{customer_13039,orders_18236}}",
-                "{{customer_13461,orders_45821}}",
-                "{{customer_14961,orders_56109}}"
+                "1327"
             ]
         }
     },
@@ -2626,26 +1685,7 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "Customer#000001327",
-                "Customer#000002974",
-                "Customer#000003322",
-                "Customer#000004681",
-                "Customer#000005948",
-                "Customer#000007141",
-                "Customer#000013040",
-                "Customer#000013462",
-                "Customer#000014962"
-            ],
-            "why": [
-                "{{customer_1327,orders_16154}}",
-                "{{customer_2979,orders_117740}}",
-                "{{customer_3327,orders_49412}}",
-                "{{customer_4684,orders_66646}}",
-                "{{customer_5951,orders_21571}}",
-                "{{customer_7145,orders_23273}}",
-                "{{customer_13039,orders_18236}}",
-                "{{customer_13461,orders_45821}}",
-                "{{customer_14961,orders_56109}}"
+                "1327"
             ]
         }
     },
@@ -2654,26 +1694,7 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "Customer#000001327",
-                "Customer#000002974",
-                "Customer#000003322",
-                "Customer#000004681",
-                "Customer#000005948",
-                "Customer#000007141",
-                "Customer#000013040",
-                "Customer#000013462",
-                "Customer#000014962"
-            ],
-            "why": [
-                "{{customer_1327,orders_16154}}",
-                "{{customer_2979,orders_117740}}",
-                "{{customer_3327,orders_49412}}",
-                "{{customer_4684,orders_66646}}",
-                "{{customer_5951,orders_21571}}",
-                "{{customer_7145,orders_23273}}",
-                "{{customer_13039,orders_18236}}",
-                "{{customer_13461,orders_45821}}",
-                "{{customer_14961,orders_56109}}"
+                "1327"
             ]
         }
     },
@@ -2682,26 +1703,7 @@
         "iteration": 4,
         "answer": {
             "answer": [
-                "Customer#000001327",
-                "Customer#000002974",
-                "Customer#000003322",
-                "Customer#000004681",
-                "Customer#000005948",
-                "Customer#000007141",
-                "Customer#000013040",
-                "Customer#000013462",
-                "Customer#000014962"
-            ],
-            "why": [
-                "{{customer_1327,orders_16154}}",
-                "{{customer_2979,orders_117740}}",
-                "{{customer_3327,orders_49412}}",
-                "{{customer_4684,orders_66646}}",
-                "{{customer_5951,orders_21571}}",
-                "{{customer_7145,orders_23273}}",
-                "{{customer_13039,orders_18236}}",
-                "{{customer_13461,orders_45821}}",
-                "{{customer_14961,orders_56109}}"
+                "1327"
             ]
         }
     },
@@ -2710,126 +1712,42 @@
         "iteration": 5,
         "answer": {
             "answer": [
-                "Customer#000001327",
-                "Customer#000002974",
-                "Customer#000003322",
-                "Customer#000004681",
-                "Customer#000005948",
-                "Customer#000007141",
-                "Customer#000013040",
-                "Customer#000013462",
-                "Customer#000014962"
-            ],
-            "why": [
-                "{{customer_1327,orders_16154}}",
-                "{{customer_2979,orders_117740}}",
-                "{{customer_3327,orders_49412}}",
-                "{{customer_4684,orders_66646}}",
-                "{{customer_5951,orders_21571}}",
-                "{{customer_7145,orders_23273}}",
-                "{{customer_13039,orders_18236}}",
-                "{{customer_13461,orders_45821}}",
-                "{{customer_14961,orders_56109}}"
+                "1327"
             ]
         }
     },
     {
         "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
         "iteration": 1,
-        "answer": {
-            "answer": [
-                "Customer#000000913",
-                "Customer#000002308",
-                "Customer#000005416",
-                "Customer#000005692",
-                "Customer#000006080",
-                "Customer#000007892",
-                "Customer#000008459",
-                "Customer#000008875",
-                "Customer#000009148",
-                "Customer#000009455",
-                "Customer#000010328",
-                "Customer#000010838"
-            ],
-            "why": [
-                "{{customer_913,orders_43378}}",
-                "{{customer_2312,orders_129503}}",
-                "{{customer_5419,orders_44786}}",
-                "{{customer_10329,orders_137338}}",
-                "{{customer_10839,orders_63060}}"
-            ]
-        }
+        "answer": "Based on the context provided, the question is: \"For which customer id's (c\\_custkey) in the customer.csv file are there more than 5 orders with a total price greater than 1000 in the orders.csv file?\"\n\nThe answer to this question would be:"
     },
     {
         "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
         "iteration": 2,
-        "answer": {
-            "answer": [
-                "Customer#000009455",
-                "Customer#000010328",
-                "Customer#000010838"
-            ],
-            "why": [
-                "{{customer_9455,orders_44786}}",
-                "{{customer_10329,orders_137338}}",
-                "{{customer_10839,orders_63060}}"
-            ]
-        }
+        "answer": "Based on the context provided, the question is: \"For which customer id's (c\\_custkey) in the customer.csv file are there more than 5 orders with a total price greater than 1000 in the orders.csv file?\"\n\nThe answer to this question would be:"
     },
     {
         "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
         "iteration": 3,
-        "answer": {
-            "answer": [
-                "Customer#000009455",
-                "Customer#000010328",
-                "Customer#000010838"
-            ],
-            "why": [
-                "{{customer_9456,orders_44786}}",
-                "{{customer_10329,orders_137338}}",
-                "{{customer_10839,orders_63060}}"
-            ]
-        }
+        "answer": "Based on the context provided, the question is: \"For which customer id's (c\\_custkey) in the customer.csv file are there more than 5 orders with a total price greater than 1000 in the orders.csv file?\"\n\nThe answer to this question would be:"
     },
     {
         "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
         "iteration": 4,
-        "answer": {
-            "answer": [
-                "Customer#000009455",
-                "Customer#000010328",
-                "Customer#000010838"
-            ],
-            "why": [
-                "{{customer_9456,orders_44786}}",
-                "{{customer_10329,orders_137338}}",
-                "{{customer_10839,orders_63060}}"
-            ]
-        }
+        "answer": "Based on the context provided, the question is: \"For which customer id's (c\\_custkey) in the customer.csv file are there more than 5 orders with a total price greater than 1000 in the orders.csv file?\"\n\nThe answer to this question would be:"
     },
     {
         "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
         "iteration": 5,
-        "answer": {
-            "answer": [
-                "Customer#000009455",
-                "Customer#000010328",
-                "Customer#000010838"
-            ],
-            "why": [
-                "{{customer_9456,orders_44786}}",
-                "{{customer_10329,orders_137338}}",
-                "{{customer_10839,orders_63060}}"
-            ]
-        }
+        "answer": "Based on the context provided, the question is: \"For which customer id's (c\\_custkey) in the customer.csv file are there more than 5 orders with a total price greater than 1000 in the orders.csv file?\"\n\nThe answer to this question would be:"
     },
     {
         "question": "Which parts (p_name) have a retail price lower than 902?",
         "iteration": 1,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "1"
+            ]
         }
     },
     {
@@ -2837,12 +1755,7 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "goldenrod lavender spring chocolate lace",
-                "wheat frosted chiffon aquamarine saddle"
-            ],
-            "why": [
-                "{{part_0}}",
-                "{{part_1000}}"
+                "1"
             ]
         }
     },
@@ -2850,8 +1763,9 @@
         "question": "Which parts (p_name) have a retail price lower than 902?",
         "iteration": 3,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "1"
+            ]
         }
     },
     {
@@ -2859,12 +1773,7 @@
         "iteration": 4,
         "answer": {
             "answer": [
-                "goldenrod lavender spring chocolate lace",
-                "wheat frosted chiffon aquamarine saddle"
-            ],
-            "why": [
-                "{{part_0}}",
-                "{{part_1000}}"
+                "1"
             ]
         }
     },
@@ -2872,8 +1781,9 @@
         "question": "Which parts (p_name) have a retail price lower than 902?",
         "iteration": 5,
         "answer": {
-            "answer": [],
-            "why": []
+            "answer": [
+                "1"
+            ]
         }
     },
     {
@@ -2882,17 +1792,9 @@
         "answer": {
             "answer": [
                 "ARGENTINA",
-                "BRAZIL",
                 "CANADA",
                 "PERU",
                 "UNITED STATES"
-            ],
-            "why": [
-                "{{nation_1}}",
-                "{{nation_2}}",
-                "{{nation_3}}",
-                "{{nation_17}}",
-                "{{nation_24}}"
             ]
         }
     },
@@ -2902,17 +1804,9 @@
         "answer": {
             "answer": [
                 "ARGENTINA",
-                "BRAZIL",
                 "CANADA",
                 "PERU",
                 "UNITED STATES"
-            ],
-            "why": [
-                "{{nation_1}}",
-                "{{nation_2}}",
-                "{{nation_3}}",
-                "{{nation_17}}",
-                "{{nation_24}}"
             ]
         }
     },
@@ -2922,17 +1816,9 @@
         "answer": {
             "answer": [
                 "ARGENTINA",
-                "BRAZIL",
                 "CANADA",
                 "PERU",
                 "UNITED STATES"
-            ],
-            "why": [
-                "{{nation_1}}",
-                "{{nation_2}}",
-                "{{nation_3}}",
-                "{{nation_17}}",
-                "{{nation_24}}"
             ]
         }
     },
@@ -2942,17 +1828,9 @@
         "answer": {
             "answer": [
                 "ARGENTINA",
-                "BRAZIL",
                 "CANADA",
                 "PERU",
                 "UNITED STATES"
-            ],
-            "why": [
-                "{{nation_1}}",
-                "{{nation_2}}",
-                "{{nation_3}}",
-                "{{nation_17}}",
-                "{{nation_24}}"
             ]
         }
     },
@@ -2962,17 +1840,9 @@
         "answer": {
             "answer": [
                 "ARGENTINA",
-                "BRAZIL",
                 "CANADA",
                 "PERU",
                 "UNITED STATES"
-            ],
-            "why": [
-                "{{nation_1}}",
-                "{{nation_2}}",
-                "{{nation_3}}",
-                "{{nation_17}}",
-                "{{nation_24}}"
             ]
         }
     },
@@ -2986,13 +1856,6 @@
                 "JAPAN",
                 "CHINA",
                 "VIETNAM"
-            ],
-            "why": [
-                "{{nation_8}}",
-                "{{nation_9}}",
-                "{{nation_12}}",
-                "{{nation_18}}",
-                "{{nation_21}}"
             ]
         }
     },
@@ -3006,13 +1869,6 @@
                 "JAPAN",
                 "CHINA",
                 "VIETNAM"
-            ],
-            "why": [
-                "{{nation_8}}",
-                "{{nation_9}}",
-                "{{nation_12}}",
-                "{{nation_18}}",
-                "{{nation_21}}"
             ]
         }
     },
@@ -3026,13 +1882,6 @@
                 "JAPAN",
                 "CHINA",
                 "VIETNAM"
-            ],
-            "why": [
-                "{{nation_8}}",
-                "{{nation_9}}",
-                "{{nation_12}}",
-                "{{nation_18}}",
-                "{{nation_21}}"
             ]
         }
     },
@@ -3046,13 +1895,6 @@
                 "JAPAN",
                 "CHINA",
                 "VIETNAM"
-            ],
-            "why": [
-                "{{nation_8}}",
-                "{{nation_9}}",
-                "{{nation_12}}",
-                "{{nation_18}}",
-                "{{nation_21}}"
             ]
         }
     },
@@ -3066,13 +1908,6 @@
                 "JAPAN",
                 "CHINA",
                 "VIETNAM"
-            ],
-            "why": [
-                "{{nation_8}}",
-                "{{nation_9}}",
-                "{{nation_12}}",
-                "{{nation_18}}",
-                "{{nation_21}}"
             ]
         }
     },
@@ -3086,13 +1921,6 @@
                 "KENYA",
                 "MOROCCO",
                 "MOZAMBIQUE"
-            ],
-            "why": [
-                "{{nation_0}}",
-                "{{nation_5}}",
-                "{{nation_14}}",
-                "{{nation_15}}",
-                "{{nation_16}}"
             ]
         }
     },
@@ -3106,13 +1934,6 @@
                 "KENYA",
                 "MOROCCO",
                 "MOZAMBIQUE"
-            ],
-            "why": [
-                "{{nation_0}}",
-                "{{nation_5}}",
-                "{{nation_14}}",
-                "{{nation_15}}",
-                "{{nation_16}}"
             ]
         }
     },
@@ -3126,13 +1947,6 @@
                 "KENYA",
                 "MOROCCO",
                 "MOZAMBIQUE"
-            ],
-            "why": [
-                "{{nation_0}}",
-                "{{nation_5}}",
-                "{{nation_14}}",
-                "{{nation_15}}",
-                "{{nation_16}}"
             ]
         }
     },
@@ -3146,13 +1960,6 @@
                 "KENYA",
                 "MOROCCO",
                 "MOZAMBIQUE"
-            ],
-            "why": [
-                "{{nation_0}}",
-                "{{nation_5}}",
-                "{{nation_14}}",
-                "{{nation_15}}",
-                "{{nation_16}}"
             ]
         }
     },
@@ -3166,13 +1973,6 @@
                 "KENYA",
                 "MOROCCO",
                 "MOZAMBIQUE"
-            ],
-            "why": [
-                "{{nation_0}}",
-                "{{nation_5}}",
-                "{{nation_14}}",
-                "{{nation_15}}",
-                "{{nation_16}}"
             ]
         }
     },
@@ -3186,13 +1986,6 @@
                 "ROMANIA",
                 "RUSSIA",
                 "UNITED KINGDOM"
-            ],
-            "why": [
-                "{{nation_6}}",
-                "{{nation_7}}",
-                "{{nation_19}}",
-                "{{nation_22}}",
-                "{{nation_23}}"
             ]
         }
     },
@@ -3206,13 +1999,6 @@
                 "ROMANIA",
                 "RUSSIA",
                 "UNITED KINGDOM"
-            ],
-            "why": [
-                "{{nation_6}}",
-                "{{nation_7}}",
-                "{{nation_19}}",
-                "{{nation_22}}",
-                "{{nation_23}}"
             ]
         }
     },
@@ -3226,13 +2012,6 @@
                 "ROMANIA",
                 "RUSSIA",
                 "UNITED KINGDOM"
-            ],
-            "why": [
-                "{{nation_6}}",
-                "{{nation_7}}",
-                "{{nation_19}}",
-                "{{nation_22}}",
-                "{{nation_23}}"
             ]
         }
     },
@@ -3246,13 +2025,6 @@
                 "ROMANIA",
                 "RUSSIA",
                 "UNITED KINGDOM"
-            ],
-            "why": [
-                "{{nation_6}}",
-                "{{nation_7}}",
-                "{{nation_19}}",
-                "{{nation_22}}",
-                "{{nation_23}}"
             ]
         }
     },
@@ -3266,13 +2038,6 @@
                 "ROMANIA",
                 "RUSSIA",
                 "UNITED KINGDOM"
-            ],
-            "why": [
-                "{{nation_6}}",
-                "{{nation_7}}",
-                "{{nation_19}}",
-                "{{nation_22}}",
-                "{{nation_23}}"
             ]
         }
     },
@@ -3280,16 +2045,7 @@
         "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
         "iteration": 1,
         "answer": {
-            "answer": [
-                "Supplier#000000195",
-                "Supplier#000000921",
-                "Supplier#000000951"
-            ],
-            "why": [
-                "{{supplier_195}}",
-                "{{supplier_920}}",
-                "{{supplier_951}}"
-            ]
+            "answer": []
         }
     },
     {
@@ -3297,14 +2053,7 @@
         "iteration": 2,
         "answer": {
             "answer": [
-                "Supplier#000000195",
-                "Supplier#000000921",
-                "Supplier#000000951"
-            ],
-            "why": [
-                "{{supplier_195}}",
-                "{{supplier_921}}",
-                "{{supplier_951}}"
+                "Supplier#000000164"
             ]
         }
     },
@@ -3313,14 +2062,7 @@
         "iteration": 3,
         "answer": {
             "answer": [
-                "Supplier#000000195",
-                "Supplier#000000921",
-                "Supplier#000000951"
-            ],
-            "why": [
-                "{{supplier_195}}",
-                "{{supplier_921}}",
-                "{{supplier_951}}"
+                "Supplier#000000164"
             ]
         }
     },
@@ -3329,14 +2071,7 @@
         "iteration": 4,
         "answer": {
             "answer": [
-                "Supplier#000000195",
-                "Supplier#000000921",
-                "Supplier#000000951"
-            ],
-            "why": [
-                "{{supplier_195}}",
-                "{{supplier_921}}",
-                "{{supplier_951}}"
+                "Supplier#000000164"
             ]
         }
     },
@@ -3345,14 +2080,7 @@
         "iteration": 5,
         "answer": {
             "answer": [
-                "Supplier#000000195",
-                "Supplier#000000921",
-                "Supplier#000000951"
-            ],
-            "why": [
-                "{{supplier_195}}",
-                "{{supplier_921}}",
-                "{{supplier_951}}"
+                "Supplier#000000164"
             ]
         }
     }
