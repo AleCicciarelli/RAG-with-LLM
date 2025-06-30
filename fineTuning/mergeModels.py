@@ -1,4 +1,4 @@
-'''
+
 from transformers import AutoModelForCausalLM
 from peft import PeftModel
 
@@ -31,3 +31,4 @@ model = PeftModel.from_pretrained(base, "output_lora")
 
 merged = model.merge_and_unload()
 merged.save_pretrained("phi3-merged")
+'''

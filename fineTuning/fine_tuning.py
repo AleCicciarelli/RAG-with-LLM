@@ -9,10 +9,10 @@ from trl import SFTTrainer
 from peft import LoraConfig, PeftModel, TaskType
 from datasets import load_dataset
 # --- CONFIG ---
-#base_model_name = "meta-llama/Meta-Llama-3-8B-Instruct"  # oppure 70B
-base_model_name = "unsloth/Phi-3-mini-4k-instruct"
+base_model_name = "meta-llama/Meta-Llama-3-8B-Instruct"  # oppure 70B
+#base_model_name = "unsloth/Phi-3-mini-4k-instruct"
 dataset_path = "fineTuning/converted_dataset.jsonl"  # <-- il tuo dataset JSONL
-adapter_output = "output_lora_phi3mini"  # <-- dove vuoi salvare l'adapter LoRA
+adapter_output = "output_lora_8b"  # <-- dove vuoi salvare l'adapter LoRA
 max_seq_length = 4096
 use_bf16 = is_bfloat16_supported()
 load_in_4bit = True
@@ -54,7 +54,7 @@ dataset = load_dataset("json", data_files=dataset_path, split="train")
 
 # --- 4. Format dataset in instruction-style ---
 def formatting(example):
-    return {"text": f"{example['prompt']}<|end|>\n{example['output']}<|end|>"}
+    return {"text": f"{example['prompt']}<|eot_id|>\n{example['output']}<|eot_id|>"}
 
 print("✅ Formatting dataset...")
 dataset = dataset.map(formatting)
@@ -143,7 +143,7 @@ If the answer is not present in the context, return:
   "answer": [],
   "why": []
 }
-<|end|>
+<|eot_id|>
 """
 inputs = tokenizer(inference_prompt, return_tensors="pt", truncation=True, max_length=max_seq_length).to("cuda")
 

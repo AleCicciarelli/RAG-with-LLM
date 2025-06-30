@@ -84,10 +84,10 @@ def main():
     gt_data = load_json("tpch/ground_truthTpch.json")
     question_types = load_json("tpch/questions.json")
 
-    pred_folder = "tpch/outputs_llama70b/iterative"
-    global_metrics_file = os.path.join(pred_folder, "global_metrics_iterative_kdin.csv")
-    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterative_kdin.csv")
-    iteration_metrics_file = os.path.join(pred_folder, "metrics_per_iteration_kdin.csv")
+    pred_folder = "tpch/outputs_llama8b/iterative"
+    global_metrics_file = os.path.join(pred_folder, "global_metrics_iterative_FC_5rounds_NOWHY.csv")
+    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterative_FC_5rounds_NOWHY.csv")
+    iteration_metrics_file = os.path.join(pred_folder, "metrics_per_iteration_FC_5rounds_NOWHY.csv")
 
     write_header_global = not os.path.exists(global_metrics_file)
     write_header_type = not os.path.exists(type_metrics_file)
@@ -117,7 +117,7 @@ def main():
                 "Explanation Precision", "Explanation Recall", "Explanation F1", "Exact Explanation"
             ])
 
-        pred_file = os.path.join(pred_folder, f"outputs_llama70b_ollama_iterative_kdin.json")
+        pred_file = os.path.join(pred_folder, f"outputs_llama8b_FC_5rounds_NOWHY.json")
         ungrouped_pred_data = load_json(pred_file)
         pred_data = group_predictions_by_question(ungrouped_pred_data)
         assert len(gt_data) == len(pred_data), "Mismatch in number of questions"
@@ -173,8 +173,8 @@ def main():
                 pred_answer_raw = pred.get("answer", [])
                 pred_answer = [str(x).strip() for x in pred_answer_raw.get("answer", [])]
                 print(f"Predicted answer: {pred_answer}")
-                pred_expl = [str(x).strip() for x in pred_answer_raw.get("why", [])]
-                print(f"Predicted explanation: {pred_expl}")
+                #pred_expl = [str(x).strip() for x in pred_answer_raw.get("why", [])]
+                #print(f"Predicted explanation: {pred_expl}")
                 #print(pred_answer_raw.get("answer", []))
                 #if isinstance(pred_answer_raw, list) and len(pred_answer_raw) > 0 and isinstance(pred_answer_raw[0], dict):
                 #    pred_answer = [str(x) for x in pred_answer_raw[0].get("answer", [])]
@@ -186,14 +186,14 @@ def main():
                 exact_answer = 1 if set(true_answer) == set(pred_answer) else 0
                 ans_prec, ans_rec, ans_f1, _ = compute_metrics(tp_ans, fp_ans, fn_ans)
 
-                tp_expl, fp_expl, fn_expl = evaluate_lists_why(true_expl, pred_expl)
-                exact_expl = 1 if (true_expl == pred_expl) else 0
-                expl_prec, expl_rec, expl_f1, _ = compute_metrics(tp_expl, fp_expl, fn_expl)
+                #tp_expl, fp_expl, fn_expl = evaluate_lists_why(true_expl, pred_expl)
+                #exact_expl = 1 if (true_expl == pred_expl) else 0
+                #expl_prec, expl_rec, expl_f1, _ = compute_metrics(tp_expl, fp_expl, fn_expl)
 
                 iter_writer.writerow([
                     question, iteration, q_type,
                     f"{ans_prec:.4f}", f"{ans_rec:.4f}", f"{ans_f1:.4f}", exact_answer,
-                    f"{expl_prec:.4f}", f"{expl_rec:.4f}", f"{expl_f1:.4f}", exact_expl
+                    #f"{expl_prec:.4f}", f"{expl_rec:.4f}", f"{expl_f1:.4f}", exact_expl
                 ])
 
                 # Aggregazione per tipo
@@ -203,10 +203,10 @@ def main():
                 m["fp_ans"] += fp_ans
                 m["fn_ans"] += fn_ans
                 m["exact_ans"] += exact_answer
-                m["tp_expl"] += tp_expl
-                m["fp_expl"] += fp_expl
-                m["fn_expl"] += fn_expl
-                m["exact_expl"] += exact_expl
+                #m["tp_expl"] += tp_expl
+                #m["fp_expl"] += fp_expl
+                #m["fn_expl"] += fn_expl
+                #m["exact_expl"] += exact_expl
 
                 # Aggregazione globale per iterazione
                 m_iter = metrics_by_iter[iteration]
@@ -214,10 +214,10 @@ def main():
                 m_iter["answer_fp"] += fp_ans
                 m_iter["answer_fn"] += fn_ans
                 m_iter["answer_exact"] += exact_answer
-                m_iter["expl_tp"] += tp_expl
-                m_iter["expl_fp"] += fp_expl
-                m_iter["expl_fn"] += fn_expl
-                m_iter["expl_exact"] += exact_expl
+                #m_iter["expl_tp"] += tp_expl
+                #m_iter["expl_fp"] += fp_expl
+                #m_iter["expl_fn"] += fn_expl
+                #m_iter["expl_exact"] += exact_expl
 
                 # Aggregazione per tipo per iterazione
                 m_type_iter = metrics_by_type_and_iter[q_type][iteration]
@@ -226,31 +226,31 @@ def main():
                 m_type_iter["fp_ans"] += fp_ans
                 m_type_iter["fn_ans"] += fn_ans
                 m_type_iter["exact_ans"] += exact_answer
-                m_type_iter["tp_expl"] += tp_expl
-                m_type_iter["fp_expl"] += fp_expl
-                m_type_iter["fn_expl"] += fn_expl
-                m_type_iter["exact_expl"] += exact_expl
+                #m_type_iter["tp_expl"] += tp_expl
+                #m_type_iter["fp_expl"] += fp_expl
+                #m_type_iter["fn_expl"] += fn_expl
+                #m_type_iter["exact_expl"] += exact_expl
 
         # Scrivi metriche globali per iterazione
         for i in range(1,4):
             m = metrics_by_iter[i]
             a_prec, a_rec, a_f1, a_acc = compute_metrics(m["answer_tp"], m["answer_fp"], m["answer_fn"], m["answer_exact"], len(gt_data))
-            e_prec, e_rec, e_f1, e_acc = compute_metrics(m["expl_tp"], m["expl_fp"], m["expl_fn"], m["expl_exact"], len(gt_data))
+            #e_prec, e_rec, e_f1, e_acc = compute_metrics(m["expl_tp"], m["expl_fp"], m["expl_fn"], m["expl_exact"], len(gt_data))
 
             global_writer.writerow(["Answer", i, f"{a_prec:.4f}", f"{a_rec:.4f}", f"{a_f1:.4f}", f"{a_acc:.4f}"])
-            global_writer.writerow(["Explanation", i, f"{e_prec:.4f}", f"{e_rec:.4f}", f"{e_f1:.4f}", f"{e_acc:.4f}"])
+            #global_writer.writerow(["Explanation", i, f"{e_prec:.4f}", f"{e_rec:.4f}", f"{e_f1:.4f}", f"{e_acc:.4f}"])
 
         # Scrivi metriche per tipo per iterazione
         for q_type, iters in metrics_by_type_and_iter.items():
             for i in range(1,4):
                 stats = iters[i]
                 ans_m = compute_metrics(stats["tp_ans"], stats["fp_ans"], stats["fn_ans"], stats["exact_ans"], stats["count"])
-                expl_m = compute_metrics(stats["tp_expl"], stats["fp_expl"], stats["fn_expl"], stats["exact_expl"], stats["count"])
+                #expl_m = compute_metrics(stats["tp_expl"], stats["fp_expl"], stats["fn_expl"], stats["exact_expl"], stats["count"])
 
                 type_writer.writerow([
                     q_type, i,
                     f"{ans_m[0]:.4f}", f"{ans_m[1]:.4f}", f"{ans_m[2]:.4f}", f"{ans_m[3]:.4f}",
-                    f"{expl_m[0]:.4f}", f"{expl_m[1]:.4f}", f"{expl_m[2]:.4f}", f"{expl_m[3]:.4f}",
+                    #f"{expl_m[0]:.4f}", f"{expl_m[1]:.4f}", f"{expl_m[2]:.4f}", f"{expl_m[3]:.4f}",
                     stats["count"]
                 ])
 
