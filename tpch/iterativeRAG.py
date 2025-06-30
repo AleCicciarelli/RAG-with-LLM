@@ -37,7 +37,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 csv_folder = "tpch/csv_data"
 faiss_index_folder = "tpch/faiss_index"
-output_filename = f"tpch/outputs_mixtral8x7b/iterative/outputs_mixtral8x7b_kdin_5rounds_NOWHY.json"
+output_filename = f"tpch/outputs_mixtral8x7b/iterative/outputs_mixtral8x7b_ksemidin_5rounds_NOWHY.json"
 debug_log_filename = f"iterativeRag/debug_log_llama70b_iterative.txt"
 os.makedirs(os.path.dirname(debug_log_filename), exist_ok=True)
 # Save the results for the current value of k to a JSON file for later analysis
@@ -227,6 +227,7 @@ class State(TypedDict):
     original_question: str # To keep track of the initial question
     current_question: str  # The question used for retrieval in the current iteration
     context: List[Document]
+    k: int
     answer: AnswerItem
     #iteration_history: List[Dict[str, Any]] # To store previous answers and contexts for iterative refinement
 
@@ -370,7 +371,8 @@ for i, question in enumerate(questions):
     current_state = initial_state
     for iter_num in range(max_iterations):
         print(f"\n--- Iteration {iter_num + 1} for question n. {i+1} ---")
-        k = k + get_k_to_add(current_state["answer"]["why"]) if current_state["answer"] else 10
+        k = current_state["k"] + 3
+        #k = k + get_k_to_add(current_state["answer"]["why"]) if current_state["answer"] else 10
         current_state["k"] = k
         print(f"Current k value: {k}")
         #full_result = generate(state)
