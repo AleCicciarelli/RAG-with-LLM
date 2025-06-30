@@ -1,3 +1,4 @@
+'''
 from transformers import AutoModelForCausalLM
 from peft import PeftModel
 
@@ -21,3 +22,12 @@ model = model.merge_and_unload()
 
 print("💾 Salvataggio modello mergiato...")
 model.save_pretrained(merged_output_path)
+'''
+from peft import PeftModel
+from transformers import AutoModelForCausalLM
+
+base = AutoModelForCausalLM.from_pretrained("unsloth/Phi-3-mini-4k-instruct", torch_dtype="auto")
+model = PeftModel.from_pretrained(base, "output_lora")
+
+merged = model.merge_and_unload()
+merged.save_pretrained("phi3-merged")

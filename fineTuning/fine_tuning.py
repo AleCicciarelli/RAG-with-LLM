@@ -9,9 +9,10 @@ from trl import SFTTrainer
 from peft import LoraConfig, PeftModel, TaskType
 from datasets import load_dataset
 # --- CONFIG ---
-base_model_name = "meta-llama/Meta-Llama-3-8B-Instruct"  # oppure 70B
+#base_model_name = "meta-llama/Meta-Llama-3-8B-Instruct"  # oppure 70B
+base_model_name = "unsloth/Phi-3-mini-4k-instruct"
 dataset_path = "fineTuning/converted_dataset.jsonl"  # <-- il tuo dataset JSONL
-adapter_output = "output_lora"
+adapter_output = "output_lora_phi3mini"  # <-- dove vuoi salvare l'adapter LoRA
 max_seq_length = 4096
 use_bf16 = is_bfloat16_supported()
 load_in_4bit = True
