@@ -54,7 +54,7 @@ dataset = load_dataset("json", data_files=dataset_path, split="train")
 
 # --- 4. Format dataset in instruction-style ---
 def formatting(example):
-    return {"text": f"{example['prompt']}<|eot_id|>\n{example['output']}"}
+    return {"text": f"{example['prompt']}<|end|>\n{example['output']}<|end|>"}
 
 print("✅ Formatting dataset...")
 dataset = dataset.map(formatting)
@@ -135,15 +135,15 @@ Return ONLY the JSON output, without any explanation or markdown formatting.
 
 Format:
 {
-  "answer": ["<name_1> <surname_1>", "<name_2> <surname_2>", ...],
-  "why": ["{<table>_<row>[,<table>_<row>...]}", ...]
+  "answer": ["<answer1>", "<answer2>", ...],
+  "why": ["{<table_row>,<table_row>...}, {....}}", ...]
 }
 If the answer is not present in the context, return:
 {
   "answer": [],
   "why": []
 }
-
+<|end|>
 """
 inputs = tokenizer(inference_prompt, return_tensors="pt", truncation=True, max_length=max_seq_length).to("cuda")
 
@@ -163,8 +163,12 @@ output_ids = outputs[0][inputs["input_ids"].shape[1]:]
 generated = tokenizer.decode(output_ids, skip_special_tokens=True).strip()
 
 # --- 9. VALIDAZIONE JSON ---
+
 if generated.startswith("```json"):
     generated = generated[len("```json"):].strip()
+
+if generated.startswith("```"):
+    generated = generated[len("```"):].strip()
 if generated.endswith("```"):
     generated = generated[:-len("```")].strip()
 
