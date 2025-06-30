@@ -28,9 +28,6 @@ def augment_data(examples):
         row_number = random.randint(0, 10)
         output = output.replace('{{students_0}}', f'{{students_{row_number}}}')
 
-        # Prompt rewording
-        reworded_prompt = prompt.replace('Return ONLY the JSON output', 'Generate the JSON output without explanations')
-        prompt = reworded_prompt
 
         # Answer modification
         answer = json.loads(output)['answer']
