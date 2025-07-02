@@ -37,7 +37,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 
 csv_folder = "csv_data"
 faiss_index_folder = "faiss_index"
-output_filename = f"iterativeRAG/outputs_llama70b/iterative_FC_5rounds.json"
+output_filename = f"iterativeRAG/outputs_llama70b/why/iterative_kdin_5rounds.json"
 debug_log_filename = f"iterativeRag/debug_log_llama70b_iterative.txt"
 os.makedirs(os.path.dirname(debug_log_filename), exist_ok=True)
 # Save the results for the current value of k to a JSON file for later analysis
@@ -147,16 +147,24 @@ def definePrompt():
     """
     '''
     prompt = """
-    Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
+   Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
+        For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
+        Format of Witness Sets (as strings):  
+        - If there is ONE relevant tuple set: "{{<table_name>_<row>}}"  
+        - If there are MULTIPLE: "{{<table_name>_<row>},{<table_name>_<row>},...}}"  
         IMPORTANT:
-
-        - Do NOT include introductory phrases, explanations or any dots at the end.
-        - If the answer is not present in the context, return an empty array.
-        - Return the answer strictly in the following JSON format:
-
+        Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.
+        If your output is not a valid JSON block in the format described, it will be discarded.
+        If the answer is not present in the context, return an empty array.
+        
+        
+        INVALID OUTPUT EXAMPLE (will be discarded):
+        The answer is: {"answer": [...], "why": [...]}
+        VALID OUTPUT EXAMPLE (will be accepted):
         ```json
         {
-            "answer": ["<answer_1>", "<answer_2>", ...]
+            "answer": ["<answer_1>", "<answer_2>", ...],
+            "why": ["{{<table_name>_<row>},{<table_name>_<row>}}", "{{<table_name>_<row>}}", ...]
         }
         ```
         EXAMPLE 1:
@@ -183,6 +191,10 @@ def definePrompt():
         ```json
             {
             "answer": ["Giulia Rossi","Marco Bianchi"],
+            "why": [
+            "{{courses_0,enrollments_0,students_0},{courses_3,enrollments_3,students_0}}",
+            "{{courses_0,enrollments_9,students_1}}"
+            ]
             }
         ```
         
@@ -198,7 +210,10 @@ def definePrompt():
         EXPECTED OUTPUT:
         ```json
         {
-            "answer": ["Engineering"]
+            "answer": ["Engineering"],
+            "why": [
+            "{{departments_1}}"
+            ]
         }
         ```
 
@@ -380,8 +395,8 @@ for i, question in enumerate(questions):
     current_state = initial_state
     for iter_num in range(max_iterations):
         print(f"\n--- Iteration {iter_num + 1} for question n. {i+1} ---")
-        k = current_state["k"] + 3
-        #k = k + get_k_to_add(current_state["answer"]["why"]) if current_state["answer"] else 10
+        #k = current_state["k"] + 3
+        k = k + get_k_to_add(current_state["answer"]["why"]) if current_state["answer"] else 10
         current_state["k"] = k
         print(f"Current k value: {k}")
         #full_result = generate(state)
