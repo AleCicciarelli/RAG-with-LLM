@@ -242,7 +242,7 @@ parser = JsonOutputParser(pydantic_schema=AnswerItem)
 
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
-'''
+
 def retrieve(state: State):
     print(f"Retrieving for question: {state['original_question']}")
     retrieved_docs = vector_store.similarity_search(state["current_question"], k = 10)
@@ -292,7 +292,7 @@ def get_rows_from_ground_truth(ground_f2: str, csv_folder: str) -> List[Document
                 print(f"⚠️ Errore nel parsing di '{entry}': {e}")
 
     return documents
-
+''' 
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
     # Construct a detailed prompt for the LLM
@@ -335,7 +335,7 @@ def generate(state: State):
 with open("questions.json", "r") as f:
     data = json.load(f)
     questions = list(data.keys())
-'''
+
 # Build the graph structure once
 workflow = StateGraph(State)
 workflow.add_node("retrieve", retrieve)
@@ -346,6 +346,7 @@ graph = workflow.compile()
 '''
 with open("ground_truth2.json", "r", encoding="utf-8") as f:
     ground_truth = json.load(f)  
+'''
 all_final_results = []
 
 # Iterate over each question and invoke the graph to get the answer
@@ -359,13 +360,13 @@ for i, question in enumerate(questions):
     "answer": [], # Initial empty answer
 }
 
-    gt = ground_truth[i]
-    gt_source_info = gt["why"]
+    #gt = ground_truth[i]
+    #gt_source_info = gt["why"]
     
     # Step 2: Costruisci contesto perfetto a partire dalle righe vere
-    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder=csv_folder)
+    #context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder=csv_folder)
     
-    
+    '''
     state = {
         "original_question": question,
         "current_question": question, # Start with the original question
@@ -373,18 +374,18 @@ for i, question in enumerate(questions):
         "context": context_docs,
         "answer": [],
     }
-
+'''
     # Run the graph until it decides to stop (or a max iteration limit)
     max_iterations = 5
     current_state = initial_state
     for iter_num in range(max_iterations):
         print(f"\n--- Iteration {iter_num + 1} for question n. {i+1} ---")
-        #k = current_state["k"] + 3
+        k = current_state["k"] + 3
         #k = k + get_k_to_add(current_state["answer"]["why"]) if current_state["answer"] else 10
-        #current_state["k"] = k
-        #print(f"Current k value: {k}")
-        full_result = generate(state)
-        #full_result = graph.invoke(current_state)
+        current_state["k"] = k
+        print(f"Current k value: {k}")
+        #full_result = generate(state)
+        full_result = graph.invoke(current_state)
         # Set the current question for the next iteration composed by original question and the last answer
         if full_result.get("answer"):
             # If the answer is a list, take the first item for the next question
