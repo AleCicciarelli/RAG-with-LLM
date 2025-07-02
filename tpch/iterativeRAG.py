@@ -226,8 +226,14 @@ def get_k_to_add(previous_answer: str,) -> int:
     seen_entries: Set[str] = set()
     k = 0
     if isinstance(previous_answer, str):
-        previous_answer = [previous_answer["why"]] if previous_answer else []  
-
+        
+        try:
+            previous_answer = json.loads(previous_answer)
+            
+        except json.JSONDecodeError as e:
+            print("Errore nel parsing JSON di previous_answer:", e)
+            return 0
+    previous_answer = previous_answer.get("why", [])
     # Regex per catturare tutte le occorrenze tipo table_row
     pattern = re.compile(r'(\w+_\d+)')
 
@@ -241,6 +247,7 @@ def get_k_to_add(previous_answer: str,) -> int:
 
     print(f"Number of unique entries in previous answer: {k}")    
     return k
+
 class AnswerItem(BaseModel):
     answer: List[str]
     why: List[str]
@@ -396,7 +403,7 @@ for i, question in enumerate(questions):
     for iter_num in range(max_iterations):
         print(f"\n--- Iteration {iter_num + 1} for question n. {i+1} ---")
         #k = current_state["k"] + 3
-        k = k + get_k_to_add(current_state["answer"]["why"]) if current_state["answer"] else 10
+        k = k + get_k_to_add(current_state["answer"]) if current_state["answer"] else 10
         current_state["k"] = k
         print(f"Current k value: {k}")
         #full_result = generate(state)
