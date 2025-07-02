@@ -35,9 +35,9 @@ llm = ChatOllama(model="llama3:70b", temperature=0)
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
 
-csv_folder = "tpch/csv_data"
-faiss_index_folder = "tpch/faiss_index"
-output_filename = f"tpch/outputs_llama70b/iterative/outputs_llama70b_iterative_k10_FC_5rounds.json"
+csv_folder = "csv_data"
+faiss_index_folder = "faiss_index"
+output_filename = f"iterativeRAG/outputs_llama70b/iterative_FC_5rounds.json"
 debug_log_filename = f"iterativeRag/debug_log_llama70b_iterative.txt"
 os.makedirs(os.path.dirname(debug_log_filename), exist_ok=True)
 # Save the results for the current value of k to a JSON file for later analysis
@@ -161,37 +161,44 @@ def definePrompt():
         ```
         EXAMPLE 1:
         CONTEXT:
-        - source: customer.csv , row: 14322
-        (<col_a>:<val_a>,..., c_nationkey : 2, ...)
-        - source: orders.csv, row: 137
-        (o_orderkey : 546, ..., o_totalprice : 20531.43, ...)
-        - source: customer.csv, row: 101
-        (<col_a>:<val_c>, ...,<c_nationkey : 2, ...)
-        - source: orders.csv, row: 78528
-        (o_orderkey : 314052, ..., o_totalprice : 20548.82, ...)
+            - source: courses.csv, row: 0  
+            (course_id:101, course_name:Machine Learning, ...)  
+            - source: courses.csv, row: 3  
+            (course_id:104, course_name:Advanced Algorithms, ...)  
+            - source: enrollments.csv, row: 0  
+            (enrollment_id:1, student_id:1, course_id:101, ...)  
+            - source: enrollments.csv, row: 3  
+            (enrollment_id:4, student_id:1, course_id:104, ...)  
+            - source: enrollments.csv, row: 9  
+            (enrollment_id:10, student_id:2, course_id:101, ...)  
+            - source: students.csv, row: 0  
+            (student_id:1, name:Giulia, surname:Rossi, ...)  
+            - source: students.csv, row: 1  
+            (student_id:2, name:Marco, surname:Bianchi, ...)  
 
-        QUESTION:
-            "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?"
+        QUESTION:  
+            "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
 
-        EXPECTED OUTPUT:
+        EXPECTED ANSWER:
         ```json
-        {
-            "answer": ["546", "314052"]
-        }
+            {
+            "answer": ["Giulia Rossi","Marco Bianchi"],
+            }
         ```
+        
         EXAMPLE 2:    
         CONTEXT:
-            - source: suppliers.csv, row: 4
-            (..s_name: "Supplier#000000005",...,s_phone: "21-151-690-3663")
+            - source: departments.csv, row: 1
+            (department_id:2, department_name:Electronics, faculty:Engineering)
            
 
         QUESTION:  
-            "What is the phone number of the supplier named 'Supplier#000000005'?"
+            "Which faculty does the Electronics department belong to?"
 
         EXPECTED OUTPUT:
         ```json
         {
-            "answer": ["21-151-690-3663"]
+            "answer": ["Engineering"]
         }
         ```
 
@@ -325,7 +332,7 @@ def generate(state: State):
     }    
 
 # Read questions from the JSON file
-with open("tpch/questions.json", "r") as f:
+with open("questions.json", "r") as f:
     data = json.load(f)
     questions = list(data.keys())
 '''
@@ -337,7 +344,7 @@ workflow.add_edge(START, "retrieve")
 workflow.add_edge("retrieve", "generate")
 graph = workflow.compile()
 '''
-with open("tpch/ground_truthTpch.json", "r", encoding="utf-8") as f:
+with open("ground_truth2.json", "r", encoding="utf-8") as f:
     ground_truth = json.load(f)  
 all_final_results = []
 
@@ -356,7 +363,7 @@ for i, question in enumerate(questions):
     gt_source_info = gt["why"]
     
     # Step 2: Costruisci contesto perfetto a partire dalle righe vere
-    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder="tpch/csv_data_tpch")
+    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder=csv_folder)
     
     
     state = {
@@ -374,8 +381,8 @@ for i, question in enumerate(questions):
         print(f"\n--- Iteration {iter_num + 1} for question n. {i+1} ---")
         #k = current_state["k"] + 3
         #k = k + get_k_to_add(current_state["answer"]["why"]) if current_state["answer"] else 10
-         #current_state["k"] = k
-        print(f"Current k value: {k}")
+        #current_state["k"] = k
+        #print(f"Current k value: {k}")
         full_result = generate(state)
         #full_result = graph.invoke(current_state)
         # Set the current question for the next iteration composed by original question and the last answer
