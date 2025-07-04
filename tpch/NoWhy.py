@@ -39,9 +39,10 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 #)
 """ Indexing part """
 
-csv_folder = "tpch/csv_data_tpch"
-faiss_index_folder = "tpch/faiss_index"
-output_filename = f"tpch/outputs_llama70b/no_why/outputs_llama70b_nowhy_FC.json"
+csv_folder = "csv_data"
+faiss_index_folder = "faiss_index"
+output_filename = f"full_context/outputs_llama70b_nowhy_FC.json"
+os.makedirs(os.path.dirname(output_filename), exist_ok=True)
 
 # Verify if the FAISS files already exist
 if os.path.exists(faiss_index_folder):
@@ -74,20 +75,31 @@ else:
 
 """ Retrieve and Generate part """
 # Define prompt for question-answering
-prompt = PromptTemplate.from_template("""
-    Your task is to provide the correct answer(s) to this question: {question}, based ONLY on the given context: {context}.
+def definePrompt():
+    '''
+    prompt = """
+        Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
+        For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
+        Format of Witness Sets (as strings):  
+        - If there is ONE relevant tuple set: "{{<table_name>_<row>}}"  
+        - If there are MULTIPLE: "{{<table_name>_<row>},{<table_name>_<row>},...}}"  
         IMPORTANT:
-
-        - Do NOT include introductory phrases, explanations or any dots at the end.
-        - If the answer is not present in the context, return an empty array.
-        - Return the answer strictly in the following JSON format:
-
+        Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.
+        If your output is not a valid JSON block in the format described, it will be discarded.
+        If the answer is not present in the context, return an empty array.
+        
+        
+        INVALID OUTPUT EXAMPLE (will be discarded):
+        The answer is: {"answer": [...], "why": [...]}
+        VALID OUTPUT EXAMPLE (will be accepted):
         ```json
-        {{
-            "answer": ["<answer_1>", "<answer_2>", ...]
-        }}
+        {
+            "answer": ["<answer_1>", "<answer_2>", ...],
+            "why": ["{{<table_name>_<row>},{<table_name>_<row>}}", "{{<table_name>_<row>}}", ...]
+        }
         ```
-        EXAMPLE 1:
+            
+         EXAMPLE 1:
         CONTEXT:
         - source: customer.csv , row: 14322
         (<col_a>:<val_a>,..., c_nationkey : 2, ...)
@@ -103,9 +115,14 @@ prompt = PromptTemplate.from_template("""
 
         EXPECTED OUTPUT:
         ```json
-        {{
-            "answer": ["546", "314052"]
-        }}
+        {
+            "answer": ["546", "314052"],
+            "why": [
+                "{{customer_14322,orders_137}}",
+                "{{customer_101,orders_78528}}"
+            ]
+            
+        }
         ```
         EXAMPLE 2:    
         CONTEXT:
@@ -118,13 +135,87 @@ prompt = PromptTemplate.from_template("""
 
         EXPECTED OUTPUT:
         ```json
-        {{
-            "answer": ["21-151-690-3663"]
-        }}
+        {
+            "answer": ["21-151-690-3663"],
+            "why": [
+                "{{supplier_4}}"
+            ]
+        }
+        ```
+    """
+    '''
+    prompt = """
+   Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
+        For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
+        Format of Witness Sets (as strings):  
+        - If there is ONE relevant tuple set: "{{<table_name>_<row>}}"  
+        - If there are MULTIPLE: "{{<table_name>_<row>},{<table_name>_<row>},...}}"  
+        IMPORTANT:
+        Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.
+        If your output is not a valid JSON block in the format described, it will be discarded.
+        If the answer is not present in the context, return an empty array.
+        
+        
+        INVALID OUTPUT EXAMPLE (will be discarded):
+        The answer is: {"answer": [...], "why": [...]}
+        VALID OUTPUT EXAMPLE (will be accepted):
+        ```json
+        {
+            "answer": ["<answer_1>", "<answer_2>", ...],
+            "why": ["{{<table_name>_<row>},{<table_name>_<row>}}", "{{<table_name>_<row>}}", ...]
+        }
+        ```
+        EXAMPLE 1:
+        CONTEXT:
+            - source: courses.csv, row: 0  
+            (course_id:101, course_name:Machine Learning, ...)  
+            - source: courses.csv, row: 3  
+            (course_id:104, course_name:Advanced Algorithms, ...)  
+            - source: enrollments.csv, row: 0  
+            (enrollment_id:1, student_id:1, course_id:101, ...)  
+            - source: enrollments.csv, row: 3  
+            (enrollment_id:4, student_id:1, course_id:104, ...)  
+            - source: enrollments.csv, row: 9  
+            (enrollment_id:10, student_id:2, course_id:101, ...)  
+            - source: students.csv, row: 0  
+            (student_id:1, name:Giulia, surname:Rossi, ...)  
+            - source: students.csv, row: 1  
+            (student_id:2, name:Marco, surname:Bianchi, ...)  
+
+        QUESTION:  
+            "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
+
+        EXPECTED ANSWER:
+        ```json
+            {
+            "answer": ["Giulia Rossi","Marco Bianchi"],
+            "why": [
+            "{{courses_0,enrollments_0,students_0},{courses_3,enrollments_3,students_0}}",
+            "{{courses_0,enrollments_9,students_1}}"
+            ]
+            }
+        ```
+        
+        EXAMPLE 2:    
+        CONTEXT:
+            - source: departments.csv, row: 1
+            (department_id:2, department_name:Electronics, faculty:Engineering)
+           
+
+        QUESTION:  
+            "Which faculty does the Electronics department belong to?"
+
+        EXPECTED OUTPUT:
+        ```json
+        {
+            "answer": ["Engineering"],
+            "why": [
+            "{{departments_1}}"
+            ]
+        }
         ```
 
 """
-)
 # Step 1: Define Explanation Class: composed by file and row
 
 class AnswerItem(BaseModel):
@@ -200,20 +291,12 @@ def generate(state: State):
         print(f"- Source: {doc.metadata} \n  Content: {doc.page_content[:300]}...\n")
    
     docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
-    chain = LLMChain(
-        llm=llm,
-        prompt = prompt 
-    )
-    response = chain.run({
-            "question": state["question"], 
-            "context": docs_content
-        })
+    raw_prompt = definePrompt()
+    final_prompt = raw_prompt.replace("QUESTION_HERE", state["current_question"]).replace("CONTEXT_HERE", docs_content)
+    response = llm.invoke(final_prompt)
+    output_text = response.content.strip()
+    print(f"\n[DEBUG] LLM RESPONSE:\n{output_text}\n")
 
-    if not response:
-        raise ValueError("Empty response from LLM.")
-
-    output_text = response.strip()
-    print(f"\n[DEBUG] RAW LLM RESPONSE:\n{output_text}\n")
 
     try:
     # Esegui il modello LLM con la catena
@@ -247,7 +330,7 @@ def generate(state: State):
 
 
 # Leggi le domande dal file JSON
-with open("tpch/questions.json", "r") as f:
+with open("questions.json", "r") as f:
     data = json.load(f)
     questions = list(data.keys())
 '''
@@ -257,7 +340,7 @@ graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
 '''
 all_results = []
-with open("tpch/ground_truthTpch.json", "r", encoding="utf-8") as f:
+with open("ground_truth2.json", "r", encoding="utf-8") as f:
     ground_truth = json.load(f)   
 for i, question in enumerate(questions):
     print(f"Processing question n. {i+1}")
