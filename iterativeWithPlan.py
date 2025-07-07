@@ -36,7 +36,7 @@ os.makedirs(os.path.dirname(debug_log_filename), exist_ok=True)
 os.makedirs(os.path.dirname(output_filename), exist_ok=True)
 
 """Uploading the database schema for the plan generation"""
-schema_path = "schemaTPCH.txt"
+schema_path = "schemaTOY.txt"
 # Load the schema from the file
 with open(schema_path, "r") as f:
     schema = f.read().strip()
@@ -71,7 +71,8 @@ else:
     # Save after full processing
     vector_store.save_local(faiss_index_folder)
     print("FAISS vector store created and saved successfully!")
-
+def serialize_answer(answer):
+    return answer.dict() if isinstance(answer, BaseModel) else answer
 """ Retrieve and Generate part """
 # Define prompt for question-answering
 
@@ -180,12 +181,13 @@ def generate(state: State):
     except Exception as e:
         print(f"Errore nel parsing: {e}")
         parsed = AnswerItem(answer=[], why=[])
+    parsed_json = parsed.dict() if isinstance(parsed, BaseModel) else parsed
 
     return {
         "answer": parsed,
         "current_question": (
             f"{state['original_question']}\n\n"
-            f"Previous answer generated: {json.dumps(parsed, indent = 2) if parsed else response.content.strip()}\n"
+            f"Previous answer generated: {json.dumps(parsed_json, indent = 2) if parsed else response.content.strip()}\n"
             f"Based on the original question, the previous answer, find the correct answer(s) to the question."
 
         )
@@ -229,6 +231,7 @@ for i, question in enumerate(questions):
     current_state = initial_state
     for step_idx, step in enumerate(plan):
         print(f"\n--- Step {step_idx + 1}/{len(plan)} ---")
+        print(f"Current step: {step}")
         current_state["step"] = step
         full_result = graph.invoke(current_state)
         # Set the current question for the next iteration composed by original question and the last answer
@@ -247,7 +250,7 @@ for i, question in enumerate(questions):
         all_final_results.append({
             "question": current_state["original_question"],
             "iteration": step_idx + 1,
-            "answer": current_state["answer"], # The last answer generated
+            "answer": serialize_answer(current_state["answer"]), # The last answer generated
         })
 
 
