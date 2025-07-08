@@ -2,6 +2,8 @@
   {
     "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
     "answer": [
+      "Supplier#000000075",
+      "Supplier#000000080",
       "Supplier#000000082",
       "Supplier#000000124",
       "Supplier#000000162",
@@ -10,14 +12,15 @@
       "Supplier#000000325",
       "Supplier#000000366",
       "Supplier#000000421",
-      "Supplier#000000590",
-      "Supplier#000000603",
+      "Supplier#000000453",
+      "Supplier#000000467",
+      "Supplier#000000471",
+      "Supplier#000000522",
       "Supplier#000000638",
       "Supplier#000000664",
       "Supplier#000000695",
       "Supplier#000000823",
-      "Supplier#000000972",
-      "Supplier#000000987"
+      "Supplier#000000972"
     ]
   },
   {
@@ -29,26 +32,26 @@
   {
     "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
     "answer": [
-      "11467"
+      "233188"
     ]
   },
   {
     "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
     "answer": [
-      "1037"
+      "ECONOMY ANODIZED STEEL"
     ]
   },
   {
     "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
     "answer": [
-      "5404"
+      "Customer#000005404"
     ]
   },
   {
     "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
     "answer": [
-      "82310",
-      "90176"
+      "1960",
+      "5065"
     ]
   },
   {
@@ -84,7 +87,7 @@
   {
     "question": "Which customer (c_name) placed the order with order key 130?",
     "answer": [
-      "3697"
+      "Customer#000003697"
     ]
   },
   {
@@ -95,43 +98,46 @@
   },
   {
     "question": "What is the nation name of the customer Customer#000000004?",
-    "answer": [
-      "EGYPT"
-    ]
+    "answer": []
   },
   {
     "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
     "answer": [
-      "18587"
+      "cyan papaya thistle dodger grey",
+      "gainsboro sienna beige peach chartreuse",
+      "orange navajo blanched cyan snow",
+      "midnight khaki medium linen peru",
+      "thistle burlywood smoke pink mint",
+      "wheat tomato forest floral light"
     ]
   },
   {
     "question": "Which regions (r_regionKey) have a region key greater than 2?",
     "answer": [
-      "3",
       "4"
     ]
   },
   {
     "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
     "answer": [
-      "Customer#000000017",
-      "Customer#000006847",
-      "Customer#000008890"
+      "17",
+      "804",
+      "2713",
+      "5315",
+      "6179"
     ]
   },
   {
     "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
     "answer": [
-      "103",
-      "223"
+      "Supplier#000000223",
+      "Supplier#000000722"
     ]
   },
   {
     "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
     "answer": [
-      "383809",
-      "241991"
+      "Customer#000003496"
     ]
   },
   {
@@ -142,15 +148,11 @@
   },
   {
     "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
-    "answer": [
-      "1995-07-30"
-    ]
+    "answer": []
   },
   {
     "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
-    "answer": [
-      "UNITED KINGDOM"
-    ]
+    "answer": []
   },
   {
     "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
@@ -161,21 +163,22 @@
   {
     "question": "Which suppliers (s_name) provides the part with partkey 200?",
     "answer": [
-      "3120",
-      "701",
-      "951"
+      "Supplier#000000201",
+      "Supplier#000000451",
+      "Supplier#000000701",
+      "Supplier#000000951"
     ]
   },
   {
     "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
     "answer": [
-      "471.98"
+      "500"
     ]
   },
   {
     "question": "What is the total price of the order with orderkey 100?",
     "answer": [
-      204408.59
+      "204408.59"
     ]
   },
   {
@@ -216,9 +219,7 @@
   },
   {
     "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
-    "answer": [
-      "AIR"
-    ]
+    "answer": []
   },
   {
     "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
@@ -229,7 +230,7 @@
   {
     "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
     "answer": [
-      "902.0"
+      "1"
     ]
   },
   {
@@ -241,26 +242,43 @@
   {
     "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
     "answer": [
-      "129",
-      "301"
+      "Customer#000001325",
+      "Customer#000003153",
+      "Customer#000003318",
+      "Customer#000005856",
+      "Customer#000009799"
     ]
   },
   {
     "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
     "answer": [
-      "67"
+      "Supplier#000000067",
+      "Supplier#000000160",
+      "Supplier#000000371",
+      "Supplier#000000465",
+      "Supplier#000000732"
     ]
   },
   {
     "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
     "answer": [
-      "1327"
+      "1327",
+      "2974"
     ]
   },
   {
     "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
     "answer": [
-      "913"
+      "913",
+      "2308",
+      "5416",
+      "5692",
+      "6080",
+      "7892",
+      "8459",
+      "8875",
+      "9148",
+      "9455"
     ]
   },
   {
@@ -272,13 +290,7 @@
   },
   {
     "question": "Which nations (n_name) have a region key of 1?",
-    "answer": [
-      "ARGENTINA",
-      "BRAZIL",
-      "CANADA",
-      "PERU",
-      "UNITED STATES"
-    ]
+    "answer": []
   },
   {
     "question": "Which nations (n_name) have a region key of 2?",
@@ -292,13 +304,7 @@
   },
   {
     "question": "Which nations (n_name) have a region key of 0?",
-    "answer": [
-      "ALGERIA",
-      "ETHIOPIA",
-      "KENYA",
-      "MOROCCO",
-      "MOZAMBIQUE"
-    ]
+    "answer": []
   },
   {
     "question": "Which nations (n_name) have a region key of 3?",
@@ -315,7 +321,8 @@
     "answer": [
       "7H,0hAZkls5qVS 6sjbnVnQtpjMnGEv3gKXVS",
       "xWy21YlUy3R6L01",
-      "2dsK093unFO"
+      "2dsK093unFO",
+      "Tuh3kFB,zCuI,jtPmV,IMcXQF"
     ]
   }
 ]

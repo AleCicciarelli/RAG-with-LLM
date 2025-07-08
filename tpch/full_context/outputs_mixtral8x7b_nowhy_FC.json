@@ -7,7 +7,9 @@
   },
   {
     "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
-    "answer": []
+    "answer": [
+      "546"
+    ]
   },
   {
     "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
@@ -17,15 +19,22 @@
   },
   {
     "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
-    "answer": []
+    "answer": [
+      "791"
+    ]
   },
   {
     "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
-    "answer": []
+    "answer": [
+      "5404"
+    ]
   },
   {
     "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
-    "answer": []
+    "answer": [
+      "82341",
+      "43526"
+    ]
   },
   {
     "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
@@ -33,9 +42,7 @@
   },
   {
     "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
-    "answer": [
-      "3"
-    ]
+    "answer": []
   },
   {
     "question": "What is the name (r_name) of the region with region key 1?",
@@ -51,17 +58,21 @@
   },
   {
     "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
-    "answer": []
+    "answer": [
+      "905.0"
+    ]
   },
   {
     "question": "Which customer (c_name) placed the order with order key 130?",
     "answer": [
-      "Customer#000003697"
+      "130"
     ]
   },
   {
     "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
-    "answer": []
+    "answer": [
+      "8815.78"
+    ]
   },
   {
     "question": "What is the nation name of the customer Customer#000000004?",
@@ -72,13 +83,7 @@
   {
     "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
     "answer": [
-      "cyan papaya thistle dodger grey",
-      "Manufacturer#2",
-      "Brand#24",
-      "ECONOMY BURNISHED NICKEL",
-      "27",
-      "JUMBO BOX",
-      "1505.58"
+      "cyan papaya thistle dodger grey"
     ]
   },
   {
@@ -87,11 +92,18 @@
   },
   {
     "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
-    "answer": []
+    "answer": [
+      "471261",
+      "223415"
+    ]
   },
   {
     "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
-    "answer": []
+    "answer": [
+      "Supplier#000000223",
+      "Supplier#000000528",
+      "Supplier#000000722"
+    ]
   },
   {
     "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
@@ -106,14 +118,14 @@
   {
     "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
     "answer": [
+      "1995-07-30",
       "1993-04-16",
-      "1994-10-17",
+      "1996-10-23",
+      "1996-08-15",
       "1995-01-17",
       "1995-07-04",
-      "1995-07-30",
+      "1994-10-17",
       "1995-10-07",
-      "1996-08-15",
-      "1996-10-23",
       "1997-08-01"
     ]
   },
@@ -144,20 +156,26 @@
   },
   {
     "question": "What is the total price of the order with orderkey 100?",
-    "answer": []
+    "answer": [
+      204408.59
+    ]
   },
   {
     "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
-    "answer": []
+    "answer": [
+      "21-151-690-3663"
+    ]
   },
   {
     "question": "What is the order date of the order with order key 323?",
-    "answer": []
+    "answer": [
+      "1994-03-26"
+    ]
   },
   {
     "question": "Which customer (c_name) placed the order with order key 323?",
     "answer": [
-      "3914"
+      "323"
     ]
   },
   {
@@ -174,11 +192,15 @@
   },
   {
     "question": "What is the name of the nation of the customer who placed order 352?",
-    "answer": []
+    "answer": [
+      "DK"
+    ]
   },
   {
     "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
-    "answer": []
+    "answer": [
+      "KENYA"
+    ]
   },
   {
     "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
@@ -201,18 +223,25 @@
   {
     "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
     "answer": [
-      "Customer#0000129"
+      "Customer#000001325",
+      "Customer#000003153",
+      "Customer#000003318",
+      "Customer#000005856",
+      "Customer#000009799",
+      "Customer#000009859",
+      "Customer#000011076",
+      "Customer#000014573"
     ]
   },
   {
     "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
-    "answer": [
-      "Supplier#000000067"
-    ]
+    "answer": []
   },
   {
     "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
-    "answer": []
+    "answer": [
+      "1327"
+    ]
   },
   {
     "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
@@ -228,6 +257,7 @@
     "question": "Which nations (n_name) have a region key of 1?",
     "answer": [
       "ARGENTINA",
+      "BRAZIL",
       "CANADA",
       "PERU",
       "UNITED STATES"
