@@ -75,8 +75,8 @@ def evaluate_lists_why(true_list, pred_list):
     fp = len(pred_set - true_set)
     fn = len(true_set - pred_set)
 
-    print(f"TP: {tp}, FP: {fp}, FN: {fn}")
-    print(f"True set: {true_set}, Pred set: {pred_set}")
+    #print(f"TP: {tp}, FP: {fp}, FN: {fn}")
+    #print(f"True set: {true_set}, Pred set: {pred_set}")
 
     return tp, fp, fn
 
@@ -84,10 +84,10 @@ def main():
     gt_data = load_json("tpch/ground_truthTpch.json")
     question_types = load_json("tpch/questions.json")
 
-    pred_folder = "tpch/outputs_llama70b/iterative"
-    global_metrics_file = os.path.join(pred_folder, "global_metrics_iterative_k10_FC_5rounds_WHY.csv")
-    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterative_k10_FC_5rounds_WHY.csv")
-    iteration_metrics_file = os.path.join(pred_folder, "metrics_per_iteration_k10_FC_5rounds_WHY.csv")
+    pred_folder = "tpch/outputs_llama70b/iterative/"
+    global_metrics_file = os.path.join(pred_folder, "global_metrics_iterative_kdin_5rounds.csv")
+    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterative_kdin_5rounds.csv")
+    iteration_metrics_file = os.path.join(pred_folder, "metrics_per_iteration_kdin_5rounds.csv")
 
     write_header_global = not os.path.exists(global_metrics_file)
     write_header_type = not os.path.exists(type_metrics_file)
@@ -117,7 +117,7 @@ def main():
                 "Explanation Precision", "Explanation Recall", "Explanation F1", "Exact Explanation"
             ])
 
-        pred_file = os.path.join(pred_folder, f"outputs_llama70b_iterative_k10_FC_5rounds.json")
+        pred_file = os.path.join(pred_folder, f"outputs_llama70b_iterative_kdin_5rounds_WHY.json")
         ungrouped_pred_data = load_json(pred_file)
         pred_data = group_predictions_by_question(ungrouped_pred_data)
         assert len(gt_data) == len(pred_data), "Mismatch in number of questions"
@@ -163,14 +163,14 @@ def main():
                 for s in gt["why"]:
                     true_expl.update(ss.strip("{} ") for ss in s.split("}}") if ss.strip())
             '''
-            print(f"True: '{true_answer,true_expl}'")  
+            #print(f"True: '{true_answer}'")  
             preds = pred_data[question]
             
 
             for pred in preds:
                 iteration = pred["iteration"]
                 raw_answer = pred.get("answer", "")
-
+                
                 pred_answer = []
                 pred_expl = []
 
@@ -181,21 +181,21 @@ def main():
                 elif isinstance(raw_answer, str):
                     try:
                         # Pulisci eventuale risposta testuale prima del JSON
-                        match = re.search(r'\{[\s\S]*?"answer"[\s\S]*?\}', raw_answer)
-                        if match:
-                            parsed = json.loads(match.group(0))
-                            pred_answer = [str(x).strip() for x in parsed.get("answer", [])]
-                            pred_expl = [str(x).strip() for x in parsed.get("why", [])]
-                    except json.JSONDecodeError:
+                        matches = re.findall(r'\{[\s\S]*?\}', raw_answer)
+                        for m in reversed(matches):  # prova a partire dall'ultimo
+                            print(m)
+                            try:
+                                parsed = json.loads(m)
+                                if "answer" in parsed:
+                                    pred_answer = [str(x).strip() for x in parsed.get("answer", [])]
+                                    pred_expl = [str(x).strip() for x in parsed.get("why", [])]
+                                    break
+                            except json.JSONDecodeError:
+                                continue
+                    except Exception:
                         pred_answer = []
-                        pred_expl = []
-                print(f"Pred: '{pred_answer,pred_expl}'")
-                #print(pred_answer_raw.get("answer", []))
-                #if isinstance(pred_answer_raw, list) and len(pred_answer_raw) > 0 and isinstance(pred_answer_raw[0], dict):
-                #    pred_answer = [str(x) for x in pred_answer_raw[0].get("answer", [])]
-                #else:
-                #    pred_answer = [str(x) for x in pred_answer_raw]
-                #pred_answer = [str(x) for x in pred_answer_raw] if isinstance(pred_answer_raw, list) else [str(pred_answer_raw)]
+               # print(f"Pred: '{pred_answer, pred_expl}'")
+            
 
                 tp_ans, fp_ans, fn_ans = evaluate_lists(true_answer, pred_answer)
                 exact_answer = 1 if set(true_answer) == set(pred_answer) else 0
