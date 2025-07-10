@@ -23,13 +23,13 @@ from planGenerator import generate_plan
 os.environ["LANGSMITH_TRACING"] = "false" 
 os.environ["LANGSMITH_API_KEY"] = "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"
 # LLM model to use, in this case the provider is Ollama local 
-llm = ChatOllama(model="llama3:70b", temperature=0)
+llm = ChatOllama(model="llama3:8b", temperature=0)
 # Embedding model: Hugging Face
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
 # Define the folder paths for CSV data and FAISS index
 csv_folder = "csv_data"
 faiss_index_folder = "faiss_index"
-output_filename = f"iterativeRAG/outputs_llama70b/iterative_FC_5rounds.json"
+output_filename = f"iterativeRAG/plan_generator/outputs_llama8b/k10.json"
 debug_log_filename = f"iterativeRag/debug_log_llama70b_iterative.txt"
 # Ensure the output and debug log directories exist
 os.makedirs(os.path.dirname(debug_log_filename), exist_ok=True)
@@ -78,14 +78,11 @@ def serialize_answer(answer):
 
 def definePrompt():
     prompt = """
-    Your task is to provide the correct answer(s) to this step: STEP_HERE, 
-    which is part of answering the overall question: QUESTION_HERE, , based ONLY on the given context: CONTEXT_HERE.
+     Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
         IMPORTANT:
 
-        - Do NOT include introductory phrases, explanations or any dots at the end.
-        - If the answer is not present in the context, return an empty array.
-        - Return the answer strictly in the following JSON format:
-
+        - Do NOT include introductory phrases or explanations.
+        VALID OUTPUT EXAMPLE (will be accepted):
         ```json
         {
             "answer": ["<answer_1>", "<answer_2>", ...]
@@ -114,7 +111,7 @@ def definePrompt():
         EXPECTED ANSWER:
         ```json
             {
-            "answer": ["Giulia Rossi","Marco Bianchi"],
+            "answer": ["Giulia Rossi","Marco Bianchi"]
             }
         ```
         
@@ -140,7 +137,7 @@ def definePrompt():
 # Define the AnswerItem model to parse the output from the LLM
 class AnswerItem(BaseModel):
     answer: List[str]
-    why: List[str]
+    #why: List[str]
 # Define state for application
 class State(TypedDict):
     original_question: str 
@@ -157,7 +154,10 @@ parser = JsonOutputParser(pydantic_schema=AnswerItem)
 
 def retrieve(state: State):
     print(f"Retrieving for question: {state['original_question']}")
+    print(f"Retrieving for step: {state['step']}")
     retrieved_docs = vector_store.similarity_search(state["current_question"], k = 10)
+    for doc in retrieved_docs:
+        print(doc)
     return {"context": retrieved_docs}
 # Generate the answer invoking the LLM with the context joined with the question
 def generate(state: State):
@@ -175,19 +175,34 @@ def generate(state: State):
     print(f"LLM response: {response}")
    
     try:
-        parsed= parser.parse(output_text)
-          
-        print(f"Previous answer generated: {parsed if parsed else response.content.strip()}")
-    except Exception as e:
-        print(f"Errore nel parsing: {e}")
-        parsed = AnswerItem(answer=[], why=[])
-    parsed_json = parsed.dict() if isinstance(parsed, BaseModel) else parsed
+        # Regex: estrae il primo oggetto JSON, tra ```json ... ``` o solo {}
+        json_match = re.search(r"```json\s*([\s\S]*?)\s*```", output_text)
+        if json_match:
+            json_str = json_match.group(1).strip()
+        else:
+            # Fallback: qualsiasi blocco tra { }
+            json_match = re.search(r"\{[\s\S]*?\}", output_text)
+            if not json_match:
+                raise ValueError("No valid JSON found in LLM response.")
+            json_str = json_match.group(0).strip()
 
+        # Parse JSON
+        parsed_output = json.loads(json_str)
+
+        if not isinstance(parsed_output, dict) or "answer" not in parsed_output:
+            raise ValueError("Invalid JSON format. Missing 'answer'.")
+
+        parsed = parsed_output["answer"]
+        
+    except (json.JSONDecodeError, ValueError) as e:
+        print(f"⚠️ Errore nel parsing del JSON: {e}")
+        parsed = response.content.strip()
+        
     return {
         "answer": parsed,
         "current_question": (
             f"{state['original_question']}\n\n"
-            f"Previous answer generated: {json.dumps(parsed_json, indent = 2) if parsed else response.content.strip()}\n"
+            f"Previous answer generated: {json.dumps(parsed, indent = 2)}\n"
             f"Based on the original question, the previous answer, find the correct answer(s) to the question."
 
         )
@@ -213,7 +228,7 @@ all_final_results = []
 for i, question in enumerate(questions):
     print(f"\n=== Running evaluation for question n. {i+1}: {question} ===")
     print(f"\n=== Plan generation===")
-    plan = generate_plan(question, schema, llm)
+    plan,max_iterations = generate_plan(question, schema, llm)
     
     step_results = []
     previous_answer = None
@@ -223,18 +238,18 @@ for i, question in enumerate(questions):
     "k": 10,
     "context": [], # Initial empty context
     "answer": {
-            "answer": [],
-            "why": []
+            "answer": []#,
+            #"why": []
         },  # Initial empty answer
 }
    
     current_state = initial_state
-    for step_idx, step in enumerate(plan):
-        print(f"\n--- Step {step_idx + 1}/{len(plan)} ---")
-        print(f"Current step: {step}")
-        current_state["step"] = step
+    if not plan:
+        print("\n⚠️ Plan is empty. Invoking graph directly with original question.")
+        current_state["step"] = "Direct answer"
         full_result = graph.invoke(current_state)
-        # Set the current question for the next iteration composed by original question and the last answer
+
+        # Update question and state
         answer_obj = full_result.get("answer")
         if answer_obj and isinstance(answer_obj, AnswerItem):
             if answer_obj.answer:
@@ -243,16 +258,44 @@ for i, question in enumerate(questions):
                 current_state["current_question"] = current_state["original_question"]
         else:
             current_state["current_question"] = current_state["original_question"]
-        # Update current_state for the next iteration
+
         current_state.update(full_result)
-        print("after current state update")
-        # Store the final result of the iterations for this question
         all_final_results.append({
             "question": current_state["original_question"],
-            "iteration": step_idx + 1,
-            "answer": serialize_answer(current_state["answer"]), # The last answer generated
+            "step": 1,
+            "answer": serialize_answer(current_state["answer"]),
         })
 
+    else:
+        for step_idx in range(max_iterations):
+            if step_idx < len(plan):
+                step = plan[step_idx]
+            else:
+                step = "Fallback step"
+            
+            print(f"\n--- Step {step_idx + 1}/{max_iterations} ---")
+            print(f"Current step: {step}")
+            current_state["step"] = step
+            full_result = graph.invoke(current_state)
+
+            # Set the current question for the next iteration
+            answer_obj = full_result.get("answer")
+            if answer_obj and isinstance(answer_obj, AnswerItem):
+                if answer_obj.answer:
+                    current_state["current_question"] = f"{current_state['original_question']} {' '.join(answer_obj.answer)}"
+                else:
+                    current_state["current_question"] = current_state["original_question"]
+            else:
+                current_state["current_question"] = current_state["original_question"]
+
+            # Update state
+            current_state.update(full_result)
+            print("after current state update")
+            all_final_results.append({
+                "question": current_state["original_question"],
+                "step": step_idx + 1,
+                "answer": serialize_answer(current_state["answer"]),
+            })
 
 with open(output_filename, "w", encoding='utf-8') as output_file:
     json.dump(all_final_results, output_file, indent=4, ensure_ascii=False)
