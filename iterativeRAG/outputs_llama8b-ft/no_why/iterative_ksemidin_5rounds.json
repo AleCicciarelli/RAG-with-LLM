@@ -1,0 +1,1528 @@
+[
+    {
+        "question": "Which is the email of the student Giulia Rossi?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "giulia.rossi@student.edu"
+            ]
+        }
+    },
+    {
+        "question": "Which is the email of the student Giulia Rossi?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "giulia.rossi@student.edu"
+            ]
+        }
+    },
+    {
+        "question": "Which is the email of the student Giulia Rossi?",
+        "iteration": 3,
+        "answer": "Based on the given context, the correct answer is:\n\n{\n  \"answer\": [\n    \"giulia.rossi@student.edu\"\n  ]\n}\n\nThis is because Giulia Rossi's email is giulia.rossi@student.edu, which matches the provided information in the students.csv file."
+    },
+    {
+        "question": "Which is the email of the student Giulia Rossi?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "giulia.rossi@student.edu"
+            ]
+        }
+    },
+    {
+        "question": "Which is the email of the student Giulia Rossi?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "giulia.rossi@student.edu"
+            ]
+        }
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "1"
+            ]
+        }
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "iteration": 2,
+        "answer": "Based on the given context and previous answer, I found that Laura Bianchi teaches in the department with ID 1. Therefore, the correct answer is:\n\n{\n\"answer\": [\"1\"]\n}"
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "iteration": 3,
+        "answer": "Based on the given context and previous answer, I found that Laura Bianchi teaches in the department with ID 1. Therefore, the correct answer is:\n\n{\n\"answer\": [\"1\"]\n}"
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "iteration": 4,
+        "answer": "Based on the given context and previous answer, I found that Laura Bianchi teaches in the department with ID 1. Therefore, the correct answer is:\n\n{\n\"answer\": [\"1\"]\n}"
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "iteration": 5,
+        "answer": "Based on the given context and previous answer, I found that Laura Bianchi teaches in the department with ID 1. Therefore, the correct answer is:\n\n{\n\"answer\": [\"1\"]\n}"
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "iteration": 1,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/courses.csv', 'row': 2}\ncourse_id: 103\ncourse_name: Embedded Systems\ndepartment_id: 2\ncredits: 6\nteacher_id: 3\nsemester: Fall\n\nThe answer is:\n{\n\"answer\": [\"6\"]\n}"
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "iteration": 2,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/courses.csv', 'row': 3}\ncourse_id: 103\ncourse_name: Software Engineering\ndepartment_id: 2\ncredits: ?\n\nThe answer is:\n{\n\"answer\": [\"6\"]\n}"
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "iteration": 3,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/courses.csv', 'row': 3}\ncourse_id: 103\ncourse_name: Software Engineering\ndepartment_id: 2\ncredits: ?\n\nThe answer is:\n{\n\"answer\": [\"6\"]\n}"
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "iteration": 4,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/courses.csv', 'row': 3}\ncourse_id: 103\ncourse_name: Software Engineering\ndepartment_id: 2\ncredits: ?\n\nThe answer is:\n{\n\"answer\": [\"6\"]\n}"
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "iteration": 5,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/courses.csv', 'row': 3}\ncourse_id: 103\ncourse_name: Software Engineering\ndepartment_id: 2\ncredits: ?\n\nThe answer is:\n{\n\"answer\": [\"6\"]\n}"
+    },
+    {
+        "question": "What is the name of building in which there is the class with room number 401?",
+        "iteration": 1,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/classrooms.csv', 'row': 0}\nclassroom_id: 1\nbuilding: Main\nroom_number: 101\ncapacity: 50\n\n{'source': 'csv_data/classrooms.csv', 'row': 3}\nclassroom_id: 4\nbuilding: Engineering\nroom_number: 301\ncapacity: 80\n\n{'source': 'csv_data/classrooms.csv', 'row': 4}\nclassroom_id: 5\nbuilding: Engineering\nroom_number: 302\ncapacity: 100\n\n{'source': 'csv_data/classrooms.csv', 'row': 5}\nclassroom_id: 6\nbuilding: Electronics\nroom_number: 401\ncapacity: 30\n\n{'source': 'csv_data/classrooms.csv', 'row': 2}\nclassroom_id: 3\nbuilding: Science\nroom_number: 201\ncapacity: 40\n\n{'source': 'csv_data/classrooms.csv', 'row': 1}\nclassroom_id: 2\nbuilding: Main\nroom_number: 102\ncapacity: 60\n\nThe answer is:\n\n{\n\"answer\": [\"Electronics\"]\n}"
+    },
+    {
+        "question": "What is the name of building in which there is the class with room number 401?",
+        "iteration": 2,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/classrooms.csv', 'row': 0}\nclassroom_id: 1\nbuilding: Main\nroom_number: 101\ncapacity: 50\n\n{'source': 'csv_data/classrooms.csv', 'row': 1}\nclassroom_id: 2\nbuilding: Main\nroom_number: 102\ncapacity: 60\n\n{'source': 'csv_data/classrooms.csv', 'row': 4}\nclassroom_id: 5\nbuilding: Engineering\nroom_number: 302\ncapacity: 100\n\n{'source': 'csv_data/classrooms.csv', 'row': 3}\nclassroom_id: 4\nbuilding: Engineering\nroom_number: 301\ncapacity: 80\n\n{'source': 'csv_data/classrooms.csv', 'row': 2}\nclassroom_id: 3\nbuilding: Science\nroom_number: 201\ncapacity: 40\n\n{'source': 'csv_data/classrooms.csv', 'row': 5}\nclassroom_id: 6\nbuilding: Electronics\nroom_number: 401\ncapacity: 30\n\nThe answer is:\n\n{\n\"answer\": [\"Electronics\"]\n}"
+    },
+    {
+        "question": "What is the name of building in which there is the class with room number 401?",
+        "iteration": 3,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/classrooms.csv', 'row': 0}\nclassroom_id: 1\nbuilding: Main\nroom_number: 101\ncapacity: 50\n\n{'source': 'csv_data/classrooms.csv', 'row': 1}\nclassroom_id: 2\nbuilding: Main\nroom_number: 102\ncapacity: 60\n\n{'source': 'csv_data/classrooms.csv', 'row': 4}\nclassroom_id: 5\nbuilding: Engineering\nroom_number: 302\ncapacity: 100\n\n{'source': 'csv_data/classrooms.csv', 'row': 3}\nclassroom_id: 4\nbuilding: Engineering\nroom_number: 301\ncapacity: 80\n\n{'source': 'csv_data/classrooms.csv', 'row': 2}\nclassroom_id: 3\nbuilding: Science\nroom_number: 201\ncapacity: 40\n\n{'source': 'csv_data/classrooms.csv', 'row': 5}\nclassroom_id: 6\nbuilding: Electronics\nroom_number: 401\ncapacity: 30\n\nThe answer is:\n\n{\n\"answer\": [\"Electronics\"]\n}"
+    },
+    {
+        "question": "What is the name of building in which there is the class with room number 401?",
+        "iteration": 4,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/classrooms.csv', 'row': 0}\nclassroom_id: 1\nbuilding: Main\nroom_number: 101\ncapacity: 50\n\n{'source': 'csv_data/classrooms.csv', 'row': 1}\nclassroom_id: 2\nbuilding: Main\nroom_number: 102\ncapacity: 60\n\n{'source': 'csv_data/classrooms.csv', 'row': 4}\nclassroom_id: 5\nbuilding: Engineering\nroom_number: 302\ncapacity: 100\n\n{'source': 'csv_data/classrooms.csv', 'row': 3}\nclassroom_id: 4\nbuilding: Engineering\nroom_number: 301\ncapacity: 80\n\n{'source': 'csv_data/classrooms.csv', 'row': 2}\nclassroom_id: 3\nbuilding: Science\nroom_number: 201\ncapacity: 40\n\n{'source': 'csv_data/classrooms.csv', 'row': 5}\nclassroom_id: 6\nbuilding: Electronics\nroom_number: 401\ncapacity: 30\n\nThe answer is:\n\n{\n\"answer\": [\"Electronics\"]\n}"
+    },
+    {
+        "question": "What is the name of building in which there is the class with room number 401?",
+        "iteration": 5,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/classrooms.csv', 'row': 0}\nclassroom_id: 1\nbuilding: Main\nroom_number: 101\ncapacity: 50\n\n{'source': 'csv_data/classrooms.csv', 'row': 1}\nclassroom_id: 2\nbuilding: Main\nroom_number: 102\ncapacity: 60\n\n{'source': 'csv_data/classrooms.csv', 'row': 4}\nclassroom_id: 5\nbuilding: Engineering\nroom_number: 302\ncapacity: 100\n\n{'source': 'csv_data/classrooms.csv', 'row': 3}\nclassroom_id: 4\nbuilding: Engineering\nroom_number: 301\ncapacity: 80\n\n{'source': 'csv_data/classrooms.csv', 'row': 2}\nclassroom_id: 3\nbuilding: Science\nroom_number: 201\ncapacity: 40\n\n{'source': 'csv_data/classrooms.csv', 'row': 5}\nclassroom_id: 6\nbuilding: Electronics\nroom_number: 401\ncapacity: 30\n\nThe answer is:\n\n{\n\"answer\": [\"Electronics\"]\n}"
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "iteration": 1,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/courses.csv', 'row': 8}\ncourse_id: 109\ncourse_name: Cybersecurity\ndepartment_id: 1\ncredits: 6\nteacher_id: 9\nsemester: Fall\n\nThe answer is:\n\n{\n\"answer\": [\"Fall\"]\n}"
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "iteration": 2,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/courses.csv', 'row': 8}\ncourse_id: 109\ncourse_name: Cybersecurity\ndepartment_id: 1\ncredits: 6\nteacher_id: 9\nsemester: Fall\n\nThe answer is:\n\n{\n\"answer\": [\"Fall\"]\n}"
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "iteration": 3,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/courses.csv', 'row': 8}\ncourse_id: 109\ncourse_name: Cybersecurity\ndepartment_id: 1\ncredits: 6\nteacher_id: 9\nsemester: Fall\n\nThe answer is:\n\n{\n\"answer\": [\"Fall\"]\n}"
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "iteration": 4,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/courses.csv', 'row': 8}\ncourse_id: 109\ncourse_name: Cybersecurity\ndepartment_id: 1\ncredits: 6\nteacher_id: 9\nsemester: Fall\n\nThe answer is:\n\n{\n\"answer\": [\"Fall\"]\n}"
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "iteration": 5,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/courses.csv', 'row': 8}\ncourse_id: 109\ncourse_name: Cybersecurity\ndepartment_id: 1\ncredits: 6\nteacher_id: 9\nsemester: Fall\n\nThe answer is:\n\n{\n\"answer\": [\"Fall\"]\n}"
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "iteration": 1,
+        "answer": "Based on the given context, I can answer your question:\n\nThe Database Systems exam is in classroom **401**."
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "iteration": 2,
+        "answer": "Based on the given context, I can answer your question:\n\nThe Database Systems exam is in classroom **401**."
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "iteration": 3,
+        "answer": "Based on the given context, I can answer your question:\n\nThe Database Systems exam is in classroom **401**."
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "iteration": 4,
+        "answer": "Based on the given context, I can answer your question:\n\nThe Database Systems exam is in classroom **401**."
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "iteration": 5,
+        "answer": "Based on the given context, I can answer your question:\n\nThe Database Systems exam is in classroom **401**."
+    },
+    {
+        "question": "In which research area is the 'User Experience Design in Web Apps' thesis?",
+        "iteration": 1,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"Human-Computer Interaction\"]\n}\n\nThe thesis with ID 5 has a title of \"User Experience Design in Web Apps\" and a research area of \"Human-Computer Interaction\"."
+    },
+    {
+        "question": "In which research area is the 'User Experience Design in Web Apps' thesis?",
+        "iteration": 2,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"Human-Computer Interaction\"]\n}"
+    },
+    {
+        "question": "In which research area is the 'User Experience Design in Web Apps' thesis?",
+        "iteration": 3,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"Human-Computer Interaction\"]\n}"
+    },
+    {
+        "question": "In which research area is the 'User Experience Design in Web Apps' thesis?",
+        "iteration": 4,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"Human-Computer Interaction\"]\n}"
+    },
+    {
+        "question": "In which research area is the 'User Experience Design in Web Apps' thesis?",
+        "iteration": 5,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"Human-Computer Interaction\"]\n}"
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Carlo Rossi"
+            ]
+        }
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "iteration": 2,
+        "answer": "Based on the given context and previous answer, I found that Carlo Rossi (teacher_id: 1) teaches Machine Learning course.\n\nSo, the correct answer is:\n\n{\n\"answer\": [\n\"Carlo Rossi\"\n]\n}"
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Carlo Rossi"
+            ]
+        }
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "iteration": 4,
+        "answer": "Based on the given context and previous answer, I found that Carlo Rossi (teacher_id: 1) teaches Machine Learning course.\n\nSo, the correct answer is:\n\n{\n\"answer\": [\n\"Carlo Rossi\"\n]\n}"
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Carlo Rossi"
+            ]
+        }
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "iteration": 1,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teachers.csv', 'row': 0}\nteacher_id: 1\nname: Carlo\nsurname: Rossi\ndepartment_id: 1\nemail: c.rossi@university.edu\n\nThe research area of teacher Carlo Rossi is not specified in this context, so the answer will be:\n\n{\n\"answer\": []\n}"
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Artificial Intelligence"
+            ]
+        }
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "iteration": 3,
+        "answer": "Based on the given context, the correct answer is:\n\n{\n  \"answer\": [\n    \"Artificial Intelligence\"\n  ]\n}\n\nThis is because Carlo Rossi's research area is Artificial Intelligence."
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "iteration": 4,
+        "answer": "Based on the given context, the correct answer is:\n\n{\n  \"answer\": [\n    \"Artificial Intelligence\"\n  ]\n}\n\nThis is because Carlo Rossi's research area is Artificial Intelligence."
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "iteration": 5,
+        "answer": "Based on the given context, the correct answer is:\n\n{\n  \"answer\": [\n    \"Artificial Intelligence\"\n  ]\n}\n\nThis is because Carlo Rossi's research area is Artificial Intelligence."
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "5"
+            ]
+        }
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "iteration": 2,
+        "answer": "Based on the given context and previous answer, I found that Giulia Colombo is associated with 5 research projects. Therefore, the correct answer is:\n\n{\n\"answer\": [\n\"5\"\n]\n}"
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "iteration": 3,
+        "answer": "Based on the given context and previous answer, I found that Giulia Colombo is associated with 5 research projects. Therefore, the correct answer is:\n\n{\n\"answer\": [\n\"5\"\n]\n}"
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "iteration": 4,
+        "answer": "Based on the given context and previous answer, I found that Giulia Colombo is associated with 5 research projects. Therefore, the correct answer is:\n\n{\n\"answer\": [\n\"5\"\n]\n}"
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "iteration": 5,
+        "answer": "Based on the given context and previous answer, I found that Giulia Colombo is associated with 5 research projects. Therefore, the correct answer is:\n\n{\n\"answer\": [\n\"5\"\n]\n}"
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "iteration": 1,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/exams.csv', 'row': 2}\nexam_id: 3\ncourse_id: 103\ndate: 2023-03-20\ntime: 10:00\nclassroom_id: 3\n\nThe Machine Learning exam is:\n{\n\"answer\": [\"2023-03-20\", \"10:00\"]\n}"
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "iteration": 2,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/exams.csv', 'row': 0}\nexam_id: 1\ncourse_id: 101\ndate: 2023-01-10\ntime: 09:00\nclassroom_id: 1\n\nThe Machine Learning exam is:\n{\n\"answer\": [\"2023-03-20\", \"10:00\"]\n}\n\nBased on the original question, the previous answer, find the correct answer(s) to the question., based ONLY on the given context:\n\n{'source': 'csv_data/exams.csv', 'row': 0}\nexam_id: 1\ncourse_id: 101\ndate: 2023-01-10\ntime: 09:00\nclassroom_id: 1\n\nThe correct answer is:\n{\n\"answer\": [\"2023-03-20\", \"10:00\"]\n}"
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "iteration": 3,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/exams.csv', 'row': 0}\nexam_id: 1\ncourse_id: 101\ndate: 2023-01-10\ntime: 09:00\nclassroom_id: 1\n\nThe Machine Learning exam is:\n{\n\"answer\": [\"2023-03-20\", \"10:00\"]\n}\n\nSince there is only one exam in the context, the correct answer is:\n\n{\n\"answer\": [\"2023-03-20\", \"10:00\"]\n}"
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "iteration": 4,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/exams.csv', 'row': 0}\nexam_id: 1\ncourse_id: 101\ndate: 2023-01-10\ntime: 09:00\nclassroom_id: 1\n\nThe Machine Learning exam is:\n{\n\"answer\": [\"2023-03-20\", \"10:00\"]\n}\n\nSince there is only one exam in the context, the correct answer is:\n\n{\n\"answer\": [\"2023-03-20\", \"10:00\"]\n}\n\nHowever, this is not the question being asked. The question is asking for the Machine Learning exam date and time.\n\nLooking at the exams.csv data, we can find the Machine Learning exam:\n\n{'source': 'csv_data/exams.csv', 'row': 2}\nexam_id: 3\ncourse_id: 103\ndate: 2023-03-20\ntime: 10:00\nclassroom_id: 3\n\nThe correct answer is:\n{\n\"answer\": [\"2023-03-20\", \"10:00\"]\n}"
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "iteration": 5,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/exams.csv', 'row': 0}\nexam_id: 1\ncourse_id: 101\ndate: 2023-01-10\ntime: 09:00\nclassroom_id: 1\n\nThe Machine Learning exam is:\n{\n\"answer\": [\"2023-03-20\", \"10:00\"]\n}\n\nHowever, this is not the question being asked. The question is asking for the Machine Learning exam date and time.\n\nLooking at the exams.csv data, we can find the Machine Learning exam:\n\n{'source': 'csv_data/exams.csv', 'row': 2}\nexam_id: 3\ncourse_id: 103\ndate: 2023-03-20\ntime: 10:00\nclassroom_id: 3\n\nThe correct answer is:\n{\n\"answer\": [\"2023-03-20\", \"10:00\"]\n}\n\nSince there is only one exam in the context, the correct answer is:\n\n{\n\"answer\": [\"2023-03-20\", \"10:00\"]\n}"
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Machine Learning",
+                "Advanced Algorithms"
+            ]
+        }
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "iteration": 2,
+        "answer": "Based on the given context, I found that Giulia Rossi is enrolled in:\n\n{\n  \"answer\": [\n    \"Machine Learning\",\n    \"Advanced Algorithms\"\n  ]\n}\n\nThis answer is correct because there are no other courses mentioned in the context that Giulia Rossi is enrolled in."
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "iteration": 3,
+        "answer": "Based on the given context, I found that Giulia Rossi is enrolled in:\n\n{\n  \"answer\": [\n    \"Machine Learning\",\n    \"Advanced Algorithms\"\n  ]\n}\n\nThis answer is correct because there are no other courses mentioned in the context that Giulia Rossi is enrolled in."
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "iteration": 4,
+        "answer": "Based on the given context, I found that Giulia Rossi is enrolled in:\n\n{\n  \"answer\": [\n    \"Machine Learning\",\n    \"Advanced Algorithms\"\n  ]\n}\n\nThis answer is correct because there are no other courses mentioned in the context that Giulia Rossi is enrolled in."
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "iteration": 5,
+        "answer": "Based on the given context, I found that Giulia Rossi is enrolled in:\n\n{\n  \"answer\": [\n    \"Machine Learning\",\n    \"Advanced Algorithms\"\n  ]\n}\n\nThis answer is correct because there are no other courses mentioned in the context that Giulia Rossi is enrolled in."
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "iteration": 1,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teacherResearchAreas.csv', 'row': 7}\nteacher_id: 8\nresearch_area: Machine Learning\nnumber_of_project: 3\n\nSince Giulia Rossi is enrolled in the course with id 101, which has a teacher with id 1 and research area \"Artificial Intelligence\", not \"Machine Learning\", we can conclude that Giulia Rossi did not take the Machine Learning course.\n\nTherefore, the answer is:\n\n{\n\"answer\": [\"No grade\"]\n}"
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "No grade"
+            ]
+        }
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "iteration": 3,
+        "answer": "Based on the given context and question, I found that Giulia Rossi is enrolled in the Machine Learning course. Therefore, the correct answer is:\n\n{\n\"answer\": [\"No grade\"]\n}\n\nNote: There is no grade information available for Giulia Rossi in the Machine Learning course."
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "iteration": 4,
+        "answer": "Based on the given context and question, I found that Giulia Rossi is enrolled in the Machine Learning course. Therefore, the correct answer is:\n\n{\n\"answer\": [\"No grade\"]\n}\n\nNote: There is no grade information available for Giulia Rossi in the Machine Learning course."
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "iteration": 5,
+        "answer": "Based on the given context and question, I found that Giulia Rossi is enrolled in the Machine Learning course. Therefore, the correct answer is:\n\n{\n\"answer\": [\"No grade\"]\n}\n\nNote: There is no grade information available for Giulia Rossi in the Machine Learning course."
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Carlo Rossi"
+            ]
+        }
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "iteration": 2,
+        "answer": "Based on the given context and previous answer, I found that Sophie Durand's thesis is supervised by Carlo Rossi. Therefore, the correct answer is:\n\n{\n\"answer\": [\n\"Carlo Rossi\"\n]\n}"
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "iteration": 3,
+        "answer": "Based on the given context and previous answer, I found that Sophie Durand's thesis is supervised by Carlo Rossi. Therefore, the correct answer is:\n\n{\n\"answer\": [\n\"Carlo Rossi\"\n]\n}"
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "iteration": 4,
+        "answer": "Based on the given context and previous answer, I found that Sophie Durand's thesis is supervised by Carlo Rossi. Therefore, the correct answer is:\n\n{\n\"answer\": [\n\"Carlo Rossi\"\n]\n}"
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "iteration": 5,
+        "answer": "Based on the given context and previous answer, I found that Sophie Durand's thesis is supervised by Carlo Rossi. Therefore, the correct answer is:\n\n{\n\"answer\": [\n\"Carlo Rossi\"\n]\n}"
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "iteration": 1,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"Cybersecurity\", \"Human-Computer Interaction\", \"Artificial Intelligence\", \"Machine Learning\", \"Data Mining\", \"Software Engineering\"]\n}\n\nExplanation: The question asks for all courses offered by the Computer Science department. From the provided data, we can see that the Computer Science department offers the following courses:\n\n1. Cybersecurity (course_id: 109)\n2. Human-Computer Interaction (course_id: 110)\n3. Artificial Intelligence (course_id: 108)\n4. Machine Learning (course_id: 101)\n5. Data Mining (course_id: 107)\n6. Software Engineering (course_id: 106)\n\nThese are the courses offered by the Computer Science department, and they are listed in the answer."
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "iteration": 2,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"Machine Learning\", \"Artificial Intelligence\", \"Data Mining\", \"Software Engineering\", \"Cybersecurity\"]\n}\n\nExplanation: The question asks for all courses offered by the Computer Science department. From the provided data, we can see that the Computer Science department offers the following courses:\n\n1. Machine Learning (course_id: 101)\n2. Artificial Intelligence (course_id: 108)\n3. Data Mining (course_id: 107)\n4. Software Engineering (course_id: 106)\n5. Cybersecurity (course_id: 109)\n\nThese are the courses offered by the Computer Science department, and they are listed in the answer."
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "iteration": 3,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"Machine Learning\", \"Artificial Intelligence\", \"Data Mining\", \"Software Engineering\", \"Cybersecurity\", \"Human-Computer Interaction\", \"Database Systems\", \"Advanced Algorithms\", \"Embedded Systems\"]\n}\n\nExplanation: The question asks for all courses offered by the Computer Science department. From the provided data, we can see that the Computer Science department offers the following courses:\n\n1. Machine Learning (course_id: 101)\n2. Artificial Intelligence (course_id: 108)\n3. Data Mining (course_id: 107)\n4. Software Engineering (course_id: 106)\n5. Cybersecurity (course_id: 109)\n6. Human-Computer Interaction (course_id: 110)\n7. Database Systems (course_id: 102)\n8. Advanced Algorithms (course_id: 104)\n9. Embedded Systems (course_id: 103)\n\nThese are the courses offered by the Computer Science department, and they are listed in the answer."
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "iteration": 4,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"Machine Learning\", \"Artificial Intelligence\", \"Data Mining\", \"Software Engineering\", \"Cybersecurity\", \"Human-Computer Interaction\", \"Database Systems\", \"Advanced Algorithms\", \"Embedded Systems\"]\n}\n\nExplanation: The question asks for all courses offered by the Computer Science department. From the provided data, we can see that the Computer Science department offers the following courses:\n\n1. Machine Learning (course_id: 101)\n2. Artificial Intelligence (course_id: 108)\n3. Data Mining (course_id: 107)\n4. Software Engineering (course_id: 106)\n5. Cybersecurity (course_id: 109)\n6. Human-Computer Interaction (course_id: 110)\n7. Database Systems (course_id: 102)\n8. Advanced Algorithms (course_id: 104)\n9. Embedded Systems (course_id: 103)\n\nThese are the courses offered by the Computer Science department, and they are listed in the answer."
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "iteration": 5,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"Machine Learning\", \"Artificial Intelligence\", \"Data Mining\", \"Software Engineering\", \"Cybersecurity\", \"Human-Computer Interaction\", \"Database Systems\", \"Advanced Algorithms\", \"Embedded Systems\"]\n}\n\nExplanation: The question asks for all courses offered by the Computer Science department. From the provided data, we can see that the Computer Science department offers the following courses:\n\n1. Machine Learning (course_id: 101)\n2. Artificial Intelligence (course_id: 108)\n3. Data Mining (course_id: 107)\n4. Software Engineering (course_id: 106)\n5. Cybersecurity (course_id: 109)\n6. Human-Computer Interaction (course_id: 110)\n7. Database Systems (course_id: 102)\n8. Advanced Algorithms (course_id: 104)\n9. Embedded Systems (course_id: 103)\n\nThese are the courses offered by the Computer Science department, and they are listed in the answer."
+    },
+    {
+        "question": "What is the name of the department in which Antonio Gallo teaches?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Computer Science"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of the department in which Antonio Gallo teaches?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Computer Science"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of the department in which Antonio Gallo teaches?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Computer Science"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of the department in which Antonio Gallo teaches?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Computer Science"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of the department in which Antonio Gallo teaches?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Computer Science"
+            ]
+        }
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "26"
+            ]
+        }
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "iteration": 2,
+        "answer": "Based on the given context, the correct answer is:\n\n{\n  \"answer\": [\n    \"26\"\n  ]\n}\n\nThis is because there is only one grade record for Elena Gonzales in the Human-Computer Interaction course, and that grade is 26."
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "iteration": 3,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teacherResearchAreas.csv', 'row': 9}\nteacher_id: 10\nresearch_area: Human-Computer Interaction\nnumber_of_project: 6\n\nThere is no information about Elena Gonzales' grade in the Human-Computer Interaction exam. Therefore, the correct answer is:\n\n{\n\"answer\": []\n}"
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "iteration": 4,
+        "answer": {
+            "answer": []
+        }
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "26"
+            ]
+        }
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Engineering"
+            ]
+        }
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Engineering"
+            ]
+        }
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Engineering"
+            ]
+        }
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Engineering"
+            ]
+        }
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Engineering"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of the building in which will be the Embedded Systems exam?",
+        "iteration": 1,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teacherResearchAreas.csv', 'row': 2}\nteacher_id: 3\nresearch_area: Embedded Systems\nnumber_of_project: 3\n\n{'source': 'csv_data/classrooms.csv', 'row': 5}\nclassroom_id: 6\nbuilding: Electronics\nroom_number: 401\ncapacity: 30\n\nThe answer is:\n\n{\n\"answer\": [\"Electronics\"]\n}"
+    },
+    {
+        "question": "What is the name of the building in which will be the Embedded Systems exam?",
+        "iteration": 2,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/classrooms.csv', 'row': 0}\nclassroom_id: 1\nbuilding: Main\nroom_number: 101\ncapacity: 50\n\n{'source': 'csv_data/classrooms.csv', 'row': 4}\nclassroom_id: 5\nbuilding: Engineering\nroom_number: 302\ncapacity: 100\n\n{'source': 'csv_data/classrooms.csv', 'row': 3}\nclassroom_id: 4\nbuilding: Engineering\nroom_number: 301\ncapacity: 80\n\n{'source': 'csv_data/classrooms.csv', 'row': 1}\nclassroom_id: 2\nbuilding: Main\nroom_number: 102\ncapacity: 60\n\n{'source': 'csv_data/classrooms.csv', 'row': 2}\nclassroom_id: 3\nbuilding: Science\nroom_number: 201\ncapacity: 40\n\n{'source': 'csv_data/classrooms.csv', 'row': 5}\nclassroom_id: 6\nbuilding: Electronics\nroom_number: 401\ncapacity: 30\n\n{'source': 'csv_data/teacherResearchAreas.csv', 'row': 2}\nteacher_id: 3\nresearch_area: Embedded Systems\nnumber_of_project: 3\n\nThe answer is:\n\n{\n\"answer\": [\"Electronics\"]\n}"
+    },
+    {
+        "question": "What is the name of the building in which will be the Embedded Systems exam?",
+        "iteration": 3,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/classrooms.csv', 'row': 0}\nclassroom_id: 1\nbuilding: Main\nroom_number: 101\ncapacity: 50\n\n{'source': 'csv_data/classrooms.csv', 'row': 4}\nclassroom_id: 5\nbuilding: Engineering\nroom_number: 302\ncapacity: 100\n\n{'source': 'csv_data/classrooms.csv', 'row': 3}\nclassroom_id: 4\nbuilding: Engineering\nroom_number: 301\ncapacity: 80\n\n{'source': 'csv_data/classrooms.csv', 'row': 1}\nclassroom_id: 2\nbuilding: Main\nroom_number: 102\ncapacity: 60\n\n{'source': 'csv_data/classrooms.csv', 'row': 2}\nclassroom_id: 3\nbuilding: Science\nroom_number: 201\ncapacity: 40\n\n{'source': 'csv_data/classrooms.csv', 'row': 5}\nclassroom_id: 6\nbuilding: Electronics\nroom_number: 401\ncapacity: 30\n\n{'source': 'csv_data/teacherResearchAreas.csv', 'row': 2}\nteacher_id: 3\nresearch_area: Embedded Systems\nnumber_of_project: 3\n\nThe answer is:\n\n{\n\"answer\": [\"Electronics\"]\n}"
+    },
+    {
+        "question": "What is the name of the building in which will be the Embedded Systems exam?",
+        "iteration": 4,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/classrooms.csv', 'row': 0}\nclassroom_id: 1\nbuilding: Main\nroom_number: 101\ncapacity: 50\n\n{'source': 'csv_data/classrooms.csv', 'row': 4}\nclassroom_id: 5\nbuilding: Engineering\nroom_number: 302\ncapacity: 100\n\n{'source': 'csv_data/classrooms.csv', 'row': 3}\nclassroom_id: 4\nbuilding: Engineering\nroom_number: 301\ncapacity: 80\n\n{'source': 'csv_data/classrooms.csv', 'row': 1}\nclassroom_id: 2\nbuilding: Main\nroom_number: 102\ncapacity: 60\n\n{'source': 'csv_data/classrooms.csv', 'row': 2}\nclassroom_id: 3\nbuilding: Science\nroom_number: 201\ncapacity: 40\n\n{'source': 'csv_data/classrooms.csv', 'row': 5}\nclassroom_id: 6\nbuilding: Electronics\nroom_number: 401\ncapacity: 30\n\n{'source': 'csv_data/teacherResearchAreas.csv', 'row': 2}\nteacher_id: 3\nresearch_area: Embedded Systems\nnumber_of_project: 3\n\nThe answer is:\n\n{\n\"answer\": [\"Electronics\"]\n}"
+    },
+    {
+        "question": "What is the name of the building in which will be the Embedded Systems exam?",
+        "iteration": 5,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/classrooms.csv', 'row': 0}\nclassroom_id: 1\nbuilding: Main\nroom_number: 101\ncapacity: 50\n\n{'source': 'csv_data/classrooms.csv', 'row': 4}\nclassroom_id: 5\nbuilding: Engineering\nroom_number: 302\ncapacity: 100\n\n{'source': 'csv_data/classrooms.csv', 'row': 3}\nclassroom_id: 4\nbuilding: Engineering\nroom_number: 301\ncapacity: 80\n\n{'source': 'csv_data/classrooms.csv', 'row': 1}\nclassroom_id: 2\nbuilding: Main\nroom_number: 102\ncapacity: 60\n\n{'source': 'csv_data/classrooms.csv', 'row': 2}\nclassroom_id: 3\nbuilding: Science\nroom_number: 201\ncapacity: 40\n\n{'source': 'csv_data/classrooms.csv', 'row': 5}\nclassroom_id: 6\nbuilding: Electronics\nroom_number: 401\ncapacity: 30\n\n{'source': 'csv_data/teacherResearchAreas.csv', 'row': 2}\nteacher_id: 3\nresearch_area: Embedded Systems\nnumber_of_project: 3\n\nThe answer is:\n\n{\n\"answer\": [\"Electronics\"]\n}"
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "iteration": 1,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teachers.csv', 'row': 7}\nteacher_id: 8\nname: Alessandro\nsurname: Moretti\ndepartment_id: 1\nemail: a.moretti@university.edu\n\nThe title of the thesis followed by Alessandro Moretti is not provided in this context. Therefore, the answer is:\n\n{\n\"answer\": []\n}"
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "iteration": 2,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teachers.csv', 'row': 7}\nteacher_id: 8\nname: Alessandro\nsurname: Moretti\ndepartment_id: 1\nemail: a.moretti@university.edu\n\nThe title of the thesis followed by Alessandro Moretti is not provided in this context. Therefore, the answer is:\n\n{\n\"answer\": []\n}"
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "iteration": 3,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teachers.csv', 'row': 7}\nteacher_id: 8\nname: Alessandro\nsurname: Moretti\ndepartment_id: 1\nemail: a.moretti@university.edu\n\nThe title of the thesis followed by Alessandro Moretti is not provided in this context. Therefore, the answer is:\n\n{\n\"answer\": []\n}"
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "iteration": 4,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teachers.csv', 'row': 7}\nteacher_id: 8\nname: Alessandro\nsurname: Moretti\ndepartment_id: 1\nemail: a.moretti@university.edu\n\nThe title of the thesis followed by Alessandro Moretti is not provided in this context. Therefore, the answer is:\n\n{\n\"answer\": []\n}"
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "iteration": 5,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teachers.csv', 'row': 7}\nteacher_id: 8\nname: Alessandro\nsurname: Moretti\ndepartment_id: 1\nemail: a.moretti@university.edu\n\nThe title of the thesis followed by Alessandro Moretti is not provided in this context. Therefore, the answer is:\n\n{\n\"answer\": []\n}"
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "iteration": 1,
+        "answer": "Based on the given context, I can answer your question:\n\nWhich students (name,surname) have an enrollment date before 2022?\n\nThe answer is:\n\n{\n\"answer\": [\"\", \"\"]\n}\n\nExplanation: The enrollment dates for students with IDs 1, 3, and 4 are before 2022."
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "iteration": 2,
+        "answer": "Based on the given context, I can answer your question:\n\n{\n\"answer\": [\"Lucas Schmidt\", \"Giulia Rossi\", \"Marco Bianchi\"]\n}\n\nExplanation: The enrollment dates for students with IDs 1, 3, and 4 are before 2022."
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "iteration": 3,
+        "answer": "Based on the given context, I can answer your question:\n\n{\n\"answer\": [\"Lucas Schmidt\", \"Giulia Rossi\", \"Sophie Durand\"]\n}"
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "iteration": 4,
+        "answer": "Based on the given context, I can answer your question:\n\n{\n\"answer\": [\"Lucas Schmidt\", \"Sophie Durand\"]\n}"
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "iteration": 5,
+        "answer": "Based on the given context, I can answer your question:\n\n{\n\"answer\": [\"Lucas Schmidt\", \"Sophie Durand\"]\n}"
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Science"
+            ]
+        }
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "iteration": 2,
+        "answer": "Based on the given context and previous answer, the correct answer is:\n\n{\n\"answer\": [\n\"Science\"\n]\n}\n\nThis is because the department_name is Chemistry and faculty is Science."
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "iteration": 3,
+        "answer": "Based on the given context and previous answer, the correct answer is:\n\n{\n\"answer\": [\n\"Science\"\n]\n}\n\nThis is because the department_name is Chemistry and faculty is Science."
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "iteration": 4,
+        "answer": "Based on the given context and previous answer, the correct answer is:\n\n{\n\"answer\": [\n\"Science\"\n]\n}\n\nThis is because the department_name is Chemistry and faculty is Science."
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "iteration": 5,
+        "answer": "Based on the given context and previous answer, the correct answer is:\n\n{\n\"answer\": [\n\"Science\"\n]\n}\n\nThis is because the department_name is Chemistry and faculty is Science."
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "iteration": 1,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"Giulia Colombo\"]\n}\n\nExplanation: The only student enrolled in the Database Systems course (course_id: 104) is student with id 1, whose name and surname are Giulia Colombo."
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "iteration": 2,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"Giulia Colombo\"]\n}\n\nExplanation: The only student enrolled in the Database Systems course (course_id: 104) is student with id 1, whose name and surname are Giulia Colombo."
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "iteration": 3,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": []\n}\n\nExplanation: There are no students enrolled in the Database Systems course (course_id: 104)."
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "iteration": 4,
+        "answer": "Based on the given context:\n\n{\n\"answer\": [\"Elisa Neri\"]\n}\n\nExplanation: There is only one student enrolled in the Database Systems course (course_id: 104), which is Elisa Neri."
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "iteration": 5,
+        "answer": "Based on the given context:\n\n{\n\"answer\": [\"Elisa Neri\"]\n}\n\nExplanation: There is only one student enrolled in the Database Systems course (course_id: 104), which is Elisa Neri."
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "iteration": 1,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teachers.csv', 'row': 9}\nteacher_id: 10\nname: Maria\nsurname: Ferrari\ndepartment_id: 1\nemail: m.ferrari@university.edu\n\n{'source': 'csv_data/teacherResearchAreas.csv', 'row': 9}\nteacher_id: 10\nresearch_area: Human-Computer Interaction\nnumber_of_project: 6\n\nThe research areas of Maria Ferrari are:\n\n{\n\"answer\": [\"Human-Computer Interaction\"]\n}"
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "iteration": 2,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teachers.csv', 'row': 9}\nteacher_id: 10\nname: Maria\nsurname: Ferrari\ndepartment_id: 1\nemail: m.ferrari@university.edu\n\n{'source': 'csv_data/teacherResearchAreas.csv', 'row': 9}\nteacher_id: 10\nresearch_area: Human-Computer Interaction\nnumber_of_project: 6\n\nThe research areas of Maria Ferrari are:\n\n{\n\"answer\": [\"Human-Computer Interaction\"]\n}"
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "iteration": 3,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teachers.csv', 'row': 9}\nteacher_id: 10\nname: Maria\nsurname: Ferrari\ndepartment_id: 1\nemail: m.ferrari@university.edu\n\n{'source': 'csv_data/teacherResearchAreas.csv', 'row': 9}\nteacher_id: 10\nresearch_area: Human-Computer Interaction\nnumber_of_project: 6\n\nThe research areas of Maria Ferrari are:\n\n{\n\"answer\": [\"Human-Computer Interaction\"]\n}"
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "iteration": 4,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teachers.csv', 'row': 9}\nteacher_id: 10\nname: Maria\nsurname: Ferrari\ndepartment_id: 1\nemail: m.ferrari@university.edu\n\n{'source': 'csv_data/teacherResearchAreas.csv', 'row': 9}\nteacher_id: 10\nresearch_area: Human-Computer Interaction\nnumber_of_project: 6\n\nThe research areas of Maria Ferrari are:\n\n{\n\"answer\": [\"Human-Computer Interaction\"]\n}"
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "iteration": 5,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teachers.csv', 'row': 9}\nteacher_id: 10\nname: Maria\nsurname: Ferrari\ndepartment_id: 1\nemail: m.ferrari@university.edu\n\n{'source': 'csv_data/teacherResearchAreas.csv', 'row': 9}\nteacher_id: 10\nresearch_area: Human-Computer Interaction\nnumber_of_project: 6\n\nThe research areas of Maria Ferrari are:\n\n{\n\"answer\": [\"Human-Computer Interaction\"]\n}"
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "iteration": 1,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"6\"]\n}\n\nExplanation: The research area for teacher Laura Bianchi (teacher_id: 2) is Data Science, and the number of projects led by her is 6."
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "6"
+            ]
+        }
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "iteration": 3,
+        "answer": "Based on the given context, the correct answer is:\n\n{\n  \"answer\": [\n    \"2\"\n  ]\n}\n\nExplanation: The only teacher with the name Laura Bianchi is found in row 1 of the 'teachers.csv' file. This teacher has an ID of 2 and leads 6 research projects."
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "6"
+            ]
+        }
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "iteration": 5,
+        "answer": "Based on the given context, the correct answer is:\n\n{\n  \"answer\": [\n    \"2\"\n  ]\n}\n\nExplanation: The only teacher with the name Laura Bianchi is found in row 1 of the 'teachers.csv' file. This teacher has an ID of 2 and leads 6 research projects."
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Lucas Schmidt"
+            ]
+        }
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Lucas Schmidt"
+            ]
+        }
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Lucas Schmidt"
+            ]
+        }
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Lucas Schmidt"
+            ]
+        }
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Lucas Schmidt"
+            ]
+        }
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "301",
+                "302"
+            ]
+        }
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "iteration": 2,
+        "answer": "Based on the given context and previous answer, the correct answer(s) to the question are:\n\n{\n  \"answer\": [\n    \"301\",\n    \"302\"\n  ]\n}\n\nThis is because the previous answer already provided the room numbers 301 and 302 as being in the Engineering building."
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "iteration": 3,
+        "answer": "Based on the given context and previous answer, the correct answer(s) to the question are:\n\n{\n  \"answer\": [\n    \"301\",\n    \"302\"\n  ]\n}"
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "iteration": 4,
+        "answer": "Based on the given context and previous answer, the correct answer(s) to the question are:\n\n{\n  \"answer\": [\n    \"301\",\n    \"302\"\n  ]\n}"
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "iteration": 5,
+        "answer": "Based on the given context and previous answer, the correct answer(s) to the question are:\n\n{\n  \"answer\": [\n    \"301\",\n    \"302\"\n  ]\n}"
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "2023-03-20",
+                "10:00"
+            ]
+        }
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "iteration": 2,
+        "answer": "Based on the given context and previous answer, I found that the correct answer is:\n\n{\n\"answer\": [\n\"2023-03-20\",\n\"10:00\"\n]\n}\n\nThis is because the previous answer matches the date and time of the Software Engineering exam."
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "iteration": 3,
+        "answer": "Based on the given context and previous answer, I found that the correct answer is:\n\n{\n\"answer\": [\n\"2023-05-30\",\n\"13:00\"\n]\n}\n\nThis is because the previous answer matches the date and time of the Software Engineering exam."
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "iteration": 4,
+        "answer": "Based on the given context and previous answer, I found that the correct answer is:\n\n{\n\"answer\": [\n\"2023-05-30\",\n\"13:00\"\n]\n}\n\nThis is because the previous answer matches the date and time of the Software Engineering exam."
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "iteration": 5,
+        "answer": "Based on the given context and previous answer, I found that the correct answer is:\n\n{\n\"answer\": [\n\"2023-05-30\",\n\"13:00\"\n]\n}\n\nThis is because the previous answer matches the date and time of the Software Engineering exam."
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "iteration": 1,
+        "answer": "Based on the given context, the courses that have 8 credits are:\n\n{\n\"answer\": [\"Artificial Intelligence\", \"Advanced Algorithms\"]\n}"
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "iteration": 2,
+        "answer": "Based on the given context, the courses that have 8 credits are:\n\n{\n\"answer\": [\"Artificial Intelligence\", \"Advanced Algorithms\"]\n}"
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "iteration": 3,
+        "answer": "Based on the given context, the courses that have 8 credits are:\n\n{\n\"answer\": [\"Artificial Intelligence\", \"Advanced Algorithms\"]\n}"
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "iteration": 4,
+        "answer": "Based on the given context, the courses that have 8 credits are:\n\n{\n\"answer\": [\"Artificial Intelligence\", \"Advanced Algorithms\"]\n}"
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "iteration": 5,
+        "answer": "Based on the given context, the courses that have 8 credits are:\n\n{\n\"answer\": [\"Artificial Intelligence\", \"Advanced Algorithms\"]\n}"
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "iteration": 1,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/students.csv', 'row': 2}\nstudent_id: 3\nname: Sophie\nsurname: Durand\nbirth_date: 2000-07-30\nnationality: French\ngender: Female\nenrollment_date: 2021-01-10\nemail: sophie.durand@student.edu\n\nAnd the thesis data:\n\n{'source': 'csv_data/thesis.csv', 'row': 4}\nthesis_id: 5\ntitle: User Experience Design in Web Apps\nstudent_id: 5\nteacher_id: 8\nacademic_year: 2022-2023\nstatus: In Progress\nresearch_area: Human-Computer Interaction\n\nThe answer is:\n\n{\n\"answer\": [\"User Experience Design in Web Apps\"]\n}"
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "iteration": 2,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/students.csv', 'row': 2}\nstudent_id: 3\nname: Sophie\nsurname: Durand\nbirth_date: 2000-07-30\nnationality: French\ngender: Female\nenrollment_date: 2021-01-10\nemail: sophie.durand@student.edu\n\nAnd the thesis data:\n\n{'source': 'csv_data/thesis.csv', 'row': 4}\nthesis_id: 5\ntitle: User Experience Design in Web Apps\nstudent_id: 5\nteacher_id: 8\nacademic_year: 2022-2023\nstatus: In Progress\nresearch_area: Human-Computer Interaction\n\nThe answer is:\n\n{\n\"answer\": [\"User Experience Design in Web Apps\"]\n}"
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "iteration": 3,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/students.csv', 'row': 2}\nstudent_id: 3\nname: Sophie\nsurname: Durand\nbirth_date: 2000-07-30\nnationality: French\ngender: Female\nenrollment_date: 2021-01-10\nemail: sophie.durand@student.edu\n\nAnd the thesis data:\n\n{'source': 'csv_data/thesis.csv', 'row': 4}\nthesis_id: 5\ntitle: User Experience Design in Web Apps\nstudent_id: 5\nteacher_id: 8\nacademic_year: 2022-2023\nstatus: In Progress\nresearch_area: Human-Computer Interaction\n\nThe answer is:\n\n{\n\"answer\": [\"User Experience Design in Web Apps\"]\n}\n\nSince Sophie Durand's student_id is 3, and there is no thesis data for this student_id, the correct answer is an empty list.\n\nSo, the output should be:\n\n{\n\"answer\": []\n}"
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "iteration": 4,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/students.csv', 'row': 2}\nstudent_id: 3\nname: Sophie\nsurname: Durand\nbirth_date: 2000-07-30\nnationality: French\ngender: Female\nenrollment_date: 2021-01-10\nemail: sophie.durand@student.edu\n\nSince there is no thesis data for this student_id, the correct answer is an empty list.\n\nSo, the output should be:\n\n{\n\"answer\": []\n}"
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "iteration": 5,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/students.csv', 'row': 2}\nstudent_id: 3\nname: Sophie\nsurname: Durand\nbirth_date: 2000-07-30\nnationality: French\ngender: Female\nenrollment_date: 2021-01-10\nemail: sophie.durand@student.edu\n\nSince there is no thesis data for this student_id, the correct answer is an empty list.\n\nSo, the output should be:\n\n{\n\"answer\": []\n}"
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Lucas Schmidt"
+            ]
+        }
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "iteration": 2,
+        "answer": "Based on the given context and previous answer, I found that Lucas Schmidt is enrolled in Machine Learning course. Therefore, the correct answer is:\n\n{\n\"answer\": [\n\"Lucas Schmidt\"\n]\n}"
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "iteration": 3,
+        "answer": "Based on the given context and previous answer, I found that Lucas Schmidt is enrolled in Machine Learning course. Therefore, the correct answer is:\n\n{\n\"answer\": [\n\"Lucas Schmidt\"\n]\n}"
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "iteration": 4,
+        "answer": "Based on the given context and previous answer, I found that Lucas Schmidt is enrolled in Machine Learning course. Therefore, the correct answer is:\n\n{\n\"answer\": [\n\"Lucas Schmidt\"\n]\n}"
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "iteration": 5,
+        "answer": "Based on the given context and previous answer, I found that Lucas Schmidt is enrolled in Machine Learning course. Therefore, the correct answer is:\n\n{\n\"answer\": [\n\"Lucas Schmidt\"\n]\n}"
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Cybersecurity",
+                "Embedded Systems",
+                "Machine Learning",
+                "Data Mining",
+                "Software Engineering"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "iteration": 2,
+        "answer": "Based on the given context, the correct answer(s) to the question are:\n\n{\n\"answer\": [\n\"Cybersecurity\",\n\"Embedded Systems\",\n\"Machine Learning\",\n\"Data Mining\",\n\"Software Engineering\"\n]\n}\n\nThese courses have 6 credits."
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "iteration": 3,
+        "answer": "Based on the given context, the correct answer(s) to the question are:\n\n{\n\"answer\": [\n\"Cybersecurity\",\n\"Embedded Systems\",\n\"Machine Learning\",\n\"Data Mining\",\n\"Software Engineering\"\n]\n}\n\nThese courses have 6 credits."
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "iteration": 4,
+        "answer": "Based on the given context, the correct answer(s) to the question are:\n\n{\n\"answer\": [\n\"Cybersecurity\",\n\"Embedded Systems\",\n\"Machine Learning\",\n\"Data Mining\",\n\"Software Engineering\"\n]\n}\n\nThese courses have 6 credits."
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "iteration": 5,
+        "answer": "Based on the given context, the correct answer(s) to the question are:\n\n{\n\"answer\": [\n\"Cybersecurity\",\n\"Embedded Systems\",\n\"Machine Learning\",\n\"Data Mining\",\n\"Software Engineering\"\n]\n}\n\nThese courses have 6 credits."
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "iteration": 1,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/students.csv', 'row': 3}\nstudent_id: 4\nname: Lucas\nsurname: Schmidt\nbirth_date: 1997-03-18\nnationality: German\ngender: Male\nenrollment_date: 2020-08-25\nemail: lucas.schmidt@student.edu\n\n{'source': 'csv_data/enrollments.csv', 'row': 8}\nenrollment_id: 9\nstudent_id: 4\ncourse_id: 110\nenrollment_date: 2020-08-25\n\n{'source': 'csv_data/enrollments.csv', 'row': 4}\nenrollment_id: 5\nstudent_id: 4\ncourse_id: 105\nenrollment_date: 2020-08-25\n\nThe answer is:\n\n{\n\"answer\": [\"Lucas Schmidt\"]\n}"
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Lucas Schmidt"
+            ]
+        }
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "iteration": 3,
+        "answer": "Based on the given context and previous answer, I can find the correct answer(s) to the question.\n\nThe previous answer was: {\"answer\": [\"Lucas Schmidt\"]}\n\nSince we are looking for students enrolled in 2020, we need to check the enrollment_date field. The only student with an enrollment date of 2020 is:\n\n* Lucas Schmidt (student_id: 4)\n\nSo, the correct answer is:\n\n{\n\"answer\": [\"Lucas Schmidt\"]\n}"
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "iteration": 4,
+        "answer": "Based on the given context and previous answer, I can find the correct answer(s) to the question.\n\nThe only student with an enrollment date of 2020 is:\n\n* Lucas Schmidt (student_id: 4)\n\nSo, the correct answer is:\n\n{\n\"answer\": [\"Lucas Schmidt\"]\n}"
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "iteration": 5,
+        "answer": "Based on the given context and previous answer, I can find the correct answer(s) to the question.\n\nThe only student with an enrollment date of 2020 is:\n\n* Lucas Schmidt (student_id: 4)\n\nSo, the correct answer is:\n\n{\n\"answer\": [\"Lucas Schmidt\"]\n}"
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "iteration": 1,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/classrooms.csv', 'row': 0}\nclassroom_id: 1\nbuilding: Main\nroom_number: 101\ncapacity: 50\n\n{'source': 'csv_data/classrooms.csv', 'row': 1}\nclassroom_id: 2\nbuilding: Main\nroom_number: 102\ncapacity: 60\n\nThe classrooms located in the Main building are:\n\n{\n\"answer\": [\"101\", \"102\"]\n}"
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "iteration": 2,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/classrooms.csv', 'row': 0}\nclassroom_id: 1\nbuilding: Main\nroom_number: 101\ncapacity: 50\n\n{'source': 'csv_data/classrooms.csv', 'row': 1}\nclassroom_id: 2\nbuilding: Main\nroom_number: 102\ncapacity: 60\n\nThe classrooms located in the Main building are:\n\n{\n\"answer\": [\"101\", \"102\"]\n}"
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "iteration": 3,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/classrooms.csv', 'row': 0}\nclassroom_id: 1\nbuilding: Main\nroom_number: 101\ncapacity: 50\n\n{'source': 'csv_data/classrooms.csv', 'row': 1}\nclassroom_id: 2\nbuilding: Main\nroom_number: 102\ncapacity: 60\n\nThe classrooms located in the Main building are:\n\n{\n\"answer\": [\"101\", \"102\"]\n}"
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "iteration": 4,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/classrooms.csv', 'row': 0}\nclassroom_id: 1\nbuilding: Main\nroom_number: 101\ncapacity: 50\n\n{'source': 'csv_data/classrooms.csv', 'row': 1}\nclassroom_id: 2\nbuilding: Main\nroom_number: 102\ncapacity: 60\n\nThe classrooms located in the Main building are:\n\n{\n\"answer\": [\"101\", \"102\"]\n}"
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "iteration": 5,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/classrooms.csv', 'row': 0}\nclassroom_id: 1\nbuilding: Main\nroom_number: 101\ncapacity: 50\n\n{'source': 'csv_data/classrooms.csv', 'row': 1}\nclassroom_id: 2\nbuilding: Main\nroom_number: 102\ncapacity: 60\n\nThe classrooms located in the Main building are:\n\n{\n\"answer\": [\"101\", \"102\"]\n}"
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Biology",
+                "Physics",
+                "Mathematics",
+                "Chemistry"
+            ]
+        }
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Biology",
+                "Physics",
+                "Mathematics",
+                "Chemistry"
+            ]
+        }
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Biology",
+                "Physics",
+                "Mathematics",
+                "Chemistry"
+            ]
+        }
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Biology",
+                "Physics",
+                "Mathematics",
+                "Chemistry"
+            ]
+        }
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Biology",
+                "Physics",
+                "Mathematics",
+                "Chemistry"
+            ]
+        }
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "iteration": 1,
+        "answer": "Based on the given context, the thesis with the status \"Completed\" are:\n\n{\n    \"answer\": [\"Deep Learning for Image Recognition\", \"Autonomous Systems\"]\n}"
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "iteration": 2,
+        "answer": "Based on the given context, the thesis with the status \"Completed\" are:\n\n{\n    \"answer\": [\"Deep Learning for Image Recognition\", \"Autonomous Systems\"]\n}"
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "iteration": 3,
+        "answer": "Based on the given context, the thesis with the status \"Completed\" are:\n\n{\n    \"answer\": [\"Deep Learning for Image Recognition\", \"Autonomous Systems\"]\n}"
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "iteration": 4,
+        "answer": "Based on the given context, the thesis with the status \"Completed\" are:\n\n{\n    \"answer\": [\"Deep Learning for Image Recognition\", \"Autonomous Systems\"]\n}"
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "iteration": 5,
+        "answer": "Based on the given context, the thesis with the status \"Completed\" are:\n\n{\n    \"answer\": [\"Deep Learning for Image Recognition\", \"Autonomous Systems\"]\n}"
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "iteration": 1,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teachers.csv', 'row': 1}\nteacher_id: 2\nname: Laura\nsurname: Bianchi\ndepartment_id: 1\nemail: l.bianchi@university.edu\n\nThe answer is:\n\n{\n\"answer\": [\"<course_name_1>\", \"<course_name_2>\", ...]\n}\n\nSince there is no information about the courses taught by Laura Bianchi, the output will be an empty list.\n\n{\n\"answer\": []\n}"
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "iteration": 2,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teachers.csv', 'row': 1}\nteacher_id: 2\nname: Laura\nsurname: Bianchi\ndepartment_id: 1\nemail: l.bianchi@university.edu\n\nSince there is no information about the courses taught by Laura Bianchi, the output will be an empty list.\n\n{\n\"answer\": []\n}"
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "iteration": 3,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teachers.csv', 'row': 1}\nteacher_id: 2\nname: Laura\nsurname: Bianchi\ndepartment_id: 1\nemail: l.bianchi@university.edu\n\nSince there is no information about the courses taught by Laura Bianchi, the output will be an empty list.\n\n{\n\"answer\": []\n}"
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "iteration": 4,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teachers.csv', 'row': 1}\nteacher_id: 2\nname: Laura\nsurname: Bianchi\ndepartment_id: 1\nemail: l.bianchi@university.edu\n\nSince there is information about the courses taught by Laura Bianchi, we can find the answer.\n\nThe correct answer(s) to the question are:\n\n{\n\"answer\": [\"Database Systems\"]\n}\n\nNote that only one course is taught by Laura Bianchi, which is \"Database Systems\"."
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "iteration": 5,
+        "answer": "Based on the given context:\n\n{'source': 'csv_data/teachers.csv', 'row': 1}\nteacher_id: 2\nname: Laura\nsurname: Bianchi\ndepartment_id: 1\nemail: l.bianchi@university.edu\n\nSince there is information about the courses taught by Laura Bianchi, we can find the answer.\n\nThe correct answer(s) to the question are:\n\n{\n\"answer\": [\"Database Systems\"]\n}\n\nNote that only one course is taught by Laura Bianchi, which is \"Database Systems\"."
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "iteration": 1,
+        "answer": "Based on the given context, the courses taught in the Fall semester are:\n\n{\n\"answer\": [\"Cybersecurity\", \"Machine Learning\", \"Embedded Systems\", \"Digital Signal Processing\", \"Data Mining\"]\n}"
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "iteration": 2,
+        "answer": "Based on the given context, the courses taught in the Fall semester are:\n\n{\n\"answer\": [\"Cybersecurity\", \"Machine Learning\", \"Embedded Systems\", \"Data Mining\", \"Digital Signal Processing\"]\n}"
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "iteration": 3,
+        "answer": "Based on the given context, the courses taught in the Fall semester are:\n\n{\n\"answer\": [\"Cybersecurity\", \"Machine Learning\", \"Embedded Systems\", \"Data Mining\", \"Digital Signal Processing\"]\n}"
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "iteration": 4,
+        "answer": "Based on the given context, the courses taught in the Fall semester are:\n\n{\n\"answer\": [\"Cybersecurity\", \"Machine Learning\", \"Embedded Systems\", \"Data Mining\", \"Digital Signal Processing\"]\n}"
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "iteration": 5,
+        "answer": "Based on the given context, the courses taught in the Fall semester are:\n\n{\n\"answer\": [\"Cybersecurity\", \"Machine Learning\", \"Embedded Systems\", \"Data Mining\", \"Digital Signal Processing\"]\n}"
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Human-Computer Interaction",
+                "Database Systems",
+                "Software Engineering",
+                "Advanced Algorithms",
+                "Artificial Intelligence"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "iteration": 2,
+        "answer": "Based on the given context and previous answer, the correct answer(s) to the question are:\n\n{\n\"answer\": [\n  \"Human-Computer Interaction\",\n  \"Database Systems\",\n  \"Software Engineering\",\n  \"Advanced Algorithms\",\n  \"Artificial Intelligence\"\n]\n}\n\nThese courses are taught in the Spring semester."
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "iteration": 3,
+        "answer": "Based on the given context and previous answer, the correct answer(s) to the question are:\n\n{\n\"answer\": [\n  \"Human-Computer Interaction\",\n  \"Database Systems\",\n  \"Software Engineering\",\n  \"Advanced Algorithms\",\n  \"Artificial Intelligence\"\n]\n}\n\nThese courses are taught in the Spring semester."
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "iteration": 4,
+        "answer": "Based on the given context and previous answer, the correct answer(s) to the question are:\n\n{\n\"answer\": [\n  \"Human-Computer Interaction\",\n  \"Database Systems\",\n  \"Software Engineering\",\n  \"Advanced Algorithms\",\n  \"Artificial Intelligence\"\n]\n}\n\nThese courses are taught in the Spring semester."
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "iteration": 5,
+        "answer": "Based on the given context and previous answer, the correct answer(s) to the question are:\n\n{\n\"answer\": [\n  \"Human-Computer Interaction\",\n  \"Database Systems\",\n  \"Software Engineering\",\n  \"Advanced Algorithms\",\n  \"Artificial Intelligence\"\n]\n}\n\nThese courses are taught in the Spring semester."
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Giulia Colombo"
+            ]
+        }
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "iteration": 2,
+        "answer": "Based on the given context and previous answer, the correct answer(s) to the question are:\n\n{\n\"answer\": [\n    \"Giulia Colombo\",\n    \"Luca Esposito\",\n    \"Elisa Neri\",\n    \"Alessandro Moretti\",\n    \"Maria Ferrari\",\n    \"Carlo Rossi\",\n    \"Francesco Conti\",\n    \"Laura Bianchi\"\n]\n}"
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Luca Esposito",
+                "Alessandro Moretti",
+                "Francesco Conti",
+                "Elisa Neri"
+            ]
+        }
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Luca Esposito",
+                "Alessandro Moretti",
+                "Francesco Conti",
+                "Giulia Colombo"
+            ]
+        }
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Luca Esposito",
+                "Alessandro Moretti",
+                "Francesco Conti",
+                "Giulia Colombo"
+            ]
+        }
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "iteration": 1,
+        "answer": "Based on the given context, the thesis with the status \"In Progress\" is:\n\n{\n\"answer\": [\"Big Data Processing\"]\n}"
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "iteration": 2,
+        "answer": "Based on the given context, the thesis with the status \"In Progress\" is:\n\n{\n\"answer\": [\"Big Data Processing\"]\n}"
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "iteration": 3,
+        "answer": "Based on the given context, the thesis with the status \"In Progress\" is:\n\n{\n\"answer\": [\"Big Data Processing\"]\n}"
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "iteration": 4,
+        "answer": "Based on the given context, the thesis with the status \"In Progress\" is:\n\n{\n\"answer\": [\"Big Data Processing\"]\n}"
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "iteration": 5,
+        "answer": "Based on the given context, the thesis with the status \"In Progress\" is:\n\n{\n\"answer\": [\"Big Data Processing\"]\n}"
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Carlo Rossi",
+                "Elisa Neri",
+                "Giulia Colombo",
+                "Francesco Conti",
+                "Laura Bianchi",
+                "Luca Esposito",
+                "Maria Ferrari"
+            ]
+        }
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Carlo Rossi",
+                "Francesco Conti",
+                "Luca Esposito",
+                "Elisa Neri",
+                "Giulia Colombo",
+                "Laura Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Carlo Rossi",
+                "Francesco Conti",
+                "Luca Esposito",
+                "Elisa Neri",
+                "Laura Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Carlo Rossi",
+                "Francesco Conti",
+                "Luca Esposito",
+                "Laura Bianchi",
+                "Elisa Neri"
+            ]
+        }
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Carlo Rossi",
+                "Francesco Conti",
+                "Luca Esposito",
+                "Laura Bianchi",
+                "Elisa Neri"
+            ]
+        }
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Giulia Rossi",
+                "Marco Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "iteration": 2,
+        "answer": "Based on the given context and previous answer, the correct answer(s) to the question are:\n\n{\n\"answer\": [\n    \"Giulia Rossi\",\n    \"Marco Bianchi\"\n]\n}"
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "iteration": 3,
+        "answer": "Based on the given context and previous answer, the correct answer(s) to the question are:\n\n{\n\"answer\": [\n    \"Giulia Rossi\",\n    \"Marco Bianchi\"\n]\n}"
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "iteration": 4,
+        "answer": "Based on the given context and previous answer, the correct answer(s) to the question are:\n\n{\n\"answer\": [\n    \"Giulia Rossi\",\n    \"Marco Bianchi\"\n]\n}"
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "iteration": 5,
+        "answer": "Based on the given context and previous answer, the correct answer(s) to the question are:\n\n{\n\"answer\": [\n    \"Giulia Rossi\",\n    \"Marco Bianchi\"\n]\n}"
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "iteration": 1,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"Lucas Schmidt\", \"Marco Bianchi\"]\n}"
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "iteration": 2,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"Lucas Schmidt\", \"Marco Bianchi\"]\n}"
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "iteration": 3,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"Lucas Schmidt\", \"Marco Bianchi\"]\n}"
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "iteration": 4,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"Lucas Schmidt\", \"Marco Bianchi\"]\n}"
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "iteration": 5,
+        "answer": "Based on the given context, the answer is:\n\n{\n\"answer\": [\"Lucas Schmidt\", \"Marco Bianchi\"]\n}"
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "iteration": 1,
+        "answer": "Based on the given context, I can answer your question.\n\nThe Female students enrolled in the university in the course with course_id 110 are:\n\n{\n\"answer\": [\"\", \"\"]\n}\n\nPlease note that there is no student with a female name and surname enrolled in the course with course_id 110."
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "iteration": 2,
+        "answer": "Based on the given context, I can answer your question.\n\nThe Female students enrolled in the university in the course with course_id 110 are:\n\n{\n\"answer\": [\"Elena Gonzalez\", \"Giulia Rossi\"]\n}"
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "iteration": 3,
+        "answer": "Based on the given context, I can answer your question.\n\nThe Female students enrolled in the university in the course with course_id 110 are:\n\n{\n\"answer\": [\"Elena Gonzalez\", \"Giulia Rossi\"]\n}"
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "iteration": 4,
+        "answer": "Based on the given context, I can answer your question.\n\nThe Female students enrolled in the university in the course with course_id 110 are:\n\n{\n\"answer\": [\"Elena Gonzalez\", \"Giulia Rossi\"]\n}"
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "iteration": 5,
+        "answer": "Based on the given context, I can answer your question.\n\nThe Female students enrolled in the university in the course with course_id 110 are:\n\n{\n\"answer\": [\"Elena Gonzalez\", \"Giulia Rossi\"]\n}"
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "30",
+                "29",
+                "28"
+            ]
+        }
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "iteration": 2,
+        "answer": "Based on the given context and previous answer, I found that Sophie Durand is enrolled in courses with grades 26, 28, and 29. Therefore, the correct answer is:\n\n{\n\"answer\": [\n\"26\",\n\"28\",\n\"29\"\n]\n}"
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "iteration": 3,
+        "answer": "Based on the given context and previous answer, I found that Sophie Durand is enrolled in courses with grades 26, 28, and 29. Therefore, the correct answer is:\n\n{\n\"answer\": [\n\"26\",\n\"28\",\n\"29\"\n]\n}"
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "iteration": 4,
+        "answer": "Based on the given context and previous answer, I found that Sophie Durand is enrolled in courses with grades 26, 28, and 29. Therefore, the correct answer is:\n\n{\n\"answer\": [\n\"26\",\n\"28\",\n\"29\"\n]\n}"
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "iteration": 5,
+        "answer": "Based on the given context and previous answer, I found that Sophie Durand is enrolled in courses with grades 26, 28, and 29. Therefore, the correct answer is:\n\n{\n\"answer\": [\n\"26\",\n\"28\",\n\"29\"\n]\n}"
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Lucas Schmidt"
+            ]
+        }
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Lucas Schmidt"
+            ]
+        }
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "iteration": 3,
+        "answer": "Based on the given context and previous answer, I found that Lucas Schmidt is enrolled in Human-Computer Interaction. Therefore, the correct answer(s) are:\n\n{\n\"answer\": [\"Lucas Schmidt\"]\n}"
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "iteration": 4,
+        "answer": "Based on the given context and previous answer, I found that Lucas Schmidt is enrolled in Human-Computer Interaction. Therefore, the correct answer(s) are:\n\n{\n\"answer\": [\"Lucas Schmidt\"]\n}"
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "iteration": 5,
+        "answer": "Based on the given context and previous answer, I found that Lucas Schmidt is enrolled in Human-Computer Interaction. Therefore, the correct answer(s) are:\n\n{\n\"answer\": [\"Lucas Schmidt\"]\n}"
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Embedded Systems",
+                "Course Name"
+            ]
+        }
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "iteration": 2,
+        "answer": "Based on the given context, I found that there are two courses with an exam scheduled at 13.00 or 14.00 hours.\n\nThe correct answer is:\n\n{\n\"answer\": [\n\"Embedded Systems\",\n\"Course Name\"\n]\n}\n\nNote: The \"Course Name\" in the previous answer was incorrect, and it should be replaced with the actual course name that has an exam scheduled at 13.00 or 14.00 hours."
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "iteration": 3,
+        "answer": "Based on the given context, I found that there are two courses with an exam scheduled at 13.00 or 14.00 hours.\n\nThe correct answer is:\n\n{\n\"answer\": [\n\"Embedded Systems\",\n\"Course Name\"\n]\n}\n\nNote: The \"Course Name\" in the previous answer was incorrect, and it should be replaced with the actual course name that has an exam scheduled at 13.00 or 14.00 hours.\n\nBased on the original question, the correct answer is:\n\n{\n\"answer\": [\n\"Embedded Systems\",\n\"Advanced Algorithms\"\n]\n}\n\nExplanation: The courses \"Embedded Systems\" (exam_id: 3) and \"Advanced Algorithms\" (exam_id: 2) have exams scheduled at 13:00 and 14:00 hours respectively."
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "iteration": 4,
+        "answer": "Based on the given context, I found that there are two courses with an exam scheduled at 13.00 or 14.00 hours.\n\nThe correct answer is:\n\n{\n\"answer\": [\n\"Embedded Systems\",\n\"Advanced Algorithms\"\n]\n}"
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "iteration": 5,
+        "answer": "Based on the given context, I found that there are two courses with an exam scheduled at 13.00 or 14.00 hours.\n\nThe correct answer is:\n\n{\n\"answer\": [\n\"Embedded Systems\",\n\"Advanced Algorithms\"\n]\n}"
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "201",
+                "401"
+            ]
+        }
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "iteration": 2,
+        "answer": "Based on the given context and previous answer, I found that the correct answer(s) to the question are:\n\n{\n\"answer\": [\n\"201\",\n\"401\"\n]\n}\n\nExplanation: The previous answer mentioned rooms 201 and 401. Since these rooms belong to the Science and Electronics buildings respectively, they satisfy the condition specified in the original question."
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "iteration": 3,
+        "answer": "Based on the given context and previous answer, I found that the correct answer(s) to the question are:\n\n{\n\"answer\": [\n\"201\",\n\"401\"\n]\n}\n\nExplanation: The previous answer mentioned rooms 201 and 401. Since these rooms belong to the Science and Electronics buildings respectively, they satisfy the condition specified in the original question."
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "iteration": 4,
+        "answer": "Based on the given context and previous answer, I found that the correct answer(s) to the question are:\n\n{\n\"answer\": [\n\"201\",\n\"401\"\n]\n}\n\nExplanation: The previous answer mentioned rooms 201 and 401. Since these rooms belong to the Science and Electronics buildings respectively, they satisfy the condition specified in the original question."
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "iteration": 5,
+        "answer": "Based on the given context and previous answer, I found that the correct answer(s) to the question are:\n\n{\n\"answer\": [\n\"201\",\n\"401\"\n]\n}\n\nExplanation: The previous answer mentioned rooms 201 and 401. Since these rooms belong to the Science and Electronics buildings respectively, they satisfy the condition specified in the original question."
+    }
+]
