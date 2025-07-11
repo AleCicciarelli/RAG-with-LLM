@@ -2,7 +2,7 @@ import random
 import json
 from datasets import load_dataset
 
-dataset_path = "fineTuning/converted_dataset.jsonl" 
+dataset_path = "fineTuning/converted_dataset2.jsonl" 
 print("✅ Caricamento dataset JSONL...")
 dataset = load_dataset("json", data_files=dataset_path, split="train")
 
@@ -25,9 +25,9 @@ def augment_data(examples):
         prompt = prompt.replace('students', replaced_table_name)
 
         # Row number modification
+        table = random.choice(table_names)
         row_number = random.randint(0, 10)
-        output = output.replace('{{students_0}}', f'{{students_{row_number}}}')
-
+        output = output.replace('{{students_0}}', f'{{{{{table}_{row_number}}}}}')
 
         # Answer modification
         answer = json.loads(output)['answer']
@@ -42,6 +42,6 @@ def augment_data(examples):
 augmented_dataset = augment_data(dataset)
 
 
-with open('augmented_dataset.jsonl', 'w') as f:
+with open('augmented_dataset2.jsonl', 'w') as f:
     for example in augmented_dataset:
         f.write(json.dumps(example) + "\n")

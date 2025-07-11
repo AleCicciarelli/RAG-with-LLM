@@ -10,9 +10,17 @@ print(input_data[:2])
 
 
 # Prompt fisso
-PROMPT = (
-    "Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.\n"
-    "If the answer is not present in the context, return an empty array.\n\n"
+PROMPT = ( """
+     Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
+        For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
+        Format of Witness Sets (as strings):  
+        - If there is ONE relevant tuple set: "{{<table_name>_<row>}}"  
+        - If there are MULTIPLE: "{{<table_name>_<row>},{<table_name>_<row>},...}}"  
+        IMPORTANT:
+        Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.
+        If your output is not a valid JSON block in the format described, it will be discarded.
+        If the answer is not present in the context, return an empty array.
+        """
 )
 
 def main():
@@ -38,17 +46,17 @@ def main():
         output.append(example)
     
     # Salvo il file JSON
-    with open("instruction_tuned_dataset.json", "w", encoding="utf-8") as f:
+    with open("instruction_tuned_dataset2.json", "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2)
-    print(f"Dataset with {len(output)} examples saved to 'instruction_tuned_dataset.json'.")
+    print(f"Dataset with {len(output)} examples saved to 'instruction_tuned_dataset2.json'.")
 
 if __name__ == "__main__":
     main()
 '''
 import json
 
-input_file = "fineTuning/instruction_tuned_dataset.json"
-output_file = "fineTuning/converted_dataset.jsonl"
+input_file = "fineTuning/instruction_tuned_dataset2.json"
+output_file = "fineTuning/converted_dataset2.jsonl"
 
 with open(input_file, "r") as f:
     data = json.load(f)
