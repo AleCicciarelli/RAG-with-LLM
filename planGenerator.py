@@ -11,7 +11,7 @@ os.environ["LANGSMITH_API_KEY"] = "lsv2_pt_87133982193d4e3b8110cb9e3253eb17_7831
 #if not os.environ.get("GROQ_API_KEY"):
 # os.environ["GROQ_API_KEY"] = "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"
 
-#llm = ChatOllama(model="llama3:70b", temperature=0)
+llm = ChatOllama(model="llama3:70b", temperature=0)
 
 # LLM: Llama3-8b by Groq
 #llm = init_chat_model("llama3-70b-8192", model_provider="groq", temperature = 0)

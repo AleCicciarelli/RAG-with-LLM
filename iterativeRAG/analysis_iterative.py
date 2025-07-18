@@ -81,13 +81,13 @@ def evaluate_lists_why(true_list, pred_list):
     return tp, fp, fn
 
 def main():
-    gt_data = load_json("tpch/ground_truthTpch.json")
-    question_types = load_json("tpch/questions.json")
+    gt_data = load_json("ground_truth2.json")
+    question_types = load_json("questions.json")
 
-    pred_folder = "tpch/outputs_llama70b/iterative/"
-    global_metrics_file = os.path.join(pred_folder, "global_metrics_iterative_kdin_5rounds.csv")
-    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterative_kdin_5rounds.csv")
-    iteration_metrics_file = os.path.join(pred_folder, "metrics_per_iteration_kdin_5rounds.csv")
+    pred_folder = "iterativeRAG/no_why/outputs_llama8b-ft2/"
+    global_metrics_file = os.path.join(pred_folder, "global_metrics_iterative_ksemidin_5rounds.csv")
+    type_metrics_file = os.path.join(pred_folder, "metrics_by_type_iterative_ksemidin_5rounds.csv")
+    iteration_metrics_file = os.path.join(pred_folder, "metrics_per_iteration_ksemidin_5rounds.csv")
 
     write_header_global = not os.path.exists(global_metrics_file)
     write_header_type = not os.path.exists(type_metrics_file)
@@ -107,17 +107,17 @@ def main():
             type_writer.writerow([
                 "Question Type", "Iteration",
                 "Answer Precision", "Answer Recall", "Answer F1", "Answer Accuracy",
-                "Explanation Precision", "Explanation Recall", "Explanation F1", "Explanation Accuracy",
+                #"Explanation Precision", "Explanation Recall", "Explanation F1", "Explanation Accuracy",
                 "Count"
             ])
         if write_header_iter:
             iter_writer.writerow([
                 "Question", "Iteration", "Question Type",
                 "Answer Precision", "Answer Recall", "Answer F1", "Exact Answer",
-                "Explanation Precision", "Explanation Recall", "Explanation F1", "Exact Explanation"
+                #"Explanation Precision", "Explanation Recall", "Explanation F1", "Exact Explanation"
             ])
 
-        pred_file = os.path.join(pred_folder, f"outputs_llama70b_iterative_kdin_5rounds_WHY.json")
+        pred_file = os.path.join(pred_folder, f"iterative_ksemidin_5rounds.json")
         ungrouped_pred_data = load_json(pred_file)
         pred_data = group_predictions_by_question(ungrouped_pred_data)
         assert len(gt_data) == len(pred_data), "Mismatch in number of questions"
@@ -163,7 +163,7 @@ def main():
                 for s in gt["why"]:
                     true_expl.update(ss.strip("{} ") for ss in s.split("}}") if ss.strip())
             '''
-            #print(f"True: '{true_answer}'")  
+            print(f"True: '{true_answer}'")  
             preds = pred_data[question]
             
 
@@ -194,14 +194,16 @@ def main():
                                 continue
                     except Exception:
                         pred_answer = []
-               # print(f"Pred: '{pred_answer, pred_expl}'")
+                print(f"Pred: '{pred_answer, pred_expl}'")
             
 
                 tp_ans, fp_ans, fn_ans = evaluate_lists(true_answer, pred_answer)
+                print(f"TP: {tp_ans}, FP: {fp_ans}, FN: {fn_ans}")
                 exact_answer = 1 if set(true_answer) == set(pred_answer) else 0
                 ans_prec, ans_rec, ans_f1, _ = compute_metrics(tp_ans, fp_ans, fn_ans)
 
                 tp_expl, fp_expl, fn_expl = evaluate_lists_why(true_expl, pred_expl)
+                print(f"TP Expl: {tp_expl}, FP Expl: {fp_expl}, FN Expl: {fn_expl}")
                 exact_expl = 1 if (true_expl == pred_expl) else 0
                 expl_prec, expl_rec, expl_f1, _ = compute_metrics(tp_expl, fp_expl, fn_expl)
 
@@ -253,19 +255,19 @@ def main():
             e_prec, e_rec, e_f1, e_acc = compute_metrics(m["expl_tp"], m["expl_fp"], m["expl_fn"], m["expl_exact"], len(gt_data))
 
             global_writer.writerow(["Answer", i, f"{a_prec:.4f}", f"{a_rec:.4f}", f"{a_f1:.4f}", f"{a_acc:.4f}"])
-            global_writer.writerow(["Explanation", i, f"{e_prec:.4f}", f"{e_rec:.4f}", f"{e_f1:.4f}", f"{e_acc:.4f}"])
+            #global_writer.writerow(["Explanation", i, f"{e_prec:.4f}", f"{e_rec:.4f}", f"{e_f1:.4f}", f"{e_acc:.4f}"])
 
         # Scrivi metriche per tipo per iterazione
         for q_type, iters in metrics_by_type_and_iter.items():
             for i in range(1,6):
                 stats = iters[i]
                 ans_m = compute_metrics(stats["tp_ans"], stats["fp_ans"], stats["fn_ans"], stats["exact_ans"], stats["count"])
-                expl_m = compute_metrics(stats["tp_expl"], stats["fp_expl"], stats["fn_expl"], stats["exact_expl"], stats["count"])
+                #expl_m = compute_metrics(stats["tp_expl"], stats["fp_expl"], stats["fn_expl"], stats["exact_expl"], stats["count"])
 
                 type_writer.writerow([
                     q_type, i,
                     f"{ans_m[0]:.4f}", f"{ans_m[1]:.4f}", f"{ans_m[2]:.4f}", f"{ans_m[3]:.4f}",
-                    f"{expl_m[0]:.4f}", f"{expl_m[1]:.4f}", f"{expl_m[2]:.4f}", f"{expl_m[3]:.4f}",
+                    #f"{expl_m[0]:.4f}", f"{expl_m[1]:.4f}", f"{expl_m[2]:.4f}", f"{expl_m[3]:.4f}",
                     stats["count"]
                 ])
 

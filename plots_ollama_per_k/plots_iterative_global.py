@@ -334,7 +334,7 @@ import os
 
 # Percorsi
 base_path = 'tpch/outputs_'
-output_path = base_path + 'plots/no_why/global/iterative/'
+output_path = base_path + 'plots/why/global/iterative/'
 os.makedirs(output_path, exist_ok=True)
 
 # Config
@@ -345,7 +345,7 @@ metrics_to_plot = ['F1']
 all_data = []
 for model in models:
     variants = {
-        'ksemidin': f'{base_path}{model}/iterative/global_metrics_iterative_ksemidin_5rounds_NOWHY.csv',
+        'kdin': f'{base_path}{model}/iterative/global_metrics_iterative_kdin_5rounds_NOWHY.csv',
         'FC': f'{base_path}{model}/iterative/global_metrics_iterative_FC_5rounds_NOWHY.csv',
         'k10': f'{base_path}{model}/iterative/global_metrics_iterative_k10_5rounds_NOWHY.csv'
     }
