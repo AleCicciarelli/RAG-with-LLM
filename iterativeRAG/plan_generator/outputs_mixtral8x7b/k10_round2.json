@@ -1,0 +1,1050 @@
+[
+    {
+        "question": "Which is the email of the student Giulia Rossi?",
+        "step": 1,
+        "answer": [
+            "Giulia Rossi"
+        ]
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "step": 1,
+        "answer": [
+            "Laura Bianchi"
+        ]
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "step": 2,
+        "answer": [
+            "<department_name>"
+        ]
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "step": 3,
+        "answer": [
+            "Science"
+        ]
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "step": 4,
+        "answer": [
+            "Science"
+        ]
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "step": 1,
+        "answer": [
+            "6"
+        ]
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "step": 2,
+        "answer": [
+            "6"
+        ]
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "step": 3,
+        "answer": [
+            "6"
+        ]
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "step": 4,
+        "answer": [
+            "6"
+        ]
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "step": 5,
+        "answer": [
+            "6"
+        ]
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "step": 6,
+        "answer": [
+            "6"
+        ]
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "step": 7,
+        "answer": [
+            "6"
+        ]
+    },
+    {
+        "question": "What is the name of building in which there is the class with room number 401?",
+        "step": 1,
+        "answer": [
+            "Electronics"
+        ]
+    },
+    {
+        "question": "What is the name of building in which there is the class with room number 401?",
+        "step": 2,
+        "answer": "Based on the provided context, the answer to the question is:"
+    },
+    {
+        "question": "What is the name of building in which there is the class with room number 401?",
+        "step": 3,
+        "answer": [
+            "Electronics"
+        ]
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "step": 1,
+        "answer": [
+            "Fall"
+        ]
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "step": 1,
+        "answer": [
+            "401"
+        ]
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "step": 2,
+        "answer": [
+            "401"
+        ]
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "step": 3,
+        "answer": [
+            "401"
+        ]
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "step": 4,
+        "answer": [
+            "401"
+        ]
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "step": 5,
+        "answer": [
+            "401"
+        ]
+    },
+    {
+        "question": "In which research area is the 'User Experience Design in Web Apps' thesis?",
+        "step": 1,
+        "answer": [
+            "Human-Computer Interaction"
+        ]
+    },
+    {
+        "question": "In which research area is the 'User Experience Design in Web Apps' thesis?",
+        "step": 2,
+        "answer": [
+            "Human-Computer Interaction"
+        ]
+    },
+    {
+        "question": "In which research area is the 'User Experience Design in Web Apps' thesis?",
+        "step": 3,
+        "answer": [
+            "Human-Computer Interaction"
+        ]
+    },
+    {
+        "question": "In which research area is the 'User Experience Design in Web Apps' thesis?",
+        "step": 4,
+        "answer": [
+            "Human-Computer Interaction"
+        ]
+    },
+    {
+        "question": "In which research area is the 'User Experience Design in Web Apps' thesis?",
+        "step": 5,
+        "answer": [
+            "Human-Computer Interaction"
+        ]
+    },
+    {
+        "question": "In which research area is the 'User Experience Design in Web Apps' thesis?",
+        "step": 6,
+        "answer": [
+            "Human-Computer Interaction"
+        ]
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "step": 1,
+        "answer": [
+            "Carlo Rossi"
+        ]
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "step": 2,
+        "answer": [
+            "Alessandro Moretti",
+            "Carlo Rossi",
+            "Luca Esposito",
+            "Marco Verdi",
+            "Maria Ferrari"
+        ]
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "step": 3,
+        "answer": [
+            "Alessandro Moretti",
+            "Marco Verdi",
+            "Maria Ferrari"
+        ]
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "step": 4,
+        "answer": [
+            "Alessandro Moretti"
+        ]
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "step": 1,
+        "answer": []
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "step": 2,
+        "answer": "{\n\"answer\": [\"<research_area_of_Carlo_Rossi>\"]\n}\n\n<research_area_of_Carlo_Rossi> is not provided directly in the context. However, we can infer it based on the 'department\\_id' field of Carlo Rossi and other teachers. The 'teacherResearchAreas.csv' file contains research areas associated with teacher IDs. By cross-referencing the department IDs from 'teachers.csv' and the teacher IDs in 'teacherResearchAreas.csv', we can find the research area of Carlo Rossi.\n\nTo get the correct answer, you need to perform a lookup using the department\\_id (1) in the teachers.csv file and match it with the teacher\\_id in the teacherResearchAreas.csv file. The correct answer will be the 'research\\_area' value associated with that teacher ID.\n\nThe following is an example of how to find the correct answer:\n\n1. Find the record with department\\_id = 1 in teachers.csv:\n   ```json\n   {'source': 'csv_data/teachers.csv', 'row': 0}\n   teacher_id: 1\n   name: Carlo\n   surname: Rossi\n   department_id: 1\n   email: c.rossi@university.edu\n   ```\n\n2. Find the record with the same teacher\\_id in teacherResearchAreas.csv:\n   ```json\n   {'source': 'csv_data/teacherResearchAreas.csv', 'row': <some_row_number>}\n   teacher_id: 1\n   research_area: <research_area_of_Carlo_Rossi>\n   number_of_project: <number_of_projects>\n   ```\n\nThe correct answer will be the 'research\\_area' value associated with Carlo Rossi. The actual row number in step 2 cannot be determined from the provided context, so you need to perform this lookup in your code."
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "step": 3,
+        "answer": [
+            "Data Science"
+        ]
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "step": 4,
+        "answer": [
+            "Data Mining"
+        ]
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "step": 5,
+        "answer": [
+            "Artificial Intelligence"
+        ]
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "step": 6,
+        "answer": [
+            "Artificial Intelligence"
+        ]
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "step": 1,
+        "answer": [
+            "5"
+        ]
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "step": 1,
+        "answer": [
+            "2023-03-20 10:00"
+        ]
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "step": 1,
+        "answer": []
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "step": 1,
+        "answer": []
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "step": 2,
+        "answer": []
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "step": 3,
+        "answer": []
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "step": 4,
+        "answer": []
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "step": 5,
+        "answer": []
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "step": 1,
+        "answer": [
+            "Carlo Rossi"
+        ]
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "step": 1,
+        "answer": ""
+    },
+    {
+        "question": "What is the name of the department in which Antonio Gallo teaches?",
+        "step": 1,
+        "answer": [
+            "<name not provided>",
+            "<surname not provided>",
+            "Department 2"
+        ]
+    },
+    {
+        "question": "What is the name of the department in which Antonio Gallo teaches?",
+        "step": 2,
+        "answer": [
+            "Mathematics"
+        ]
+    },
+    {
+        "question": "What is the name of the department in which Antonio Gallo teaches?",
+        "step": 3,
+        "answer": [
+            "Mathematics"
+        ]
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "step": 1,
+        "answer": [
+            26
+        ]
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "step": 1,
+        "answer": [
+            "Engineering"
+        ]
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "step": 2,
+        "answer": [
+            "Engineering"
+        ]
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "step": 3,
+        "answer": [
+            "Engineering"
+        ]
+    },
+    {
+        "question": "What is the name of the building in which will be the Embedded Systems exam?",
+        "step": 1,
+        "answer": [
+            "Electronics"
+        ]
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "step": 1,
+        "answer": []
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "step": 1,
+        "answer": [
+            "Giulia Rossi",
+            "Marco Bianchi",
+            "Student 1"
+        ]
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "step": 2,
+        "answer": [
+            "Giulia Rossi",
+            "Marco Bianchi"
+        ]
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "step": 3,
+        "answer": [
+            "Giulia Rossi",
+            "Marco Bianchi"
+        ]
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "step": 4,
+        "answer": [
+            "Giulia Rossi",
+            "Marco Bianchi"
+        ]
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "step": 1,
+        "answer": [
+            "Science"
+        ]
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "step": 2,
+        "answer": [
+            "Science"
+        ]
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "step": 3,
+        "answer": [
+            "Science"
+        ]
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "step": 4,
+        "answer": [
+            "Science"
+        ]
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "step": 1,
+        "answer": [
+            "Giulia Colombo"
+        ]
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "step": 1,
+        "answer": [
+            "Artificial Intelligence",
+            "Human-Computer Interaction"
+        ]
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "step": 2,
+        "answer": [
+            "Human-Computer Interaction"
+        ]
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "step": 3,
+        "answer": [
+            "Human-Computer Interaction"
+        ]
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "step": 4,
+        "answer": [
+            "Human-Computer Interaction"
+        ]
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "step": 1,
+        "answer": [
+            "6"
+        ]
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "step": 2,
+        "answer": [
+            "6"
+        ]
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "step": 3,
+        "answer": [
+            "6"
+        ]
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "step": 4,
+        "answer": [
+            "6"
+        ]
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "step": 5,
+        "answer": [
+            "6"
+        ]
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "step": 6,
+        "answer": [
+            "6"
+        ]
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "step": 7,
+        "answer": [
+            "6"
+        ]
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "step": 8,
+        "answer": [
+            "6"
+        ]
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "step": 9,
+        "answer": [
+            "6"
+        ]
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "step": 1,
+        "answer": []
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "step": 1,
+        "answer": [
+            "301",
+            "302"
+        ]
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "step": 1,
+        "answer": [
+            "2023-03-20 10:00"
+        ]
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "step": 1,
+        "answer": [
+            "Artificial Intelligence",
+            "Advanced Algorithms"
+        ]
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "step": 1,
+        "answer": [
+            "User Experience Design in Web Apps"
+        ]
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "step": 2,
+        "answer": [
+            "User Experience Design in Web Apps"
+        ]
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "step": 3,
+        "answer": [
+            "User Experience Design in Web Apps"
+        ]
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "step": 4,
+        "answer": [
+            "User Experience Design in Web Apps"
+        ]
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "step": 5,
+        "answer": [
+            "User Experience Design in Web Apps"
+        ]
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "step": 1,
+        "answer": "Based on the given context, the students enrolled in Machine Learning course are not specified. However, the student enrolled in Advanced Algorithms course is:"
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "step": 2,
+        "answer": []
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "step": 3,
+        "answer": [
+            "<student_name>"
+        ]
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "step": 4,
+        "answer": [
+            "Lucas Schmidt"
+        ]
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "step": 5,
+        "answer": [
+            "Lucas Schmidt"
+        ]
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "step": 6,
+        "answer": [
+            "Lucas Schmidt"
+        ]
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "step": 7,
+        "answer": [
+            "Lucas Schmidt"
+        ]
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "step": 1,
+        "answer": [
+            "Cybersecurity",
+            "Embedded Systems",
+            "Data Mining",
+            "Software Engineering"
+        ]
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "step": 1,
+        "answer": [
+            "Lucas Schmidt"
+        ]
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "step": 1,
+        "answer": [
+            "101",
+            "102"
+        ]
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "step": 2,
+        "answer": [
+            "101",
+            "102"
+        ]
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "step": 3,
+        "answer": [
+            "101",
+            "102"
+        ]
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "step": 4,
+        "answer": [
+            "101",
+            "102"
+        ]
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "step": 1,
+        "answer": ""
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "step": 1,
+        "answer": "```json"
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "step": 2,
+        "answer": [
+            "Deep Learning for Image Recognition"
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "step": 3,
+        "answer": [
+            "Deep Learning for Image Recognition",
+            "Autonomous Systems"
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "step": 4,
+        "answer": [
+            "Deep Learning for Image Recognition",
+            "Autonomous Systems"
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "step": 5,
+        "answer": [
+            "Deep Learning for Image Recognition",
+            "Autonomous Systems"
+        ]
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "step": 1,
+        "answer": []
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "step": 2,
+        "answer": []
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "step": 3,
+        "answer": []
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "step": 4,
+        "answer": []
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "step": 5,
+        "answer": []
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "step": 6,
+        "answer": []
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "step": 1,
+        "answer": ""
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "step": 1,
+        "answer": ""
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "step": 1,
+        "answer": []
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "step": 1,
+        "answer": [
+            "Big Data Processing",
+            "User Experience Design in Web Apps"
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "step": 2,
+        "answer": [
+            "Big Data Processing",
+            "User Experience Design in Web Apps"
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "step": 3,
+        "answer": [
+            "Big Data Processing",
+            "User Experience Design in Web Apps"
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "step": 4,
+        "answer": [
+            "Big Data Processing",
+            "User Experience Design in Web Apps"
+        ]
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "step": 1,
+        "answer": [
+            "Carlo Rossi",
+            "Elisa Neri",
+            "Laura Bianchi",
+            "Francesco Conti",
+            "Luca Esposito",
+            "Maria Ferrari"
+        ]
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "step": 2,
+        "answer": [
+            "Francesco Conti",
+            "Carlo Rossi",
+            "Laura Bianchi",
+            "Elisa Neri",
+            "Luca Esposito",
+            "Maria Ferrari"
+        ]
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "step": 3,
+        "answer": [
+            "Francesco Conti",
+            "Carlo Rossi",
+            "Laura Bianchi",
+            "Elisa Neri",
+            "Luca Esposito",
+            "Maria Ferrari"
+        ]
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "step": 4,
+        "answer": [
+            "Francesco Conti",
+            "Carlo Rossi",
+            "Laura Bianchi",
+            "Elisa Neri",
+            "Luca Esposito",
+            "Maria Ferrari"
+        ]
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "step": 5,
+        "answer": [
+            "Francesco Conti",
+            "Carlo Rossi",
+            "Laura Bianchi",
+            "Elisa Neri",
+            "Luca Esposito",
+            "Maria Ferrari"
+        ]
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "step": 1,
+        "answer": [
+            "Giulia Rossi",
+            "Marco Bianchi"
+        ]
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "step": 2,
+        "answer": [
+            "Giulia Rossi",
+            "Marco Bianchi"
+        ]
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "step": 3,
+        "answer": [
+            "Giulia Rossi",
+            "Marco Bianchi"
+        ]
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "step": 1,
+        "answer": [
+            "Lucas Schmidt",
+            "Marco Bianchi"
+        ]
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "step": 2,
+        "answer": [
+            "Lucas Schmidt",
+            "Marco Bianchi"
+        ]
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "step": 3,
+        "answer": [
+            "Lucas Schmidt",
+            "Marco Bianchi"
+        ]
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "step": 4,
+        "answer": [
+            "Lucas Schmidt",
+            "Marco Bianchi"
+        ]
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "step": 1,
+        "answer": []
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "step": 2,
+        "answer": [
+            "<student name and surname for student_id 5>"
+        ]
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "step": 3,
+        "answer": []
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "step": 4,
+        "answer": [
+            "<student name and surname for student_id 5>"
+        ]
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "step": 5,
+        "answer": []
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "step": 6,
+        "answer": [
+            "<student name and surname for student_id 5>"
+        ]
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "step": 1,
+        "answer": [
+            "29",
+            "28",
+            "30"
+        ]
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "step": 1,
+        "answer": ""
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "step": 2,
+        "answer": [
+            "Maria Ferrari"
+        ]
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "step": 3,
+        "answer": [
+            "Maria Ferrari"
+        ]
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "step": 4,
+        "answer": [
+            "Maria Ferrari"
+        ]
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "step": 1,
+        "answer": [
+            "Embedded Systems"
+        ]
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "step": 1,
+        "answer": [
+            "401"
+        ]
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "step": 2,
+        "answer": [
+            "401",
+            "201"
+        ]
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "step": 3,
+        "answer": "Based on the provided context, the correct answer to the question \"Which are the classrooms (room number) in Science or Electronics building?\" is:"
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "step": 4,
+        "answer": [
+            "401",
+            "201"
+        ]
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "step": 5,
+        "answer": ""
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "step": 6,
+        "answer": [
+            "401",
+            "201"
+        ]
+    }
+]
