@@ -1,11 +1,11 @@
 
-from transformers import AutoModelForCausalLM
+from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
 
 # ⚠️ Usa lo stesso modello base usato nel fine-tuning
-base_model_name = "meta-llama/Meta-Llama-3-8B-Instruct"
-lora_path = "output_lora"
-merged_output_path = "merged_model"
+base_model_name = "meta-llama/Meta-Llama-3-70B-Instruct"
+lora_path = "output_lora_70b_ft"
+merged_output_path = "merged_model_70b"
 
 print("🔄 Caricamento modello base...")
 base_model = AutoModelForCausalLM.from_pretrained(
@@ -22,6 +22,9 @@ model = model.merge_and_unload()
 
 print("💾 Salvataggio modello mergiato...")
 model.save_pretrained(merged_output_path)
+print("💾 Salvataggio tokenizer...")
+tokenizer = AutoTokenizer.from_pretrained(base_model_name)
+tokenizer.save_pretrained(merged_output_path)
 '''
 from peft import PeftModel
 from transformers import AutoModelForCausalLM
