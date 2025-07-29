@@ -1,0 +1,1265 @@
+[
+  {
+    "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+    "answer": [
+      "Supplier#000000678",
+      "Supplier#000000590",
+      "Supplier#000000773",
+      "Supplier#000000417"
+    ]
+  },
+  {
+    "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which orders done by a customer with nationkey = 2 have a total price between 20500 and 20550?\n\nExpected Answer:\n```json\n{\n    \"answer\": [\"<answer_1>\", \"<answer_2>\", ...]\n}\n```\nAfter analyzing the provided context, I found that there are no orders done by a customer with nationkey = 2 that have a total price between 20500 and 20550. Therefore, the expected answer is an empty list.\n\nHere's the code to solve this problem:\n```python\nanswer = []\nfor row in data:\n    if row['o_custkey'] == 2 and 20500 <= row['o_totalprice'] <= 20550:\n        answer.append(row['o_orderkey'])\nprint({\"answer\": answer})\n```\nNote that this code assumes that the `data` variable contains the provided context, which is a list of dictionaries representing each order. The code iterates through the orders and checks if the customer nationkey is equal to 2 and the total price is between 20500 and 20550. If an order meets these conditions, its orderkey is added to the `answer` list. Finally, the code prints the expected answer as a JSON object."
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+    "answer": [
+      "1994",
+      "10003"
+    ]
+  },
+  {
+    "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+    "answer": [
+      "ECONOMY ANODIZED STEEL",
+      "SMALL PLATED BRASS"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+    "answer": []
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+    "answer": [
+      "Customer#000011015",
+      "Customer#000012654"
+    ]
+  },
+  {
+    "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+    "answer": [
+      "Based on the provided context and question, I will provide an answer.\n\n**Answer**\n\n{\n\"answer\": [\"1990\", \"14411\", \"14917\", ...]\n}\n\nThe customers with nationkey 24 (which is the United States) who have placed orders with a total price lower than 1000 and have an order status of either 'P' or 'F' are:\n\n* Customer#000001990\n* Customer#000014411\n* Customer#000014517\n* ..."
+    ]
+  },
+  {
+    "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+    "answer": [
+      "EUROPE"
+    ]
+  },
+  {
+    "question": "What is the name (r_name) of the region with region key 1?",
+    "answer": [
+      "The name of the region with a region key of 1 is AMERICA."
+    ]
+  },
+  {
+    "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+    "answer": [
+      "14-685-851-5424"
+    ]
+  },
+  {
+    "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+    "answer": [
+      "978.07"
+    ]
+  },
+  {
+    "question": "Which customer (c_name) placed the order with order key 130?",
+    "answer": [
+      "4436"
+    ]
+  },
+  {
+    "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+    "answer": [
+      "Giulia Rossi",
+      "Marco Bianchi"
+    ]
+  },
+  {
+    "question": "What is the nation name of the customer Customer#000000004?",
+    "answer": [
+      "United States"
+    ]
+  },
+  {
+    "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+    "answer": [
+      "I'm happy to help!\n\nPlease provide the context and question you'd like me to answer. I'll do my best to generate a valid output example in JSON format.\n\nRemember, I won't include introductory phrases or explanations in my response. Just the answers!"
+    ]
+  },
+  {
+    "question": "Which regions (r_regionKey) have a region key greater than 2?",
+    "answer": [
+      "3",
+      "4"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\n**Question:** Which customers are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?\n\n**Expected Answer:**\n```json\n{\n    \"answer\": [\"Customer#000001980\", \"Customer#000002020\", ...] // list of customer names with account balances between 0 and 100 in the AUTOMOBILE market segment\n}\n```\nPlease note that this is a sample answer, and you may need to adjust it based on your specific requirements."
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+    "answer": [
+      "Supplier#000000545",
+      "Supplier#000000315"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+    "answer": [
+      "Customer#000002607"
+    ]
+  },
+  {
+    "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+    "answer": [
+      "1996-07-27"
+    ]
+  },
+  {
+    "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+    "answer": [
+      "1998-03-16"
+    ]
+  },
+  {
+    "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+    "answer": [
+      "23"
+    ]
+  },
+  {
+    "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+    "answer": []
+  },
+  {
+    "question": "Which suppliers (s_name) provides the part with partkey 200?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which suppliers (s_name) provides the part with partkey 200?\n\nAnswer:\n\n{\n\"answer\": [\"Supplier#000000975\", \"Supplier#000000274\", ...]\n}\n\nNote that there are multiple suppliers providing parts with partkey 200."
+    ]
+  },
+  {
+    "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+    "answer": [
+      1648
+    ]
+  },
+  {
+    "question": "What is the total price of the order with orderkey 100?",
+    "answer": [
+      112149.59
+    ]
+  },
+  {
+    "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+    "answer": []
+  },
+  {
+    "question": "What is the order date of the order with order key 323?",
+    "answer": [
+      "Order key 323 does not exist"
+    ]
+  },
+  {
+    "question": "Which customer (c_name) placed the order with order key 323?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which customer (c_name) placed the order with order key 323?\n\nExpected Answer:\n\n{\n\"answer\": [\"<answer_1>\", \"<answer_2>\", ...]\n}\n\nPlease note that the actual answer may vary depending on the specific data in your CSV files."
+    ]
+  },
+  {
+    "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+    "answer": [
+      "United States"
+    ]
+  },
+  {
+    "question": "What is the name of the region where the nation FRANCE is located?",
+    "answer": [
+      "EUROPE"
+    ]
+  },
+  {
+    "question": "What is the name of the nation of the customer who placed order 352?",
+    "answer": [
+      "Customer#000009781"
+    ]
+  },
+  {
+    "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+    "answer": [
+      "4"
+    ]
+  },
+  {
+    "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+    "answer": [
+      "Based on the provided context, I will answer your question.\n\nThe phone number of the supplier that delivered a lineitem for partkey 275 in order 32 is:\n\n18-876-287-5756\n\nThis information can be found in the row with s_suppkey: 668."
+    ]
+  },
+  {
+    "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+    "answer": [
+      "0"
+    ]
+  },
+  {
+    "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+    "answer": [
+      "$901.00"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\n**Question:** Which customers from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?\n\n**Answer:**\n```json\n{\n    \"answer\": [\"Customer#000001990\", \"Customer#000002009\", ...]\n}\n```\nNote that I will provide a list of customer names (e.g., `Customer#000001990`) that meet the condition."
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+    "answer": [
+      "Supplier#000000877",
+      "Supplier#000000216",
+      "Supplier#000000185",
+      "Supplier#000000181",
+      "Supplier#000000121",
+      "Supplier#000000229",
+      "Supplier#000000834",
+      "Supplier#000000495",
+      "Supplier#000000416",
+      "Supplier#000000108",
+      "Supplier#000000668",
+      "Supplier#000000749",
+      "Supplier#000000158",
+      "Supplier#000000557",
+      "Supplier#000000149",
+      "Supplier#000000267",
+      "Supplier#000000918",
+      "Supplier#000000875"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?\n\nExpected Answer:\n```json\n{\n    \"answer\": [\"2018\", \"12662\", \"14155\", \"1099\", \"1999\", ...]\n}\n```\nNote: The actual answer will include all the customer IDs (c_name) that have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'."
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?\n\nExpected Answer:\n```json\n{\n    \"answer\": [\"3392\", \"1099\", ...] // list of customer IDs who meet the criteria\n}\n```\nNote: The actual answer will depend on the specific data in the orders.csv file."
+    ]
+  },
+  {
+    "question": "Which parts (p_name) have a retail price lower than 902?",
+    "answer": [
+      "maroon forest lavender burlywood red",
+      "linen rose blue white honeydew",
+      "black mint olive drab medium",
+      "grey blue steel antique white",
+      "thistle aquamarine lawn yellow burlywood",
+      "pale lace chiffon white blue"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 1?",
+    "answer": [
+      "UNITED STATES",
+      "BRAZIL",
+      "ARGENTINA",
+      "PERU"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 2?",
+    "answer": [
+      "INDONESIA",
+      "CHINA",
+      "JAPAN",
+      "VIETNAM"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 0?",
+    "answer": [
+      "ALGERIA",
+      "MOROCCO",
+      "ETHIOPIA",
+      "KENYA"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 3?",
+    "answer": [
+      "RUSSIA",
+      "CANADA",
+      "FRANCE",
+      "GERMANY",
+      "UNITED KINGDOM",
+      "ROMANIA"
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+    "answer": [
+      "Supplier#000000612",
+      "Supplier#000000565"
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+    "answer": [
+      "Supplier#000000678",
+      "Supplier#000000590",
+      "Supplier#000000773",
+      "Supplier#000000417"
+    ]
+  },
+  {
+    "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which orders done by a customer with nationkey = 2 have a total price between 20500 and 20550?\n\nExpected Answer:\n```json\n{\n    \"answer\": [\"<answer_1>\", \"<answer_2>\", ...]\n}\n```\nAfter analyzing the provided context, I found that there are no orders done by customers with nationkey = 2 that have a total price between 20500 and 20550. Therefore, the expected answer is an empty list.\n\nHere's the code to solve this problem:\n```python\nanswer = []\nfor row in data:\n    if row['o_custkey'] == 2 and 20500 <= row['o_totalprice'] <= 20550:\n        answer.append(row['o_orderkey'])\nprint({\"answer\": answer})\n```\nNote that this code assumes that the `data` variable contains the provided context, which is a list of dictionaries representing each order. The code iterates through the orders and checks if the customer nationkey is equal to 2 and the total price is between 20500 and 20550. If an order meets these conditions, its orderkey is added to the `answer` list. Finally, the answer is printed in JSON format."
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+    "answer": []
+  },
+  {
+    "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+    "answer": [
+      "PROMO PLATED COPPER",
+      "ECONOMY ANODIZED BRASS"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+    "answer": []
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+    "answer": [
+      "Customer#000011015",
+      "Customer#000012654"
+    ]
+  },
+  {
+    "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+    "answer": [
+      "Customer#000014526",
+      "Customer#000011053",
+      "Customer#000014411",
+      "Customer#000012246"
+    ]
+  },
+  {
+    "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+    "answer": [
+      "EUROPE"
+    ]
+  },
+  {
+    "question": "What is the name (r_name) of the region with region key 1?",
+    "answer": [
+      "The name of the region with region key 1 is AMERICA."
+    ]
+  },
+  {
+    "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+    "answer": [
+      "No such supplier found"
+    ]
+  },
+  {
+    "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+    "answer": [
+      905.0
+    ]
+  },
+  {
+    "question": "Which customer (c_name) placed the order with order key 130?",
+    "answer": [
+      "4436"
+    ]
+  },
+  {
+    "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+    "answer": [
+      "7696.26"
+    ]
+  },
+  {
+    "question": "What is the nation name of the customer Customer#000000004?",
+    "answer": [
+      "United States"
+    ]
+  },
+  {
+    "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+    "answer": [
+      "I'm happy to help! However, I need more information about the specific problem you're trying to solve. Please provide me with the context and question you want me to answer.\n\nIf your question is similar to Example 1 or Example 2, please let me know so I can provide a sample solution."
+    ]
+  },
+  {
+    "question": "Which regions (r_regionKey) have a region key greater than 2?",
+    "answer": [
+      "3",
+      "4"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\n**Question:** Which customers are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?\n\n**Expected Answer:**\n```json\n{\n    \"answer\": [\"Customer#000001980\", \"Customer#000002020\", ...] // list of customer names with account balances between 0 and 100 in the AUTOMOBILE market segment\n}\n```\nPlease note that this is a simulated answer based on the provided context. The actual output may vary depending on the specific data and requirements."
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+    "answer": [
+      "Supplier#000000545",
+      "Supplier#000000745"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+    "answer": [
+      "Customer#000002607"
+    ]
+  },
+  {
+    "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+    "answer": [
+      "1996-07-27"
+    ]
+  },
+  {
+    "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+    "answer": [
+      "1998-03-16"
+    ]
+  },
+  {
+    "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+    "answer": [
+      "23"
+    ]
+  },
+  {
+    "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+    "answer": [
+      "North America"
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) provides the part with partkey 200?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nThe question is: Which suppliers (s_name) provides the part with partkey 200?\n\nFrom the given data, we can find the supplier that provides the part with partkey 200. The relevant row from the partsupp.csv file is:\n\n{'source': 'tpch/csv_data_tpch/partsupp.csv', 'row': 8111}\nps_partkey: 2020\nps_suppkey: 273\nps_availqty: 246\nps_supplycost: 301.31\n\nSince partkey 200 is not present in this row, we need to look for another row that matches the condition. After searching through the data, I found the following row:\n\n{'source': 'tpch/csv_data_tpch/partsupp.csv', 'row': 71575}\nps_partkey: 17891\nps_suppkey: 159\nps_availqty: 2020\nps_supplycost: 799.84\n\nHowever, this partkey is not equal to 200 either.\n\nAfter further searching, I found the following row:\n\n{'source': 'tpch/csv_data_tpch/partsupp.csv', 'row': 13120}\nps_partkey: 3269\nps_suppkey: 776\nps_availqty: 2015\nps_supplycost: 198.57\n\nUnfortunately, this partkey is not equal to 200 either.\n\nAfter searching through the entire data set, I was unable to find a row that matches the condition of having partkey 200. Therefore, my answer is:\n\n{\n\"answer\": [\"No supplier provides the part with partkey 200\"]\n}\n\nPlease note that this answer assumes that there are no duplicate entries in the partsupp.csv file or any other data source."
+    ]
+  },
+  {
+    "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+    "answer": [
+      1648
+    ]
+  },
+  {
+    "question": "What is the total price of the order with orderkey 100?",
+    "answer": [
+      112149.59
+    ]
+  },
+  {
+    "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+    "answer": [
+      "No such supplier exists"
+    ]
+  },
+  {
+    "question": "What is the order date of the order with order key 323?",
+    "answer": [
+      "1995-06-08"
+    ]
+  },
+  {
+    "question": "Which customer (c_name) placed the order with order key 323?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which customer (c_name) placed the order with order key 323?\n\nExpected Answer:\n\n{\n\"answer\": [\"<answer_1>\", \"<answer_2>\", ...]\n}\n\nPlease note that the actual answer may vary depending on the specific data in the orders.csv file."
+    ]
+  },
+  {
+    "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+    "answer": [
+      "Canada"
+    ]
+  },
+  {
+    "question": "What is the name of the region where the nation FRANCE is located?",
+    "answer": [
+      "EUROPE"
+    ]
+  },
+  {
+    "question": "What is the name of the nation of the customer who placed order 352?",
+    "answer": [
+      "United States"
+    ]
+  },
+  {
+    "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+    "answer": [
+      "4"
+    ]
+  },
+  {
+    "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+    "answer": [
+      "31-571-345-4549"
+    ]
+  },
+  {
+    "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+    "answer": [
+      "Based on the provided context and question, I will provide an answer.\n\nThe question is asking for the available quantity of the part \"blush thistle blue yellow saddle\" supplied by Supplier#000000003. \n\nFrom the given data, we can find the row with the matching part name:\n\n```json\n{'source': 'tpch/csv_data_tpch/part.csv', 'row': 7020}\np_partkey: 7019\np_name: blush yellow blue aquamarine saddle\np_mfgr: Manufacturer#1\np_brand: Brand#14\np_type: STANDARD POLISHED BRASS\np_size: 18\np_container: LG PACK\np_retailprice: 926.01\n```\n\nSince there is only one row with the matching part name, we can conclude that the available quantity of this part is not specified in the given data.\n\nTherefore, the expected output would be:\n\n```json\n{\n    \"answer\": [\"Not Specified\"]\n}\n```"
+    ]
+  },
+  {
+    "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+    "answer": [
+      "Unknown"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\n**Question:** Which customers from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?\n\n**Answer:**\n\n{\n\"answer\": [\"Customer#000001990\", \"Customer#000002009\", \"Customer#000008270\", ...]\n}\n\nPlease note that I will provide the expected answer based on the given context and question."
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+    "answer": [
+      "Based on the provided context, I will answer your question.\n\nThe suppliers that have supplied parts for the order with order key 1 are:\n\n* Supplier#000000877\n* Supplier#000000216\n* Supplier#000000185\n* Supplier#000000181\n* Supplier#000000121\n* Supplier#000000229\n* Supplier#000000834\n* Supplier#000000495\n* Supplier#000000416\n* Supplier#000000108\n* Supplier#000000668\n* Supplier#000000749\n* Supplier#000000158\n* Supplier#000000557\n* Supplier#000000149\n* Supplier#000000267\n* Supplier#000000918\n* Supplier#000000875\n* Supplier#000000336\n* Supplier#000000385\n* Supplier#000000975\n\nSo, the answer is:\n\n```json\n{\n    \"answer\": [\"Supplier#000000877\", \"Supplier#000000216\", \"Supplier#000000185\", ...]\n}\n```\n\nPlease note that this is a JSON object with a single key-value pair, where the key is \"answer\" and the value is an array of supplier names."
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?\n\nExpected Answer:\n```json\n{\n    \"answer\": [\"2018\", \"12662\", \"14155\", ...] // list of customer IDs who meet the criteria\n}\n```\nNote: The actual answer will include all customers (c_name) who have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'."
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?\n\nExpected Answer:\n```json\n{\n    \"answer\": [\"3392\", \"1099\", \"737\", ...]\n}\n```\nNote that the actual answer will depend on the specific data in the orders.csv file, but based on the provided context, these are some examples of customers who may have placed orders with the specified criteria."
+    ]
+  },
+  {
+    "question": "Which parts (p_name) have a retail price lower than 902?",
+    "answer": [
+      "maroon forest lavender burlywood red",
+      "linen rose blue white honeydew",
+      "drab midnight orange pink mint",
+      "thistle maroon khaki green dodger",
+      "steel drab spring blue white",
+      "pale lace chiffon white blue",
+      "khaki turquoise violet maroon misty",
+      "turquoise yellow dim purple antique",
+      "mint antique aquamarine deep maroon",
+      "tan salmon white rosy beige",
+      "rosy khaki black burlywood floral"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 1?",
+    "answer": [
+      "ARGENTINA",
+      "CANADA",
+      "UNITED STATES",
+      "PERU"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 2?",
+    "answer": [
+      "INDONESIA",
+      "CHINA",
+      "JAPAN",
+      "VIETNAM"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 0?",
+    "answer": [
+      "ALGERIA",
+      "MOROCCO",
+      "ETHIOPIA",
+      "KENYA",
+      "MOZAMBIQUE"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 3?",
+    "answer": [
+      "RUSSIA",
+      "CANADA",
+      "FRANCE",
+      "GERMANY",
+      "ROMANIA"
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+    "answer": [
+      "Supplier#000000612",
+      "Supplier#000000565"
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+    "answer": [
+      "Supplier#000000678",
+      "Supplier#000000590",
+      "Supplier#000000773",
+      "Supplier#000000417"
+    ]
+  },
+  {
+    "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+    "answer": [
+      "Based on the provided context and question, I will provide an answer.\n\nQuestion: Which orders done by a customer with nationkey = 2 have a total price between 20500 and 20550?\n\nAnswer:\n```json\n{\n    \"answer\": [\"<answer_1>\", \"<answer_2>\", ...]\n}\n```\nAfter analyzing the provided context, I found that there are no orders done by a customer with nationkey = 2 that have a total price between 20500 and 20550. Therefore, my answer is an empty list.\n\n```json\n{\n    \"answer\": []\n}\n```"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+    "answer": []
+  },
+  {
+    "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+    "answer": [
+      "PROMO PLATED COPPER"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+    "answer": []
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+    "answer": [
+      "Customer#000011015",
+      "Customer#000012654"
+    ]
+  },
+  {
+    "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+    "answer": [
+      "14619",
+      "14411"
+    ]
+  },
+  {
+    "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+    "answer": [
+      "EUROPE"
+    ]
+  },
+  {
+    "question": "What is the name (r_name) of the region with region key 1?",
+    "answer": [
+      "The name of the region with region key 1 is AMERICA."
+    ]
+  },
+  {
+    "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+    "answer": [
+      "14-685-851-5424"
+    ]
+  },
+  {
+    "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+    "answer": [
+      "905.0"
+    ]
+  },
+  {
+    "question": "Which customer (c_name) placed the order with order key 130?",
+    "answer": [
+      "4436"
+    ]
+  },
+  {
+    "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+    "answer": [
+      "Giulia Rossi",
+      "Marco Bianchi"
+    ]
+  },
+  {
+    "question": "What is the nation name of the customer Customer#000000004?",
+    "answer": [
+      "United States"
+    ]
+  },
+  {
+    "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+    "answer": [
+      "Giulia Rossi",
+      "Marco Bianchi"
+    ]
+  },
+  {
+    "question": "Which regions (r_regionKey) have a region key greater than 2?",
+    "answer": [
+      "MIDDLE EAST",
+      "EUROPE"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\n**Question:** Which customers are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?\n\n**Expected Answer:**\n```json\n{\n    \"answer\": [\"Customer#000001980\", \"Customer#000002020\", ...] // list of customer names with account balances between 0 and 100 in the AUTOMOBILE market segment\n}\n```\nPlease note that this is a simulated answer based on the provided context. The actual output may vary depending on the specific data and conditions."
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+    "answer": [
+      "Supplier#000000877",
+      "Supplier#000000545"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+    "answer": [
+      "Customer#000002607"
+    ]
+  },
+  {
+    "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+    "answer": [
+      "1996-07-27"
+    ]
+  },
+  {
+    "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+    "answer": [
+      "1998-03-16"
+    ]
+  },
+  {
+    "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: What is the nation of the supplier 'Supplier#000000007', based ONLY on the given context: {'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 876}\n\nAnswer:\n{\n\"answer\": [\"23\"]\n}"
+    ]
+  },
+  {
+    "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which region (r_name) does the supplier 'Supplier#000000005' belong to?\n\nAnswer:\n```json\n{\n    \"answer\": [\"<answer_1>\"]  # Please fill in the correct answer\n}\n```\nNote that there is no specific region mentioned for Supplier#000000005, so I will leave the answer blank."
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) provides the part with partkey 200?",
+    "answer": [
+      "Supplier#000000273",
+      "Supplier#000000159"
+    ]
+  },
+  {
+    "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+    "answer": [
+      1648
+    ]
+  },
+  {
+    "question": "What is the total price of the order with orderkey 100?",
+    "answer": [
+      "112149.59"
+    ]
+  },
+  {
+    "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+    "answer": [
+      "Not found"
+    ]
+  },
+  {
+    "question": "What is the order date of the order with order key 323?",
+    "answer": [
+      "1995-06-08"
+    ]
+  },
+  {
+    "question": "Which customer (c_name) placed the order with order key 323?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which customer (c_name) placed the order with order key 323?\n\nExpected Answer:\n\n{\n\"answer\": [\"<answer_1>\", \"<answer_2>\", ...]\n}\n\nPlease note that the actual answer may vary depending on the specific data in your CSV files."
+    ]
+  },
+  {
+    "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+    "answer": [
+      "United States"
+    ]
+  },
+  {
+    "question": "What is the name of the region where the nation FRANCE is located?",
+    "answer": [
+      "Europe"
+    ]
+  },
+  {
+    "question": "What is the name of the nation of the customer who placed order 352?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: What is the name of the nation of the customer who placed order 352?\n\nExpected Answer:\n\n{\n\"answer\": [\"<answer_1>\"] // Please fill in the correct answer\n}\n\nTo find the answer, we need to look for the row with orderkey 352 in the orders.csv file. Once found, we can check the custkey column and then search for that customer's nationkey in the customer.csv file.\n\nPlease note that I will not provide the actual answer as it requires manual processing of the provided data."
+    ]
+  },
+  {
+    "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+    "answer": [
+      "4"
+    ]
+  },
+  {
+    "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+    "answer": [
+      "31-571-345-4549"
+    ]
+  },
+  {
+    "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+    "answer": [
+      "Not Found"
+    ]
+  },
+  {
+    "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+    "answer": [
+      "$901.00"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\n**Question:** Which customers from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?\n\n**Expected Answer:**\n```json\n{\n    \"answer\": [\"Customer#000001990\", \"Customer#000002009\", ...]\n}\n```\nNote that I will only provide the expected answer and not the actual data from the CSV files."
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which suppliers have supplied parts for the order with order key 1?\n\nExpected Answer:\n\n{\n\"answer\": [\"Supplier#000000877\", \"Supplier#000000216\", ...]\n}\n\nNote that the actual list of suppliers may vary depending on the specific data provided in the context."
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?\n\nExpected Answer:\n```json\n{\n    \"answer\": [\"2018\", \"12662\", \"14155\", ...]\n}\n```\nNote that this is a JSON object with a single key-value pair, where the key is \"answer\" and the value is a list of customer IDs (c_name) who have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'."
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?\n\nExpected Answer:\n```json\n{\n    \"answer\": [\"3392\", \"1099\", ...]\n}\n```\nNote that this is a JSON object with a single key-value pair, where the key is \"answer\" and the value is a list of customer IDs (c_name) that meet the specified criteria."
+    ]
+  },
+  {
+    "question": "Which parts (p_name) have a retail price lower than 902?",
+    "answer": [
+      "maroon forest lavender burlywood red",
+      "linen rose blue white honeydew",
+      "black mint olive drab medium",
+      "grey violet purple mint black",
+      "thistle aquamarine lawn yellow burlywood",
+      "red medium orange blue dark"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 1?",
+    "answer": [
+      "ARGENTINA",
+      "CANADA",
+      "UNITED STATES",
+      "PERU"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 2?",
+    "answer": [
+      "INDONESIA",
+      "CHINA",
+      "JAPAN",
+      "VIETNAM"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 0?",
+    "answer": [
+      "ALGERIA",
+      "MOROCCO",
+      "ETHIOPIA",
+      "KENYA",
+      "MOZAMBIQUE"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 3?",
+    "answer": [
+      "RUSSIA",
+      "CANADA",
+      "FRANCE",
+      "UNITED KINGDOM",
+      "GERMANY",
+      "ROMANIA"
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+    "answer": [
+      "Supplier#000000678"
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+    "answer": [
+      "Supplier#000000678",
+      "Supplier#000000590",
+      "Supplier#000000772",
+      "Supplier#000000417",
+      "Supplier#000000156"
+    ]
+  },
+  {
+    "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which orders done by a customer with nationkey = 2 have a total price between 20500 and 20550?\n\nExpected Answer:\n```json\n{\n    \"answer\": [\"<answer_1>\", \"<answer_2>\", ...]\n}\n```\nAfter analyzing the provided context, I found that there are no orders done by a customer with nationkey = 2 that have a total price between 20500 and 20550. Therefore, the expected answer is an empty list.\n\nHere's the code to solve this problem:\n```python\nanswer = []\nfor row in data:\n    if row['o_custkey'] == 2 and 20500 <= row['o_totalprice'] <= 20550:\n        answer.append(row['o_orderkey'])\nprint({\"answer\": answer})\n```\nNote that `data` is the list of dictionaries representing the orders, and `row` is a dictionary representing an order. The code iterates over each order, checks if the customer nationkey is 2 and the total price is between 20500 and 20550, and appends the order key to the answer list if the conditions are met. Finally, it prints the answer as a JSON object."
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+    "answer": [
+      "1994",
+      "1990",
+      "1992",
+      "1993",
+      "1994"
+    ]
+  },
+  {
+    "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+    "answer": [
+      "PROMO PLATED COPPER"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+    "answer": [
+      "1994",
+      "1303",
+      "8657",
+      "14476",
+      "11104",
+      "10687",
+      "4339",
+      "191"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+    "answer": [
+      "Customer#000011015",
+      "Customer#000012654"
+    ]
+  },
+  {
+    "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+    "answer": [
+      "14619",
+      "14411"
+    ]
+  },
+  {
+    "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+    "answer": [
+      "EUROPE"
+    ]
+  },
+  {
+    "question": "What is the name (r_name) of the region with region key 1?",
+    "answer": [
+      "The name of the region with region key 1 is AMERICA."
+    ]
+  },
+  {
+    "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+    "answer": [
+      "877-685-851-5424"
+    ]
+  },
+  {
+    "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+    "answer": [
+      "905.00"
+    ]
+  },
+  {
+    "question": "Which customer (c_name) placed the order with order key 130?",
+    "answer": [
+      "4436"
+    ]
+  },
+  {
+    "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+    "answer": [
+      "Based on the provided context and question, I will provide an answer.\n\nThe account balance (c_acctbal) of the customer with custkey 456 is:\n\n7696.26"
+    ]
+  },
+  {
+    "question": "What is the nation name of the customer Customer#000000004?",
+    "answer": [
+      "United States"
+    ]
+  },
+  {
+    "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+    "answer": [
+      "Giulia Rossi",
+      "Marco Bianchi"
+    ]
+  },
+  {
+    "question": "Which regions (r_regionKey) have a region key greater than 2?",
+    "answer": [
+      "3",
+      "4"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\n**Question:** Which customers are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?\n\n**Answer:**\n\n{\n\"answer\": [\"Customer#000001980\", \"Customer#000002020\", ...]\n}\n\nPlease note that this is a sample output, as there might be multiple customers meeting the criteria."
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+    "answer": [
+      "Supplier#000000877",
+      "Supplier#000000545"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+    "answer": [
+      "Customer#000002607"
+    ]
+  },
+  {
+    "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+    "answer": [
+      "1996-07-27"
+    ]
+  },
+  {
+    "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+    "answer": [
+      "1998-03-16"
+    ]
+  },
+  {
+    "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+    "answer": [
+      "23"
+    ]
+  },
+  {
+    "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+    "answer": []
+  },
+  {
+    "question": "Which suppliers (s_name) provides the part with partkey 200?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which suppliers (s_name) provides the part with partkey 200?\n\nAnswer:\n\n{\n\"answer\": [\"Supplier#000000975\", \"Supplier#000000274\", ...]\n}\n\nNote that there are multiple suppliers providing parts with partkey 200."
+    ]
+  },
+  {
+    "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+    "answer": [
+      1648
+    ]
+  },
+  {
+    "question": "What is the total price of the order with orderkey 100?",
+    "answer": [
+      112149.59
+    ]
+  },
+  {
+    "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+    "answer": [
+      "No such supplier found"
+    ]
+  },
+  {
+    "question": "What is the order date of the order with order key 323?",
+    "answer": [
+      "1995-06-08"
+    ]
+  },
+  {
+    "question": "Which customer (c_name) placed the order with order key 323?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which customer placed the order with order key 323?\n\nExpected Answer:\n\n{\n\"answer\": [\"<answer_1>\"] (since there is only one customer who placed an order with order key 323)\n}\n\nPlease note that the actual answer may vary depending on the specific data provided in the context."
+    ]
+  },
+  {
+    "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+    "answer": [
+      "Unknown"
+    ]
+  },
+  {
+    "question": "What is the name of the region where the nation FRANCE is located?",
+    "answer": [
+      "EUROPE"
+    ]
+  },
+  {
+    "question": "What is the name of the nation of the customer who placed order 352?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nThe customer who placed order 352 is:\n\n**Answer:** None (since there is no order with key 352 in the orders.csv file)\n\nPlease note that this answer is based solely on the given context and does not require any additional information or calculations."
+    ]
+  },
+  {
+    "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+    "answer": [
+      "United States"
+    ]
+  },
+  {
+    "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+    "answer": [
+      "31-571-345-4549"
+    ]
+  },
+  {
+    "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+    "answer": [
+      "Not Available"
+    ]
+  },
+  {
+    "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+    "answer": [
+      "901.0"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\n**Question:** Which customers from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?\n\n**Expected Answer:**\n```json\n{\n    \"answer\": [\"Customer#000001990\", \"Customer#000002009\", ...]\n}\n```\nNote that I will only provide the expected answer based on the given context and question."
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+    "answer": [
+      "Supplier#000000877",
+      "Supplier#000000216",
+      "Supplier#000000185",
+      "Supplier#000000181",
+      "Supplier#000000121",
+      "Supplier#000000229",
+      "Supplier#000000834",
+      "Supplier#000000495",
+      "Supplier#000000416",
+      "Supplier#000000108",
+      "Supplier#000000668",
+      "Supplier#000000749",
+      "Supplier#000000158",
+      "Supplier#000000557",
+      "Supplier#000000149",
+      "Supplier#000000273",
+      "Supplier#000000875",
+      "Supplier#000000336",
+      "Supplier#000000385",
+      "Supplier#000000975",
+      "Supplier#00000015",
+      "Supplier#000000747",
+      "Supplier#000000284",
+      "Supplier#000000352",
+      "Supplier#000000670"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?\n\nExpected Answer:\n```json\n{\n    \"answer\": [\"2018\", \"12662\", \"14155\", ...] // list of customer IDs who meet the criteria\n}\n```\nNote: The actual answer will depend on the specific data in the orders.csv file."
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+    "answer": [
+      "Based on the provided context and question, I will provide the expected answer.\n\nQuestion: Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?\n\nExpected Answer:\n```json\n{\n    \"answer\": [\"3392\", \"1099\", \"737\", ...]\n}\n```\nNote that the actual answer will depend on the specific data in the orders.csv file, but based on the provided context, these are the customers who have placed orders with a priority of '4-NOT SPECIFIED' on 1997-12-31."
+    ]
+  },
+  {
+    "question": "Which parts (p_name) have a retail price lower than 902?",
+    "answer": [
+      "maroon forest lavender burlywood red",
+      "linen rose blue white honeydew",
+      "grey violet purple mint black",
+      "thistle aquamarine lawn yellow burlywood",
+      "red medium orange blue dark"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 1?",
+    "answer": [
+      "ARGENTINA",
+      "BRAZIL",
+      "CANADA",
+      "UNITED KINGDOM",
+      "UNITED STATES"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 2?",
+    "answer": [
+      "INDIA",
+      "CHINA",
+      "JAPAN",
+      "VIETNAM"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 0?",
+    "answer": [
+      "ALGERIA",
+      "MOROCCO",
+      "ETHIOPIA",
+      "KENYA",
+      "MOZAMBIQUE"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 3?",
+    "answer": [
+      "CANADA",
+      "FRANCE",
+      "UNITED KINGDOM",
+      "ROMANIA"
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+    "answer": [
+      "Supplier#000000008",
+      "Supplier#000000678",
+      "Supplier#000000612"
+    ]
+  }
+]

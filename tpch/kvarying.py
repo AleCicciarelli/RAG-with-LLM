@@ -10,6 +10,7 @@ from typing_extensions import List, TypedDict, Set
 from langchain_core.documents import Document
 from langchain_community.retrievers import BM25Retriever
 from langchain import hub
+from transformers import AutoTokenizer
 import json
 import csv
 import re
@@ -28,8 +29,10 @@ os.environ["LANGSMITH_API_KEY"] = "lsv2_pt_87133982193d4e3b8110cb9e3253eb17_7831
 # MISTRAL by Groq
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
-#llm = ChatOllama(model="llama3.1-8b-ft", temperature=0)
-llm = ChatOllama(model="deepseek-r1:70b", temperature=0)
+llm = ChatOllama(model="llama3:8b", temperature=0, num_ctx=8192)
+
+#llm = ChatOllama(model="llama3-8b-ft", temperature=0)
+#llm = ChatOllama(model="deepseek-r1:70b", temperature=0)
 
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
@@ -39,13 +42,22 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 #    model_kwargs={"device": "cuda"},  
 #    encode_kwargs={"normalize_embeddings": True}
 #)
+
+
+
+# Tokenizer per LLaMA 3
+tokenizer = AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B-Instruct")
+truncation_log = []
+MAX_TOKENS = 8192
+def count_tokens(text: str) -> int:
+    return len(tokenizer.encode(text))
+
 """ Indexing part """
 
-csv_folder = "csv_data"
-faiss_index_folder = "faiss_index"
-output_filename = f"full_context/why/deepseek70b/FC_rounds_2.json"
-# Ensure the output directory exists
-os.makedirs(os.path.dirname(output_filename), exist_ok=True)
+csv_folder = "tpch/csv_data_tpch"
+faiss_index_folder = "tpch/faiss_index"
+output_filename = f"tpch/kvarying/llama8b"
+#os.makedirs(os.path.dirname(output_filename), exist_ok=True)
 
 # Verify if the FAISS files already exist
 if os.path.exists(faiss_index_folder):
@@ -78,41 +90,20 @@ else:
 
 """ Retrieve and Generate part """
 # Define prompt for question-answering
-
-''' old prompt'''
-class AnswerItem(BaseModel):
-    answer: List[str]
-    why: List[str] 
-
-# Define state for application
-class State(TypedDict):
-    question: str
-    context: List[Document]
-    answer: AnswerItem
 def definePrompt():
+   
     prompt = """
         Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
-        For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
-        Format of Witness Sets (as strings):  
-        - If there is ONE relevant tuple set: "{{<table_name>_<row>}}"  
-        - If there are MULTIPLE: "{{<table_name>_<row>},{<table_name>_<row>},...}}"  
         IMPORTANT:
-        Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.
-        If your output is not a valid JSON block in the format described, it will be discarded.
-        If the answer is not present in the context, return an empty array.
-        
-        
-        INVALID OUTPUT EXAMPLE (will be discarded):
-        The answer is: {"answer": [...], "why": [...]}
+
+        - Do NOT include introductory phrases or explanations.
         VALID OUTPUT EXAMPLE (will be accepted):
         ```json
         {
-            "answer": ["<answer_1>", "<answer_2>", ...],
-            "why": ["{{<table_name>_<row>},{<table_name>_<row>}}", "{{<table_name>_<row>}}", ...]
+            "answer": ["<answer_1>", "<answer_2>", ...]
         }
         ```
-            
-        EXAMPLE 1:
+         EXAMPLE 1:
         CONTEXT:
             - source: courses.csv, row: 0  
             (course_id:101, course_name:Machine Learning, ...)  
@@ -135,11 +126,8 @@ def definePrompt():
         EXPECTED ANSWER:
         ```json
             {
-            "answer": ["Giulia Rossi","Marco Bianchi"],
-            "why": [
-            "{{courses_0,enrollments_0,students_0},{courses_3,enrollments_3,students_0}}",
-            "{{courses_0,enrollments_9,students_1}}"
-            ]
+            "answer": ["Giulia Rossi","Marco Bianchi"]
+            
             }
         ```
         
@@ -155,30 +143,101 @@ def definePrompt():
         EXPECTED OUTPUT:
         ```json
         {
-            "answer": ["Engineering"],
-            "why": [
-            "{{departments_1}}"
-            ]
+            "answer": ["Engineering"]
+            
         }
         ```
     """
-    return prompt
 
+
+    '''
+    prompt = """
+   Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
+        For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
+        Format of Witness Sets (as strings):  
+        - If there is ONE relevant tuple set: "{{<table_name>_<row>}}"  
+        - If there are MULTIPLE: "{{<table_name>_<row>},{<table_name>_<row>},...}}"  
+        IMPORTANT:
+        Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.
+        If your output is not a valid JSON block in the format described, it will be discarded.
+        If the answer is not present in the context, return an empty array.
+        
+        
+        INVALID OUTPUT EXAMPLE (will be discarded):
+        The answer is: {"answer": [...]}
+        VALID OUTPUT EXAMPLE (will be accepted):
+        ```json
+        {
+            "answer": ["<answer_1>", "<answer_2>", ...],
+        }
+        ```
+         EXAMPLE 1:
+        CONTEXT:
+        - source: customer.csv , row: 14322
+        (<col_a>:<val_a>,..., c_nationkey : 2, ...)
+        - source: orders.csv, row: 137
+        (o_orderkey : 546, ..., o_totalprice : 20531.43, ...)
+        - source: customer.csv, row: 101
+        (<col_a>:<val_c>, ...,<c_nationkey : 2, ...)
+        - source: orders.csv, row: 78528
+        (o_orderkey : 314052, ..., o_totalprice : 20548.82, ...)
+
+        QUESTION:
+            "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?"
+
+        EXPECTED OUTPUT:
+        ```json
+        {
+            "answer": ["546", "314052"],
+            "why": [
+                "{{customer_14322,orders_137}}",
+                "{{customer_101,orders_78528}}"
+            ]
+            
+        }
+        ```
+        EXAMPLE 2:    
+        CONTEXT:
+            - source: suppliers.csv, row: 4
+            (..s_name: "Supplier#000000005",...,s_phone: "21-151-690-3663")
+           
+
+        QUESTION:  
+            "What is the phone number of the supplier named 'Supplier#000000005'?"
+
+        EXPECTED OUTPUT:
+        ```json
+        {
+            "answer": ["21-151-690-3663"],
+            "why": [
+                "{{supplier_4}}"
+            ]
+        }
+        ```
+
+"""
+ '''
+    return prompt
 # Step 1: Define Explanation Class: composed by file and row
 
+class AnswerItem(BaseModel):
+    answer: str
+
+# Define state for application
+class State(TypedDict):
+    question: str
+    context: List[Document]
+    answer: List[AnswerItem]
+    k: int
+    question_index : int
 parser = JsonOutputParser(pydantic_schema=AnswerItem)    
-schema_path = "schemaTOY.txt"
-# Load the schema from the file
-with open(schema_path, "r") as f:
-    schema = f.read().strip()
-# Print the schema to verify it has been loaded correctly
-print(f"Schema loaded from {schema_path}:\n{schema}\n")
+
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
-'''
+
 def retrieve(state: State):
     print(f"Retrieving for question: {state['question']}")
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 10)
+    retrieved_docs = vector_store.similarity_search(state["question"], k = state['k'])
     return {"context": retrieved_docs}
 '''
 def get_rows_from_ground_truth(ground_f2: str, csv_folder: str) -> List[Document]:
@@ -225,10 +284,36 @@ def get_rows_from_ground_truth(ground_f2: str, csv_folder: str) -> List[Document
                 print(f"⚠️ Errore nel parsing di '{entry}': {e}")
 
     return documents
+'''
+# Generate the answer invoking the LLM with the context joined with the question
+def generate(state: State):
 
-def tryParseOutput(output_text: str):
+   
+    print("\n[DEBUG] CONTEXT USED:")
+    for doc in state["context"]:
+        print(f"- Source: {doc.metadata} \n  Content: {doc.page_content[:300]}...\n")
+   
+    docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
+    raw_prompt = definePrompt()
+    final_prompt = raw_prompt.replace("QUESTION_HERE", state["question"]).replace("CONTEXT_HERE", docs_content)
+    num_tokens = count_tokens(final_prompt)
+    is_truncated = num_tokens > MAX_TOKENS
+    print(f"[DEBUG] Prompt token count: {num_tokens} {'(TRUNCATED)' if is_truncated else ''}")
+
+    # Salva info per CSV
+    truncation_log.append({
+        "k": state["k"],
+        "question_index": state["question_index"],
+        "num_tokens": num_tokens,
+        "truncated": is_truncated
+    })
+    response = llm.invoke(final_prompt)
+    output_text = response.content.strip()
+    print(f"\n[DEBUG] LLM RESPONSE:\n{output_text}\n")
+
+
     try:
-        # Esegui il modello LLM con la catena
+    # Esegui il modello LLM con la catena
         
         # Regex: estrae il primo oggetto JSON, tra ```json ... ``` o solo {}
         json_match = re.search(r"```json\s*([\s\S]*?)\s*```", output_text)
@@ -238,145 +323,86 @@ def tryParseOutput(output_text: str):
             # Fallback: qualsiasi blocco tra { }
             json_match = re.search(r"\{[\s\S]*?\}", output_text)
             if not json_match:
-                json_match = re.search(r"\{\s*\"answer\"\s*:\s*\[.*?\],\s*\"why\"\s*:\s*\[.*?\]\s*\}", output_text, re.DOTALL)
-            if json_match:
-                json_str = json_match.group(0).strip()
-            else:
-                return None
+                raise ValueError("No valid JSON found in LLM response.")
+            json_str = json_match.group(0).strip()
 
         # Parse JSON
         parsed_output = json.loads(json_str)
 
-         # Validazione: devono esserci entrambi i campi richiesti
-        if not isinstance(parsed_output, dict):
-            return None
+        if not isinstance(parsed_output, dict) or "answer" not in parsed_output:
+            raise ValueError("Invalid JSON format. Missing 'answer'.")
 
-        if "answer" not in parsed_output:
-            return None
-        if "why" not in parsed_output:
-            return None
-        # Validazione finale: tipo corretto dei campi
-        if not isinstance(parsed_output["answer"], list):
-            return None
-        if not isinstance(parsed_output["why"], list):
-            return None
-        
-        return parsed_output
-    except Exception as e:
-        print(f"Error parsing output: {e}")
-        return None
-# Generate the answer invoking the LLM with the context joined with the question
-def generate(state: State):
-  
-    print("\n[DEBUG] CONTEXT USED:")
-    for doc in state["context"]:
-        print(f"- Source: {doc.metadata} \n  Content: {doc.page_content[:300]}...\n")
-   
-    docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
-    raw_prompt = definePrompt()
-    final_prompt = raw_prompt.replace("QUESTION_HERE", state["question"]).replace("CONTEXT_HERE", docs_content).replace("SCHEMA_HERE", schema)
-    response = llm.invoke(final_prompt)
-    output_text = response.content.strip()
-    print(f"\n[DEBUG] LLM RESPONSE:\n{output_text}\n")
-    
-    
-    # Prova a parsare l'output JSON
-    try:
-        parsed_output = parser.parse(output_text)
-    except Exception as e:
-        print(f"Error parsing output: {e}")
-        parsed_output = None
-    return {
-        "answer": parsed_output if parsed_output else []
+        return {
+            "answer": parsed_output["answer"]
         }
-    '''
-    if parsed_output is None:
-        response = llm.invoke(correction_prompt = f"""
-                The previous output is not a valid JSON object. Please extract and return only a valid JSON with the following structure:
-                 ```json
-                    {{
-                        "answer": ["<answer_1>", "<answer_2>", ...],
-                        "why": ["{{{{<table_name>_<row>}},{{<table_name>_<row>}}}}", "{{{{<table_name>_<row>}}}}", ...]
-                    }}
-                    ```
 
-                Do not include any text outside the JSON block.
-                Here is the previous output:
+    except (json.JSONDecodeError, ValueError) as e:
+        print(f"⚠️ Errore nel parsing del JSON: {e}")
+        return {
+            "answer": [response.content.strip()]
+        }
 
-                {output_text}
-                """
-            )
-        output_text = response.content.strip()
-        print(f"\n[DEBUG] LLM RESPONSE:\n{output_text}\n")
-    
-    
-        # Prova a parsare l'output JSON
-        parsed_output = tryParseOutput(output_text)
-        if parsed_output:
-            return parsed_output
-        else:
-            print("Error: Failed to parse corrected output.")
-            return {
-                "answer": [],
-                "why": []
-            }
-'''
 
 # Leggi le domande dal file JSON
-with open("questions.json", "r") as f:
+with open("tpch/questions.json", "r") as f:
     data = json.load(f)
     questions = list(data.keys())
 
 # Build the graph structure once
-#graph_builder = StateGraph(State).add_sequence([retrieve, generate])
-#graph_builder.add_edge(START, "retrieve")
-#graph = graph_builder.compile()
+graph_builder = StateGraph(State).add_sequence([retrieve, generate])
+graph_builder.add_edge(START, "retrieve")
+graph = graph_builder.compile()
 
 all_results = []
-with open("ground_truth2.json", "r", encoding="utf-8") as f:
-    ground_truth = json.load(f)   
-for i, question in enumerate(questions):
-    print(f"Processing question n. {i+1}")
-    gt = ground_truth[i]
-    gt_source_info = gt["why"]
-    
-    # Step 2: Costruisci contesto perfetto a partire dalle righe vere
-    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder=csv_folder)
-    
-    print(f" Processing question n. {i+1}")
-    #full_result = graph.invoke({"question": question})
-    
+#with open("ground_truth2.json", "r", encoding="utf-8") as f:
+#    ground_truth = json.load(f)  
+for k in range(10, 60):
     state = {
-        "question": question,
-        "context": context_docs
+        "k" : k
     }
+    print(f"K = {k}")
+    for i, question in enumerate(questions):
+        print(f"Processing question n. {i+1}")
+        
+        
+        #gt = ground_truth[i]
+        #gt_source_info = gt["why"]
+        
+        # Step 2: Costruisci contesto perfetto a partire dalle righe vere
+        #context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder=csv_folder)
+        
+        print(f" Processing question n. {i+1}")
+        full_result = graph.invoke({"question": question, "k": k, "question_index": i})
+        
+        #state = {
+        #    "question": question,
+        #    "context": context_docs
+        #}
+        
+        #full_result = generate(state)
     
-    full_result = generate(state)
- 
-    result = {
-        "question": question,
-        "answer": full_result.get("answer", []),
-    }
-    all_results.append(result)
-example_output_txt = "full_context/example_readable_output.txt"
-with open(example_output_txt, "w", encoding="utf-8") as f:
-    for idx, result in enumerate(all_results, 1):
-        f.write(f"--- Question {idx} ---\n")
-        f.write(result["question"] + "\n\n")
-        f.write("Answer:\n")
-        if isinstance(result["answer"], list):
-            f.write(", ".join(result["answer"]))
-        else:
-            f.write(str(result["answer"]))
-        f.write("\n\n")
-print(f"Readable example saved to {example_output_txt}")
+        result = {
+            "question": question,
+            "answer": full_result.get("answer", []),
+        }
+        all_results.append(result)
+    output_filename_complete = f'{output_filename}/outputs_k_{k}.json'
+    os.makedirs(os.path.dirname(output_filename_complete), exist_ok=True)
 
-# Save the results for the current value of k to a JSON file for later analysis
-with open(output_filename, "w") as output_file:
-    json.dump(all_results, output_file, indent=2, ensure_ascii=False)
-    #for i,result in enumerate(all_results,1):
-    #    output_file.write(f"----Results {i}---- \n")
-    #    output_file.write(f"Question:{result['question']} \n")
-    #    output_file.write(f"Answer:{result['answer']} \n")
-    #    output_file.write("\n\n")			
-print(f"Results saved to {output_filename}")
+    # Save the results for the current value of k to a JSON file for later analysis
+    with open(output_filename_complete, "w") as output_file:
+        json.dump(all_results, output_file, indent=2, ensure_ascii=False)
+        #for i,result in enumerate(all_results,1):
+        #    output_file.write(f"----Results {i}---- \n")
+        #    output_file.write(f"Question:{result['question']} \n")
+        #    output_file.write(f"Answer:{result['answer']} \n")
+        #    output_file.write("\n\n")			
+    print(f"Results saved to {output_filename_complete}")
+
+with open("tpch/kvarying/truncation_info.csv", "w", newline="") as csvfile:
+    fieldnames = ["k", "question_index", "num_tokens", "truncated"]
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerows(truncation_log)
+
+print("📝 Truncation info saved to kvarying/truncation_info.csv")

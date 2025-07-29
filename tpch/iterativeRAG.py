@@ -30,16 +30,25 @@ os.environ["LANGSMITH_API_KEY"] = "lsv2_pt_87133982193d4e3b8110cb9e3253eb17_7831
 # MISTRAL by Groq
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
-llm = ChatOllama(model="llama3:70b", temperature=0)
+#llm = ChatOllama(model="llama3.1-8b-ft", temperature=0)
+llm = ChatOllama(model="llama3:70b", temperature=0, num_ctx=8192)
+
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
 
-csv_folder = "csv_data"
-faiss_index_folder = "faiss_index"
-output_filename = f"iterativeRAG/outputs_llama70b/why/iterative_kdin_5rounds.json"
-debug_log_filename = f"iterativeRag/debug_log_llama70b_iterative.txt"
-os.makedirs(os.path.dirname(debug_log_filename), exist_ok=True)
+csv_folder = "tpch/csv_data_tpch"
+faiss_index_folder = "tpch/faiss_index"
+output_filename = f"tpch/iterativeRAG/outputs_llama70b/why/iterative_kdin_5rounds_3.json"
+
+"""Uploading the database schema for CoT"""
+#schema_path = "schemaTOY.txt"
+# Load the schema from the file
+#with open(schema_path, "r") as f:
+#    schema = f.read().strip()
+# Print the schema to verify it has been loaded correctly
+#print(f"Schema loaded from {schema_path}:\n{schema}\n")
+#os.makedirs(os.path.dirname(debug_log_filename), exist_ok=True)
 # Save the results for the current value of k to a JSON file for later analysis
 os.makedirs(os.path.dirname(output_filename), exist_ok=True)
 
@@ -79,12 +88,15 @@ else:
 
 def definePrompt():
     '''
+  
     prompt = """
-        Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
+        Your task is to provide the correct answer(s) and explanation to this question: QUESTION_HERE, based ONLY on the given context
+        : CONTEXT_HERE.
+        This is the schema of the tabular data is this one: SCHEMA_HERE.
         For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
         Format of Witness Sets (as strings):  
         - If there is ONE relevant tuple set: "{{<table_name>_<row>}}"  
-        - If there are MULTIPLE: "{{<table_name>_<row>},{<table_name>_<row>},...}}"  
+        - If there are MULTIPLE: "{{<table_name>_<row>},{<table_name>_<row>}},..."  
         IMPORTANT:
         Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.
         If your output is not a valid JSON block in the format described, it will be discarded.
@@ -99,8 +111,7 @@ def definePrompt():
             "answer": ["<answer_1>", "<answer_2>", ...],
             "why": ["{{<table_name>_<row>},{<table_name>_<row>}}", "{{<table_name>_<row>}}", ...]
         }
-        ```
-            
+        ```      
          EXAMPLE 1:
         CONTEXT:
         - source: customer.csv , row: 14322
@@ -145,26 +156,15 @@ def definePrompt():
         }
         ```
     """
-    '''
     prompt = """
    Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
-        For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
-        Format of Witness Sets (as strings):  
-        - If there is ONE relevant tuple set: "{{<table_name>_<row>}}"  
-        - If there are MULTIPLE: "{{<table_name>_<row>},{<table_name>_<row>},...}}"  
         IMPORTANT:
-        Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.
-        If your output is not a valid JSON block in the format described, it will be discarded.
-        If the answer is not present in the context, return an empty array.
-        
-        
-        INVALID OUTPUT EXAMPLE (will be discarded):
-        The answer is: {"answer": [...], "why": [...]}
+
+        - Do NOT include introductory phrases or explanations.
         VALID OUTPUT EXAMPLE (will be accepted):
         ```json
         {
-            "answer": ["<answer_1>", "<answer_2>", ...],
-            "why": ["{{<table_name>_<row>},{<table_name>_<row>}}", "{{<table_name>_<row>}}", ...]
+            "answer": ["<answer_1>", "<answer_2>", ...]
         }
         ```
         EXAMPLE 1:
@@ -190,11 +190,7 @@ def definePrompt():
         EXPECTED ANSWER:
         ```json
             {
-            "answer": ["Giulia Rossi","Marco Bianchi"],
-            "why": [
-            "{{courses_0,enrollments_0,students_0},{courses_3,enrollments_3,students_0}}",
-            "{{courses_0,enrollments_9,students_1}}"
-            ]
+            "answer": ["Giulia Rossi","Marco Bianchi"]
             }
         ```
         
@@ -210,42 +206,107 @@ def definePrompt():
         EXPECTED OUTPUT:
         ```json
         {
-            "answer": ["Engineering"],
-            "why": [
-            "{{departments_1}}"
-            ]
+            "answer": ["Engineering"]
         }
         ```
+    """
+        '''
 
-"""
+    prompt= """   Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
+        For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
+        Format of Witness Sets (as strings):  
+        - If there is ONE relevant tuple set: "{{<table_name>_<row>}}"  
+        - If there are MULTIPLE: "{{<table_name>_<row>},{<table_name>_<row>}},..."    
+        IMPORTANT:
+        Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.
+        If your output is not a valid JSON block in the format described, it will be discarded.
+        If the answer is not present in the context, return an empty array.
+        
+        
+        INVALID OUTPUT EXAMPLE (will be discarded):
+        The answer is: {"answer": [...]}
+        VALID OUTPUT EXAMPLE (will be accepted):
+        ```json
+        {
+            "answer": ["<answer_1>", "<answer_2>", ...],
+        }
+        ```
+         EXAMPLE 1:
+        CONTEXT:
+        - source: customer.csv , row: 14322
+        (<col_a>:<val_a>,..., c_nationkey : 2, ...)
+        - source: orders.csv, row: 137
+        (o_orderkey : 546, ..., o_totalprice : 20531.43, ...)
+        - source: customer.csv, row: 101
+        (<col_a>:<val_c>, ...,<c_nationkey : 2, ...)
+        - source: orders.csv, row: 78528
+        (o_orderkey : 314052, ..., o_totalprice : 20548.82, ...)
 
+        QUESTION:
+            "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?"
+
+        EXPECTED OUTPUT:
+        ```json
+        {
+            "answer": ["546", "314052"],
+            "why": [
+                "{{customer_14322,orders_137}}",
+                "{{customer_101,orders_78528}}"
+            ]
+            
+        }
+        ```
+        EXAMPLE 2:    
+        CONTEXT:
+            - source: suppliers.csv, row: 4
+            (..s_name: "Supplier#000000005",...,s_phone: "21-151-690-3663")
+           
+
+        QUESTION:  
+            "What is the phone number of the supplier named 'Supplier#000000005'?"
+
+        EXPECTED OUTPUT:
+        ```json
+        {
+            "answer": ["21-151-690-3663"],
+            "why": [
+                "{{supplier_4}}"
+            ]
+        }
+        """
     return prompt
-
-def get_k_to_add(previous_answer: str,) -> int:
-
+def get_k_to_add(previous_answer) -> int:
     seen_entries: Set[str] = set()
     k = 0
+
     if isinstance(previous_answer, str):
-        
         try:
             previous_answer = json.loads(previous_answer)
-            
         except json.JSONDecodeError as e:
             print("Errore nel parsing JSON di previous_answer:", e)
+            print("Contenuto:", previous_answer)
             return 0
-    previous_answer = previous_answer.get("why", [])
+    elif not isinstance(previous_answer, dict):
+        print("Formato non valido per previous_answer:", type(previous_answer))
+        return 0
+
+    witness_list = previous_answer.get("why", [])
+    if not isinstance(witness_list, list):
+        print("Il campo 'why' non è una lista:", witness_list)
+        return 0
+
     # Regex per catturare tutte le occorrenze tipo table_row
     pattern = re.compile(r'(\w+_\d+)')
 
-    for witness_set in previous_answer:
+    for witness_set in witness_list:
         matches = pattern.findall(witness_set)
 
         for entry in matches:
-            if entry in seen_entries:
-                continue
-            k += 1
+            if entry not in seen_entries:
+                seen_entries.add(entry)
+                k += 1
 
-    print(f"Number of unique entries in previous answer: {k}")    
+    print(f"Number of unique entries in previous answer: {k}")
     return k
 
 class AnswerItem(BaseModel):
@@ -267,7 +328,7 @@ parser = JsonOutputParser(pydantic_schema=AnswerItem)
 
 def retrieve(state: State):
     print(f"Retrieving for question: {state['original_question']}")
-    retrieved_docs = vector_store.similarity_search(state["current_question"], k = 10)
+    retrieved_docs = vector_store.similarity_search(state["current_question"], k = state["k"])
     return {"context": retrieved_docs}
 '''
 def get_rows_from_ground_truth(ground_f2: str, csv_folder: str) -> List[Document]:
@@ -354,7 +415,7 @@ def generate(state: State):
     }    
 
 # Read questions from the JSON file
-with open("questions.json", "r") as f:
+with open("tpch/questions.json", "r") as f:
     data = json.load(f)
     questions = list(data.keys())
 
@@ -365,10 +426,10 @@ workflow.add_node("generate", generate)
 workflow.add_edge(START, "retrieve")
 workflow.add_edge("retrieve", "generate")
 graph = workflow.compile()
-'''
-with open("ground_truth2.json", "r", encoding="utf-8") as f:
+
+with open("tpch/ground_truthTpch.json", "r", encoding="utf-8") as f:
     ground_truth = json.load(f)  
-'''
+
 all_final_results = []
 
 # Iterate over each question and invoke the graph to get the answer
@@ -382,8 +443,8 @@ for i, question in enumerate(questions):
     "answer": [], # Initial empty answer
 }
 
-    #gt = ground_truth[i]
-    #gt_source_info = gt["why"]
+    gt = ground_truth[i]
+    gt_source_info = gt["why"]
     
     # Step 2: Costruisci contesto perfetto a partire dalle righe vere
     #context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder=csv_folder)

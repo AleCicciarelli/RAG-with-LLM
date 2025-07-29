@@ -1,0 +1,292 @@
+[
+  {
+    "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+    "answer": [
+      "Supplier#000000012",
+      "Supplier#000000185",
+      "Supplier#000000678",
+      "Supplier#000000075"
+    ]
+  },
+  {
+    "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+    "answer": []
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+    "answer": []
+  },
+  {
+    "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+    "answer": [
+      "tan orange cyan linen frosted",
+      "brown spring sandy tomato white"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+    "answer": []
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+    "answer": []
+  },
+  {
+    "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+    "answer": [
+      "14619"
+    ]
+  },
+  {
+    "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+    "answer": [
+      "EUROPE"
+    ]
+  },
+  {
+    "question": "What is the name (r_name) of the region with region key 1?",
+    "answer": [
+      "AMERICA"
+    ]
+  },
+  {
+    "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+    "answer": [
+      "14-685-851-5424"
+    ]
+  },
+  {
+    "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'tpch/csv_data_tpch/part.csv', 'row': 12494}\np_partkey: 12493\np_name: olive floral forest powder cream\np_mfgr: Manufacturer#3\np_brand: Brand#31\np_type: LARGE BRUSHED TIN\np_size: 18\np_container: MED PACK\np_retailprice: 1405.49\n\n{'source': 'tpch/csv_data_tpch/part.csv', 'row': 19228}\np_partkey: 19229\np_name: puff forest khaki brown cream\np_mfgr: Manufacturer#1\np_brand: Brand#15\np_type: ECONOMY BURNISHED TIN\np_size: 12\np_container: MED PACK\np_retailprice: 1148.22\n\nThe retail price of the part named 'forest brown coral puff cream' is:\n\n{\n\"answer\": [\"1148.22\"]\n}"
+    ]
+  },
+  {
+    "question": "Which customer (c_name) placed the order with order key 130?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 42053}\no_orderkey: 130\no_custkey: 4436\no_orderstatus: O\no_totalprice: 251732.65\no_orderdate: 1998-03-16\no_orderpriority: 5-LOW\no_clerk: Clerk#000000260\no_shippriority: 0\n\nThe customer who placed the order with order key 130 is:\n\n{\n\"answer\": [\"4436\"]\n}"
+    ]
+  },
+  {
+    "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+    "answer": []
+  },
+  {
+    "question": "What is the nation name of the customer Customer#000000004?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'tpch/csv_data_tpch/customer.csv', 'row': 6778}\nc_custkey: 6774\nc_name: Customer#000006774\nc_address: tufe2Xi42Fdq6R4hf7drAFRCg3Rz4i\nc_nationkey: 2\nc_phone: 12-800-430-6064\nc_acctbal: 1958.28\nc_mktsegment: HOUSEHOLD\n\n{'source': 'tpch/csv_data_tpch/customer.csv', 'row': 9868}\nc_custkey: 9867\nc_name: Customer#000009867\nc_address: eLOYljmVxqIaPx,u\nc_nationkey: 1\nc_phone: 11-871-380-8766\nc_acctbal: 3296.84\nc_mktsegment: HOUSEHOLD\n\n{'source': 'tpch/csv_data_tpch/customer.csv', 'row': 8775}\nc_custkey: 8774\nc_name: Customer#000008774\nc_address: J1i6bdCYCua,Z\nc_nationkey: 11\nc_phone: 21-281-662-2959\nc_acctbal: 8816.66\nc_mktsegment: HOUSEHOLD\n\n{'source': 'tpch/csv_data_tpch/customer.csv', 'row': 12000}\nc_custkey: 12001\nc_name: Customer#000012001\nc_address: R1sjeFy Ai8z5v8,n9FrRmT\nc_nationkey: 14\nc_phone: 24-206-789-2397\nc_acctbal: 3204.63\nc_mktsegment: HOUSEHOLD\n\n{'source': 'tpch/csv_data_tpch/customer.csv', 'row': 12865}\nc_custkey: 12866\nc_name: Customer#000012866\nc_address: f39,92BHx  rP5dcvJbO2J,sc\nc_nationkey: 19\nc_phone: 29-873-870-5653\nc_acctbal: 3741.19\nc_mktsegment: HOUSEHOLD\n\n{'source': 'tpch/csv_data_tpch/customer.csv', 'row': 8817}\nc_custkey: 8816\nc_name: Customer#000008816\nc_address: hmE9Kw j9eWAiNIi0yLMLpSM,Pbb\nc_nationkey: 5\nc_phone: 15-208-800-1561\nc_acctbal: 7012.5\nc_mktsegment: HOUSEHOLD\n\n{'source': 'tpch/csv_data_tpch/customer.csv', 'row': 13797}\nc_custkey: 13798\nc_name: Customer#000013798\nc_address: Jpdw9WbpvEN49fO,\nc_nationkey: 0\nc_phone: 10-882-701-5666\nc_acctbal: 6079.36\nc_mktsegment: HOUSEHOLD\n\n{'source': 'tpch/csv_data_tpch/customer.csv', 'row': 11747}\nc_custkey: 11748\nc_name: Customer#000011748\nc_address: 6vHlD8LolpgN2n,9\nc_nationkey: 3\nc_phone: 13-801-555-3412\nc_acctbal: 7467.45\nc_mktsegment: HOUSEHOLD\n\n{'source': 'tpch/csv_data_tpch/customer.csv', 'row': 12964}\nc_custkey: 12965\nc_name: Customer#000012965\nc_address: NNrkH60PeF0W3VnLFUrgG1\nc_nationkey: 22\nc_phone: 32-129-978-9172\nc_acctbal: -285.19\nc_mktsegment: HOUSEHOLD\n\n{'source': 'tpch/csv_data_tpch/customer.csv', 'row': 9788}\nc_custkey: 9787\nc_name: Customer#000009787\nc_address: l NaTsOvApYGU26iE3Wz4UaVE8s\nc_nationkey: 4\nc_phone: 14-486-611-5297\nc_acctbal: 8435.25\nc_mktsegment: HOUSEHOLD\n\nThe nation name of the customer Customer#000000004 is:\n\nAnswer:\n{\n\"answer\": [\"ALFKI\"]\n}"
+    ]
+  },
+  {
+    "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+    "answer": [
+      "1705",
+      "2061",
+      "16236",
+      "7403",
+      "14401"
+    ]
+  },
+  {
+    "question": "Which regions (r_regionKey) have a region key greater than 2?",
+    "answer": [
+      "EUROPE",
+      "MIDDLE EAST"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+    "answer": [
+      "Customer#000010920",
+      "Customer#000001497"
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+    "answer": []
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+    "answer": [
+      "Customer#000012500",
+      "Customer#000014619"
+    ]
+  },
+  {
+    "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 66701}\no_orderkey: 266752\no_custkey: 2692\no_orderstatus: O\no_totalprice: 202612.8\no_orderdate: 1996-07-27\no_orderpriority: 1-URGENT\no_clerk: Clerk#000000463\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 95298}\no_orderkey: 381152\no_custkey: 3803\no_orderstatus: O\no_totalprice: 333997.79\no_orderdate: 1995-11-30\no_orderpriority: 1-URGENT\no_clerk: Clerk#000000283\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 50763}\no_orderkey: 202978\no_custkey: 5155\no_orderstatus: O\no_totalprice: 268702.72\no_orderdate: 1995-12-22\no_orderpriority: 1-URGENT\no_clerk: Clerk#000000248\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 125432}\no_orderkey: 501699\no_custkey: 9784\no_orderstatus: F\no_totalprice: 89551.73\no_orderdate: 1994-10-28\no_orderpriority: 5-LOW\no_clerk: Clerk#000000867\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 84577}\no_orderkey: 338245\no_custkey: 6334\no_orderstatus: F\no_totalprice: 3091.86\no_orderdate: 1992-11-25\no_orderpriority: 1-URGENT\no_clerk: Clerk#000000324\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 38260}\no_orderkey: 152963\no_custkey: 9223\no_orderstatus: F\no_totalprice: 202955.84\no_orderdate: 1994-12-18\no_orderpriority: 1-URGENT\no_clerk: Clerk#000000478\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 53762}\no_orderkey: 214977\no_custkey: 6530\no_orderstatus: O\no_totalprice: 202415.34\no_orderdate: 1996-01-12\no_orderpriority: 1-URGENT\no_clerk: Clerk#000000832\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 127733}\no_orderkey: 510915\no_custkey: 14104\no_orderstatus: F\no_totalprice: 202918.19\no_orderdate: 1992-08-27\no_orderpriority: 1-URGENT\no_clerk: Clerk#000000327\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 77495}\no_orderkey: 309923\no_custkey: 7786\no_orderstatus: F\no_totalprice: 202724.85\no_orderdate: 1993-10-12\no_orderpriority: 1-URGENT\no_clerk: Clerk#000000689\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 95034}\no_orderkey: 380096\no_custkey: 7265\no_orderstatus: F\no_totalprice: 39367.88\no_orderdate: 1992-12-24\no_orderpriority: 1-URGENT\no_clerk: Clerk#000000543\no_shippriority: 0\n\nThe ship date of the lineitem with order key 324 and line number 1 is:\n\nAnswer:\n{\n\"answer\": [\"1994-10-28\"]\n}"
+    ]
+  },
+  {
+    "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 42053}\no_orderkey: 168132\no_custkey: 4436\no_orderstatus: O\no_totalprice: 251732.65\no_orderdate: 1998-03-16\no_orderpriority: 5-LOW\no_clerk: Clerk#000000260\no_shippriority: 0\n\nThe order date of the order placed by customer 'Customer#000000023' is:\n\n1998-03-16"
+    ]
+  },
+  {
+    "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 876}\ns_suppkey: 877\ns_name: Supplier#000000877\ns_address: 4yN9i5CbQ8Tw1X5InsMlOjjhGg8MAciTG\ns_nationkey: 4\ns_phone: 14-685-851-5424\ns_acctbal: 6489.62\n\nThe nation (n_name) of the supplier 'Supplier#000000007' is:\n\n{\n\"answer\": [\"Algeria\"]\n}"
+    ]
+  },
+  {
+    "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 876}\n\ns_suppkey: 877\ns_name: Supplier#000000877\ns_address: 4yN9i5CbQ8Tw1X5InsMlOjjhGg8MAciTG\ns_nationkey: 4\ns_phone: 14-685-851-5424\ns_acctbal: 6489.62\n\nThe supplier 'Supplier#000000005' does not exist in the given context, so it is not possible to determine which region (r_name) it belongs to.\n\nHowever, if you are asking about the supplier with s_suppkey: 5, then:\n\n{'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 28}\n\ns_suppkey: 29\ns_name: Supplier#000000029\ns_address: 658tEqXLPvRd6xpFdqC2\ns_nationkey: 1\ns_phone: 11-555-705-5922\ns_acctbal: -811.62\n\nThe supplier 'Supplier#000000005' belongs to region with nationkey: 1.\n\nSo, the answer is:\n\n{\n\"answer\": [\"region with nationkey: 1\"]\n}"
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) provides the part with partkey 200?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 975}\n\ns_suppkey: 975\ns_name: Supplier#000000975\ns_address: ,AC e,tBpNwKb5xMUzeohxlRn, hdZJo73gFQF8y\ns_nationkey: 3\ns_phone: 13-892-333-9275\ns_acctbal: 7577.42\n\nThe part with partkey 200 is not present in this context.\n\nTherefore, the correct answer is:\n\n{\n\"answer\": []\n}"
+    ]
+  },
+  {
+    "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'tpch/csv_data_tpch/partsupp.csv', 'row': 7810}\nps_partkey: 1945\nps_suppkey: 197\nps_availqty: 1648\nps_supplycost: 188.45\n\n{'source': 'tpch/csv_data_tpch/partsupp.csv', 'row': 7380}\nps_partkey: 1838\nps_suppkey: 90\nps_availqty: 1734\nps_supplycost: 217.56\n\n...\n\nThe available quantity for partkey 500 supplied by supplierkey 123 is:\n\n{\n\"answer\": [\"1648\"]\n}"
+    ]
+  },
+  {
+    "question": "What is the total price of the order with orderkey 100?",
+    "answer": []
+  },
+  {
+    "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 876}\n\nWhat is the phone number of the supplier named \"Supplier#000000005\"?\n\nSince there is no supplier with the name \"Supplier#000000005\" in the provided data, the answer would be:\n\n{\n\"answer\": [\"Not Found\"]\n}"
+    ]
+  },
+  {
+    "question": "What is the order date of the order with order key 323?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 50875}\no_orderkey: 203426\no_custkey: 9781\no_orderstatus: O\no_totalprice: 112710.39\no_orderdate: 1995-06-08\no_orderpriority: 2-HIGH\no_clerk: Clerk#000000673\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 53163}\no_orderkey: 212578\no_custkey: 9781\no_orderstatus: F\no_totalprice: 211018.95\no_orderdate: 1992-03-25\no_orderpriority: 5-LOW\no_clerk: Clerk#000000122\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 91810}\no_orderkey: 367175\no_custkey: 9782\no_orderstatus: O\no_totalprice: 191229.88\no_orderdate: 1997-06-25\no_orderpriority: 2-HIGH\no_clerk: Clerk#000000140\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 24496}\no_orderkey: 97893\no_custkey: 10927\no_orderstatus: O\no_totalprice: 156532.39\no_orderdate: 1997-07-13\no_orderpriority: 5-LOW\no_clerk: Clerk#000000971\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 95936}\no_orderkey: 383686\no_custkey: 5329\no_orderstatus: O\no_totalprice: 247632.24\no_orderdate: 1997-10-18\no_orderpriority: 5-LOW\no_clerk: Clerk#000000386\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 56843}\no_orderkey: 227300\no_custkey: 9787\no_orderstatus: O\no_totalprice: 121026.88\no_orderdate: 1998-07-27\no_orderpriority: 2-HIGH\no_clerk: Clerk#000000256\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 91535}\no_orderkey: 366084\no_custkey: 12926\no_orderstatus: O\no_totalprice: 299045.39\no_orderdate: 1995-10-24\no_orderpriority: 4-NOT SPECIFIED\no_clerk: Clerk#000000535\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 92039}\no_orderkey: 368100\no_custkey: 2806\no_orderstatus: O\no_totalprice: 298970.18\no_orderdate: 1997-02-11\no_orderpriority: 4-NOT SPECIFIED\no_clerk: Clerk#000000370\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 42673}\no_orderkey: 170624\no_custkey: 9785\no_orderstatus: F\no_totalprice: 244881.85\no_orderdate: 1992-03-13\no_orderpriority: 5-LOW\no_clerk: Clerk#000000512\no_shippriority: 0\n\n{'source': 'tpch/csv_data_tpch/orders.csv', 'row': 78257}\no_orderkey: 312965\no_custkey: 9781\no_orderstatus: O\no_totalprice: 107249.63\no_orderdate: 1996-07-09\no_orderpriority: 4-NOT SPECIFIED\no_clerk: Clerk#000000711\no_shippriority: 0\n\nThe order date of the order with order key 323 is:\n\n**Answer:** None (since there is no order with order key 323 in the given context)"
+    ]
+  },
+  {
+    "question": "Which customer (c_name) placed the order with order key 323?",
+    "answer": [
+      "5353"
+    ]
+  },
+  {
+    "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 876}\n\nWhat is the name of the nation where the supplier with suppkey 456 is located?\n\nSince there is no supplier with suppkey 456 in the provided data, the answer would be:\n\n{\n\"answer\": [\"Unknown\"]\n}"
+    ]
+  },
+  {
+    "question": "What is the name of the region where the nation FRANCE is located?",
+    "answer": [
+      "EUROPE"
+    ]
+  },
+  {
+    "question": "What is the name of the nation of the customer who placed order 352?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'tpch/csv_data_tpch/customer.csv', 'row': 9788}\n\nThe customer who placed order 352 is from nation with key 4.\n\nSo, the answer is:\n\n{\n\"answer\": [\"Algeria\"]\n}"
+    ]
+  },
+  {
+    "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 876}\n\nWhat is the nation name of the supplier that provided partkey 430 in order 3?\n\nAnswer:\n{\n\"answer\": [\"4\"]\n}"
+    ]
+  },
+  {
+    "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+    "answer": [
+      "18-876-287-5756"
+    ]
+  },
+  {
+    "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'tpch/csv_data_tpch/part.csv', 'row': 16333}\np_partkey: 16334\np_name: burlywood lace rosy honeydew saddle\np_mfgr: Manufacturer#4\np_brand: Brand#45\np_type: STANDARD POLISHED NICKEL\np_size: 38\np_container: SM BOX\np_retailprice: 1250.33\n\n{'source': 'tpch/csv_data_tpch/part.csv', 'row': 2596}\np_partkey: 2595\np_name: cream midnight red burlywood saddle\np_mfgr: Manufacturer#4\np_brand: Brand#43\np_type: PROMO POLISHED NICKEL\np_size: 27\np_container: MED PKG\np_retailprice: 1497.59\n\n{'source': 'tpch/csv_data_tpch/part.csv', 'row': 7020}\np_partkey: 7019\np_name: blush yellow blue aquamarine saddle\np_mfgr: Manufacturer#1\np_brand: Brand#14\np_type: STANDARD POLISHED BRASS\np_size: 18\np_container: LG PACK\np_retailprice: 926.01\n\nThe available quantity of the part \"blush thistle blue yellow saddle\" supplied by Supplier#000000003 is:\n\nThere is no record of this specific part in the given context, so the answer is:\n\n{\n\"answer\": [\"Not Available\"]\n}"
+    ]
+  },
+  {
+    "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'tpch/csv_data_tpch/part.csv', 'row': 0}\np_partkey: 1\np_name: goldenrod lavender spring chocolate lace\np_mfgr: Manufacturer#1\np_brand: Brand#13\np_type: PROMO BURNISHED COPPER\np_size: 7\np_container: JUMBO PKG\np_retailprice: 901.0\n\nThe supply cost of the part \"goldenrod lavender spring chocolate lace\" supplied by Supplier#000000002 is $901.00."
+    ]
+  },
+  {
+    "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+    "answer": [
+      "Customer#000001990",
+      "Customer#000009628",
+      "Customer#000002009"
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+    "answer": [
+      "Supplier#000000877",
+      "Supplier#000000216",
+      "Supplier#000000185",
+      "Supplier#000000181",
+      "Supplier#000000121",
+      "Supplier#000000055",
+      "Supplier#000000229",
+      "Supplier#000000835",
+      "Supplier#000000495",
+      "Supplier#000000416"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+    "answer": [
+      "2018"
+    ]
+  },
+  {
+    "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+    "answer": []
+  },
+  {
+    "question": "Which parts (p_name) have a retail price lower than 902?",
+    "answer": [
+      "maroon forest lavender burlywood red",
+      "linen rose blue white honeydew",
+      "black mint olive drab medium",
+      "saddle burlywood drab deep red"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 1?",
+    "answer": [
+      "UNITED STATES",
+      "CANADA"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 2?",
+    "answer": [
+      "INDONESIA",
+      "INDIA",
+      "CHINA"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 0?",
+    "answer": [
+      "ALGERIA"
+    ]
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 3?",
+    "answer": [
+      "RUSSIA",
+      "FRANCE",
+      "UNITED KINGDOM"
+    ]
+  },
+  {
+    "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 11}\ns_suppkey: 12\ns_name: Supplier#000000012\ns_address: aLIW  q0HYd\ns_nationkey: 8\ns_phone: 18-179-925-7181\ns_acctbal: 1432.69\n\n{'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 9}\ns_suppkey: 10\ns_name: Supplier#000000010\ns_address: Saygah3gYWMp72i PY\ns_nationkey: 24\ns_phone: 34-852-489-8585\ns_acctbal: 3891.91\n\n{'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 1}\ns_suppkey: 2\ns_name: Supplier#000000002\ns_address: 89eJ5ksX3ImxJQBvxObC,\ns_nationkey: 5\ns_phone: 15-679-861-2259\ns_acctbal: 4032.68\n\n{'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 171}\ns_suppkey: 172\ns_name: Supplier#000000172\ns_address: NckigAXBRUXbJI\ns_nationkey: 22\ns_phone: 32-481-329-1585\ns_acctbal: 2077.39\n\n{'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 928}\ns_suppkey: 929\ns_name: Supplier#000000929\ns_address: XYQyy9rraHvHMCBQcoGnAvfw0iGG4jOCMENI\ns_nationkey: 20\ns_phone: 30-190-675-2042\ns_acctbal: 1235.72\n\n{'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 17}\ns_suppkey: 18\ns_name: Supplier#000000018\ns_address: PGGVE5PWAMwKDZw\ns_nationkey: 16\ns_phone: 26-729-551-1115\ns_acctbal: 7040.82\n\n{'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 185}\ns_suppkey: 185\ns_name: Supplier#000000185\ns_address: F4C0AWRPk3\ns_nationkey: 17\ns_phone: 27-586-282-7422\ns_acctbal: 5435.91\n\n{'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 6}\ns_suppkey: 7\ns_name: Supplier#000000007\ns_address: s,4TicNGB4uO6PaSqNBUq\ns_nationkey: 23\ns_phone: 33-990-965-2201\ns_acctbal: 6820.35\n\n{'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 677}\ns_suppkey: 678\ns_name: Supplier#000000678\ns_address: SLpBfeoHSImv\ns_nationkey: 1\ns_phone: 11-465-565-3513\ns_acctbal: -58.41\n\n{'source': 'tpch/csv_data_tpch/supplier.csv', 'row': 106}\ns_suppkey: 107\ns_name: Supplier#000000107\ns_address: fqniA2vC1VZU5DZG2TBiN\ns_nationkey: 16\ns_phone: 26-958-723-2164\ns_acctbal: 1378.93\n\nThe suppliers that belong to the nation with nationkey = 2 and have a balance lower than 0 are:\n\n* Supplier#000000678 (nationkey: 1, s_acctbal: -58.41)\n\nSo, the answer is:\n\n{\n\"answer\": [\"Supplier#000000678\"]\n}"
+    ]
+  }
+]
