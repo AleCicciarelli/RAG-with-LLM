@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": "Hello! It seems like you've provided some data from a supplier table in a database. Each record contains information about a supplier, including a unique supplier key (s\\_suppkey), name (s\\_name), address (s\\_address), nation key (s\\_nationkey), phone number (s\\_phone), and account balance (s\\_acctbal).\n\nIf you have any specific questions or requests related to this data, feel free to ask! For example, you could ask for the average account balance of suppliers from a particular nation key, or for the supplier name with the highest account balance. I'm here to help!"
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 870
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": 1
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": "Hello! It seems like you've provided a list of supplier records from a database or file. Each record contains the supplier's ID, name, address, nation key (which I assume corresponds to the country they are based in), phone number, and account balance.\n\nIf you have a specific question about this data or need help with a particular task related to it, please let me know! For example, I can help you find suppliers from a certain country, identify suppliers with negative account balances, or sort the records in various ways.\n\nHowever, without a specific question or request, there's not much more for me to add. This data is formatted as a series of JSON objects, each representing a single supplier record. The keys in each object correspond to the field names (e.g. \"s\\_suppkey\" represents the supplier's ID), and the values are the corresponding data for each field."
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 1
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 1
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 10
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": "Hello! It seems like you've provided me with a list of supplier records from a database or a file. Each record contains the supplier's ID, name, address, nation key (which I assume is a foreign key linked to a country or region), phone number, and account balance.\n\nI'm ready for any questions or tasks you have regarding this data! For example, you might want to know the average account balance of suppliers from a particular nation, or perhaps you'd like me to identify suppliers with a low account balance who are from the same nation as a specific supplier. Let me know how I can help!"
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": 1
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": "Here are the supplier details with a negative account balance from the data you provided:\n\n* Supplier#000000886:\n\t+ s\\_suppkey: 886\n\t+ s\\_name: Supplier#000000886\n\t+ s\\_address: R52IgT6b0yBuU r8,dNRZVWRY\n\t+ s\\_nationkey: 1\n\t+ s\\_phone: 11-329-720-1904\n\t+ s\\_acctbal: -158.08"
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": 1
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": "Hello! It seems like you've provided me with a list of supplier records from a database. Each record contains the supplier's ID, name, address, nation key (which I assume is a foreign key linked to a country or region), phone number, and account balance.\n\nIf you have a specific question about this data or if there's something specific you would like me to do with this data, please let me know! For example, I can:\n\n* Provide summary statistics about the account balances (e.g., mean, median, mode, range, etc.)\n* Count the number of suppliers from each nation key\n* Identify suppliers with negative account balances\n* And much more! Just let me know what you need."
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": "Hello! It seems like you've provided some data from a supplier table in a database. Each record contains the supplier's ID, name, address, nation key (which I assume refers to the country they are based in), phone number, and account balance.\n\nIf you have any specific question or task related to this data, please let me know and I will do my best to assist you! For example, you might want to know the average account balance for suppliers in a certain nation, or perhaps you'd like to see which suppliers have a balance above a certain threshold.\n\nI'm here to help with tasks related to natural language processing, so the more specific you can be with your request, the better I can assist you."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

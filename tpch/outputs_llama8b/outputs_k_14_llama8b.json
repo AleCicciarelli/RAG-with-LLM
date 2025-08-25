@@ -1,0 +1,1278 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": [
+            {
+                "supplier_name": "Supplier#000000957",
+                "s_suppkey": 957,
+                "s_nationkey": 23,
+                "s_phone": "33-616-674-6155",
+                "s_acctbal": 4324.51
+            },
+            {
+                "supplier_name": "Supplier#000000993",
+                "s_suppkey": 993,
+                "s_nationkey": 2,
+                "s_phone": "12-316-384-2073",
+                "s_acctbal": 2336.52
+            }
+        ]
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": [
+            {
+                "question": null,
+                "answer": [
+                    [
+                        "Supplier#000000906",
+                        "Supplier#000000944"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": [
+            {
+                "question": null,
+                "answer": [
+                    {
+                        "value": "Supplier#000000891",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Supplier#000000998",
+                        "type": "text"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": [
+            {
+                "answer": "Supplier#000000894",
+                "context": "the special packa"
+            },
+            {
+                "answer": "Supplier#000000925",
+                "context": "regular packages can haggle acro"
+            },
+            {
+                "answer": "Supplier#000000985",
+                "context": "the furiously final deposits integrate according to th"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": [
+            {
+                "question": null,
+                "answer": {
+                    "s_suppkey": "882",
+                    "s_name": "Supplier#000000882",
+                    "s_address": "5op1w94,JerNmOkyPfAVkZEtb7",
+                    "s_nationkey": "14",
+                    "s_phone": "24-437-170-2579",
+                    "s_acctbal": "9450.21",
+                    "s_comment": "ly final requests haggle furiously final, regula"
+                }
+            },
+            {
+                "question": null,
+                "answer": {
+                    "s_suppkey": "891",
+                    "s_name": "Supplier#000000891",
+                    "s_address": "cv64gZAB3Ax5XblZ19gNA zOHb9q2nGjtvUzLm9P",
+                    "s_nationkey": "8",
+                    "s_phone": "18-541-281-5118",
+                    "s_acctbal": "2284.88",
+                    "s_comment": "deposits. slyly final accounts are fluffily slyly"
+                }
+            },
+            {
+                "question": null,
+                "answer": {
+                    "s_suppkey": "931",
+                    "s_name": "Supplier#000000931",
+                    "s_address": "CqslHrffpOBxqMDxiGH8nz7scX,i3HmUhNlwBBU6",
+                    "s_nationkey": "8",
+                    "s_phone": "18-174-741-5563",
+                    "s_acctbal": "4398.36",
+                    "s_comment": "t carefully. express accounts sleep. ironic, final theodolites haggle regul"
+                }
+            },
+            {
+                "question": null,
+                "answer": {
+                    "s_suppkey": "985",
+                    "s_name": "Supplier#000000985",
+                    "s_address": "kzI8mk3jN9F67EStJ 8dlpx 6GwZYwzXPFOKJ5R",
+                    "s_nationkey": "1",
+                    "s_phone": "11-131-656-2612",
+                    "s_acctbal": "3524.1",
+                    "s_comment": "ut the furiously final deposits integrate according to th"
+                }
+            },
+            {
+                "question": null,
+                "answer": {
+                    "s_suppkey": "998",
+                    "s_name": "Supplier#000000998",
+                    "s_address": "lgaoC,43IUbHf3Ar5odS8wQKp",
+                    "s_nationkey": "15",
+                    "s_phone": "25-430-605-1180",
+                    "s_acctbal": "3282.62",
+                    "s_comment": "hs against the unusual accounts haggle r"
+                }
+            },
+            {
+                "question": null,
+                "answer": {
+                    "s_suppkey": "968",
+                    "s_name": "Supplier#000000968",
+                    "s_address": "6idVVWn8RbFoZgPeyVJlQOJ",
+                    "s_nationkey": "4",
+                    "s_phone": "14-431-296-9521",
+                    "s_acctbal": "4487.96",
+                    "s_comment": "final accounts. slyly regular deposits wake fluffily after the"
+                }
+            },
+            {
+                "question": null,
+                "answer": {
+                    "s_suppkey": "841",
+                    "s_name": "Supplier#000000841",
+                    "s_address": "dvQXS7Wi29wVuSUWsknpHVQWVrJ6cUvB8V",
+                    "s_nationkey": "7",
+                    "s_phone": "17-359-161-6634",
+                    "s_acctbal": "1685.95",
+                    "s_comment": "final accounts unwind furiously among the furiously pending req"
+                }
+            },
+            {
+                "question": null,
+                "answer": {
+                    "s_suppkey": "882",
+                    "s_name": "Supplier#000000882",
+                    "s_address": "5op1w94,JerNmOkyPfAVkZEtb7",
+                    "s_nationkey": "14",
+                    "s_phone": "24-437-170-2579",
+                    "s_acctbal": "9450.21",
+                    "s_comment": "ly final requests haggle furiously final, regula"
+                }
+            },
+            {
+                "question": null,
+                "answer": {
+                    "s_suppkey": "841",
+                    "s_name": "Supplier#000000841",
+                    "s_address": "dvQXS7Wi29wVuSUWsknpHVQWVrJ6cUvB8V",
+                    "s_nationkey": "7",
+                    "s_phone": "17-359-161-6634",
+                    "s_acctbal": "1685.95",
+                    "s_comment": "final accounts unwind furiously among the furiously pending req"
+                }
+            },
+            {
+                "question": null,
+                "answer": {
+                    "s_suppkey": "882",
+                    "s_name": "Supplier#000000882",
+                    "s_address": "5op1w94,JerNmOkyPfAVkZEtb7",
+                    "s_nationkey": "14",
+                    "s_phone": "24-437-170-2579",
+                    "s_acctbal": "9450.21",
+                    "s_comment": "ly final requests haggle furiously final, regula"
+                }
+            },
+            {
+                "question": null,
+                "answer": {
+                    "s_suppkey": "882",
+                    "s_name": "Supplier#000000882",
+                    "s_address": "5op1w94,JerNmOkyPfAVkZEtb7",
+                    "s_nationkey": "14",
+                    "s_phone": "24-437-170-2579",
+                    "s_acctbal": "9450.21",
+                    "s_comment": "ly final requests haggle furiously final, regula"
+                }
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": [
+            {
+                "answer": "Supplier#000000920, Supplier#000000932",
+                "context": "The context is not provided."
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": [
+            {
+                "answer": "Supplier#000000852",
+                "context": "Customer s. even asympRecommends haggl"
+            },
+            {
+                "answer": "Supplier#000000814",
+                "context": "accounts. blithely final accounts haggle carefully special instruc"
+            },
+            {
+                "answer": "Supplier#000000903",
+                "context": "sometimes across the furiously express accounts. unusual accou"
+            },
+            {
+                "answer": "Supplier#000000998",
+                "context": "hs against the unusual accounts haggle r"
+            }
+        ]
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": [
+            {
+                "answer": "Supplier#000000886",
+                "context": "Supplier#000000886"
+            },
+            {
+                "answer": "Supplier#000000969",
+                "context": "Supplier#000000969"
+            },
+            {
+                "answer": "Supplier#000000974",
+                "context": "Supplier#000000974"
+            }
+        ]
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "value": "Supplier#000000963",
+                        "type": "text"
+                    }
+                ],
+                "score": 0.5,
+                "context": {
+                    "question": "What is the name of the supplier with nationkey 11?",
+                    "answers": [
+                        {
+                            "value": "Supplier#000000963",
+                            "type": "text"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": [
+            {
+                "question": null,
+                "answer": [
+                    {
+                        "s_suppkey": "816",
+                        "s_name": "Supplier#000000816",
+                        "s_address": "uCvvad6NCkXBUkr28t dtq swXPtu",
+                        "s_nationkey": "23",
+                        "s_phone": "33-830-680-6168",
+                        "s_acctbal": "361.01",
+                        "s_comment": "lve furiously according to the final accounts. even accounts on the "
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "value": "Supplier#000000817",
+                        "text": "blithely even requests. blithely ironic deposits wake slyly. ideas haggle! quickly i"
+                    }
+                ],
+                "score": 0.5
+            },
+            {
+                "answer": [
+                    {
+                        "value": "Supplier#000001000",
+                        "text": "press deposits boost thinly quickly unusual instructions. unusual forges haggle ruthlessly. packa"
+                    }
+                ],
+                "score": 0.4
+            },
+            {
+                "answer": [
+                    {
+                        "value": "Supplier#000000973",
+                        "text": "al ideas cajole quickly ironic packages. carefully unusual theodolites detect. unusual packa"
+                    }
+                ],
+                "score": 0.3
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": [
+            {
+                "question": null,
+                "answer": [
+                    {
+                        "s_suppkey": "820",
+                        "s_name": "Supplier#000000820",
+                        "s_address": "QoduMcALdP",
+                        "s_nationkey": 15,
+                        "s_phone": "25-716-340-3140",
+                        "s_acctbal": 4604.84,
+                        "s_comment": "osits. slyly final packages are furiously according to the ironic, pending deposits. ruthl"
+                    },
+                    {
+                        "s_suppkey": "818",
+                        "s_name": "Supplier#000000818",
+                        "s_address": "78Rr rF8zcBGTSud4,5B",
+                        "s_nationkey": 16,
+                        "s_phone": "26-754-547-4185",
+                        "s_acctbal": 9594.51,
+                        "s_comment": "es. carefully final deposits use"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": "Based on the provided context, I'll do my best to provide an answer.\n\nPlease note that the context appears to be a collection of supplier information with comments that seem to contain some sort of encoded or cryptic message. Without further clarification or specific questions, it's challenging to provide a meaningful answer.\n\nHowever, if you're looking for a general response, I can try to summarize the key points from the provided context:\n\n* The suppliers' names and addresses are listed along with their nation keys and phone numbers.\n* The comments section appears to contain encoded messages that might be related to financial transactions or accounting practices.\n\nIf you have specific questions about this data or would like me to help decode the comments, please feel free to ask!"
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "supplier_name": "Supplier#000000852",
+                        "phone_number": "11-574-892-3228"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": [
+            {
+                "answer": [
+                    [
+                        "Supplier#000000865",
+                        "Supplier#000000892"
+                    ],
+                    [
+                        "Supplier#000000984",
+                        "Supplier#000000989"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": [
+            {
+                "answer": "Supplier#000000993",
+                "context": "asymptotes haggle slowly above the"
+            },
+            {
+                "answer": "Supplier#000000969",
+                "context": "ounts nag slyly across the furiously"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": "Based on the provided context, I can help answer your question.\n\nPlease provide the question you would like me to answer using the given context."
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "value": "Supplier#000000839",
+                        "type": "text"
+                    }
+                ],
+                "score": 0.5,
+                "context": {
+                    "source": "csv_data_tpsh/supplier.csv",
+                    "row": 838
+                }
+            },
+            {
+                "answer": [
+                    {
+                        "value": "Supplier#000000846",
+                        "type": "text"
+                    }
+                ],
+                "score": 0.5,
+                "context": {
+                    "source": "csv_data_tpsh/supplier.csv",
+                    "row": 845
+                }
+            },
+            {
+                "answer": [
+                    {
+                        "value": "Supplier#000000853",
+                        "type": "text"
+                    }
+                ],
+                "score": 0.5,
+                "context": {
+                    "source": "csv_data_tpsh/supplier.csv",
+                    "row": 852
+                }
+            },
+            {
+                "answer": [
+                    {
+                        "value": "Supplier#000000954",
+                        "type": "text"
+                    }
+                ],
+                "score": 0.5,
+                "context": {
+                    "source": "csv_data_tpsh/supplier.csv",
+                    "row": 954
+                }
+            },
+            {
+                "answer": [
+                    {
+                        "value": "Supplier#000000822",
+                        "type": "text"
+                    }
+                ],
+                "score": 0.5,
+                "context": {
+                    "source": "csv_data_tpsh/supplier.csv",
+                    "row": 821
+                }
+            },
+            {
+                "answer": [
+                    {
+                        "value": "Supplier#000000816",
+                        "type": "text"
+                    }
+                ],
+                "score": 0.5,
+                "context": {
+                    "source": "csv_data_tpsh/supplier.csv",
+                    "row": 815
+                }
+            },
+            {
+                "answer": [
+                    {
+                        "value": "Supplier#000000909",
+                        "type": "text"
+                    }
+                ],
+                "score": 0.5,
+                "context": {
+                    "source": "csv_data_tpsh/supplier.csv",
+                    "row": 908
+                }
+            },
+            {
+                "answer": [
+                    {
+                        "value": "Supplier#000000928",
+                        "type": "text"
+                    }
+                ],
+                "score": 0.5,
+                "context": {
+                    "source": "csv_data_tpsh/supplier.csv",
+                    "row": 927
+                }
+            },
+            {
+                "answer": [
+                    {
+                        "value": "Supplier#000000982",
+                        "type": "text"
+                    }
+                ],
+                "score": 0.5,
+                "context": {
+                    "source": "csv_data_tpsh/supplier.csv",
+                    "row": 982
+                }
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": [
+            {
+                "question": null,
+                "answer": [
+                    {
+                        "context": "Customer s. even asympRecommends haggl",
+                        "suppkey": 841,
+                        "name": "Supplier#000000841",
+                        "address": "dvQXS7Wi29wVuSUWsknpHVQWVrJ6cUvB8V",
+                        "nationkey": 7,
+                        "phone": "17-359-161-6634",
+                        "acctbal": 1685.95,
+                        "comment": "final accounts unwind furiously among the furiously pending req"
+                    },
+                    {
+                        "context": "Customer s. even asympRecommends haggl",
+                        "suppkey": 882,
+                        "name": "Supplier#000000882",
+                        "address": "5op1w94,JerNmOkyPfAVkZEtb7",
+                        "nationkey": 14,
+                        "phone": "24-437-170-2579",
+                        "acctbal": 9450.21,
+                        "comment": "ly final requests haggle furiously final, regula"
+                    }
+                ],
+                "type": "answer"
+            }
+        ]
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": [
+            {
+                "answer": "Supplier#000000822, Supplier#000000886",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": [
+            {
+                "question": "What is the average account balance for suppliers with nationkey 1?",
+                "answer": "3524.1"
+            },
+            {
+                "question": "What is the average account balance for suppliers with nationkey 0?",
+                "answer": "2576.28"
+            },
+            {
+                "question": "What is the average account balance for suppliers with nationkey 8?",
+                "answer": "2284.88"
+            },
+            {
+                "question": "What is the average account balance for suppliers with nationkey 13?",
+                "answer": "5757.36"
+            }
+        ]
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": [
+            {
+                "answer": [
+                    [
+                        "Supplier#000000959",
+                        "Supplier#000000959"
+                    ]
+                ],
+                "context": [
+                    "the final accounts.",
+                    "even accounts on the"
+                ],
+                "question": ""
+            }
+        ]
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "context": "Supplier#000000910",
+                        "supporting_facts": [
+                            "Supplier#000000910",
+                            "0X S 2E55,maqch",
+                            "5",
+                            "15-960-448-6633",
+                            "4763.2"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": [
+            {
+                "question": "",
+                "answer": [
+                    {
+                        "text": "Supplier#000000816",
+                        "context": "s_name"
+                    },
+                    {
+                        "text": "Supplier#000000909",
+                        "context": "s_name"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "value": "Supplier#000000908",
+                        "context": "ss requests. even packages haggle furiously."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": [
+            {
+                "id": 0,
+                "answer": [
+                    {
+                        "question": "What is the value of s_suppkey for Supplier#000000816?",
+                        "answer": "816"
+                    }
+                ]
+            },
+            {
+                "id": 1,
+                "answer": [
+                    {
+                        "question": "What is the value of s_suppkey for Supplier#000000817?",
+                        "answer": "817"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "answer": [
+                    {
+                        "question": "What is the value of s_suppkey for Supplier#000000848?",
+                        "answer": "848"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "answer": [
+                    {
+                        "question": "What is the value of s_suppkey for Supplier#000000846?",
+                        "answer": "846"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "answer": [
+                    {
+                        "question": "What is the value of s_suppkey for Supplier#000000985?",
+                        "answer": "985"
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "answer": [
+                    {
+                        "question": "What is the value of s_suppkey for Supplier#000000988?",
+                        "answer": "988"
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "answer": [
+                    {
+                        "question": "What is the value of s_suppkey for Supplier#000000906?",
+                        "answer": "906"
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "answer": [
+                    {
+                        "question": "What is the value of s_suppkey for Supplier#000000975?",
+                        "answer": "975"
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "answer": [
+                    {
+                        "question": "What is the value of s_suppkey for Supplier#000000889?",
+                        "answer": "889"
+                    }
+                ]
+            },
+            {
+                "id": 9,
+                "answer": [
+                    {
+                        "question": "What is the value of s_suppkey for Supplier#000000847?",
+                        "answer": "847"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": [
+            {
+                "answer": "Supplier#000000852",
+                "context": "Customer s. even asympRecommends haggl"
+            },
+            {
+                "answer": "Supplier#000000854",
+                "context": "n requests believe fluffily. carefully special depen"
+            },
+            {
+                "answer": "Supplier#000000909",
+                "context": "ss requests. even packages haggle furiously."
+            }
+        ]
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": [
+            {
+                "answer": "Supplier#000000801",
+                "context": ""
+            },
+            {
+                "answer": "Supplier#000000818",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": [
+            {
+                "answer": "Supplier#000000815",
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 814,
+                        "s_suppkey": 815,
+                        "s_name": "Supplier#000000815",
+                        "s_address": "3f8XIvP m9v5fv",
+                        "s_nationkey": 7,
+                        "s_phone": "17-984-775-9865",
+                        "s_acctbal": "3855.74",
+                        "s_comment": "ms. final packages use finall"
+                    }
+                ]
+            },
+            {
+                "answer": "Supplier#000000818",
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 817,
+                        "s_suppkey": 818,
+                        "s_name": "Supplier#000000818",
+                        "s_address": "78Rr rF8zcBGTSud4,5B",
+                        "s_nationkey": 16,
+                        "s_phone": "26-754-547-4185",
+                        "s_acctbal": "9594.51",
+                        "s_comment": "es. carefully final deposits use"
+                    }
+                ]
+            },
+            {
+                "answer": "Supplier#000000886",
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 885,
+                        "s_suppkey": 886,
+                        "s_name": "Supplier#000000886",
+                        "s_address": "R52IgT6b0yBuU r8,dNRZVWRY",
+                        "s_nationkey": 1,
+                        "s_phone": "11-329-720-1904",
+                        "s_acctbal": "-158.08",
+                        "s_comment": "ts during the blithely silent packages c"
+                    }
+                ]
+            },
+            {
+                "answer": "Supplier#000000954",
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 954,
+                        "s_suppkey": 954,
+                        "s_name": "Supplier#000000954",
+                        "s_address": "P3O5p UFz1QsLmZX",
+                        "s_nationkey": 6,
+                        "s_phone": "16-537-341-8517",
+                        "s_acctbal": "6721.7",
+                        "s_comment": "ect blithely blithely final acco"
+                    }
+                ]
+            },
+            {
+                "answer": "Supplier#000000960",
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 960,
+                        "s_suppkey": 960,
+                        "s_name": "Supplier#000000960",
+                        "s_address": "yk1dgGaQlbTN1YhnJjyM3ULEDDf",
+                        "s_nationkey": 12,
+                        "s_phone": "22-811-163-5363",
+                        "s_acctbal": "1480.82",
+                        "s_comment": "onic theodolites wake carefully. ironic packages use carefully. ironic"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": [
+            {
+                "question": null,
+                "answer": "Supplier#000000891, Supplier#000000818",
+                "context": [
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 890
+                    },
+                    {
+                        "source": "csv_data_tpch/supplier.csv",
+                        "row": 817
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": [
+            {
+                "answer": "Supplier#000000806",
+                "context": "805"
+            },
+            {
+                "answer": "Supplier#000000886",
+                "context": "885"
+            },
+            {
+                "answer": "Supplier#000000861",
+                "context": "860"
+            },
+            {
+                "answer": "Supplier#000000845",
+                "context": "844"
+            },
+            {
+                "answer": "Supplier#000000867",
+                "context": "866"
+            },
+            {
+                "answer": "Supplier#000000909",
+                "context": "908"
+            },
+            {
+                "answer": "Supplier#000000822",
+                "context": "821"
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": [
+            {
+                "question": "What is the context?",
+                "answer": "The context is a set of retrieved data from the 'supplier.csv' file, containing information about suppliers, including their supplier key, name, address, nation key, phone number, and account balance."
+            },
+            {
+                "question": "How do I answer this question?",
+                "answer": "I will use the provided context to generate an answer for the given question. If the question is unclear or ambiguous, I may request clarification before providing a response."
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": [
+            {
+                "question": null,
+                "answer": [
+                    {
+                        "text": "15",
+                        "type": "number"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": [
+            {
+                "answer": [
+                    [
+                        "Supplier#000000909",
+                        "Supplier#000000885"
+                    ]
+                ],
+                "context": [
+                    "leep carefully among the e",
+                    "ss requests. even packages haggle furiously."
+                ]
+            },
+            {
+                "answer": [
+                    [
+                        "Supplier#000000955",
+                        "Supplier#000000965"
+                    ]
+                ],
+                "context": [
+                    "ave instructions haggle. regular instructions past the theodolites are slyly depos",
+                    "ut the express packages. ironic sentiments are qui"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": [
+            {
+                "answer": "Supplier#000000886",
+                "context": "You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question."
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": "[\n{\n\"answer\": \"Supplier#000000828\",\n\"context\": \"827\"\n},\n{\n\"answer\": \"Supplier#000000874\",\n\"context\": \"873\"\n},\n{\n\"answer\": \"Supplier#000000906\",\n\"context\": \"905\"\n},\n{\n\"answer\": \"Supplier#000000940\",\n<context\": \"939\"\n},\n{\n\"answer\": \"Supplier#000000950\",\n<context\": \"950\"\n}\n]"
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": [
+            {
+                "answer": "Supplier#000000818",
+                "context": "The supplier with nationkey 16 has an account balance of 9594.51."
+            },
+            {
+                "answer": "Supplier#000000820",
+                "context": "The supplier with nationkey 15 has an account balance of 4604.84."
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": [
+            {
+                "answer": "Supplier#000000891",
+                "context": ""
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "context": "Supplier#000000886",
+                        "phone": "11-329-720-1904"
+                    },
+                    {
+                        "context": "Supplier#000000841",
+                        "phone": "17-359-161-6634"
+                    }
+                ],
+                "type": "list"
+            }
+        ]
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": [
+            {
+                "question": "What is the context?",
+                "answer": "The context appears to be a collection of supplier information from the 'supplier.csv' file, with each entry containing details such as supplier key, name, address, nation key, phone number, and account balance."
+            },
+            {
+                "question": "How can I assist you with this context?",
+                "answer": "I can help answer specific questions about the suppliers, their characteristics, or any relationships between them. Please provide a question, and I'll do my best to find an answer within the provided context."
+            }
+        ]
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": [
+            {
+                "answer": "Supplier#000000867",
+                "context": "blithely final instructions will haggle fluffily. iron"
+            },
+            {
+                "answer": "Supplier#000000924",
+                "context": "shall have to integrate blithely alongside of the fluffily even epitaphs. quickly unusual"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": [
+            {
+                "answer": "Supplier#000000899",
+                "context": "898"
+            },
+            {
+                "answer": "Supplier#000000841",
+                "context": "840"
+            },
+            {
+                "answer": "Supplier#000000957"
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": "Here is the answer:\n\n[\n  {\n    \"Supplier#\": \"000000841\",\n    \"phone\": \"17-359-161-6634\"\n  },\n  {\n    \"Supplier#\": \"000000899\",\n    \"phone\": \"21-980-994-3905\"\n  },\n  {\n    \"Supplier#\": \"000000812\",\n    \"phone\": \"16-585-724-6633\"\n  }\n]\n\nNote: The answer is a list of objects, each containing the Supplier# and phone number."
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": [
+            {
+                "answer": "Supplier#000000852",
+                "context": "Customer s. even asympRecommends haggle"
+            },
+            {
+                "answer": "Supplier#000000955",
+                "context": "ave instructions haggle. regular instructions past the theodolites are slyly depos"
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": [
+            {
+                "answer": "Supplier#000000951",
+                "context": "The context is that Supplier#000000951 has an account balance of -511.17."
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": [
+            {
+                "answer": "Supplier#000000887",
+                "context": "s_suppkey: 887, s_name: Supplier#000000887, s_address: urEaTejH5POADP2ARrf, s_nationkey: 3, s_phone: 13-738-297-6117, s_acctbal: 3113.73, s_comment: s. regular realms haggle. special, unusual accounts wake furiously. bold pearls play c"
+            },
+            {
+                "answer": "Supplier#000000918",
+                "context": "s_suppkey: 918, s_name: Supplier#000000918, s_address: e0sB7xAU3,cWF7pzXrpIbATUNydCUZup, s_nationkey: 20, s_phone: 30-303-831-1662, s_acctbal: 7893.58, s_comment: ependencies wake carefull"
+            },
+            {
+                "answer": "Supplier#000000969",
+                "context": "s_suppkey: 969, s_name: Supplier#000000969, s_address: thRdVx7vCajVFs7gsK8VKxzydPiHvIKK,DtR, s_nationkey: 21, s_phone: 31-171-204-7902, s_acctbal: 162.06, s_comment: ounts nag slyly across the furiously"
+            },
+            {
+                "answer": "Supplier#000000954",
+                "context": "s_suppkey: 954, s_name: Supplier#000000954, s_address: P3O5p UFz1QsLmZX, s_nationkey: 6, s_phone: 16-537-341-8517, s_acctbal: 6721.7, s_comment: ect blithely blithely final acco"
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": [
+            {
+                "answer": "Supplier#000000963",
+                "context": "Supplier#000000963, s3WbU6w31FgnuZVtwGnH6PkyZFg, 11, 21-395-611-8793, 4152.04, blithe"
+            },
+            {
+                "answer": "Supplier#000000954",
+                "context": "Supplier#000000954, P3O5p UFz1QsLmZX, 6, 16-537-341-8517, 6721.7, blithely final acco"
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": [
+            {
+                "answer": [
+                    {
+                        "supplier_name": "Supplier#000000887",
+                        "phone_number": "13-738-297-6117"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": [
+            {
+                "answer": "Supplier#000000959",
+                "context": [
+                    {
+                        "s_suppkey": 959,
+                        "s_name": "Supplier#000000959",
+                        "s_address": "8grA EHBnwOZhO",
+                        "s_nationkey": 7,
+                        "s_phone": "17-108-642-3106",
+                        "s_acctbal": 9032.15,
+                        "s_comment": "nding dependencies nag furiou"
+                    }
+                ]
+            },
+            {
+                "answer": "Supplier#000000954",
+                "context": [
+                    {
+                        "s_suppkey": 954,
+                        "s_name": "Supplier#000000954",
+                        "s_address": "P3O5p UFz1QsLmZX",
+                        "s_nationkey": 6,
+                        "s_phone": "16-537-341-8517",
+                        "s_acctbal": 6721.7,
+                        "s_comment": "ect blithely blithely final acco"
+                    }
+                ]
+            },
+            {
+                "answer": "Supplier#000000996",
+                "context": [
+                    {
+                        "s_suppkey": 996,
+                        "s_name": "Supplier#000000996",
+                        "s_address": "Wx4dQwOAwWjfSCGupfrM",
+                        "s_nationkey": 7,
+                        "s_phone": "17-447-811-3282",
+                        "s_acctbal": 6329.9,
+                        "s_comment": "ironic forges cajole blithely agai"
+                    }
+                ]
+            },
+            {
+                "answer": "Supplier#000000982",
+                "context": [
+                    {
+                        "s_suppkey": 982,
+                        "s_name": "Supplier#000000982",
+                        "s_address": "2GJow4mz8ZkIPUSibA0NZ3OyR5TkfHx0",
+                        "s_nationkey": 10,
+                        "s_phone": "20-884-330-2979",
+                        "s_acctbal": 9763.28,
+                        "s_comment": "deas cajole carefully furiously regula "
+                    }
+                ]
+            },
+            {
+                "answer": "Supplier#000000959",
+                "context": [
+                    {
+                        "s_suppkey": 959,
+                        "s_name": "Supplier#000000959",
+                        "s_address": "8grA EHBnwOZhO",
+                        "s_nationkey": 7,
+                        "s_phone": "17-108-642-3106",
+                        "s_acctbal": 9032.15,
+                        "s_comment": "nding dependencies nag furiou"
+                    }
+                ]
+            },
+            {
+                "answer": "Supplier#000000954",
+                "context": [
+                    {
+                        "s_suppkey": 954,
+                        "s_name": "Supplier#000000954",
+                        "s_address": "P3O5p UFz1QsLmZX",
+                        "s_nationkey": 6,
+                        "s_phone": "16-537-341-8517",
+                        "s_acctbal": 6721.7,
+                        "s_comment": "ect blithely blithely final acco"
+                    }
+                ]
+            },
+            {
+                "answer": "Supplier#000000996",
+                "context": [
+                    {
+                        "s_suppkey": 996,
+                        "s_name": "Supplier#000000996",
+                        "s_address": "Wx4dQwOAwWjfSCGupfrM",
+                        "s_nationkey": 7,
+                        "s_phone": "17-447-811-3282",
+                        "s_acctbal": 6329.9,
+                        "s_comment": "ironic forges cajole blithely agai"
+                    }
+                ]
+            },
+            {
+                "answer": "Supplier#000000982",
+                "context": [
+                    {
+                        "s_suppkey": 982,
+                        "s_name": "Supplier#000000982",
+                        "s_address": "2GJow4mz8ZkIPUSibA0NZ3OyR5TkfHx0",
+                        "s_nationkey": 10,
+                        "s_phone": "20-884-330-2979",
+                        "s_acctbal": 9763.28,
+                        "s_comment": "deas cajole carefully furiously regula "
+                    }
+                ]
+            },
+            {
+                "answer": "Supplier#000000959",
+                "context": [
+                    {
+                        "s_suppkey": 959,
+                        "s_name": "Supplier#000000959",
+                        "s_address": "8grA EHBnwOZhO",
+                        "s_nationkey": 7,
+                        "s_phone": "17-108-642-3106",
+                        "s_acctbal": 9032.15,
+                        "s_comment": "nding dependencies nag furiou"
+                    }
+                ]
+            },
+            {
+                "answer": "Supplier#000000954"
+            }
+        ]
+    }
+]

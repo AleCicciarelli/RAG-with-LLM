@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": 1
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": "Here are the summarized details of the suppliers in the 'csv\\_data\\_tpch/supplier.csv' file:\n\n* Supplier #0: Suppkey: 1, Name: Supplier#000000001, Nationkey: 1, Comment: None\n* Supplier #1: Suppkey: 2, Name: Supplier#000000002, Nationkey: 5, Comment: Regular requests are met with quickly bold packages.\n* Supplier #2: Suppkey: 3, Name: Supplier#000000003, Nationkey: 17, Comment: Even packages haggle carefully according to the slowly fluffily requests.\n* Supplier #3: Suppkey: 4, Name: Supplier#000000004, Nationkey: 2, Comment: Final accounts are settled with unusual care.\n* Supplier #4: Suppkey: 5, Name: Supplier#000000005, Nationkey: 13, Comment: Regular requests are met with carefully regular packages.\n* Supplier #5: Suppkey: 6, Name: Supplier#000000006, Nationkey: 9, Comment: Final accounts are settled with quickly bold packages.\n* Supplier #6: Suppkey: 7, Name: Supplier#000000007, Nationkey: 15, Comment: Regular requests are met with carefully regular packages.\n* Supplier #7: Suppkey: 8, Name: Supplier#000000008, Nationkey: 22, Comment: Final accounts are settled with unusual care.\n* Supplier #8: Suppkey: 9, Name: Supplier#000000009, Nationkey: 13, Comment: Regular requests are met with quickly bold packages.\n* Supplier #9: Suppkey: 10, Name: Supplier#000000010, Nationkey: 2, Comment: Final accounts are settled with carefully regular packages.\n* Supplier #10: Suppkey: 11, Name: Supplier#000000011, Nationkey: 9, Comment: Regular requests are met with quickly bold packages.\n* Supplier #11: Suppkey: 12, Name: Supplier#000000012, Nationkey: 5, Comment: Final accounts are settled with unusual care.\n* Supplier #12: Suppkey: 13, Name: Supplier#000000013, Nationkey: 17, Comment: Regular requests are met with bold packages.\n* Supplier #13: Suppkey: 14, Name: Supplier#000000014, Nationkey: 2, Comment: Final accounts are settled with quickly bold packages.\n* Supplier #14: Suppkey: 15, Name: Supplier#000000015, Nationkey: 9, Comment: Regular requests are met with carefully regular packages.\n* Supplier #15: Suppkey: 16, Name: Supplier#000000016, Nationkey: 13, Comment: Final accounts are settled with unusual care.\n* Supplier #16: Suppkey: 17, Name: Supplier#000000017, Nationkey: 5, Comment: Regular requests are met with quickly bold packages.\n* Supplier #17: Suppkey: 18, Name: Supplier#000000018, Nationkey: 22, Comment: Final accounts are settled with carefully regular packages.\n* Supplier #18: Suppkey: 19, Name: Supplier#000000019, Nationkey: 15, Comment: Regular requests are met with quickly bold packages.\n* Supplier #19: Suppkey: 20, Name: Supplier#000000020, Nationkey: 17, Comment: Final accounts are settled with unusual care.\n* Supplier #20: Suppkey: 21, Name: Supplier#000000021, Nationkey: 9, Comment: Regular requests are met with bold packages.\n* Supplier #21: Suppkey: 22, Name: Supplier#000000022, Nationkey: 5, Comment: Final accounts are settled with quickly bold packages.\n* Supplier #22: Suppkey: 23, Name: Supplier#000000023, Nationkey: 1, Comment: Regular requests are met with carefully regular packages.\n* Supplier #23: Suppkey: 24, Name: Supplier#000000024, Nationkey: 13, Comment: Final accounts are settled with unusual care.\n* Supplier #24: Suppkey: 25, Name: Supplier#000000025, Nationkey: 22, Comment: Regular requests are met with quickly bold packages.\n* Supplier #25: Suppkey: 26, Name: Supplier#000000026, Nationkey: 15, Comment: Final accounts are settled with carefully regular packages.\n* Supplier #26: Suppkey: 27, Name: Supplier#000000027, Nationkey: 2, Comment: Regular requests are met with quickly bold packages.\n* Supplier #27: Suppkey: 28, Name: Supplier#000000028, Nationkey: 17, Comment: Final accounts are settled with unusual care.\n* Supplier #28: Suppkey: 29, Name: Supplier#000000029, Nationkey: 5, Comment: Regular requests are met with bold packages.\n* Supplier #29: Suppkey: 30, Name: Supplier#000000030, Nationkey: 1, Comment: Final accounts are settled with quickly bold packages.\n* Supplier #30: Suppkey: 31, Name: Supplier#000000031, Nationkey: 9, Comment: Regular requests are met with carefully regular packages.\n* Supplier #31: Suppkey: 32, Name: Supplier#000000032, Nationkey: 13, Comment: Final accounts are settled with unusual care.\n* Supplier #32: Suppkey: 33, Name: Supplier#000000033, Nationkey: 5, Comment: Regular requests are met with quickly bold packages.\n* Supplier #33: Suppkey: 34, Name: Supplier#000000034, Nationkey: 22, Comment: Final accounts are settled with carefully regular packages.\n* Supplier #34: Suppkey: 35, Name: Supplier#000000035, Nationkey: 15, Comment: Regular requests are met with quickly bold packages.\n* Supplier #35: Suppkey: 36, Name: Supplier#000000036, Nationkey: 2, Comment: Final accounts are settled with unusual care.\n* Supplier #36: Suppkey: 37, Name: Supplier#000000037, Nationkey: 17, Comment: Regular requests are met with bold packages.\n* Supplier #37: Suppkey: 38, Name: Supplier#000000038, Nationkey: 9, Comment: Final accounts are settled with quickly bold packages.\n* Supplier #38: Suppkey: 39, Name: Supplier#000000039, Nationkey: 1, Comment: Regular requests are met with carefully regular packages.\n* Supplier #39: Suppkey: 40, Name: Supplier#000000040, Nationkey: 13, Comment: Final accounts are settled with unusual care.\n* Supplier #40: Suppkey: 41, Name: Supplier#000000041, Nationkey: 5, Comment: Regular requests are met with quickly bold packages.\n* Supplier #41: Suppkey: 42, Name: Supplier#000000042, Nationkey: 22, Comment: Final accounts are settled with carefully regular packages.\n* Supplier #42: Suppkey: 43, Name: Supplier#000000043, Nationkey: 15, Comment: Regular requests are met with quickly bold packages.\n* Supplier #43: Suppkey: 44, Name: Supplier#000000044, Nationkey: 2, Comment: Final accounts are settled with unusual care.\n* Supplier #44: Suppkey: 45, Name: Supplier#000000045, Nationkey: 17, Comment: Regular requests are met with bold packages.\n* Supplier #45: Suppkey: 46, Name: Supplier#000000046, Nationkey: 9, Comment: Final accounts are settled with quickly bold packages.\n* Supplier #46: Suppkey: 47, Name: Supplier#000000047, Nationkey: 1, Comment: Regular requests are met with carefully regular packages.\n* Supplier #47: Suppkey: 48, Name: Supplier#000000048, Nationkey: 13, Comment: Final accounts are settled with unusual care.\n* Supplier #48: Suppkey: 49, Name: Supplier#000000049, Nationkey: 5, Comment: Regular requests are met with quickly bold packages.\n* Supplier #49: Suppkey: 50, Name: Supplier#000000050, Nationkey: 22, Comment: Final accounts are settled with carefully regular packages.\n* Supplier #50: Suppkey: 51, Name: Supplier#000000051, Nationkey: 15, Comment: Regular requests are met with quickly bold packages.\n* Supplier #51: Suppkey: 52, Name: Supplier#000000052, Nationkey: 2, Comment: Final accounts are settled with unusual care.\n* Supplier #52: Suppkey: 53, Name: Supplier#000000053, Nationkey: 17, Comment: Regular requests are met with bold packages.\n* Supplier #53: Suppkey: 54, Name: Supplier#000000054, Nationkey: 9, Comment: Final accounts are settled with quickly bold packages.\n* Supplier #54: Suppkey: 55, Name: Supplier#000000055, Nationkey: 1, Comment: Regular requests are met with carefully regular packages.\n* Supplier #55: Suppkey: 56, Name: Supplier#000000056, Nationkey: 13, Comment: Final accounts are settled with unusual care.\n* Supplier #56: Suppkey: 57, Name: Supplier#000000057, Nationkey: 5, Comment: Regular requests are met with quickly bold packages.\n* Supplier #57: Suppkey: 58, Name: Supplier#000000058, Nationkey: 22, Comment: Final accounts are settled with carefully regular packages.\n* Supplier #58: Suppkey: 59, Name: Supplier#000000059, Nationkey: 15, Comment: Regular requests are met with quickly bold packages.\n* Supplier #59: Suppkey: 60, Name: Supplier#000000060, Nationkey: 2, Comment: Final accounts are settled with unusual care.\n* Supplier #60: Suppkey: 61, Name: Supplier#000000061, Nationkey: 17, Comment: Regular requests are met with bold packages.\n* Supplier #61: Suppkey: 62, Name: Supplier#000000062, Nationkey: 9, Comment: Final accounts are settled with quickly bold packages.\n* Supplier #62: Suppkey: 63, Name: Supplier#000000063, Nationkey: 1, Comment: Regular requests are met with carefully regular packages.\n* Supplier #63: Suppkey: 64, Name: Supplier#000000064, Nationkey: 13, Comment: Final accounts are settled with unusual care.\n* Supplier #64: Suppkey: 65, Name: Supplier#000000065, Nationkey: 5, Comment: Regular requests are met with quickly bold packages.\n* Supplier #65: Suppkey: 66, Name: Supplier#000000066, Nationkey: 22, Comment: Final accounts are settled with carefully regular packages.\n* Supplier #66: Suppkey: 67, Name: Supplier#000000067, Nationkey: 15, Comment: Regular requests are met with quickly bold packages.\n* Supplier #67: Suppkey: 68, Name: Supplier#000000068, Nationkey: 2, Comment: Final accounts are settled with unusual care.\n* Supplier #68: Suppkey: 69, Name: Supplier#000000069, Nationkey: 17, Comment: Regular requests are met with bold packages.\n* Supplier #69: Suppkey: 70, Name: Supplier#000000070, Nationkey: 9, Comment: Final accounts are settled with quickly bold packages.\n* Supplier #70: Suppkey: 71, Name: Supplier#000000071, Nationkey: 1, Comment: Regular requests are met with carefully regular packages.\n* Supplier #71: Suppkey: 72, Name: Supplier#000000072, Nationkey: 13, Comment: Final accounts are settled with unusual care.\n* Supplier #72: Suppkey: 73, Name: Supplier#000000073, Nationkey: 5, Comment: Regular requests are met with quickly bold packages.\n* Supplier #73: Suppkey: 74, Name: Supplier#000000074, Nationkey: 22, Comment: Final accounts are settled with carefully regular packages.\n* Supplier #74: Suppkey: 75, Name: Supplier#000000075, Nationkey: 15, Comment: Regular requests are met with quickly bold packages.\n* Supplier #75: Suppkey: 76, Name: Supplier#000000076, Nationkey: 2, Comment: Final accounts are settled with unusual care.\n* Supplier #76: Suppkey: 77, Name: Supplier#000000077, Nationkey: 17, Comment: Regular requests are met with bold packages.\n* Supplier #77: Suppkey: 78, Name: Supplier#000000078, Nationkey: 9, Comment: Final accounts are settled with quickly bold packages.\n* Supplier #78: Suppkey: 79, Name: Supplier#000000079, Nationkey: 1, Comment: Regular requests are met with carefully regular packages.\n* Supplier #79: Suppkey: 80, Name: Supplier#000000080, Nationkey: 13, Comment: Final accounts are settled with unusual care.\n* Supplier #80: Suppkey: 81, Name: Supplier#000000081, Nationkey: 5, Comment: Regular requests are met with quickly bold packages.\n* Supplier #81: Suppkey: 82, Name: Supplier#000000082, Nationkey: 22, Comment: Final accounts are settled with carefully regular packages.\n* Supplier #82: Suppkey: 83, Name: Supplier#000000083, Nationkey: 15, Comment: Regular requests are met with quickly bold packages.\n* Supplier #83: Suppkey: 84, Name: Supplier#000000084, Nationkey: 2, Comment: Final accounts are settled with unusual care.\n* Supplier #84: Suppkey: 85, Name: Supplier#000000085, Nationkey: 17, Comment: Regular requests are met with bold packages.\n* Supplier #85: Suppkey: 86, Name: Supplier#000000086, Nationkey: 9, Comment: Final accounts are settled with quickly bold packages.\n* Supplier #86: Suppkey: 87, Name: Supplier#000000087, Nationkey: 1, Comment: Regular requests are met with carefully regular packages.\n* Supplier #87: Suppkey: 88, Name: Supplier#000000088, Nationkey: 13, Comment: Final accounts are settled with unusual care.\n* Supplier #88: Suppkey: 89, Name: Supplier#000000089, Nationkey: 5, Comment: Regular requests are met with quickly bold packages.\n* Supplier #89: Suppkey: 90, Name: Supplier#000000090, Nationkey: 22, Comment: Final accounts are settled with carefully regular packages.\n* Supplier #90: Suppkey: 91, Name: Supplier#000000091, Nationkey: 15, Comment: Regular requests are met with quickly bold packages.\n* Supplier #91: Suppkey: 92, Name: Supplier#000000092, Nationkey: 2, Comment: Final accounts are settled with unusual care.\n* Supplier #92: Suppkey: 93, Name: Supplier#000000093, Nationkey: 17, Comment: Regular requests are met with bold packages.\n* Supplier #93: Suppkey: 94, Name: Supplier#000000094, Nationkey: 9, Comment: Final accounts are settled with quickly bold packages.\n* Supplier #94: Suppkey: 95, Name: Supplier#000000095, Nationkey: 1, Comment: Regular requests are met with carefully regular packages.\n* Supplier #95: Suppkey: 96, Name: Supplier#000000096, Nationkey: 13, Comment: Final accounts are settled with unusual care.\n* Supplier #96: Suppkey: 97, Name: Supplier#000000097, Nationkey: 5, Comment: Regular requests are met with quickly bold packages.\n* Supplier #97: Suppkey: 98, Name: Supplier#000000098, Nationkey: 22, Comment: Final accounts are settled with carefully regular packages.\n* Supplier #98: Suppkey: 99, Name: Supplier#000000099, Nationkey: 15, Comment: Regular requests are met with quickly bold packages.\n* Supplier #99: Suppkey: 100, Name: Supplier#000000100, Nationkey: 2, Comment: Final accounts are settled with unusual care.\n```python\nThis appears to be a list of 100 supplier objects, each with properties such as 'Suppkey', 'Name', and 'Comment'. However, it is not valid Python code. If you want to create 100 supplier objects in Python, you could use a loop to repeatedly call a Supplier class constructor. Here's an example:\n\n```\nclass Supplier:\n    def __init__(self, suppkey, name, comment):\n        self.suppkey = suppkey\n        self.name = name\n        self.comment = comment\n\nsuppliers = []\nfor i in range(1, 101):\n    suppliers.append(Supplier(i, f'Supplier#0000000{i}', 'Comment for Supplier #0000000{i}'))\n\n```\n```"
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 1
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 1
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": 1
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": "Based on the provided data, the answer to the question is the list of suppliers with their corresponding information. Here's the list of suppliers with their 'suppkey', 'name', 'address', 'nationkey', 'phone', 'acctbal' (account balance), and 'comment' fields:\n\n1. Suppkey: 832, Name: Supplier#000000832, Address: SwUNp9Yyt5pe 6i5EYiV3hHU9RWJnd3VzBjsbtvO, Nationkey: 15, Phone: 25-658-573-4042, Acctbal: 9747.16, Comment: old ideas wake carefully above the slowly regular pack\n2. Suppkey: 961, Name: Supplier#000000961, Address: jlfkD00x6r0M34ctcSTY3cABv4yWKcjvHV, Nationkey: 15, Phone: 25-911-416-1546, Acctbal: 4139.88, Comment: luffily bold packages wake steadily\n3. Suppkey: 891, Name: Supplier#000000891, Address: cv64gZAB3Ax5XblZ19gNA zOHb9q2nGjtvUzLm9P, Nationkey: 8, Phone: 18-541-281-5118, Acctbal: 2284.88, Comment: deposits. slyly final accounts are fluffily slyly\n4. Suppkey: 903, Name: Supplier#000000903, Address: fQVbA9,L6tB9iFrCfk4Yt1dwT0kRWg9DV, Nationkey: 22, Phone: 32-277-492-3117, Acctbal: 3238.01, Comment: sometimes across the furiously express accounts. unusual accou\n5. Suppkey: 987, Name: Supplier#000000987, Address: DAWJ1lDhybbSO3mngqD28aX, Nationkey: 18, Phone: 28-375-179-1732, Acctbal: -40.3, Comment: uriously unusual courts. slyly unus\n6. Suppkey: 910, Name: Supplier#000000910, Address: 0X S 2E55,maqch, Nationkey: 5, Phone: 15-960-448-6633, Acctbal: 4763.2, Comment: arefully unusual deposits.\n\nPlease note that the 'comment' field is not a standard field in the supplier table and seems to be added for some specific purpose."
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": "It seems like you've provided a list of supplier records from a database or file. However, you didn't ask a specific question or request a certain action related to this data. I'm here to help you with a programming problem, provide an explanation for a piece of code, or clarify a concept in computer science.\n\nIf you need assistance with analyzing, manipulating, or filtering this data, please provide more context and let me know what you'd like to achieve. For example, you might want to find suppliers with a credit balance above a certain threshold, or summarize the data in some way. I'll do my best to help you once I understand your needs better."
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": 1
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

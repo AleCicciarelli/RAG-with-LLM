@@ -1,0 +1,172 @@
+import os
+from langchain.chat_models import init_chat_model
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.document_loaders import CSVLoader
+from langchain_core.documents import Document
+from langchain_community.vectorstores import FAISS
+from langchain_community.vectorstores.utils import DistanceStrategy
+from langgraph.graph import START, StateGraph
+from typing_extensions import List, TypedDict
+from langchain_core.documents import Document
+from langchain import hub
+import json
+from langchain_core.output_parsers import JsonOutputParser
+from pydantic import BaseModel, Field
+from typing import List
+import time
+from langchain_community.chat_models import ChatOllama
+
+os.environ["LANGSMITH_TRACING"] = "true" 
+os.environ["LANGSMITH_API_KEY"] = "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"
+#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 old old token langsmith
+#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 olt token langsmith 
+if not os.environ.get("GROQ_API_KEY"):
+  os.environ["GROQ_API_KEY"] = "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"
+
+# LLM: Llama3-8b by Groq
+#llm = init_chat_model("llama3-8b-8192", model_provider="groq", temperature = 0)
+# MISTRAL by Groq
+#llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
+#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 token hugging-face
+llm = ChatOllama(model="mixtral:8x7b", temperature=0)
+# Embedding model: Hugging Face
+#embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
+embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+
+""" Indexing part """
+
+csv_folder = "csv_data_tpch"
+faiss_index_folder = "faiss_index"
+
+# Verify if the FAISS files already exist
+if os.path.exists(faiss_index_folder):
+    # Load the FAISS index folder ( allow_dangerous_deserialization=True just because we create the files and so we can trust them)
+    vector_store = FAISS.load_local(faiss_index_folder, embedding_model, allow_dangerous_deserialization=True)
+    print("FAISS index successfully loaded")
+else:
+    batch_size = 200  # Adjust as needed
+    documents = []
+    all_files = [f for f in os.listdir(csv_folder) if f.endswith(".csv")]
+
+    for file in all_files:
+        file_path = os.path.join(csv_folder, file)
+        loader = CSVLoader(file_path=file_path)
+        docs = loader.load()
+        
+        for i in range(0, len(docs), batch_size):
+            batch_docs = docs[i:i+batch_size]
+            if not documents:
+                vector_store = FAISS.from_documents(batch_docs, embedding=embedding_model)
+            else:
+                vector_store.add_documents(batch_docs)
+
+    # Save after full processing
+    vector_store.save_local(faiss_index_folder)
+    print("FAISS vector store created and saved successfully!")
+""" Retrieve and Generate part """
+# Define prompt for question-answering
+prompt = hub.pull("rlm/rag-prompt")
+# Step 1: Define Explanation Class: composed by file and row
+
+class AnswerItem(BaseModel):
+    answer: List[str]
+    why: List[str]
+
+# Define state for application
+class State(TypedDict):
+    question: str
+    answer: List[AnswerItem]
+   
+parser = JsonOutputParser(pydantic_schema=AnswerItem)    
+
+# Generate the answer invoking the LLM with the context joined with the question
+def generate(question):
+    prompt_with_explanation = f"""
+        Question: {question}
+
+        Your task is to:
+        1. Provide the correct answer(s)
+        2. For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
+
+        Each Witness Set must be a string like:
+            "{{{{<table_name>_<row>}}}}"
+
+
+        If an answer has multiple Witness Sets, list each one in the `"why"` array "{{{{WitnessSet1}}, {{WitnessSet2}}}}". A result is valid if at least one Witness Set supports it.
+
+        Return the output as a **stringified JSON array**, with NO extra text: (avoid the comments, or the additional information)
+
+        [
+            {{
+            "answer": ["<answer_1>","<answer_2>"],
+            "why": [
+            "{{{{table_row_a, table_row_b}}, {{table_row_c, table_row_d}}}}",   //answer1 
+            "{{{{table_row_e, table_row_f}}}}"    //answer2
+            ]
+            }}
+        ]
+
+        Example:
+
+        QUESTION:
+            "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?"
+
+        EXPECTED ANSWER:
+
+        [  
+            {{
+                "answer": [
+                {{
+                    "answer": [
+                    "546",
+                    "314052"
+                    ],
+                    "why": [
+                    "{{{{customer_14322,orders_137}}}}", 
+                    "{{{{customer_101,orders_78528}}}}"
+                    ]
+                }}
+                
+            }}           
+        ]
+"""
+
+
+    response = llm.invoke(prompt_with_explanation)
+     
+    try:
+        parsed = parser.parse(response.content)
+    except Exception as e:
+        print(f"Errore nel parsing: {e}")
+        parsed = None
+
+    return {
+        "answer": parsed if parsed else response.content.strip()
+    }
+
+
+# Leggi le domande dal file JSON
+with open("questions.json", "r") as f:
+    data = json.load(f)
+    questions = list(data.keys())
+# Ora 'questions' contiene solo le domande (le chiavi del dizionario)
+for q in questions:
+    print(q)
+    
+
+
+all_results = []
+
+for i, question in enumerate(questions):
+    full_result = generate(question)
+    result = {
+        "question": question,
+        "answer": full_result.get("answer", []),
+    }
+    all_results.append(result)
+
+output_filename = f"outputs_mixtral8x7b/emptyContext.json"
+# Save the results for the current value of k to a JSON file for later analysis
+with open(output_filename, "w") as output_file:
+    json.dump(all_results, output_file, indent=4, ensure_ascii=False)
+print(f"Results saved to {output_filename}")

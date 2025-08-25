@@ -1,0 +1,470 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": "Based on the provided context, I have formulated an answer to the question: \"Which suppliers (specify <col_a> and <col_b>) have a total quantity (sum of <col_e> and <col_f>) greater than or equal to 200?\"\n\nThe answer is:\n[\n{\n\"answer\": [\"Supplier1 Quantity\", \"Supplier2 Quantity\"],\n\"why\": [\"{{csv_data/suppliers_1_past_year.csv_5}, {csv_data/quantities_1_past_year.csv_3}}\", \"{{csv_data/suppliers_1_past_year.csv_6}, {csv_data/quantities_1_past_year.csv_4}}\"]\n}\n]\n\nExplanation:\n1. Supplier1 Quantity: This answer is justified by the Witness Set {{csv\\_data/suppliers\\_1\\_past\\_year.csv\\_5}, {csv\\_data/quantities\\_1\\_past\\_year.csv\\_3}}. The supplier information in row 5 of the suppliers table and the quantity information in row 3 of the quantities table contribute to this answer, as their combined total quantity is greater than or equal to 200.\n2. Supplier2 Quantity: This answer is justified by the Witness Set {{csv\\_data/suppliers\\_1\\_past\\_year.csv\\_6}, {csv\\_data/quantities\\_1\\_past\\_year.csv\\_4}}. The supplier information in row 6 of the suppliers table and the quantity information in row 4 of the quantities table contribute to this answer, as their combined total quantity is greater than or equal to 200."
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": [
+            {
+                "answer": [
+                    "14323"
+                ],
+                "why": [
+                    "{{orders_137}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": [
+            {
+                "answer": [
+                    "Customer#000011467"
+                ],
+                "why": [
+                    "{{orders_58315}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": [
+            {
+                "answer": [
+                    "ECONOMY ANODIZED STEEL",
+                    "LARGE BRUSHED COPPER"
+                ],
+                "why": [
+                    "{{part_9465, partsupp_37901, supplier_724}}, {{part_1037, partsupp_4170, supplier_791}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": [
+            {
+                "answer": [
+                    "Customer#000005404"
+                ],
+                "why": [
+                    "{{customer_5407}, {orders_116716}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": "CONTEXT:\n    - source: orders, row: 5 (customer_id:14968, product:null, ...)\n    - source: customers, row: 14968 (customer_id:14968, name:sykKTZBzVFl7ito1750v2TRYwmkRl2nvqGHwmx, ...)\n    - source: orders, row: 110873 (customer_id:14968, product:null, ...)\n\n    QUESTION: Which customers have an order with a missing product name?\n\n    EXPECTED ANSWER:\n    [\n        {\n            \"answer\": [\"sykKTZBzVFl7ito175"
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": "Based on the context provided, there is only one customer (c\\_custkey) that meets the criteria. The customer with c\\_custkey 6896 has placed orders with a total price lower than 1000 (958.56), belongs to the nation with nationkey = 24, and has an order status of 'F'.\n\nHere are the witness sets for this answer:\n\n* For the customer information: \"{{customer\\_6900}}\"\n* For the order information: \"{{orders\\_149223}}\"\n\nSo, the output is:\n\n[\n{\n\"answer\": [\"6896\"],\n\"why\": [\n\"{{customer\\_6900},{orders\\_149223}}\"\n]\n}\n]"
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": [
+            {
+                "answer": [
+                    "3"
+                ],
+                "why": [
+                    "{{region_3}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": "Based on the context provided: {'source': 'region', 'row': 1}, the name of the region with region key"
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": [
+            {
+                "answer": [
+                    "34-852-489-8585"
+                ],
+                "why": [
+                    "{{csv_data_supplier_9}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": [
+            {
+                "answer": [
+                    "905.0"
+                ],
+                "why": [
+                    "{{csv_data_parts_15}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": "Based on the provided context, the answer to \"Which customer (c\\_name) placed the order with order key 130?\" is:\n\n[\n{\n\"answer\": [\"Customer#000003697\"],\n\"why\": [\"{{customer\\_3697, orders\\_33}}\"]\n}\n]\n\nExplanation:\n\nThe customer who placed the order with order key 1"
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": "Based on the context provided: {'source': 'customer', 'row': 456}"
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": "Based on the context provided, the nation name of the customer with ID Customer#00000"
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": [
+            {
+                "answer": [
+                    "cyan papaya thistle dodger grey",
+                    "Manufacturer#2",
+                    "Brand#24",
+                    "ECONOMY BURNISHED NICKEL",
+                    "27",
+                    "JUMBO BOX",
+                    "1505.58"
+                ],
+                "why": [
+                    "{{orders_3, lineitem_1}}",
+                    "{{lineitem_1, partsupp_1}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": [
+            {
+                "answer": [
+                    "3",
+                    "4"
+                ],
+                "why": [
+                    "{{region_3}}",
+                    "{{region_4}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": "CONTEXT:\n    - source: csv_data/customer\\_data.csv, row: 1 (id:1, name:\"John Smith\", ...)\n    - source: csv_data/customer\\_data.csv, row: 2 (id:2, name:\"Jane Doe\", ...)\n    - source: csv_data/customer\\_data.csv, row: 3 (id:3, name:\"Mike Johnson\", ...)\n    - source: csv_data/customer\\_data.csv, row: 4 (id:4, name:\"Sara Connor\", ...)\n    - source: csv_data/orders\\_data.csv, row: 1 (order\\_id:101, customer\\_id:2, order\\_date:\"2022-01-01\", ...)\n    - source: csv_data/orders\\_data.csv, row: 2 (order\\_id:102, customer\\_id:3, order\\_date:\"2022-01-05\", ...)\n    - source: csv_data/orders\\_data.csv, row: 3 (order\\_id:103, customer\\_id:1, order\\_date:\"2022-01-10\", ...)\n    - source: csv_data/orders\\_data.csv, row: 4 (order\\_id:104, customer\\_id:4, order\\_date:\"2022-01-15\", ...)\n\n    QUESTION: \"Which **customers** have placed an **order**?\"\n\n    EXPECTED ANSWER:\n\n    [\n        {\n            \"answer\": [\"John Smith\", \"Jane Doe\", \"Mike Johnson\", \"Sara Connor\"],\n            \"why\": [\n                \"{{csv_data/customer_data.csv_1}, {csv_data/orders_data.csv_3}}\",\n                \"{{csv_data/customer_data.csv_2}, {csv_data/orders_data.csv_1}}\",\n                \"{{csv_data/customer_data.csv_3}, {csv_data/orders_data.csv_2}}\",\n                \"{{csv_data/customer_data.csv_4}, {csv_data/orders_data.csv_4}}\"\n            ]\n        }\n    ]"
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": [
+            {
+                "answer": [
+                    "Supplier#000000103",
+                    "Supplier#000000528"
+                ],
+                "why": [
+                    "{{supplier_102}}",
+                    "{{supplier_527}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": "CONTEXT:\n- source: orders, row: 5 (customer\\_id:3, product:B, total:12.64, order\\_date:2021-01-08)\n- source: customers, row: 3 (customer\\_id:3, name:Larry Halff, last\\_purchase\\_date:2021-01-08, email:\"[larry@halff.com](mailto:larry@halff.com)\", loyalty\\_points:450)\n- source: orders, row: 7 (customer\\_id:6, product:C, total:33.21, order\\_date:2021-01-10)\n- source: customers, row: 6 (customer\\_id:6, name:Robert Jones, last\\_purchase\\_date:null, email:\"[robertj@zap.com](mailto:robertj@zap.com)\", loyalty\\_points:150)\n- source: orders, row: 8 (customer\\_id:9, product:A, total:14.32, order\\_date:2021-01-11)\n- source: customers, row: 9 (customer\\_id:9, name:Emma Brown, last\\_purchase\\_date:2021-01-11, email:\"[emmab@intuitive.com](mailto:emmab@intuitive.com)\", loyalty\\_points:75)\n\nQUESTION: Which are the customers who made a purchase on the same date as their last purchase?\n\nANSWER:\n[\n{\n\"answer\": [\"Larry Halff\"],\n\"why\": [\n\"{{orders_5, customers_3}}\"\n]\n}\n]\n\nWHY:\nLarry Halff is the only customer who made a purchase on the same date as their last purchase. The witness set for this answer includes orders\\_5 (customer\\_id: 3, order\\_date: 2021-01-08) and customers\\_3 (customer\\_id: 3, last\\_purchase\\_date: 2021-01-08)."
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": "Based on the provided context, the ship date of the lineitem with order key 324 and line number 1 is '1992-05-12'.\n\nHere's the JSON array format for the answer along with its witness set:\n\n[\n    {\n        \"answer\": [\"1992-05-12\"],\n        \"why\": [\n            \"{{lineitem_334}}\"\n        ]\n    }\n]\n\nExplanation:\nThe 'lineitem' table has a row (334) that contains the order key (324) and line number (1), along with the ship date '1992-05-12'. This information is sufficient to determine the answer."
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": [
+            {
+                "answer": [
+                    "1993-04-16",
+                    "1994-10-17",
+                    "1995-01-17",
+                    "1995-07-04",
+                    "1995-07-30",
+                    "1995-10-07",
+                    "1996-08-15",
+                    "1996-10-23"
+                ],
+                "why": [
+                    "{{orders_45277}}",
+                    "{{orders_98506}}",
+                    "{{orders_71169}}",
+                    "{{orders_78887}}",
+                    "{{orders_3746}}",
+                    "{{orders_146338}}",
+                    "{{orders_147240}}",
+                    "{{orders_46223}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": "Based on the context provided, the nation (n\\_name) of the supplier 'Supplier#00000"
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": [
+            {
+                "answer": [
+                    "MIDDLE EAST"
+                ],
+                "why": [
+                    "{region_4}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": [
+            {
+                "answer": [
+                    "Supplier#000000201",
+                    "Supplier#000000451",
+                    "Supplier#000000701",
+                    "Supplier#000000951"
+                ],
+                "why": [
+                    "{{partsupp_797, supplier_201}}",
+                    "{{partsupp_798, supplier_451}}",
+                    "{{partsupp_799, supplier_700}}",
+                    "{{partsupp_800, supplier_951}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": "Based on the context provided, the correct answer to \"What is the available quantity for partkey 500 supplied by supplierkey 123?\" is:\n\n[\n    {\n        \"answer\": [\"1000\"],\n        \"why\": [\"{{partsupp_43}}\"]\n    }\n]\n\nExplanation:\n\nThe context specifies the source as 'partsupp' and row as 43. This means that we should look at the 'partsupp' table, specifically row 43, to find the answer.\n\nIn the 'partsupp' table, row 43 contains the following values:\n```diff\npartkey: 500\nsupplierkey: 123\navailqty: 1000\n..."
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 204408.59
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": [
+            {
+                "answer": [
+                    "11",
+                    "Gcdm2rJRzl5qlTVzc"
+                ],
+                "why": [
+                    "{{csv_data_supplier_4}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": [
+            {
+                "answer": [
+                    "1994-03-26"
+                ],
+                "why": [
+                    "{{orders_82}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": "Based on the context provided, the customer who placed the order with order key 323 is 'Customer#000003914'.\n\nThe answer is justified by the following witness set(s):\n\"{{'customer'-3914}, {'orders'-82}}\"\n\nThe context includes information about a customer row and an orders row. The customer row contains the customer name and their unique identifier, while the orders row contains the order key and the customer id that placed the order. By matching the customer id from the orders row (3914) to the unique identifier in the customer row ('Customer#000003914'), we can determine that 'Customer#000003914' placed the order with order key 323."
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": [
+            {
+                "answer": [
+                    "ETHIOPIA"
+                ],
+                "why": [
+                    "{{nation_5}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": "Based on the context provided, the name of the region where the nation France is located is 'EUROPE'.\n\nHere's the stringified JSON array as requested:\n\n[\n    {\n        \"answer\": [\"EUROPE\"],\n        \"why\": [\"{{region_3}, {nation_6}}\"}\n    }\n]\n\nExplanation of the Witness Set:\n\n* `{region_3}`: This is the third row in the 'region' table, which indicates that the region with index 3 is EUROPE.\n* `{nation_6}`: This is the sixth row in the 'nation' table, which indicates that the nation with index 6 is FRANCE.\n\nTherefore, based on these two rows from the 'region' and 'nation' tables, we can conclude that FRANCE is located in EUROPE."
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": [
+            {
+                "answer": [
+                    "000010646"
+                ],
+                "why": [
+                    "{{customer_10647}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": [
+            {
+                "answer": [
+                    "KENYA"
+                ],
+                "why": [
+                    "{nation_14}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": [
+            {
+                "answer": [
+                    "776"
+                ],
+                "why": [
+                    "{{supplier_775}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": [
+            {
+                "answer": [
+                    "1"
+                ],
+                "why": [
+                    "{{part_1}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 771.64
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": "[\n    {\n        \"answer\": [\"Customer#000003153\", \"Customer#000003318\", \"Customer#000005856\", \"Customer#000009799\", \"Customer#000009859\", \"Customer#000011076\", \"Customer#000014573\"],\n        \"why\": [\n            \"{{customer_3158}}\",\n            \"{{customer_3323}}\",\n            \"{{customer_5859}}\",\n            \"{{customer_9800}}\",\n            \"{{customer_9860}}\",\n            \"{{customer_11077}}\",\n            \"{{customer_14572}}\"\n        ]\n    }\n]\n\n**Why**: The answer is justified by the following witness sets, each one corresponding to a row in the `customer` table that has a balance greater than 9000:\n\n* customer\\_3158: {\"source\": \"customer\", \"row\": 3158, \"cust_id\": \"Customer#000"
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": [
+            {
+                "answer": [
+                    "Supplier#000000067",
+                    "Supplier#000000371",
+                    "Supplier#000000465"
+                ],
+                "why": [
+                    "{{lineitem_5, supplier_67}}",
+                    "{{lineitem_0, supplier_371}}",
+                    "{{lineitem_2, supplier_465}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": "CONTEXT:\n    * source: orders, row: 56109 (item: '78767.38', qty: '0')\n    * source: orders, row: 45821 (item: '112245.24', qty: '0')\n    * source: orders, row: 50795 (item: '61131.17', qty: '1')\n    * source: orders, row: 53869 (item: '51594.08', qty: '1')\n    * source: orders, row: 28301 (item: '3661.08', qty: '3')\n\n    QUESTION: Which items have a quantity of exactly '1'?\n\n    ANSWER:\n    [\n        {\n            \"answer\": [\"51594.08\", \"61131.17\"],\n            \"why\": [\n                \"{{orders_53869}}\",\n                \"{{orders_50795}}\"\n            ]\n        }\n    ]\n\n    EXPLAIN: The answer is derived from rows where the quantity column has a value of exactly '1'. This information comes from orders rows 53869 and 50795, as shown in the context."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": "Based on the provided context, the question is: \"What are the 'category' and 'submitted_via' for the tuples with 'payment_amount' greater than or equal to 90000?\""
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": [
+            {
+                "answer": [
+                    "goldenrod lavender spring chocolate lace"
+                ],
+                "why": [
+                    "{{source_part_0}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": [
+            {
+                "answer": [
+                    "ARGENTINA",
+                    "CANADA",
+                    "PERU",
+                    "UNITED STATES"
+                ],
+                "why": [
+                    "{{nation_1}}",
+                    "{{nation_3}}",
+                    "{{nation_17}}",
+                    "{{nation_24}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": ""
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": [
+            {
+                "answer": [
+                    "ALGERIA",
+                    "ETHIOPIA",
+                    "KENYA",
+                    "MOROCCO",
+                    "MOZAMBIQUE"
+                ],
+                "why": [
+                    "{{nation_0}}",
+                    "{{nation_5}}",
+                    "{{nation_14}}",
+                    "{{nation_15}}",
+                    "{{nation_16}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": [
+            {
+                "answer": [
+                    "FRANCE",
+                    "GERMANY",
+                    "ROMANIA",
+                    "RUSSIA",
+                    "UNITED KINGDOM"
+                ],
+                "why": [
+                    "{{nation_6}}",
+                    "{{nation_7}}",
+                    "{{nation_19}}",
+                    "{{nation_22}}",
+                    "{{nation_23}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": "Based on the provided context, the answer to \"Which suppliers (s\\_name) belong to the nation with nationkey = 2 and have a balance lower than 0?\" is:\n\n[\n   {\n      \"answer\": [\n         \"Supplier#000000164\",\n         \"Supplier#000000195\"\n      ],\n      \"why\": [\n         \"{{supplier_163}}\",\n         \"{{supplier_195}}\"\n      ]\n   }\n]\n\nExplanation:\n\n* The supplier with row number 163 in the 'supplier' table (source = 'supplier', row = 163) has s\\_name as \"Supplier#000000164\" and balance as -264.2, which is lower than 0. The nationkey for this supplier is 2.\n* The supplier with row number 195 in the 'supplier' table (source = 'supplier', row = 195) has s\\_name as \"Supplier#000000195\" and balance as -767.31, which is lower than 0. The nationkey for this supplier is also 2.\n\nTherefore, these two suppliers are the answer to the question. The witness sets for each of them are mentioned in the \"why\" field above."
+    }
+]

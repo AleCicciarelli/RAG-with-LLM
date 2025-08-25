@@ -1,0 +1,186 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": "The question is asking for the countries that have a population greater than 100 million. \n\nFrom the given data, we can see that only one country has a population greater than 100 million.\n\nAnswer: [\"Asia\"]\n\nWhy:\n{{\"Asia_1\"}}"
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"546\"],\n        \"why\": [\n            \"{{orders_137}}\",\n            \"{{customer_14322}, orders_137}\"\n        ]\n    }\n]\n\nExplanation:\nThe question asks for orders (o_orderkey) done by a customer with nationkey = 2 that have a total price between 20500 and 20550. The only order that meets this condition is the one with o_orderkey = 546, which has a total price of 20531.43.\n\nWitness Sets:\nThe first Witness Set is {{orders_137}}, because this order (o_orderkey = 546) has a total price between 20500 and 20550.\nThe second Witness Set is {{customer_14322}, orders_137}} because the customer with nationkey = 2 (Customer#000014323) placed this order."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"11467\"],\n        \"why\": [\n            \"{{customer_11466}, {orders_58315}\"\n        ]\n    }\n]\n\nExplanation:\nThe question asks for customers who have placed orders with a total price between 91123 and 91130. The only customer who meets this condition is Customer#000011467, as shown in the context.\n\nWitness Set 1: {{customer_11466}, {orders_58315}} - This set includes the customer tuple (11467) and the order tuple (58315), which shows that Customer#000011467 placed an order with a total price of 91126.62, which falls within the desired range.\n\nNote that there are no other customers who meet this condition, so the answer is simply \"11467\"."
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"1037\"],\n        \"why\": [\n            \"{{part_1037}}, {{partsupp_4170}}, {{supplier_790}}\",\n            \"{{part_9465}}, {{partsupp_37901}}, {{supplier_723}}\"\n        ]\n    }\n]\n\nExplanation:\nThe question asks for parts (p_type) that have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102. \n\nIn the given context, only two parts meet this condition: part 1037 and part 9465. Both of these parts have a size of 36. For part 1037, it is supplied by supplier 791 with a supply cost of 101.94, which falls within the range [100,102). Similarly, for part 9464, it is supplied by supplier 724 with a supply cost of 100.22, which also falls within the range [100,102).\n\nThe witness sets are constructed as follows: \n- For part 1037, we have {{part_1037}}, {{partsupp_4170}}, {{supplier_790}} because these three tuples together justify that part 1037 has a size of 36 and is supplied by supplier 791 with a supply cost of 101.94.\n- Similarly, for part 9465, we have {{part_9465}}, {{partsupp_37901}}, {{supplier_723}} because these three tuples together justify that part 9464 has a size of 36 and is supplied by supplier 724 with a supply cost of 100.22."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Customer#000005404\"],\n        \"why\": [\n            \"{{customer_5407}}\"\n        ]\n    }\n]\n\nExplanation:\nThe question asks for customers who have placed orders with a total price between 13156 and 13160. The only order that meets this condition is the one with row 116716, which belongs to customer 5404. Therefore, the answer is \"Customer#000005404\"."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"1960\"],\n        \"why\": [\n            \"{{customer_1963,customer_1960,orders_27778}}\",\n            \"{{customer_1960,orders_66019}}\"\n        ]\n    }\n]\n\nExplanation:\nThe question asks for customers who have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1. \n\nFrom the given data, we can see that customer #1960 has an order with a total price of 91159.18 (orders_27778) which falls within the specified range. This customer also belongs to the nation with nationkey = 1.\n\nAdditionally, customer #1960 has another order with a total price of 91251.32 (orders_110873) which also falls within the specified range and belongs to the same nation.\n\nTherefore, the answer is \"1960\" and the witness sets that justify this result are customer_1963, customer_1960, orders_27778 and customer_1960, orders_66019."
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"6896\"],\n        \"why\": [\n            \"{{customer_6900}\"\n        ]\n    }\n]\n\nExplanation:\nThe customer with c_custkey 6896 has placed orders with a total price lower than 1000, belongs to the nation with nationkey = 24 (which is 'MvVnnxEF29nDVdr' in this case), and has an order status of either 'P' or 'F'. The only customer that meets these conditions is 6896."
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"3\"],\n        \"why\": [\n            \"{{'nation'_7, 'region'_3}}\"\n        ]\n    }\n]\n\nExplanation:\nThe nation 'GERMANY' belongs to region 3 (EUROPE). The witness set for this answer is a single tuple that combines the row metadata from the 'nation' and 'region' tables."
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": "Based on the provided context, the answer to the question \"What is the name (r_name) of the region with region key 1?\" is:\n\n[\n    {\n        \"answer\": [\"AMERICA\"],\n        \"why\": [\n            \"{{region_1}}\"\n        ]\n    }\n]\n\nThe reason for this answer is that the only row in the context has a source value of 'region' and a row value of 1, which corresponds to the region key 1. The r_name (region name) for this region key is \"AMERICA\"."
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"34-852-489-8585\"],\n        \"why\": [\n            \"{{supplier_9}}\"\n        ]\n    }\n]\n\nExplanation:\nThe phone number of the supplier with name 'Supplier#000000010' is 34-852-489-8585. This can be justified by the following witness set: {{supplier_9}}, where 'supplier_9' refers to the row metadata in the context, which corresponds to the table name and row index."
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"905.0\"],\n        \"why\": [\n            \"{{csv_data/Manufacturer#3.csv_4}}\"\n        ]\n    }\n]\n\nExplanation: The retail price of the part named 'forest brown coral puff cream' is 905.0, which can be justified by the Witness Set {{csv_data/Manufacturer#3.csv_4}}."
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Customer#000003697\"],\n        \"why\": [\n            \"{{customer_3697}}\"\n        ]\n    }\n]\n\nExplanation: The order key 130 corresponds to an order placed by customer Customer#000003697. This can be justified by the witness set {{customer_3697}}, which is a minimal set of input tuples that justifies the result."
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"8815.78\"],\n        \"why\": [\n            \"{{customer_456}}\"\n        ]\n    }\n]\n\nExplanation: The account balance (c_acctbal) of the customer with custkey 456 is 8815.78, which can be justified by the single witness set `{{customer_456}}`."
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"EGYPT\"],\n        \"why\": [\n            \"{{customer_3}}\"\n        ]\n    }\n]\n\nExplanation:\nThe customer's nation name is EGYPT, which can be justified by the following witness set: `{{customer_3}}`. This means that the tuple at row 3 of the 'customer' table (`source`: 'customer', `row`: 3) contains the information about the customer's nation, which is EGYPT."
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"18587\"],\n        \"why\": [\n            \"{{lineitem_250}\", \n            \"{{part_18586}\"\n        ]\n    }\n]\n\nExplanation: The order with lineitem l_orderkey = 230 was supplied in the order with part p_name = 18587. This is supported by Witness Sets {{lineitem_250}} and {{part_18586}}, which show that this part was involved in this order."
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"EUROPE\"],\n        \"why\": [\n            \"{{region_3}\"\n        ]\n    }\n]\n\nExplanation:\nThe question asks which regions have a region key greater than 2. The only region with a region key greater than 2 is EUROPE, which has a region key of 3. This is supported by the witness set {{region_3}}, which corresponds to the input tuple {'source': 'region', 'row': 3}."
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Customer#000000017\", \"715\"],\n        \"why\": [\n            \"{{customer_16}\", \"{{customer_716}\"\n        ]\n    }\n]\n\nExplanation:\nThe question asks for customers from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100. The answer is Customer#000000017 and 715, which are the only two customers that meet this condition.\n\nWitness Sets:\n\n* {{customer_16}}: This customer has a market segment of AUTOMOBILE and an account balance of 6.34, which is within the range of 0 to 100.\n* {{customer_716}}: This customer has a market segment of AUTOMOBILE and an account balance of 85.05, which is also within the range of 0 to 100.\n\nThese two customers are the only ones that meet the condition, so they are the answer."
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Supplier#000000223\", \"Supplier#000000722\"],\n        \"why\": [\n            \"{{supplier_102, supplier_223}}\",\n            \"{{supplier_223, supplier_722}}\"\n        ]\n    }\n]\n\nExplanation:\nThe question asks for suppliers with a nation key of 2 and a balance between 1000 and 2000. The answer is Supplier#000000223 (nation key 2, balance 1518.42) and Supplier#000000722 (nation key 2, balance 1895.71).\n\nWitness Sets:\nThe first Witness Set {{supplier_102, supplier_223}} supports the answer because it includes the row with nation key 2 and balance 1518.42 (Supplier#000000223). The second Witness Set {{supplier_223, supplier_722}} also supports the answer because it includes the row with nation key 2 and balance 1895.71 (Supplier#000000722)."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"571\"],\n        \"why\": [\n            \"{{customer_571}}, {{orders_46455}}\", \n            \"{{customer_571}}, {{orders_60518}}\"\n        ]\n    }\n]\n\nExplanation:\nThe question asks for customers who have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2. \n\nFrom the given data, we can see that customer #571 has two orders: one with a total price of 1141.94 (orders_46455) and another with a total price of 8993.23 (no order ID provided). The total price for these two orders is 8993.23 + 1141.94 = 10135.17, which is greater than the maximum allowed price of 1500.\n\nHowever, customer #571 also has an order with a total price of 1337.29 (orders_61159), which falls within the allowed range. Therefore, we can conclude that only customer #571 meets the condition.\n\nThe witness sets are {{customer_571}}, {{orders_46455}} and {{customer_571}}, {{orders_60518}} because these orders justify the result."
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"1992-05-28\"],\n        \"why\": [\n            \"{{orders_83}}, {{lineitem_334}}\"\n        ]\n    }\n]\n\nExplanation:\nThe ship date of the line item with order key 324 and line number 1 is 1992-05-28. This can be justified by the following witness sets:\n\n* The orders table (row 83) shows that the order was placed on 1992-03-20, but the expected delivery date is 1992-05-28.\n* The line item table (row 334) shows that the line item has a start date of 1992-04-19 and an end date of 1992-05-12, which implies that the ship date is likely to be 1992-05-28."
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"1995-07-30\"],\n        \"why\": [\n            \"{{orders_14947}\", \n            \"{{orders_78887}\"\n        ]\n    }\n]\n\nExplanation:\nThe order date of the order placed by customer 'Customer#000000023' is 1995-07-30. This can be justified by the following witness sets:\n\n* {{orders_14947}}: The order with ID 14947 has a customer ID of 23 and an order date of 1995-07-30.\n* {{orders_78887}}: The order with ID 78887 has a customer ID of 23 and an order date of 1995-07-30."
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"UNITED KINGDOM\"],\n        \"why\": [\n            \"{{nation_23}}\"\n        ]\n    }\n]\n\nExplanation: The nation of the supplier 'Supplier#000000007' is based on the context provided, which includes a row with source 'nation' and row 23. This information corresponds to the value 'UNITED KINGDOM'."
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"MIDDLE EAST\"],\n        \"why\": [\n            \"{{nation_11}\"\n        ]\n    }\n]\n\nExplanation:\nThe supplier 'Supplier#000000005' belongs to the MIDDLE EAST region. This can be justified by the following witness set: {{nation_11}}. The nation table has a row with index 11, which corresponds to IRAQ, and this country is located in the MIDDLE EAST region."
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Supplier#000000451\", \"Supplier#000000701\"],\n        \"why\": [\n            \"{{partsupp_797}}, {{supplier_451}}\",\n            \"{{partsupp_799}}\"\n        ]\n    }\n]\n\nExplanation:\nThe question asks which suppliers provide the part with partkey 200. The answer is Supplier#000000451 and Supplier#000000701 because they are associated with partkey 200 in the partsupp table.\n\nWitness Sets:\n\n* {{partsupp_797}}: This witness set shows that partkey 200 is associated with supplier 451 (Supplier#000000451) in the partsupp table.\n* {{supplier_451}}: This witness set shows that supplier 451 (Supplier#000000451) exists in the supplier table, which further supports the association between this supplier and partkey 200.\n* {{partsupp_799}}: This witness set shows that partkey 200 is also associated with supplier 701 (Supplier#000000701) in the partsupp table.\n\nThese witness sets together justify the answer that Supplier#000000451 and Supplier#000000701 provide the part with partkey 200."
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"500\"],\n        \"why\": [\n            \"{{partsupp_43}}\"\n        ]\n    }\n]\n\nExplanation: The partkey 500 supplied by supplierkey 123 can be found in row 43 of the 'partsupp' table."
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"204408.59\"],\n        \"why\": [\n            \"{{orders_27}}\"\n        ]\n    }\n]\n\nExplanation: The orderkey 100 corresponds to row 27 in the orders table, and the total price of this order is 204408.59."
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"21-151-690-3663\"],\n        \"why\": [\n            \"{{supplier_4}}\"\n        ]\n    }\n]\n\nExplanation: The phone number of the supplier named \"Supplier#000000005\" is 21-151-690-3663. This can be justified by the context provided, which includes a tuple with source='supplier', row=4, and phone number 21-151-690-3663 for Supplier#000000005."
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"1994-03-26\"],\n        \"why\": [\n            \"{{orders_82}}\"\n        ]\n    }\n]\n\nExplanation: The order date of the order with order key 323 is 1994-03-26. This can be justified by the following Witness Set: {{orders_82}}."
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"ttiejPeOhdDhQ Y\"],\n        \"why\": [\n            \"{{customer_3914}\"\n        ]\n    }\n]\n\nExplanation: The order key 323 corresponds to an order placed by customer ttiejPeOhdDhQ Y, as indicated in the orders table."
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"ETHIOPIA\"],\n        \"why\": [\n            \"{{nation_5}}\"\n        ]\n    }\n]\n\nExplanation:\nThe question asks for the name of the nation where the supplier with suppkey 456 is located. The only relevant information provided is the row with suppkey 456, which indicates that the supplier is located in ETHIOPIA. This information can be found in the \"nation\" table at row 5, hence the witness set \"{{nation_5}}\"."
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": "Here is the output:\n\n[\n    {\n        \"answer\": [\"EUROPE\"],\n        \"why\": [\n            \"{{'source': 'region', 'row': 3}}\"\n        ]\n    }\n]\n\nExplanation:\nThe question asks for the name of the region where the nation FRANCE is located. The answer is EUROPE, which can be justified by the following Witness Set:\n\n{{'source': 'region', 'row': 3}}\n\nThis Witness Set corresponds to the row in the \"region\" table with index 3, which has a value of EUROPE."
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"DK\"],\n        \"why\": [\n            \"{{'customer'_10647}}\"\n        ]\n    }\n]\n\nExplanation: The customer who placed order 352 has a nation of DK, which can be found in the 'customer' table with row index 10647."
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Supplier#000000181\"],\n        \"why\": [\n            \"{{supplier_181}\"\n        ]\n    }\n]\n\nExplanation:\nThe partkey 430 in order 3 belongs to supplier #000000181. This can be justified by the following witness set: {{supplier_181}}."
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"31-317-593-4029\"],\n        \"why\": [\n            \"{{supplier_775}\"\n        ]\n    }\n]\n\nExplanation:\nThe phone number of the supplier that delivered a lineitem for partkey 275 in order 32 can be found by looking at the 'lineitem' context, which has row 28. The 'part' context has row 274 and shows that partkey 275 is steel chartreuse red plum sienna. The 'supplier' context has row 775 and shows that supplier 776 delivered this part. Therefore, the phone number of the supplier that delivered a lineitem for partkey 275 in order 32 is 31-317-593-4029."
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"1\"],\n        \"why\": [\n            \"{{part_row_1}}\",\n            \"{{partsupp_row_4}}\",\n            \"{{supplier_row_2}}\"\n        ]\n    }\n]\n\nExplanation:\nThe available quantity of the part \"blush thistle blue yellow saddle\" supplied by Supplier#000000003 is 1, based on the context provided. The answer is justified by three witness sets:\n\n* {{part_row_1}}: This row provides the information about the part itself, which has a quantity of 1.\n* {{partsupp_row_4}}: This row provides the information about the supplier's part supply, which also indicates a quantity of 1 for this part.\n* {{supplier_row_2}}: This row provides general information about the supplier, including their contact details and total sales value. However, it does not provide specific information about the part or its availability, but it does not contradict the other two witness sets either.\n\nTherefore, the answer is 1, and the three witness sets support this result."
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": "Here is the output:\n\n[\n    {\n        \"answer\": [\"901.0\"],\n        \"why\": [\n            \"{{part_0}}\",\n            \"{{partsupp_0}}\",\n            \"{{supplier_1}}\"\n        ]\n    }\n]\n\nExplanation:\nThe supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002 is 901.0.\n\nWitness Sets:\n\n* {{part_0}}: This tuple provides the price of the part, which is 901.0.\n* {{partsupp_0}}: This tuple shows that the part is supplied with a cost of 901.0.\n* {{supplier_1}}: This tuple identifies the supplier as Supplier#000000002, who supplies the part at a cost of 901.0.\n\nNote that there are no other tables or rows that could affect the answer, so these three witness sets together justify the result."
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Customer#000001325\", \"Customer#000003153\", \"Customer#000005856\", \"Customer#000009799\"],\n        \"why\": [\n            \"{{customer_129,customer_1325,customer_5856,customer_9799}}\",\n            \"{{customer_301,customer_1325,customer_5856,customer_9799}}\"\n        ]\n    }\n]\n\nExplanation:\n\nThe question asks for customers from the nation 'GERMANY' in the market segment 'HOUSEHOLD' with an account balance greater than 9000. \n\nFrom the given data, we can see that the customers who meet this condition are:\n- Customer#000001325 (account balance: 9108.61)\n- Customer#000003153 (account balance: 9945.83)\n- Customer#000005856 (account balance: 9971.5)\n- Customer#000009799 (account balance: 9768.43)\n\nThese customers are supported by the witness sets:\n- {{customer_129,customer_1325,customer_5856,customer_9799}}: This set includes all the customers who meet the condition.\n- {{customer_301,customer_1325,customer_5856,customer_9799}}: This set also includes Customer#000001325, which meets the condition."
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"Supplier#000000067\", \"Supplier#000000160\"],\n        \"why\": [\n            \"{{lineitem_5}\", \"{{supplier_66}\", \"{{lineitem_4}\", \"{{supplier_159}\"}\n        ]\n    }\n]\n\nExplanation:\nThe question asks which suppliers have supplied parts for the order with order key 1. The answer is Supplier#000000067 and Supplier#000000160.\n\nWitness Sets:\n\n* {{lineitem_5}}: This line item has an order key of 1, which matches the condition.\n* {{supplier_66}}: This supplier's row number (66) does not match the condition directly, but it supplies parts for the order with order key 1 (lineitem_5).\n* {{lineitem_4}}: This line item does not have an order key of 1, so it does not support the answer.\n* {{supplier_159}}: This supplier's row number (159) does not match the condition directly, but it supplies parts for the order with order key 1 (lineitem_5).\n\nThe other line items and suppliers do not supply parts for the order with order key 1, so they are not included in the witness sets."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"1327\", \"5948\", \"3322\"],\n        \"why\": [\n            \"{{customer_1329}, {orders_16154}, {orders_197571}}\",\n            \"{{customer_1329}, {orders_64518}, {orders_470919}}\",\n            \"{{customer_1329}, {orders_49412}, {orders_197571}}\"\n        ]\n    }\n]\n\nExplanation:\n\nThe question asks for customers who have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'. \n\nFrom the given data, we can see that the customers 1327, 5948, and 3322 meet this condition. They all have orders with a date of 1995-12-24 and an order priority of '3-MEDIUM'.\n\nThe witness sets are:\n\n* For customer 1327: The orders 64518 and 197571 both have the same date and order priority.\n* For customer 5948: The order 86208 has the same date and order priority.\n* For customer 3322: The order 49412 has the same date and order priority.\n\nThese witness sets justify the result that customers 1327, 5948, and 3322 are the ones who have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"913\"],\n        \"why\": [\n            \"{{orders_43378, orders_129503}}\",\n            \"{{orders_7114, orders_35229}}\",\n            \"{{orders_21546, orders_1232}}\",\n            \"{{orders_126638, orders_21597}}\",\n            \"{{orders_44786, orders_137338}}\"\n        ]\n    }\n]\n\nExplanation:\n\nThe question is asking for the customer IDs (column \"Customer ID\" in the \"customers.csv\" file) that are involved in transactions with a condition of having an order date in 1997 and the total amount spent is greater than or equal to $5500.\n\nThe answer is \"913\", which corresponds to the customer ID \"913\" in the \"customers.csv\" file. This customer has two orders (orders_43378 and orders_129503) with a total amount spent of $5501.8, which meets the condition.\n\nThe witness sets are:\n\n* {{orders_43378, orders_129503}}: These two orders have a total amount spent of $5501.8, which is greater than or equal to $5500.\n* {{orders_7114, orders_35229}}: These two orders have a total amount spent of $5500.61, which is greater than or equal to $5500.\n* {{orders_21546, orders_1232}}: These two orders have a total amount spent of $5501.8, which is greater than or equal to $5500.\n* {{orders_126638, orders_21597}}: These two orders have a total amount spent of $5500.61, which is greater than or equal to $5500.\n* {{orders_44786, orders_137338}}: These two orders have a total amount spent of $5501.8, which is greater than or equal to $5500.\n\nThese witness sets support the answer \"913\" as the customer ID that meets the condition."
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"goldenrod lavender spring chocolate lace\"],\n        \"why\": [\n            \"{{part_0}}\"\n        ]\n    }\n]\n\nExplanation: The retail price of \"goldenrod lavender spring chocolate lace\" is 901.0, which is lower than 902."
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"ARGENTINA\", \"BRAZIL\", \"CANADA\", \"PERU\", \"UNITED STATES\"],\n        \"why\": [\n            \"{{nation_1}\", \"{{nation_2}\", \"{{nation_3}\", \"{{nation_17}\", \"{{nation_24}\"\n        ]\n    }\n]\n\nThe answer is the list of nations that have a region key of 1, which are ARGENTINA, BRAZIL, CANADA, PERU, and UNITED STATES.\n\nEach Witness Set is a string in the format \"{{<table_name>_<row>}\" where <table_name> is \"nation\" (based on the context) and <row> is the row index of each nation."
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"INDIA\", \"INDONESIA\", \"JAPAN\", \"CHINA\", \"VIETNAM\"],\n        \"why\": [\n            \"{{nation_8}\", \"{{nation_9}\", \"{{nation_12}\", \"{{nation_18}\", \"{{nation_21}}\"\n        ]\n    }\n]\n\nExplanation: The question asks which nations have a region key of 2. The answer is the list of nations with a region key of 2, which are INDIA, INDONESIA, JAPAN, CHINA, and VIETNAM. Each nation has a region key of 2 in its corresponding row (8, 9, 12, 18, and 21)."
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"ALGERIA\", \"ETHIOPIA\", \"KENYA\", \"MOROCCO\", \"MOZAMBIQUE\"],\n        \"why\": [\n            \"{{nation_0}\", \"{{nation_5}\", \"{{nation_14}\", \"{{nation_15}\", \"{{nation_16}}\"\n        ]\n    }\n]\n\nExplanation: The region key of 0 is present in the rows for ALGERIA, ETHIOPIA, KENYA, MOROCCO, and MOZAMBIQUE."
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"FRANCE\", \"GERMANY\", \"ROMANIA\", \"RUSSIA\", \"UNITED KINGDOM\"],\n        \"why\": [\n            \"{{nation_6}\", \"{{nation_7}\", \"{{nation_19}\", \"{{nation_22}\", \"{{nation_23}}\"\n        ]\n    }\n]\n\nThe answer is the list of nations that have a region key of 3. The witness sets are the input tuples that justify this result, which are all the nation rows with a region key of 3."
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": "Here is the answer:\n\n[\n    {\n        \"answer\": [\"7H,0hAZkls5qVS 6sjbnVnQtpjMnGEv3gKXVS\", \"xWy21YlUy3R6L01\", \"2dsK093unFO\"],\n        \"why\": [\n            \"{{supplier_163}, {supplier_195}, {supplier_921}}\"\n        ]\n    }\n]\n\nExplanation:\nThe nationkey is 2, and we need to find suppliers with a balance lower than 0. The suppliers that meet this condition are:\n\n* Supplier#000000164 (row 163) with a balance of -264.2\n* Supplier#000000195 (row 195) with a balance of -767.31\n* Supplier#000000921 (row 921) with a balance of -686.97\n\nThese suppliers belong to the nation with nationkey = 2 and have a balance lower than 0. The witness sets that justify this result are:\n\n{{supplier_163}, {supplier_195}, {supplier_921}}"
+    }
+]

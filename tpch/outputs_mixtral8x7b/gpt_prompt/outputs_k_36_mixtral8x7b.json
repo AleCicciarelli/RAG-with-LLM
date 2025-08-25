@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": "Here is the information for each supplier based on the provided data:\n\n1. Supplier #803, \"Supplier#000000803\", has a account balance of 1887.55 and is located in nationkey 15. Their phone number is \"25-347-400-8216\" and their comment mentions furiously ironic quiet ideas and carefully haggling packages.\n2. Supplier #807, \"Supplier#000000807\", has a account balance of 1077.97 and is located in nationkey 14. Their phone number is \"24-255-894-5069\" and their comment mentions furiously boosting pending requests.\n3. Supplier #812, \"Supplier#000000812\", has a account balance of 8615.5 and is located in nationkey 6. Their phone number is \"16-585-724-6633\" and their comment mentions quickly haggling pending packages after the carefuly regular deposits.\n4. Supplier #815, \"Supplier#000000815\", has a account balance of 1498.22 and is located in nationkey 7. Their phone number is \"17-664-380-2059\" and their comment mentions even haggling packages.\n5. Supplier #834, \"Supplier#000000834\", has a account balance of 2170.29 and is located in nationkey 6. Their phone number is \"16-772-526-2998\" and their comment mentions even haggling packages.\n6. Supplier #839, \"Supplier#000000839\", has a account balance of 2761.59 and is located in nationkey 6. Their phone number is \"16-845-687-7291\" and their comment mentions slyly haggling regular accounts across the carefully fluffily slow requests.\n7. Supplier #844, \"Supplier#000000844\", has a account balance of 7776.86 and is located in nationkey 13. Their phone number is \"23-452-536-7876\" and their comment mentions quickly haggling pinto beans express requests.\n8. Supplier #848, \"Supplier#000000848\", has a account balance of 4404.29 and is located in nationkey 3. Their phone number is \"13-169-466-8402\" and their comment mentions furiously haggling regular requests during the regular packages.\n9. Supplier #874, \"Supplier#000000874\", has a account balance of 7755.5 and is located in nationkey 16. Their phone number is \"26-826-579-8300\" and their comment mentions haggling after the blithely express deposits.\n10. Supplier #944, \"Supplier#000000944\", has a account balance of 7776.86 and is located in nationkey 13. Their phone number is \"23-452-536-7876\" and their comment mentions quickly haggling pinto beans express requests.\n11. Supplier #948, \"Supplier#000000948\", has a account balance of 1251.11 and is located in nationkey 1. Their phone number is \"1-773-682-2998\" and their comment mentions even haggling packages.\n12. Supplier #954, \"Supplier#000000954\", has a account balance of -40.3 and is located in nationkey 17. Their phone number is \"27-680-576-6812\" and their comment mentions slyly haggling unusually courts.\n\nPlease note that there are many more suppliers in the provided data, if you need information on all of them please let me know."
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": 1
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": "Here is a summary of the information provided in the text:\n\nThe text contains 20 rows from a CSV file named 'csv\\_data\\_tpch/supplier.csv'. Each row represents a supplier and contains several fields of information about that supplier, including:\n\n* s\\_suppkey: a unique identifier for the supplier (integer)\n* s\\_name: the name of the supplier (string)\n* s\\_address: the address of the supplier (string)\n* s\\_nationkey: the nation key associated with the supplier's country (integer)\n* s\\_phone: the phone number of the supplier (string)\n* s\\_acctbal: the supplier's account balance (float)\n* s\\_comment: a comment about the supplier (string)\n\nThe suppliers have account balances ranging from 213.41 to 7577.42. The comments in the text contain various phrases, including \"haggle\", \"express deposits\", \"pending asymptotes\", and others, which may be relevant for understanding the suppliers' behavior or financial situation.\n\nThe nations associated with the suppliers are identified by a nation key, which ranges from 1 to 22. The countries corresponding to these keys are not provided in the text, but they could be looked up in a separate mapping table.\n\nOverall, this text provides information about 20 suppliers, including their identifiers, names, addresses, account balances, and some comments. This information could be used for various purposes, such as analyzing the suppliers' financial health, identifying trends or patterns, or making decisions based on their behavior or characteristics."
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 1
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 20
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": 7
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": 1
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

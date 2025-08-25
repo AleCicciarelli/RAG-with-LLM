@@ -1,0 +1,313 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": [
+            [
+                "Supplier#000000852",
+                "11-574-892-3228"
+            ],
+            [
+                "Supplier#000"
+            ]
+        ]
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": [
+            "(853, 9797.52)",
+            "(999, 3898.69)"
+        ]
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": "Sure, I can help you with that! However, I need more information about what you want me to do. You mentioned \"(_, c) from itertools.groupby\" - it seems like you're asking for a Python code snippet involving the `itertools.groupby` function.\n\nHere's an example of how you can use `itertools.groupby` to group a list of tuples by a certain value, and then extract the first tuple of each group:\n```python\nimport itertools\n\n# Suppose we have a list of tuples like this:\ndata = [(1, 'apple'), (2, 'banana'), (3, 'cherry'), (2, 'date'), (1, 'elderberry')]\n\n# We can group the tuples by the first element of each tuple using itertools.groupby:\ngrouped_data = itertools.groupby(sorted(data, key=lambda x: x[0]), key=lambda x: x[0])\n\n# Then we can extract the first tuple of each group using a list comprehension:\nresult = [next(g) for k, g in grouped_data]\n\nprint(result)\n# Output: [(1, 'apple'), (2, 'banana'), (3, 'cherry')]\n```\nIn this example, `grouped_data` is a generator that yields tuples of the form `(key, group)`, where `key` is the value that the tuples in the group have in common, and `group` is an iterator yielding the tuples in the group. The list comprehension `[next(g) for k, g in grouped_data]` extracts the first tuple of each group by calling `next(g)`.\n\nIf you can provide more context or clarify your question, I'd be happy to help further!"
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": {
+            "answer": {
+                "suppkey_name": [
+                    [
+                        "906",
+                        "Supplier#000000906"
+                    ],
+                    [
+                        "846",
+                        "Supplier#000000846"
+                    ]
+                ]
+            },
+            "explanation": {
+                "suppkey_name": [
+                    {
+                        "0": {
+                            "condition": "condition1",
+                            "column_name": "nationkey"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": 818
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": [
+            "Supplier#000000818 9594.51",
+            "Supplier#000000965 2843.8"
+        ]
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": "[\n    {\n        \"s\\_suppkey\": \"867\",\n        \"s\\_name\": \"Supplier#000000867\",\n        \"s\\_address\": \"WTM7RpRoZPk5MKGEtE2dsh\",\n        \"s\\_nationkey\": \"11\",\n        \"s\\_phone\": \"21-221-554-8461\",\n        \"s\\_acctbal\": \"7476.72\"\n    },\n    {\n        \"s\\_suppkey\": \"989\",\n        \"s\\_name\": \"Supplier#000000989\",\n        \"s\\_address\": \"e5uX8AJF,,zRIIDgJc YMB59ITz4v\",\n        \"s\\_nationkey\": \"1\",\n        \"s\\_phone\": \"11-895-219-9405\",\n        \"s\\_acctbal\": \"9098.64\"\n    }\n]\n\nThe two suppliers that have the highest account balance are those with the suppkey 867 and 989."
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": [
+            "Supplier#000000939:"
+        ]
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": [
+            {}
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 840
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": {
+            "answer": {
+                "suppkey_1": 821,
+                "suppkey_2": 833
+            },
+            "explanation": "The supplier with the highest account balance and the supplier with the lowest nation key are selected. Supplier 821 has the highest account balance and supplier 833 has the lowest nation key."
+        }
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 822
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": [
+            [
+                "supplier name",
+                "account balance"
+            ],
+            [
+                "Supplier#000000837",
+                "5167.0"
+            ],
+            [
+                "Supplier#000000867",
+                "7476.72"
+            ],
+            [
+                "Supplier#000000909",
+                "4012.42"
+            ],
+            [
+                "Supplier#000000815",
+                "3855.74"
+            ]
+        ]
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": {
+            "answer": "The 'condition' parameter in the SQL query would be 's_acctbal < 0' for negative account balance.",
+            "results": [
+                {
+                    "row_index": 0,
+                    "supplier_name": "Supplier#000000920",
+                    "account_balance": "-111.84"
+                }
+            ]
+        }
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": "\""
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": {
+            "answer": [
+                {}
+            ]
+        }
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 818
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": [
+            "(806, 'Supplier#000000806')",
+            "(845, 'Supplier#000000845')"
+        ]
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": [
+            "Supplier#000000815,1736.47",
+            "Supplier#000000965,2843.8"
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": {
+            "answer": {
+                "suppkey_list": [
+                    815,
+                    988
+                ],
+                "answer_elements": {
+                    "condition_1": [
+                        ""
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": 1
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 815
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": "[(\"Supplier#000000815\", \"3855.74\"), (\"Supplier#000000988\", \"2536.81\")]"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 899
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 8
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": 920
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": [
+            "(996, 'Supplier#000000996')",
+            "(853, 'Supplier#000000853')"
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": {
+            "answer": {
+                "suppkey_name": []
+            }
+        }
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": [
+            "Supplier#000000853,9797.52",
+            "Supplier#000000963,4152.04",
+            "Supplier#000000988,2536.81"
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": [
+            "(853, 'Supplier#000000853')",
+            "(976, 'Supplier#000000976')",
+            "(912, 'Supplier#000000912')",
+            "(949, 'Supplier#000000996')"
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 852
+    }
+]

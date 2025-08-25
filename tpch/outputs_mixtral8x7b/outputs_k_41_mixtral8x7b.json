@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": "Here is the information for the first 10 suppliers in the file:\n\n1. Supplier #000000001, Nationkey: 1, Name: , Address: , Phone: 26-387-490-2592, Acctbal: 3376.7, Comm: 0.12, Quantity: 10\n2. Supplier #000000002, Nationkey: 1, Name: , Address: , Phone: 26-387-490-2592, Acctbal: 3220.94, Comm: 0.14, Quantity: 20\n3. Supplier #000000005, Nationkey: 2, Name: , Address: , Phone: 26-387-490-2592, Acctbal: 2228.4, Comm: 0.12, Quantity: 30\n4. Supplier #000000006, Nationkey: 3, Name: , Address: , Phone: 26-387-490-2592, Acctbal: 2662.81, Comm: 0.13, Quantity: 40\n5. Supplier #000000007, Nationkey: 4, Name: , Address: , Phone: 26-387-490-2592, Acctbal: 2043.6, Comm: 0.12, Quantity: 50\n6. Supplier #00000"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": "1. (86, 'Supplier#000000086', 'CosbyBH1bG81zFspjW', 24, '34-374-244-3932', 1768.34, 'regulary excuses. quickly close ideas sleep. final requests haggle along th')\n2. (85, 'Supplier#000000085', 'FgTKwjRfNyLzBkS9Y', 1, '24-733-661-2029', 9022.26, 'pendig special requests past the bold theodolites')\n3. (84, 'Supplier#000000084', 'HlzgjoNfFkJiQqTAK', 20, '30-283-261-2020', 7122.9, 'thely special deposits was furious')\n4. (95, 'Supplier#000000095', '7OFLXDHjSgGrFlHTg8VHFS4glUuN', 17, '27-839-781-6125', -408.45, 'ave instructions haggle. regular instructions past the theodolites are slyly depos')\n5. (92, 'Supplier#000000092', 'V2KIQXPxtYnOkul', 13, '23-456-977-9276', 2015.59, 'yly even packages affix quickly! quickly pending foxes haggle at the final, bold deposits. blit')\n6. (81, 'Supplier#000000081', 'UcOeVbZzCQBkCR5YS', 23, '15-794-446-6580', 6019.21, 'yly special packages past the regular ideas')\n7. (94, 'Supplier#000000094', 'RgZk9UrVTWoOvESQT', 16, '26-530-865-5903', 6910.07, 'special bold ideas affix the final excuses')\n8. (82, 'Supplier#000000082', 'TgPqMxjhGfNmSZuDw', 15, '15-603-940-7869', 5204.6, 'close regular excuses past the final theodolites')\n9. (83, 'Supplier#000000083', 'SxMlLrjyXTDkUq1pB', 14, '14-572-603-3093', 7094.21, 'blithely regular excuses past the final theodolites')\n10. (87, 'Supplier#000000087', 'DsWvLzjJKeEiGfFQq', 22, '32-961-455-5202', 8638.93, 'pendig special requests past the bold theodolites')\n11. (88, 'Supplier#000000088', 'EpXokzjJKeEiGfFQq', 22, '32-961-455-5202', 7053.09, 'pendig special ideas past the bold theodolites')\n12. (89, 'Supplier#000000089', 'FpYqlzjJKeEiGfFQq', 22, '32-961-455-5202', 7864.61, 'blithely regular requests past the bold theodolites')\n13. (90, 'Supplier#000000090', 'GqZrlzjJKeEiGfFQq', 22, '32-961-455-5202', 8706.93, 'pendig special ideas past the bold theodolites')\n14. (91, 'Supplier#000000091', 'Hr0smazJJeNsS0TtZ', 25, '38-706-598-4026', 6421.64, 'pendig even ideas past the regular theodolites')\n15. (93, 'Supplier#000000093', 'Jn5uemtNNAvHr0TtZ', 25, '38-706-598-4026', 6381.58, 'blithely regular ideas past the final theodolites')\n16. (78, 'Supplier#000000078', 'BbCcDdEeFfGg', 5, '5-543-234-5678', 9519.42, 'blithely even excuses past the regular ideas')\n17. (79, 'Supplier#000000079', 'BbCcDdEeFfGgHhIi', 6, '6-534-234-5678', 8022.74, 'blithely even excuses past the regular ideas')\n18. (80, 'Supplier#000000080', 'CcDdEeFfGgHhIiJjK', 7, '7-525-234-5678', 8923.01, 'blithely even excuses past the regular ideas')\n19. (96, 'Supplier#000000096', 'LqMgPfTgVhWjXyYzZ', 30, '47-285-654-1000', 4000.54, 'blithely even excuses past the regular ideas')\n20. (97, 'Supplier#000000097', 'MqNhQfUgWhXkPyQzZ', 30, '47-285-654-1000', 4112.2, 'blithely even excuses past the regular ideas')\n21. (98, 'Supplier#000000098', 'NrPhRgVhXsWlOzRaa', 30, '47-285-654-1000', 4230.11, 'blithely even excuses past the regular ideas')\n22. (99, 'Supplier#000000099', 'OqQiSgUjYtXmNySbb', 30, '47-285-654-1000', 4354.57, 'blithely even excuses past the regular ideas')\n23. (100, 'Supplier#000000100', 'PrRjTgVkZuWnMyTcc', 30, '47-285-654-1000', 4485.98, 'blithely even excuses past the regular ideas')\n24. (101, 'Supplier#000000101', 'QsSkUhWlZvXoLxUdd', 30, '47-285-654-1000', 4624.98, 'blithely even excuses past the regular ideas')\n25. (102, 'Supplier#000000102', 'RtTlVgXmAeYnKyVee', 30, '47-285-654-1000', 4771.39, 'blithely even excuses past the regular ideas')\n26. (103, 'Supplier#000000103', 'SuUmWhXnBeZoLyWff', 30, '47-285-654-1000', 4925.17, 'blithely even excuses past the regular ideas')\n27. (104, 'Supplier#000000104', 'VvXqJgYoCfAeZxXgg', 30, '47-285-654-1000', 5086.38, 'blithely even excuses past the regular ideas')\n28. (105, 'Supplier#000000105', 'WwXrKhYpDgBeZyYhh', 30, '47-285-654-1000', 5255.2, 'blithely even excuses past the regular ideas')\n\nThese are the next batch of suppliers with IDs 78 to 105.\nEach supplier has an ID, phone number and a list of words in their name.\nTheir name might be abbreviated in the ID.\nFor example: Supplier#000000078 is named 'BbCcDdEeFfGg'.\nPlease note that some suppliers share the same name, but they can be distinguished by their IDs.\nThere are also new suppliers with names longer than 10 characters and thus cannot fit into a 5-digit ID.\nTo solve this problem, we have assigned them IDs from 100 to 105 with the 'Supplier#' prefix.\nThey will not have word lists in their names.\nPlease process this batch of suppliers similarly as the previous ones.\n\n[Your task is to extract the necessary information about these suppliers and print it out in the following format:\n\nSupplier ID: Supplier#000"
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": 1
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 1
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 1
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": "It seems like you've provided me with a list of supplier records from a database. Each record contains various details about a supplier such as their supplier key (s\\_suppkey), name, address, nation key (s\\_nationkey), phone number, and balance. However, you didn't ask a question or provide any context regarding what you would like me to do with this data.\n\nIf you need me to perform some operations on this data, such as filtering, sorting, or analyzing it, please let me know and I would be happy to help!\n\nFor example, if you want to find the supplier with the highest account balance, you can simply sort the data by the s\\_acctbal column in descending order and select the first record. Based on the data you provided, the supplier with the highest account balance is:\n\n| s\\_suppkey | s\\_name | s\\_address | s\\_nationkey | s\\_phone | s\\_acctbal |\n| --- | --- | --- | --- | --- | --- |\n| 917 | Supplier#000000917 | tMr5motk0IFyIXJDwCr98Q O5 | 22 | 32-754-782-6474 | 8877.42 |\n\nTherefore, Supplier#000000917 has the highest account balance of 8877.42."
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": "Here are the top 5 suppliers with the highest account balance:\n1. Supplier#000000997 (S_NAME: 'Supplier#000000997') with S\\_ACCTBAL: 3659.56\n2. Supplier#000"
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": 1
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": "Here is a summary of the information for some of the suppliers in the data you provided:\n\n1. Supplier #841 (`Supplier#000000841`) has an account balance of 1685.95 and is located in nationkey 7. Their address is `dvQXS7Wi29wVuSUWsknpHVQWVrJ6cUvB8V` and their phone number is `17-359-161-6634`.\n2. Supplier #898 (`Supplier#000000898`) has an account balance of 5737.18 and is located in nationkey 4. Their address is `Uud3qAUC91Cy,c` and their phone number is `14-247-832-2299`.\n3. Supplier #954 (`Supplier#000000954`) has an account balance of 6721.7 and is located in nationkey 6. Their address is `P3O5p UFz1QsLmZX` and their phone number is `16-537-341-8517`.\n4. Supplier #921 (`Supplier#000000921`) has an account balance of -686.97 and is located in nationkey 2. Their address is `2dsK093unFO` and their phone number is `12-670-146-9689`.\n5. Supplier #983 (`Supplier#000000983`) has an account balance of 2576.28 and is located in nationkey 0. Their address is `XOYb xohl2j0U7wTTUaT4F6DShKfH4Hv3p,hnP` and their phone number is `10-384-209-1825`.\n\nNote that I am just a helpful AI and cannot actually browse the web or access real data. I can only provide information based on what you have given me in the prompt."
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": "Based on the data provided, here are some observations about suppliers:\n\n* Supplier #851 has the lowest account balance of 157.21.\n* Supplier #900 has an address that ends with \"FOXes,\" which may be a reference to the idiom \"get off the fence\" or \"stop being neutral.\"\n* Supplier #839's comment includes the word \"ess,\" which is a suffix meaning \"belonging to or characteristic of.\" It may be a misspelling of \"ease\" or \"class.\"\n* Supplier #803 has a comment that includes the phrase \"asymptotically ironic,\" which could mean that their situation is becoming increasingly ironic over time.\n* Supplier #924 has a comment that includes the phrase \"unusual epitaphs,\" which could suggest that they are associated with death or memorials in some way.\n* Several suppliers have comments that include the word \"even,\" which could be a keyword indicating that they have something in common.\n* Supplier #850's comment includes the phrase \"bold instructions,\" which could suggest that they are assertive or confident.\n* Supplier #923 has a comment that includes the phrase \"quickly unusual,\" which could mean that they are able to adapt to new situations quickly.\n* Supplier #874's comment includes the word \"beans,\" which could be a code word or inside joke.\n* Supplier #873's comment includes the phrase \"express deposits,\" which could suggest that they prioritize speed and convenience.\n* Supplier #902 has a comment that includes the phrase \"unusual excuses,\" which could suggest that they are creative or unconventional.\n* Supplier #851's comment includes the word \"close,\" which could mean that they are cautious or meticulous.\n* Supplier #901 has a comment that includes the phrase \"special shall,\" which could suggest that they have unique needs or requirements.\n* Several suppliers have comments that include the word \"regular,\" which could be a keyword indicating that they have something in common.\n* Supplier #899's comment includes the word \"mold,\" which could suggest that they are resistant to change or slow to adapt.\n* Supplier #803 has a comment that includes the phrase \"quiet ideas,\" which could suggest that they are introverted or reserved.\n* Supplier #924's comment includes the word \"integrate,\" which could suggest that they are collaborative or team-oriented.\n* Supplier #850's comment includes the phrase \"nag regular,\" which could suggest that they are persistent or tenacious.\n* Several suppliers have comments that include the word \"carefully,\" which could be a keyword indicating that they are cautious or methodical.\n* Supplier #902 has a phone number that starts with \"32,\" which is an area code for Ohio, Indiana, or Florida in the United States.\n* Several suppliers have comments that include the word \"even,\" which could be a keyword indicating that they have something in common.\n* Supplier #851's comment includes the phrase \"bold instructions,\" which could suggest that they are assertive or confident.\n* Supplier #923 has a phone number that starts with \"24,\" which is an area code for Texas, Missouri, Arkansas, or Louisiana in the United States.\n* Several suppliers have comments that include the word \"regular,\" which could be a keyword indicating that they have something in common.\n* Supplier #803 has a comment that includes the phrase \"slow requests,\" which could suggest that they are patient or deliberate.\n* Supplier #924's comment includes the phrase \"fluffily even,\" which could suggest that they are optimistic or positive.\n* Several suppliers have comments that include the word \"even,\" which could be a keyword indicating that they have something in common.\n* Supplier #850 has a phone number that starts with \"25,\" which is an area code for Texas, Missouri, or Arkansas in the United States.\n* Supplier #923 has a comment that includes the phrase \"quickly unusual,\" which could suggest that they are adaptable or flexible.\n* Several suppliers have comments that include the word \"even,\" which could be a keyword indicating that they have something in common.\n* Supplier #851's comment includes the phrase \"bold instructions,\" which could suggest that they are assertive or confident.\n* Supplier #924 has a phone number that starts with \"32,\" which is an area code for Ohio, Indiana, or Florida in the United States.\n* Several suppliers have comments that include the word \"regular,\" which could be a keyword indicating that they have something in common.\n* Supplier #803 has a comment that includes the phrase \"asymptotically ironic,\" which could suggest that their situation is becoming increasingly ironic over time.\n* Supplier #924 has a comment that includes the phrase \"unusual epitaphs,\" which could suggest that they are associated with death or memorials in some way."
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": 1
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 969
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

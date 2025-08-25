@@ -1,0 +1,1186 @@
+[
+    {
+        "question": "Which is the email of Giulia Rossi?",
+        "answer": [
+            {
+                "student_id": 1,
+                "name": "Sally Johnson",
+                "thesis_title": "Deep Learning for Image Recognition"
+            },
+            {
+                "student_id": 4,
+                "name": "Lucas Schmidt",
+                "thesis_title": null
+            },
+            {
+                "student_id": 5,
+                "name": "Elena Gonzalez",
+                "thesis_title": null
+            },
+            {
+                "student_id": 3,
+                "name": "Sophie Durand",
+                "thesis_title": null
+            }
+        ]
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "answer": [
+            "Computer Science"
+        ]
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "answer": [
+            {
+                "answer": [
+                    "6"
+                ],
+                "why": [
+                    "{{courses_5}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In which building is the class with room number 401?",
+        "answer": [
+            "Machine Learning",
+            "Advanced Algorithms",
+            "Artificial Intelligence",
+            "Data Mining",
+            "Human-Computer Interaction",
+            "Cybersecurity"
+        ]
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "answer": [
+            {
+                "studentId": 1,
+                "name": "John",
+                "surname": "Doe",
+                "enrolledCourses": [
+                    "101 - Introduction to Computer Science",
+                    "103 - Embedded Systems",
+                    "110 - Human-Computer Interaction"
+                ]
+            },
+            {
+                "studentId": 2,
+                "name": "Jane",
+                "surname": "Doe",
+                "enrolledCourses": [
+                    "102 - Database Systems",
+                    "105 - Digital Signal Processing"
+                ]
+            },
+            {
+                "studentId": 4,
+                "name": "Lucas",
+                "surname": "Schmidt",
+                "enrolledCourses": [
+                    "110 - Human-Computer Interaction"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "answer": [
+            {
+                "classroom_id": 1,
+                "course_name": "Database Systems",
+                "date": "2023-01-10",
+                "time": "09:00"
+            }
+        ]
+    },
+    {
+        "question": "In which area is the 'User Experience Design in Web Apps' thesis?",
+        "answer": [
+            {
+                "student_id": 2,
+                "name": "Marco",
+                "surname": "Bianchi",
+                "research_area": "Data Science",
+                "teacher_id": 2,
+                "teacher_name": "Maria Garcia",
+                "course_id": 101,
+                "course_name": "Machine Learning"
+            },
+            {
+                "student_id": 3,
+                "name": "Lucas",
+                "surname": "Schmidt",
+                "research_area": "Cybersecurity",
+                "teacher_id": 9,
+                "teacher_name": "Alexander Johnson",
+                "course_id": 110,
+                "course_name": "Human-Computer Interaction"
+            }
+        ]
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "answer": [
+            {
+                "teacher_id": 1,
+                "name": "Carlo",
+                "surname": "Rossi",
+                "department_id": 1,
+                "email": "c.rossi@university.edu",
+                "research_area": "Artificial Intelligence",
+                "number_of_project": 5,
+                "courses": [
+                    {
+                        "course_id": 105,
+                        "course_name": "Artificial Intelligence",
+                        "department": 1,
+                        "credits": 8,
+                        "teacher_id": 1,
+                        "semester": "Spring"
+                    }
+                ]
+            },
+            {
+                "teacher_id": 7,
+                "name": "Francesco",
+                "surname": "Conti",
+                "department_id": 1,
+                "email": "f.conti@university.edu",
+                "research_area": "Data Mining",
+                "number_of_project": 4,
+                "courses": [
+                    {
+                        "course_id": 107,
+                        "course_name": "Data Mining",
+                        "department": 1,
+                        "credits": 6,
+                        "teacher_id": 7,
+                        "semester": "Spring"
+                    }
+                ]
+            },
+            {
+                "teacher_id": 8
+            }
+        ]
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "answer": [
+            "Artificial Intelligence"
+        ]
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "answer": [
+            {
+                "teacher_id": 6,
+                "name": "Francesco",
+                "surname": "Conti",
+                "department_id": 1,
+                "email": "f.conti@university.edu",
+                "research_area": "Software Engineering",
+                "number_of_project": 5
+            }
+        ]
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "answer": [
+            {
+                "teacherId": 8,
+                "researchArea": "Machine Learning",
+                "numberOfProject": 3
+            },
+            {
+                "teacherId": 1,
+                "thesisId": 1,
+                "title": "Deep Learning for Image Recognition",
+                "studentId": 1,
+                "academicYear": "2023-2024",
+                "status": "Completed",
+                "researchArea": "Artificial Intelligence"
+            },
+            {
+                "teacherId": 3,
+                "thesisId": 3,
+                "title": "Autonomous Systems",
+                "studentId": 4,
+                "academicYear": "2021-2022",
+                "status": "Completed",
+                "researchArea": "Robotics"
+            },
+            {
+                "teacherId": 2,
+                "thesisId": 2,
+                "title": "Big Data Processing",
+                "studentId": 2,
+                "academicYear": "2022-2023",
+                "status": "In Progress",
+                "researchArea": "Data Science"
+            },
+            {
+                "studentId": 4,
+                "name": "Lucas",
+                "surname": "Schmidt",
+                "birthDate": "1997-03-18",
+                "nationality": "German",
+                "gender": "Male",
+                "enrollmentDate": "2020-08-25",
+                "email": "lucas.schmidt@student.edu",
+                "courseId": 110,
+                "enrollmentId": 9
+            },
+            {
+                "studentId": 5,
+                "name": null,
+                "surname": null,
+                "birthDate": null,
+                "nationality": null,
+                "gender": null,
+                "enrollmentDate": "2022-02-14",
+                "email": null,
+                "courseId": 110,
+                "enrollmentId": 7
+            }
+        ]
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "answer": [
+            {
+                "student_id": 1,
+                "name": "John",
+                "surname": "Doe",
+                "birth_date": "2001-02-03",
+                "nationality": "American",
+                "gender": "Male",
+                "enrollment_date": "2020-08-25",
+                "email": "john.doe@student.edu",
+                "courses": [
+                    {
+                        "course_id": 101,
+                        "course_name": "Machine Learning",
+                        "department": 1,
+                        "credits": 6,
+                        "teacher": "Antonio S.",
+                        "semester": "Fall"
+                    }
+                ]
+            },
+            {
+                "student_id": 2,
+                "name": "Marco",
+                "surname": "Bianchi",
+                "birth_date": "1995-11-22",
+                "nationality": "Italian",
+                "gender": "Male",
+                "enrollment_date": "2022-10-15",
+                "email": "marco.bianchi@student.edu",
+                "courses": [
+                    {
+                        "course_id": 108,
+                        "course_name": "Artificial Intelligence",
+                        "department": 1,
+                        "credits": 8,
+                        "teacher": "Laura B.",
+                        "semester": "Spring"
+                    }
+                ]
+            },
+            {
+                "student_id": 3,
+                "name": "Lucas",
+                "surname": "Schmidt",
+                "birth_date": "1997-03-18",
+                "nationality": "German",
+                "gender": "Male",
+                "enrollment_date": "2020-08-25",
+                "email": "lucas.schmidt@student.edu",
+                "courses": [
+                    {
+                        "course_id": 107,
+                        "course_name": "Data Mining",
+                        "department": 1,
+                        "credits": 6,
+                        "teacher": "Elisa N.",
+                        "semester": "Fall"
+                    }
+                ]
+            },
+            {
+                "student_id": 4,
+                "name": "Elena",
+                "surname": "Gonzalez",
+                "birth_date": "1999-09-05",
+                "nationality": "Spanish",
+                "gender": "Female",
+                "enrollment_date": "2022-02-14",
+                "email": "elena.gonzalez@student.edu",
+                "courses": [
+                    {
+                        "course_id": 110,
+                        "course_name": "Human-Computer Interaction",
+                        "department": 1,
+                        "credits": 6,
+                        "teacher": "Maria F.",
+                        "semester": "Spring"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "answer": [
+            "28"
+        ]
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "answer": "[\n  {\n    \"teacher\\_name\": \"Giulia Rossi\",\n    \"teacher\\_id\": 1,\n    \"department\\_name\": \"Computer Science\",\n    \"research\\_area\": \"Data Science\"\n  },\n  {\n    \"teacher\\_name\": \"Laura Bianchi\",\n    \"teacher\\_id\": 2,\n    \"department\\_name\": \"Computer Science\",\n    \"research\\_area\": \"Data Science\"\n  },\n  {\n    \"teacher\\_name\": \"Marco Verdi\",\n    \"teacher\\_id\": 3,\n    \"department\\_name\": \"Electrical Engineering\",\n    \"research\\_area\": null\n  },\n  {\n    \"teacher\\_name\": \"Elisa Neri\",\n    \"teacher\\_id\": 4,\n    \"department\\_name\": \"Computer Science\",\n    \"research\\_area\": null\n  },\n  {\n    \"teacher\\_name\": \"Lucas Schmidt\",\n    \"teacher\\_id\": 6,\n    \"department\\_name\": \"Computer Science\",\n    \"research\\_area\": \"Software Engineering\"\n  },\n  {\n    \"teacher\\_name\": \"Elena Gonzalez\",\n    \"teacher\\_id\": 5,\n    \"department\\_name\": \"Computer Science\",\n    \"research\\_area\": \"Signal Processing\"\n  }\n]"
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "answer": [
+            "Advanced Algorithms",
+            "Cybersecurity",
+            "Database Systems",
+            "Data Science",
+            "Digital Signal Processing",
+            "Embedded Systems",
+            "Software Engineering",
+            "Machine Learning"
+        ]
+    },
+    {
+        "question": "What is the department name in which Antonio Gallo teaches?",
+        "answer": [
+            "Electronics"
+        ]
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "answer": [
+            {
+                "student_id": 5,
+                "name": "Elena",
+                "surname": "Gonzalez",
+                "grade": 26
+            }
+        ]
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "answer": [
+            {
+                "answer": [
+                    "Engineering"
+                ],
+                "why": [
+                    "{{departments_1}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "In which building will be the Embedded Systems exam?",
+        "answer": [
+            "Main",
+            "3"
+        ]
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "answer": [
+            {
+                "teacherId": 1,
+                "name": "Carlo",
+                "surname": "Rossi",
+                "departmentId": 1,
+                "email": "c.rossi@university.edu",
+                "researchAreas": [
+                    {
+                        "researchArea": "Artificial Intelligence",
+                        "numberOfProjects": 5
+                    }
+                ]
+            },
+            {
+                "teacherId": 2,
+                "name": "Laura",
+                "surname": "Bianchi",
+                "departmentId": 1,
+                "email": "l.bianchi@university.edu",
+                "researchAreas": []
+            },
+            {
+                "teacherId": 4,
+                "name": "Elisa",
+                "surname": "Neri",
+                "departmentId": 1,
+                "email": "e.neri@university.edu",
+                "researchAreas": [
+                    {
+                        "researchArea": "Algorithms Optimization",
+                        "numberOfProjects": 2
+                    }
+                ]
+            },
+            {
+                "teacherId": 5,
+                "name": "Antonio",
+                "surname": "Gallo",
+                "departmentId": 2,
+                "email": "a.gallo@university.edu",
+                "researchAreas": []
+            },
+            {
+                "teacherId": 6,
+                "name": null,
+                "surname": null,
+                "departmentId": null,
+                "email": null,
+                "researchAreas": [
+                    {
+                        "researchArea": "Software Engineering",
+                        "numberOfProjects": 5
+                    }
+                ]
+            },
+            {
+                "teacherId": 8,
+                "name": "Maria",
+                "surname": "Ferrari",
+                "departmentId": 1,
+                "email": "m.ferrari@university.edu",
+                "researchAreas": [
+                    {
+                        "researchArea": "Machine Learning",
+                        "numberOfProjects": 3
+                    }
+                ]
+            },
+            {
+                "teacherId": 9,
+                "name": null,
+                "surname": null,
+                "departmentId": null,
+                "email": null,
+                "researchAreas": [
+                    {
+                        "researchArea": "Cybersecurity",
+                        "numberOfProjects": 6
+                    }
+                ]
+            },
+            {
+                "teacherId": 10,
+                "name": "Maria",
+                "surname": "Ferrari",
+                "departmentId": 1,
+                "email": "m.ferrari@university.edu",
+                "researchAreas": [
+                    {
+                        "researchArea": "Human-Computer Interaction",
+                        "numberOfProjects": 6
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "answer": "[\n{\n\"student\\_id\": 3,\n\"name\": \"Sophie\",\n\"surname\": \"Durand\",\n\"birth\\_date\": \"2000-07-30\",\n\"nationality\": \"French\",\n\"gender\": \"Female\",\n\"enrollment\\_date\": \"2021-01-10\",\n\"email\": \"sophie.durand@student.edu\",\n\"courses\": [\n{\"course\\_id\": 103, \"name\": \"Operating Systems\"},\n{\"course\\_id\": 104, \"name\": \"Algorithms\"},\n{\"course\\_id\": 107, \"name\": \"Data Mining\"}\n]\n}\n]"
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "answer": [
+            {
+                "answer": [
+                    "Science"
+                ],
+                "why": [
+                    "{{'faculty'.join(map(lambda x: x.values(), filter(lambda y: y['department_id']==6, teachers))[0].get('faculty',[]))}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "answer": [
+            {
+                "student_id": 3,
+                "name": "Sophie",
+                "surname": "Durand",
+                "birth_date": "2000-07-30",
+                "nationality": "French",
+                "gender": "Female",
+                "enrollment_date": "2021-01-10",
+                "email": "sophie.durand@student.edu"
+            }
+        ]
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "answer": [
+            {
+                "teacherId": 1,
+                "name": "Maria",
+                "surname": "Rossi",
+                "researchAreas": [
+                    "Artificial Intelligence"
+                ],
+                "numberOfProjects": 5,
+                "thesisAssigned": 2
+            },
+            {
+                "teacherId": 2,
+                "name": "Giovanni",
+                "surname": "Verdi",
+                "researchAreas": [
+                    "Data Science"
+                ],
+                "numberOfProjects": 6,
+                "thesisAssigned": 1
+            },
+            {
+                "teacherId": 3,
+                "name": "Alessandro",
+                "surname": "Bianchi",
+                "researchAreas": [
+                    "Embedded Systems",
+                    "Data Science"
+                ],
+                "numberOfProjects": 6,
+                "thesisAssigned": 1
+            },
+            {
+                "teacherId": 8,
+                "name": "Alessandro",
+                "surname": "Moretti",
+                "researchAreas": [
+                    "Human-Computer Interaction"
+                ],
+                "numberOfProjects": 6,
+                "thesisAssigned": 1
+            }
+        ]
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "answer": [
+            {
+                "teacher_id": 1,
+                "name": "Laura",
+                "surname": "Ricci",
+                "department_id": 1,
+                "email": "l.ricci@university.edu",
+                "research_area": "Artificial Intelligence"
+            },
+            {
+                "teacher_id": 8,
+                "name": "Alessandro",
+                "surname": "Moretti",
+                "department_id": 1,
+                "email": "a.moretti@university.edu",
+                "research_area": "Machine Learning"
+            }
+        ]
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "answer": [
+            {
+                "name": "Lucas Schmidt",
+                "grade": 28,
+                "course": "Human-Computer Interaction"
+            }
+        ]
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "answer": [
+            {
+                "answer": [
+                    "301",
+                    "302"
+                ],
+                "why": [
+                    "{{classrooms_3}, {classrooms_4}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "answer": [
+            "Software Engineering",
+            "Embedded Systems",
+            "Database Systems"
+        ]
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "answer": [
+            {
+                "answer": [
+                    "Advanced Algorithms",
+                    "Artificial Intelligence"
+                ],
+                "witnesses": [
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 3
+                    },
+                    {
+                        "source": "csv_data/courses.csv",
+                        "row": 7
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "answer": {
+            "studentName": "Sophie",
+            "teacherName": "Carlo Rossi",
+            "thesisTitle": "Deep Learning for Image Recognition",
+            "status": "Completed",
+            "enrollmentDate": "2023-09-01",
+            "departmentName": "Mathematics"
+        }
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "answer": [
+            {
+                "studentId": 1,
+                "name": "Marco",
+                "surname": "Bianchi",
+                "enrollmentDate": "2022-10-15",
+                "thesis": {
+                    "title": "Deep Learning for Image Recognition",
+                    "status": "Completed",
+                    "researchArea": "Artificial Intelligence"
+                },
+                "enrollments": [
+                    {
+                        "courseId": 101,
+                        "enrollmentDate": "2022-09-01"
+                    },
+                    {
+                        "courseId": 104,
+                        "enrollmentDate": "2022-09-01"
+                    }
+                ]
+            },
+            {
+                "studentId": 2,
+                "name": "Lucas",
+                "surname": "Schmidt",
+                "enrollmentDate": "2020-08-25",
+                "thesis": {
+                    "title": "Big Data Processing",
+                    "status": "In Progress",
+                    "researchArea": "Data Science"
+                },
+                "enrollments": [
+                    {
+                        "courseId": 103,
+                        "enrollmentDate": "2021-01-10"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "answer": [
+            {
+                "answer": [
+                    "101",
+                    "102",
+                    "103",
+                    "105",
+                    "106",
+                    "107",
+                    "110"
+                ],
+                "witnesses": [
+                    {
+                        "source": "csv_data/grades.csv",
+                        "row": 0
+                    },
+                    {
+                        "source": "csv_data/grades.csv",
+                        "row": 2
+                    },
+                    {
+                        "source": "csv_data/grades.csv",
+                        "row": 3
+                    },
+                    {
+                        "source": "csv_data/grades.csv",
+                        "row": 4
+                    },
+                    {
+                        "source": "csv_data/grades.csv",
+                        "row": 5
+                    },
+                    {
+                        "source": "csv_data/grades.csv",
+                        "row": 6
+                    },
+                    {
+                        "source": "csv_data/grades.csv",
+                        "row": 7
+                    },
+                    {
+                        "source": "csv_data/grades.csv",
+                        "row": 8
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "answer": [
+            {
+                "student_id": 4,
+                "name": "Lucas",
+                "surname": "Morris",
+                "courses": [
+                    {
+                        "course_id": 110,
+                        "grade": 27
+                    }
+                ]
+            },
+            {
+                "student_id": 5,
+                "name": "Elena",
+                "surname": "Gonzalez",
+                "courses": [
+                    {
+                        "course_id": 110,
+                        "grade": 26
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "answer": [
+            {
+                "answer": [
+                    "101",
+                    "102"
+                ],
+                "why": [
+                    "{{csv_data/classrooms.csv, 0}}",
+                    "{{csv_data/classrooms.csv, 1}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "answer": [
+            {
+                "answer": [
+                    "Biology",
+                    "Physics",
+                    "Mathematics",
+                    "Chemistry"
+                ],
+                "why": [
+                    "{{departments_4}}",
+                    "{{departments_3}}",
+                    "{{departments_2}}",
+                    "{{departments_6}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "answer": [
+            {
+                "teacherId": 1,
+                "name": "Giulia",
+                "surname": "Colombo",
+                "researchArea": "Artificial Intelligence",
+                "numberOfProjects": 5,
+                "department": {
+                    "departmentId": 1
+                }
+            }
+        ]
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "answer": [
+            {
+                "teacher": {
+                    "teacher_id": 2,
+                    "name": "Laura",
+                    "surname": "Grimaldi",
+                    "department_id": 1,
+                    "email": "laura.grimaldi@university.edu"
+                },
+                "course": {
+                    "course_id": 102,
+                    "name": "Database Systems",
+                    "department": 1,
+                    "credits": 6,
+                    "teacher_id": 2,
+                    "semester": "Spring"
+                }
+            },
+            {
+                "teacher": {
+                    "teacher_id": 4,
+                    "name": "Elisa",
+                    "surname": "Neri",
+                    "department_id": 1,
+                    "email": "e.neri@university.edu"
+                },
+                "course": {
+                    "course_id": 104,
+                    "name": "Advanced Algorithms",
+                    "department": 1,
+                    "credits": 8,
+                    "teacher_id": 4,
+                    "semester": "Spring"
+                }
+            },
+            {
+                "teacher": {
+                    "teacher_id": 6,
+                    "name": "Francesco",
+                    "surname": "Conti",
+                    "department_id": 1,
+                    "email": "f.conti@university.edu"
+                },
+                "course": {
+                    "course_id": 107,
+                    "name": "Data Mining",
+                    "department": 1,
+                    "credits": 6,
+                    "teacher_id": 6,
+                    "semester": "Fall"
+                }
+            },
+            {
+                "teacher": {
+                    "teacher_id": 7,
+                    "name": "Francesco",
+                    "surname": "Conti",
+                    "department_id": 1,
+                    "email": "f.conti@university.edu"
+                },
+                "course": {
+                    "course_id": 106,
+                    "name": "Operating Systems",
+                    "department": 1,
+                    "credits": 8,
+                    "teacher_id": 7,
+                    "semester": "Spring"
+                }
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "answer": [
+            {
+                "course_id": 104,
+                "course_name": "Advanced Algorithms",
+                "department": 1,
+                "enrollments": [
+                    {
+                        "enrollment_id": 4,
+                        "student_id": 1,
+                        "enrollment_date": "2022-09-01"
+                    }
+                ]
+            },
+            {
+                "course_id": 101,
+                "course_name": "Database Systems",
+                "department": 1,
+                "enrollments": [
+                    {
+                        "enrollment_id": 1,
+                        "student_id": 1,
+                        "enrollment_date": "2022-09-01"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "answer": [
+            "Database Systems",
+            "Embedded Systems",
+            "Advanced Algorithms",
+            "Artificial Intelligence"
+        ]
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "answer": [
+            {
+                "answer": [
+                    "Antonio Gallo",
+                    "Giulia Colombo",
+                    "Francesco Conti",
+                    "Maria Ferrari",
+                    "Luca Esposito",
+                    "Alessandro Moretti"
+                ],
+                "why": [
+                    "{{teachers.csv:4, teachers.csv:0, teachers.csv:6, teachers.csv:9, teachers.csv:8, teachers.csv:7}}"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "answer": [
+            {
+                "thesisId": 2,
+                "title": "Big Data Analysis",
+                "studentId": 5,
+                "academicYear": "2022-2023",
+                "status": "In Progress",
+                "researchArea": "Data Science",
+                "teacherId": 1,
+                "teacherName": "Giovanni",
+                "teacherSurname": "Rossi",
+                "departmentId": 1,
+                "departmentName": "Computer Science"
+            },
+            {
+                "thesisId": 3,
+                "title": "Deep Learning for Image Recognition",
+                "studentId": 6,
+                "academicYear": "2021-2022",
+                "status": "Completed",
+                "researchArea": "Artificial Intelligence",
+                "teacherId": 1,
+                "teacherName": "Giovanni",
+                "teacherSurname": "Rossi",
+                "departmentId": 1,
+                "departmentName": "Computer Science"
+            },
+            {
+                "thesisId": 4,
+                "title": "Secure Multi-Party Computation",
+                "studentId": 7,
+                "academicYear": "2021-2022",
+                "status": "Completed",
+                "researchArea": "Cybersecurity",
+                "teacherId": 8,
+                "teacherName": "Laura",
+                "teacherSurname": "Jones",
+                "departmentId": 1,
+                "departmentName": "Computer Science"
+            },
+            {
+                "thesisId": 5,
+                "title": "User Experience Design in Web Apps",
+                "studentId": 8,
+                "academicYear": "2022-2023",
+                "status": "In Progress",
+                "researchArea": "Human-Computer Interaction",
+                "teacherId": 10,
+                "teacherName": "Michael",
+                "teacherSurname": "Brown",
+                "departmentId": 1,
+                "departmentName": "Computer Science"
+            }
+        ]
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "answer": [
+            {
+                "answer": [
+                    "Carlo Rossi",
+                    "Elisa Neri",
+                    "Giulia Colombo",
+                    "Laura Bianchi",
+                    "Maria Ferrari",
+                    "Francesco Conti",
+                    "Alessandro Moretti"
+                ],
+                "teacher_ids": [
+                    1,
+                    4,
+                    6,
+                    2,
+                    9,
+                    7,
+                    8
+                ],
+                "evidence": [
+                    "teachers.csv rows: 1, 3, 6, 2, 9, 7, 8"
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "answer": [
+            {
+                "student_id": 1,
+                "name": "Giulia",
+                "surname": "Rossi",
+                "email": "giulia.rossi@student.edu",
+                "thesis_info": {
+                    "title": "Deep Learning for Image Recognition",
+                    "academic_year": "2023-2024",
+                    "status": "Completed",
+                    "research_area": "Artificial Intelligence"
+                }
+            },
+            {
+                "student_id": 3,
+                "name": "Sophie",
+                "surname": "Durand",
+                "email": "sophie.durand@student.edu",
+                "grades_info": [
+                    {
+                        "course_id": 106,
+                        "course_name": "Convolutional Neural Networks",
+                        "grade": 29
+                    },
+                    {
+                        "course_id": 110,
+                        "course_name": "Natural Language Processing",
+                        "grade": 28
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "answer": "[\n{\n\"student\\_id\": 4,\n\"name\": \"Luca\",\n\"surname\": \"Esposito\",\n\"courses\": [\n{\"course\\_id\": 110, \"course\\_name\": \"Data Science\"},\n{\"course\\_id\": 105, \"course\\_name\": \"Algorithms\"},\n{\"course\\_id\": 103, \"course\\_name\": \"Web Engineering\"}\n]\n},\n{\n\"student\\_id\": 5,\n\"name\": \"Maria\",\n\"surname\": \"Ferrari\",\n\"courses\": [\n{\"course\\_id\": 110, \"course\\_name\": \"Data Science\"}\n]\n},\n{\n\"student\\_id\": 3,\n\"name\": \"Francesco\",\n\"surname\": \"Conti\",\n\"courses\": [\n{\"course\\_id\": 106, \"course\\_name\": \"Machine Learning\"},\n{\"course\\_id\": 103, \"course\\_name\": \"Web Engineering\"},\n{\"course\\_id\": 110, \"course\\_name\": \"Data Science\"}\n]\n},\n{\n\"student\\_id\": 1,\n\"name\": \"Giulia\",\n\"surname\": \"Rossi\",\n\"courses\": [\n{\"course\\_id\": 101, \"course\\_name\": \"Introduction to Programming\"}\n]\n}\n]\n\nThe answer is a list of students with their respective courses. Each student has an id, name, and surname, as well as a list of courses they are enrolled in. Each course has an id and name. The students are sorted by the number of courses they are enrolled in, in descending order. If there are multiple students with the same number of courses, they are sorted alphabetically by their surnames."
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "answer": [
+            {
+                "student_id": 3,
+                "name": "Sophie",
+                "surname": "Durand",
+                "gender": "Female"
+            },
+            {
+                "student_id": 4,
+                "name": "Lucas",
+                "surname": "Schmidt",
+                "gender": "Male"
+            }
+        ]
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "answer": "[\n  {grade_id=5, student_id=3, course_id=106, grade=29},\n  {grade_id=8, student_id=3, course_id=110, grade=28},\n  {grade_id=6, student_id=3, course_id=106, grade=29},\n  {grade_id=2, student_id=2, course_id=102, grade=25}\n]\n\nThe grades obtained by Sophie (student with id 3) are: a grade of 29 in Software Engineering (course with id 106), a grade of 28 in Human-Computer Interaction (course with id 110), and a grade of 29 in Software Engineering (course with id 106, repeated). The only other grade obtained by Sophie is a grade of 25 in Database Systems (course with id 102) which was not taught by Maria Ferrari."
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "answer": [
+            "Thesis ID: 1, Title: Deep Learning for Image Recognition, Student ID: 1, Teacher ID: 1, Academic Year: 2023-2024, Status: Completed, Research Area: Artificial Intelligence, Teacher Name: Giulia Andreoli, Department: Computer Science, Email: [g.andreoli@university.edu](mailto:g.andreoli@university.edu)",
+            "Thesis ID: 4, Title: User Experience Design in Web Apps, Student ID: 5, Teacher ID: 8, Academic Year: 2022-2"
+        ]
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "answer": [
+            {
+                "course_name": "Embedded Systems",
+                "course_id": 103,
+                "department": 2,
+                "credits": 6,
+                "teacher": 3,
+                "enrollments": [
+                    {
+                        "enrollment_id": 3,
+                        "student_id": 3,
+                        "enrollment_date": "2021-01-10"
+                    },
+                    {
+                        "enrollment_id": 7,
+                        "student_id": 5,
+                        "enrollment_date": "2022-02-14"
+                    },
+                    {
+                        "enrollment_id": 8,
+                        "student_id": 3,
+                        "enrollment_date": "2021-01-10"
+                    }
+                ]
+            },
+            {
+                "course_name": "Software Engineering",
+                "course_id": 106,
+                "department": 1,
+                "credits": 6,
+                "teacher": 4,
+                "enrollments": [
+                    {
+                        "enrollment_id": 5,
+                        "student_id": 4,
+                        "enrollment_date": "2020-08-25"
+                    }
+                ]
+            },
+            {
+                "course_name": "Human-Computer Interaction",
+                "course_id": 110,
+                "department": 1,
+                "credits": 6,
+                "teacher": 10,
+                "enrollments": [
+                    {
+                        "enrollment_id": 9,
+                        "student_id": 4,
+                        "enrollment_date": "2020-08-25"
+                    },
+                    {
+                        "enrollment_id": 7,
+                        "student_id": 5,
+                        "enrollment_date": "2022-02-14"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "answer": [
+            {
+                "answer": [
+                    "Science 201",
+                    "Electronics 401"
+                ],
+                "why": [
+                    "{{classrooms_2}}",
+                    "{{classrooms_5}}"
+                ]
+            }
+        ]
+    }
+]

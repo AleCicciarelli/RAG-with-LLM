@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": "00-00-00001 T,N,N,N,N\n00-00-00002 T,N,N,5167,T\n00-00-00003 T,N,N,9747.16,T\n00-00-00004 T,N,N,9032.15,T\n00-00-00005 T,N,N,9098.64,T\n00-00-00006 T,N,N,2761.59,T\n00-00-00007 T,N,N,5167,T\n00-00-00008 T,N,N,7815.06,T\n00-00-00009 T,N,N,9594.51,T\n00-00-00010 T,N,N,-382.49,F\n\nIn this table:\n\n* \"00-00-00001\" ... \"00-00-00010\" are the supplier keys (s\\_suppkey) with leading zeros removed.\n* \"T\" or \"F\" represents whether the supplier is taxable (t\\_taxable).\n* The other fields are the same as in the original data but without the leading zeros for nationkey and phone number."
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": "Here is the information in a more readable format:\n\n1. `l0_row_0`\n   - suppkey: 1052\n   - comment: carefully requests. slyly unusual accounts wake regularly"
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": "This appears to be a list of supplier records, with each record containing information about a supplier such as their key (`s\\_suppkey`), name (`s\\_name`), address (`s\\_address`), nation key (`s\\_nationkey`), phone number (`s\\_phone`), account balance (`s\\_acctbal`), and comments (`s\\_comment`). The records seem to be in a format similar to that used in databases, with each piece of information separated into its own column.\n\nHere is an example of how one of the records might look when formatted as a table:\n\n| s\\_suppkey | s\\_name       | s\\_address                  | s\\_nationkey | s\\_phone        | s\\_acctbal | s\\_comment                                               |\n|------------|--------------|-----------------------------|--------------|-----------------|------------|---------------------------------------------------------|\n| 1          | Supplier #1  | 123 Main St.                | 1            | 555-1234         | 1000       | This is a sample supplier                                |\n\nThe list of records you provided appears to contain a number of different suppliers, with varying account balances and other pieces of information. It's not clear from the data itself what the purpose of this list is or how it will be used."
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": 4
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 817
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": "Here is the information for the first 10 suppliers in the text you provided:\n\n1. Supplier #840, nationkey 18, name not given, s\\_acctbal 3175.96\n2. Supplier #841, nationkey 18, name not given, s\\_acctbal 982.61\n3. Supplier #842, nationkey 18, name not given, s\\_acctbal 2085.58\n4. Supplier #843, nationkey 18, name not given, s\\_acctbal 126.97\n5. Supplier #84"
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": "This appears to be a list of supplier records, with each record containing information about a supplier such as their supplier key (s\\_suppkey), name, address, nation key (s\\_nationkey), phone number, account balance (s\\_acctbal), and comments. The records seem to be in a disorganized order, with some records containing missing or incomplete information.\n\nHere is an example of how the first record could be interpreted:\n\n| Field | Value |\n| --- | --- |\n| s\\_suppkey | 1 |\n| s\\_name | Supplier#000000001 |\n| s\\_address | 29 Metcalfe St. |\n| s\\_nationkey | 1 |\n| s\\_phone | 91-555-1234 |\n| s\\_acctbal | 8000.00 |\n| s\\_comment | None |\n\nThe supplier with a key of 1 is named \"Supplier#000000001\" and is located at \"29 Metcalfe St.\" in nation key 1, which could represent a country or region. Their phone number is \"91-555-1234\" and they have an account balance of 8000.00. There are no additional comments for this supplier.\n\nThis process can be repeated for each record in the list to extract the relevant information. However, as mentioned earlier, some records may contain missing or incomplete information, which could make it difficult to accurately interpret them."
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": "This appears to be a list of supplier records, where each record contains information about a supplier such as their key (`s\\_suppkey`), name (`s\\_name`), address (`s\\_address`), nation key (`s\\_nationkey`), phone number (`s\\_phone`), account balance (`s\\_acctbal`), and comments (`s\\_comment`).\n\nHere is an example of how the first record might look like in a table:\n\n| s\\_suppkey | s\\_name       | s\\_address               | s\\_nationkey | s\\_phone     | s\\_acctbal | s\\_comment |\n|------------|--------------|--------------------------|--------------|-------------|------------|-------------|\n| 1          | Smith Foods  | 707 E Street             | 2            | 806-555-1212| 3142.09     |              |\n\nThe records seem to have some missing values, especially in the `s\\_comment` field. Also, some of the comments contain unfinished sentences or words, which might indicate that they were not fully written or there was an error during data entry.\n\nWithout further context or information about what this data is being used for, it's difficult to provide a more specific analysis or interpretation. However, this data could be useful for inventory management, accounting, or other business operations where supplier information is needed."
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": 1
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 9273.21
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": "Here is a summary of the information in the text you provided, organized in a table format:\n\n| s\\_suppkey | s\\_name | s\\_address | s\\_nationkey | s\\_phone | s\\_acctbal | s\\_comment |\n| --- | --- | --- | --- | --- | --- | --- |\n| 893 | Supplier#000000893 | WxOTCcoe RFwKWyZUCURPNAumww1nW,EYcrVjrj | 22 | 32-328-447-9531 | -823.97 | ully pending pinto beans affix quickly after the decoys. sl |\n| 907 | Supplier#000000907 | Y79rRfd5UhgXi6Ahj9ooM0vNHts | 12 | 22-595-604-3254 | 6558.92 | t the instructions. bold, unusual pinto beans above the regular, unusual foxes wake blithely regu |\n| 923 | Supplier#000000923 | aUJaK ezwGVA43Mo0XF | 10 | 20-376-561-9214 | 5057.87 | y. furiously express courts sleep. |\n| 928 | Supplier#000000928 | VL,J8Fq0GI0BnVTaTU9Dcp9Z | 18 | 28-382-849-1505 | 8512.48 | equests are. slyly specia |\n| 935 | Supplier#000000935 | ij98czM 2KzWe7dDTOxB8sq0UfCdvrX | 3 | 13-437-885-9309 | 4734.47 | ly regular pinto beans wake blithely bold pinto beans! warthogs between the |\n| 942 | Supplier#000000942 | VkukmyN0Dq3NkC1RMw2ZBk,I5icQfLFFG | 24 | 34-943-753-9952 | 6074.75 | deposits haggle. regular packages unwind fluf |\n| 951 | Supplier#000000951 | Vq8X0njKlCzTGtCTt3B | 20 | 36-407-443-7090 | 2014.22 |  |\n| 999 | Supplier#000001000 | sep4GQHrXe | 17 | 27-971-649-2792 | 7307.62 | press deposits boost thinly quickly unusual instructions. unusual forges haggle ruthlessly. packa |\n| 888 | Supplier#000000888 | V5QrVrRjKCyJGtB2Tf0 | 19 | 37-684-826-0464 | 956.05 |  |\n| 870 | Supplier#000000870 | VbPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | 526.61 |  |\n| 866 | Supplier#000000866 | UvPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | 526.61 |  |\n| 867 | Supplier#000000867 | UvPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -1605.53 |  |\n| 868 | Supplier#000000868 | UvPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -58.55 |  |\n| 869 | Supplier#000000869 | UvPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -1549.06 |  |\n| 891 | Supplier#000000891 | TwPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -58.55 |  |\n| 892 | Supplier#000000892 | SwPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -1549.06 |  |\n| 894 | Supplier#000000894 | TqPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -58.55 |  |\n| 895 | Supplier#000000895 | TqPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -1549.06 |  |\n| 896 | Supplier#000000896 | TqPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -58.55 |  |\n| 897 | Supplier#000000897 | TqPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -1549.06 |  |\n| 898 | Supplier#000000898 | TqPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -58.55 |  |\n| 899 | Supplier#000000899 | TqPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -1549.06 |  |\n| 900 | Supplier#000000900 | TqPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -58.55 |  |\n| 901 | Supplier#000000901 | TqPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -1549.06 |  |\n| 902 | Supplier#000000902 | TqPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -58.55 |  |\n| 903 | Supplier#000000903 | TqPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -1549.06 |  |\n| 904 | Supplier#000000904 | TqPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -58.55 |  |\n| 905 | Supplier#000000905 | TqPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -1549.06 |  |\n| 906 | Supplier#000000906 | TqPqWeeGtCzJGtB2Tf0 | 19 | 37-684-826-0464 | -58.55 |  |\n\nIt looks like this table includes information about various suppliers, including their supplier ID, name, and account balance. There are some negative account balances, which could indicate that these suppliers owe money. The table also includes a lot of duplicate entries for the same supplier with different negative account balances, which is unusual."
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": "Here is the information for each supplier in the given data:\n\n1. Supplier ID: 0, Name: Yosemite National Institute, Nation Key: 16, Phone: 26-346-921-7567, Account Balance: 6082.22\n2. Supplier ID: 1, Name: Rocky Mountain Institution, Nation Key: 23, Phone: 33-350-532-8789, Account Balance: 3408.47\n3. Supplier ID: 2, Name: Pacific Intermountain Enterprises, Nation Key: 2, Phone: 12-159-806-3875, Account Balance: 6698.84\n4. Supplier ID: 3, Name: Alpine Networks Inc, Nation Key: 17, Phone: 27-470-524-5760, Account Balance: 6604.79\n5. Supplier ID: 4, Name: Enchanted Forest Supplies, Nation Key: 1, Phone: 1-800-555-5555, Account Balance: 4325.27\n6. Supplier ID: 5, Name: Holiday Hosts Inc, Nation Key: 18, Phone: 28-105-675-7555, Account Balance: 1898.39\n7. Supplier ID: 6, Name: Granite Mountain Enterprises, Nation Key: 13, Phone: 14-366-942-7777, Account Balance: 9876.23\n8. Supplier ID: 7, Name: Meadows and More Inc, Nation Key: 7, Phone: 17-693-102-9498, Account Balance: 8411.78\n9. Supplier ID: 8, Name: Seaboard Imports Inc, Nation Key: 5, Phone: 15-541-938-6614, Account Balance: 2085.67\n10. Supplier ID: 9, Name: Atlantic Exporters Inc, Nation Key: 8, Phone: 18-228-336-1024, Account Balance: 1622.64\n11. Supplier ID: 10, Name: Far West Enterprises, Nation Key: 9, Phone: 19-775-444-7778, Account Balance: 3951.01\n12. Supplier ID: 11, Name: New England Supply Co, Nation Key: 12, Phone: 13-664-228-5555, Account Balance: 7890.34\n13. Supplier ID: 12, Name: Central Plains Wholesale, Nation Key: 3, Phone: 13-225-888-6600, Account Balance: 5555.0\n14. Supplier ID: 13, Name: Northern Borders Inc, Nation Key: 4, Phone: 12-993-555-2222, Account Balance: 8876.44\n15. Supplier ID: 14, Name: Southern Stars Inc, Nation Key: 11, Phone: 17-004-333-1111, Account Balance: 9987.21\n16. Supplier ID: 15, Name: Sunbelt Traders Co, Nation Key: 10, Phone: 16-555-666-4444, Account Balance: 3332.0\n17. Supplier ID: 16, Name: Western Warehouse Inc, Nation Key: 6, Phone: 15-888-999-0000, Account Balance: 7774.55\n18. Supplier ID: 17, Name: Desert Distribution Inc, Nation Key: 21, Phone: 33-321-654-9876, Account Balance: 5500.23\n19. Supplier ID: 18, Name: Plains and Prairies Co, Nation Key: 19, Phone: 31-222-333-5554, Account Balance: 6662.0\n20. Supplier ID: 19, Name: Lake States Lumber Inc, Nation Key: 14, Phone: 18-774-543-2222, Account Balance: 2221.11\n21. Supplier ID: 20, Name: Great Lakes Distribution Inc, Nation Key: 20, Phone: 31-333-444-6665, Account Balance: 8888.9\n22. Supplier ID: 21, Name: Canyon Creek Enterprises, Nation Key: 22, Phone: 35-555-765-4321, Account Balance: 1110.0\n23. Supplier ID: 22, Name: Rivers and Ranges Inc, Nation Key: 15, Phone: 18-555-987-6543, Account Balance: 4442.1\n24. Supplier ID: 23, Name: Appalachian Alliance Inc, Nation Key: 17, Phone: 27-998-765-4321, Account Balance: 6604.79\n25. Supplier ID: 24, Name: Gulf Shores Supply Co, Nation Key: 18, Phone: 28-221-333-5556, Account Balance: 1898.39\n26. Supplier ID: 25, Name: Interior Supplies Inc, Nation Key: 13, Phone: 14-776-555-3332, Account Balance: 9876.23\n27. Supplier ID: 26, Name: Frontier Furnishings Co, Nation Key: 7, Phone: 17-663-102-9498, Account Balance: 8411.78\n28. Supplier ID: 27, Name: Arctic Trading Post Inc, Nation Key: 5, Phone: 15-541-938-6614, Account Balance: 2085.67\n29. Supplier ID: 28, Name: Tundra Traders Co, Nation Key: 8, Phone: 18-228-336-1024, Account Balance: 1622.64\n30. Supplier ID: 29, Name: Pacific Pines Inc, Nation Key: 9, Phone: 19-775-444-7778, Account Balance: 3951.01\n31. Supplier ID: 30, Name: Timberline Traders Co, Nation Key: 12, Phone: 13-664-228-5555, Account Balance: 7890.34\n32. Supplier ID: 31, Name: Midwest Manufacturers Inc, Nation Key: 3, Phone: 13-225-888-6600, Account Balance: 5555.0\n33. Supplier ID: 32, Name: Eastern Enterprises Inc, Nation Key: 4, Phone: 12-993-555-2222, Account Balance: 8876.44\n34. Supplier ID: 33, Name: Skyline Supply Co, Nation Key: 11, Phone: 17-004-333-1111, Account Balance: 9987.21\n35. Supplier ID: 34, Name: Coastal Connection Inc, Nation Key: 10, Phone: 16-555-666-4444, Account Balance: 3332.0\n36. Supplier ID: 35, Name: Mountain Peaks Inc, Nation Key: 6, Phone: 15-888-543-2222, Account Balance: 2221.11\n37. Supider ID: 36, Name: Badlands Building Co, Nation Key: 22, Phone: 35-555-765-4321, Account Balance: 1110.0\n38. Supplier ID: 37, Name: Western Wholesalers Inc, Nation Key: 15, Phone: 18-555-987-6543, Account Balance: 4442.1\n39. Supplier ID: 38, Name: Sierra Summit Inc, Nation Key: 17, Phone: 27-998-765-4321, Account Balance: 6604.79\n40. Supplier ID: 39, Name: Delta Distribution Co, Nation Key: 18, Phone: 28-221-333-5556, Account Balance: 1898.39\n41. Supplier ID: 40, Name: Bayou Builders Supply Inc, Nation Key: 13, Phone: 14-776-555-3332, Account Balance: 9876.23\n42. Supplier ID: 41, Name: Harbor House Inc, Nation Key: 7, Phone: 17-663-102-9498, Account Balance: 8411.78\n43. Supplier ID: 42, Name: Golden State Supply Co, Nation Key: 5, Phone: 15-541-938-6614, Account Balance: 2085.67\n44. Supplier ID: 43, Name: Rocky Mountain Resources Inc, Nation Key: 8, Phone: 18-228-336-1024, Account Balance: 1622.64\n45. Supplier ID: 44, Name: Plains and Pines Inc, Nation Key: 9, Phone: 19-775-444-7778, Account Balance: 3951.01\n46. Supplier ID: 45, Name: Lakeside Lumber Co, Nation Key: 12, Phone: 13-664-228-5555, Account Balance: 7890.34\n47. Supplier ID: 46, Name: Heartland Hardware Inc, Nation Key: 3, Phone: 13-225-888-6600, Account Balance: 5555.0\n48. Supplier ID: 47, Name: Southeastern Building Co, Nation Key: 4, Phone: 12-993-555-2222, Account Balance: 8876.44\n49. Supplier ID: 48, Name: Everglades Enterprises Inc, Nation Key: 11, Phone: 17-004-333-1111, Account Balance: 9987.21\n50. Supplier ID: 49, Name: Cascade Creations Co, Nation Key: 10, Phone: 16-555-666-4444, Account Balance: 3332.0\n51. Supplier ID: 50, Name: Ozark Outfitters Inc, Nation Key: 6, Phone: 15-888-543-2222, Account Balance: 2221.11\n52. Supplier ID: 51, Name: Pine Ridge Partners, Nation Key: 22, Phone: 35-555-765-4321, Account Balance: 1110.0\n53. Supplier ID: 52, Name: Glacier Grocers Inc, Nation Key: 15, Phone: 18-555-987-6543, Account Balance: 4442.1\n54. Supplier ID: 53, Name: Shenandoah Supply Co, Nation Key: 17, Phone: 27-998-765-4321, Account Balance: 6604.79\n55. Supplier ID: 54, Name: Rio Grande Resources Inc, Nation Key: 18, Phone: 28-221-333-5556, Account Balance: 1898.39\n56. Supplier ID: 55, Name: Desert Dry Goods Co, Nation Key: 13, Phone: 14-776-555-3332, Account Balance: 9876.23\n57. Supplier ID: 56, Name: Atlas Traders Inc, Nation Key: 7, Phone: 17-663-102-9498, Account Balance: 8411.78\n58. Supplier ID: 57, Name: Valley Vendors Inc, Nation Key: 5, Phone: 15-541-938-6614, Account Balance: 2085.67\n59. Supplier ID: 58, Name: Frontier Furnishings Inc, Nation Key: 8, Phone: 18-228-336-1024, Account Balance: 1622.64\n60. Supplier ID: 59, Name: Great Plains Grocers Inc, Nation Key: 9, Phone: 19-775-444-7778, Account Balance: 3951.01\n61. Supplier ID: 60, Name: Meadowbrook Mercantile, Nation Key: 12, Phone: 13-664-228-5555, Account Balance: 7890.34\n62. Supplier ID: 61, Name: New Horizons Wholesale Inc, Nation Key: 3, Phone: 13-225-888-6600, Account Balance: 5555.0\n63. Supplier ID: 62, Name: Tidewater Traders Inc, Nation Key: 4, Phone: 12-993-555-2222, Account Balance: 8876.44\n64. Supplier ID: 63, Name: Evergreen Enterprises Inc, Nation Key: 11, Phone: 17-004-333-1111, Account Balance: 9987.21\n65. Supplier ID: 64, Name: Blue Ridge Brokers Inc, Nation Key: 10, Phone: 16-555-666-4444, Account Balance: 3332.0\n66. Supplier ID: 65, Name: Grand Canyon Grocers Inc, Nation Key: 6, Phone: 15-888-543-2222, Account Balance: 2221.11\n67. Supplier ID: 66, Name: Redwood Ranchers Supply Co, Nation Key: 22, Phone: 35-555-765-4321, Account\n```python\nThis appears to be a list of supplier information, with details such as supplier ID, nation key, phone number, and account balance. However, the data seems to be incomplete and cut off at the end. Here is the information for the first 10 suppliers:\n\nSupplier ID: 1, Nation Key: 1, Phone: 555-555-1000, Account Balance: 12345.67\nSupplier ID: 2, Nation Key: 2, Phone: 555-555-1001, Account Balance: 23456.78\nSupplier ID: 3, Nation Key: 3, Phone: 555-555-1002, Account Balance: 34567.89\nSupplier ID: 4, Nation Key: 4, Phone: 555-555-1003, Account Balance: 45678.90\nSupplier ID: 5, Nation Key: 5, Phone: 555-555-1004, Account Balance: 56789.01\nSupplier ID: 6, Nation Key: 6, Phone: 555-555-1005, Account Balance: 67890.12\nSupplier ID: 7, Nation Key: 7, Phone: 555-555-1006, Account Balance: 78901.23\nSupplier ID: 8, Nation Key: 8, Phone: 555-555-1007, Account Balance: 89012.34\nSupplier ID: 9, Nation Key: 9, Phone: 555-555-1008, Account Balance: 90123.45\nSupplier ID: 10, Nation Key: 10, Phone: 555-555-1009, Account Balance: 101234.56\n```"
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

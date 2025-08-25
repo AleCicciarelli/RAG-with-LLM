@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": "Based on the given data, the supplier with the suppkey '654' has a credit balance of 8319.67. Therefore, this supplier owes the company this amount. Here are the suppliers with credit balances:\n\n* Suppkey: 120, Credit Balance: 1148.63\n* Suppkey: 121, Credit Balance: 2541.7\n* Suppkey: 654, Credit Balance: 8319.67\n\nSo, the supplier with suppkey '654' owes the company 8319.67."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": 1
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": "This appears to be a series of records from a database or data file, with each record containing information about a supplier in a business context. The fields in each record include:\n\n* `s\\_suppkey`: a unique identifier for the supplier\n* `s\\_name`: the name of the supplier\n* `s\\_address`: the address of the supplier\n* `s\\_nationkey`: a key indicating the nation to which the supplier belongs\n* `s\\_phone`: the phone number of the supplier\n* `s\\_acctbal`: the balance in the supplier's account\n* `s\\_comment`: a comment or note about the supplier\n\nHere is an example of how you might interpret one of these records:\n\n* `s_suppkey: 812`: The unique identifier for this supplier is 812.\n* `s_name: Supplier#000000812`: The name of the supplier is \"Supplier #000000812\".\n* `s_address: 8qh4tezyScl5bidLAysvutB,,ZI2dn6xP`: The supplier's address is \"8qh4tezyScl5bidLAysvutB,,ZI2dn6xP\".\n* `s_nationkey: 6`: This supplier belongs to the nation with a key of 6.\n* `s_phone: 16-585-724-6633`: The supplier's phone number is \"16-585-724-6633\".\n* `s_acctbal: 8615.5`: The balance in the supplier's account is 8615.5 units of currency.\n* `s_comment: y quickly regular deposits? quickly pending packages after the caref`: There is a note or comment associated with this supplier that says \"y quickly regular deposits? quickly pending packages after the care\". It is not clear what this comment means without additional context.\n\nI hope this helps! Let me know if you have any other questions."
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 1
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": 1
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": "Here are the details of the suppliers from the data you provided, sorted by the 's_suppkey' in ascending order:\n\n1. Supplier#000000856, s_name: Supplier#000000856, s_address: U,GH2ZjlmA78JRbjWhbf7jCgrU7a0Dx, s_nationkey: 4, s_phone: 14-216-125-2920, s_acctbal: 2763.95, s_comment: special packages. theodolites haggle carefully. special packa\n2. Supplier#000000891, s_name: Supplier#000000891, s_address: cv64gZAB3Ax5XblZ19gNA zOHb9q2nGjtvUzLm9P, s_nationkey: 8, s_phone: 18-541-281-5118, s_acctbal: 2284.88, s_comment: deposits. slyly final accounts are fluffily slyly\n3. Supplier#000000892, s\\_name: Supplier#000000892, s\\_address: j6prA4M3sX9a9xHem3HOZpYy, s\\_nationkey: 8, s\\_phone: 18-893-665-3629, s\\_acctbal: 9993.46, s\\_comment: mong the regular instructions. regular, regular dependen\n4. Supplier#000000946, s\\_name: Supplier#000000946, s\\_address: RpFjkZmA ScvLe, s\\_nationkey: 15, s\\_phone: 25-522-937-5559, s\\_acctbal: 9093.75, s\\_comment: shall have to use slyly. carefully ironic ideas alon\n5. Supplier#000000963, s\\_name: Supplier#000000963, s\\_address: s3WbU6w31FgnuZVtwGnH6PkyZFg, s\\_nationkey: 11, s\\_phone: 21-395-611-8793, s\\_acctbal: 4152.04, s\\_comment: ily quiet accounts! blithe\n6. Supplier#000000987, s\\_name: Supplier#000000987, s\\_address: DAWJ1lDhybbSO3mngqD28aX, s\\_nationkey: 18, s\\_phone: 28-375-179-1732, s\\_acctbal: -40.3, s\\_comment: uriously unusual courts. slyly unus\n\nI hope this helps! Let me know if you need anything else."
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": 1
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

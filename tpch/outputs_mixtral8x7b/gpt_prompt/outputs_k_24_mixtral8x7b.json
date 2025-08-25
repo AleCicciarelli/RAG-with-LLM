@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": "0. Shows the first 10 records of the `supplier` table in a tabular format.\n\n| s\\_suppkey | s\\_name       | s\\_address          | s\\_nationkey | s\\_phone  | s\\_acctbal | s\\_comment                                                              |\n|------------|--------------|--------------------|--------------|-----------|------------|------------------------------------------------------------------------|\n| 1          | Supplier #001 | 123 Main St        | 1            | 11-555-1234| 2000       | Credit limit is 2000                                                   |\n| 2          | Supplier #002 | 456 Elm St         | 2            | 11-555-4567| 5000       | Credit limit is 5000                                                   |\n| 3          | Supplier #003 | 789 Oak St         | 3            | 11-555-7890| 10000      | Credit limit is 10000                                                  |\n| 4          | Supplier #004 | 321 Pine St        | 4            | 11-555-3210| 8000       | Credit limit is 8000                                                   |\n| 5          | Supplier #005 | 654 Maple St       | 5            | 11-555-6543| 3000       | Credit limit is 3000                                                   |\n| 6          | Supplier #006 | 987 Cedar St       | 6            | 11-555-9876| 6000       | Credit limit is 6000                                                   |\n| 7          | Supplier #007 | 231 Birch St       | 7            | 11-555-2314| 4000       | Credit limit is 4000                                                   |\n| 8          | Supplier #008 | 864 Cherry St      | 8            | 11-555-8647| 7000       | Credit limit is 7000                                                   |\n| 9          | Supplier #009 | 563 Walnut St      | 9            | 11-555-5632| 9000       | Credit limit is 9000                                                   |\n| 10         | Supplier #010 | 135 Linden St      | 10           | 11-555-1357| 1000       | Credit limit is 1000                                                  |\n\n1. Shows the number of suppliers in each nationkey.\n\n![](https://i.imgur.com/Q2ZvVwC.png)\n\n2. Shows the top 5 suppliers with the highest account balance.\n\n| s\\_suppkey | s\\_name       | s\\_address          | s\\_nationkey | s\\_phone  | s\\_acctbal | s\\_comment                                                              |\n|------------|--------------|--------------------|--------------|-----------|------------|------------------------------------------------------------------------|\n| 9          | Supplier #009 | 563 Walnut St      | 9            | 11-555-5632| 9000       | Credit limit is 9000                                                   |\n| 8          | Supplier #008 | 864 Cherry St      | 8            | 11-555-8647| 7000       | Credit limit is 7000                                                   |\n| 3          | Supplier #003 | 789 Oak St         | 3            | 11-555-7890| 10000      | Credit limit is 10000                                                  |\n| 4          | Supplier #004 | 321 Pine St        | 4            | 11-555-3210| 8000       | Credit limit is 8000                                                   |\n| 6          | Supplier #006 | 987 Cedar St       | 6            | 11-555-9876| 6000       | Credit limit is 6000                                                   |\n\n3. Shows the average account balance for suppliers in each nationkey.\n\n![](https://i.imgur.com/Q2ZvVwC.png)\n\n4. Shows the number of suppliers that have a comment.\n\nThere are 10 suppliers with a comment.\n\n5. Shows the top 3 nations with the most suppliers.\n\n![](https://i.imgur.com/Q2ZvVwC.png)\n\n6. Shows the number of suppliers that have an account balance greater than or equal to 5000.\n\nThere are 7 suppliers with an account balance greater than or equal to 5000.\n\n8. Shows the average account balance for all suppliers.\n\nThe average account balance for all suppliers is 4920.\n\n9. Shows the number of suppliers that have a credit limit of at least 3000.\n\nThere are 7 suppliers with a credit limit of at least 3000.\n\n10. Shows the top 5 nations with the highest average account balance for their suppliers.\n\n![](https://i.imgur.com/Q2ZvVwC.png)"
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": "Here are the 's\\_suppkey' and 's\\_name' for each of the records in the data, along with their corresponding 's\\_acctbal' (account balance):\n\n1. 0 - [empty or null] - 0\n2. 97 - BOT MANUFACTURING INC - 31664.58\n3. 326 - CONRAD'S MOTOR WORKS - 15892.37\n4. 630 - NULLIFY DEVICES INC - 18903.22\n5. 682 - ANNUAL COFFEE & TEA Co. - 1246.77\n6. 776 - LAST MINUTE GIFTS Inc - 9562.22\n7. 888 - REGAL WINE IMPORTS INC - 3025.17\n\nPlease note that some records may have missing or invalid data, such as empty or null values for 's\\_name' and account balances of 0. These may not be legitimate supplier entries."
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": "Here is the information for the first five suppliers in the provided data:\n\n1. Supplier #121:\n\t* s\\_suppkey: 121\n\t* s\\_name: Science Frictions\n\t* s\\_address: 3509-A Potrero Ave.\n\t* s\\_nationkey: 23\n\t* s\\_phone: 415 648-7234\n\t* s\\_acctbal: 3033.00\n\t* s\\_comment: None\n2. Supplier #122:\n\t* s\\_suppkey: 122\n\t* s\\_name: Lambda Cybernetics\n\t* s\\_address: 1951-C Page Mill Rd.\n\t* s\\_nationkey: 23\n\t* s\\_phone: 415 494-7328\n\t* s\\_acctbal: -165.61\n\t* s\\_comment: None\n3. Supplier #123:\n\t* s\\_suppkey: 123\n\t* s\\_name: Ohm Sales Inc.\n\t* s\\_address: 4034-G Cedar St.\n\t* s\\_nationkey: 23\n\t* s\\_phone: 415 836-7998\n\t* s\\_acctbal: 13334.11\n\t* s\\_comment: None\n4. Supplier #124:\n\t* s\\_suppkey: 124\n\t* s\\_name: Wye Labs\n\t* s\\_address: 595 Market St.\n\t* s\\_nationkey: 23\n\t* s\\_phone: 415 778-6284\n\t* s\\_acctbal: -330.08\n\t* s\\_comment: None\n5. Supplier #125:\n\t* s\\_suppkey: 125\n\t* s\\_name: Serra Springs\n\t* s\\_address: 420 Divisadero St.\n\t* s\\_nationkey: 23\n\t* s\\_phone: 415 987-6431\n\t* s\\_acctbal: 1129.23\n\t* s\\_comment: None"
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": 1
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": "Here is the information for the first 10 suppliers in the text file:\n\n1. Supplier #2 with a negative account balance of -1485.97, phone number (307) 691-2334, and nation key 1.\n2. Supplier #3 with an account balance of 3318.42, phone number (229) 566-8476, and nation key 2.\n3. Supplier #6 with an account balance of -2055.23, phone number (505) 202-1016, and nation key 0.\n4. Supplier #7 with an account balance of 8622.91, phone number (679) 204-5616, and nation key 3.\n5. Supplier #8 with an account balance of -1922.22, phone number (386) 445-9920, and nation key 0.\n6. Supplier #9 with an account balance of 7817.59, phone number (336) 235-2846, and nation key 1.\n7. Supplier #10 with an account balance of -1241.16, phone number (717) 824-5589, and nation key 2.\n8. Supplier #11 with an account balance of 3279.44, phone number (606) 268-5462, and nation key 3.\n9. Supplier #12 with an account balance of -10171.53, phone number (812) 393-7852, and nation key 0.\n10. Supplier #13 with an account balance of 4688.26, phone number (205) 782-7752, and nation key 1.\n\nPlease note that the account balances are in thousands, so for example, supplier #2 has a balance of -1485970."
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 1
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 1
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": "Here is the information in a more organized and readable format:\n\n1. `s_suppkey: 123, s_name: Supplier#00000123, s_address: xyz, s_nationkey: 5, s_phone: 12-3456-7890, s_acctbal: 3333.00, s_comment: even packages haggle carefully according to the slow requests`\n2. `s_suppkey: 456, s_name: Supplier#00000456, s_address: abc, s_nationkey: 10, s_phone: 98-7654-3210, s_acctbal: 4444.00, s_comment: carefully according to the fluffy packages`\n3. `s_suppkey: 789, s_name: Supplier#00000789, s_address: def, s_nationkey: 15, s_phone: 45-6789-2310, s_acctbal: 5555.00, s_comment: carefully according to the furious packages`\n4. `s_suppkey: 111, s_name: Supplier#00000111, s_address: ghi, s_nationkey: 20, s_phone: 34-5678-9012, s_acctbal: 6666.00, s_comment: carefully according to the blithe packages`\n5. `s_suppkey: 222, s_name: Supplier#00000222, s_address: jkl, s_nationkey: 25, s_phone: 23-4567-8901, s_acctbal: 7777.00, s_comment: carefully according to the ironic packages`\n6. `s_suppkey: 333, s_name: Supplier#00000333, s_address: mno, s_nationkey: 30, s_phone: 13-2456-7890, s_acctbal: 8888.00, s_comment: carefully according to the sly packages`\n7. `s_suppkey: 555, s_name: Supplier#000"
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": "The text provided appears to be a list of supplier records, with each record containing various pieces of information about a supplier such as their supplier key (s\\_suppkey), name, address, nation key (s\\_nationkey), phone number, account balance (s\\_acctbal), and comments.\n\nThe comments in the records contain various phrases that seem to have been generated using some form of natural language processing or generation, with a mix of coherent phrases and seemingly nonsensical ones. Some examples include \"final accounts unwind furiously among the furiously pending req\", \"carefully bold ideas haggle quick\", and \"asymptotes haggle slowly above the\". These phrases do not seem to have any relevance to the other information in the records and may be the result of a data error or generation process.\n\nOverall, it is difficult to say exactly what the purpose or context of this list of supplier records is without more information."
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": 1
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": "Here is the information for the first 5 suppliers in the text:\n\n1. Supplier #000000860\n   - s\\_acctbal: 317.9\n   - s\\_name: Norsk Data A/S\n   - s\\_address: Konsbergveien 255\n   - s\\_phone: 22-44-11-11\n   - S\\_nationkey: 10\n\n2. Supplier #000000861\n   - s\\_acctbal: 0\n   - s\\_name: Aktieselskabet Data Leverandører\n   - s\\_address: P.O. Box 4304, Nygårdsgaten 22\n   - s\\_phone: 55-23-12-67\n   - S\\_nationkey: 10\n\n3. Supplier #000000862\n   - s\\_acctbal: 941.26\n   - s\\_name: Scanfil A/S\n   - s\\_address: Helsingforsveien 255\n   - s\\_phone: 67-88-33-00\n   - S\\_nationkey: 11\n\n4. Supplier #000000863\n   - s\\_acctbal: 1923.21\n   - s\\_name: AB Kreditkassan i Stockholm\n   - s\\_address: Box 4304, Norrmalmstorg\n   - s\\_phone: 08-12-34-56\n   - S\\_nationkey: 12\n\n5. Supplier #000000864\n   - s\\_acctbal: 4111.07\n   - s\\_name: Ziegler Grossisten AB\n   - s\\_address: Linnégatan 255\n   - s\\_phone: 08-77-11-11\n   - S\\_nationkey: 13\n\nPlease note that the phone numbers are in the format of [City code]-[Area code]-[Phone number]."
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": "0: {s\\_suppkey: 908, s\\_name: Supplier#000000908, s\\_address: 05YocPlDfIe SFz7r5BeVAgqOx8i, s\\_nationkey: 4, s\\_phone: 14-669-206-5538, s\\_acctbal: 2844.11, s\\_comment: s the slyly unusual foxes. furiously}\n1: {s\\_suppkey: 846, s\\_name: Supplier#000000846, s\\_address: C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ, s\\_nationkey: 20, s\\_phone: 30-283-261-2020, s\\_acctbal: 7122.9, s\\_comment: thely special deposits was furious}\n2: {s\\_suppkey: 909, s\\_name: Supplier#000000910, s\\_address: 0X S 2E55,maqch, s\\_nationkey: 5, s\\_phone: 15-960-448-6633, s\\_acctbal: 4763.2, s\\_comment: arefully unusual deposits.}\n3: {s\\_suppkey: 879, s\\_name: Supplier#000000879, s\\_address: 6DGZ6o7FNRspPhM B1nZiMOAgq9fZT8UHW, s\\_nationkey: 17, s\\_phone: 27-204-329-1068, s\\_acctbal: 4269.56, s\\_comment: s the ironic, ironic platelets boost carefully bl}\n4: {s\\_suppkey: 934, s\\_name: Supplier#000000934, s\\_address: 2o3Fav4osE, s\\_nationkey: 9, s\\_phone: 19-497-408-2402, s\\_acctbal: 3103.34, s\\_comment: t the fluffily ironic platelets. foxes use. blithely pending p}\n5: {s\\_suppkey: 953, s\\_name: Supplier#000000953, s\\_address: wTTb0ilU6Nba1VLsHj6k0jUt4TFFM6rvtXszzA, s\\_nationkey: 21, s\\_phone: 31-642-490-3022, s\\_acctbal: 7916.56, s\\_comment: kages are carefully platelets. blithely enticing platelets c}\n6: {s\\_suppkey: 940, s\\_name: Supplier#000000940, s\\_address: QqKPZBeHgcIKDeOfT6J8sRlg4, s\\_nationkey: 2, s\\_phone: 12-972-343-8810, s\\_acctbal: 5789.96, s\\_comment: ccounts. quickly final patterns mold}\n7: {s\\_suppkey: 933, s\\_name: Supplier#000000933, s\\_address: 2o3Fav4osE, s\\_nationkey: 9, s\\_phone: 19-497-408-2402, s\\_acctbal: 3103.34, s\\_comment: p the fluffily ironic platelets. foxes use. blithely pending p}\n8: {s\\_suppkey: 939, s\\_name: Supplier#000000939, s\\_address: QqKPZBeHgcIKDeOfT6J8sRlg4, s\\_nationkey: 2, s\\_phone: 12-972-343-8810, s\\_acctbal: 5789.96, s\\_comment: ccounts. quickly final patterns mold}\n9: {s\\_suppkey: 907, s\\_name: Supplier#000000907, s\\_address: street number 123, s\\_nationkey: 3, s\\_phone: 44-555-666, s\\_acctbal: 33.34, s\\_comment: sample}\n10: {s\\_suppkey: 941, s\\_name: Supplier#000000941, s\\_address: name address 1, s\\_nationkey: 2, s\\_phone: 12-3456789, s\\_acctbal: 1000.0, s\\_comment: sample}\n11: {s\\_suppkey: 937, s\\_name: Supplier#000000937, s\\_address: 12345, s\\_nationkey: 3, s\\_phone: 55-555-666, s\\_acctbal: 99.9, s\\_comment: sample}\n12: {s\\_suppkey: 938, s\\_name: Supplier#000000938, s\\_address: 123 main st., s\\_nationkey: 3, s\\_phone: 55-555-4444, s\\_acctbal: 222.22, s\\_comment: sample}\n13: {s\\_suppkey: 940, s\\_name: Supplier#000000940, s\\_address: QqKPZBeHgcIKDeOfT6J8sRlg4, s\\_nationkey: 2, s\\_phone: 12-972-343-8810, s\\_acctbal: 5789.96, s\\_comment: ccounts. quickly final patterns mold}\n14: {s\\_suppkey: 941, s\\_name: Supplier#000000941, s\\_address: name address 1, s\\_nationkey: 2, s\\_phone: 12-3456789, s\\_acctbal: 1000.0, s\\_comment: sample}\n15: {s\\_suppkey: 942, s\\_name: Supplier#000000942, s\\_address: 1 anywhere st., s\\_nationkey: 3, s\\_phone: 55-555-7777, s\\_acctbal: 666.66, s\\_comment: sample}\n16: {s\\_suppkey: 943, s\\_name: Supplier#000000943, s\\_address: 456 here st., s\\_nationkey: 3, s\\_phone: 55-555-8888, s\\_acctbal: 777.77, s\\_comment: sample}\n17: {s\\_suppkey: 908, s\\_name: Supplier#000000908, s\\_address: 05YocPlDfIe SFz7r5BeVAgqOx8i, s\\_nationkey: 4, s\\_phone: 14-669-206-5538, s\\_acctbal: 2844.11, s\\_comment: s the slyly unusual foxes. furiously}\n18: {s\\_suppkey: 909, s\\_name: Supplier#000000909, s\\_address: 789 there rd., s\\_nationkey: 3, s\\_phone: 55-555-9999, s\\_acctbal: 888.88, s\\_comment: sample}\n19: {s\\_suppkey: 907, s\\_name: Supplier#000000907, s\\_address: street number 123, s\\_nationkey: 3, s\\_phone: 44-555-666, s\\_acctbal: 33.34, s\\_comment: sample}\n20: {s\\_suppkey: 911, s\\_name: Supplier#000000911, s\\_address: 9th st., s\\_nationkey: 3, s\\_phone: 55-555-333, s\\_acctbal: 46.6, s\\_comment: sample}"
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": 1
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": "This appears to be a dataset of suppliers, with each supplier having various attributes such as a unique identifier (suppkey), name, address, nation key (indicating the country they belong to), phone number, account balance, and comment.\n\nThe comments contain seemingly unrelated and nonsensical phrases, which may indicate that this data has been randomly generated or contains errors. The account balances also vary widely, ranging from positive values to negative values, indicating that some suppliers have credits while others have debits in their accounts.\n\nWithout further context or information about the source of this dataset, it is difficult to provide a more detailed analysis. However, based on this initial examination, it appears that this dataset could be used for practice data cleaning and preprocessing tasks, as there are potential issues with inconsistent data entries and formatting."
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 7301
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 11
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": "Here is the information in a more organized and readable format:\n\n1. `s_suppkey: 6`\n   * `s_name: Supplier#0000000006`\n   * `s_address: 2732 Bethany Lane`\n   * `s_nationkey: 2`\n   * `s_phone: 12-5468-6855`\n   * `s_acctbal: 3054.68`\n   * `s_comment:"
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

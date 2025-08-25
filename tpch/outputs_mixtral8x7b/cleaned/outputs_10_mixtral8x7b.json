@@ -1,0 +1,472 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": [
+            832,
+            900,
+            964
+        ]
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": "[“970”, “992”]\n\nThe input does not specify a particular table to query, so I assume that the information in the input is relevant and that we are looking for suppliers in nationkey 2 that have an acctbal greater than 4643.76 (the acctbal of the supplier with suppkey 970). The suppliers with the suppkeys 970 and 992 meet this condition."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": [
+            935,
+            929,
+            829
+        ]
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": [
+            829
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": [
+            "Supplier#000000931",
+            "Supplier#000000833",
+            "Supplier#000000843",
+            "Supplier#000000956"
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": "Based on the provided information, there is no data for any table other than 'supplier' and no column named 'nationkey' in any other table. Therefore, I can only query the 'supplier' table to find suppliers from a nation with a specific id. Here are all the suppliers from nation key 1:\n\n```sql\nSELECT * FROM supplier WHERE nationkey = 1;\n```\n\nThis will return rows for the suppliers with the following 'suppkey' values: 945, 930, and 994."
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": "["
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": [
+            {}
+        ]
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": [
+            "Supplier#000000801",
+            "Supplier#000000891",
+            "Supplier#000000871",
+            "Supplier#000000857",
+            "Supplier#000000904"
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": [
+            {
+                "answer": [
+                    "12-663-356-1288",
+                    "12-316-384-2073",
+                    "12-991-892-1050"
+                ],
+                "row": [
+                    992,
+                    993,
+                    998
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": "Based on the context provided, there is no part named 'forest green, dark' in the given data, nor is there any numeric information that could be interpreted as a price for such an item. Therefore, it is not possible to provide the retail price of this part."
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": "Based on the provided context, there is no customer information or order keys given, so it's not possible to provide the requested details about a specific customer and their orders. The context only contains information about various suppliers."
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": [
+            {
+                "supplier_id": 4,
+                "balance": 8855.24
+            },
+            {
+                "supplier_id": 17,
+                "balance": -408.45
+            },
+            {
+                "supplier_id": 20,
+                "balance": 7122.9
+            },
+            {
+                "supplier_id": 21,
+                "balance": 7916.56
+            }
+        ]
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": [
+            ""
+        ]
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": [
+            [
+                "suppkey",
+                "829"
+            ],
+            [
+                "name",
+                "Supplier#000000829"
+            ],
+            [
+                "address",
+                "w247SZbFQvw1Fp4f0JFIfVXmIBfulBxfgUg"
+            ],
+            [
+                "nationkey",
+                "2"
+            ],
+            [
+                "phone",
+                "12-123-147-1171"
+            ],
+            [
+                "acctbal",
+                "9542.56"
+            ]
+        ]
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": [
+            {
+                "answer": [
+                    "806",
+                    "831",
+                    "904",
+                    "922",
+                    "946",
+                    "948",
+                    "991"
+                ],
+                "explanation": "The 'nationkey' values in the provided rows are: 13, 15, 2, 13, 15, 21, 2, 15, 11, 16. The unique 'nationkey' values that are greater than or equal to 2 (since the question asks for regions with a 'nationkey' of at least 2) are: 2, 13, 15, 21, 16."
+            }
+        ]
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": [
+            850,
+            853,
+            833,
+            865,
+            1000,
+            829
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": [
+            "Supplier#000000829",
+            "Supplier#000000900",
+            "Supplier#000000906",
+            "Supplier#000000983",
+            "Supplier#000000993"
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": [
+            "Supplier#000000993",
+            "Supplier#00000999"
+        ]
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": [
+            "2022-03-16"
+        ]
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": [
+            "No order ID provided"
+        ]
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": [
+            "Supplier#000000992",
+            "Supplier#000000994"
+        ]
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": [
+            "2",
+            "20"
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": [
+            "Supplier#000000857",
+            "Supplier#000000928"
+        ]
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": [
+            {
+                "suppkey": 123,
+                "name": "Supplier#000000123",
+                "address": "100 E 42nd St",
+                "nationkey": 2,
+                "phone": "12-123-147-1170",
+                "acctbal": 9542.56
+            }
+        ]
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": [
+            "907",
+            "856",
+            "808",
+            "992"
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": [
+            {
+                "answer": [
+                    "15-926-534-2005"
+                ],
+                "row": 899
+            }
+        ]
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": [
+            {
+                "suppkey": 829,
+                "name": "Supplier#000000829",
+                "nationkey": 2
+            }
+        ]
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": [
+            935,
+            829
+        ]
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": [
+            "Supplier#000000870",
+            "Supplier#000000943"
+        ]
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": [
+            "Supplier#000000904",
+            "Supplier#000000826",
+            "Supplier#000"
+        ]
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": [
+            "Supplier#000000825",
+            "Supplier#000000826",
+            "Supplier#000000827",
+            "Supplier#000000829",
+            "Supplier#000000849",
+            "Supplier#000000934",
+            "Supplier#000000935",
+            "Supplier#000000972"
+        ]
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": [
+            {
+                "nationkey": 2,
+                "name": "Supplier#000000999"
+            }
+        ]
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": [
+            "Supplier#000000803",
+            "Supplier#000000808",
+            "Supplier#000000809",
+            "Supplier#000000826",
+            "Supplier#000000827",
+            "Supplier#000000833",
+            "Supplier#000000937"
+        ]
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": [
+            {
+                "answer": [
+                    "10000",
+                    "1000"
+                ],
+                "row": [
+                    936,
+                    912
+                ]
+            }
+        ]
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": [
+            "12-123-147-1171"
+        ]
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": [
+            "Supplier#000000935",
+            "Supplier#000000953",
+            "Supplier#000000853"
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": [
+            "Supplier#000000829",
+            "Supplier#000000857"
+        ]
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": {
+            "suppkey": [
+                931,
+                853,
+                803,
+                993,
+                826
+            ],
+            "sname": [
+                "Supplier#000000931",
+                "Supplier#000000853",
+                "Supplier#000000803",
+                "Supplier#000000993",
+                "Supplier#000000826"
+            ],
+            "nationkey": [
+                8,
+                8,
+                15,
+                2,
+                15
+            ]
+        }
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": [
+            "Supplier#000000844",
+            "Supplier#000000935",
+            "Supplier#000000976"
+        ]
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": [
+            "Supplier#000000906",
+            "Supplier#000000829"
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": [
+            887,
+            905,
+            940
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": [
+            852,
+            862,
+            906,
+            961,
+            970,
+            992,
+            993
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": [
+            {
+                "nationkey": 2,
+                "count": 2
+            },
+            {
+                "nationkey": 1,
+                "count": 2
+            },
+            {
+                "nationkey": 11,
+                "count": 2
+            },
+            {
+                "nationkey": 7,
+                "count": 1
+            },
+            {
+                "nationkey": 13,
+                "count": 1
+            },
+            {
+                "nationkey": 21,
+                "count": 1
+            }
+        ]
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": [
+            {
+                "suppkey": 863,
+                "nationkey": 21
+            },
+            {
+                "suppkey": 953,
+                "nationkey": 21
+            },
+            {
+                "suppkey": 904,
+                "nationkey": 15
+            },
+            {
+                "suppkey": 922,
+                "nationkey": 13
+            }
+        ]
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": [
+            "Supplier#000000972"
+        ]
+    }
+]

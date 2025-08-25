@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": 9
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": 8.0
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": 12
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": "This appears to be a list of supplier records, where each record contains information about a supplier such as their key (`s\\_suppkey`), name (`s\\_name`), address (`s\\_address`), nation key (`s\\_nationkey`), phone number (`s\\_phone`), account balance (`s\\_acctbal`), and comments (`s\\_comment`).\n\nHere is an example of how to interpret one of the records:\n\n* `s_suppkey: 801`: The supplier key is 801.\n* `s_name: Supplier#000000801`: The name of the supplier is \"Supplier#000000801\".\n* `s_address: zohVF4 4GHOJpWy9kdytvYwm27mJEBhk`: The address of the supplier is \"zohVF4 4GHOJpWy9kdytvYwm27mJEBhk\".\n* `s_nationkey: 1`: The nation key associated with the supplier is 1.\n* `s_phone: 11-673-791-6926`: The phone number for the supplier is \"11-673-791-6926\".\n* `s_acctbal: 976.53`: The account balance for the supplier is 976.53.\n* `s_comment: ckly final accounts wake since the even instructions. regular, permanent accounts are against t`: There is a comment associated with this supplier record.\n\nIt's worth noting that some of the account balances (`s_acctbal`) are negative, which could indicate that these suppliers owe money rather than having a positive balance."
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": 5
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 1
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 1
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": "Here is the information for the first 10 records in the 'supplier' table:\n\n1. s\\_suppkey: 1, s\\_name: Supplier#000000001, s\\_address: 123 Main St.\\"
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": "Here is the information for the first 5 suppliers from the data you provided:\n\n1. Supplier Key: 3, Name: Data Base Machines, Nation Key: 2, Location: Cambridge, Capital: 10000\n2. Supplier Key: 5, Name: Paper Clips LTD, Nation Key: 2, Location: Cambridge, Capital: 4883\n3. Supplier Key: 6, Name: Printing Press, Nation Key: 1, Location: London, Capital: 23701\n4. Supplier Key: 7, Name: National Screw Co, Nation Key: 7, Location: Manchester, Capital: 9523\n5. Supplier Key: 8, Name: Copper Wire Inc, Nation Key: 6, Location: Glasgow, Capital: 19414\n\nAnd here is the code I used to extract this information:\n\n```python\nimport pandas as pd\n\ndata = [line.split(',') for line in info]\nheader = data[0]\nsuppliers\\_data = data[1:]\n\n# Create a DataFrame from the list of lines\nsuppliers\\_df = pd.DataFrame(suppliers\\_data, columns=header)\n\n# Clean up the data types\nsuppliers\\_df[['s\\_suppkey', 's\\_nationkey']] = suppliers\\_df[['s\\_suppkey', 's\\_nationkey']].astype(int)\nsuppliers\\_df['s\\_capital'] = suppliers\\_df['s\\_capital'].astype(float)\n\n# Display the first 5 rows of the DataFrame\nprint(suppliers\\_df.head())\n```\n\nNote: I assumed that the variable `info` contains the data you provided as a string. If this is not the case, you will need to modify the code accordingly."
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 1736.47
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": 1
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": "This appears to be a list of supplier records, where each record contains information about a supplier such as their key (`s_suppkey`), name (`s_name`), address (`s_address`), nation key (`s_nationkey`), phone number (`s_phone`), account balance (`s_acctbal`), and comments (`s_comment`).\n\nHere is an example of how to parse the first record in Python:\n```python\nrecord = {\n    's_suppkey': 1,\n    's_name': 'Supplier #000001',\n    's_address': ' 4711 Windows Way\\nParis   FR',\n    's_nationkey': 21,\n    's_phone': '56-345-7890',\n    's_acctbal': 3047.05,\n    's_comment': 'long standing supplier'\n}\n```\nNote that the `s_address` field contains newline characters (`\\n`) which represent line breaks in the address."
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": "Here is the information for the first 5 suppliers in the text:\n\n1. Supplier #846, s\\_suppkey = 846, s\\_name = \"Supplier#846\", s\\_address = \"25, Immedia, NY\", s\\_nationkey = 2, s\\_phone = \"12-575-2345\", s\\_acctbal = 3145.92, s\\_comment = \"High quality goods\"\n2. Supplier #847, s\\_suppkey = 847, s\\_name = \"Supplier#847\", s\\_address = \"45, Electron, NY\", s\\_nationkey = 3, s\\_phone = \"13-169-466-8402\", s\\_acctbal = 4404.29, s\\_comment = \"Regular packages are during the regular packages. Furiously regular requests haggle carefully\"\n3. Supplier #851, s\\_suppkey = 851, s\\_name = \"Supplier#851\", s\\_address = \"76, Zmart, NY\", s\\_nationkey = 1, s\\_phone = \"11-574-892-3228\", s\\_acctbal = 213.41, s\\_comment = \"Customer s recommends\"\n4. Supplier #852, s\\_suppkey = 852, s\\_name = \"Supplier#852\", s\\_address = \"98, Lord, NY\", s\\_nationkey = 1, s\\_phone = \"11-574-892-3228\", s\\_acctbal = 679.33, s\\_comment = \"Customer r recommends. Quality products\"\n5. Supplier #853, s\\_suppkey = 853, s\\_name = \"Supplier#853\", s\\_address = \"120, Rich, NY\", s\\_nationkey = 1, s\\_phone = \"11-574-892-3228\", s\\_acctbal = 638.22, s\\_comment = \"Quality products\"\n\nPlease note that the s\\_address and s\\_comment fields contain some garbled text, so I have done my best to interpret them."
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": 1
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": "Here is the information for the first 10 suppliers in the text you provided:\n\n1. Supplier #: 1, Supplier Name: Supplier#00000001, Nationkey: 3, Comment: , Account Balance: 29214.78\n2. Supplier #: 2, Supplier Name: Supplier#00000002, Nationkey: 15, Comment: , Account Balance: 12416.36\n3. Supplier #: 3, Supplier Name: Supplier#00000003, Nationkey: 24, Comment: , Account Balance: 7089.24\n4. Supplier #: 4, Supplier Name: Supplier#000"
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

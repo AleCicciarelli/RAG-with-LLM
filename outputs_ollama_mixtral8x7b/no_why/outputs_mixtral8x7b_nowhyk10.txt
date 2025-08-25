@@ -1,0 +1,298 @@
+----Results 1---- 
+Question:Which is the email of Giulia Rossi? 
+Answer:giulia.rossi@student.edu 
+
+
+----Results 2---- 
+Question:Which is the name of the department where the teacher Laura Bianchi teaches? 
+Answer:Computer Science 
+
+
+----Results 3---- 
+Question:How many credits has the course Software Engineering? 
+Answer:6 
+
+
+----Results 4---- 
+Question:What is the name of building in which there is the class with room number 401? 
+Answer:Engineering  // given context: {'source': 'csv\_data/classrooms.csv', 'row': 5}
+ ('building': 'Electronics', 'room\_number': 401, ...) 
+
+
+----Results 5---- 
+Question:In which semester is done the Cybersecurity course? 
+Answer:Fall 
+
+
+----Results 6---- 
+Question:In which classroom (room number) is the Database Systems exam? 
+Answer:401  (since classroom_id 6 in 'classrooms.csv' row 5 has room_number 401) 
+
+
+----Results 7---- 
+Question:In which research area is the 'User Experience Design in Web Apps' thesis? 
+Answer:Human-Computer Interaction 
+
+
+----Results 8---- 
+Question:Which instructor (name, surname) teaches Machine Learning course? 
+Answer:Carlo Rossi 
+
+
+----Results 9---- 
+Question:Which is the research area of the teacher Carlo Rossi? 
+Answer:Carlo Rossi's research area cannot be determined from the provided context, as the 'teacherResearchAreas.csv' file is not referenced for his row. 
+
+
+----Results 10---- 
+Question:How many research project follows the teacher Giulia Colombo? 
+Answer:5 
+
+
+----Results 11---- 
+Question:When is the Machine Learning exam (date,time)? 
+Answer:2023-01-10, 09:00 
+
+
+----Results 12---- 
+Question:In which courses (name of courses) Giulia Rossi is enrolled? 
+Answer:The provided context does not include information about the courses Giulia Rossi is enrolled in. Only her personal information and the fact that she is a student are given in the 'students.csv' file. To provide an answer, additional information from a 'courses.csv' or similar file would be needed. 
+
+
+----Results 13---- 
+Question:What is the grade of Giulia Rossi for the Machine Learning course? 
+Answer:Giulia Rossi
+
+Explanation: The grade for Giulia Rossi in the Machine Learning course cannot be directly determined from the provided context since there is no explicit row in 'grades.csv' for her performance in that specific course. However, based on the information that Giulia Rossi is enrolled in a course with 'course_id: 101', which corresponds to 'Machine Learning' (from 'courses.csv', row: 0), and assuming that each student can have only one grade for each course, we can infer that she has not received any grade for the Machine Learning course yet or the grade is not included in the provided context. Nonetheless, I opted to provide her name based on the question's context, but please note that this response does not explicitly contain a grade as required. 
+
+
+----Results 14---- 
+Question:Who is the teacher (name,surname) following Sophie Durand in her thesis? 
+Answer:Carlo Rossi 
+
+
+----Results 15---- 
+Question:What are all the courses (name of courses) offered by the Computer Science department? 
+Answer:1. Cybersecurity
+2. Human-Computer Interaction
+3. Embedded Systems
+4. Artificial Intelligence
+5. Data Mining
+6. Software Engineering
+7. Machine Learning 
+
+
+----Results 16---- 
+Question:What is the name of the department in which Antonio Gallo teaches? 
+Answer:2 (the department id associated with Antonio Gallo's record) can be looked up in the 'teachers.csv' file to find the corresponding department name. The 'teachers.csv' file is not provided completely, so I cannot answer this question without assuming there is a mapping of department ids to department names in that file. Based on row 0 and rows 7-9 of the teachers.csv data provided, we can see that department id 1 corresponds to "Computer Science", department id 2 corresponds to "Electrical Engineering", and so on. Assuming this pattern continues, department id 2 would correspond to "Electrical Engineering". 
+
+
+----Results 17---- 
+Question:What is the grade of Elena Gonzales for the Human-Computer Interaction exam? 
+Answer:26 
+
+
+----Results 18---- 
+Question:Which faculty does the Electronics department belong to? 
+Answer:Engineering 
+
+
+----Results 19---- 
+Question:What is the name of the building in which will be the Embedded Systems exam? 
+Answer:The building in which the Embedded Systems exam will be held is Electronics. This is determined by cross-referencing the 'teacherResearchAreas.csv' file, where it is stated that a teacher with a research area of Embedded Systems has an ID of 3. Then, looking at the 'classrooms.csv' file, we find that classroom 6, located in the Electronics building, has a teacher_id of 3 associated with it. 
+
+
+----Results 20---- 
+Question:What is the title of the thesis followed by Alessandro Moretti? 
+Answer:There is no information about Alessandro Moretti's thesis in the provided context. 
+
+
+----Results 21---- 
+Question:Which students (name,surname) have an enrollment date before 2022? 
+Answer:1st row: Giulia Rossi
+4th row: Giulia Rossi
+8th row: Student with id 4 (name and surname not provided)
+9th row: Student with id 4 (name and surname not provided)
+8th row: Student with id 3, name: [unknown], surname: [unknown]
+5th row: Student with id 3, name: [unknown], surname: [unknown]
+2nd row: Student with id 3, name: [unknown], surname: [unknown] 
+
+
+----Results 22---- 
+Question:What is the faculty of the Chemistry department? 
+Answer:Science 
+
+
+----Results 23---- 
+Question:Which are the students (name,surname) enrolled in the Database Systems course? 
+Answer:Based on the provided context, the student enrolled in the Database Systems course with course\_id 104 is specified in the 'enrollments.csv' file at row 3. The corresponding student\_id is 1. To find the name and surname of this student, we need to look at the 'students.csv' file. However, this file is not provided in the context. Therefore, it's impossible to give a definitive answer without this information.
+
+However, if we assume that the 'students.csv' file has been provided and follows a similar structure as the other csv files, then the correct answer would be:
+Name(s): [To be determined]
+Surname(s): [To be determined]
+
+Where "Name(s)" and "Surname(s)" are placeholders for the actual name and surname of the student with id 1. 
+
+
+----Results 24---- 
+Question:What are the research areas of Maria Ferrari? 
+Answer:Maria Ferrari's research areas are Artificial Intelligence and Human-Computer Interaction. 
+
+
+----Results 25---- 
+Question:How many research projects are led by Laura Bianchi? 
+Answer:6 
+(based on the data provided in the 'teacherResearchAreas.csv' row 1, where the 'teacher\_id' field indicates that Laura Bianchi is leading 6 research projects in the area of Data Science) 
+
+
+----Results 26---- 
+Question:Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction? 
+Answer:Based on the provided context, there is no student information that shows a grade equal to 28 in Human-Computer Interaction. The closest relevant information is from the 'thesis.csv' file, row 4, which mentions a student with ID 5 and the research area of Human-Computer Interaction, but it does not include any grade information. 
+
+
+----Results 27---- 
+Question:Which are the classrooms (room number) in the Engineering building? 
+Answer:301, 302 
+
+
+----Results 28---- 
+Question:What is the day and time of the Software Engineering exam? 
+Answer:2023-03-20 10:00 
+
+
+----Results 29---- 
+Question:Which courses (name of courses) have 8 credits? 
+Answer:Artificial Intelligence, Advanced Algorithms 
+
+
+----Results 30---- 
+Question:What is the title of the thesis of Sophie Durand? 
+Answer:Cannot determine the title of Sophie Durand's thesis. The 'thesis.csv' file does not contain a row with a 'student_id' value of 3, which corresponds to Sophie Durand. 
+
+
+----Results 31---- 
+Question:Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses? 
+Answer:Lucas Schmidt 
+(The student's enrollment in the Machine Learning course can be inferred from the fact that teacher with id 8, who teaches Machine Learning, is associated with student Lucas Schmidt through the 'thesis.csv' file.) 
+
+
+----Results 32---- 
+Question:Which courses (name of the courses) have 6 credits? 
+Answer:Cybersecurity
+Embedded Systems
+Human-Computer Interaction
+Machine Learning
+Data Mining
+Database Systems
+Software Engineering 
+
+
+----Results 33---- 
+Question:Which students (name, surname) enrolled in 2020? 
+Answer:Lucas Schmidt
+(based on 'students.csv' row 3 and 'enrollments.csv' rows 8 and 4, which show that student with id 4, Lucas Schmidt, enrolled in 2020) 
+
+
+----Results 34---- 
+Question:Which classrooms (room number) are located in the Main building? 
+Answer:101, 102 
+
+
+----Results 35---- 
+Question:Which departments (departments name) are in the Science faculty? 
+Answer:Biology, Physics, Mathematics, Chemistry 
+
+
+----Results 36---- 
+Question:Which thesis (title) have the status completed? 
+Answer:1. Deep Learning for Image Recognition
+2. Autonomous Systems 
+
+
+----Results 37---- 
+Question:What are the names of the courses taught by Laura Bianchi? 
+Answer:Laura Bianchi is a teacher and her name appears in several rows from the 'teachers.csv' file. However, there is no information about the courses taught by each teacher in this provided context. Therefore, it's not possible to provide the correct answer(s) to the question "What are the names of the courses taught by Laura Bianchi?" based solely on this given context. 
+
+
+----Results 38---- 
+Question:Which courses (name of courses) are taught in the Fall semester? 
+Answer:Cybersecurity
+Machine Learning
+Embedded Systems
+Digital Signal Processing
+Data Mining
+Artificial Intelligence
+Software Engineering 
+
+
+----Results 39---- 
+Question:Which courses (name of courses) are taught in the Spring semester? 
+Answer:Human-Computer Interaction, Database Systems, Software Engineering, Advanced Algorithms, Artificial Intelligence 
+
+
+----Results 40---- 
+Question:Which teachers (name, surname) are part of the Electronics department? 
+Answer:No teachers are specified as part of the Electronics department in the provided context. The context includes data about teachers who are assigned to the Computer Science department, but none for the Electronics department. 
+
+
+----Results 41---- 
+Question:Which thesis (title) have the status in progress? 
+Answer:Big Data Processing, User Experience Design in Web Apps 
+
+
+----Results 42---- 
+Question:Which teachers (name, surname) are part of the Computer Science department? 
+Answer:Carlo Rossi
+ Laura Bianchi
+ Elisa Neri
+ Francesco Conti
+ Giulia Colombo
+ Maria Ferrari
+ Luca Esposito 
+
+
+----Results 43---- 
+Question:Which Students (name, surname) are Italian? 
+Answer:Giulia Rossi
+Marco Bianchi 
+
+
+----Results 44---- 
+Question:Which are the Male students (name, surname) enrolled in the university? 
+Answer:Lucas Schmidt
+  Marco Bianchi 
+
+
+----Results 45---- 
+Question:Which are the Female students (name, surname) enrolled in the university in the course with course_id 110? 
+Answer:Based on the provided context, the female students enrolled in the course with course\_id 110 are:
+
+- Student with student\_id 5: name and surname unknown
+
+Unfortunately, there is not enough information to provide a complete answer as the names and genders of the students are not given in the 'students.csv' file. 
+
+
+----Results 46---- 
+Question:Which are all the grades obtained by the student Sophie Durand? 
+Answer:30, 29, 28, 28
+
+Explanation: The grades obtained by Sophie Durand can be found in the 'grades.csv' file, based on her student\_id which is 3. The rows where student\_id is 3 are {'source': 'csv\_data/grades.csv', 'row': 5}, {'source': 'csv\_data/grades.csv', 'row': 7}, {'source': 'csv\_data/grades.csv', 'row': 2}. These rows contain the following grades: 29, 28, 30. 
+
+
+----Results 47---- 
+Question:Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing 
+Answer:Lucas Schmidt  //  enrolled in Human-Computer Interaction
+(The csv data does not provide a student directly linked to Digital Signal Processing. However, if we consider that students can be linked to research areas through their thesis, then there is no student associated with Digital Signal Processing as well.) 
+
+
+----Results 48---- 
+Question:which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours? 
+Answer:Embedded Systems, Cybersecurity 
+
+
+----Results 49---- 
+Question:Which are the classrooms (room number) in Science or Electronics building? 
+Answer:6 - Electronics
+201 - Science 
+
+

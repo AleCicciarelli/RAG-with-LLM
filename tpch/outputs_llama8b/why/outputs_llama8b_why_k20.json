@@ -1,0 +1,487 @@
+[
+  {
+    "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+    "answer": {
+      "answer": [
+        "-12.84",
+        "397.74"
+      ],
+      "why": [
+        "{{supplier_589,supplier_356}}"
+      ]
+    }
+  },
+  {
+    "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+    "answer": {
+      "answer": [],
+      "why": []
+    }
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+    "answer": {
+      "answer": [],
+      "why": []
+    }
+  },
+  {
+    "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+    "answer": {
+      "answer": [],
+      "why": []
+    }
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+    "answer": {
+      "answer": [],
+      "why": []
+    }
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+    "answer": {
+      "answer": [
+        "13917",
+        "14619"
+      ],
+      "why": [
+        "{{customer_13916,customer_13917}}",
+        "{{customer_14618,customer_14619}}"
+      ]
+    }
+  },
+  {
+    "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+    "answer": {
+      "answer": [
+        "2323",
+        "14516"
+      ],
+      "why": [
+        "{{customer_2323}}",
+        "{{customer_14516}}"
+      ]
+    }
+  },
+  {
+    "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+    "answer": {
+      "answer": [
+        "3"
+      ],
+      "why": [
+        "{{nation_7}}"
+      ]
+    }
+  },
+  {
+    "question": "What is the name (r_name) of the region with region key 1?",
+    "answer": {
+      "answer": [
+        "AMERICA"
+      ],
+      "why": [
+        "{{source_region_1}}"
+      ]
+    }
+  },
+  {
+    "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+    "answer": {
+      "answer": [
+        "10-475-868-5521"
+      ],
+      "why": [
+        "{{supplier_117}"
+      ]
+    }
+  },
+  {
+    "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+    "answer": {
+      "answer": [
+        "905.0"
+      ],
+      "why": [
+        "{{part_4}"
+      ]
+    }
+  },
+  {
+    "question": "Which customer (c_name) placed the order with order key 130?",
+    "answer": {
+      "answer": [],
+      "why": []
+    }
+  },
+  {
+    "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+    "answer": {
+      "answer": [],
+      "why": []
+    }
+  },
+  {
+    "question": "What is the nation name of the customer Customer#000000004?",
+    "answer": {
+      "answer": [
+        "2"
+      ],
+      "why": [
+        "{{customer_<row>}"
+      ]
+    }
+  },
+  {
+    "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+    "answer": {
+      "answer": [
+        "361601",
+        "389351"
+      ],
+      "why": [
+        "{{lineitem_361335,lineitem_361335}",
+        "{{lineitem_389183,lineitem_389183}"
+      ]
+    }
+  },
+  {
+    "question": "Which regions (r_regionKey) have a region key greater than 2?",
+    "answer": {
+      "answer": [
+        "3",
+        "4"
+      ],
+      "why": [
+        "{{region_3},{region_4}}"
+      ]
+    }
+  },
+  {
+    "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+    "answer": {
+      "answer": [],
+      "why": []
+    }
+  },
+  {
+    "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+    "answer": {
+      "answer": [
+        "2"
+      ],
+      "why": [
+        "{{customer_14322,orders_137}}",
+        "{{customer_101,orders_78528}}"
+      ]
+    }
+  },
+  {
+    "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+    "answer": {
+      "answer": [
+        "2398.85",
+        "7191.82",
+        "7349.82"
+      ],
+      "why": [
+        "{{customer_1035,customer_6069,customer_1035}}",
+        "{{customer_1035,customer_6069,customer_1035}}"
+      ]
+    }
+  },
+  {
+    "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+    "answer": {
+      "answer": [],
+      "why": []
+    }
+  },
+  {
+    "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+    "answer": {
+      "answer": [],
+      "why": []
+    }
+  },
+  {
+    "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+    "answer": {
+      "answer": [],
+      "why": []
+    }
+  },
+  {
+    "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+    "answer": {
+      "answer": [
+        "337",
+        "425"
+      ],
+      "why": [
+        "{{supplier_337}}",
+        "{{supplier_425}}"
+      ]
+    }
+  },
+  {
+    "question": "Which suppliers (s_name) provides the part with partkey 200?",
+    "answer": {
+      "answer": [
+        "129",
+        "130"
+      ],
+      "why": [
+        "{{supplier_129},{supplier_130}}"
+      ]
+    }
+  },
+  {
+    "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+    "answer": {
+      "answer": [
+        "1648"
+      ],
+      "why": [
+        "{{partsupp_7810}}"
+      ]
+    }
+  },
+  {
+    "question": "What is the total price of the order with orderkey 100?",
+    "answer": {
+      
+      "answer": [],
+      
+      "why": []
+    }
+  },
+  {
+    "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+    "answer": {
+      "answer": [
+        "30-364-864-1141"
+      ],
+      "why": [
+        "{{supplier_669}}"
+      ]
+    }
+  },
+  {
+    "question": "What is the order date of the order with order key 323?",
+    "answer": {
+      
+      "answer": [],
+      
+      "why": []
+    }
+  },
+  {
+    "question": "Which customer (c_name) placed the order with order key 323?",
+    "answer": {
+      "answer": [],
+      "why": []
+    }
+  },
+  {
+    "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+    "answer": {
+      "answer": [
+        "F",
+        "749"
+      ],
+      "why": [
+        "{{supplier_748}}",
+        "{{supplier_457}}"
+      ]
+    }
+  },
+  {
+    "question": "What is the name of the region where the nation FRANCE is located?",
+    "answer": {
+      "answer": [
+        "EUROPE"
+      ],
+      "why": [
+        "{{nation_6,region_3}}"
+      ]
+    }
+  },
+  {
+    "question": "What is the name of the nation of the customer who placed order 352?",
+    "answer": {
+      "answer": [],
+      "why": []
+    }
+  },
+  {
+    "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+    "answer": {
+      "answer": [
+        "2"
+      ],
+      "why": [
+        "{{suppliers_138}"
+      ]
+    }
+  },
+  {
+    "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+    "answer": {
+      "answer": [],
+      "why": []
+    }
+  },
+  {
+    "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+    "answer": {
+      "answer": [
+        "available quantity: 1000"
+      ],
+      "why": [
+        "{{part_714}}"
+      ]
+    }
+  },
+  {
+    "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+    "answer": {
+      "answer": [
+        "royal sienna linen chartreuse lace",
+        "drab seashell forest orchid lace"
+      ],
+      "why": [
+        "{{part_14182}"
+      ]
+    }
+  },
+  {
+    "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+    "answer": {
+      "answer": [],
+      "why": []
+    }
+  },
+  {
+    "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+    "answer": {
+      "answer": [
+        "381",
+        "702"
+      ],
+      "why": [
+        "{{supplier_701, supplier_702}}"
+      ]
+    }
+  },
+  {
+    "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+    "answer": {
+      "answer": [],
+      "why": []
+    }
+  },
+  {
+    "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+    "answer": {
+      "answer": [],
+      "why": []
+    }
+  },
+  {
+    "question": "Which parts (p_name) have a retail price lower than 902?",
+    "answer": {
+      "answer": [
+        "P001",
+        "P002",
+        "P003",
+        "P004",
+        "P005",
+        "P006",
+        "P007",
+        "P008",
+        "P009",
+        "P010"
+      ],
+      "why": [
+        "{{part_1,part_name:P001}",
+        "{{part_2,part_name:P002}",
+        "{{part_3,part_name:P003}",
+        "{{part_4,part_name:P004}",
+        "{{part_5,part_name:P005}",
+        "{{part_6,part_name:P006}",
+        "{{part_7,part_name:P007}",
+        "{{part_8,part_name:P008}",
+        "{{part_9,part_name:P009}",
+        "{{part_10,part_name:P010}"
+      ]
+    }
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 1?",
+    "answer": {
+      "answer": [
+        "UNITED STATES",
+        "CANADA"
+      ],
+      "why": [
+        "{{nation_24}}",
+        "{{nation_3}}"
+      ]
+    }
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 2?",
+    "answer": {
+      "answer": [
+        "INDONESIA",
+        "INDIA",
+        "CHINA"
+      ],
+      "why": [
+        "{{nation_9}}",
+        "{{nation_8}}",
+        "{{nation_18}}"
+      ]
+    }
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 0?",
+    "answer": {
+      "answer": [
+        "ALGERIA",
+        "ETHIOPIA",
+        "MOROCCO"
+      ],
+      "why": [
+        "{{nation_5}}",
+        "{{nation_0}}",
+        "{{nation_15}}"
+      ]
+    }
+  },
+  {
+    "question": "Which nations (n_name) have a region key of 3?",
+    "answer": {
+      "answer": [
+        "RUSSIA",
+        "GERMANY",
+        "UNITED KINGDOM"
+      ],
+      "why": [
+        "{{nation_22}}",
+        "{{nation_7}}",
+        "{{nation_23}}"
+      ]
+    }
+  },
+  {
+    "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+    "answer": {
+      "answer": [],
+      "why": []
+    }
+  }
+]

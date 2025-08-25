@@ -1,0 +1,391 @@
+----Results 1---- 
+Question:Which is the email of Giulia Rossi? 
+Answer:The email of Giulia Rossi is giulia.rossi@student.edu. 
+
+
+----Results 2---- 
+Question:Which is the name of the department where the teacher Laura Bianchi teaches? 
+Answer:Based on the given context, the answer to the question "Which is the name of the department where the teacher Laura Bianchi teaches?" is:
+
+Computer Science 
+
+
+----Results 3---- 
+Question:How many credits has the course Software Engineering? 
+Answer:Based on the given context:
+
+{'source': 'csv_data/courses.csv', 'row': 5}
+course_id: 106
+course_name: Software Engineering
+department_id: 1
+credits: 6
+teacher_id: 4
+semester: Spring
+
+The answer is:
+
+6 
+
+
+----Results 4---- 
+Question:What is the name of building in which there is the class with room number 401? 
+Answer:Based on the given context, the correct answer to the question "What is the name of building in which there is the class with room number 401?" is:
+
+Electronics 
+
+
+----Results 5---- 
+Question:In which semester is done the Cybersecurity course? 
+Answer:Based on the given context, the correct answer to the question "In which semester is done the Cybersecurity course?" is:
+
+Fall 
+
+
+----Results 6---- 
+Question:In which classroom (room number) is the Database Systems exam? 
+Answer:Based on the given context, the Database Systems exam is in classroom room number **401**. 
+
+
+----Results 7---- 
+Question:In which research area is the 'User Experience Design in Web Apps' thesis? 
+Answer:Based on the given context, the research area for the 'User Experience Design in Web Apps' thesis is:
+
+Human-Computer Interaction 
+
+
+----Results 8---- 
+Question:Which instructor (name, surname) teaches Machine Learning course? 
+Answer:Carlo Rossi 
+
+
+----Results 9---- 
+Question:Which is the research area of the teacher Carlo Rossi? 
+Answer:Based on the given context, the research area of the teacher Carlo Rossi is not specified. The provided data only includes information about teachers, students, and departments, but there is no mention of research areas for any of the teachers, including Carlo Rossi. Therefore, the correct answer is:
+
+"No research area is specified." 
+
+
+----Results 10---- 
+Question:How many research project follows the teacher Giulia Colombo? 
+Answer:Based on the given context, there are no research projects that follow the teacher Giulia Colombo. Therefore, the answer is:
+
+0 
+
+
+----Results 11---- 
+Question:When is the Machine Learning exam (date,time)? 
+Answer:Based on the given context {'source': 'csv_data/exams.csv', 'row': 2}, the Machine Learning exam date and time are:
+
+2023-03-20, 10:00 
+
+
+----Results 12---- 
+Question:In which courses (name of courses) Giulia Rossi is enrolled? 
+Answer:Based on the given context, Giulia Rossi is enrolled in:
+
+Machine Learning course 
+
+
+----Results 13---- 
+Question:What is the grade of Giulia Rossi for the Machine Learning course? 
+Answer:Based on the given context, there is no information about Giulia Rossi's grade in the Machine Learning course. Therefore, the correct answer is:
+
+"Not available" or "Unknown" 
+
+
+----Results 14---- 
+Question:Who is the teacher (name,surname) following Sophie Durand in her thesis? 
+Answer:Carlo Rossi 
+
+
+----Results 15---- 
+Question:What are all the courses (name of courses) offered by the Computer Science department? 
+Answer:Based on the given context, the courses offered by the Computer Science department are:
+
+* Cybersecurity
+* Human-Computer Interaction
+* Artificial Intelligence
+* Machine Learning
+* Data Mining
+* Software Engineering 
+
+
+----Results 16---- 
+Question:What is the name of the department in which Antonio Gallo teaches? 
+Answer:The name of the department in which Antonio Gallo teaches is:
+
+Department 2 
+
+
+----Results 17---- 
+Question:What is the grade of Elena Gonzales for the Human-Computer Interaction exam? 
+Answer:The grade of Elena Gonzales for the Human-Computer Interaction exam is 26. 
+
+
+----Results 18---- 
+Question:Which faculty does the Electronics department belong to? 
+Answer:Engineering 
+
+
+----Results 19---- 
+Question:What is the name of the building in which will be the Embedded Systems exam? 
+Answer:Based on the given context:
+
+{'source': 'csv_data/teacherResearchAreas.csv', 'row': 2}
+teacher_id: 3
+research_area: Embedded Systems
+number_of_project: 3
+
+{'source': 'csv_data/classrooms.csv', 'row': 5}
+classroom_id: 6
+building: Electronics
+room_number: 401
+capacity: 30
+
+The expected response is:
+
+Electronics 
+
+
+----Results 20---- 
+Question:What is the title of the thesis followed by Alessandro Moretti? 
+Answer:Based on the given context {'source': 'csv_data/teachers.csv', 'row': 7}, the title of the thesis followed by Alessandro Moretti is not provided in this specific example. The provided data only contains information about teachers, students, and courses, but does not include any information about theses or their titles. 
+
+
+----Results 21---- 
+Question:Which students (name,surname) have an enrollment date before 2022? 
+Answer:Based on the given context, the students with an enrollment date before 2022 are:
+
+* Marco Bianchi (student_id: 2)
+* Giulia Rossi (student_id: 1)
+
+These students have enrollment dates of 2020-08-25 and 2021-01-10, respectively. 
+
+
+----Results 22---- 
+Question:What is the faculty of the Chemistry department? 
+Answer:Science 
+
+
+----Results 23---- 
+Question:Which are the students (name,surname) enrolled in the Database Systems course? 
+Answer:Based on the given context and the question, I can provide the correct answer:
+
+The students enrolled in the Database Systems course are:
+
+* Giulia Colombo (student_id: 1) 
+
+
+----Results 24---- 
+Question:What are the research areas of Maria Ferrari? 
+Answer:Based on the given context, Maria Ferrari's research areas are:
+
+Human-Computer Interaction 
+
+
+----Results 25---- 
+Question:How many research projects are led by Laura Bianchi? 
+Answer:Based on the given context, the answer to the question "How many research projects are led by Laura Bianchi?" is:
+
+6 
+
+
+----Results 26---- 
+Question:Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction? 
+Answer:Based on the given context, the student with a grade equal to 28 in Human-Computer Interaction is:
+
+Lucas Schmidt 
+
+
+----Results 27---- 
+Question:Which are the classrooms (room number) in the Engineering building? 
+Answer:301 
+
+
+----Results 28---- 
+Question:What is the day and time of the Software Engineering exam? 
+Answer:Based on the given context:
+
+{'source': 'csv_data/exams.csv', 'row': 2}
+exam_id: 3
+course_id: 103
+date: 2023-03-20
+time: 10:00
+classroom_id: 3
+
+The day and time of the Software Engineering exam is:
+
+Monday, March 20, 10:00 
+
+
+----Results 29---- 
+Question:Which courses (name of courses) have 8 credits? 
+Answer:Based on the given context, the courses with 8 credits are:
+
+* Advanced Algorithms (course_id: 104)
+* Artificial Intelligence (course_id: 108) 
+
+
+----Results 30---- 
+Question:What is the title of the thesis of Sophie Durand? 
+Answer:Based on the given context, the title of Sophie Durand's thesis is:
+
+User Experience Design in Web Apps 
+
+
+----Results 31---- 
+Question:Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses? 
+Answer:Based on the given context, the students enrolled in Machine Learning or Advanced Algorithm courses are:
+
+Lucas Schmidt 
+
+
+----Results 32---- 
+Question:Which courses (name of the courses) have 6 credits? 
+Answer:Based on the given context, the courses that have 6 credits are:
+
+* Cybersecurity (course_id: 109)
+* Embedded Systems (course_id: 103)
+* Human-Computer Interaction (course_id: 110)
+* Machine Learning (course_id: 101)
+* Data Mining (course_id: 107)
+* Software Engineering (course_id: 106) 
+
+
+----Results 33---- 
+Question:Which students (name, surname) enrolled in 2020? 
+Answer:Based on the given context, the students enrolled in 2020 are:
+
+Lucas Schmidt 
+
+
+----Results 34---- 
+Question:Which classrooms (room number) are located in the Main building? 
+Answer:Based on the given context, the classrooms located in the Main building are:
+
+* Room 101 (classroom_id: 1)
+* Room 102 (classroom_id: 2)
+
+These rooms have a "building" attribute with the value "Main". 
+
+
+----Results 35---- 
+Question:Which departments (departments name) are in the Science faculty? 
+Answer:Biology, Physics, Mathematics, and Chemistry. 
+
+
+----Results 36---- 
+Question:Which thesis (title) have the status completed? 
+Answer:Based on the given context, the thesis with the status "Completed" are:
+
+* Thesis ID: 1, Title: Deep Learning for Image Recognition
+* Thesis ID: 4, Title: Autonomous Systems 
+
+
+----Results 37---- 
+Question:What are the names of the courses taught by Laura Bianchi? 
+Answer:Based on the given context, the courses taught by Laura Bianchi are:
+
+Computer Science 
+
+
+----Results 38---- 
+Question:Which courses (name of courses) are taught in the Fall semester? 
+Answer:Based on the given context, the courses taught in the Fall semester are:
+
+* Cybersecurity (course_id: 109)
+* Machine Learning (course_id: 101)
+* Embedded Systems (course_id: 103)
+* Digital Signal Processing (course_id: 105)
+* Data Mining (course_id: 107) 
+
+
+----Results 39---- 
+Question:Which courses (name of courses) are taught in the Spring semester? 
+Answer:Based on the given context, the courses taught in the Spring semester are:
+
+* Human-Computer Interaction (course_id: 110)
+* Database Systems (course_id: 102)
+* Software Engineering (course_id: 106)
+* Advanced Algorithms (course_id: 104)
+* Artificial Intelligence (course_id: 108) 
+
+
+----Results 40---- 
+Question:Which teachers (name, surname) are part of the Electronics department? 
+Answer:Giulia Colombo 
+
+
+----Results 41---- 
+Question:Which thesis (title) have the status in progress? 
+Answer:Based on the given context, the thesis with the status "In Progress" is:
+
+Big Data Processing 
+
+
+----Results 42---- 
+Question:Which teachers (name, surname) are part of the Computer Science department? 
+Answer:Elisa Neri
+Carlo Rossi
+Laura Bianchi
+Giulia Colombo
+Francesco Conti
+Luca Esposito 
+
+
+----Results 43---- 
+Question:Which Students (name, surname) are Italian? 
+Answer:Based on the given context, the students who are Italian are:
+
+Giulia Rossi 
+
+
+----Results 44---- 
+Question:Which are the Male students (name, surname) enrolled in the university? 
+Answer:Based on the given context, the Male students enrolled in the university are:
+
+Lucas Schmidt
+Marco Bianchi 
+
+
+----Results 45---- 
+Question:Which are the Female students (name, surname) enrolled in the university in the course with course_id 110? 
+Answer:Based on the given context, the Female students enrolled in the course with course_id 110 are:
+
+* Student_id: 5, Name: ?, Surname: ?
+* Student_id: 4, Name: ?, Surname: ?
+
+Note that the names and surnames of the students are not provided in the given context. 
+
+
+----Results 46---- 
+Question:Which are all the grades obtained by the student Sophie Durand? 
+Answer:Based on the given context, Sophie Durand's grades are:
+
+29
+28
+30 
+
+
+----Results 47---- 
+Question:Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing 
+Answer:Based on the given context, the students enrolled in Human-Computer Interaction or Digital Signal Processing are:
+
+Lucas Schmidt 
+
+
+----Results 48---- 
+Question:which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours? 
+Answer:Based on the given context, the courses with an exam scheduled at 13.00 or 14.00 hours are:
+
+* Embedded Systems (course_id: 103) - exam time: 13:00 
+
+
+----Results 49---- 
+Question:Which are the classrooms (room number) in Science or Electronics building? 
+Answer:Based on the given context, the classrooms in the Science or Electronics building are:
+
+201 (Science)
+401 (Electronics) 
+
+

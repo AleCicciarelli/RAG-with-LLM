@@ -1,0 +1,198 @@
+[
+    {
+        "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+        "answer": 2
+    },
+    {
+        "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+        "answer": 1278.74
+    },
+    {
+        "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+        "answer": "Here are the details of the first 10 records from the 'supplier' table:\n\n1. Supplier #1, nationkey 1, has a supply balance of -378.52 and a comment about even asymptotes.\n2. Supplier #2, nationkey 1, has a supply balance of -659.46 and a comment about final accounts.\n3. Supplier #3, nationkey 1, has a supply balance of -208.7 and a comment about silent packages.\n4. Supplier #4, nationkey 1, has a supply balance of -125.69 and a comment about blithely final accounts.\n5. Supplier #5, nationkey 1, has a supply balance of -308.78 and a comment about even asymptotes.\n6. Supplier #6, nationkey 1, has a supply balance of -292.4 and a comment about blithely final accounts.\n7. Supplier #7, nationkey 1, has a supply balance of -305.82 and a comment about even asymptotes.\n8. Supplier #8, nationkey 1, has a supply balance of -946.9 and a comment about blithely final accounts.\n9. Supplier #9, nationkey 1, has a supply balance of -352.78 and a comment about even asymptotes.\n10. Supplier #10, nationkey 1, has a supply balance of -467.01 and a comment about blithely final accounts.\n\nNote that all these suppliers belong to the same nation (nationkey = 1) and have negative supply balances, indicating that they owe some amount. The comments suggest that there may be issues with finalizing accounts or reaching an even balance."
+    },
+    {
+        "question": "What is the name (r_name) of the region with region key 1?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 130?",
+        "answer": 1
+    },
+    {
+        "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation name of the customer Customer#000000004?",
+        "answer": "Here is the information in a more readable format:\n\n1. `supplier_id: 2, name: Supplier #000000002, nationkey: 5, comment: Regular customers.`\n2. `supplier_id: 3, name: Supplier #000000003, nationkey: 1, comment: New supplier.`\n3. `supplier_id: 4, name: Supplier #000"
+    },
+    {
+        "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+        "answer": 1
+    },
+    {
+        "question": "Which regions (r_regionKey) have a region key greater than 2?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+        "answer": "These are records from a supplier table, where each record represents a supplier. Here is a breakdown of some of the fields:\n\n* `s_suppkey`: A unique identifier for the supplier.\n* `s_name`: The name of the supplier.\n* `s_address`: The street address of the supplier.\n* `s_nationkey`: The nation key, which is a foreign key referencing the nation table.\n* `s_phone`: The phone number of the supplier.\n* `s_acctbal`: The account balance of the supplier.\n* `s_comment`: A comment or note about the supplier.\n\nHere are some examples of records in this table:\n\n1. Supplier #105 with a name of \"Supplier #105\" located at \"123 Main St.\" in nation key 5, has a phone number of \"12-345-6789\", an account balance of $1000.00 and a comment of \"Regular customer\".\n2. Supplier #112 with a name of \"Supplier #112\" located at \"456 Elm St.\" in nation key 12, has a phone number of \"23-456-7890\", an account balance of $500.00 and a comment of \"Paid on time\".\n3. Supplier #120 with a name of \"Supplier #120\" located at \"789 Oak St.\" in nation key 15, has a phone number of \"34-567-8901\", an account balance of $250.00 and a comment of \"Slow payer\".\n\nIt can be observed that the supplier table contains information about different suppliers such as their unique identifier, name, address, nation key, phone number, account balance and comments."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+        "answer": 1
+    },
+    {
+        "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+        "answer": 1
+    },
+    {
+        "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+        "answer": 1
+    },
+    {
+        "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+        "answer": 1
+    },
+    {
+        "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) provides the part with partkey 200?",
+        "answer": "0000008"
+    },
+    {
+        "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+        "answer": "000000959,Supplier#000000959,8grA EHBnwOZhO,7,17-108-642-3106,9032.15,Regular supplier with high account balance and a short address\n000000940,Supplier#000000940,QqKPZBeHgcIKDeOfT6J8sRlg4,2,12-972-343-8810,5789.96,Regular supplier with high account balance and a medium-length address\n000000900,Supplier#000000900,,5,15-926-534-2005,165.26,Supplier with low account balance and a short address in nationkey 5\n000000877,Supplier#000000877,4yN9i5CbQ8Tw1X5InsMlOjjhGg8MAciTG,4,14-685-851-5424,6489.62,Supplier with high account balance and a long address in nationkey 4\n000000848,Supplier#000000848,tx44JAuF,3,13-169-466-8402,4404.29,Supplier with high account balance and a short address in nationkey 3\n000000846,Supplier#000000846,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000816,Supplier#000000816,uCvvad6NCkXBUkr28t dtq swXPtu,23,33-830-680-6168,361.01,Supplier with low account balance and a long address in nationkey 23\n000000909,Supplier#000000909,5FV7sjGQJEWZo,19,29-481-629-5303,3214.09,Supplier with high account balance and a short address in nationkey 19\n000000901,Supplier#000000901,xXS4z8Tt,17,26-503-561-9761,2220.28,Supplier with moderate account balance and a short address in nationkey 17\n000000899,Supplier#000000899,,5,15-926-534-2005,165.26,Supplier with low account balance and a short address in nationkey 5\n000000876,Supplier#000000876,ZMxWcFkQq,4,14-685-851-5424,6489.62,Supplier with high account balance and a very short address in nationkey 4\n000000845,Supplier#000000845,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000844,Supplier#000000844,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000843,Supplier#000000843,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000842,Supplier#000000842,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000841,Supplier#000000841,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000840,Supplier#000000840,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000839,Supplier#000000839,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000838,Supplier#000000838,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000837,Supplier#000000837,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000836,Supplier#000000836,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000835,Supplier#000000835,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000834,Supplier#000000834,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000833,Supplier#000000833,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000832,Supplier#000000832,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000831,Supplier#000000831,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000830,Supplier#000000830,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000829,Supplier#000000829,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000828,Supplier#000000828,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000827,Supplier#000000827,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000826,Supplier#000000826,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000825,Supplier#000000825,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000824,Supplier#000000824,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000823,Supplier#000000823,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000822,Supplier#000000822,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000821,Supplier#000000821,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000820,Supplier#000000820,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000819,Supplier#000000819,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000818,Supplier#000000818,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000817,Supplier#000000817,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000816,Supplier#000000816,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000815,Supplier#000000815,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000814,Supplier#000000814,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000813,Supplier#000000813,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000812,Supplier#000000812,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000000811,Supplier#000000811,C1Cs3zHlceRMxlaPIBprCC76x4LKVdH3QhZ,20,30-283-261-2020,7122.9,Supplier with very high account balance and a long address in nationkey 20\n000"
+    },
+    {
+        "question": "What is the total price of the order with orderkey 100?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+        "answer": "001: Supplier ID: 823, Name: Oe3KrTiUcSjXq6pRjBt5vDfJGg6NhHM7F, Nation Key: 15, Phone: 27-490-769-2560, Account Balance: 8139.34, Comment: \n002: Supplier ID: 824, Name: 6WbQqXrCvBgMNUeQHxTJyYzLz, Nation Key: 17, Phone: 29-534-902-2811, Account Balance: -622.01, Comment: \n003: Supplier ID: 825, Name: tSJgNlX4fEeCsYkTiBnUjMgKoC, Nation Key: 9, Phone: 19-762-400-4690, Account Balance: 3814.75, Comment: \n004: Supplier ID: 826, Name: zQzgYvX6kSrQqFrRjGnWxIzGvH, Nation Key: 19, Phone: 33-201-755-2549, Account Balance: -2318.6, Comment: \n005: Supplier ID: 827, Name: 5VbHhXrTgRqMnYuUjTtWwSxQoU, Nation Key: 1, Phone: 11-903-464-9861, Account Balance: 5187.28, Comment: \n006: Supplier ID: 828, Name: pPpJjOoNnMmLlKkIiEeGgFfDdCcBbAa, Nation Key: 13, Phone: 35-409-786-1062, Account Balance: -4051.56, Comment: \n007: Supplier ID: 829, Name: yYzZzVvUuTtSsRrPpOoNnMmLlK, Nation Key: 11, Phone: 31-146-528-2014, Account Balance: -178.99, Comment: \n008: Supplier ID: 830, Name: gGgNnOoMmLlKkJjIiHhGgFfEeDdCcBb, Nation Key: 2, Phone: 12-758-964-3876, Account Balance: -380.64, Comment: \n009: Supplier ID: 831, Name: bBbMmJjIiHhGgFfEeDdCcBbAa, Nation Key: 5, Phone: 25-705-261-4903, Account Balance: -1338.15, Comment: \n010: Supplier ID: 832, Name: nNnMmKkIiEeGgFfDdCcBbAa, Nation Key: 7, Phone: 17-649-583-8461, Account Balance: -450.21, Comment: \n\nThe table shows the following information for each supplier:\n\n* Supplier ID (s\\_suppkey)\n* Name (a random string of letters and numbers generated for this example)\n* Nation Key (s\\_nationkey)\n* Phone\n* Account Balance (s\\_acctbal)\n* Comment (s\\_comment)"
+    },
+    {
+        "question": "What is the comment of the customer with custkey 123?",
+        "answer": 1
+    },
+    {
+        "question": "What is the order date of the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "Which customer (c_name) placed the order with order key 323?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+        "answer": "Here is the information for the first 20 suppliers in the dataset:\n\n1. Suppkey: 1, Name: Supplier#1, Nationkey: 5, Comment: blank\n2. Suppkey: 2, Name: Supplier#2, Nationkey: 9, Comment: blank\n3. Suppkey: 3, Name: Supplier#3, Nationkey: 1, Comment: blank\n4. Suppkey: 4, Name: Supplier#4, Nationkey: 3, Comment: blank\n5. Suppkey: 5, Name: Supplier#5, Nationkey: 6, Comment: blank\n6. Suppkey: 6, Name: Supplier#6, Nationkey: 7, Comment: blank\n7. Suppkey: 7, Name: Supplier#7, Nationkey: 2, Comment: blank\n8. Suppkey: 8, Name: Supplier#8, Nationkey: 8, Comment: blank\n9. Suppkey: 9, Name: Supplier#9, Nationkey: 1, Comment: blank\n10. Suppkey: 10, Name: Supplier#10, Nationkey: 2, Comment: blank\n11. Suppkey: 11, Name: Supplier#11, Nationkey: 5, Comment: blank\n12. Suppkey: 12, Name: Supplier#12, Nationkey: 3, Comment: blank\n13. Suppkey: 13, Name: Supplier#13, Nationkey: 6, Comment: blank\n14. Suppkey: 14, Name: Supplier#14, Nationkey: 7, Comment: blank\n15. Suppkey: 15, Name: Supplier#15, Nationkey: 8, Comment: blank\n16. Suppkey: 16, Name: Supplier#16, Nationkey: 4, Comment: blank\n17. Suppkey: 17, Name: Supplier#17, Nationkey: 9, Comment: blank\n18. Suppkey: 18, Name: Supplier#18, Nationkey: 5, Comment: blank\n19. Suppkey: 19, Name: Supplier#19, Nationkey: 7, Comment: blank\n20. Suppkey: 20, Name: Supplier#20, Nationkey: 6, Comment: blank\n\nThe `suppkey` column is a unique supplier key, the `name` column contains the name of the supplier, the `nationkey` column is a foreign key to the nation table and the `comment` column is a text field for any additional comments about the supplier. All of the comment fields in this sample are blank."
+    },
+    {
+        "question": "What is the name of the region where the nation FRANCE is located?",
+        "answer": 1
+    },
+    {
+        "question": "What is the name of the nation of the customer who placed order 352?",
+        "answer": "Based on the provided data, here is the information for supplier with suppkey 4774:\n\n* s\\_suppkey: 4774\n* s\\_name: Supplier#0000004774\n* s\\_address: EtsZWB,zCuI,jtPmV,IMcXQF\n* s\\_nationkey: 2\n* s\\_phone: 12-561-627-9752\n* s\\_acctbal: -348.22\n* s\\_comment: eans. quickly fluffy accounts are quickly about the ironic\n\nIt appears that this supplier is based in nationkey 2, and has a negative account balance of -348.22. The comment for this supplier suggests that there may be some issues with their accounts, as it mentions \"eans\" and \"quickly fluffy accounts are quickly about the ironic\". However, without additional context or information, it is difficult to determine the exact meaning of this comment."
+    },
+    {
+        "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+        "answer": 1
+    },
+    {
+        "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+        "answer": 1
+    },
+    {
+        "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+        "answer": "Here is the information for the first 10 suppliers in the text you provided:\n\n1. Supplier #:"
+    },
+    {
+        "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which are the comments (p_comment) of the parts supplied in the order with order key 2?",
+        "answer": "Here are the details for the first 10 records in the 'supplier' table:\n\n1. Supplier ID (s\\_suppkey): 1, Supplier Name (s\\_name): Supplier#0000000001, Supplier Address (s\\_address):, Supplier Nation Key (s\\_nationkey): 9, Supplier Phone (s\\_phone): 15-382-467-021, Supplier Account Balance (s\\_acctbal): 3147.67, Supplier Comment (s\\_comment): careful instructions past the ironic theodolites are silently disposed\n2. Supplier ID (s\\_suppkey): 2, Supplier Name (s\\_name): Supplier#0000000002, Supplier Address (s\\_address):, Supplier Nation Key (s\\_nationkey): 1, Supplier Phone (s\\_phone): 15-486-344-966, Supplier Account Balance (s\\_acctbal): -776.2, Supplier Comment (s\\_comment): bold courts silently nag\n3. Supplier ID (s\\_suppkey): 3, Supplier Name (s\\_name): Supplier#0000000003, Supplier Address (s\\_address):, Supplier Nation Key (s\\_nationkey): 6, Supplier Phone (s\\_phone): 15-729-843-651, Supplier Account Balance (s\\_acctbal): 2579.34, Supplier Comment (s\\_comment): even packages haggle silently\n4. Supplier ID (s\\_suppkey): 4, Supplier Name (s\\_name): Supplier#0000000004, Supplier Address (s\\_address):, Supplier Nation Key (s\\_nationkey): 3, Supplier Phone (s\\_phone): 15-826-769-843, Supplier Account Balance (s\\_acctbal): -1083.31, Supplier Comment (s\\_comment): carefully special packages nag\n5. Supplier ID (s\\_suppkey): 5, Supplier Name (s\\_name): Supplier#0000000005, Supplier Address (s\\_address):, Supplier Nation Key (s\\_nationkey): 5, Supplier Phone (s\\_phone): 15-926-534-200, Supplier Account Balance (s\\_acctbal): 165.26, Supplier Comment (s\\_comment): counts cajole carefully pending foxes. bold packages mold carefully unusual\n6. Supplier ID (s\\_suppkey): 6, Supplier Name (s\\_name): Supplier#0000000006, Supplier Address (s\\_address):, Supplier Nation Key (s\\_nationkey): 8, Supplier Phone (s\\_phone): 16-254-737-953, Supplier Account Balance (s\\_acctbal): -102.23, Supplier Comment (s\\_comment): carefully special instructions past the ironic theodolites are silently disposed\n7. Supplier ID (s\\_suppkey): 7, Supplier Name (s\\_name): Supplier#0000000007, Supplier Address (s\\_address):, Supplier Nation Key (s\\_nationkey): 7, Supplier Phone (s\\_phone): 17-984-775-986, Supplier Account Balance (s\\_acctbal): 3855.74, Supplier Comment (s\\_comment): ms. final packages use\n8. Supplier ID (s\\_suppkey): 8, Supplier Name (s\\_name): Supplier#0000000008, Supplier Address (s\\_address):, Supplier Nation Key (s\\_nationkey): 2, Supplier Phone (s\\_phone): 12-663-356-128, Supplier Account Balance (s\\_acctbal): 4379.45, Supplier Comment (s\\_comment): silent packages. quickly regular requests against the carefully unusual theodolites affix furiously\n9. Supplier ID (s\\_suppkey): 9, Supplier Name (s\\_name): Supplier#0000000009, Supplier Address (s\\_address):, Supplier Nation Key (s\\_nationkey): 4, Supplier Phone (s\\_phone): 13-675-289-419, Supplier Account Balance (s\\_acctbal): -120.91, Supplier Comment (s\\_comment): bold foxes silently nag\n10. Supplier ID (s\\_suppkey): 10, Supplier Name (s\\_name): Supplier#0000000010, Supplier Address (s\\_address):, Supplier Nation Key (s\\_nationkey): 2, Supplier Phone (s\\_phone): 12-630-579-843, Supplier Account Balance (s\\_acctbal): 2051.2, Supplier Comment (s\\_comment): carefully special instructions past the ironic theodolites are silently disposed\n\nPlease note that I have provided only a partial view of the supplier address and phone number as they contain random values in the actual dataset."
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+        "answer": 1
+    },
+    {
+        "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+        "answer": 1
+    },
+    {
+        "question": "Which parts (p_name) have a retail price lower than 902?",
+        "answer": "Here is the information for the supplier with a suppkey of 10:\n\nSupplier Key: 10\nName: Supplier#000000982\nAddress: 2GJow4mz8ZkIPUSibA0NZ3OyR5TkfHx0\nNation Key: 10\nPhone: 20-884-330-2979\nAccount Balance: 9763.28\nComment: deas cajole carefully furiously regularly\n\nIt seems that this supplier is located in a nation with a key of 10, and their account balance is quite high at 9763.28. The comment about them suggests that they may be diligent and persistent in their business dealings."
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 1?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 2?",
+        "answer": "Here are the details of 10 suppliers from the text you provided:\n\n1. Supplier #:"
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 0?",
+        "answer": 1
+    },
+    {
+        "question": "Which nations (n_name) have a region key of 3?",
+        "answer": 1
+    },
+    {
+        "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+        "answer": 1
+    }
+]

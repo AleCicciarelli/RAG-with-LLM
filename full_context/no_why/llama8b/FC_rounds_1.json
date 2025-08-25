@@ -1,0 +1,302 @@
+[
+  {
+    "question": "Which is the email of the student Giulia Rossi?",
+    "answer": [
+      "giulia.rossi@student.edu."
+    ]
+  },
+  {
+    "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'departments', 'row': 0}\n1,Computer Science,Engineering\n\n{'source': 'teachers', 'row': 1}\n2,Laura,Bianchi,1,l.bianchi@university.edu.\n\nThe answer is:\n\n{\n\"answer\": [\"Computer Science\"]\n}"
+    ]
+  },
+  {
+    "question": "How many credits has the course Software Engineering?",
+    "answer": [
+      "4"
+    ]
+  },
+  {
+    "question": "What is the name of building in which there is the class with room number 401?",
+    "answer": [
+      "Electronics"
+    ]
+  },
+  {
+    "question": "In which semester is done the Cybersecurity course?",
+    "answer": [
+      "Fall"
+    ]
+  },
+  {
+    "question": "In which classroom (room number) is the Database Systems exam?",
+    "answer": [
+      "102"
+    ]
+  },
+  {
+    "question": "In which research area is the 'User Experience Design in Web Apps' thesis?",
+    "answer": [
+      "Human-Computer Interaction"
+    ]
+  },
+  {
+    "question": "Which instructor (name, surname) teaches Machine Learning course?",
+    "answer": [
+      "Carlo Rossi"
+    ]
+  },
+  {
+    "question": "Which is the research area of the teacher Carlo Rossi?",
+    "answer": [
+      "Artificial Intelligence"
+    ]
+  },
+  {
+    "question": "How many research project follows the teacher Giulia Colombo?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'teachers', 'row': 5}\n6,Giulia,Colombo,1,g.colombo@university.edu\n\nThe answer is:\n\n{\n\"answer\": [\"Giulia Colombo\"]\n}"
+    ]
+  },
+  {
+    "question": "When is the Machine Learning exam (date,time)?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'courses', 'row': 0}\n101,Machine Learning,1,6,1,Fall\n\n{'source': 'exams', 'row': 0}\n1,101,2023-01-10,09:00,1.\n\nThe Machine Learning exam is on:\n{\n\"answer\": [\"2023-01-10\", \"09:00\"]\n}"
+    ]
+  },
+  {
+    "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'courses', 'row': 0}\n101,Machine Learning,1,6,1,Fall\n\n{'source': 'enrollments', 'row': 0}\n1,1,101,2022-09-01\n\n{'source': 'students', 'row': 0}\n1,Giulia,Rossi,1998-05-14,Italian,Female,2022-09-01,giulia.rossi@student.edu\n\n{'source': 'courses', 'row': 3}\n104,Advanced Algorithms,1,8,4,Spring\n\n{'source': 'enrollments', 'row': 3}\n4,1,104,2022-09-01.\n\nThe answer is:\n\n{\n\"answer\": [\"Machine Learning\", \"Advanced Algorithms\"]\n}\n\nHowever, since the question asks for the students enrolled in these courses, not the course names themselves, the correct output would be:\n\n{\n\"answer\": [\"Giulia Rossi\"]\n}"
+    ]
+  },
+  {
+    "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+    "answer": [
+      "1"
+    ]
+  },
+  {
+    "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+    "answer": [
+      "Luca Esposito"
+    ]
+  },
+  {
+    "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'courses', 'row': 0}\n101,Machine Learning,1,6,1,Fall\n\n{'source': 'courses', 'row': 3}\n104,Advanced Algorithms,1,8,4,Spring\n\nThe courses offered by the Computer Science department are:\n\n{\n\"answer\": [\"Machine Learning\", \"Database Systems\", \"Advanced Algorithms\", \"Software Engineering\", \"Data Mining\", \"Artificial Intelligence\", \"Cybersecurity\", \"Human-Computer Interaction\"]\n}"
+    ]
+  },
+  {
+    "question": "What is the name of the department in which Antonio Gallo teaches?",
+    "answer": [
+      "Engineering"
+    ]
+  },
+  {
+    "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+    "answer": [
+      "6"
+    ]
+  },
+  {
+    "question": "Which faculty does the Electronics department belong to?",
+    "answer": [
+      "Engineering"
+    ]
+  },
+  {
+    "question": "What is the name of the building in which will be the Embedded Systems exam?",
+    "answer": [
+      "201"
+    ]
+  },
+  {
+    "question": "What is the title of the thesis followed by Alessandro Moretti?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'teachers', 'row': 7}\n8,Alessandro,Moretti,1,a.moretti@university.edu\n\n{'source': 'thesis', 'row': 4}\n5,User Experience Design in Web Apps,5,8,2022-2023,In Progress,Human-Computer Interaction.\n\nThe title of the thesis followed by Alessandro Moretti is:\n\n{\n\"answer\": [\"User Experience Design in Web Apps\"]\n}"
+    ]
+  },
+  {
+    "question": "Which students (name,surname) have an enrollment date before 2022?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'students', 'row': 2}\n3,Sophie,Durand,2000-07-30,French,Female,2021-01-10,sophie.durand@student.edu\n\n{'source': 'students', 'row': 3}\n4,Lucas,Schmidt,1997-03-18,German,Male,2020-08-25,lucas.schmidt@student.edu.\n\nThe students with an enrollment date before 2022 are:\n\n* Sophie Durand (enrollment date: 2021-01-10)\n* Lucas Schmidt (enrollment date: 2020-08-25)\n\nSo the answer is:\n\n{\n\"answer\": [\"Sophie Durand\", \"Lucas Schmidt\"]\n}"
+    ]
+  },
+  {
+    "question": "What is the faculty of the Chemistry department?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'departments', 'row': 5}\n\nThe answer is:\n\n{\n\"answer\": [\"Science\"]\n}"
+    ]
+  },
+  {
+    "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+    "answer": [
+      "Marco Bianchi"
+    ]
+  },
+  {
+    "question": "What are the research areas of Maria Ferrari?",
+    "answer": [
+      "Human-Computer Interaction"
+    ]
+  },
+  {
+    "question": "How many research projects are led by Laura Bianchi?",
+    "answer": [
+      "1"
+    ]
+  },
+  {
+    "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+    "answer": [
+      "Sophie Durand"
+    ]
+  },
+  {
+    "question": "Which are the classrooms (room number) in the Engineering building?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'classrooms', 'row': 3}\n4,Engineering,301,80\n\n{'source': 'classrooms', 'row': 4}\n5,Engineering,302,100.\n\nThe classrooms in the Engineering building are:\n\n{\n\"answer\": [\"301\", \"302\"]\n}"
+    ]
+  },
+  {
+    "question": "What is the day and time of the Software Engineering exam?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'courses', 'row': 5}\n106,Software Engineering,1,6,4,Spring\n\n{'source': 'exams', 'row': 4}\n5,106,2023-05-30,13:00,5.\n\nThe answer is:\n\n{\n\"answer\": [\"2023-05-30\", \"13:00\"]\n}"
+    ]
+  },
+  {
+    "question": "Which courses (name of courses) have 8 credits?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'courses', 'row': 3}\n104,Advanced Algorithms,1,8,4,Spring\n\n{'source': 'courses', 'row': 7}\n108,Artificial Intelligence,1,8,7,Spring.\n\nThe courses with 8 credits are:\n\n{\n\"answer\": [\"Advanced Algorithms\", \"Artificial Intelligence\"]\n}"
+    ]
+  },
+  {
+    "question": "What is the title of the thesis of Sophie Durand?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'students', 'row': 2}\n3,Sophie,Durand,2000-07-30,French,Female,2021-01-10,sophie.durand@student.edu\n\n{'source': 'thesis', 'row': 2}\n3,IoT Security Challenges,3,9,2023-2024,Completed,Cybersecurity.\n\nThe title of Sophie Durand's thesis is:\n\n{\n\"answer\": [\"IoT Security Challenges\"]\n}"
+    ]
+  },
+  {
+    "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+    "answer": [
+      "Giulia Rossi",
+      "Marco Bianchi"
+    ]
+  },
+  {
+    "question": "Which courses (name of the courses) have 6 credits?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'courses', 'row': 0}\n101,Machine Learning,1,6,1,Fall\n\n{'source': 'courses', 'row': 2}\n103,Embedded Systems,2,6,3,Fall\n\n{'source': 'courses', 'row': 5}\n106,Software Engineering,1,6,4,Spring\n\n{'source': 'courses', 'row': 8}\n109,Cybersecurity,1,6,9,Fall\n\nThe courses with 6 credits are:\n\n101,Machine Learning\n103,Embedded Systems\n105,Digital Signal Processing\n106,Software Engineering\n107,Data Mining\n109,Cybersecurity\n\nSo the answer is:\n\n{\n\"answer\": [\"Machine Learning\", \"Embedded Systems\", \"Digital Signal Processing\", \"Software Engineering\", \"Data Mining\", \"Cybersecurity\"]\n}"
+    ]
+  },
+  {
+    "question": "Which students (name, surname) enrolled in 2020?",
+    "answer": [
+      "Based on the given context: {'source': 'students', 'row': 3}\n\nThe answer is:\n\n{\n\"answer\": [\"Lucas Schmidt\"]\n}"
+    ]
+  },
+  {
+    "question": "Which classrooms (room number) are located in the Main building?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'classrooms', 'row': 0}\n1,Main,101,50\n\n{'source': 'classrooms', 'row': 1}\n2,Main,102,60.\n\nThe classrooms located in the Main building are:\n\n{\n\"answer\": [\"101\", \"102\"]\n}"
+    ]
+  },
+  {
+    "question": "Which departments (departments name) are in the Science faculty?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'departments', 'row': 2}\n3,Mathematics,Science\n\n{'source': 'departments', 'row': 3}\n4,Physics,Science\n\n{'source': 'departments', 'row': 4}\n5,Biology,Science\n\n{'source': 'departments', 'row': 6}\n6,Chemistry,Science.\n\nThe departments in the Science faculty are:\n\n{\n\"answer\": [\"Mathematics\", \"Physics\", \"Biology\", \"Chemistry\"]\n}"
+    ]
+  },
+  {
+    "question": "Which thesis (title) have the status completed?",
+    "answer": [
+      "Deep Learning for Image Recognition",
+      "IoT Security Challenges",
+      "Autonomous Systems"
+    ]
+  },
+  {
+    "question": "What are the names of the courses taught by Laura Bianchi?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'courses', 'row': 1}\n102,Database Systems,1,6,2,Spring\n\n{'source': 'teachers', 'row': 1}\n2,Laura,Bianchi,1,l.bianchi@university.edu.\n\nThe answer is:\n\n{\n\"answer\": [\"Database Systems\"]\n}"
+    ]
+  },
+  {
+    "question": "Which courses (name of courses) are taught in the Fall semester?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'courses', 'row': 0}\n101,Machine Learning,1,6,1,Fall\n\n{'source': 'courses', 'row': 2}\n103,Embedded Systems,2,6,3,Fall\n\n{'source': 'courses', 'row': 4}\n105,Digital Signal Processing,2,6,5,Fall\n\n{'source': 'courses', 'row': 6}\n107,Data Mining,1,6,6,Fall\n\n{'source': 'courses', 'row': 8}\n109,Cybersecurity,1,6,9,Fall.\n\nThe courses taught in the Fall semester are:\n\n{\n\"answer\": [\"Machine Learning\", \"Embedded Systems\", \"Digital Signal Processing\", \"Data Mining\", \"Cybersecurity\"]\n}"
+    ]
+  },
+  {
+    "question": "Which courses (name of courses) are taught in the Spring semester?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'courses', 'row': 1}\n102,Database Systems,1,6,2,Spring\n\n{'source': 'courses', 'row': 3}\n104,Advanced Algorithms,1,8,4,Spring\n\n{'source': 'courses', 'row': 5}\n106,Software Engineering,1,6,4,Spring\n\n{'source': 'courses', 'row': 7}\n108,Artificial Intelligence,1,8,7,Spring\n\n{'source': 'courses', 'row': 9}\n110,Human-Computer Interaction,1,6,10,Spring.\n\nThe courses taught in the Spring semester are:\n\n{\n\"answer\": [\"Database Systems\", \"Advanced Algorithms\", \"Software Engineering\", \"Artificial Intelligence\", \"Human-Computer Interaction\"]\n}"
+    ]
+  },
+  {
+    "question": "Which teachers (name, surname) are part of the Electronics department?",
+    "answer": [
+      "Marco Verdi",
+      "Antonio Gallo"
+    ]
+  },
+  {
+    "question": "Which thesis (title) have the status in progress?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'thesis', 'row': 1}\n2,Big Data Processing,2,2,2022-2023,In Progress,Data Science\n\n{'source': 'thesis', 'row': 4}\n5,User Experience Design in Web Apps,5,8,2022-2023,In Progress,Human-Computer Interaction.\n\nThe thesis with the status \"In Progress\" are:\n\n{\n\"answer\": [\"Big Data Processing\", \"User Experience Design in Web Apps\"]\n}"
+    ]
+  },
+  {
+    "question": "Which teachers (name, surname) are part of the Computer Science department?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'departments', 'row': 0}\n1,Computer Science,Engineering\n\nThe answer is:\n\n{\n\"answer\": [\"Carlo Rossi\", \"Laura Bianchi\", \"Elisa Neri\", \"Giulia Colombo\", \"Francesco Conti\", \"Alessandro Moretti\", \"Luca Esposito\", \"Maria Ferrari\"]\n}"
+    ]
+  },
+  {
+    "question": "Which Students (name, surname) are Italian?",
+    "answer": [
+      "Giulia Rossi"
+    ]
+  },
+  {
+    "question": "Which are the Male students (name, surname) enrolled in the university?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'students', 'row': 1}\n2,Marco,Bianchi,1995-11-22,Italian,Male,2022-10-15,marco.bianchi@student.edu\n\n{'source': 'students', 'row': 3}\n4,Lucas,Schmidt,1997-03-18,German,Male,2020-08-25,lucas.schmidt@student.edu.\n\nThe answer is:\n\n{\n\"answer\": [\"Marco Bianchi\"]\n}"
+    ]
+  },
+  {
+    "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+    "answer": [
+      "Sophie Durand",
+      "Elena Gonzalez"
+    ]
+  },
+  {
+    "question": "Which are all the grades obtained by the student Sophie Durand?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'grades', 'row': 2}\n3,3,103,30\n\nThe answer is:\n\n{\n\"answer\": [\"3\", \"3\", \"103\", \"30\"]\n}"
+    ]
+  },
+  {
+    "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+    "answer": [
+      "Elena Gonzalez",
+      "Lucas Schmidt"
+    ]
+  },
+  {
+    "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'courses', 'row': 1}\n102,Database Systems,1,6,2,Spring\n\n{'source': 'exams', 'row': 1}\n2,102,2023-02-15,14:00,2\n\n{'source': 'courses', 'row': 5}\n106,Software Engineering,1,6,4,Spring\n\n{'source': 'exams', 'row': 4}\n5,106,2023-05-30,13:00,5.\n\nThe courses with an exam scheduled at 13.00 or 14.00 hours are:\n\n* Software Engineering (exam time: 13:00)\n* Database Systems (exam time: 14:00)\n\nSo, the answer is:\n\n{\n\"answer\": [\"Software Engineering\", \"Database Systems\"]\n}"
+    ]
+  },
+  {
+    "question": "Which are the classrooms (room number) in Science or Electronics building?",
+    "answer": [
+      "Based on the given context:\n\n{'source': 'classrooms', 'row': 2}\n3,Science,201,40\n\n{'source': 'classrooms', 'row': 5}\n6,Electronics,401,30.\n\nThe classrooms in Science or Electronics building are:\n\n{\n\"answer\": [\"201\", \"401\"]\n}"
+    ]
+  }
+]

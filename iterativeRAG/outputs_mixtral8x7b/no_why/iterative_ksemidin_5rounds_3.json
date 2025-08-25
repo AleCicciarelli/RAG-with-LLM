@@ -1,0 +1,2192 @@
+[
+    {
+        "question": "Which is the email of the student Giulia Rossi?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "giulia.rossi@student.edu"
+            ]
+        }
+    },
+    {
+        "question": "Which is the email of the student Giulia Rossi?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "giulia.rossi@student.edu"
+            ]
+        }
+    },
+    {
+        "question": "Which is the email of the student Giulia Rossi?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "giulia.rossi@student.edu"
+            ]
+        }
+    },
+    {
+        "question": "Which is the email of the student Giulia Rossi?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Giulia Rossi"
+            ]
+        }
+    },
+    {
+        "question": "Which is the email of the student Giulia Rossi?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Alessandro Sala"
+            ]
+        }
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Physics"
+            ]
+        }
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Physics"
+            ]
+        }
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Computer Science"
+            ]
+        }
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Computer Science"
+            ]
+        }
+    },
+    {
+        "question": "Which is the name of the department where the teacher Laura Bianchi teaches?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Computer Science"
+            ]
+        }
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "6"
+            ]
+        }
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "6"
+            ]
+        }
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "6"
+            ]
+        }
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "6"
+            ]
+        }
+    },
+    {
+        "question": "How many credits has the course Software Engineering?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "6 credits"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of building in which there is the class with room number 401?",
+        "iteration": 1,
+        "answer": ""
+    },
+    {
+        "question": "What is the name of building in which there is the class with room number 401?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Electronics"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of building in which there is the class with room number 401?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Electronics"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of building in which there is the class with room number 401?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Electronics"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of building in which there is the class with room number 401?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Computer Science"
+            ]
+        }
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Fall"
+            ]
+        }
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Fall"
+            ]
+        }
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Fall"
+            ]
+        }
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "iteration": 4,
+        "answer": "Based on the provided context, here are the answers to the two questions:\nQuestion: Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithms courses?\nAnswer:\n{\n\"answer\": [\"Giulia Rossi\", \"Marco Bianchi\"]\n}\nQuestion: Which faculty does the Electronics department belong to?\nAnswer:\n{\n\"answer\": [\"Engineering\"]\n}"
+    },
+    {
+        "question": "In which semester is done the Cybersecurity course?",
+        "iteration": 5,
+        "answer": "given context:\n- source: teachers.csv, row: 20 (teacher\\_id:6, name:Francesca, surname:Rossi, department\\_id:1, email:f.rossi@dept1.university.xyz)\n- source: courses.csv, row: 7 (course\\_id:107, course\\_name:Data Structures and Algorithms, department\\_id:1, teacher\\_id:6, credits:6, semester:Spring)\n- source: enrollments.csv, row: 25 (enrollment\\_id:26, student\\_id:5, course\\_id:107, grade:85)\n- source: students.csv, row: 4 (student\\_id:5, name:Elena, surname:Gonzalez, department\\_id:1, enrollment\\_date:\"2022-02-14\", graduation\\_date:null)\n\nquestion: Which teacher teaches the Data Structures and Algorithms course?\nanswer: {\"answer\": [\"Francesca Rossi\"]}"
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "401"
+            ]
+        }
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "401"
+            ]
+        }
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "401"
+            ]
+        }
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "401"
+            ]
+        }
+    },
+    {
+        "question": "In which classroom (room number) is the Database Systems exam?",
+        "iteration": 5,
+        "answer": "Based on the given context, the answer to the question is:"
+    },
+    {
+        "question": "In which research area is the 'User Experience Design in Web Apps' thesis?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Human-Computer Interaction"
+            ]
+        }
+    },
+    {
+        "question": "In which research area is the 'User Experience Design in Web Apps' thesis?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Human-Computer Interaction"
+            ]
+        }
+    },
+    {
+        "question": "In which research area is the 'User Experience Design in Web Apps' thesis?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Human-Computer Interaction"
+            ]
+        }
+    },
+    {
+        "question": "In which research area is the 'User Experience Design in Web Apps' thesis?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Computer Science"
+            ]
+        }
+    },
+    {
+        "question": "In which research area is the 'User Experience Design in Web Apps' thesis?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Giulia Rossi",
+                "Marco Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "iteration": 1,
+        "answer": "Based on the given context, the instructor who teaches the Machine Learning course is:"
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Alessandro Moretti"
+            ]
+        }
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Alessandro Moretti"
+            ]
+        }
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Machine Learning"
+            ]
+        }
+    },
+    {
+        "question": "Which instructor (name, surname) teaches Machine Learning course?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Giulia Rossi",
+                "Marco Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Machine Learning"
+            ]
+        }
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Artificial Intelligence"
+            ]
+        }
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Artificial Intelligence"
+            ]
+        }
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Artificial Intelligence"
+            ]
+        }
+    },
+    {
+        "question": "Which is the research area of the teacher Carlo Rossi?",
+        "iteration": 5,
+        "answer": "Based on the provided context, the answer to the following question is:\n\nQuestion: Which students are enrolled in the Machine Learning course and what are their email addresses?\n\nAnswer:\n{\n\"answer\": [\n{\"name\": \"Giulia\", \"surname\": \"Rossi\", \"email\": \"giulia.rossi@student.university.edu\"},\n{\"name\": \"Marco\", \"surname\": \"Bianchi\", \"email\": \"marco.bianchi@student.university.edu\"}\n]\n}\n\nExplanation:\nThe answer is based on the context from the enrollments.csv and students.csv files. The enrollments.csv file shows that student 1 (Giulia Rossi) and student 2 (Marco Bianchi) are enrolled in the Machine Learning course with course\\_id 101. The students.csv file provides their email addresses, which follow a standard format of [name].[surname]@student.university.edu."
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Giulia Colombo"
+            ]
+        }
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "5"
+            ]
+        }
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "5"
+            ]
+        }
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "5"
+            ]
+        }
+    },
+    {
+        "question": "How many research project follows the teacher Giulia Colombo?",
+        "iteration": 5,
+        "answer": 1
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "2023-03-20",
+                "10:00"
+            ]
+        }
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "2023-03-20",
+                "10:00"
+            ]
+        }
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "2023-03-20",
+                "10:00"
+            ]
+        }
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Exam name: Machine Learning, Exam date and time: Not provided in the context"
+            ]
+        }
+    },
+    {
+        "question": "When is the Machine Learning exam (date,time)?",
+        "iteration": 5,
+        "answer": "Based on the provided context, here are the answers to the questions:\n\nQuestion: Which students are enrolled in the Machine Learning course?\nAnswer: \n{\n\"answer\": [\"Giulia Rossi\"]\n}\n\nQuestion: In which department does the instructor with teacher\\_id=3 work?\nAnswer: \n{\n\"answer\": [\"Embedded Systems\"]\n}\n\nQuestion: What is the course name for course\\_id=105?\nAnswer: \n{\n\"answer\": [\"Artificial Intelligence\"]\n}\n\nQuestion: Which students are enrolled in a course with the 'Algorithms' keyword in the course name?\nAnswer: \n{\n\"answer\": [\"Giulia Rossi\", \"Marco Bianchi\"]\n}\n\nQuestion: What is the full name of the student with student\\_id=5?\nAnswer: \n{\n\"answer\": [\"Elena Gonzalez\"]\n}\n\nQuestion: How many courses has the student with student\\_id=1 enrolled in?\nAnswer: \n{\n\"answer\": [\"2\"]\n}\n\nQuestion: Which course is the student with student\\_id=2 enrolled in that starts on 2023-08-12?\nAnswer: \n{\n\"answer\": [\"Machine Learning\"]\n}"
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "iteration": 1,
+        "answer": {
+            "answer": []
+        }
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "iteration": 2,
+        "answer": {
+            "answer": []
+        }
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "iteration": 3,
+        "answer": {
+            "answer": []
+        }
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Giulia Rossi",
+                "Marco Bianchi",
+                "Sophie Durand"
+            ]
+        }
+    },
+    {
+        "question": "In which courses (name of courses) Giulia Rossi is enrolled?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Giulia Rossi",
+                "Marco Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "iteration": 1,
+        "answer": "Based on the given context, Giulia Rossi's grade for the Machine Learning course is not provided in the data. Therefore, it is not possible to give an answer to this question."
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "iteration": 2,
+        "answer": "Based on the given context, there is no information about Giulia Rossi's grade for the Machine Learning course. Therefore, it is not possible to provide an answer to this question.\nThe previous answer is correct and I don't have any new or updated information to provide a different answer."
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "iteration": 3,
+        "answer": {
+            "answer": []
+        }
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "iteration": 4,
+        "answer": {
+            "answer": []
+        }
+    },
+    {
+        "question": "What is the grade of Giulia Rossi for the Machine Learning course?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Student with ID 3"
+            ]
+        }
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Carlo Rossi",
+                "Giulia Colombo",
+                "Maria Ferrari",
+                "Luca Esposito",
+                "Alessandro Moretti",
+                "Laura Bianchi",
+                "Elisa Neri"
+            ]
+        }
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "iteration": 2,
+        "answer": {
+            "answer": []
+        }
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Laura Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Artificial Intelligence",
+                "Data Science",
+                "Machine Learning",
+                "Human-Computer Interaction",
+                "Signal Processing",
+                "Software Engineering",
+                "Algorithms Optimization"
+            ]
+        }
+    },
+    {
+        "question": "Who is the teacher (name,surname) following Sophie Durand in her thesis?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "<student_name> <student_surname>"
+            ]
+        }
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Machine Learning",
+                "Advanced Algorithms",
+                "Embedded Systems",
+                "Artificial Intelligence",
+                "Data Mining",
+                "Software Engineering",
+                "Cybersecurity",
+                "Human-Computer Interaction"
+            ]
+        }
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Machine Learning",
+                "Advanced Algorithms",
+                "Embedded Systems",
+                "Artificial Intelligence",
+                "Data Mining",
+                "Software Engineering",
+                "Cybersecurity",
+                "Human-Computer Interaction"
+            ]
+        }
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Machine Learning",
+                "Advanced Algorithms",
+                "Embedded Systems",
+                "Artificial Intelligence",
+                "Data Mining",
+                "Software Engineering",
+                "Cybersecurity",
+                "Human-Computer Interaction"
+            ]
+        }
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Machine Learning",
+                "Advanced Algorithms",
+                "Software Engineering",
+                "Database Systems",
+                "Data Mining"
+            ]
+        }
+    },
+    {
+        "question": "What are all the courses (name of courses) offered by the Computer Science department?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Electronics"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of the department in which Antonio Gallo teaches?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Science"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of the department in which Antonio Gallo teaches?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Science"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of the department in which Antonio Gallo teaches?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Science"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of the department in which Antonio Gallo teaches?",
+        "iteration": 4,
+        "answer": "Based on the given context, the name of the department in which Antonio Gallo teaches is 'Science'. The row with teacher_id 5 from teachers.csv and the row with department_id 2 from departments.csv provide this information.\n\n{'answer': ['Science']}"
+    },
+    {
+        "question": "What is the name of the department in which Antonio Gallo teaches?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Maria Rodriguez"
+            ]
+        }
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "26"
+            ]
+        }
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                26
+            ]
+        }
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "iteration": 3,
+        "answer": "Based on the provided context, the grade of Elena Gonzales for the Human-Computer Interaction exam is:"
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "iteration": 4,
+        "answer": {
+            "answer": null
+        }
+    },
+    {
+        "question": "What is the grade of Elena Gonzales for the Human-Computer Interaction exam?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Maria Ferrari"
+            ]
+        }
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Engineering"
+            ]
+        }
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Engineering"
+            ]
+        }
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Engineering"
+            ]
+        }
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Engineering"
+            ]
+        }
+    },
+    {
+        "question": "Which faculty does the Electronics department belong to?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Engineering"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of the building in which will be the Embedded Systems exam?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Electronics"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of the building in which will be the Embedded Systems exam?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Electronics"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of the building in which will be the Embedded Systems exam?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Electronics"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of the building in which will be the Embedded Systems exam?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Electronics"
+            ]
+        }
+    },
+    {
+        "question": "What is the name of the building in which will be the Embedded Systems exam?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Computer Science",
+                "Engineering"
+            ]
+        }
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "iteration": 1,
+        "answer": "Based on the given context, Alessandro Moretti's thesis title is not provided directly in any of the rows. However, we can infer that he might be the teacher of one of the students with a thesis. By cross-referencing the 'teacher_id' from the 'thesis.csv' file and the 'teachers.csv' file, we can find the corresponding thesis for Alessandro Moretti.\n\nBy performing this operation, we find that Alessandro Moretti is related to the thesis with 'thesis_id: 3' (not directly shown in the context but can be derived from the data provided). The thesis title for 'thesis_id: 3' can be found in the 'thesis.csv' file, row: 2.\n\nTherefore, Alessandro Moretti's thesis title is: \"Reinforcement Learning for Autonomous Systems\"."
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Reinforcement Learning for Autonomous Systems"
+            ]
+        }
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Autonomous Systems"
+            ]
+        }
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "iteration": 4,
+        "answer": "Based on the context provided, the answer to the question would be:"
+    },
+    {
+        "question": "What is the title of the thesis followed by Alessandro Moretti?",
+        "iteration": 5,
+        "answer": "Based on the context provided, here are the answers to the questions:\nQuestion: Who is the teacher with email [e.neri@university.edu](mailto:e.neri@university.edu)?\nAnswer:\n{\n\"answer\": [\"Elisa Surname\"]\n}\nQuestion: Which teachers have no research area related to Data?\nAnswer:\n{\n\"answer\": [\"Antonio Gallo\", \"Marco Teacher\"]\n}\nQuestion: How many teachers work in the department with department\\_id 2?\nAnswer:\n{\n\"answer\": [\"3\"]\n}\nQuestion: Which are the research areas of the teacher with email [a.gallo@university.edu](mailto:a.gallo@university.edu)?\nAnswer:\n{\n\"answer\": [\"Embedded Systems\"]\n}\nQuestion: Which students are enrolled in courses of the teacher with email [e.neri@university.edu](mailto:e.neri@university.edu)?\nAnswer:\n{\n\"answer\": []\n}\nNote: The answer to the last question is an empty list because there is no information provided about which courses are taught by the teacher with email [e.neri@university.edu](mailto:e.neri@university.edu), and there are no direct enrollments in teachers. Also, I assumed that \"Marco Teacher\" is a teacher since they were included in the list of teachers in the context."
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Lucas Schmidt",
+                "Elena Gonzalez"
+            ]
+        }
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Lucas Schmidt",
+                "Sophie Durand"
+            ]
+        }
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Giulia Rossi",
+                "Giula",
+                "Giulia Rossi",
+                "Giulia Rossi"
+            ]
+        }
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "iteration": 4,
+        "answer": "Based on the provided context, the answers to your questions are:\n\nQuestion: Which students are enrolled in a course with the 'Computer Science' department?\nAnswer: {\n\"answer\": [\n\"Giulia Rossi\"\n]\n}\n\nQuestion: Which students are enrolled in a course with the 'Engineering' faculty?\nAnswer: {\n\"answer\": [\n\"Marco Bianchi\",\n\"Giulia Rossi\"\n]\n}\n\nQuestion: Which is the course name for student Marco Bianchi?\nAnswer: {\n\"answer\": [\n\"Machine Learning\"\n]\n}\n\nQuestion: Which are the course names for student Giulia Rossi?\nAnswer: {\n\"answer\": [\n\"Machine Learning\",\n\"Advanced Algorithms\"\n]\n}"
+    },
+    {
+        "question": "Which students (name,surname) have an enrollment date before 2022?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Giulia Rossi",
+                "Marco Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Science"
+            ]
+        }
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Science"
+            ]
+        }
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Science"
+            ]
+        }
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Science"
+            ]
+        }
+    },
+    {
+        "question": "What is the faculty of the Chemistry department?",
+        "iteration": 5,
+        "answer": "Based on the context provided, the answer to the question would be:\n\n    {\n        \"answer\": [\"Computer Science\"]\n    }"
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "iteration": 1,
+        "answer": ""
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "iteration": 2,
+        "answer": "Based on the provided context, the students enrolled in the Database Systems course are:\n\nNone, as there is no student enrollment information for the Database Systems course (course\\_id: 102) in the 'enrollments.csv' file."
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Sophie Durand"
+            ]
+        }
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Sophia Loren"
+            ]
+        }
+    },
+    {
+        "question": "Which are the students (name,surname) enrolled in the Database Systems course?",
+        "iteration": 5,
+        "answer": "Based on the context provided, here are the answers to the two examples given:\n\nExample 1:\nCONTEXT:\n{\n\"course\\_id\": 101,\n\"course\\_name\": \"Machine Learning\",\n...},\n{\n\"course\\_id\": 104,\n\"course\\_name\": \"Advanced Algorithms\",\n...},\n{\n\"enrollment\\_id\": 1,\n\"student\\_id\": 1,\n\"course\\_id\": 101,\n...},\n{\n\"enrollment\\_id\": 4,\n\"student\\_id\": 1,\n\"course\\_id\": 104,\n...},\n{\n\"enrollment\\_id\": 10,\n\"student\\_id\": 2,\n\"course\\_id\": 101,\n...},\n{\n\"student\\_id\": 1,\n\"name\": \"Giulia\",\n\"surname\": \"Rossi\",\n...},\n{\n\"student\\_id\": 2,\n\"name\": \"Marco\",\n\"surname\": \"Bianchi\",\n...}\n}\n\nQUESTION: Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?\n\nANSWER:\n{\n\"answer\": [\"Giulia Rossi\", \"Marco Bianchi\"]\n}\n\nExample 2:\nCONTEXT:\n{\n\"department\\_id\": 2,\n\"department\\_name\": \"Electronics\",\n\"faculty\": \"Engineering\"\n}\n\nQUESTION: Which faculty does the Electronics department belong to?\n\nANSWER:\n{\n\"answer\": [\"Engineering\"]\n}"
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Artificial Intelligence",
+                "Human-Computer Interaction"
+            ]
+        }
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Robotics"
+            ]
+        }
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Human-Computer Interaction"
+            ]
+        }
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Human-Computer Interaction"
+            ]
+        }
+    },
+    {
+        "question": "What are the research areas of Maria Ferrari?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Marco Mancini"
+            ]
+        }
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "6"
+            ]
+        }
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "6"
+            ]
+        }
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "6"
+            ]
+        }
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "6"
+            ]
+        }
+    },
+    {
+        "question": "How many research projects are led by Laura Bianchi?",
+        "iteration": 5,
+        "answer": "Based on the provided context, the answers to your questions are:"
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "iteration": 1,
+        "answer": {
+            "answer": []
+        }
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Lucas Schmidt"
+            ]
+        }
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Lucas Schmidt"
+            ]
+        }
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "iteration": 4,
+        "answer": "Based on the context provided, the only information given about student grades is that there exists a grading system with passes and fails. There is no specific mention of any student's grade or pass/fail status in the course taught by the teacher with the ID 1003. Therefore, it is impossible to accurately determine which students passed or failed the course.\n\nTo provide an answer, we would need additional information about the students' grades or their pass/fail status for the course taught by the teacher with the ID 1003."
+    },
+    {
+        "question": "Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?",
+        "iteration": 5,
+        "answer": "Based on the provided context, the answer to the question would be:\n\n    {\n        \"answer\": [\"Human-Computer Interaction\", \"Software Engineering\"]\n    }"
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "iteration": 1,
+        "answer": ""
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "301",
+                "302"
+            ]
+        }
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "301",
+                "302"
+            ]
+        }
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "301",
+                "302"
+            ]
+        }
+    },
+    {
+        "question": "Which are the classrooms (room number) in the Engineering building?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Advanced Algorithms"
+            ]
+        }
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "iteration": 1,
+        "answer": ""
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "2023-03-20 10:00"
+            ]
+        }
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "2023-05-30 13:00"
+            ]
+        }
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "2023-05-30 13:00"
+            ]
+        }
+    },
+    {
+        "question": "What is the day and time of the Software Engineering exam?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Giulia Rossi",
+                "Marco Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Artificial Intelligence",
+                "Advanced Algorithms"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Artificial Intelligence",
+                "Advanced Algorithms"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Artificial Intelligence",
+                "Advanced Algorithms"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Artificial Intelligence",
+                "Advanced Algorithms"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of courses) have 8 credits?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Marco Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "User Experience Design in Web Apps"
+            ]
+        }
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "User Experience Design in Web Apps"
+            ]
+        }
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Elena Gonzalez"
+            ]
+        }
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Giulia Rossi",
+                "Marco Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "What is the title of the thesis of Sophie Durand?",
+        "iteration": 5,
+        "answer": 1
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "iteration": 1,
+        "answer": ""
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Giulia Rossi"
+            ]
+        }
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Giulia Rossi"
+            ]
+        }
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Giulia Rossi",
+                "Elena Gonzalez"
+            ]
+        }
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?",
+        "iteration": 5,
+        "answer": "Based on the provided context, the answer to the question is:"
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Cybersecurity",
+                "Embedded Systems",
+                "Human-Computer Interaction",
+                "Machine Learning",
+                "Data Mining",
+                "Database Systems",
+                "Software Engineering",
+                "Digital Signal Processing"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Cybersecurity",
+                "Embedded Systems",
+                "Machine Learning",
+                "Data Mining",
+                "Database Systems",
+                "Software Engineering",
+                "Digital Signal Processing"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Cybersecurity",
+                "Embedded Systems",
+                "Machine Learning",
+                "Data Mining",
+                "Database Systems",
+                "Software Engineering",
+                "Digital Signal Processing",
+                "Human-Computer Interaction"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Cybersecurity",
+                "Embedded Systems",
+                "Machine Learning",
+                "Data Mining",
+                "Database Systems",
+                "Software Engineering",
+                "Digital Signal Processing",
+                "Software Engineering"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of the courses) have 6 credits?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Cybersecurity"
+            ]
+        }
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Lucas Schmidt"
+            ]
+        }
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Lucas Schmidt"
+            ]
+        }
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Lucas Schmidt"
+            ]
+        }
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Sophia Johnson"
+            ]
+        }
+    },
+    {
+        "question": "Which students (name, surname) enrolled in 2020?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Marco Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "iteration": 1,
+        "answer": ""
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "101",
+                "102"
+            ]
+        }
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "101",
+                "102"
+            ]
+        }
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "iteration": 4,
+        "answer": "Based on the provided context, the correct answer is:"
+    },
+    {
+        "question": "Which classrooms (room number) are located in the Main building?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "101",
+                "102"
+            ]
+        }
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "iteration": 1,
+        "answer": ""
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Physics",
+                "Biology",
+                "Chemistry",
+                "Mathematics"
+            ]
+        }
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Physics",
+                "Biology",
+                "Chemistry",
+                "Mathematics"
+            ]
+        }
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Physics",
+                "Biology",
+                "Chemistry",
+                "Mathematics"
+            ]
+        }
+    },
+    {
+        "question": "Which departments (departments name) are in the Science faculty?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Physics",
+                "Biology",
+                "Mathematics",
+                "Chemistry"
+            ]
+        }
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Deep Learning for Image Recognition"
+            ]
+        }
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "iteration": 2,
+        "answer": "Based on the provided context, the following thesis have the status \"Completed\":"
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Deep Learning for Image Recognition",
+                "Autonomous Systems"
+            ]
+        }
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "iteration": 4,
+        "answer": "Based on the provided context, the answer to the question would be:"
+    },
+    {
+        "question": "Which thesis (title) have the status completed?",
+        "iteration": 5,
+        "answer": "Based on the provided context, here are the answers to the questions:\n\nQuestion: Which students are enrolled in the course with course\\_id: 108 (Artificial Intelligence)?\nAnswer: \n{\n\"answer\": [\"Marco Bianchi\"]\n}\n\nQuestion: What is the name of the student with student\\_id: 4?\nAnswer: \n{\n\"answer\": [\"Lucas Schmidt\"]\n}\n\nQuestion: Which are the departments that belong to the faculty of Science?\nAnswer: \n{\n\"answer\": [\"Computer Science\", \"Physics\", \"Mathematics\"]\n}\n\nQuestion: Which students are enrolled in courses with credits greater than or equal to 7?\nAnswer: \n{\n\"answer\": [\"Marco Bianchi\", \"Giulia Rossi\"]\n}\n\nQuestion: Which is the name of the teacher who teaches the course with course\\_id: 108 (Artificial Intelligence)?\nAnswer: \n{\n\"answer\": [\"Francesca Garcia\"]\n}\n\nQuestion: What is the nationality of the student with student\\_id: 2?\nAnswer: \n{\n\"answer\": [\"Italian\"]\n}\n\nQuestion: Which are the courses taught by the teacher with teacher\\_id: 7?\nAnswer: \n{\n\"answer\": [\"Artificial Intelligence\"]\n}\n\nQuestion: Which is the course\\_name of the course with course\\_id: 104?\nAnswer: \n{\n\"answer\": [\"Advanced Algorithms\"]\n}\n\nQuestion: What is the enrollment\\_date of the student with student\\_id: 1 for the course with course\\_id: 104?\nAnswer: \n{\n\"answer\": [\"2023-01-16\"]\n}\n\nQuestion: Which are the departments that have a name containing the word 'Science'?\nAnswer: \n{\n\"answer\": [\"Computer Science\", \"Physics\"]\n}"
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "iteration": 1,
+        "answer": "Based on the given context, Laura Bianchi teaches one course. However, the specific course name is not provided in this context. The context only gives us information about Laura Bianchi's teacher details and her department ID (1). To find out which course she teaches, we would need additional data that links Laura Bianchi to a specific course.\n   Since the required information is not available in the given context, I cannot provide an answer for the names of the courses taught by Laura Bianchi."
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "iteration": 2,
+        "answer": "Based on the given context, Laura Bianchi teaches a course with the name 'Database Systems'. The course information is stored in the 'courses.csv' file, where Laura Bianchi (teacher_id: 2) is linked to this specific course.\n\n{'answer': ['Database Systems']}"
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "iteration": 3,
+        "answer": "Based on the given context, Laura Bianchi teaches the 'Database Systems' and 'Data Mining' courses. The course information is stored in the 'courses.csv' file, where Laura Bianchi (teacher_id: 2) is linked to these specific courses.\n\n{'answer': ['Database Systems', 'Data Mining']}"
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "iteration": 4,
+        "answer": "Based on the provided context, the answer to the question would be:"
+    },
+    {
+        "question": "What are the names of the courses taught by Laura Bianchi?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "lname1: Rossi, fname1: Giulia",
+                "lname2: Bianchi, fname2: Marco"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "iteration": 1,
+        "answer": "Based on the given context, the courses taught in the Fall semester are:"
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "iteration": 2,
+        "answer": ""
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Machine Learning",
+                "Cybersecurity",
+                "Embedded Systems",
+                "Digital Signal Processing",
+                "Data Mining"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Computer Science"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Fall semester?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Giulia Neri"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Human-Computer Interaction",
+                "Database Systems",
+                "Software Engineering",
+                "Advanced Algorithms",
+                "Artificial Intelligence"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Human-Computer Interaction",
+                "Database Systems",
+                "Software Engineering",
+                "Advanced Algorithms",
+                "Artificial Intelligence"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Human-Computer Interaction",
+                "Database Systems",
+                "Software Engineering",
+                "Advanced Algorithms",
+                "Artificial Intelligence"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Human-Computer Interaction",
+                "Software Engineering",
+                "Database Systems",
+                "Artificial Intelligence",
+                "Computer Graphics",
+                "Operating Systems",
+                "Programming Languages",
+                "Computer Networks",
+                "Data Structures and Algorithms",
+                "Web Technologies"
+            ]
+        }
+    },
+    {
+        "question": "Which courses (name of courses) are taught in the Spring semester?",
+        "iteration": 5,
+        "answer": "Based on the provided context, here are the answers to the questions:\n\nQuestion: Which students are enrolled in the"
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Giulia Colombo",
+                "Elisa Neri",
+                "Carlo Rossi",
+                "Laura Bianchi",
+                "Francesco Conti"
+            ]
+        }
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Alessandro Moretti",
+                "Carlo Rossi",
+                "Elisa Neri",
+                "Francesco Conti",
+                "Giulia Colombo",
+                "Laura Bianchi",
+                "Maria Ferrari"
+            ]
+        }
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Alessandro Moretti",
+                "Carlo Rossi",
+                "Francesco Conti",
+                "Elisa Neri",
+                "Giulia Colombo",
+                "Laura Bianchi",
+                "Maria Ferrari"
+            ]
+        }
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Alessandro Moretti",
+                "Carlo Rossi",
+                "Francesco Conti",
+                "Elisa Neri",
+                "Giulia Colombo",
+                "Laura Bianchi",
+                "Maria Ferrari"
+            ]
+        }
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Electronics department?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Human-Computer Interaction"
+            ]
+        }
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "iteration": 1,
+        "answer": ""
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Big Data Processing",
+                "User Experience Design in Web Apps"
+            ]
+        }
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Big Data Processing",
+                "User Experience Design in Web Apps"
+            ]
+        }
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Big Data Analytics",
+                "Distributed Systems"
+            ]
+        }
+    },
+    {
+        "question": "Which thesis (title) have the status in progress?",
+        "iteration": 5,
+        "answer": "based on the given context, the answers to the questions are:\n\n    Q1: Who is the teacher of the"
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Carlo Rossi",
+                "Elisa Neri",
+                "Laura Bianchi",
+                "Giulia Colombo",
+                "Francesco Conti",
+                "Antonio Gallo",
+                "Luca Esposito",
+                "Alessandro Moretti",
+                "Maria Ferrari"
+            ]
+        }
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Carlo Rossi",
+                "Elisa Neri",
+                "Laura Bianchi",
+                "Giulia Colombo",
+                "Francesco Conti",
+                "Antonio Gallo",
+                "Luca Esposito",
+                "Alessandro Moretti",
+                "Maria Ferrari"
+            ]
+        }
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Carlo Rossi",
+                "Elisa Neri",
+                "Laura Bianchi",
+                "Giulia Colombo",
+                "Francesco Conti",
+                "Antonio Gallo",
+                "Luca Esposito",
+                "Alessandro Moretti",
+                "Maria Ferrari"
+            ]
+        }
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Carlo Rossi",
+                "Elisa Neri",
+                "Laura Bianchi",
+                "Giulia Colombo",
+                "Francesco Conti",
+                "Antonio Martinez"
+            ]
+        }
+    },
+    {
+        "question": "Which teachers (name, surname) are part of the Computer Science department?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Antonio Manca"
+            ]
+        }
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Giulia Rossi",
+                "Marco Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Giulia Rossi",
+                "Marco Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Giulia Rossi",
+                "Marco Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Giulia Rossi",
+                "Marco Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "Which Students (name, surname) are Italian?",
+        "iteration": 5,
+        "answer": "Based on the provided context, here are the answers to the questions:\n\nQuestion:\nWho is the teacher of the course with course\\_id: 108?\n\nAnswer:\n{\n\"answer\": [\"Maria Garcia\"]\n}\n\nQuestion:\nWhat research area does teacher with teacher\\_id: 3 specialize in?\n\nAnswer:\n{\n\"answer\": [\"Natural Language Processing\"]\n}\n\nQuestion:\nHow many projects did the teacher with teacher\\_id: 6 complete in Software Engineering?\n\nAnswer:\n{\n\"answer\": [\"5\"]\n}\n\nQuestion:\nWhich student is working on a thesis with title: \"Deep Learning for Image Recognition\"?\n\nAnswer:\n{\n\"answer\": [\"Luca Toni\"]\n}\n\nQuestion:\nWhat is the course name of the course with course\\_id: 102?\n\nAnswer:\n{\n\"answer\": [\"Database Systems\"]\n}\n\nQuestion:\nWhich student is enrolled in the course with course\\_id: 107?\n\nAnswer:\n{\n\"answer\": [\"Alessandro Del Piero\", \"Francesco Totti\"]\n}"
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "iteration": 1,
+        "answer": "Based on the provided context, the male students enrolled in the university are:"
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Lucas Schmidt",
+                "Marco Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Lucas Martinez"
+            ]
+        }
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "iteration": 4,
+        "answer": "Based on the context provided, here are the answers to the questions:\n\nQuestion: Which students are enrolled in the course with course\\_id 110?\nAnswer: {\"answer\": [\"student with student\\_id 2 (name: Marco, surname: Bianchi)\"]}\n\nQuestion: Which research areas does teacher with teacher\\_id 6 work on?\nAnswer: {\"answer\": [\"Software Engineering\"]}\n\nQuestion: What is the name of the course taught by the teacher with teacher\\_id 3?\nAnswer: {\"answer\": [\"course\\_name: Not Sure (insufficient information)\"]}\n\nQuestion: Which students are enrolled in the course with course\\_name Human-Computer Interaction?\nAnswer: {\"answer\": [\"student with student\\_id 10 (name: Marco, surname: Verdi)\", \"student with student\\_id 2 (name: Marco, surname: Bianchi)\"]}\n\nQuestion: What is the name of the faculty that teaches the course with course\\_id 101?\nAnswer: {\"answer\": [\"faculty name: Not Sure (insufficient information)\"]}\n\nQuestion: Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?\nAnswer: {\"answer\": [\"student with student\\_id 1 (name: Giulia, surname: Rossi)\", \"student with student\\_id 2 (name: Marco, surname: Bianchi)\"]}\n\nQuestion: What is the building and room number of the classroom where course with course\\_id 101 is taught?\nAnswer: {\"answer\": [\"building: Not Sure (insufficient information)\", \"room number: Not Sure (insufficient information)\"]}\n\nQuestion: Which research areas does teacher with teacher\\_id 2 work on?\nAnswer: {\"answer\": [\"Data Science\"]}\n\nQuestion: What is the capacity of the classroom where course with course\\_name Human-Computer Interaction is taught?\nAnswer: {\"answer\": [\"classroom capacity: Not Sure (insufficient information)\"]}\n\nQuestion: Which students are enrolled in the course with course\\_id 104?\nAnswer: {\"answer\": [\"No student is enrolled in this course (based on the provided context)\"]}"
+    },
+    {
+        "question": "Which are the Male students (name, surname) enrolled in the university?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Giulia Rossi",
+                "Marco Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Ada Lovelace",
+                "Grace Hopper"
+            ]
+        }
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "iteration": 2,
+        "answer": "Based on the provided context, the correct answer to the question is:"
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Giulia Colombo"
+            ]
+        }
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Marco Bianchi"
+            ]
+        }
+    },
+    {
+        "question": "Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Luca Verdi"
+            ]
+        }
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "iteration": 1,
+        "answer": "Based on the given context, the grades obtained by the student Sophie Durand are:"
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                24,
+                27
+            ]
+        }
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                24,
+                28
+            ]
+        }
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                25
+            ]
+        }
+    },
+    {
+        "question": "Which are all the grades obtained by the student Sophie Durand?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Francesco Conti",
+                "Antonio Gallo"
+            ]
+        }
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "iteration": 1,
+        "answer": ""
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Maria Ferrari"
+            ]
+        }
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Maria Ferrari"
+            ]
+        }
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "Laura Bianchi",
+                "Antonio Gallo"
+            ]
+        }
+    },
+    {
+        "question": "Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Deep Learning for Image Recognition",
+                "Giulia Rossi",
+                "Artificial Intelligence"
+            ]
+        }
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "iteration": 1,
+        "answer": {
+            "answer": [
+                "Embedded Systems",
+                "Data Mining"
+            ]
+        }
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "Embedded Systems",
+                "Database Systems"
+            ]
+        }
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "Embedded Systems",
+                "Database Systems"
+            ]
+        }
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "iteration": 4,
+        "answer": 14
+    },
+    {
+        "question": "which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "Student with ID 1 (Giulia Rossi) is enrolled in the Machine Learning course",
+                "Student with ID 2 (Marco Bianchi) is also enrolled in the Machine Learning course"
+            ]
+        }
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "iteration": 1,
+        "answer": ""
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "iteration": 2,
+        "answer": {
+            "answer": [
+                "201 (Science building)",
+                "401 (Electronics building)"
+            ]
+        }
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "iteration": 3,
+        "answer": {
+            "answer": [
+                "201 (Science building)"
+            ]
+        }
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "iteration": 4,
+        "answer": {
+            "answer": [
+                "201 (Science building)",
+                "401 (Electronics)"
+            ]
+        }
+    },
+    {
+        "question": "Which are the classrooms (room number) in Science or Electronics building?",
+        "iteration": 5,
+        "answer": {
+            "answer": [
+                "201 (Science building)"
+            ]
+        }
+    }
+]
