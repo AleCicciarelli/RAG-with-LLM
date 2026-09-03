@@ -17,9 +17,22 @@ from langchain_core.output_parsers import JsonOutputParser
 from pydantic import BaseModel, Field
 from typing import List
 import time
+import subprocess
+import threading
+from datetime import datetime, timezone
 from langchain_core.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain_community.chat_models import ChatOllama
+
+try:
+    import torch
+except ImportError:
+    torch = None
+
+try:
+    from transformers import AutoTokenizer
+except ImportError:
+    AutoTokenizer = None
 
 os.environ["LANGSMITH_TRACING"] = "false" 
 os.environ["LANGSMITH_API_KEY"] = "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"
@@ -29,11 +42,20 @@ os.environ["LANGSMITH_API_KEY"] = "lsv2_pt_87133982193d4e3b8110cb9e3253eb17_7831
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
 #llm = ChatOllama(model="llama3.1-8b-ft", temperature=0)
-llm = ChatOllama(model="deepseek-r1:70b", temperature=0)
+LLM_MODEL_NAME = "llama3:70b"
+EMBEDDING_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
+LLM_CONTEXT_WINDOW = 8192
+EMBEDDING_BATCH_SIZE = 200
+llm = ChatOllama(model=LLM_MODEL_NAME, temperature=0, num_ctx=LLM_CONTEXT_WINDOW)
 
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
-embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+cuda_available = bool(torch is not None and torch.cuda.is_available())
+embedding_device = "cuda" if cuda_available else "cpu"
+embedding_model = HuggingFaceEmbeddings(
+    model_name=EMBEDDING_MODEL_NAME,
+    model_kwargs={"device": embedding_device},
+)
 #embedding_model = HuggingFaceEmbeddings(
 #    model_name="BAAI/bge-small-en-v1.5",
 #    model_kwargs={"device": "cuda"},  
@@ -41,39 +63,217 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mp
 #)
 """ Indexing part """
 
-csv_folder = "csv_data"
-faiss_index_folder = "faiss_index"
-output_filename = f"full_context/why/deepseek70b/FC_rounds_2.json"
+repo_folder = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+csv_folder = os.path.join(repo_folder, "csv_data")
+faiss_index_folder = os.path.join(repo_folder, "faiss_index")
+output_filename = os.path.join(repo_folder, "tpch", "test_pipeline.json")
+timing_filename = os.path.join(repo_folder, "tpch", "timing_metrics.json")
 # Ensure the output directory exists
 os.makedirs(os.path.dirname(output_filename), exist_ok=True)
 
+timing_metrics = {
+    "started_at_utc": datetime.now(timezone.utc).isoformat(),
+    "oar_job_id": os.environ.get("OAR_JOB_ID"),
+    "retrieval": {
+        "method": "faiss_similarity_search_with_score",
+        "k": 10,
+        "score_interpretation": "lower_is_more_similar_for_default_faiss_euclidean_distance",
+    },
+    "embedding": {
+        "model": EMBEDDING_MODEL_NAME,
+        "batch_size": EMBEDDING_BATCH_SIZE,
+        "device": embedding_device,
+        "gpu_name": torch.cuda.get_device_name(0) if cuda_available else None,
+        "index_action": None,
+        "wall_seconds": None,
+        "index_build_wall_seconds": None,
+        "average_gpu_utilization_percent": None,
+        "peak_gpu_memory_mib": None,
+        "average_gpu_memory_mib": None,
+        "gpu_samples": 0,
+        "documents_embedded": 0,
+        "files": [],
+    },
+    "generation_model": {
+        "name": LLM_MODEL_NAME,
+        "context_window_tokens": LLM_CONTEXT_WINDOW,
+    },
+    "gpu_measurement": {
+        "source": "nvidia-smi",
+        "sample_interval_seconds": 0.2,
+        "scope": "first GPU visible to the OAR job",
+        "peak_definition": "maximum observed sample",
+    },
+    "questions": [],
+}
+
+
+def save_timing_metrics():
+    """Checkpoint timings so an interrupted OAR job keeps completed measurements."""
+    with open(timing_filename, "w", encoding="utf-8") as timing_file:
+        json.dump(timing_metrics, timing_file, indent=2, ensure_ascii=False)
+
+
+def sample_gpu(stop_event, samples, interval_seconds=0.2):
+    """Capture raw nvidia-smi utilization and memory observations."""
+    while not stop_event.is_set():
+        try:
+            completed = subprocess.run(
+                [
+                    "nvidia-smi",
+                    "--query-gpu=utilization.gpu,memory.used,memory.total",
+                    "--format=csv,noheader,nounits",
+                ],
+                capture_output=True,
+                text=True,
+                timeout=2,
+                check=True,
+            )
+            # CUDA_VISIBLE_DEVICES normally exposes one GPU in an OAR allocation.
+            utilization, memory_used, memory_total = completed.stdout.splitlines()[0].split(",")
+            samples.append({
+                "elapsed_seconds": time.perf_counter(),
+                "utilization_percent": float(utilization.strip()),
+                "memory_used_mib": float(memory_used.strip()),
+                "memory_total_mib": float(memory_total.strip()),
+            })
+        except (OSError, subprocess.SubprocessError, ValueError, IndexError):
+            pass
+        stop_event.wait(interval_seconds)
+
+
+def summarize_gpu_samples(samples, phase_started):
+    if not samples:
+        return {
+            "average_gpu_utilization_percent": None,
+            "peak_gpu_memory_mib": None,
+            "average_gpu_memory_mib": None,
+            "gpu_samples": 0,
+            "gpu_sample_interval_seconds": 0.2,
+            "gpu_observations": [],
+        }
+    observations = [
+        {
+            **sample,
+            "elapsed_seconds": sample["elapsed_seconds"] - phase_started,
+        }
+        for sample in samples
+    ]
+    return {
+        "average_gpu_utilization_percent": sum(
+            sample["utilization_percent"] for sample in samples
+        ) / len(samples),
+        "peak_gpu_memory_mib": max(sample["memory_used_mib"] for sample in samples),
+        "average_gpu_memory_mib": sum(
+            sample["memory_used_mib"] for sample in samples
+        ) / len(samples),
+        "gpu_samples": len(samples),
+        "gpu_sample_interval_seconds": 0.2,
+        "gpu_observations": observations,
+    }
+
+
+def get_token_count(text):
+    """Count the untruncated prompt with the matching Llama 3 tokenizer, if available."""
+    global prompt_tokenizer
+    if prompt_tokenizer is False:
+        return None
+    if prompt_tokenizer is None:
+        if AutoTokenizer is None:
+            prompt_tokenizer = False
+            return None
+        try:
+            prompt_tokenizer = AutoTokenizer.from_pretrained(
+                "meta-llama/Meta-Llama-3-8B-Instruct"
+            )
+        except Exception as exc:
+            print(f"Prompt tokenizer unavailable; truncation cannot be checked exactly: {exc}")
+            prompt_tokenizer = False
+            return None
+    return len(prompt_tokenizer.encode(text, add_special_tokens=True))
+
+
+prompt_tokenizer = None
+
 # Verify if the FAISS files already exist
-if os.path.exists(faiss_index_folder):
+index_exists = all(
+    os.path.isfile(os.path.join(faiss_index_folder, filename))
+    for filename in ("index.faiss", "index.pkl")
+)
+force_index_rebuild = os.environ.get("REBUILD_FAISS_INDEX", "0") == "1"
+if index_exists and not force_index_rebuild:
     # Load the FAISS index folder (allow_dangerous_deserialization=True just because we create the files and so we can trust them)
     vector_store = FAISS.load_local(faiss_index_folder, embedding_model, allow_dangerous_deserialization=True)
+    timing_metrics["embedding"]["index_action"] = "loaded_existing_index"
     print("FAISS index successfully loaded")
 else:
-    batch_size = 200  # Adjust as needed
+    batch_size = EMBEDDING_BATCH_SIZE
     documents = []
     all_files = [f for f in os.listdir(csv_folder) if f.endswith(".csv")]
 
     # Initialize vector_store before the loop
     vector_store = None
 
+    # Synchronization makes the wall clock include queued CUDA work.
+    gpu_samples = []
+    gpu_sampler_stop = threading.Event()
+    gpu_sampler = None
+    if cuda_available:
+        torch.cuda.synchronize()
+        gpu_sampler = threading.Thread(
+            target=sample_gpu,
+            args=(gpu_sampler_stop, gpu_samples),
+            daemon=True,
+        )
+        gpu_sampler.start()
+    embedding_started = time.perf_counter()
+
     for file in all_files:
         file_path = os.path.join(csv_folder, file)
         loader = CSVLoader(file_path=file_path)
         docs = loader.load()
+        if cuda_available:
+            torch.cuda.synchronize()
+        file_embedding_started = time.perf_counter()
         for i in range(0, len(docs), batch_size):
             batch_docs = docs[i:i+batch_size]
+            timing_metrics["embedding"]["documents_embedded"] += len(batch_docs)
             if vector_store is None: # Only create for the first batch
                 vector_store = FAISS.from_documents(batch_docs, embedding=embedding_model)
             else:
                 vector_store.add_documents(batch_docs)
+        if cuda_available:
+            torch.cuda.synchronize()
+        timing_metrics["embedding"]["files"].append({
+            "file": file,
+            "document_count": len(docs),
+            "embedding_wall_seconds": time.perf_counter() - file_embedding_started,
+        })
+
+    if cuda_available:
+        torch.cuda.synchronize()
+        gpu_sampler_stop.set()
+        gpu_sampler.join(timeout=3)
+    embedding_wall_seconds = time.perf_counter() - embedding_started
+    timing_metrics["embedding"].update({
+        "index_action": "created_index",
+        "wall_seconds": sum(
+            item["embedding_wall_seconds"]
+            for item in timing_metrics["embedding"]["files"]
+        ),
+        "index_build_wall_seconds": embedding_wall_seconds,
+        **summarize_gpu_samples(gpu_samples, embedding_started),
+    })
 
     # Save after full processing
     vector_store.save_local(faiss_index_folder)
     print("FAISS vector store created and saved successfully!")
+
+save_timing_metrics()
+
+# Initialize outside per-question timing so tokenizer setup is not charged to
+# the first question. A failure is recorded later as an unavailable check.
+get_token_count("")
 
 
 """ Retrieve and Generate part """
@@ -167,7 +367,7 @@ def definePrompt():
 # Step 1: Define Explanation Class: composed by file and row
 
 parser = JsonOutputParser(pydantic_schema=AnswerItem)    
-schema_path = "schemaTOY.txt"
+schema_path = os.path.join(repo_folder, "schemaTOY.txt")
 # Load the schema from the file
 with open(schema_path, "r") as f:
     schema = f.read().strip()
@@ -175,12 +375,24 @@ with open(schema_path, "r") as f:
 print(f"Schema loaded from {schema_path}:\n{schema}\n")
 # Define application steps
 # Retrieved the most k relevant docs in the vector store, embedding also the question and computing the similarity function
-'''
+
 def retrieve(state: State):
     print(f"Retrieving for question: {state['question']}")
-    retrieved_docs = vector_store.similarity_search(state["question"], k = 10)
-    return {"context": retrieved_docs}
-'''
+    documents_with_scores = vector_store.similarity_search_with_score(
+        state["question"], k=timing_metrics["retrieval"]["k"]
+    )
+    return {
+        "context": [document for document, _ in documents_with_scores],
+        "retrieved_documents": [
+            {
+                "rank": rank,
+                "score": float(score),
+                "metadata": document.metadata,
+            }
+            for rank, (document, score) in enumerate(documents_with_scores, start=1)
+        ],
+    }
+r''' Disabled legacy ground-truth retrieval implementation.
 def get_rows_from_ground_truth(ground_f2: str, csv_folder: str) -> List[Document]:
     """
     Estrae le righe specificate in f2, gestendo Witness Sets multipli e duplicati.
@@ -225,7 +437,7 @@ def get_rows_from_ground_truth(ground_f2: str, csv_folder: str) -> List[Document
                 print(f"⚠️ Errore nel parsing di '{entry}': {e}")
 
     return documents
-
+'''
 def tryParseOutput(output_text: str):
     try:
         # Esegui il modello LLM con la catena
@@ -275,8 +487,45 @@ def generate(state: State):
     docs_content = "\n\n".join(str(doc.metadata) + "\n" + doc.page_content for doc in state["context"])
     raw_prompt = definePrompt()
     final_prompt = raw_prompt.replace("QUESTION_HERE", state["question"]).replace("CONTEXT_HERE", docs_content).replace("SCHEMA_HERE", schema)
-    response = llm.invoke(final_prompt)
-    output_text = response.content.strip()
+    original_prompt_tokens = get_token_count(final_prompt)
+    prompt_exceeds_context = (
+        original_prompt_tokens > LLM_CONTEXT_WINDOW
+        if original_prompt_tokens is not None else None
+    )
+
+    gpu_samples = []
+    gpu_sampler_stop = threading.Event()
+    gpu_sampler = None
+    generation_started = time.perf_counter()
+    if cuda_available:
+        gpu_sampler = threading.Thread(
+            target=sample_gpu,
+            args=(gpu_sampler_stop, gpu_samples),
+            daemon=True,
+        )
+        gpu_sampler.start()
+
+    output_parts = []
+    first_token_seconds = None
+    response_metadata = {}
+    usage_metadata = {}
+    try:
+        for chunk in llm.stream(final_prompt):
+            if chunk.content:
+                if first_token_seconds is None:
+                    first_token_seconds = time.perf_counter() - generation_started
+                output_parts.append(str(chunk.content))
+            if getattr(chunk, "response_metadata", None):
+                response_metadata.update(chunk.response_metadata)
+            if getattr(chunk, "usage_metadata", None):
+                usage_metadata.update(chunk.usage_metadata)
+    finally:
+        gpu_sampler_stop.set()
+        if gpu_sampler is not None:
+            gpu_sampler.join(timeout=3)
+
+    generation_seconds = time.perf_counter() - generation_started
+    output_text = "".join(output_parts).strip()
     print(f"\n[DEBUG] LLM RESPONSE:\n{output_text}\n")
     
     
@@ -287,7 +536,35 @@ def generate(state: State):
         print(f"Error parsing output: {e}")
         parsed_output = None
     return {
-        "answer": parsed_output if parsed_output else []
+        "answer": parsed_output if parsed_output else [],
+        "metrics": {
+            "parsing_succeeded": parsed_output is not None,
+            "time_to_first_token_seconds": first_token_seconds,
+            "llm_stream_seconds": generation_seconds,
+            "original_prompt_tokens": original_prompt_tokens,
+            "ollama_prompt_tokens_processed": response_metadata.get(
+                "prompt_eval_count", usage_metadata.get("input_tokens")
+            ),
+            "output_tokens": response_metadata.get(
+                "eval_count", usage_metadata.get("output_tokens")
+            ),
+            "prompt_exceeds_configured_context": prompt_exceeds_context,
+            "prompt_truncation_detected": prompt_exceeds_context,
+            "prompt_truncation_check": (
+                "matching_model_tokenizer_count_vs_configured_context"
+                if original_prompt_tokens is not None
+                else "unavailable_tokenizer"
+            ),
+            "model_load_seconds": (
+                response_metadata["load_duration"] / 1_000_000_000
+                if response_metadata.get("load_duration") is not None else None
+            ),
+            "ollama_total_seconds": (
+                response_metadata["total_duration"] / 1_000_000_000
+                if response_metadata.get("total_duration") is not None else None
+            ),
+            **summarize_gpu_samples(gpu_samples, generation_started),
+        },
         }
     '''
     if parsed_output is None:
@@ -323,7 +600,7 @@ def generate(state: State):
 '''
 
 # Leggi le domande dal file JSON
-with open("questions.json", "r") as f:
+with open(os.path.join(repo_folder, "questions.json"), "r") as f:
     data = json.load(f)
     questions = list(data.keys())
 
@@ -333,15 +610,19 @@ with open("questions.json", "r") as f:
 #graph = graph_builder.compile()
 
 all_results = []
-with open("ground_truth2.json", "r", encoding="utf-8") as f:
-    ground_truth = json.load(f)   
 for i, question in enumerate(questions):
     print(f"Processing question n. {i+1}")
-    gt = ground_truth[i]
-    gt_source_info = gt["why"]
-    
-    # Step 2: Costruisci contesto perfetto a partire dalle righe vere
-    context_docs = get_rows_from_ground_truth(gt_source_info, csv_folder=csv_folder)
+
+    # Retrieve actual nearest neighbours, including query embedding and FAISS search.
+    question_started = time.perf_counter()
+    if cuda_available:
+        torch.cuda.synchronize()
+    retrieval_started = time.perf_counter()
+    retrieval_result = retrieve({"question": question})
+    if cuda_available:
+        torch.cuda.synchronize()
+    retrieval_seconds = time.perf_counter() - retrieval_started
+    context_docs = retrieval_result["context"]
     
     print(f" Processing question n. {i+1}")
     #full_result = graph.invoke({"question": question})
@@ -351,14 +632,60 @@ for i, question in enumerate(questions):
         "context": context_docs
     }
     
+    generation_started = time.perf_counter()
     full_result = generate(state)
+    generation_seconds = time.perf_counter() - generation_started
+    total_seconds = time.perf_counter() - question_started
+    generation_metrics = full_result["metrics"]
  
     result = {
         "question": question,
+        "models": {
+            "llm": LLM_MODEL_NAME,
+            "embedding": EMBEDDING_MODEL_NAME,
+            "embedding_batch_size": EMBEDDING_BATCH_SIZE,
+        },
         "answer": full_result.get("answer", []),
+        "retrieved_document_count": len(context_docs),
+        "retrieved_documents": retrieval_result["retrieved_documents"],
+        "parsing_succeeded": generation_metrics["parsing_succeeded"],
+        "token_counts": {
+            "original_prompt": generation_metrics["original_prompt_tokens"],
+            "ollama_prompt_processed": generation_metrics["ollama_prompt_tokens_processed"],
+            "output": generation_metrics["output_tokens"],
+        },
+        "prompt_truncation": {
+            "detected": generation_metrics["prompt_truncation_detected"],
+            "exceeds_configured_context": generation_metrics["prompt_exceeds_configured_context"],
+            "check": generation_metrics["prompt_truncation_check"],
+        },
+        "generation_request": {
+            "sequence_state": "cold_first_request" if i == 0 else "warm_subsequent_request",
+            **generation_metrics,
+        },
+        "timing_seconds": {
+            "retrieval": retrieval_seconds,
+            "generation": generation_seconds,
+            "total": total_seconds,
+        },
     }
     all_results.append(result)
-example_output_txt = "full_context/example_readable_output.txt"
+    timing_metrics["questions"].append({
+        "question_number": i + 1,
+        "question": question,
+        "retrieved_document_count": len(context_docs),
+        "retrieved_documents": retrieval_result["retrieved_documents"],
+        "parsing_succeeded": generation_metrics["parsing_succeeded"],
+        "retrieval_seconds": retrieval_seconds,
+        "generation_seconds": generation_seconds,
+        "total_seconds": total_seconds,
+        "generation_request": {
+            "sequence_state": "cold_first_request" if i == 0 else "warm_subsequent_request",
+            **generation_metrics,
+        },
+    })
+    save_timing_metrics()
+example_output_txt = os.path.join(repo_folder, "full_context", "example_readable_output.txt")
 with open(example_output_txt, "w", encoding="utf-8") as f:
     for idx, result in enumerate(all_results, 1):
         f.write(f"--- Question {idx} ---\n")
@@ -380,3 +707,7 @@ with open(output_filename, "w") as output_file:
     #    output_file.write(f"Answer:{result['answer']} \n")
     #    output_file.write("\n\n")			
 print(f"Results saved to {output_filename}")
+timing_metrics["finished_at_utc"] = datetime.now(timezone.utc).isoformat()
+timing_metrics["question_count"] = len(timing_metrics["questions"])
+save_timing_metrics()
+print(f"Timing metrics saved to {timing_filename}")
