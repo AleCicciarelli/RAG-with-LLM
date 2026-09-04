@@ -3,22 +3,25 @@ set -euo pipefail
 
 # Submit after adapting the resource expression to your cluster, for example:
 #   oarsub -l 'host=1/gpu=1,walltime=04:00:00' -S ./tpch/run_why_oar.sh
-
+OLLAMA_BIN=/home/daisy/cicciara/ollama/bin/ollama
+VENV_PATH=/home/daisy/cicciara/venvs/rag-why
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 LOG_DIR="${REPO_DIR}/tpch/oar_logs"
 JOB_LABEL="${OAR_JOB_ID:-manual}"
-PYTHON_BIN="${PYTHON_BIN:-python3}"
+PYTHON_BIN="${PYTHON_BIN:-python3.11}"
 mkdir -p "${LOG_DIR}"
 
 if [[ -n "${VENV_PATH:-}" ]]; then
     # Set VENV_PATH when the required packages are installed in a virtualenv.
     source "${VENV_PATH}/bin/activate"
-    PYTHON_BIN="python3"
+    PYTHON_BIN="python3.11"
 fi
 
 cd "${REPO_DIR}"
 
-ollama serve >"${LOG_DIR}/ollama_${JOB_LABEL}.log" 2>&1 &
+# Large models can take several minutes to allocate and load on a cold start.
+export OLLAMA_LOAD_TIMEOUT="${OLLAMA_LOAD_TIMEOUT:-10m}"
+"${OLLAMA_BIN}" serve >"${LOG_DIR}/ollama_${JOB_LABEL}.log" 2>&1 &
 OLLAMA_PID=$!
 cleanup() {
     kill "${OLLAMA_PID}" 2>/dev/null || true
@@ -45,10 +48,12 @@ fi
 # A rebuild is required to measure CSV embedding. Set REBUILD_FAISS_INDEX=0 to
 # reuse an existing index; embedding duration will then intentionally be null.
 REBUILD_FAISS_INDEX="${REBUILD_FAISS_INDEX:-1}" \
+LLM_MODEL_NAME="${LLM_MODEL_NAME:-llama3:70b}" \
+REQUIRE_CUDA="${REQUIRE_CUDA:-1}" \
     "${PYTHON_BIN}" "${REPO_DIR}/tpch/Why.py" \
     >"${LOG_DIR}/why_${JOB_LABEL}.log" 2>&1
 
 echo "Pipeline complete."
-echo "Results: ${REPO_DIR}/tpch/test_pipeline.json"
-echo "Timings: ${REPO_DIR}/tpch/timing_metrics.json"
-echo "Run log: ${LOG_DIR}/why_${JOB_LABEL}.log"
+echo "Results: ${REPO_DIR}/tpch/test_pipeline70b.json"
+echo "Timings: ${REPO_DIR}/tpch/timing_metrics70b.json"
+echo "Run log: ${LOG_DIR}/why_${JOB_LABEL}_70b.log"

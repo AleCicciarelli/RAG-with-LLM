@@ -42,16 +42,38 @@ os.environ["LANGSMITH_API_KEY"] = "lsv2_pt_87133982193d4e3b8110cb9e3253eb17_7831
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
 #llm = ChatOllama(model="llama3.1-8b-ft", temperature=0)
-LLM_MODEL_NAME = "llama3:70b"
+LLM_MODEL_NAME = os.environ.get("LLM_MODEL_NAME", "llama3:70b")
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
 LLM_CONTEXT_WINDOW = 8192
 EMBEDDING_BATCH_SIZE = 200
+OLLAMA_MAX_ATTEMPTS = max(1, int(os.environ.get("OLLAMA_MAX_ATTEMPTS", "3")))
+OLLAMA_RETRY_DELAY_SECONDS = max(
+    0.0, float(os.environ.get("OLLAMA_RETRY_DELAY_SECONDS", "10"))
+)
 llm = ChatOllama(model=LLM_MODEL_NAME, temperature=0, num_ctx=LLM_CONTEXT_WINDOW)
 
 # Embedding model: Hugging Face
 #embedding_model = HuggingFaceEmbeddings(model_name="/home/ciccia/.cache/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2/snapshots/12e86a3c702fc3c50205a8db88f0ec7c0b6b94a0")
+REQUIRE_CUDA = os.environ.get("REQUIRE_CUDA", "1").lower() not in {"0", "false", "no"}
 cuda_available = bool(torch is not None and torch.cuda.is_available())
+if REQUIRE_CUDA and not cuda_available:
+    torch_version = getattr(torch, "__version__", "not installed")
+    torch_cuda_version = getattr(getattr(torch, "version", None), "cuda", None)
+    visible_devices = os.environ.get("CUDA_VISIBLE_DEVICES", "not set")
+    raise RuntimeError(
+        "CUDA is required for embeddings, but PyTorch cannot access a GPU. "
+        f"torch={torch_version}, torch CUDA build={torch_cuda_version}, "
+        f"CUDA_VISIBLE_DEVICES={visible_devices}. Install a PyTorch wheel compatible "
+        "with the compute node's NVIDIA driver (the reported driver supports CUDA "
+        "12.8, so use the cu128 wheel), and run inside a GPU allocation. Set "
+        "REQUIRE_CUDA=0 only when an intentional CPU fallback is desired."
+    )
 embedding_device = "cuda" if cuda_available else "cpu"
+if cuda_available:
+    print(
+        f"PyTorch GPU enabled: {torch.cuda.get_device_name(0)} "
+        f"(torch={torch.__version__}, CUDA={torch.version.cuda})"
+    )
 embedding_model = HuggingFaceEmbeddings(
     model_name=EMBEDDING_MODEL_NAME,
     model_kwargs={"device": embedding_device},
@@ -509,16 +531,40 @@ def generate(state: State):
     first_token_seconds = None
     response_metadata = {}
     usage_metadata = {}
+    generation_error = None
+    generation_attempts = 0
     try:
-        for chunk in llm.stream(final_prompt):
-            if chunk.content:
-                if first_token_seconds is None:
-                    first_token_seconds = time.perf_counter() - generation_started
-                output_parts.append(str(chunk.content))
-            if getattr(chunk, "response_metadata", None):
-                response_metadata.update(chunk.response_metadata)
-            if getattr(chunk, "usage_metadata", None):
-                usage_metadata.update(chunk.usage_metadata)
+        for attempt in range(1, OLLAMA_MAX_ATTEMPTS + 1):
+            generation_attempts = attempt
+            # Discard a partial response before retrying so outputs are never duplicated.
+            output_parts = []
+            response_metadata = {}
+            usage_metadata = {}
+            try:
+                for chunk in llm.stream(final_prompt):
+                    if chunk.content:
+                        if first_token_seconds is None:
+                            first_token_seconds = time.perf_counter() - generation_started
+                        output_parts.append(str(chunk.content))
+                    if getattr(chunk, "response_metadata", None):
+                        response_metadata.update(chunk.response_metadata)
+                    if getattr(chunk, "usage_metadata", None):
+                        usage_metadata.update(chunk.usage_metadata)
+                generation_error = None
+                break
+            except (ConnectionError, TimeoutError, ValueError) as exc:
+                generation_error = str(exc)
+                if attempt == OLLAMA_MAX_ATTEMPTS:
+                    print(
+                        f"Ollama generation failed after {attempt} attempts: {exc}"
+                    )
+                    break
+                delay = OLLAMA_RETRY_DELAY_SECONDS * attempt
+                print(
+                    f"Ollama generation attempt {attempt}/{OLLAMA_MAX_ATTEMPTS} "
+                    f"failed: {exc}. Retrying in {delay:.0f}s..."
+                )
+                time.sleep(delay)
     finally:
         gpu_sampler_stop.set()
         if gpu_sampler is not None:
@@ -530,15 +576,20 @@ def generate(state: State):
     
     
     # Prova a parsare l'output JSON
-    try:
-        parsed_output = parser.parse(output_text)
-    except Exception as e:
-        print(f"Error parsing output: {e}")
+    if generation_error is not None:
         parsed_output = None
+    else:
+        try:
+            parsed_output = parser.parse(output_text)
+        except Exception as e:
+            print(f"Error parsing output: {e}")
+            parsed_output = None
     return {
         "answer": parsed_output if parsed_output else [],
         "metrics": {
             "parsing_succeeded": parsed_output is not None,
+            "generation_attempts": generation_attempts,
+            "generation_error": generation_error,
             "time_to_first_token_seconds": first_token_seconds,
             "llm_stream_seconds": generation_seconds,
             "original_prompt_tokens": original_prompt_tokens,

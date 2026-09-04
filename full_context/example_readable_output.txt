@@ -8,7 +8,7 @@ Answer:
 Which is the name of the department where the teacher Laura Bianchi teaches?
 
 Answer:
-{'answer': ['Computer Science'], 'why': ['{{departments_0,teachers_1}}']}
+{'answer': [], 'why': []}
 
 --- Question 3 ---
 How many credits has the course Software Engineering?
@@ -32,7 +32,7 @@ Answer:
 In which classroom (room number) is the Database Systems exam?
 
 Answer:
-{'answer': ['2'], 'why': ['{{exams_1}}']}
+{'answer': [], 'why': []}
 
 --- Question 7 ---
 In which research area is the 'User Experience Design in Web Apps' thesis?
@@ -44,61 +44,61 @@ Answer:
 Which instructor (name, surname) teaches Machine Learning course?
 
 Answer:
-{'answer': ['Carlo Rossi'], 'why': ['{{courses_0,teachers_0}}']}
+{'answer': [], 'why': []}
 
 --- Question 9 ---
 Which is the research area of the teacher Carlo Rossi?
 
 Answer:
-{'answer': ['Artificial Intelligence'], 'why': ['{{teachers_0,teacherResearchAreas_0}}']}
+{'answer': [], 'why': []}
 
 --- Question 10 ---
 How many research project follows the teacher Giulia Colombo?
 
 Answer:
-{'answer': ['1'], 'why': ['{{teachers_5}}']}
+{'answer': ['5'], 'why': ['{{teacherResearchAreas_5}}']}
 
 --- Question 11 ---
 When is the Machine Learning exam (date,time)?
 
 Answer:
-{'answer': ['2023-01-10,09:00'], 'why': ['{{courses_0,exams_0}}']}
+{'answer': ['2023-03-20', '10:00'], 'why': ['{{exams_2}}']}
 
 --- Question 12 ---
 In which courses (name of courses) Giulia Rossi is enrolled?
 
 Answer:
-{'answer': ['Machine Learning', 'Advanced Algorithms'], 'why': ['{{courses_0,enrollments_0,students_0}}', '{{courses_3,enrollments_3,students_0}}']}
+{'answer': [], 'why': []}
 
 --- Question 13 ---
 What is the grade of Giulia Rossi for the Machine Learning course?
 
 Answer:
-{'answer': ['28'], 'why': ['{{courses_0,students_0,grades_0}}']}
+{'answer': [], 'why': []}
 
 --- Question 14 ---
 Who is the teacher (name,surname) following Sophie Durand in her thesis?
 
 Answer:
-{'answer': ['Luca Esposito'], 'why': ['{{thesis_2},{teachers_8}}']}
+{'answer': [], 'why': []}
 
 --- Question 15 ---
 What are all the courses (name of courses) offered by the Computer Science department?
 
 Answer:
-{'answer': ['Machine Learning', 'Database Systems', 'Advanced Algorithms', 'Software Engineering', 'Data Mining', 'Artificial Intelligence', 'Cybersecurity', 'Human-Computer Interaction'], 'why': ['{{courses_0}}', '{{courses_1}}', '{{courses_3}}', '{{courses_5}}', '{{courses_6}}', '{{courses_7}}', '{{courses_8}}', '{{courses_9}}']}
+{'answer': ['Cybersecurity', 'Human-Computer Interaction', 'Artificial Intelligence', 'Machine Learning', 'Data Mining', 'Software Engineering'], 'why': ['{{courses_8}}', '{{courses_9}}', '{{courses_7}}', '{{courses_0}}', '{{courses_6}}', '{{courses_5}}']}
 
 --- Question 16 ---
 What is the name of the department in which Antonio Gallo teaches?
 
 Answer:
-{'answer': ['Electronics'], 'why': ['{{departments_1},{teachers_4}}']}
+{'answer': [], 'why': []}
 
 --- Question 17 ---
 What is the grade of Elena Gonzales for the Human-Computer Interaction exam?
 
 Answer:
-{'answer': [], 'why': []}
+{'answer': ['26'], 'why': ['{{grades_6,students_4,courses_9}}']}
 
 --- Question 18 ---
 Which faculty does the Electronics department belong to?
@@ -110,19 +110,19 @@ Answer:
 What is the name of the building in which will be the Embedded Systems exam?
 
 Answer:
-{'answer': ['Science'], 'why': ['{{classrooms_2},{exams_2}}']}
+{'answer': ['Electronics'], 'why': ['{{teacherResearchAreas_2,classrooms_5}}']}
 
 --- Question 20 ---
 What is the title of the thesis followed by Alessandro Moretti?
 
 Answer:
-{'answer': ['User Experience Design in Web Apps'], 'why': ['{{teachers_7},{thesis_4}}']}
+{'answer': [], 'why': []}
 
 --- Question 21 ---
 Which students (name,surname) have an enrollment date before 2022?
 
 Answer:
-{'answer': ['Sophie Durand', 'Lucas Schmidt'], 'why': ['{{students_2}}', '{{students_3}}']}
+{'answer': ['Student 4', 'Student 3'], 'why': ['{{enrollments_8,enrollments_4}}', '{{enrollments_7,enrollments_5,enrollments_2}}']}
 
 --- Question 22 ---
 What is the faculty of the Chemistry department?
@@ -134,25 +134,25 @@ Answer:
 Which are the students (name,surname) enrolled in the Database Systems course?
 
 Answer:
-{'answer': ['Marco Bianchi'], 'why': ['{{courses_1,enrollments_1,students_1}}']}
+{'answer': ['Giulia Rossi', 'Marco Bianchi'], 'why': ['{{courses_1,enrollments_3,students_0}}', '{{courses_1,enrollments_9,students_1}}']}
 
 --- Question 24 ---
 What are the research areas of Maria Ferrari?
 
 Answer:
-{'answer': ['Human-Computer Interaction'], 'why': ['{{teachers_9,teacherResearchAreas_9}}']}
+{'answer': ['Human-Computer Interaction'], 'why': ['{{teacherResearchAreas_9}}']}
 
 --- Question 25 ---
 How many research projects are led by Laura Bianchi?
 
 Answer:
-{'answer': ['1'], 'why': ['{{teachers_1}}']}
+{'answer': ['6'], 'why': ['{{teacherResearchAreas_1}}']}
 
 --- Question 26 ---
 Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?
 
 Answer:
-{'answer': ['Sophie Durand'], 'why': ['{{grades_7,courses_9,students_2}}']}
+{'answer': [], 'why': []}
 
 --- Question 27 ---
 Which are the classrooms (room number) in the Engineering building?
@@ -164,31 +164,31 @@ Answer:
 What is the day and time of the Software Engineering exam?
 
 Answer:
-{'answer': ['2023-05-30, 13:00'], 'why': ['{{courses_5},{exams_4}}']}
+{'answer': ['2023-03-20', '10:00'], 'why': ['{{exams_2}}']}
 
 --- Question 29 ---
 Which courses (name of courses) have 8 credits?
 
 Answer:
-{'answer': ['Advanced Algorithms', 'Artificial Intelligence'], 'why': ['{{courses_3}}', '{{courses_7}}']}
+{'answer': ['Artificial Intelligence', 'Advanced Algorithms'], 'why': ['{{courses_7}}', '{{courses_3}}']}
 
 --- Question 30 ---
 What is the title of the thesis of Sophie Durand?
 
 Answer:
-{'answer': ['IoT Security Challenges'], 'why': ['{{students_2},{thesis_2}}']}
+{'answer': [], 'why': []}
 
 --- Question 31 ---
 Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?
 
 Answer:
-{'answer': ['Giulia Rossi', 'Marco Bianchi'], 'why': ['{{courses_0,enrollments_0,students_0},{courses_3,enrollments_3,students_0}}', '{{courses_0,enrollments_9,students_1}}']}
+{'answer': ['Lucas Schmidt'], 'why': ['{{courses_0,enrollments_<not_present>,students_3},{courses_3,enrollments_<not_present>,students_3}}']}
 
 --- Question 32 ---
 Which courses (name of the courses) have 6 credits?
 
 Answer:
-{'answer': ['Machine Learning', 'Database Systems', 'Embedded Systems', 'Digital Signal Processing', 'Software Engineering', 'Data Mining', 'Cybersecurity', 'Human-Computer Interaction'], 'why': ['{{courses_0}}', '{{courses_1}}', '{{courses_2}}', '{{courses_4}}', '{{courses_5}}', '{{courses_6}}', '{{courses_8}}', '{{courses_9}}']}
+{'answer': ['Cybersecurity', 'Embedded Systems', 'Human-Computer Interaction', 'Machine Learning', 'Data Mining', 'Database Systems', 'Software Engineering'], 'why': ['{{courses_8}}', '{{courses_2}}', '{{courses_9}}', '{{courses_0}}', '{{courses_6}}', '{{courses_1}}', '{{courses_5}}']}
 
 --- Question 33 ---
 Which students (name, surname) enrolled in 2020?
@@ -206,13 +206,13 @@ Answer:
 Which departments (departments name) are in the Science faculty?
 
 Answer:
-{'answer': ['Mathematics', 'Physics', 'Biology', 'Chemistry'], 'why': ['{{departments_2}}', '{{departments_3}}', '{{departments_4}}', '{{departments_5}}']}
+{'answer': ['Biology', 'Physics', 'Mathematics', 'Chemistry'], 'why': ['{{departments_4}}', '{{departments_3}}', '{{departments_2}}', '{{departments_5}}']}
 
 --- Question 36 ---
 Which thesis (title) have the status completed?
 
 Answer:
-{'answer': ['Deep Learning for Image Recognition', 'IoT Security Challenges', 'Autonomous Systems'], 'why': ['{{thesis_0}}', '{{thesis_2}}', '{{thesis_3}}']}
+{'answer': ['Deep Learning for Image Recognition', 'Autonomous Systems'], 'why': ['{{thesis_0}}', '{{thesis_3}}']}
 
 --- Question 37 ---
 What are the names of the courses taught by Laura Bianchi?
@@ -230,13 +230,13 @@ Answer:
 Which courses (name of courses) are taught in the Spring semester?
 
 Answer:
-{'answer': ['Database Systems', 'Advanced Algorithms', 'Software Engineering', 'Artificial Intelligence', 'Human-Computer Interaction'], 'why': ['{{courses_1}}', '{{courses_3}}', '{{courses_5}}', '{{courses_7}}', '{{courses_9}}']}
+{'answer': ['Human-Computer Interaction', 'Database Systems', 'Software Engineering', 'Advanced Algorithms', 'Artificial Intelligence'], 'why': ['{{courses_9}}', '{{courses_1}}', '{{courses_5}}', '{{courses_3}}', '{{courses_7}}']}
 
 --- Question 40 ---
 Which teachers (name, surname) are part of the Electronics department?
 
 Answer:
-{'answer': ['Marco Verdi', 'Antonio Gallo'], 'why': ['{{teachers_2}}', '{{teachers_4}}']}
+{'answer': [], 'why': []}
 
 --- Question 41 ---
 Which thesis (title) have the status in progress?
@@ -248,7 +248,7 @@ Answer:
 Which teachers (name, surname) are part of the Computer Science department?
 
 Answer:
-{'answer': ['Carlo Rossi', 'Laura Bianchi', 'Elisa Neri', 'Giulia Colombo', 'Francesco Conti', 'Alessandro Moretti', 'Luca Esposito', 'Maria Ferrari'], 'why': ['{{departments_0,teachers_0}}', '{{departments_0,teachers_1}}', '{{departments_0,teachers_3}}', '{{departments_0,teachers_5}}', '{{departments_0,teachers_6}}', '{{departments_0,teachers_7}}', '{{departments_0,teachers_8}}', '{{departments_0,teachers_9}}']}
+{'answer': ['Carlo Rossi', 'Elisa Neri', 'Giulia Colombo', 'Francesco Conti', 'Laura Bianchi', 'Maria Ferrari', 'Luca Esposito'], 'why': ['{{teachers_0}}', '{{teachers_3}}', '{{teachers_5}}', '{{teachers_6}}', '{{teachers_1}}', '{{teachers_9}}', '{{teachers_8}}']}
 
 --- Question 43 ---
 Which Students (name, surname) are Italian?
@@ -260,31 +260,31 @@ Answer:
 Which are the Male students (name, surname) enrolled in the university?
 
 Answer:
-{'answer': ['Marco Bianchi', 'Lucas Schmidt'], 'why': ['{{students_1}}', '{{students_3}}']}
+{'answer': ['Lucas Schmidt', 'Marco Bianchi'], 'why': ['{{students_3}}', '{{students_1}}']}
 
 --- Question 45 ---
 Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?
 
 Answer:
-{'answer': ['Sophie Durand', 'Elena Gonzalez'], 'why': ['{{enrollments_7,students_2}}', '{{enrollments_6,students_4}}']}
+{'answer': [], 'why': []}
 
 --- Question 46 ---
 Which are all the grades obtained by the student Sophie Durand?
 
 Answer:
-{'answer': ['30', '29', '28'], 'why': ['{{grades_2}}', '{{grades_5}}', '{{grades_7}}']}
+{'answer': [29, 28, 30], 'why': ['{{grades_5}}', '{{grades_7}}', '{{grades_2}}']}
 
 --- Question 47 ---
 Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing
 
 Answer:
-{'answer': ['Elena Gonzalez', 'Lucas Schmidt'], 'why': ['{{courses_9,enrollments_6,students_4}}', '{{courses_4,enrollments_4,students_3}}']}
+{'answer': ['Lucas Schmidt'], 'why': ['{{courses_9,students_3,thesis_4}}']}
 
 --- Question 48 ---
 which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?
 
 Answer:
-{'answer': ['Database Systems', 'Software Engineering'], 'why': ['{{exams_1,courses_1}}', '{{exams_4,courses_5}}']}
+{'answer': ['Embedded Systems', 'Cybersecurity'], 'why': ['{{exams_4,courses_2}}', '{{exams_1,courses_8}}']}
 
 --- Question 49 ---
 Which are the classrooms (room number) in Science or Electronics building?

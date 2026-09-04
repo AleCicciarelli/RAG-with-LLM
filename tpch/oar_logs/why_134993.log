@@ -1,0 +1,4082 @@
+/home/daisy/cicciara/venvs/rag-why/lib/python3.11/site-packages/langgraph/cache/base/__init__.py:8: LangChainPendingDeprecationWarning: The default value of `allowed_objects` will change in a future version. Pass an explicit value (e.g., allowed_objects='messages' or allowed_objects='core') to suppress this warning.
+  from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+/home/daisy/cicciara/test/RAG-with-LLM/tpch/Why.py:53: LangChainDeprecationWarning: The class `ChatOllama` was deprecated in LangChain 0.3.1 and will be removed in 1.0.0. An updated version of the class exists in the :class:`~langchain-ollama package and should be used instead. To use it run `pip install -U :class:`~langchain-ollama` and import as `from :class:`~langchain_ollama import ChatOllama``.
+  llm = ChatOllama(model=LLM_MODEL_NAME, temperature=0, num_ctx=LLM_CONTEXT_WINDOW)
+PyTorch GPU enabled: NVIDIA H100 NVL (torch=2.11.0+cu128, CUDA=12.8)
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   1%|          | 1/199 [00:00<00:50,  3.95it/s]Loading weights:  21%|██        | 41/199 [00:00<00:01, 145.96it/s]Loading weights:  76%|███████▌  | 151/199 [00:00<00:00, 463.95it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 407.94it/s]
+FAISS vector store created and saved successfully!
+Schema loaded from /home/daisy/cicciara/test/RAG-with-LLM/schemaTOY.txt:
+1. TEACHERRESEARCHAREAS(
+    TEACHER_ID INTEGER PRIMARY KEY,
+    RESEARCH_AREA VARCHAR,
+    NUMBER_OF_PROJECT INTEGER
+)
+
+2. CLASSROOMS(
+    CLASSROOM_ID INTEGER PRIMARY KEY,
+    BUILDING VARCHAR,
+    ROOM_NUMBER INTEGER,
+    CAPACITY INTEGER
+)
+
+3. DEPARTMENTS(
+    DEPARTMENT_ID INTEGER PRIMARY KEY,
+    DEPARTMENT_NAME VARCHAR,
+    FACULTY VARCHAR
+)
+
+4. EXAMS(
+    EXAM_ID INTEGER PRIMARY KEY,
+    COURSE_ID INTEGER REFERENCES COURSES(COURSE_ID),
+    DATE VARCHAR,
+    TIME VARCHAR,
+    CLASSROOM_ID INTEGER REFERENCES CLASSROOMS(CLASSROOM_ID)
+)
+
+5. THESIS(
+    THESIS_ID INTEGER PRIMARY KEY,
+    TITLE VARCHAR,
+    STUDENT_ID INTEGER REFERENCES STUDENTS(STUDENT_ID),
+    TEACHER_ID INTEGER REFERENCES TEACHERS(TEACHER_ID),
+    ACADEMIC_YEAR VARCHAR,
+    STATUS VARCHAR,
+    RESEARCH_AREA VARCHAR
+)
+
+6. ENROLLMENTS(
+    ENROLLMENT_ID INTEGER PRIMARY KEY,
+    STUDENT_ID INTEGER REFERENCES STUDENTS(STUDENT_ID),
+    COURSE_ID INTEGER REFERENCES COURSES(COURSE_ID),
+    ENROLLMENT_DATE DATE
+)
+
+7. STUDENTS(
+    STUDENT_ID INTEGER PRIMARY KEY,
+    NAME VARCHAR,
+    SURNAME VARCHAR,
+    BIRTH_DATE DATE,
+    NATIONALITY VARCHAR,
+    GENDER VARCHAR,
+    ENROLLMENT_DATE DATE,
+    EMAIL VARCHAR
+)
+
+8. GRADES(
+    GRADE_ID INTEGER PRIMARY KEY,
+    STUDENT_ID INTEGER  REFERENCES STUDENTS(STUDENT_ID),
+    COURSE_ID INTEGER REFERENCES COURSES(COURSE_ID),
+    GRADE INTEGER
+)
+
+9. TEACHERS(
+    TEACHER_ID INTEGER PRIMARY KEY,
+    NAME VARCHAR,
+    SURNAME VARCHAR,
+    DEPARTMENT_ID INTEGER REFERENCES DEPARTMENTS(DEPARTMENT_ID),
+    EMAIL VARCHAR
+)
+
+10. COURSES(
+    COURSE_ID INTEGER PRIMARY KEY,
+    COURSE_NAME VARCHAR,
+    DEPARTMENT_ID INTEGER REFERENCES DEPARTMENTS(DEPARTMENT_ID), 
+    CREDITS INTEGER,
+    TEACHER_ID INTEGER REFERENCES TEACHERS(TEACHER_ID),
+    SEMESTER VARCHAR
+)
+
+Processing question n. 1
+Retrieving for question: Which is the email of the student Giulia Rossi?
+ Processing question n. 1
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 0} 
+  Content: student_id: 1
+name: Giulia
+surname: Rossi
+birth_date: 1998-05-14
+nationality: Italian
+gender: Female
+enrollment_date: 2022-09-01
+email: giulia.rossi@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 0} 
+  Content: teacher_id: 1
+name: Carlo
+surname: Rossi
+department_id: 1
+email: c.rossi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 1} 
+  Content: student_id: 2
+name: Marco
+surname: Bianchi
+birth_date: 1995-11-22
+nationality: Italian
+gender: Male
+enrollment_date: 2022-10-15
+email: marco.bianchi@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 5} 
+  Content: teacher_id: 6
+name: Giulia
+surname: Colombo
+department_id: 1
+email: g.colombo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 6} 
+  Content: teacher_id: 7
+name: Francesco
+surname: Conti
+department_id: 1
+email: f.conti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 7} 
+  Content: teacher_id: 8
+name: Alessandro
+surname: Moretti
+department_id: 1
+email: a.moretti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 2} 
+  Content: teacher_id: 3
+name: Marco
+surname: Verdi
+department_id: 2
+email: m.verdi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 8} 
+  Content: teacher_id: 9
+name: Luca
+surname: Esposito
+department_id: 1
+email: l.esposito@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 9} 
+  Content: teacher_id: 10
+name: Maria
+surname: Ferrari
+department_id: 1
+email: m.ferrari@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 3} 
+  Content: teacher_id: 4
+name: Elisa
+surname: Neri
+department_id: 1
+email: e.neri@university.edu...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["giulia.rossi@student.edu"],
+"why": [
+"{{students_0}}"
+]
+}
+
+Processing question n. 2
+Retrieving for question: Which is the name of the department where the teacher Laura Bianchi teaches?
+ Processing question n. 2
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 1} 
+  Content: teacher_id: 2
+name: Laura
+surname: Bianchi
+department_id: 1
+email: l.bianchi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 0} 
+  Content: teacher_id: 1
+name: Carlo
+surname: Rossi
+department_id: 1
+email: c.rossi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 8} 
+  Content: teacher_id: 9
+name: Luca
+surname: Esposito
+department_id: 1
+email: l.esposito@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 7} 
+  Content: teacher_id: 8
+name: Alessandro
+surname: Moretti
+department_id: 1
+email: a.moretti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 4} 
+  Content: teacher_id: 5
+name: Antonio
+surname: Gallo
+department_id: 2
+email: a.gallo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 3} 
+  Content: teacher_id: 4
+name: Elisa
+surname: Neri
+department_id: 1
+email: e.neri@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 9} 
+  Content: teacher_id: 10
+name: Maria
+surname: Ferrari
+department_id: 1
+email: m.ferrari@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 6} 
+  Content: teacher_id: 7
+name: Francesco
+surname: Conti
+department_id: 1
+email: f.conti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 2} 
+  Content: teacher_id: 3
+name: Marco
+surname: Verdi
+department_id: 2
+email: m.verdi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 5} 
+  Content: teacher_id: 6
+name: Giulia
+surname: Colombo
+department_id: 1
+email: g.colombo@university.edu...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": [],
+"why": []
+}
+
+Processing question n. 3
+Retrieving for question: How many credits has the course Software Engineering?
+ Processing question n. 3
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 2} 
+  Content: course_id: 103
+course_name: Embedded Systems
+department_id: 2
+credits: 6
+teacher_id: 3
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 9} 
+  Content: course_id: 110
+course_name: Human-Computer Interaction
+department_id: 1
+credits: 6
+teacher_id: 10
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 8} 
+  Content: course_id: 109
+course_name: Cybersecurity
+department_id: 1
+credits: 6
+teacher_id: 9
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 5} 
+  Content: course_id: 106
+course_name: Software Engineering
+department_id: 1
+credits: 6
+teacher_id: 4
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 0} 
+  Content: course_id: 101
+course_name: Machine Learning
+department_id: 1
+credits: 6
+teacher_id: 1
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 5} 
+  Content: teacher_id: 6
+research_area: Software Engineering
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 6} 
+  Content: course_id: 107
+course_name: Data Mining
+department_id: 1
+credits: 6
+teacher_id: 6
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 7} 
+  Content: course_id: 108
+course_name: Artificial Intelligence
+department_id: 1
+credits: 8
+teacher_id: 7
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 3} 
+  Content: course_id: 104
+course_name: Advanced Algorithms
+department_id: 1
+credits: 8
+teacher_id: 4
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 1} 
+  Content: course_id: 102
+course_name: Database Systems
+department_id: 1
+credits: 6
+teacher_id: 2
+semester: Spring...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["6"],
+"why": [
+"{{courses_5}}"
+]
+}
+
+Processing question n. 4
+Retrieving for question: What is the name of building in which there is the class with room number 401?
+ Processing question n. 4
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 0} 
+  Content: classroom_id: 1
+building: Main
+room_number: 101
+capacity: 50...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 3} 
+  Content: classroom_id: 4
+building: Engineering
+room_number: 301
+capacity: 80...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 4} 
+  Content: classroom_id: 5
+building: Engineering
+room_number: 302
+capacity: 100...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 5} 
+  Content: classroom_id: 6
+building: Electronics
+room_number: 401
+capacity: 30...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 2} 
+  Content: classroom_id: 3
+building: Science
+room_number: 201
+capacity: 40...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 1} 
+  Content: classroom_id: 2
+building: Main
+room_number: 102
+capacity: 60...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 9} 
+  Content: teacher_id: 10
+research_area: Human-Computer Interaction
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 4} 
+  Content: teacher_id: 5
+research_area: Signal Processing
+number_of_project: 4...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 4} 
+  Content: exam_id: 5
+course_id: 106
+date: 2023-05-30
+time: 13:00
+classroom_id: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 2} 
+  Content: exam_id: 3
+course_id: 103
+date: 2023-03-20
+time: 10:00
+classroom_id: 3...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Electronics"],
+"why": [
+"{{classrooms_5}}"
+]
+}
+
+Processing question n. 5
+Retrieving for question: In which semester is done the Cybersecurity course?
+ Processing question n. 5
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 8} 
+  Content: teacher_id: 9
+research_area: Cybersecurity
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 8} 
+  Content: course_id: 109
+course_name: Cybersecurity
+department_id: 1
+credits: 6
+teacher_id: 9
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 2} 
+  Content: thesis_id: 3
+title: IoT Security Challenges
+student_id: 3
+teacher_id: 9
+academic_year: 2023-2024
+status: Completed
+research_area: Cybersecurity...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 2} 
+  Content: course_id: 103
+course_name: Embedded Systems
+department_id: 2
+credits: 6
+teacher_id: 3
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 9} 
+  Content: course_id: 110
+course_name: Human-Computer Interaction
+department_id: 1
+credits: 6
+teacher_id: 10
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 0} 
+  Content: course_id: 101
+course_name: Machine Learning
+department_id: 1
+credits: 6
+teacher_id: 1
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 6} 
+  Content: course_id: 107
+course_name: Data Mining
+department_id: 1
+credits: 6
+teacher_id: 6
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 7} 
+  Content: course_id: 108
+course_name: Artificial Intelligence
+department_id: 1
+credits: 8
+teacher_id: 7
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 5} 
+  Content: course_id: 106
+course_name: Software Engineering
+department_id: 1
+credits: 6
+teacher_id: 4
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 3} 
+  Content: course_id: 104
+course_name: Advanced Algorithms
+department_id: 1
+credits: 8
+teacher_id: 4
+semester: Spring...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Fall"],
+"why": [
+"{{courses_8}}"
+]
+}
+
+Processing question n. 6
+Retrieving for question: In which classroom (room number) is the Database Systems exam?
+ Processing question n. 6
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 5} 
+  Content: classroom_id: 6
+building: Electronics
+room_number: 401
+capacity: 30...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 2} 
+  Content: exam_id: 3
+course_id: 103
+date: 2023-03-20
+time: 10:00
+classroom_id: 3...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 3} 
+  Content: classroom_id: 4
+building: Engineering
+room_number: 301
+capacity: 80...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 0} 
+  Content: classroom_id: 1
+building: Main
+room_number: 101
+capacity: 50...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 4} 
+  Content: exam_id: 5
+course_id: 106
+date: 2023-05-30
+time: 13:00
+classroom_id: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 2} 
+  Content: classroom_id: 3
+building: Science
+room_number: 201
+capacity: 40...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 4} 
+  Content: classroom_id: 5
+building: Engineering
+room_number: 302
+capacity: 100...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 1} 
+  Content: classroom_id: 2
+building: Main
+room_number: 102
+capacity: 60...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 0} 
+  Content: exam_id: 1
+course_id: 101
+date: 2023-01-10
+time: 09:00
+classroom_id: 1...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 3} 
+  Content: exam_id: 4
+course_id: 104
+date: 2023-04-25
+time: 09:30
+classroom_id: 4...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": [],
+"why": []
+}
+
+Processing question n. 7
+Retrieving for question: In which research area is the 'User Experience Design in Web Apps' thesis?
+ Processing question n. 7
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 4} 
+  Content: thesis_id: 5
+title: User Experience Design in Web Apps
+student_id: 5
+teacher_id: 8
+academic_year: 2022-2023
+status: In Progress
+research_area: Human-Computer Interaction...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 9} 
+  Content: teacher_id: 10
+research_area: Human-Computer Interaction
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 1} 
+  Content: thesis_id: 2
+title: Big Data Processing
+student_id: 2
+teacher_id: 2
+academic_year: 2022-2023
+status: In Progress
+research_area: Data Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 5} 
+  Content: teacher_id: 6
+research_area: Software Engineering
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 0} 
+  Content: thesis_id: 1
+title: Deep Learning for Image Recognition
+student_id: 1
+teacher_id: 1
+academic_year: 2023-2024
+status: Completed
+research_area: Artificial Intelligence...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 2} 
+  Content: thesis_id: 3
+title: IoT Security Challenges
+student_id: 3
+teacher_id: 9
+academic_year: 2023-2024
+status: Completed
+research_area: Cybersecurity...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 8} 
+  Content: teacher_id: 9
+research_area: Cybersecurity
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 3} 
+  Content: thesis_id: 4
+title: Autonomous Systems
+student_id: 4
+teacher_id: 3
+academic_year: 2021-2022
+status: Completed
+research_area: Robotics...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 0} 
+  Content: teacher_id: 1
+research_area: Artificial Intelligence
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 7} 
+  Content: teacher_id: 8
+research_area: Machine Learning
+number_of_project: 3...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Human-Computer Interaction"],
+"why": [
+"{{thesis_4}}"
+]
+}
+
+Processing question n. 8
+Retrieving for question: Which instructor (name, surname) teaches Machine Learning course?
+ Processing question n. 8
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 7} 
+  Content: teacher_id: 8
+research_area: Machine Learning
+number_of_project: 3...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 0} 
+  Content: course_id: 101
+course_name: Machine Learning
+department_id: 1
+credits: 6
+teacher_id: 1
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 0} 
+  Content: teacher_id: 1
+name: Carlo
+surname: Rossi
+department_id: 1
+email: c.rossi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 6} 
+  Content: course_id: 107
+course_name: Data Mining
+department_id: 1
+credits: 6
+teacher_id: 6
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 7} 
+  Content: course_id: 108
+course_name: Artificial Intelligence
+department_id: 1
+credits: 8
+teacher_id: 7
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 0} 
+  Content: teacher_id: 1
+research_area: Artificial Intelligence
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 9} 
+  Content: teacher_id: 10
+research_area: Human-Computer Interaction
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 4} 
+  Content: teacher_id: 5
+research_area: Signal Processing
+number_of_project: 4...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 9} 
+  Content: teacher_id: 10
+name: Maria
+surname: Ferrari
+department_id: 1
+email: m.ferrari@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 1} 
+  Content: teacher_id: 2
+research_area: Data Science
+number_of_project: 6...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": [],
+"why": []
+}
+
+Processing question n. 9
+Retrieving for question: Which is the research area of the teacher Carlo Rossi?
+ Processing question n. 9
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 0} 
+  Content: teacher_id: 1
+name: Carlo
+surname: Rossi
+department_id: 1
+email: c.rossi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 2} 
+  Content: teacher_id: 3
+name: Marco
+surname: Verdi
+department_id: 2
+email: m.verdi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 5} 
+  Content: teacher_id: 6
+name: Giulia
+surname: Colombo
+department_id: 1
+email: g.colombo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 8} 
+  Content: teacher_id: 9
+name: Luca
+surname: Esposito
+department_id: 1
+email: l.esposito@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 7} 
+  Content: teacher_id: 8
+name: Alessandro
+surname: Moretti
+department_id: 1
+email: a.moretti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 6} 
+  Content: teacher_id: 7
+name: Francesco
+surname: Conti
+department_id: 1
+email: f.conti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 0} 
+  Content: student_id: 1
+name: Giulia
+surname: Rossi
+birth_date: 1998-05-14
+nationality: Italian
+gender: Female
+enrollment_date: 2022-09-01
+email: giulia.rossi@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 4} 
+  Content: teacher_id: 5
+name: Antonio
+surname: Gallo
+department_id: 2
+email: a.gallo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 9} 
+  Content: teacher_id: 10
+name: Maria
+surname: Ferrari
+department_id: 1
+email: m.ferrari@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 4} 
+  Content: teacher_id: 5
+research_area: Signal Processing
+number_of_project: 4...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": [],
+"why": []
+}
+
+Processing question n. 10
+Retrieving for question: How many research project follows the teacher Giulia Colombo?
+ Processing question n. 10
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 5} 
+  Content: teacher_id: 6
+name: Giulia
+surname: Colombo
+department_id: 1
+email: g.colombo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 1} 
+  Content: teacher_id: 2
+research_area: Data Science
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 0} 
+  Content: teacher_id: 1
+research_area: Artificial Intelligence
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 9} 
+  Content: teacher_id: 10
+research_area: Human-Computer Interaction
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 3} 
+  Content: teacher_id: 4
+research_area: Algorithms Optimization
+number_of_project: 2...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 5} 
+  Content: teacher_id: 6
+research_area: Software Engineering
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 8} 
+  Content: teacher_id: 9
+research_area: Cybersecurity
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 6} 
+  Content: teacher_id: 7
+name: Francesco
+surname: Conti
+department_id: 1
+email: f.conti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 4} 
+  Content: teacher_id: 5
+research_area: Signal Processing
+number_of_project: 4...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 8} 
+  Content: teacher_id: 9
+name: Luca
+surname: Esposito
+department_id: 1
+email: l.esposito@university.edu...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["5"],
+"why": [
+"{{teacherResearchAreas_5}}"
+]
+}
+
+Processing question n. 11
+Retrieving for question: When is the Machine Learning exam (date,time)?
+ Processing question n. 11
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 2} 
+  Content: exam_id: 3
+course_id: 103
+date: 2023-03-20
+time: 10:00
+classroom_id: 3...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 3} 
+  Content: exam_id: 4
+course_id: 104
+date: 2023-04-25
+time: 09:30
+classroom_id: 4...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 4} 
+  Content: exam_id: 5
+course_id: 106
+date: 2023-05-30
+time: 13:00
+classroom_id: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 0} 
+  Content: exam_id: 1
+course_id: 101
+date: 2023-01-10
+time: 09:00
+classroom_id: 1...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 1} 
+  Content: exam_id: 2
+course_id: 102
+date: 2023-02-15
+time: 14:00
+classroom_id: 2...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 0} 
+  Content: thesis_id: 1
+title: Deep Learning for Image Recognition
+student_id: 1
+teacher_id: 1
+academic_year: 2023-2024
+status: Completed
+research_area: Artificial Intelligence...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 7} 
+  Content: teacher_id: 8
+research_area: Machine Learning
+number_of_project: 3...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 7} 
+  Content: course_id: 108
+course_name: Artificial Intelligence
+department_id: 1
+credits: 8
+teacher_id: 7
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 1} 
+  Content: thesis_id: 2
+title: Big Data Processing
+student_id: 2
+teacher_id: 2
+academic_year: 2022-2023
+status: In Progress
+research_area: Data Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 0} 
+  Content: course_id: 101
+course_name: Machine Learning
+department_id: 1
+credits: 6
+teacher_id: 1
+semester: Fall...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["2023-03-20", "10:00"],
+"why": ["{{exams_2}}"]
+}
+
+Processing question n. 12
+Retrieving for question: In which courses (name of courses) Giulia Rossi is enrolled?
+ Processing question n. 12
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 0} 
+  Content: student_id: 1
+name: Giulia
+surname: Rossi
+birth_date: 1998-05-14
+nationality: Italian
+gender: Female
+enrollment_date: 2022-09-01
+email: giulia.rossi@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 0} 
+  Content: teacher_id: 1
+name: Carlo
+surname: Rossi
+department_id: 1
+email: c.rossi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 5} 
+  Content: teacher_id: 6
+name: Giulia
+surname: Colombo
+department_id: 1
+email: g.colombo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 2} 
+  Content: teacher_id: 3
+name: Marco
+surname: Verdi
+department_id: 2
+email: m.verdi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 6} 
+  Content: teacher_id: 7
+name: Francesco
+surname: Conti
+department_id: 1
+email: f.conti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 7} 
+  Content: teacher_id: 8
+name: Alessandro
+surname: Moretti
+department_id: 1
+email: a.moretti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 9} 
+  Content: teacher_id: 10
+name: Maria
+surname: Ferrari
+department_id: 1
+email: m.ferrari@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 1} 
+  Content: student_id: 2
+name: Marco
+surname: Bianchi
+birth_date: 1995-11-22
+nationality: Italian
+gender: Male
+enrollment_date: 2022-10-15
+email: marco.bianchi@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 8} 
+  Content: teacher_id: 9
+name: Luca
+surname: Esposito
+department_id: 1
+email: l.esposito@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 3} 
+  Content: teacher_id: 4
+name: Elisa
+surname: Neri
+department_id: 1
+email: e.neri@university.edu...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": [],
+"why": []
+}
+
+Processing question n. 13
+Retrieving for question: What is the grade of Giulia Rossi for the Machine Learning course?
+ Processing question n. 13
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 7} 
+  Content: teacher_id: 8
+research_area: Machine Learning
+number_of_project: 3...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 0} 
+  Content: student_id: 1
+name: Giulia
+surname: Rossi
+birth_date: 1998-05-14
+nationality: Italian
+gender: Female
+enrollment_date: 2022-09-01
+email: giulia.rossi@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 7} 
+  Content: course_id: 108
+course_name: Artificial Intelligence
+department_id: 1
+credits: 8
+teacher_id: 7
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 0} 
+  Content: course_id: 101
+course_name: Machine Learning
+department_id: 1
+credits: 6
+teacher_id: 1
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 0} 
+  Content: teacher_id: 1
+research_area: Artificial Intelligence
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/grades.csv', 'row': 8} 
+  Content: grade_id: 9
+student_id: 4
+course_id: 110
+grade: 27...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 6} 
+  Content: teacher_id: 7
+research_area: Data Mining
+number_of_project: 4...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/grades.csv', 'row': 6} 
+  Content: grade_id: 7
+student_id: 5
+course_id: 110
+grade: 26...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/grades.csv', 'row': 7} 
+  Content: grade_id: 8
+student_id: 3
+course_id: 110
+grade: 28...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 6} 
+  Content: course_id: 107
+course_name: Data Mining
+department_id: 1
+credits: 6
+teacher_id: 6
+semester: Fall...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": [],
+"why": []
+}
+
+Processing question n. 14
+Retrieving for question: Who is the teacher (name,surname) following Sophie Durand in her thesis?
+ Processing question n. 14
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 0} 
+  Content: teacher_id: 1
+name: Carlo
+surname: Rossi
+department_id: 1
+email: c.rossi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 2} 
+  Content: student_id: 3
+name: Sophie
+surname: Durand
+birth_date: 2000-07-30
+nationality: French
+gender: Female
+enrollment_date: 2021-01-10
+email: sophie.durand@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 5} 
+  Content: teacher_id: 6
+name: Giulia
+surname: Colombo
+department_id: 1
+email: g.colombo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 9} 
+  Content: teacher_id: 10
+name: Maria
+surname: Ferrari
+department_id: 1
+email: m.ferrari@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 6} 
+  Content: teacher_id: 7
+name: Francesco
+surname: Conti
+department_id: 1
+email: f.conti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 4} 
+  Content: teacher_id: 5
+name: Antonio
+surname: Gallo
+department_id: 2
+email: a.gallo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 2} 
+  Content: teacher_id: 3
+name: Marco
+surname: Verdi
+department_id: 2
+email: m.verdi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 8} 
+  Content: teacher_id: 9
+name: Luca
+surname: Esposito
+department_id: 1
+email: l.esposito@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 7} 
+  Content: teacher_id: 8
+name: Alessandro
+surname: Moretti
+department_id: 1
+email: a.moretti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 1} 
+  Content: teacher_id: 2
+name: Laura
+surname: Bianchi
+department_id: 1
+email: l.bianchi@university.edu...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": [],
+"why": []
+}
+
+Processing question n. 15
+Retrieving for question: What are all the courses (name of courses) offered by the Computer Science department?
+ Processing question n. 15
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 8} 
+  Content: course_id: 109
+course_name: Cybersecurity
+department_id: 1
+credits: 6
+teacher_id: 9
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 9} 
+  Content: course_id: 110
+course_name: Human-Computer Interaction
+department_id: 1
+credits: 6
+teacher_id: 10
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 2} 
+  Content: course_id: 103
+course_name: Embedded Systems
+department_id: 2
+credits: 6
+teacher_id: 3
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 0} 
+  Content: department_id: 1
+department_name: Computer Science
+faculty: Engineering...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 7} 
+  Content: course_id: 108
+course_name: Artificial Intelligence
+department_id: 1
+credits: 8
+teacher_id: 7
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 0} 
+  Content: course_id: 101
+course_name: Machine Learning
+department_id: 1
+credits: 6
+teacher_id: 1
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 6} 
+  Content: course_id: 107
+course_name: Data Mining
+department_id: 1
+credits: 6
+teacher_id: 6
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 8} 
+  Content: teacher_id: 9
+research_area: Cybersecurity
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 9} 
+  Content: teacher_id: 10
+research_area: Human-Computer Interaction
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 5} 
+  Content: course_id: 106
+course_name: Software Engineering
+department_id: 1
+credits: 6
+teacher_id: 4
+semester: Spring...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Cybersecurity", "Human-Computer Interaction", "Artificial Intelligence", "Machine Learning", "Data Mining", "Software Engineering"],
+"why": ["{{courses_8}}", "{{courses_9}}", "{{courses_7}}", "{{courses_0}}", "{{courses_6}}", "{{courses_5}}"]
+}
+
+Processing question n. 16
+Retrieving for question: What is the name of the department in which Antonio Gallo teaches?
+ Processing question n. 16
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 4} 
+  Content: teacher_id: 5
+name: Antonio
+surname: Gallo
+department_id: 2
+email: a.gallo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 8} 
+  Content: teacher_id: 9
+name: Luca
+surname: Esposito
+department_id: 1
+email: l.esposito@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 0} 
+  Content: teacher_id: 1
+name: Carlo
+surname: Rossi
+department_id: 1
+email: c.rossi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 2} 
+  Content: teacher_id: 3
+name: Marco
+surname: Verdi
+department_id: 2
+email: m.verdi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 4} 
+  Content: student_id: 5
+name: Elena
+surname: Gonzalez
+birth_date: 1999-09-05
+nationality: Spanish
+gender: Female
+enrollment_date: 2022-02-14
+email: elena.gonzalez@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 9} 
+  Content: teacher_id: 10
+name: Maria
+surname: Ferrari
+department_id: 1
+email: m.ferrari@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 7} 
+  Content: teacher_id: 8
+name: Alessandro
+surname: Moretti
+department_id: 1
+email: a.moretti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 5} 
+  Content: teacher_id: 6
+name: Giulia
+surname: Colombo
+department_id: 1
+email: g.colombo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 6} 
+  Content: teacher_id: 7
+name: Francesco
+surname: Conti
+department_id: 1
+email: f.conti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 3} 
+  Content: teacher_id: 4
+name: Elisa
+surname: Neri
+department_id: 1
+email: e.neri@university.edu...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": [],
+"why": []
+}
+
+Processing question n. 17
+Retrieving for question: What is the grade of Elena Gonzales for the Human-Computer Interaction exam?
+ Processing question n. 17
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 9} 
+  Content: teacher_id: 10
+research_area: Human-Computer Interaction
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 4} 
+  Content: student_id: 5
+name: Elena
+surname: Gonzalez
+birth_date: 1999-09-05
+nationality: Spanish
+gender: Female
+enrollment_date: 2022-02-14
+email: elena.gonzalez@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 7} 
+  Content: course_id: 108
+course_name: Artificial Intelligence
+department_id: 1
+credits: 8
+teacher_id: 7
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 9} 
+  Content: course_id: 110
+course_name: Human-Computer Interaction
+department_id: 1
+credits: 6
+teacher_id: 10
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 7} 
+  Content: teacher_id: 8
+research_area: Machine Learning
+number_of_project: 3...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 0} 
+  Content: teacher_id: 1
+research_area: Artificial Intelligence
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/grades.csv', 'row': 6} 
+  Content: grade_id: 7
+student_id: 5
+course_id: 110
+grade: 26...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/grades.csv', 'row': 8} 
+  Content: grade_id: 9
+student_id: 4
+course_id: 110
+grade: 27...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/grades.csv', 'row': 7} 
+  Content: grade_id: 8
+student_id: 3
+course_id: 110
+grade: 28...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 1} 
+  Content: teacher_id: 2
+research_area: Data Science
+number_of_project: 6...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["26"],
+"why": [
+"{{grades_6,students_4,courses_9}}"
+]
+}
+
+Processing question n. 18
+Retrieving for question: Which faculty does the Electronics department belong to?
+ Processing question n. 18
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 1} 
+  Content: department_id: 2
+department_name: Electronics
+faculty: Engineering...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 0} 
+  Content: department_id: 1
+department_name: Computer Science
+faculty: Engineering...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 3} 
+  Content: department_id: 4
+department_name: Physics
+faculty: Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 5} 
+  Content: department_id: 6
+department_name: Chemistry
+faculty: Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 4} 
+  Content: department_id: 5
+department_name: Biology
+faculty: Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 6} 
+  Content: department_id: 7
+department_name: Economics
+faculty: Business...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 2} 
+  Content: department_id: 3
+department_name: Mathematics
+faculty: Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 5} 
+  Content: classroom_id: 6
+building: Electronics
+room_number: 401
+capacity: 30...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 3} 
+  Content: teacher_id: 4
+name: Elisa
+surname: Neri
+department_id: 1
+email: e.neri@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 0} 
+  Content: teacher_id: 1
+name: Carlo
+surname: Rossi
+department_id: 1
+email: c.rossi@university.edu...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Engineering"],
+"why": [
+"{{departments_1}}"
+]
+}
+
+Processing question n. 19
+Retrieving for question: What is the name of the building in which will be the Embedded Systems exam?
+ Processing question n. 19
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 2} 
+  Content: teacher_id: 3
+research_area: Embedded Systems
+number_of_project: 3...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 5} 
+  Content: classroom_id: 6
+building: Electronics
+room_number: 401
+capacity: 30...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 3} 
+  Content: thesis_id: 4
+title: Autonomous Systems
+student_id: 4
+teacher_id: 3
+academic_year: 2021-2022
+status: Completed
+research_area: Robotics...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 4} 
+  Content: classroom_id: 5
+building: Engineering
+room_number: 302
+capacity: 100...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 9} 
+  Content: teacher_id: 10
+research_area: Human-Computer Interaction
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 8} 
+  Content: teacher_id: 9
+research_area: Cybersecurity
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 3} 
+  Content: classroom_id: 4
+building: Engineering
+room_number: 301
+capacity: 80...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 0} 
+  Content: classroom_id: 1
+building: Main
+room_number: 101
+capacity: 50...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 2} 
+  Content: classroom_id: 3
+building: Science
+room_number: 201
+capacity: 40...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 5} 
+  Content: teacher_id: 6
+research_area: Software Engineering
+number_of_project: 5...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Electronics"],
+"why": [
+"{{teacherResearchAreas_2,classrooms_5}}"
+]
+}
+
+Processing question n. 20
+Retrieving for question: What is the title of the thesis followed by Alessandro Moretti?
+ Processing question n. 20
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 7} 
+  Content: teacher_id: 8
+name: Alessandro
+surname: Moretti
+department_id: 1
+email: a.moretti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 6} 
+  Content: teacher_id: 7
+name: Francesco
+surname: Conti
+department_id: 1
+email: f.conti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 2} 
+  Content: teacher_id: 3
+name: Marco
+surname: Verdi
+department_id: 2
+email: m.verdi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 5} 
+  Content: teacher_id: 6
+name: Giulia
+surname: Colombo
+department_id: 1
+email: g.colombo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 8} 
+  Content: teacher_id: 9
+name: Luca
+surname: Esposito
+department_id: 1
+email: l.esposito@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 1} 
+  Content: student_id: 2
+name: Marco
+surname: Bianchi
+birth_date: 1995-11-22
+nationality: Italian
+gender: Male
+enrollment_date: 2022-10-15
+email: marco.bianchi@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 0} 
+  Content: student_id: 1
+name: Giulia
+surname: Rossi
+birth_date: 1998-05-14
+nationality: Italian
+gender: Female
+enrollment_date: 2022-09-01
+email: giulia.rossi@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 0} 
+  Content: teacher_id: 1
+name: Carlo
+surname: Rossi
+department_id: 1
+email: c.rossi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 9} 
+  Content: teacher_id: 10
+name: Maria
+surname: Ferrari
+department_id: 1
+email: m.ferrari@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 0} 
+  Content: thesis_id: 1
+title: Deep Learning for Image Recognition
+student_id: 1
+teacher_id: 1
+academic_year: 2023-2024
+status: Completed
+research_area: Artificial Intelligence...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": [],
+"why": []
+}
+
+Processing question n. 21
+Retrieving for question: Which students (name,surname) have an enrollment date before 2022?
+ Processing question n. 21
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 6} 
+  Content: enrollment_id: 7
+student_id: 5
+course_id: 110
+enrollment_date: 2022-02-14...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 9} 
+  Content: enrollment_id: 10
+student_id: 2
+course_id: 101
+enrollment_date: 2023-08-12...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 3} 
+  Content: enrollment_id: 4
+student_id: 1
+course_id: 104
+enrollment_date: 2022-09-01...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 0} 
+  Content: enrollment_id: 1
+student_id: 1
+course_id: 101
+enrollment_date: 2022-09-01...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 8} 
+  Content: enrollment_id: 9
+student_id: 4
+course_id: 110
+enrollment_date: 2020-08-25...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 1} 
+  Content: enrollment_id: 2
+student_id: 2
+course_id: 102
+enrollment_date: 2022-10-15...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 7} 
+  Content: enrollment_id: 8
+student_id: 3
+course_id: 110
+enrollment_date: 2021-01-10...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 4} 
+  Content: enrollment_id: 5
+student_id: 4
+course_id: 105
+enrollment_date: 2020-08-25...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 5} 
+  Content: enrollment_id: 6
+student_id: 3
+course_id: 106
+enrollment_date: 2021-01-10...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 2} 
+  Content: enrollment_id: 3
+student_id: 3
+course_id: 103
+enrollment_date: 2021-01-10...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Student 4", "Student 3"],
+"why": [
+"{{enrollments_8,enrollments_4}}",
+"{{enrollments_7,enrollments_5,enrollments_2}}"
+]
+}
+
+Processing question n. 22
+Retrieving for question: What is the faculty of the Chemistry department?
+ Processing question n. 22
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 5} 
+  Content: department_id: 6
+department_name: Chemistry
+faculty: Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 3} 
+  Content: department_id: 4
+department_name: Physics
+faculty: Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 4} 
+  Content: department_id: 5
+department_name: Biology
+faculty: Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 2} 
+  Content: department_id: 3
+department_name: Mathematics
+faculty: Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 0} 
+  Content: department_id: 1
+department_name: Computer Science
+faculty: Engineering...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 6} 
+  Content: department_id: 7
+department_name: Economics
+faculty: Business...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 1} 
+  Content: department_id: 2
+department_name: Electronics
+faculty: Engineering...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 0} 
+  Content: teacher_id: 1
+name: Carlo
+surname: Rossi
+department_id: 1
+email: c.rossi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 4} 
+  Content: teacher_id: 5
+name: Antonio
+surname: Gallo
+department_id: 2
+email: a.gallo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 3} 
+  Content: teacher_id: 4
+name: Elisa
+surname: Neri
+department_id: 1
+email: e.neri@university.edu...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Science"],
+"why": [
+"{{departments_5}}"
+]
+}
+
+Processing question n. 23
+Retrieving for question: Which are the students (name,surname) enrolled in the Database Systems course?
+ Processing question n. 23
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 3} 
+  Content: enrollment_id: 4
+student_id: 1
+course_id: 104
+enrollment_date: 2022-09-01...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 1} 
+  Content: course_id: 102
+course_name: Database Systems
+department_id: 1
+credits: 6
+teacher_id: 2
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 6} 
+  Content: course_id: 107
+course_name: Data Mining
+department_id: 1
+credits: 6
+teacher_id: 6
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 5} 
+  Content: teacher_id: 6
+research_area: Software Engineering
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 0} 
+  Content: enrollment_id: 1
+student_id: 1
+course_id: 101
+enrollment_date: 2022-09-01...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 6} 
+  Content: enrollment_id: 7
+student_id: 5
+course_id: 110
+enrollment_date: 2022-02-14...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 5} 
+  Content: teacher_id: 6
+name: Giulia
+surname: Colombo
+department_id: 1
+email: g.colombo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 9} 
+  Content: enrollment_id: 10
+student_id: 2
+course_id: 101
+enrollment_date: 2023-08-12...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 1} 
+  Content: teacher_id: 2
+research_area: Data Science
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 2} 
+  Content: enrollment_id: 3
+student_id: 3
+course_id: 103
+enrollment_date: 2021-01-10...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Giulia Rossi", "Marco Bianchi"],
+"why": [
+"{{courses_1,enrollments_3,students_0}}",
+"{{courses_1,enrollments_9,students_1}}"
+]
+}
+
+Processing question n. 24
+Retrieving for question: What are the research areas of Maria Ferrari?
+ Processing question n. 24
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 9} 
+  Content: teacher_id: 10
+name: Maria
+surname: Ferrari
+department_id: 1
+email: m.ferrari@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 0} 
+  Content: thesis_id: 1
+title: Deep Learning for Image Recognition
+student_id: 1
+teacher_id: 1
+academic_year: 2023-2024
+status: Completed
+research_area: Artificial Intelligence...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 7} 
+  Content: teacher_id: 8
+research_area: Machine Learning
+number_of_project: 3...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 3} 
+  Content: thesis_id: 4
+title: Autonomous Systems
+student_id: 4
+teacher_id: 3
+academic_year: 2021-2022
+status: Completed
+research_area: Robotics...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 2} 
+  Content: teacher_id: 3
+name: Marco
+surname: Verdi
+department_id: 2
+email: m.verdi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 9} 
+  Content: teacher_id: 10
+research_area: Human-Computer Interaction
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 0} 
+  Content: teacher_id: 1
+research_area: Artificial Intelligence
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 5} 
+  Content: teacher_id: 6
+name: Giulia
+surname: Colombo
+department_id: 1
+email: g.colombo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 1} 
+  Content: thesis_id: 2
+title: Big Data Processing
+student_id: 2
+teacher_id: 2
+academic_year: 2022-2023
+status: In Progress
+research_area: Data Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 3} 
+  Content: teacher_id: 4
+research_area: Algorithms Optimization
+number_of_project: 2...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Human-Computer Interaction"],
+"why": [
+"{{teacherResearchAreas_9}}"
+]
+}
+
+Processing question n. 25
+Retrieving for question: How many research projects are led by Laura Bianchi?
+ Processing question n. 25
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 1} 
+  Content: teacher_id: 2
+name: Laura
+surname: Bianchi
+department_id: 1
+email: l.bianchi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 0} 
+  Content: teacher_id: 1
+research_area: Artificial Intelligence
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 1} 
+  Content: teacher_id: 2
+research_area: Data Science
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 9} 
+  Content: teacher_id: 10
+research_area: Human-Computer Interaction
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 1} 
+  Content: student_id: 2
+name: Marco
+surname: Bianchi
+birth_date: 1995-11-22
+nationality: Italian
+gender: Male
+enrollment_date: 2022-10-15
+email: marco.bianchi@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 5} 
+  Content: teacher_id: 6
+research_area: Software Engineering
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 7} 
+  Content: teacher_id: 8
+research_area: Machine Learning
+number_of_project: 3...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 0} 
+  Content: thesis_id: 1
+title: Deep Learning for Image Recognition
+student_id: 1
+teacher_id: 1
+academic_year: 2023-2024
+status: Completed
+research_area: Artificial Intelligence...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 6} 
+  Content: teacher_id: 7
+research_area: Data Mining
+number_of_project: 4...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 4} 
+  Content: teacher_id: 5
+research_area: Signal Processing
+number_of_project: 4...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["6"],
+"why": [
+"{{teacherResearchAreas_1}}"
+]
+}
+
+Processing question n. 26
+Retrieving for question: Which student (name,surname) had a grade equal to 28 in Human-Computer Interaction?
+ Processing question n. 26
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 9} 
+  Content: teacher_id: 10
+research_area: Human-Computer Interaction
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 9} 
+  Content: course_id: 110
+course_name: Human-Computer Interaction
+department_id: 1
+credits: 6
+teacher_id: 10
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 7} 
+  Content: course_id: 108
+course_name: Artificial Intelligence
+department_id: 1
+credits: 8
+teacher_id: 7
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 3} 
+  Content: student_id: 4
+name: Lucas
+surname: Schmidt
+birth_date: 1997-03-18
+nationality: German
+gender: Male
+enrollment_date: 2020-08-25
+email: lucas.schmidt@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 0} 
+  Content: course_id: 101
+course_name: Machine Learning
+department_id: 1
+credits: 6
+teacher_id: 1
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 4} 
+  Content: teacher_id: 5
+research_area: Signal Processing
+number_of_project: 4...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 5} 
+  Content: teacher_id: 6
+research_area: Software Engineering
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 4} 
+  Content: thesis_id: 5
+title: User Experience Design in Web Apps
+student_id: 5
+teacher_id: 8
+academic_year: 2022-2023
+status: In Progress
+research_area: Human-Computer Interaction...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 7} 
+  Content: teacher_id: 8
+research_area: Machine Learning
+number_of_project: 3...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 2} 
+  Content: course_id: 103
+course_name: Embedded Systems
+department_id: 2
+credits: 6
+teacher_id: 3
+semester: Fall...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": [],
+"why": []
+}
+
+Processing question n. 27
+Retrieving for question: Which are the classrooms (room number) in the Engineering building?
+ Processing question n. 27
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 3} 
+  Content: classroom_id: 4
+building: Engineering
+room_number: 301
+capacity: 80...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 4} 
+  Content: classroom_id: 5
+building: Engineering
+room_number: 302
+capacity: 100...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 2} 
+  Content: classroom_id: 3
+building: Science
+room_number: 201
+capacity: 40...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 5} 
+  Content: classroom_id: 6
+building: Electronics
+room_number: 401
+capacity: 30...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 0} 
+  Content: classroom_id: 1
+building: Main
+room_number: 101
+capacity: 50...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 1} 
+  Content: classroom_id: 2
+building: Main
+room_number: 102
+capacity: 60...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 5} 
+  Content: teacher_id: 6
+research_area: Software Engineering
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 9} 
+  Content: teacher_id: 10
+research_area: Human-Computer Interaction
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 4} 
+  Content: teacher_id: 5
+research_area: Signal Processing
+number_of_project: 4...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 2} 
+  Content: teacher_id: 3
+research_area: Embedded Systems
+number_of_project: 3...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["301", "302"],
+"why": ["{{classrooms_3}}", "{{classrooms_4}}"]
+}
+
+Processing question n. 28
+Retrieving for question: What is the day and time of the Software Engineering exam?
+ Processing question n. 28
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 2} 
+  Content: exam_id: 3
+course_id: 103
+date: 2023-03-20
+time: 10:00
+classroom_id: 3...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 4} 
+  Content: exam_id: 5
+course_id: 106
+date: 2023-05-30
+time: 13:00
+classroom_id: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 3} 
+  Content: exam_id: 4
+course_id: 104
+date: 2023-04-25
+time: 09:30
+classroom_id: 4...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 1} 
+  Content: exam_id: 2
+course_id: 102
+date: 2023-02-15
+time: 14:00
+classroom_id: 2...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 0} 
+  Content: exam_id: 1
+course_id: 101
+date: 2023-01-10
+time: 09:00
+classroom_id: 1...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 5} 
+  Content: teacher_id: 6
+research_area: Software Engineering
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 2} 
+  Content: course_id: 103
+course_name: Embedded Systems
+department_id: 2
+credits: 6
+teacher_id: 3
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 8} 
+  Content: teacher_id: 9
+research_area: Cybersecurity
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 8} 
+  Content: course_id: 109
+course_name: Cybersecurity
+department_id: 1
+credits: 6
+teacher_id: 9
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 2} 
+  Content: teacher_id: 3
+research_area: Embedded Systems
+number_of_project: 3...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["2023-03-20", "10:00"],
+"why": [
+"{{exams_2}}"
+]
+}
+
+Processing question n. 29
+Retrieving for question: Which courses (name of courses) have 8 credits?
+ Processing question n. 29
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 8} 
+  Content: course_id: 109
+course_name: Cybersecurity
+department_id: 1
+credits: 6
+teacher_id: 9
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 2} 
+  Content: course_id: 103
+course_name: Embedded Systems
+department_id: 2
+credits: 6
+teacher_id: 3
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 9} 
+  Content: course_id: 110
+course_name: Human-Computer Interaction
+department_id: 1
+credits: 6
+teacher_id: 10
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 0} 
+  Content: course_id: 101
+course_name: Machine Learning
+department_id: 1
+credits: 6
+teacher_id: 1
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 6} 
+  Content: course_id: 107
+course_name: Data Mining
+department_id: 1
+credits: 6
+teacher_id: 6
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 1} 
+  Content: course_id: 102
+course_name: Database Systems
+department_id: 1
+credits: 6
+teacher_id: 2
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 7} 
+  Content: course_id: 108
+course_name: Artificial Intelligence
+department_id: 1
+credits: 8
+teacher_id: 7
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 3} 
+  Content: course_id: 104
+course_name: Advanced Algorithms
+department_id: 1
+credits: 8
+teacher_id: 4
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 5} 
+  Content: course_id: 106
+course_name: Software Engineering
+department_id: 1
+credits: 6
+teacher_id: 4
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 4} 
+  Content: course_id: 105
+course_name: Digital Signal Processing
+department_id: 2
+credits: 6
+teacher_id: 5
+semester: Fall...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Artificial Intelligence", "Advanced Algorithms"],
+"why": ["{{courses_7}}", "{{courses_3}}"]
+}
+
+Processing question n. 30
+Retrieving for question: What is the title of the thesis of Sophie Durand?
+ Processing question n. 30
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 2} 
+  Content: student_id: 3
+name: Sophie
+surname: Durand
+birth_date: 2000-07-30
+nationality: French
+gender: Female
+enrollment_date: 2021-01-10
+email: sophie.durand@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 5} 
+  Content: teacher_id: 6
+name: Giulia
+surname: Colombo
+department_id: 1
+email: g.colombo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 4} 
+  Content: thesis_id: 5
+title: User Experience Design in Web Apps
+student_id: 5
+teacher_id: 8
+academic_year: 2022-2023
+status: In Progress
+research_area: Human-Computer Interaction...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 9} 
+  Content: teacher_id: 10
+name: Maria
+surname: Ferrari
+department_id: 1
+email: m.ferrari@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 2} 
+  Content: teacher_id: 3
+name: Marco
+surname: Verdi
+department_id: 2
+email: m.verdi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 1} 
+  Content: thesis_id: 2
+title: Big Data Processing
+student_id: 2
+teacher_id: 2
+academic_year: 2022-2023
+status: In Progress
+research_area: Data Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 0} 
+  Content: thesis_id: 1
+title: Deep Learning for Image Recognition
+student_id: 1
+teacher_id: 1
+academic_year: 2023-2024
+status: Completed
+research_area: Artificial Intelligence...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 4} 
+  Content: teacher_id: 5
+name: Antonio
+surname: Gallo
+department_id: 2
+email: a.gallo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 0} 
+  Content: teacher_id: 1
+name: Carlo
+surname: Rossi
+department_id: 1
+email: c.rossi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 7} 
+  Content: teacher_id: 8
+name: Alessandro
+surname: Moretti
+department_id: 1
+email: a.moretti@university.edu...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": [],
+"why": []
+}
+
+Processing question n. 31
+Retrieving for question: Which are the students (name, surname) enrolled in Machine Learning or in Advanced Algorithm courses?
+ Processing question n. 31
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 7} 
+  Content: teacher_id: 8
+research_area: Machine Learning
+number_of_project: 3...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 0} 
+  Content: course_id: 101
+course_name: Machine Learning
+department_id: 1
+credits: 6
+teacher_id: 1
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 6} 
+  Content: course_id: 107
+course_name: Data Mining
+department_id: 1
+credits: 6
+teacher_id: 6
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 6} 
+  Content: teacher_id: 7
+research_area: Data Mining
+number_of_project: 4...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 3} 
+  Content: student_id: 4
+name: Lucas
+surname: Schmidt
+birth_date: 1997-03-18
+nationality: German
+gender: Male
+enrollment_date: 2020-08-25
+email: lucas.schmidt@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 3} 
+  Content: course_id: 104
+course_name: Advanced Algorithms
+department_id: 1
+credits: 8
+teacher_id: 4
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 1} 
+  Content: teacher_id: 2
+research_area: Data Science
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 7} 
+  Content: course_id: 108
+course_name: Artificial Intelligence
+department_id: 1
+credits: 8
+teacher_id: 7
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 1} 
+  Content: thesis_id: 2
+title: Big Data Processing
+student_id: 2
+teacher_id: 2
+academic_year: 2022-2023
+status: In Progress
+research_area: Data Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 0} 
+  Content: teacher_id: 1
+research_area: Artificial Intelligence
+number_of_project: 5...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Lucas Schmidt"],
+"why": [
+"{{courses_0,enrollments_<not_present>,students_3},{courses_3,enrollments_<not_present>,students_3}}"
+]
+}
+
+Processing question n. 32
+Retrieving for question: Which courses (name of the courses) have 6 credits?
+ Processing question n. 32
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 8} 
+  Content: course_id: 109
+course_name: Cybersecurity
+department_id: 1
+credits: 6
+teacher_id: 9
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 2} 
+  Content: course_id: 103
+course_name: Embedded Systems
+department_id: 2
+credits: 6
+teacher_id: 3
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 9} 
+  Content: course_id: 110
+course_name: Human-Computer Interaction
+department_id: 1
+credits: 6
+teacher_id: 10
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 0} 
+  Content: course_id: 101
+course_name: Machine Learning
+department_id: 1
+credits: 6
+teacher_id: 1
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 6} 
+  Content: course_id: 107
+course_name: Data Mining
+department_id: 1
+credits: 6
+teacher_id: 6
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 1} 
+  Content: course_id: 102
+course_name: Database Systems
+department_id: 1
+credits: 6
+teacher_id: 2
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 7} 
+  Content: course_id: 108
+course_name: Artificial Intelligence
+department_id: 1
+credits: 8
+teacher_id: 7
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/grades.csv', 'row': 5} 
+  Content: grade_id: 6
+student_id: 3
+course_id: 106
+grade: 29...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 5} 
+  Content: course_id: 106
+course_name: Software Engineering
+department_id: 1
+credits: 6
+teacher_id: 4
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 3} 
+  Content: course_id: 104
+course_name: Advanced Algorithms
+department_id: 1
+credits: 8
+teacher_id: 4
+semester: Spring...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Cybersecurity", "Embedded Systems", "Human-Computer Interaction", "Machine Learning", "Data Mining", "Database Systems", "Software Engineering"],
+"why": ["{{courses_8}}", "{{courses_2}}", "{{courses_9}}", "{{courses_0}}", "{{courses_6}}", "{{courses_1}}", "{{courses_5}}"]
+}
+
+Processing question n. 33
+Retrieving for question: Which students (name, surname) enrolled in 2020?
+ Processing question n. 33
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 3} 
+  Content: student_id: 4
+name: Lucas
+surname: Schmidt
+birth_date: 1997-03-18
+nationality: German
+gender: Male
+enrollment_date: 2020-08-25
+email: lucas.schmidt@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 8} 
+  Content: enrollment_id: 9
+student_id: 4
+course_id: 110
+enrollment_date: 2020-08-25...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 4} 
+  Content: enrollment_id: 5
+student_id: 4
+course_id: 105
+enrollment_date: 2020-08-25...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 7} 
+  Content: enrollment_id: 8
+student_id: 3
+course_id: 110
+enrollment_date: 2021-01-10...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 5} 
+  Content: enrollment_id: 6
+student_id: 3
+course_id: 106
+enrollment_date: 2021-01-10...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 6} 
+  Content: enrollment_id: 7
+student_id: 5
+course_id: 110
+enrollment_date: 2022-02-14...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 2} 
+  Content: enrollment_id: 3
+student_id: 3
+course_id: 103
+enrollment_date: 2021-01-10...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 3} 
+  Content: enrollment_id: 4
+student_id: 1
+course_id: 104
+enrollment_date: 2022-09-01...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 9} 
+  Content: enrollment_id: 10
+student_id: 2
+course_id: 101
+enrollment_date: 2023-08-12...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 0} 
+  Content: enrollment_id: 1
+student_id: 1
+course_id: 101
+enrollment_date: 2022-09-01...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Lucas Schmidt"],
+"why": [
+"{{students_3}}"
+]
+}
+
+Processing question n. 34
+Retrieving for question: Which classrooms (room number) are located in the Main building?
+ Processing question n. 34
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 0} 
+  Content: classroom_id: 1
+building: Main
+room_number: 101
+capacity: 50...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 1} 
+  Content: classroom_id: 2
+building: Main
+room_number: 102
+capacity: 60...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 2} 
+  Content: classroom_id: 3
+building: Science
+room_number: 201
+capacity: 40...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 3} 
+  Content: classroom_id: 4
+building: Engineering
+room_number: 301
+capacity: 80...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 4} 
+  Content: classroom_id: 5
+building: Engineering
+room_number: 302
+capacity: 100...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 5} 
+  Content: classroom_id: 6
+building: Electronics
+room_number: 401
+capacity: 30...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 3} 
+  Content: teacher_id: 4
+name: Elisa
+surname: Neri
+department_id: 1
+email: e.neri@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 9} 
+  Content: teacher_id: 10
+research_area: Human-Computer Interaction
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 0} 
+  Content: course_id: 101
+course_name: Machine Learning
+department_id: 1
+credits: 6
+teacher_id: 1
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 7} 
+  Content: course_id: 108
+course_name: Artificial Intelligence
+department_id: 1
+credits: 8
+teacher_id: 7
+semester: Spring...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["101", "102"],
+"why": ["{{classrooms_0}}", "{{classrooms_1}}"]
+}
+
+Processing question n. 35
+Retrieving for question: Which departments (departments name) are in the Science faculty?
+ Processing question n. 35
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 4} 
+  Content: department_id: 5
+department_name: Biology
+faculty: Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 3} 
+  Content: department_id: 4
+department_name: Physics
+faculty: Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 2} 
+  Content: department_id: 3
+department_name: Mathematics
+faculty: Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 5} 
+  Content: department_id: 6
+department_name: Chemistry
+faculty: Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 0} 
+  Content: department_id: 1
+department_name: Computer Science
+faculty: Engineering...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 6} 
+  Content: department_id: 7
+department_name: Economics
+faculty: Business...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 1} 
+  Content: department_id: 2
+department_name: Electronics
+faculty: Engineering...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 2} 
+  Content: classroom_id: 3
+building: Science
+room_number: 201
+capacity: 40...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 3} 
+  Content: teacher_id: 4
+name: Elisa
+surname: Neri
+department_id: 1
+email: e.neri@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 4} 
+  Content: teacher_id: 5
+name: Antonio
+surname: Gallo
+department_id: 2
+email: a.gallo@university.edu...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Biology", "Physics", "Mathematics", "Chemistry"],
+"why": [
+"{{departments_4}}",
+"{{departments_3}}",
+"{{departments_2}}",
+"{{departments_5}}"
+]
+}
+
+Processing question n. 36
+Retrieving for question: Which thesis (title) have the status completed?
+ Processing question n. 36
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 0} 
+  Content: thesis_id: 1
+title: Deep Learning for Image Recognition
+student_id: 1
+teacher_id: 1
+academic_year: 2023-2024
+status: Completed
+research_area: Artificial Intelligence...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 1} 
+  Content: thesis_id: 2
+title: Big Data Processing
+student_id: 2
+teacher_id: 2
+academic_year: 2022-2023
+status: In Progress
+research_area: Data Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 5} 
+  Content: teacher_id: 6
+research_area: Software Engineering
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 3} 
+  Content: thesis_id: 4
+title: Autonomous Systems
+student_id: 4
+teacher_id: 3
+academic_year: 2021-2022
+status: Completed
+research_area: Robotics...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 0} 
+  Content: teacher_id: 1
+research_area: Artificial Intelligence
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 8} 
+  Content: teacher_id: 9
+research_area: Cybersecurity
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 9} 
+  Content: teacher_id: 10
+research_area: Human-Computer Interaction
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 3} 
+  Content: teacher_id: 4
+research_area: Algorithms Optimization
+number_of_project: 2...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 4} 
+  Content: teacher_id: 5
+research_area: Signal Processing
+number_of_project: 4...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 7} 
+  Content: teacher_id: 8
+research_area: Machine Learning
+number_of_project: 3...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Deep Learning for Image Recognition", "Autonomous Systems"],
+"why": ["{{thesis_0}}", "{{thesis_3}}"]
+}
+
+Processing question n. 37
+Retrieving for question: What are the names of the courses taught by Laura Bianchi?
+ Processing question n. 37
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 1} 
+  Content: teacher_id: 2
+name: Laura
+surname: Bianchi
+department_id: 1
+email: l.bianchi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 0} 
+  Content: teacher_id: 1
+name: Carlo
+surname: Rossi
+department_id: 1
+email: c.rossi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 2} 
+  Content: teacher_id: 3
+name: Marco
+surname: Verdi
+department_id: 2
+email: m.verdi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 5} 
+  Content: teacher_id: 6
+name: Giulia
+surname: Colombo
+department_id: 1
+email: g.colombo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 7} 
+  Content: teacher_id: 8
+name: Alessandro
+surname: Moretti
+department_id: 1
+email: a.moretti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 9} 
+  Content: teacher_id: 10
+name: Maria
+surname: Ferrari
+department_id: 1
+email: m.ferrari@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 1} 
+  Content: student_id: 2
+name: Marco
+surname: Bianchi
+birth_date: 1995-11-22
+nationality: Italian
+gender: Male
+enrollment_date: 2022-10-15
+email: marco.bianchi@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 6} 
+  Content: teacher_id: 7
+name: Francesco
+surname: Conti
+department_id: 1
+email: f.conti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 8} 
+  Content: teacher_id: 9
+name: Luca
+surname: Esposito
+department_id: 1
+email: l.esposito@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 3} 
+  Content: teacher_id: 4
+name: Elisa
+surname: Neri
+department_id: 1
+email: e.neri@university.edu...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": [],
+"why": []
+}
+
+Processing question n. 38
+Retrieving for question: Which courses (name of courses) are taught in the Fall semester?
+ Processing question n. 38
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 9} 
+  Content: course_id: 110
+course_name: Human-Computer Interaction
+department_id: 1
+credits: 6
+teacher_id: 10
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 8} 
+  Content: course_id: 109
+course_name: Cybersecurity
+department_id: 1
+credits: 6
+teacher_id: 9
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 0} 
+  Content: course_id: 101
+course_name: Machine Learning
+department_id: 1
+credits: 6
+teacher_id: 1
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 2} 
+  Content: course_id: 103
+course_name: Embedded Systems
+department_id: 2
+credits: 6
+teacher_id: 3
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 4} 
+  Content: course_id: 105
+course_name: Digital Signal Processing
+department_id: 2
+credits: 6
+teacher_id: 5
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 6} 
+  Content: course_id: 107
+course_name: Data Mining
+department_id: 1
+credits: 6
+teacher_id: 6
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 7} 
+  Content: course_id: 108
+course_name: Artificial Intelligence
+department_id: 1
+credits: 8
+teacher_id: 7
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 1} 
+  Content: course_id: 102
+course_name: Database Systems
+department_id: 1
+credits: 6
+teacher_id: 2
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 3} 
+  Content: course_id: 104
+course_name: Advanced Algorithms
+department_id: 1
+credits: 8
+teacher_id: 4
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 5} 
+  Content: course_id: 106
+course_name: Software Engineering
+department_id: 1
+credits: 6
+teacher_id: 4
+semester: Spring...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Machine Learning", "Embedded Systems", "Digital Signal Processing", "Data Mining", "Cybersecurity"],
+"why": ["{{courses_0}}", "{{courses_2}}", "{{courses_4}}", "{{courses_6}}", "{{courses_8}}"]
+}
+
+Processing question n. 39
+Retrieving for question: Which courses (name of courses) are taught in the Spring semester?
+ Processing question n. 39
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 9} 
+  Content: course_id: 110
+course_name: Human-Computer Interaction
+department_id: 1
+credits: 6
+teacher_id: 10
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 2} 
+  Content: course_id: 103
+course_name: Embedded Systems
+department_id: 2
+credits: 6
+teacher_id: 3
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 8} 
+  Content: course_id: 109
+course_name: Cybersecurity
+department_id: 1
+credits: 6
+teacher_id: 9
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 0} 
+  Content: course_id: 101
+course_name: Machine Learning
+department_id: 1
+credits: 6
+teacher_id: 1
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 4} 
+  Content: course_id: 105
+course_name: Digital Signal Processing
+department_id: 2
+credits: 6
+teacher_id: 5
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 1} 
+  Content: course_id: 102
+course_name: Database Systems
+department_id: 1
+credits: 6
+teacher_id: 2
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 6} 
+  Content: course_id: 107
+course_name: Data Mining
+department_id: 1
+credits: 6
+teacher_id: 6
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 5} 
+  Content: course_id: 106
+course_name: Software Engineering
+department_id: 1
+credits: 6
+teacher_id: 4
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 3} 
+  Content: course_id: 104
+course_name: Advanced Algorithms
+department_id: 1
+credits: 8
+teacher_id: 4
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 7} 
+  Content: course_id: 108
+course_name: Artificial Intelligence
+department_id: 1
+credits: 8
+teacher_id: 7
+semester: Spring...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Human-Computer Interaction", "Database Systems", "Software Engineering", "Advanced Algorithms", "Artificial Intelligence"],
+"why": ["{{courses_9}}", "{{courses_1}}", "{{courses_5}}", "{{courses_3}}", "{{courses_7}}"]
+}
+
+Processing question n. 40
+Retrieving for question: Which teachers (name, surname) are part of the Electronics department?
+ Processing question n. 40
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 1} 
+  Content: department_id: 2
+department_name: Electronics
+faculty: Engineering...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 0} 
+  Content: department_id: 1
+department_name: Computer Science
+faculty: Engineering...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 5} 
+  Content: teacher_id: 6
+name: Giulia
+surname: Colombo
+department_id: 1
+email: g.colombo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 3} 
+  Content: teacher_id: 4
+name: Elisa
+surname: Neri
+department_id: 1
+email: e.neri@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 5} 
+  Content: classroom_id: 6
+building: Electronics
+room_number: 401
+capacity: 30...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 3} 
+  Content: department_id: 4
+department_name: Physics
+faculty: Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 0} 
+  Content: teacher_id: 1
+name: Carlo
+surname: Rossi
+department_id: 1
+email: c.rossi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 2} 
+  Content: teacher_id: 3
+research_area: Embedded Systems
+number_of_project: 3...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 5} 
+  Content: department_id: 6
+department_name: Chemistry
+faculty: Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 4} 
+  Content: teacher_id: 5
+research_area: Signal Processing
+number_of_project: 4...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": [],
+"why": []
+}
+
+Processing question n. 41
+Retrieving for question: Which thesis (title) have the status in progress?
+ Processing question n. 41
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 1} 
+  Content: thesis_id: 2
+title: Big Data Processing
+student_id: 2
+teacher_id: 2
+academic_year: 2022-2023
+status: In Progress
+research_area: Data Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 0} 
+  Content: thesis_id: 1
+title: Deep Learning for Image Recognition
+student_id: 1
+teacher_id: 1
+academic_year: 2023-2024
+status: Completed
+research_area: Artificial Intelligence...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 5} 
+  Content: teacher_id: 6
+research_area: Software Engineering
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 3} 
+  Content: thesis_id: 4
+title: Autonomous Systems
+student_id: 4
+teacher_id: 3
+academic_year: 2021-2022
+status: Completed
+research_area: Robotics...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 8} 
+  Content: teacher_id: 9
+research_area: Cybersecurity
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 9} 
+  Content: teacher_id: 10
+research_area: Human-Computer Interaction
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 0} 
+  Content: teacher_id: 1
+research_area: Artificial Intelligence
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 4} 
+  Content: teacher_id: 5
+research_area: Signal Processing
+number_of_project: 4...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 3} 
+  Content: teacher_id: 4
+research_area: Algorithms Optimization
+number_of_project: 2...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 4} 
+  Content: thesis_id: 5
+title: User Experience Design in Web Apps
+student_id: 5
+teacher_id: 8
+academic_year: 2022-2023
+status: In Progress
+research_area: Human-Computer Interaction...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Big Data Processing", "User Experience Design in Web Apps"],
+"why": ["{{thesis_1}}", "{{thesis_4}}"]
+}
+
+Processing question n. 42
+Retrieving for question: Which teachers (name, surname) are part of the Computer Science department?
+ Processing question n. 42
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 0} 
+  Content: department_id: 1
+department_name: Computer Science
+faculty: Engineering...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 3} 
+  Content: teacher_id: 4
+name: Elisa
+surname: Neri
+department_id: 1
+email: e.neri@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 0} 
+  Content: teacher_id: 1
+name: Carlo
+surname: Rossi
+department_id: 1
+email: c.rossi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 5} 
+  Content: teacher_id: 6
+name: Giulia
+surname: Colombo
+department_id: 1
+email: g.colombo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 6} 
+  Content: teacher_id: 7
+name: Francesco
+surname: Conti
+department_id: 1
+email: f.conti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 4} 
+  Content: teacher_id: 5
+name: Antonio
+surname: Gallo
+department_id: 2
+email: a.gallo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 1} 
+  Content: teacher_id: 2
+name: Laura
+surname: Bianchi
+department_id: 1
+email: l.bianchi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 9} 
+  Content: teacher_id: 10
+name: Maria
+surname: Ferrari
+department_id: 1
+email: m.ferrari@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 2} 
+  Content: department_id: 3
+department_name: Mathematics
+faculty: Science...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 8} 
+  Content: teacher_id: 9
+name: Luca
+surname: Esposito
+department_id: 1
+email: l.esposito@university.edu...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Carlo Rossi", "Elisa Neri", "Giulia Colombo", "Francesco Conti", "Laura Bianchi", "Maria Ferrari", "Luca Esposito"],
+"why": [
+"{{teachers_0}}",
+"{{teachers_3}}",
+"{{teachers_5}}",
+"{{teachers_6}}",
+"{{teachers_1}}",
+"{{teachers_9}}",
+"{{teachers_8}}"
+]
+}
+
+Processing question n. 43
+Retrieving for question: Which Students (name, surname) are Italian?
+ Processing question n. 43
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 0} 
+  Content: student_id: 1
+name: Giulia
+surname: Rossi
+birth_date: 1998-05-14
+nationality: Italian
+gender: Female
+enrollment_date: 2022-09-01
+email: giulia.rossi@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 1} 
+  Content: student_id: 2
+name: Marco
+surname: Bianchi
+birth_date: 1995-11-22
+nationality: Italian
+gender: Male
+enrollment_date: 2022-10-15
+email: marco.bianchi@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 2} 
+  Content: teacher_id: 3
+name: Marco
+surname: Verdi
+department_id: 2
+email: m.verdi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 0} 
+  Content: teacher_id: 1
+name: Carlo
+surname: Rossi
+department_id: 1
+email: c.rossi@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 7} 
+  Content: teacher_id: 8
+name: Alessandro
+surname: Moretti
+department_id: 1
+email: a.moretti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 6} 
+  Content: teacher_id: 7
+name: Francesco
+surname: Conti
+department_id: 1
+email: f.conti@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 8} 
+  Content: teacher_id: 9
+name: Luca
+surname: Esposito
+department_id: 1
+email: l.esposito@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 3} 
+  Content: student_id: 4
+name: Lucas
+surname: Schmidt
+birth_date: 1997-03-18
+nationality: German
+gender: Male
+enrollment_date: 2020-08-25
+email: lucas.schmidt@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 5} 
+  Content: teacher_id: 6
+name: Giulia
+surname: Colombo
+department_id: 1
+email: g.colombo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 4} 
+  Content: student_id: 5
+name: Elena
+surname: Gonzalez
+birth_date: 1999-09-05
+nationality: Spanish
+gender: Female
+enrollment_date: 2022-02-14
+email: elena.gonzalez@student.edu...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Giulia Rossi", "Marco Bianchi"],
+"why": [
+"{{students_0}}",
+"{{students_1}}"
+]
+}
+
+Processing question n. 44
+Retrieving for question: Which are the Male students (name, surname) enrolled in the university?
+ Processing question n. 44
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 3} 
+  Content: student_id: 4
+name: Lucas
+surname: Schmidt
+birth_date: 1997-03-18
+nationality: German
+gender: Male
+enrollment_date: 2020-08-25
+email: lucas.schmidt@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 1} 
+  Content: student_id: 2
+name: Marco
+surname: Bianchi
+birth_date: 1995-11-22
+nationality: Italian
+gender: Male
+enrollment_date: 2022-10-15
+email: marco.bianchi@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 2} 
+  Content: student_id: 3
+name: Sophie
+surname: Durand
+birth_date: 2000-07-30
+nationality: French
+gender: Female
+enrollment_date: 2021-01-10
+email: sophie.durand@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 5} 
+  Content: teacher_id: 6
+name: Giulia
+surname: Colombo
+department_id: 1
+email: g.colombo@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 4} 
+  Content: student_id: 5
+name: Elena
+surname: Gonzalez
+birth_date: 1999-09-05
+nationality: Spanish
+gender: Female
+enrollment_date: 2022-02-14
+email: elena.gonzalez@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 0} 
+  Content: student_id: 1
+name: Giulia
+surname: Rossi
+birth_date: 1998-05-14
+nationality: Italian
+gender: Female
+enrollment_date: 2022-09-01
+email: giulia.rossi@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 9} 
+  Content: teacher_id: 10
+name: Maria
+surname: Ferrari
+department_id: 1
+email: m.ferrari@university.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 3} 
+  Content: enrollment_id: 4
+student_id: 1
+course_id: 104
+enrollment_date: 2022-09-01...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 8} 
+  Content: enrollment_id: 9
+student_id: 4
+course_id: 110
+enrollment_date: 2020-08-25...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teachers.csv', 'row': 3} 
+  Content: teacher_id: 4
+name: Elisa
+surname: Neri
+department_id: 1
+email: e.neri@university.edu...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Lucas Schmidt", "Marco Bianchi"],
+"why": [
+"{{students_3}}",
+"{{students_1}}"
+]
+}
+
+Processing question n. 45
+Retrieving for question: Which are the Female students (name, surname) enrolled in the university in the course with course_id 110?
+ Processing question n. 45
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 3} 
+  Content: enrollment_id: 4
+student_id: 1
+course_id: 104
+enrollment_date: 2022-09-01...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 6} 
+  Content: course_id: 107
+course_name: Data Mining
+department_id: 1
+credits: 6
+teacher_id: 6
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 0} 
+  Content: enrollment_id: 1
+student_id: 1
+course_id: 101
+enrollment_date: 2022-09-01...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 6} 
+  Content: enrollment_id: 7
+student_id: 5
+course_id: 110
+enrollment_date: 2022-02-14...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 8} 
+  Content: enrollment_id: 9
+student_id: 4
+course_id: 110
+enrollment_date: 2020-08-25...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 9} 
+  Content: enrollment_id: 10
+student_id: 2
+course_id: 101
+enrollment_date: 2023-08-12...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 1} 
+  Content: course_id: 102
+course_name: Database Systems
+department_id: 1
+credits: 6
+teacher_id: 2
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 2} 
+  Content: enrollment_id: 3
+student_id: 3
+course_id: 103
+enrollment_date: 2021-01-10...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/grades.csv', 'row': 1} 
+  Content: grade_id: 2
+student_id: 2
+course_id: 102
+grade: 25...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/grades.csv', 'row': 0} 
+  Content: grade_id: 1
+student_id: 1
+course_id: 101
+grade: 28...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": [],
+"why": []
+}
+
+Processing question n. 46
+Retrieving for question: Which are all the grades obtained by the student Sophie Durand?
+ Processing question n. 46
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 2} 
+  Content: student_id: 3
+name: Sophie
+surname: Durand
+birth_date: 2000-07-30
+nationality: French
+gender: Female
+enrollment_date: 2021-01-10
+email: sophie.durand@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/grades.csv', 'row': 4} 
+  Content: grade_id: 5
+student_id: 4
+course_id: 105
+grade: 24...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/grades.csv', 'row': 6} 
+  Content: grade_id: 7
+student_id: 5
+course_id: 110
+grade: 26...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/grades.csv', 'row': 0} 
+  Content: grade_id: 1
+student_id: 1
+course_id: 101
+grade: 28...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/grades.csv', 'row': 5} 
+  Content: grade_id: 6
+student_id: 3
+course_id: 106
+grade: 29...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/grades.csv', 'row': 8} 
+  Content: grade_id: 9
+student_id: 4
+course_id: 110
+grade: 27...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/grades.csv', 'row': 7} 
+  Content: grade_id: 8
+student_id: 3
+course_id: 110
+grade: 28...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/grades.csv', 'row': 3} 
+  Content: grade_id: 4
+student_id: 1
+course_id: 104
+grade: 27...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 7} 
+  Content: course_id: 108
+course_name: Artificial Intelligence
+department_id: 1
+credits: 8
+teacher_id: 7
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/grades.csv', 'row': 2} 
+  Content: grade_id: 3
+student_id: 3
+course_id: 103
+grade: 30...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": [29, 28, 30],
+"why": [
+"{{grades_5}}",
+"{{grades_7}}",
+"{{grades_2}}"
+]
+}
+
+Processing question n. 47
+Retrieving for question: Which are the students (name, surname) enrolled in Human-Computer Interaction or Digital Signal Processing
+ Processing question n. 47
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 9} 
+  Content: teacher_id: 10
+research_area: Human-Computer Interaction
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 4} 
+  Content: teacher_id: 5
+research_area: Signal Processing
+number_of_project: 4...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/students.csv', 'row': 3} 
+  Content: student_id: 4
+name: Lucas
+surname: Schmidt
+birth_date: 1997-03-18
+nationality: German
+gender: Male
+enrollment_date: 2020-08-25
+email: lucas.schmidt@student.edu...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 5} 
+  Content: teacher_id: 6
+research_area: Software Engineering
+number_of_project: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 9} 
+  Content: course_id: 110
+course_name: Human-Computer Interaction
+department_id: 1
+credits: 6
+teacher_id: 10
+semester: Spring...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 2} 
+  Content: teacher_id: 3
+research_area: Embedded Systems
+number_of_project: 3...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 1} 
+  Content: teacher_id: 2
+research_area: Data Science
+number_of_project: 6...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 0} 
+  Content: thesis_id: 1
+title: Deep Learning for Image Recognition
+student_id: 1
+teacher_id: 1
+academic_year: 2023-2024
+status: Completed
+research_area: Artificial Intelligence...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/thesis.csv', 'row': 4} 
+  Content: thesis_id: 5
+title: User Experience Design in Web Apps
+student_id: 5
+teacher_id: 8
+academic_year: 2022-2023
+status: In Progress
+research_area: Human-Computer Interaction...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 7} 
+  Content: teacher_id: 8
+research_area: Machine Learning
+number_of_project: 3...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Lucas Schmidt"],
+"why": [
+"{{courses_9,students_3,thesis_4}}"
+]
+}
+
+Processing question n. 48
+Retrieving for question: which are the courses (name of the course) with an exam scheduled at 13.00 or 14.00 hours?
+ Processing question n. 48
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 2} 
+  Content: exam_id: 3
+course_id: 103
+date: 2023-03-20
+time: 10:00
+classroom_id: 3...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 4} 
+  Content: exam_id: 5
+course_id: 106
+date: 2023-05-30
+time: 13:00
+classroom_id: 5...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 3} 
+  Content: exam_id: 4
+course_id: 104
+date: 2023-04-25
+time: 09:30
+classroom_id: 4...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 0} 
+  Content: exam_id: 1
+course_id: 101
+date: 2023-01-10
+time: 09:00
+classroom_id: 1...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/exams.csv', 'row': 1} 
+  Content: exam_id: 2
+course_id: 102
+date: 2023-02-15
+time: 14:00
+classroom_id: 2...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 2} 
+  Content: course_id: 103
+course_name: Embedded Systems
+department_id: 2
+credits: 6
+teacher_id: 3
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/courses.csv', 'row': 8} 
+  Content: course_id: 109
+course_name: Cybersecurity
+department_id: 1
+credits: 6
+teacher_id: 9
+semester: Fall...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 2} 
+  Content: enrollment_id: 3
+student_id: 3
+course_id: 103
+enrollment_date: 2021-01-10...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 8} 
+  Content: enrollment_id: 9
+student_id: 4
+course_id: 110
+enrollment_date: 2020-08-25...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/enrollments.csv', 'row': 6} 
+  Content: enrollment_id: 7
+student_id: 5
+course_id: 110
+enrollment_date: 2022-02-14...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["Embedded Systems", "Cybersecurity"],
+"why": [
+"{{exams_4,courses_2}}",
+"{{exams_1,courses_8}}"
+]
+}
+
+Processing question n. 49
+Retrieving for question: Which are the classrooms (room number) in Science or Electronics building?
+ Processing question n. 49
+
+[DEBUG] CONTEXT USED:
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 5} 
+  Content: classroom_id: 6
+building: Electronics
+room_number: 401
+capacity: 30...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 2} 
+  Content: classroom_id: 3
+building: Science
+room_number: 201
+capacity: 40...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 4} 
+  Content: classroom_id: 5
+building: Engineering
+room_number: 302
+capacity: 100...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 3} 
+  Content: classroom_id: 4
+building: Engineering
+room_number: 301
+capacity: 80...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 0} 
+  Content: classroom_id: 1
+building: Main
+room_number: 101
+capacity: 50...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/classrooms.csv', 'row': 1} 
+  Content: classroom_id: 2
+building: Main
+room_number: 102
+capacity: 60...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 2} 
+  Content: teacher_id: 3
+research_area: Embedded Systems
+number_of_project: 3...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/departments.csv', 'row': 1} 
+  Content: department_id: 2
+department_name: Electronics
+faculty: Engineering...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 4} 
+  Content: teacher_id: 5
+research_area: Signal Processing
+number_of_project: 4...
+
+- Source: {'source': '/home/daisy/cicciara/test/RAG-with-LLM/csv_data/teacherResearchAreas.csv', 'row': 9} 
+  Content: teacher_id: 10
+research_area: Human-Computer Interaction
+number_of_project: 6...
+
+
+[DEBUG] LLM RESPONSE:
+{
+"answer": ["201", "401"],
+"why": [
+"{{classrooms_2}}",
+"{{classrooms_5}}"
+]
+}
+
+Readable example saved to /home/daisy/cicciara/test/RAG-with-LLM/full_context/example_readable_output.txt
+Results saved to /home/daisy/cicciara/test/RAG-with-LLM/tpch/test_pipeline.json
+Timing metrics saved to /home/daisy/cicciara/test/RAG-with-LLM/tpch/timing_metrics.json
