@@ -1,107 +1,111 @@
 [
   {
     "query": "query01.csv",
+    "question": "Which suppliers (s_name) belong to the region with r_name EUROPE and have a balance lower than 0?",
+    "question_type": "three tables two joins",
     "answer": [
-      "Supplier#000000075",
-      "Supplier#000000080",
-      "Supplier#000000082",
-      "Supplier#000000124",
-      "Supplier#000000162",
-      "Supplier#000000177",
-      "Supplier#000000209",
-      "Supplier#000000325",
-      "Supplier#000000366",
-      "Supplier#000000421",
-      "Supplier#000000444",
-      "Supplier#000000453",
-      "Supplier#000000467",
-      "Supplier#000000471",
-      "Supplier#000000522",
-      "Supplier#000000590",
-      "Supplier#000000603",
-      "Supplier#000000638",
-      "Supplier#000000665",
-      "Supplier#000000695",
-      "Supplier#000000823",
-      "Supplier#000000972",
-      "Supplier#000000987"
+      "Supplier#000000040",
+      "Supplier#000000065",
+      "Supplier#000000134",
+      "Supplier#000000145",
+      "Supplier#000000174",
+      "Supplier#000000212",
+      "Supplier#000000295",
+      "Supplier#000000383",
+      "Supplier#000000409",
+      "Supplier#000000417",
+      "Supplier#000000510",
+      "Supplier#000000511",
+      "Supplier#000000563",
+      "Supplier#000000598",
+      "Supplier#000000612",
+      "Supplier#000000630",
+      "Supplier#000000704",
+      "Supplier#000000773",
+      "Supplier#000000893"
     ],
     "why": [
-      "{{nation_18,region_2,supplier_74}}",
-      "{{nation_21,region_2,supplier_79}}",
-      "{{nation_18,region_2,supplier_81}}",
-      "{{nation_8,region_2,supplier_123}}",
-      "{{nation_9,region_2,supplier_161}}",
-      "{{nation_12,region_2,supplier_176}}",
-      "{{nation_18,region_2,supplier_209}}",
-      "{{nation_8,region_2,supplier_325}}",
-      "{{nation_12,region_2,supplier_366}}",
-      "{{nation_8,region_2,supplier_421}}",
-      "{{nation_21,region_2,supplier_444}}",
-      "{{nation_21,region_2,supplier_453}}",
-      "{{nation_12,region_2,supplier_467}}",
-      "{{nation_12,region_2,supplier_471}}",
-      "{{nation_8,region_2,supplier_521}}",
-      "{{nation_9,region_2,supplier_589}}",
-      "{{nation_12,region_2,supplier_602}}",
-      "{{nation_8,region_2,supplier_637}}",
-      "{{nation_12,region_2,supplier_664}}",
-      "{{nation_21,region_2,supplier_694}}",
-      "{{nation_21,region_2,supplier_822}}",
-      "{{nation_12,region_2,supplier_972}}",
-      "{{nation_18,region_2,supplier_987}}"
+      "{{nation_23,region_4,supplier_40}}",
+      "{{nation_23,region_4,supplier_65}}",
+      "{{nation_7,region_4,supplier_134}}",
+      "{{nation_7,region_4,supplier_145}}",
+      "{{nation_23,region_4,supplier_174}}",
+      "{{nation_8,region_4,supplier_213}}",
+      "{{nation_24,region_4,supplier_296}}",
+      "{{nation_23,region_4,supplier_384}}",
+      "{{nation_8,region_4,supplier_410}}",
+      "{{nation_7,region_4,supplier_418}}",
+      "{{nation_20,region_4,supplier_510}}",
+      "{{nation_24,region_4,supplier_511}}",
+      "{{nation_8,region_4,supplier_563}}",
+      "{{nation_8,region_4,supplier_598}}",
+      "{{nation_24,region_4,supplier_612}}",
+      "{{nation_24,region_4,supplier_630}}",
+      "{{nation_20,region_4,supplier_704}}",
+      "{{nation_24,region_4,supplier_773}}",
+      "{{nation_23,region_4,supplier_893}}"
     ]
   },
   {
     "query": "query02.csv",
+    "question": "Which orders (o_orderkey) done by a customer with nationkey = 2 have a total price between 20500 and 20550?",
+    "question_type": "two tables single join multiple rows",
     "answer": [
-      "546",
-      "314052"
+      "314052",
+      "546"
     ],
     "why": [
-      "{{customer_14322,orders_137}}",
-      "{{customer_101,orders_78528}}"
+      "{{customer_102,orders_78529}}",
+      "{{customer_14323,orders_138}}"
     ]
   },
   {
     "query": "query03.csv",
+    "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91130",
+    "question_type": "two tables single join multiple rows",
     "answer": [
-      "Customer#000011467",
       "Customer#000000502",
+      "Customer#000000899",
       "Customer#000009067",
-      "Customer#000000899"
+      "Customer#000011467"
     ],
     "why": [
-      "{{customer_11466,orders_58315}}",
-      "{{customer_502,orders_64565}}",
-      "{{customer_9068,orders_121190}}",
-      "{{customer_899,orders_138654}}"
+      "{{customer_503,orders_64566}}",
+      "{{customer_900,orders_138655}}",
+      "{{customer_9069,orders_121191}}",
+      "{{customer_11467,orders_58316}}"
     ]
   },
   {
     "query": "query04.csv",
+    "question": "Which parts (p_type) have a size equal to 36 and are supplied by suppliers with a supply cost between 100 and 102?",
+    "question_type": "three tables two joins",
     "answer": [
       "ECONOMY ANODIZED STEEL",
       "LARGE BRUSHED COPPER",
       "MEDIUM POLISHED COPPER"
     ],
     "why": [
-      "{{part_1037,partsupp_4170,supplier_790}}",
-      "{{part_9465,partsupp_37901,supplier_723}}",
-      "{{part_3046,partsupp_12222,supplier_551}}"
+      "{{part_1038,partsupp_4171}}",
+      "{{part_9466,partsupp_37902}}",
+      "{{part_3047,partsupp_12223}}"
     ]
   },
   {
     "query": "query05.csv",
+    "question": "Which customers (c_name) have placed orders with a total price between 13156 and 13160?",
+    "question_type": "two tables single join",
     "answer": [
       "Customer#000005404"
     ],
     "why": [
-      "{{customer_5407,orders_116716}}"
+      "{{customer_5408,orders_116717}}"
     ]
   },
   {
     "query": "query06.csv",
+    "question": "Which customers (c_name) have placed orders with a total price between 91123 and 91600, and belong to the nation with nationkey = 1?",
+    "question_type": "two tables single join",
     "answer": [
       "Customer#000001960",
       "Customer#000004267",
@@ -116,123 +120,145 @@
       "Customer#000014968"
     ],
     "why": [
-      "{{customer_1963,orders_27778}}",
-      "{{customer_4268,orders_66019}}",
-      "{{customer_4387,orders_22563}}",
-      "{{customer_5068,orders_20601}}",
-      "{{customer_6422,orders_9017}}",
-      "{{customer_7458,orders_22658}}",
-      "{{customer_8822,orders_79129}}",
-      "{{customer_8955,orders_8147}}",
-      "{{customer_11298,orders_149096}}",
-      "{{customer_12781,orders_23864}}",
-      "{{customer_14967,orders_110873}}"
+      "{{customer_1964,orders_27779}}",
+      "{{customer_4269,orders_66020}}",
+      "{{customer_4388,orders_22564}}",
+      "{{customer_5069,orders_20602}}",
+      "{{customer_6423,orders_9018}}",
+      "{{customer_7459,orders_22659}}",
+      "{{customer_8823,orders_79130}}",
+      "{{customer_8956,orders_8148}}",
+      "{{customer_11299,orders_149097}}",
+      "{{customer_12782,orders_23865}}",
+      "{{customer_14968,orders_110874}}"
     ]
   },
   {
     "query": "query07.csv",
+    "question": "Which customer (c_custkey) have placed orders with a total price lower than 1000, belong to the nation with nationkey = 24, and have an order status of either 'P' or 'F'?",
+    "question_type": "two tables single join",
     "answer": [
       "6896"
     ],
     "why": [
-      "{{customer_6900,orders_149223}}"
+      "{{customer_6901,orders_149224}}"
     ]
   },
   {
     "query": "query08.csv",
+    "question": "Which region (r_regionkey) does the nation 'GERMANY' belong to?",
+    "question_type": "two tables single join",
     "answer": [
       "3"
     ],
     "why": [
-      "{{nation_7,region_3}}"
+      "{{nation_8}}"
     ]
   },
   {
     "query": "query09.csv",
+    "question": "What is the name (r_name) of the region with region key 1?",
+    "question_type": "single table single row",
     "answer": [
       "AMERICA"
     ],
     "why": [
-      "{{region_1}}"
+      "{{region_2}}"
     ]
   },
   {
     "query": "query10.csv",
+    "question": "What is the phone number of the supplier with name 'Supplier#000000010'?",
+    "question_type": "single table single row",
     "answer": [
       "34-852-489-8585"
     ],
     "why": [
-      "{{supplier_9}}"
+      "{{supplier_10}}"
     ]
   },
   {
     "query": "query11.csv",
+    "question": "What is the retail price of the part named 'forest brown coral puff cream'?",
+    "question_type": "single table single row",
     "answer": [
       "905.00"
     ],
     "why": [
-      "{{part_4}} "
+      "{{part_5}}"
     ]
   },
   {
     "query": "query12.csv",
+    "question": "Which customer (c_name) placed the order with order key 130?",
+    "question_type": "two tables single join",
     "answer": [
       "Customer#000003697"
     ],
     "why": [
-      "{{customer_3697,orders_33}}"
+      "{{customer_3698,orders_34}}"
     ]
   },
   {
     "query": "query13.csv",
+    "question": "What is the account balance (c_acctbal) of the customer with custkey 456?",
+    "question_type": "single table single row",
     "answer": [
       "8815.78"
     ],
     "why": [
-      "{{customer_456}}"
+      "{{customer_457}}"
     ]
   },
   {
     "query": "query14.csv",
+    "question": "What is the nation name of the customer Customer#000000004?",
+    "question_type": "two tables single join",
     "answer": [
       "EGYPT"
     ],
     "why": [
-      "{{customer_3,nation_4}}"
+      "{{customer_4,nation_5}}"
     ]
   },
   {
     "query": "query15.csv",
+    "question": "Which parts (p_name) were supplied in the order with lineitem l_orderkey = 230?",
+    "question_type": "three tables two joins",
     "answer": [
       "cyan papaya thistle dodger grey",
       "gainsboro sienna beige peach chartreuse",
-      "orange navajo blanched cyan snow",
       "midnight khaki medium linen peru",
+      "orange navajo blanched cyan snow",
       "thistle burlywood smoke pink mint",
       "wheat tomato forest floral light"
     ],
     "why": [
-      "{{lineitem_250,orders_61,part_18586}}",
-      "{{lineitem_251,orders_61,part_19490}}",
-      "{{lineitem_252,orders_61,part_737}}",
-      "{{lineitem_253,orders_61,part_917}}",
-      "{{lineitem_254,orders_61,part_1895}}",
-      "{{lineitem_255,orders_61,part_3394}}"
+      "{{lineitem_251,part_18587}}",
+      "{{lineitem_252,part_19491}}",
+      "{{lineitem_254,part_918}}",
+      "{{lineitem_253,part_738}}",
+      "{{lineitem_255,part_1896}}",
+      "{{lineitem_256,part_3395}}"
     ]
   },
   {
     "query": "query16.csv",
+    "question": "Which regions (r_regionKey) have a region key greater than 2?",
+    "question_type": "single table multiple rows",
     "answer": [
       "3",
       "4"
     ],
     "why": [
-      "{{region_3}}",
-      "{{region_4}}"
+      "{{region_4}}",
+      "{{region_5}}"
     ]
   },
   {
     "query": "query17.csv",
+    "question": "Which customers (c_name) are from the market segment 'AUTOMOBILE' and have an account balance between 0 and 100?",
+    "question_type": "single table multiple rows",
     "answer": [
       "Customer#000000017",
       "Customer#000000715",
@@ -254,28 +280,30 @@
       "Customer#000014622"
     ],
     "why": [
-      "{{customer_16}}",
-      "{{customer_716}}",
-      "{{customer_805}}",
-      "{{customer_2718}}",
-      "{{customer_3093}}",
-      "{{customer_5318}}",
-      "{{customer_6183}}",
-      "{{customer_6851}}",
-      "{{customer_6879}}",
-      "{{customer_8748}}",
-      "{{customer_8891}}",
-      "{{customer_10056}}",
-      "{{customer_10885}}",
-      "{{customer_11680}}",
-      "{{customer_11983}}",
-      "{{customer_13336}}",
-      "{{customer_14411}}",
-      "{{customer_14621}}"
+      "{{customer_17}}",
+      "{{customer_717}}",
+      "{{customer_806}}",
+      "{{customer_2719}}",
+      "{{customer_3094}}",
+      "{{customer_5319}}",
+      "{{customer_6184}}",
+      "{{customer_6852}}",
+      "{{customer_6880}}",
+      "{{customer_8749}}",
+      "{{customer_8892}}",
+      "{{customer_10057}}",
+      "{{customer_10886}}",
+      "{{customer_11681}}",
+      "{{customer_11984}}",
+      "{{customer_13337}}",
+      "{{customer_14412}}",
+      "{{customer_14622}}"
     ]
   },
   {
     "query": "query18.csv",
+    "question": "Which suppliers (s_name) have a nation key of 2 and a balance between 1000 and 2000?",
+    "question_type": "single table multiple rows",
     "answer": [
       "Supplier#000000103",
       "Supplier#000000223",
@@ -284,15 +312,17 @@
       "Supplier#000000737"
     ],
     "why": [
-      "{{supplier_102}}",
-      "{{supplier_223}}",
-      "{{supplier_527}}",
-      "{{supplier_721}}",
-      "{{supplier_736}}"
+      "{{supplier_103}}",
+      "{{supplier_224}}",
+      "{{supplier_528}}",
+      "{{supplier_722}}",
+      "{{supplier_737}}"
     ]
   },
   {
     "query": "query19.csv",
+    "question": "Which customers (c_name) have placed orders with a total price between 1000 and 1500 and belong to the nation with nationkey = 2?",
+    "question_type": "two tables single join multiple rows",
     "answer": [
       "Customer#000000571",
       "Customer#000001159",
@@ -307,73 +337,83 @@
       "Customer#000012307"
     ],
     "why": [
-      "{{customer_571,orders_46455}}",
-      "{{customer_1160,orders_60518}}",
-      "{{customer_2393,orders_95963}}",
-      "{{customer_3096,orders_61159}}",
-      "{{customer_3496,orders_40312}}",
-      "{{customer_3914,orders_108833}}",
-      "{{customer_6461,orders_38064}}",
-      "{{customer_9017,orders_139439}}",
-      "{{customer_9896,orders_34356}}",
-      "{{customer_11229,orders_92588}}",
-      "{{customer_12306,orders_146111}}"
+      "{{customer_572,orders_46456}}",
+      "{{customer_1161,orders_60519}}",
+      "{{customer_2394,orders_95964}}",
+      "{{customer_3097,orders_61160}}",
+      "{{customer_3497,orders_40313}}",
+      "{{customer_3915,orders_108834}}",
+      "{{customer_6462,orders_38065}}",
+      "{{customer_9018,orders_139440}}",
+      "{{customer_9897,orders_34357}}",
+      "{{customer_11230,orders_92589}}",
+      "{{customer_12307,orders_146112}}"
     ]
   },
   {
     "query": "query20.csv",
+    "question": "What is the ship date of the lineitem with order key 324 and line number 1?",
+    "question_type": "three tables two joins",
     "answer": [
       "1992-04-19"
     ],
     "why": [
-      "{{customer_10517,lineitem_334,orders_83}}"
+      "{{lineitem_335}}"
     ]
   },
   {
     "query": "query21.csv",
+    "question": "What are the order date of the order placed by customer 'Customer#000000023'?",
+    "question_type": "two tables single join multiple rows",
     "answer": [
-      "1995-07-30",
       "1993-04-16",
-      "1996-10-23",
-      "1996-08-15",
+      "1994-10-17",
       "1995-01-17",
       "1995-07-04",
-      "1994-10-17",
+      "1995-07-30",
       "1995-10-07",
+      "1996-08-15",
+      "1996-10-23",
       "1997-08-01"
     ],
     "why": [
-      "{{customer_22,orders_3746}}",
-      "{{customer_22,orders_45277}}",
-      "{{customer_22,orders_46223}}",
-      "{{customer_22,orders_57068}}",
-      "{{customer_22,orders_71169}}",
-      "{{customer_22,orders_78887}}",
-      "{{customer_22,orders_98506}}",
-      "{{customer_22,orders_146338}}",
-      "{{customer_22,orders_147240}}"
+      "{{customer_23,orders_45278}}",
+      "{{customer_23,orders_98507}}",
+      "{{customer_23,orders_71170}}",
+      "{{customer_23,orders_78888}}",
+      "{{customer_23,orders_3747}}",
+      "{{customer_23,orders_146339}}",
+      "{{customer_23,orders_57069}}",
+      "{{customer_23,orders_46224}}",
+      "{{customer_23,orders_147241}}"
     ]
   },
   {
     "query": "query22.csv",
+    "question": "What is the nation (n_name) of the supplier 'Supplier#000000007'",
+    "question_type": "two tables single join",
     "answer": [
       "UNITED KINGDOM"
     ],
     "why": [
-      "{{nation_23,supplier_6}}"
+      "{{nation_24,supplier_7}}"
     ]
   },
   {
     "query": "query23.csv",
+    "question": "Which region (r_name) does the supplier 'Supplier#000000005' belong to?",
+    "question_type": "three tables two joins",
     "answer": [
       "MIDDLE EAST"
     ],
     "why": [
-      "{{nation_11,region_4,supplier_4}}"
+      "{{nation_12,region_5,supplier_5}}"
     ]
   },
   {
     "query": "query24.csv",
+    "question": "Which suppliers (s_name) provides the part with partkey 200?",
+    "question_type": "three tables two joins",
     "answer": [
       "Supplier#000000201",
       "Supplier#000000451",
@@ -381,122 +421,144 @@
       "Supplier#000000951"
     ],
     "why": [
-      "{{partsupp_797,supplier_201}}",
-      "{{partsupp_798,supplier_451}}",
-      "{{partsupp_799,supplier_700}}",
-      "{{partsupp_800,supplier_951}}"
+      "{{partsupp_798,supplier_202}}",
+      "{{partsupp_799,supplier_452}}",
+      "{{partsupp_800,supplier_701}}",
+      "{{partsupp_801,supplier_952}}"
     ]
   },
   {
     "query": "query25.csv",
-    "answer": [
-      "3213"
-    ],
-    "why": [
-      "{{partsupp_43}}"
-    ]
+    "question": "What is the available quantity for partkey 500 supplied by supplierkey 123?",
+    "question_type": "single table single row",
+    "answer": [],
+    "why": []
   },
   {
     "query": "query26.csv",
+    "question": "What is the total price of the order with orderkey 100?",
+    "question_type": "single table single row",
     "answer": [
       "204408.59"
     ],
     "why": [
-      "{{orders_27}}"
+      "{{orders_28}}"
     ]
   },
   {
     "query": "query27.csv",
+    "question": "What is the phone number of the supplier named \"Supplier#000000005\"?",
+    "question_type": "single table single row",
     "answer": [
       "21-151-690-3663"
     ],
     "why": [
-      "{{supplier_4}}"
+      "{{supplier_5}}"
     ]
   },
   {
-    "query": "query29.csv",
+    "query": "query28.csv",
+    "question": "What is the order date of the order with order key 323?",
+    "question_type": "single table single row",
     "answer": [
       "1994-03-26"
     ],
     "why": [
-      "{{orders_82}}"
+      "{{orders_83}}"
     ]
   },
   {
-    "query": "query30.csv",
+    "query": "query29.csv",
+    "question": "Which customer (c_name) placed the order with order key 323?",
+    "question_type": "two tables single join",
     "answer": [
       "Customer#000003914"
     ],
     "why": [
-      "{{customer_3914,orders_82}}"
+      "{{customer_3915,orders_83}}"
     ]
   },
   {
-    "query": "query31.csv",
+    "query": "query30.csv",
+    "question": "What is the name of the nation where the supplier with suppkey 456 is located?",
+    "question_type": "two tables single join",
     "answer": [
       "ETHIOPIA"
     ],
     "why": [
-      "{{nation_5,supplier_456}}"
+      "{{nation_6,supplier_457}}"
     ]
   },
   {
-    "query": "query32.csv",
+    "query": "query31.csv",
+    "question": "What is the name of the region where the nation FRANCE is located?",
+    "question_type": "two tables single join",
     "answer": [
       "EUROPE"
     ],
     "why": [
-      "{{nation_6,region_3}}"
+      "{{nation_7,region_4}}"
     ]
   },
   {
-    "query": "query33.csv",
+    "query": "query32.csv",
+    "question": "What is the name of the nation of the customer who placed order 352?",
+    "question_type": "three tables two joins",
     "answer": [
       "MOZAMBIQUE"
     ],
     "why": [
-      "{{customer_10647,nation_16,orders_87}}"
+      "{{customer_10648,nation_17,orders_88}}"
     ]
   },
   {
-    "query": "query34.csv",
+    "query": "query33.csv",
+    "question": "What is the nation name of the supplier that provided partkey 430 in order 3?",
+    "question_type": "three tables two joins",
     "answer": [
       "KENYA"
     ],
     "why": [
-      "{{lineitem_7,nation_14,supplier_181}}"
+      "{{lineitem_8,nation_15,supplier_182}}"
     ]
   },
   {
-    "query": "query35.csv",
+    "query": "query34.csv",
+    "question": "What is the phone number of the supplier that delivered a lineitem for partkey 275 in order 32?",
+    "question_type": "three tables two joins",
     "answer": [
       "31-317-593-4029"
     ],
     "why": [
-      "{{lineitem_28,part_274,supplier_775}}"
+      "{{lineitem_29,supplier_776}}"
     ]
   },
   {
-    "query": "query36.csv",
+    "query": "query35.csv",
+    "question": "What is the available quantity of the part blush thistle blue yellow saddle supplied by Supplier#000000003",
+    "question_type": "three tables two joins",
     "answer": [
       "8895"
     ],
     "why": [
-      "{{part_1,partsupp_4,supplier_2}}"
+      "{{part_2,partsupp_5,supplier_3}}"
     ]
   },
   {
-    "query": "query37.csv",
+    "query": "query36.csv",
+    "question": "What is the supply cost of the part goldenrod lavender spring chocolate lace supplied by Supplier#000000002",
+    "question_type": "three tables two joins",
     "answer": [
       "771.64"
     ],
     "why": [
-      "{{part_0,partsupp_0,supplier_1}}"
+      "{{part_1,partsupp_1,supplier_2}}"
     ]
   },
   {
-    "query": "query38.csv",
+    "query": "query37.csv",
+    "question": "Which customers (c_name) from the nation 'GERMANY' in the market segment 'HOUSEHOLD' have an account balance greater than 9000?",
+    "question_type": "two tables single join multiple rows",
     "answer": [
       "Customer#000000129",
       "Customer#000000301",
@@ -511,21 +573,23 @@
       "Customer#000014573"
     ],
     "why": [
-      "{{customer_129,nation_7}}",
-      "{{customer_301,nation_7}}",
-      "{{customer_1327,nation_7}}",
-      "{{customer_3158,nation_7}}",
-      "{{customer_3323,nation_7}}",
-      "{{customer_5859,nation_7}}",
-      "{{customer_9800,nation_7}}",
-      "{{customer_9860,nation_7}}",
-      "{{customer_11077,nation_7}}",
-      "{{customer_11815,nation_7}}",
-      "{{customer_14572,nation_7}}"
+      "{{customer_130,nation_8}}",
+      "{{customer_302,nation_8}}",
+      "{{customer_1328,nation_8}}",
+      "{{customer_3159,nation_8}}",
+      "{{customer_3324,nation_8}}",
+      "{{customer_5860,nation_8}}",
+      "{{customer_9801,nation_8}}",
+      "{{customer_9861,nation_8}}",
+      "{{customer_11078,nation_8}}",
+      "{{customer_11816,nation_8}}",
+      "{{customer_14573,nation_8}}"
     ]
   },
   {
-    "query": "query39.csv",
+    "query": "query38.csv",
+    "question": "Which suppliers (s_name) have supplied parts for the order with order key 1?",
+    "question_type": "two tables single join multiple rows",
     "answer": [
       "Supplier#000000067",
       "Supplier#000000160",
@@ -535,16 +599,18 @@
       "Supplier#000000785"
     ],
     "why": [
-      "{{lineitem_5,supplier_66}}",
-      "{{lineitem_4,supplier_159}}",
-      "{{lineitem_2,supplier_371}}",
-      "{{lineitem_3,supplier_465}}",
-      "{{lineitem_1,supplier_731}}",
-      "{{lineitem_0,supplier_784}}"
+      "{{lineitem_6,supplier_67}}",
+      "{{lineitem_5,supplier_160}}",
+      "{{lineitem_3,supplier_372}}",
+      "{{lineitem_4,supplier_466}}",
+      "{{lineitem_2,supplier_732}}",
+      "{{lineitem_1,supplier_785}}"
     ]
   },
   {
-    "query": "query42.csv",
+    "query": "query39.csv",
+    "question": "Which customers (c_name) have placed orders on 1995-12-24 with an order priority of '3-MEDIUM'?",
+    "question_type": "two tables single join multiple rows",
     "answer": [
       "Customer#000001327",
       "Customer#000002974",
@@ -557,19 +623,21 @@
       "Customer#000014962"
     ],
     "why": [
-      "{{customer_1329,orders_16154}}",
-      "{{customer_2979,orders_117740}}",
-      "{{customer_3327,orders_49412}}",
-      "{{customer_4684,orders_66646}}",
-      "{{customer_5951,orders_21571}}",
-      "{{customer_7145,orders_23273}}",
-      "{{customer_13039,orders_18236}}",
-      "{{customer_13461,orders_45821}}",
-      "{{customer_14961,orders_56109}}"
+      "{{customer_1330,orders_16155}}",
+      "{{customer_2980,orders_117741}}",
+      "{{customer_3328,orders_49413}}",
+      "{{customer_4685,orders_66647}}",
+      "{{customer_5952,orders_21572}}",
+      "{{customer_7146,orders_23274}}",
+      "{{customer_13040,orders_18237}}",
+      "{{customer_13462,orders_45822}}",
+      "{{customer_14962,orders_56110}}"
     ]
   },
   {
-    "query": "query43.csv",
+    "query": "query40.csv",
+    "question": "Which customers (c_name) have placed orders on 1997-12-31 with an order priority of '4-NOT SPECIFIED'?",
+    "question_type": "two tables single join multiple rows",
     "answer": [
       "Customer#000000913",
       "Customer#000002308",
@@ -585,33 +653,37 @@
       "Customer#000010838"
     ],
     "why": [
-      "{{customer_913,orders_43378}}",
-      "{{customer_2312,orders_129503}}",
-      "{{customer_5419,orders_7114}}",
-      "{{customer_5695,orders_35229}}",
-      "{{customer_6084,orders_21546}}",
-      "{{customer_7896,orders_1232}}",
-      "{{customer_8463,orders_126638}}",
-      "{{customer_8876,orders_21597}}",
-      "{{customer_9149,orders_115550}}",
-      "{{customer_9456,orders_44786}}",
-      "{{customer_10329,orders_137338}}",
-      "{{customer_10839,orders_63060}}"
+      "{{customer_914,orders_43379}}",
+      "{{customer_2313,orders_129504}}",
+      "{{customer_5420,orders_7115}}",
+      "{{customer_5696,orders_35230}}",
+      "{{customer_6085,orders_21547}}",
+      "{{customer_7897,orders_1233}}",
+      "{{customer_8464,orders_126639}}",
+      "{{customer_8877,orders_21598}}",
+      "{{customer_9150,orders_115551}}",
+      "{{customer_9457,orders_44787}}",
+      "{{customer_10330,orders_137339}}",
+      "{{customer_10840,orders_63061}}"
     ]
   },
   {
-    "query": "query44.csv",
+    "query": "query41.csv",
+    "question": "Which parts (p_name) have a retail price lower than 902?",
+    "question_type": "single table multiple rows",
     "answer": [
       "goldenrod lavender spring chocolate lace",
       "wheat frosted chiffon aquamarine saddle"
     ],
     "why": [
-      "{{part_0}}",
-      "{{part_1000}}"
+      "{{part_1}}",
+      "{{part_1001}}"
     ]
   },
   {
-    "query": "query45.csv",
+    "query": "query42.csv",
+    "question": "Which nations (n_name) have a region key of 1?",
+    "question_type": "single table multiple rows",
     "answer": [
       "ARGENTINA",
       "BRAZIL",
@@ -620,32 +692,36 @@
       "UNITED STATES"
     ],
     "why": [
-      "{{nation_1}}",
       "{{nation_2}}",
       "{{nation_3}}",
-      "{{nation_17}}",
-      "{{nation_24}}"
+      "{{nation_4}}",
+      "{{nation_18}}",
+      "{{nation_25}}"
     ]
   },
   {
-    "query": "query46.csv",
+    "query": "query43.csv",
+    "question": "Which nations (n_name) have a region key of 2?",
+    "question_type": "single table multiple rows",
     "answer": [
+      "CHINA",
       "INDIA",
       "INDONESIA",
       "JAPAN",
-      "CHINA",
       "VIETNAM"
     ],
     "why": [
-      "{{nation_8}}",
+      "{{nation_19}}",
       "{{nation_9}}",
-      "{{nation_12}}",
-      "{{nation_18}}",
-      "{{nation_21}}"
+      "{{nation_10}}",
+      "{{nation_13}}",
+      "{{nation_22}}"
     ]
   },
   {
-    "query": "query47.csv",
+    "query": "query44.csv",
+    "question": "Which nations (n_name) have a region key of 0?",
+    "question_type": "single table multiple rows",
     "answer": [
       "ALGERIA",
       "ETHIOPIA",
@@ -654,15 +730,17 @@
       "MOZAMBIQUE"
     ],
     "why": [
-      "{{nation_0}}",
-      "{{nation_5}}",
-      "{{nation_14}}",
+      "{{nation_1}}",
+      "{{nation_6}}",
       "{{nation_15}}",
-      "{{nation_16}}"
+      "{{nation_16}}",
+      "{{nation_17}}"
     ]
   },
   {
-    "query": "query48.csv",
+    "query": "query45.csv",
+    "question": "Which nations (n_name) have a region key of 3?",
+    "question_type": "single table multiple rows",
     "answer": [
       "FRANCE",
       "GERMANY",
@@ -671,15 +749,17 @@
       "UNITED KINGDOM"
     ],
     "why": [
-      "{{nation_6}}",
       "{{nation_7}}",
-      "{{nation_19}}",
-      "{{nation_22}}",
-      "{{nation_23}}"
+      "{{nation_8}}",
+      "{{nation_20}}",
+      "{{nation_23}}",
+      "{{nation_24}}"
     ]
   },
   {
-    "query": "query49.csv",
+    "query": "query46.csv",
+    "question": "Which suppliers (s_name) belong to the nation with nationkey = 2 and have a balance lower than 0?",
+    "question_type": "single table multiple rows",
     "answer": [
       "Supplier#000000164",
       "Supplier#000000195",
@@ -687,10 +767,10 @@
       "Supplier#000000951"
     ],
     "why": [
-      "{{supplier_163}}",
-      "{{supplier_195}}",
-      "{{supplier_920}}",
-      "{{supplier_951}}"
+      "{{supplier_164}}",
+      "{{supplier_196}}",
+      "{{supplier_921}}",
+      "{{supplier_952}}"
     ]
   }
 ]

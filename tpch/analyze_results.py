@@ -1,244 +1,333 @@
 #!/usr/bin/env python3
-"""Analyze the TPCH RAG run and create dependency-free reports and SVG plots."""
+"""Score a TPC-H run against regenerated ground truth and write offline reports."""
 
+import argparse
 import csv
 import html
 import json
 import math
 import re
 import statistics
+from collections import defaultdict
+from decimal import Decimal
 from pathlib import Path
 
-
 TPCH_DIR = Path(__file__).resolve().parent
-ROOT_DIR = TPCH_DIR.parent
-OUTPUT_DIR = TPCH_DIR / "results_analysis"
+
+
+def normalize(value):
+    value = re.sub(r'\s+', ' ', str(value).strip().lower())
+    if re.fullmatch(r'[+-]?\d+(?:\.\d+)?', value):
+        return str(Decimal(value).normalize())
+    return value
+
+
+def witness_sets(value):
+    """Preserve alternative witnesses and the membership of each joined tuple set."""
+    if not isinstance(value, str):
+        raise ValueError('Witness must be a string')
+    value = re.sub(r'\s+', '', value).lower()
+    identifier = r'[a-z][a-z0-9]*_\d+'
+    group = rf'\{{{identifier}(?:,{identifier})*\}}'
+    if not re.fullmatch(rf'\{{{group}(?:,{group})*\}}', value):
+        raise ValueError(f'Invalid witness format: {value!r}')
+    return frozenset(frozenset(group.split(',')) for group in re.findall(r'\{([^{}]+)\}', value))
+
+
+def provenance_pairs(answers, why):
+    if len(answers) != len(why):
+        raise ValueError('Every answer must have a corresponding why string')
+    return {(normalize(answer), witness) for answer, value in zip(answers, why)
+            for witness in witness_sets(value)}
+
+
+def set_metrics(predicted, expected):
+    hits = len(predicted & expected)
+    precision = hits / len(predicted) if predicted else float(not expected)
+    recall = hits / len(expected) if expected else float(not predicted)
+    return precision, recall, 2 * precision * recall / (precision + recall) if precision + recall else 0.0
+
+
+def mean(values):
+    values = [value for value in values if value is not None]
+    return statistics.mean(values) if values else None
 
 
 def percentile(values, fraction):
-    return sorted(values)[math.ceil(fraction * len(values)) - 1]
+    return sorted(values)[math.ceil(fraction * len(values)) - 1] if values else None
 
 
-def normalized_values(values):
-    return sorted(re.sub(r"\s+", " ", str(value).strip().lower()) for value in values)
+def display(value, spec='.2f', suffix=''):
+    return 'N/A' if value is None else format(value, spec) + suffix
 
 
-def evidence_refs(values):
-    pattern = r"([A-Za-z][A-Za-z0-9]*_\d+)"
+def keyed(items, label):
+    if not isinstance(items, list):
+        raise ValueError(f'{label} must be a list')
+    mapping = {}
+    for item in items:
+        question = item.get('question')
+        if not isinstance(question, str) or not question or question in mapping:
+            raise ValueError(f'{label} contains a missing or duplicate question')
+        mapping[question] = item
+    return mapping
+
+
+def score_question(result, expected, number):
+    prediction = result.get('answer')
+    request = result.get('generation_request') or {}
+    valid = (isinstance(prediction, dict)
+             and all(isinstance(prediction.get(key), list)
+                     and all(isinstance(value, str) for value in prediction[key])
+                     for key in ('answer', 'why'))
+             and result.get('parsing_succeeded', request.get('parsing_succeeded', True)) is True
+             and not request.get('generation_error'))
+    answers = prediction['answer'] if valid else []
+    why = prediction['why'] if valid else []
+    expected_answers = {normalize(value) for value in expected['answer']}
+    predicted_answers = {normalize(value) for value in answers}
+    expected_pairs = provenance_pairs(expected['answer'], expected['why'])
+    provenance_valid = valid
+    try:
+        predicted_pairs = provenance_pairs(answers, why) if valid else set()
+    except ValueError:
+        predicted_pairs = set()
+        provenance_valid = False
+    answer_scores = set_metrics(predicted_answers, expected_answers) if valid else (0, 0, 0)
+    provenance_scores = set_metrics(predicted_pairs, expected_pairs) if provenance_valid else (0, 0, 0)
+    expected_refs = set().union(*(witness for _, witness in expected_pairs)) if expected_pairs else set()
+    retrieved = []
+    for doc in result.get('retrieved_documents', []):
+        metadata = doc['metadata']
+        ref = metadata.get('tuple_id')
+        if ref is None:
+            ref = f"{Path(metadata['source']).stem}_{metadata['row']}"
+        retrieved.append(ref.lower())
+    retrieved_set = set(retrieved)
+    hits = expected_refs & retrieved_set
+    covered_answers = {answer for answer, witness in expected_pairs if witness <= retrieved_set}
+    times = result.get('timing_seconds') or {}
+    tokens = result.get('token_counts') or {}
+    truncation = result.get('prompt_truncation') or {}
     return {
-        match.lower()
-        for value in values
-        for match in re.findall(pattern, str(value))
+        'question_number': number,
+        'question': result['question'],
+        'question_type': expected.get('question_type', 'unknown'),
+        'parsing_succeeded': bool(valid),
+        'provenance_format_valid': bool(provenance_valid),
+        'answer_exact': bool(valid and predicted_answers == expected_answers),
+        'answer_precision': answer_scores[0], 'answer_recall': answer_scores[1], 'answer_f1': answer_scores[2],
+        'why_exact': bool(provenance_valid and predicted_pairs == expected_pairs),
+        'why_precision': provenance_scores[0], 'why_recall': provenance_scores[1], 'why_f1': provenance_scores[2],
+        'expected_answer_count': len(expected_answers),
+        'predicted_answer_count': len(predicted_answers),
+        'empty_answer': not answers,
+        'expected_evidence_count': len(expected_refs),
+        'retrieved_evidence_count': len(hits),
+        'retrieval_recall': len(hits) / len(expected_refs) if expected_refs else None,
+        'retrieval_full': expected_refs <= retrieved_set if expected_refs else None,
+        'answer_evidence_coverage': len(covered_answers) / len(expected_answers) if expected_answers else None,
+        'first_evidence_rank': min((retrieved.index(ref) + 1 for ref in hits), default=None),
+        'retrieval_seconds': times.get('retrieval'),
+        'generation_seconds': times.get('generation'),
+        'total_seconds': times.get('total'),
+        'prompt_tokens': tokens.get('original_prompt'),
+        'processed_prompt_tokens': tokens.get('ollama_prompt_processed'),
+        'output_tokens': tokens.get('output'),
+        'prompt_exceeds_context': truncation.get('exceeds_configured_context', request.get('prompt_exceeds_configured_context')),
+        'truncation_detected': truncation.get('detected', request.get('prompt_truncation_detected')),
+        'gpu_utilization': request.get('average_gpu_utilization_percent'),
+        'peak_gpu_memory_mib': request.get('peak_gpu_memory_mib'),
+        'generation_error': request.get('generation_error'),
     }
 
 
-def retrieved_refs(result):
-    refs = []
-    for document in result["retrieved_documents"]:
-        table = Path(document["metadata"]["source"]).stem.lower()
-        refs.append(f"{table}_{document['metadata']['row']}")
-    return refs
-
-
-def svg_text(x, y, value, size=13, fill="#243447", anchor="start", weight="normal"):
-    return (
-        f'<text x="{x}" y="{y}" font-family="sans-serif" font-size="{size}" '
-        f'fill="{fill}" text-anchor="{anchor}" font-weight="{weight}">'
-        f"{html.escape(str(value))}</text>"
-    )
-
-
-def create_dashboard(rows, summary, output_path):
-    width, height = 1400, 980
-    svg = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
-        '<rect width="100%" height="100%" fill="#f7f9fc"/>',
-        svg_text(55, 55, "TPCH RAG experiment dashboard", 28, "#14213d", weight="bold"),
-        svg_text(55, 82, "llama3:70b · FAISS k=10 · 49 questions · NVIDIA H100 NVL", 15, "#526274"),
-    ]
-
-    cards = [
-        ("Answer exact match", f"{summary['answer_exact']}/49 ({summary['answer_accuracy']:.1%})", "#2a9d8f"),
-        ("Provenance exact match", f"{summary['why_exact']}/49 ({summary['why_accuracy']:.1%})", "#457b9d"),
-        ("Full evidence retrieved", f"{summary['retrieval_full']}/49 ({summary['retrieval_full_rate']:.1%})", "#e9c46a"),
-        ("Warm median latency", f"{summary['warm_median']:.2f} s", "#f4a261"),
-    ]
-    for index, (label, value, color) in enumerate(cards):
-        x = 55 + index * 330
-        svg.extend([
-            f'<rect x="{x}" y="110" width="300" height="105" rx="10" fill="white" stroke="#dce3ec"/>',
-            f'<rect x="{x}" y="110" width="7" height="105" rx="3" fill="{color}"/>',
-            svg_text(x + 22, 142, label, 14, "#526274"),
-            svg_text(x + 22, 187, value, 25, "#14213d", weight="bold"),
-        ])
-
-    # Quality comparison bars.
-    svg.append(svg_text(55, 265, "Quality and retrieval", 19, "#14213d", weight="bold"))
-    quality = [
-        ("Answer exact", summary["answer_accuracy"], "#2a9d8f"),
-        ("Provenance exact", summary["why_accuracy"], "#457b9d"),
-        ("Full evidence recall", summary["retrieval_full_rate"], "#e9c46a"),
-        ("Any evidence found", summary["retrieval_any_rate"], "#f4a261"),
-    ]
-    for index, (label, value, color) in enumerate(quality):
-        y = 300 + index * 48
-        svg.append(svg_text(55, y + 17, label, 13))
-        svg.append(f'<rect x="210" y="{y}" width="430" height="23" rx="4" fill="#e6ebf2"/>')
-        svg.append(f'<rect x="210" y="{y}" width="{430 * value:.1f}" height="23" rx="4" fill="{color}"/>')
-        svg.append(svg_text(655, y + 17, f"{value:.1%}", 13, anchor="end", weight="bold"))
-
-    # Latency by question (log scale preserves the cold-start outlier).
-    svg.append(svg_text(735, 265, "Total latency by question (log scale)", 19, "#14213d", weight="bold"))
-    plot_x, plot_y, plot_w, plot_h = 735, 295, 610, 190
-    max_log = math.log10(max(row["total_seconds"] for row in rows))
-    for seconds in (1, 10, 100):
-        y = plot_y + plot_h - math.log10(seconds) / max_log * plot_h
-        svg.append(f'<line x1="{plot_x}" y1="{y:.1f}" x2="{plot_x + plot_w}" y2="{y:.1f}" stroke="#dce3ec"/>')
-        svg.append(svg_text(plot_x - 8, y + 4, f"{seconds}s", 11, anchor="end"))
-    bar_width = plot_w / len(rows)
-    for index, row in enumerate(rows):
-        value = max(row["total_seconds"], 1)
-        bar_h = math.log10(value) / max_log * plot_h
-        color = "#e76f51" if index == 0 else "#457b9d"
-        svg.append(
-            f'<rect x="{plot_x + index * bar_width:.1f}" y="{plot_y + plot_h - bar_h:.1f}" '
-            f'width="{max(2, bar_width - 2):.1f}" height="{bar_h:.1f}" fill="{color}"/>'
-        )
-    svg.append(svg_text(plot_x, plot_y + plot_h + 22, "Q1", 11))
-    svg.append(svg_text(plot_x + plot_w, plot_y + plot_h + 22, "Q49", 11, anchor="end"))
-
-    # Retrieval recall per question.
-    svg.append(svg_text(55, 555, "Ground-truth evidence recall per question", 19, "#14213d", weight="bold"))
-    grid_x, grid_y, cell_w, cell_h = 55, 580, 51, 42
-    for index, row in enumerate(rows):
-        col, line = index % 25, index // 25
-        x, y = grid_x + col * cell_w, grid_y + line * 72
-        recall = row["retrieval_recall"]
-        color = "#2a9d8f" if recall == 1 else ("#e9c46a" if recall > 0 else "#e76f51")
-        svg.append(f'<rect x="{x}" y="{y}" width="43" height="30" rx="4" fill="{color}"/>')
-        svg.append(svg_text(x + 21.5, y + 20, index + 1, 11, "white", anchor="middle", weight="bold"))
-        svg.append(svg_text(x + 21.5, y + 46, f"{recall:.0%}", 10, anchor="middle"))
-
-    # Warm GPU utilization.
-    svg.append(svg_text(55, 765, "Average GPU utilization per warm request", 19, "#14213d", weight="bold"))
-    line_x, line_y, line_w, line_h = 55, 790, 900, 130
-    svg.append(f'<rect x="{line_x}" y="{line_y}" width="{line_w}" height="{line_h}" fill="white" stroke="#dce3ec"/>')
-    warm = rows[1:]
-    points = []
-    for index, row in enumerate(warm):
-        x = line_x + index / (len(warm) - 1) * line_w
-        y = line_y + line_h - row["gpu_utilization"] / 100 * line_h
-        points.append(f"{x:.1f},{y:.1f}")
-    svg.append(f'<polyline points="{" ".join(points)}" fill="none" stroke="#2a9d8f" stroke-width="2"/>')
-    svg.append(svg_text(line_x - 8, line_y + 5, "100%", 11, anchor="end"))
-    svg.append(svg_text(line_x - 8, line_y + line_h, "0%", 11, anchor="end"))
-
-    svg.extend([
-        svg_text(1010, 790, "Key finding", 18, "#14213d", weight="bold"),
-        svg_text(1010, 825, "When all evidence was retrieved:", 13),
-        svg_text(1010, 858, f"{summary['answer_given_full_retrieval']:.1%} answer accuracy", 23, "#2a9d8f", weight="bold"),
-        svg_text(1010, 892, "With incomplete evidence:", 13),
-        svg_text(1010, 925, f"{summary['answer_given_incomplete_retrieval']:.1%} answer accuracy", 23, "#e76f51", weight="bold"),
-        "</svg>",
-    ])
-    output_path.write_text("\n".join(svg), encoding="utf-8")
-
-
-def main():
-    results = json.loads((TPCH_DIR / "test_pipeline.json").read_text())
-    timings = json.loads((TPCH_DIR / "timing_metrics.json").read_text())
-    truth = json.loads((ROOT_DIR / "ground_truth2.json").read_text())
-    if not (len(results) == len(timings["questions"]) == len(truth)):
-        raise ValueError("Result, timing, and ground-truth lengths do not match")
-
-    rows = []
-    for number, (result, expected) in enumerate(zip(results, truth), 1):
-        prediction = result.get("answer") or {}
-        predicted_answer = prediction.get("answer", [])
-        predicted_why = prediction.get("why", [])
-        expected_refs = evidence_refs(expected.get("why", []))
-        predicted_refs = evidence_refs(predicted_why)
-        retrieved = retrieved_refs(result)
-        retrieved_set = set(retrieved)
-        hits = expected_refs & retrieved_set
-        ranks = [retrieved.index(ref) + 1 for ref in expected_refs if ref in retrieved_set]
-        request = result["generation_request"]
-        rows.append({
-            "question_number": number,
-            "question": result["question"],
-            "answer_exact": normalized_values(predicted_answer) == normalized_values(expected.get("answer", [])),
-            "why_exact": predicted_refs == expected_refs,
-            "empty_answer": not predicted_answer,
-            "retrieval_recall": len(hits) / len(expected_refs) if expected_refs else 1.0,
-            "first_evidence_rank": min(ranks) if ranks else None,
-            "retrieval_seconds": result["timing_seconds"]["retrieval"],
-            "generation_seconds": result["timing_seconds"]["generation"],
-            "total_seconds": result["timing_seconds"]["total"],
-            "prompt_tokens": result["token_counts"]["original_prompt"],
-            "output_tokens": result["token_counts"]["output"],
-            "gpu_utilization": request.get("average_gpu_utilization_percent") or 0,
-            "peak_gpu_memory_mib": request.get("peak_gpu_memory_mib"),
-        })
-
-    full = [row for row in rows if row["retrieval_recall"] == 1]
-    incomplete = [row for row in rows if row["retrieval_recall"] < 1]
-    warm_times = [row["total_seconds"] for row in rows[1:]]
+def summarize(rows):
+    warm = [row['total_seconds'] for row in rows[1:] if row['total_seconds'] is not None]
+    with_evidence = [row for row in rows if row['expected_evidence_count']]
+    full = [row for row in with_evidence if row['retrieval_full']]
+    incomplete = [row for row in with_evidence if not row['retrieval_full']]
     summary = {
-        "answer_exact": sum(row["answer_exact"] for row in rows),
-        "answer_accuracy": statistics.mean(row["answer_exact"] for row in rows),
-        "why_exact": sum(row["why_exact"] for row in rows),
-        "why_accuracy": statistics.mean(row["why_exact"] for row in rows),
-        "retrieval_full": len(full),
-        "retrieval_full_rate": len(full) / len(rows),
-        "retrieval_any_rate": statistics.mean(row["retrieval_recall"] > 0 for row in rows),
-        "mean_retrieval_recall": statistics.mean(row["retrieval_recall"] for row in rows),
-        "answer_given_full_retrieval": statistics.mean(row["answer_exact"] for row in full),
-        "answer_given_incomplete_retrieval": statistics.mean(row["answer_exact"] for row in incomplete),
-        "warm_mean": statistics.mean(warm_times),
-        "warm_median": statistics.median(warm_times),
-        "warm_p95": percentile(warm_times, 0.95),
-        "cold_seconds": rows[0]["total_seconds"],
-        "cold_share": rows[0]["total_seconds"] / sum(row["total_seconds"] for row in rows),
-        "empty_answers": sum(row["empty_answer"] for row in rows),
+        'question_count': len(rows),
+        'answer_exact': sum(row['answer_exact'] for row in rows),
+        'why_exact': sum(row['why_exact'] for row in rows),
+        'parse_failures': sum(not row['parsing_succeeded'] for row in rows),
+        'provenance_format_failures': sum(not row['provenance_format_valid'] for row in rows),
+        'generation_failures': sum(bool(row['generation_error']) for row in rows),
+        'retrieval_evaluable_questions': len(with_evidence),
+        'retrieval_full': len(full),
+        'retrieval_full_rate': len(full) / len(with_evidence) if with_evidence else None,
+        'retrieval_any_rate': mean([bool(row['retrieved_evidence_count']) for row in with_evidence]),
+        'answer_given_full_retrieval': mean([row['answer_exact'] for row in full]),
+        'answer_given_incomplete_retrieval': mean([row['answer_exact'] for row in incomplete]),
+        'warm_mean': mean(warm),
+        'warm_median': statistics.median(warm) if warm else None,
+        'warm_p95': percentile(warm, 0.95),
+        'first_request_seconds': rows[0]['total_seconds'],
+        'truncation_detected_count': sum(row['truncation_detected'] is True for row in rows),
+        'truncation_unknown_count': sum(row['truncation_detected'] is None for row in rows),
+        'prompts_exceeding_context': sum(row['prompt_exceeds_context'] is True for row in rows),
+        'peak_gpu_memory_mib': max((row['peak_gpu_memory_mib'] for row in rows
+                                    if row['peak_gpu_memory_mib'] is not None), default=None),
     }
+    for metric in ('answer_exact', 'why_exact', 'answer_precision', 'answer_recall', 'answer_f1',
+                   'why_precision', 'why_recall', 'why_f1', 'retrieval_recall', 'answer_evidence_coverage',
+                   'gpu_utilization'):
+        summary['mean_' + metric] = mean([row[metric] for row in rows])
+    return summary
 
-    OUTPUT_DIR.mkdir(exist_ok=True)
-    with (OUTPUT_DIR / "per_question.csv").open("w", newline="", encoding="utf-8") as output:
-        writer = csv.DictWriter(output, fieldnames=rows[0].keys())
+
+def svg_text(x, y, value, size=14):
+    return f'<text x="{x}" y="{y}" font-family="sans-serif" font-size="{size}" fill="#243447">{html.escape(str(value))}</text>'
+
+
+def create_dashboard(rows, summary, timings, output_path):
+    height = 420 + len(rows) * 25
+    svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="{height}" viewBox="0 0 1200 {height}">',
+           '<rect width="100%" height="100%" fill="#f7f9fc"/>',
+           svg_text(35, 40, 'TPC-H RAG experiment', 26)]
+    model = timings.get('generation_model', {}).get('name', 'unknown model')
+    k = timings.get('retrieval', {}).get('k', '?')
+    svg.append(svg_text(35, 70, f"{model} | FAISS k={k} | {len(rows)} questions"))
+    for index, (label, metric) in enumerate([
+        ('Answer exact match', 'mean_answer_exact'), ('Provenance exact match', 'mean_why_exact'),
+        ('All witness tuples retrieved', 'retrieval_full_rate'), ('Answer evidence coverage', 'mean_answer_evidence_coverage')
+    ]):
+        y = 108 + index * 40
+        value = summary[metric]
+        svg.extend([svg_text(35, y + 16, label),
+                    f'<rect x="310" y="{y}" width="600" height="22" fill="#e6ebf2"/>',
+                    f'<rect x="310" y="{y}" width="{600 * (value or 0):.1f}" height="22" fill="#2a9d8f"/>',
+                    svg_text(930, y + 16, display(value, '.1%'))])
+    svg.append(svg_text(35, 295, f"First request: {display(summary['first_request_seconds'], suffix=' s')} | Warm median: {display(summary['warm_median'], suffix=' s')} | Parse failures: {summary['parse_failures']}"))
+    svg.append(svg_text(35, 330, 'Per-question evidence recall (all witness tuples); N/A = no ground-truth evidence', 17))
+    svg.append(svg_text(35, 365, 'Question / answer exact / provenance exact'))
+    svg.append(svg_text(820, 365, 'Total latency / GPU utilization'))
+    for index, row in enumerate(rows):
+        y = 380 + index * 25
+        recall = row['retrieval_recall']
+        svg.extend([svg_text(35, y + 15, f"Q{row['question_number']} / {'yes' if row['answer_exact'] else 'no'} / {'yes' if row['why_exact'] else 'no'}"),
+                    f'<rect x="310" y="{y}" width="400" height="17" fill="#e6ebf2"/>',
+                    f'<rect x="310" y="{y}" width="{400 * (recall or 0):.1f}" height="17" fill="#457b9d"/>',
+                    svg_text(725, y + 15, display(recall, '.0%')),
+                    svg_text(820, y + 15, f"{display(row['total_seconds'], suffix=' s')} / {display(row['gpu_utilization'], '.1f', '%')}")])
+    svg.append('</svg>')
+    output_path.write_text('\n'.join(svg), encoding='utf-8')
+
+
+def write_csv(path, rows):
+    with path.open('w', newline='', encoding='utf-8') as output:
+        writer = csv.DictWriter(output, fieldnames=list(rows[0]))
         writer.writeheader()
         writer.writerows(rows)
 
-    create_dashboard(rows, summary, OUTPUT_DIR / "dashboard.svg")
-    mismatches = ", ".join(str(row["question_number"]) for row in rows if not row["answer_exact"])
-    report = f"""# TPCH RAG results analysis
 
-## Executive summary
+def analyze(run_dir, ground_truth, output_dir=None, allow_partial=False):
+    run_dir, ground_truth = Path(run_dir), Path(ground_truth)
+    output_dir = Path(output_dir) if output_dir else run_dir / 'analysis'
+    results = json.loads((run_dir / 'test_pipeline.json').read_text())
+    timings = json.loads((run_dir / 'timing_metrics.json').read_text())
+    truth = keyed(json.loads(ground_truth.read_text()), 'Ground truth')
+    by_question = keyed(results, 'Results')
+    timed = keyed(timings['questions'], 'Timings')
+    if not by_question:
+        raise ValueError('No completed questions to analyze')
+    if set(by_question) != set(timed):
+        raise ValueError('Result and timing questions do not match')
+    if not set(by_question) <= set(truth):
+        raise ValueError('Run contains questions absent from the TPC-H ground truth')
+    missing = set(truth) - set(by_question)
+    if missing and not allow_partial:
+        raise ValueError(f'Run is missing {len(missing)} ground-truth questions; use --allow-partial to analyze completed questions')
+    if timings.get('dataset', {}).get('name', 'tpch') != 'tpch':
+        raise ValueError('Expected a TPC-H run')
+    rows = [score_question(result, truth[result['question']], number)
+            for number, result in enumerate(results, 1)]
+    summary = summarize(rows)
+    summary.update({'ground_truth': str(ground_truth.resolve()), 'run_dir': str(run_dir.resolve()),
+                    'ground_truth_question_count': len(truth), 'missing_question_count': len(missing),
+                    'partial_run': bool(missing), 'generation_model': timings.get('generation_model', {}),
+                    'embedding': timings.get('embedding', {}), 'retrieval': timings.get('retrieval', {})})
+    by_type = defaultdict(list)
+    for row in rows:
+        by_type[row['question_type']].append(row)
+    type_metrics = []
+    for kind, items in sorted(by_type.items()):
+        category = summarize(items)
+        type_metrics.append({'question_type': kind, **{
+            key: value for key, value in category.items()
+            if key.startswith(('mean_', 'answer_', 'why_', 'retrieval_'))
+            or key in ('question_count', 'parse_failures', 'provenance_format_failures', 'generation_failures')
+        }})
+    output_dir.mkdir(parents=True, exist_ok=True)
+    write_csv(output_dir / 'per_question.csv', rows)
+    write_csv(output_dir / 'metrics_by_type.csv', type_metrics)
+    (output_dir / 'summary.json').write_text(json.dumps(summary, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+    create_dashboard(rows, summary, timings, output_dir / 'dashboard.svg')
+    embedding = timings.get('embedding', {})
+    mismatches = ', '.join(str(row['question_number']) for row in rows if not row['answer_exact']) or 'none'
+    report = f"""# TPC-H RAG results analysis
 
-- Answer exact match: **{summary['answer_exact']}/{len(rows)} ({summary['answer_accuracy']:.1%})**.
-- Exact provenance (`why`): **{summary['why_exact']}/{len(rows)} ({summary['why_accuracy']:.1%})**.
-- Full ground-truth evidence retrieved: **{summary['retrieval_full']}/{len(rows)} ({summary['retrieval_full_rate']:.1%})**; mean evidence recall: **{summary['mean_retrieval_recall']:.1%}**.
-- With complete retrieval, answer accuracy was **{summary['answer_given_full_retrieval']:.1%}**. With incomplete retrieval, it was **{summary['answer_given_incomplete_retrieval']:.1%}**.
-- All {len(rows)} outputs parsed successfully; {summary['empty_answers']} contained an empty answer.
+Analyzed {len(rows)} of {len(truth)} questions. Partial run: {bool(missing)}.
+Model: {timings.get('generation_model', {}).get('name', 'unknown')}; retrieval k: {timings.get('retrieval', {}).get('k', 'unknown')}.
+
+## Quality
+
+- Answer exact match: {summary['answer_exact']}/{len(rows)} ({display(summary['mean_answer_exact'], '.1%')}).
+- Provenance exact match: {summary['why_exact']}/{len(rows)} ({display(summary['mean_why_exact'], '.1%')}).
+- Answer macro precision / recall / F1: {display(summary['mean_answer_precision'], '.3f')} / {display(summary['mean_answer_recall'], '.3f')} / {display(summary['mean_answer_f1'], '.3f')}.
+- Provenance macro precision / recall / F1: {display(summary['mean_why_precision'], '.3f')} / {display(summary['mean_why_recall'], '.3f')} / {display(summary['mean_why_f1'], '.3f')}.
+- Parse/schema failures: {summary['parse_failures']}; provenance format failures: {summary['provenance_format_failures']}; generation failures: {summary['generation_failures']} (counts may overlap).
+- Answer mismatches (run order): {mismatches}.
+
+## Retrieval
+
+- All ground-truth witness tuples retrieved: {summary['retrieval_full']}/{summary['retrieval_evaluable_questions']} ({display(summary['retrieval_full_rate'], '.1%')}).
+- Mean evidence recall: {display(summary['mean_retrieval_recall'], '.1%')}.
+- Mean answer evidence coverage: {display(summary['mean_answer_evidence_coverage'], '.1%')}.
+- Answer accuracy with all witness tuples retrieved: {display(summary['answer_given_full_retrieval'], '.1%')}; with incomplete evidence: {display(summary['answer_given_incomplete_retrieval'], '.1%')}.
 
 ## Performance
 
-- Cold question: **{summary['cold_seconds']:.2f} s**, accounting for **{summary['cold_share']:.1%}** of cumulative question latency. Model loading alone took {results[0]['generation_request']['model_load_seconds']:.2f} s.
-- Warm requests: mean **{summary['warm_mean']:.2f} s**, median **{summary['warm_median']:.2f} s**, p95 **{summary['warm_p95']:.2f} s**.
-- Embedding/index build: **{timings['embedding']['index_build_wall_seconds']:.2f} s** for {timings['embedding']['documents_embedded']} documents on {timings['embedding']['gpu_name']}.
-- Warm GPU utilization median: **{statistics.median(row['gpu_utilization'] for row in rows[1:]):.1f}%**; peak GPU memory was approximately **{max(row['peak_gpu_memory_mib'] for row in rows if row['peak_gpu_memory_mib']) / 1024:.1f} GiB**.
-- No prompt exceeded the configured 8,192-token context window.
+- First request: {display(summary['first_request_seconds'], suffix=' s')}. It may include model loading.
+- Subsequent requests: mean {display(summary['warm_mean'], suffix=' s')}, median {display(summary['warm_median'], suffix=' s')}, p95 {display(summary['warm_p95'], suffix=' s')}.
+- Index action: {embedding.get('index_action', 'unknown')}; build time: {display(embedding.get('index_build_wall_seconds'), suffix=' s')}; documents embedded: {embedding.get('documents_embedded', 'unknown')}.
+- Embedding device: {embedding.get('device', 'unknown')}; GPU: {embedding.get('gpu_name') or 'N/A'}.
+- Mean generation GPU utilization: {display(summary['mean_gpu_utilization'], suffix='%')}; peak sampled generation GPU memory: {display(summary['peak_gpu_memory_mib'], suffix=' MiB')}.
+- Prompts exceeding configured context: {summary['prompts_exceeding_context']}; truncation flagged: {summary['truncation_detected_count']}; truncation check unavailable: {summary['truncation_unknown_count']}.
 
-## Interpretation
+## Metric definitions
 
-Retrieval is the dominant quality bottleneck: every answer with incomplete ground-truth evidence was incorrect, while 23 of 25 questions with complete evidence were answered correctly. Questions 11 and 48 had complete evidence but incorrect answers, so those are the clearest generation/reasoning failures. Provenance trails answer quality because several correct answers omitted supporting join rows.
+Answers are compared as sets after case/whitespace normalization and numeric
+normalization (e.g. 905.00 equals 905). Provenance compares (answer, witness-set)
+pairs, retaining alternative derivations and each witness's tuple membership;
+swapped explanations or merged alternatives are not exact matches. Exact
+provenance requires all ground-truth alternatives. Scores are macro averages
+across questions; a valid empty prediction against empty truth scores 1.
+Failed parses/generations score 0, including on empty-truth questions.
 
-Answer mismatches: {mismatches}.
+Evidence recall measures the union of all ground-truth witness tuples. Answer
+evidence coverage measures the fraction of expected answers with at least one
+complete witness retrieved. Empty-truth questions are excluded from retrieval
+metrics: lack of retrieved evidence cannot prove that an answer does not exist.
+Missing measurements and empty metric groups are N/A, not zero. GPU values are
+sampled observations. Truncation flags reflect the runner's available checks.
 """
-    (OUTPUT_DIR / "summary.md").write_text(report, encoding="utf-8")
-    print(report)
-    print(f"Dashboard: {OUTPUT_DIR / 'dashboard.svg'}")
-    print(f"Per-question data: {OUTPUT_DIR / 'per_question.csv'}")
+    (output_dir / 'summary.md').write_text(report, encoding='utf-8')
+    return summary, output_dir
 
 
-if __name__ == "__main__":
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--run-dir', type=Path, default=TPCH_DIR / 'runs' / 'tpch')
+    parser.add_argument('--ground-truth', type=Path, default=TPCH_DIR / 'ground_truthTpch.json')
+    parser.add_argument('--output-dir', type=Path)
+    parser.add_argument('--allow-partial', action='store_true')
+    args = parser.parse_args()
+    summary, output_dir = analyze(args.run_dir, args.ground_truth, args.output_dir, args.allow_partial)
+    print(f"Analyzed {summary['question_count']} questions; answer exact match: {summary['mean_answer_exact']:.1%}")
+    print(f'Reports: {output_dir}')
+
+
+if __name__ == '__main__':
     main()

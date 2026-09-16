@@ -1,7 +1,9 @@
 import os
+from pathlib import Path
+from itertools import islice
+from tpch_data import data_files, iter_rows, index_manifest, load_questions
 from langchain.chat_models import init_chat_model
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_community.document_loaders import CSVLoader
 from langchain_core.documents import Document
 from langchain_community.vectorstores import FAISS
 from langchain_community.vectorstores.utils import DistanceStrategy
@@ -41,7 +43,7 @@ os.environ["LANGSMITH_API_KEY"] = "lsv2_pt_87133982193d4e3b8110cb9e3253eb17_7831
 # MISTRAL by Groq
 #llm = init_chat_model("mistral-saba-24b", model_provider="groq", temperature = 0)
 #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 token hugging-face
-#llm = ChatOllama(model="llama3.1-8b-ft", temperature=0)
+
 LLM_MODEL_NAME = os.environ.get("LLM_MODEL_NAME", "llama3:70b")
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
 LLM_CONTEXT_WINDOW = 8192
@@ -50,6 +52,22 @@ OLLAMA_MAX_ATTEMPTS = max(1, int(os.environ.get("OLLAMA_MAX_ATTEMPTS", "3")))
 OLLAMA_RETRY_DELAY_SECONDS = max(
     0.0, float(os.environ.get("OLLAMA_RETRY_DELAY_SECONDS", "10"))
 )
+repo_folder = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+tpch_folder = Path(__file__).resolve().parent
+csv_folder = Path(os.environ.get("TPCH_DATA_DIR", tpch_folder / "tpch-data")).resolve()
+faiss_index_folder = Path(os.environ.get("FAISS_INDEX_DIR", tpch_folder / "faiss_index")).resolve()
+output_folder = Path(os.environ.get("OUTPUT_DIR", tpch_folder / "runs" / "tpch")).resolve()
+questions_path = Path(os.environ.get("QUESTIONS_FILE", tpch_folder / "questions.json")).resolve()
+output_filename = output_folder / "test_pipeline.json"
+timing_filename = output_folder / "timing_metrics.json"
+output_folder.mkdir(parents=True, exist_ok=True)
+all_files = data_files(csv_folder)
+data = load_questions(questions_path)
+questions = list(data)
+expected_manifest = index_manifest(all_files, EMBEDDING_MODEL_NAME)
+manifest_path = faiss_index_folder / "manifest.json"
+
+
 llm = ChatOllama(model=LLM_MODEL_NAME, temperature=0, num_ctx=LLM_CONTEXT_WINDOW)
 
 # Embedding model: Hugging Face
@@ -85,15 +103,11 @@ embedding_model = HuggingFaceEmbeddings(
 #)
 """ Indexing part """
 
-repo_folder = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-csv_folder = os.path.join(repo_folder, "csv_data")
-faiss_index_folder = os.path.join(repo_folder, "faiss_index")
-output_filename = os.path.join(repo_folder, "tpch", "test_pipeline.json")
-timing_filename = os.path.join(repo_folder, "tpch", "timing_metrics.json")
-# Ensure the output directory exists
-os.makedirs(os.path.dirname(output_filename), exist_ok=True)
 
 timing_metrics = {
+    "dataset": {"name": "tpch", "data_dir": str(csv_folder),
+                "questions_file": str(questions_path), "index_dir": str(faiss_index_folder),
+                "provenance": "explicit_table_rownum"},
     "started_at_utc": datetime.now(timezone.utc).isoformat(),
     "oar_job_id": os.environ.get("OAR_JOB_ID"),
     "retrieval": {
@@ -223,15 +237,21 @@ index_exists = all(
     for filename in ("index.faiss", "index.pkl")
 )
 force_index_rebuild = os.environ.get("REBUILD_FAISS_INDEX", "0") == "1"
-if index_exists and not force_index_rebuild:
+manifest_matches = False
+if manifest_path.is_file():
+    try:
+        manifest_matches = json.loads(manifest_path.read_text()) == expected_manifest
+    except (ValueError, OSError):
+        pass
+if index_exists and not force_index_rebuild and not manifest_matches:
+    print("Index metadata does not match TPC-H inputs; rebuilding the index.")
+if index_exists and manifest_matches and not force_index_rebuild:
     # Load the FAISS index folder (allow_dangerous_deserialization=True just because we create the files and so we can trust them)
-    vector_store = FAISS.load_local(faiss_index_folder, embedding_model, allow_dangerous_deserialization=True)
+    vector_store = FAISS.load_local(str(faiss_index_folder), embedding_model, allow_dangerous_deserialization=True)
     timing_metrics["embedding"]["index_action"] = "loaded_existing_index"
     print("FAISS index successfully loaded")
 else:
     batch_size = EMBEDDING_BATCH_SIZE
-    documents = []
-    all_files = [f for f in os.listdir(csv_folder) if f.endswith(".csv")]
 
     # Initialize vector_store before the loop
     vector_store = None
@@ -250,15 +270,16 @@ else:
         gpu_sampler.start()
     embedding_started = time.perf_counter()
 
-    for file in all_files:
-        file_path = os.path.join(csv_folder, file)
-        loader = CSVLoader(file_path=file_path)
-        docs = loader.load()
+    for file_path in all_files:
+        rows = iter_rows(file_path)
+        document_count = 0
         if cuda_available:
             torch.cuda.synchronize()
         file_embedding_started = time.perf_counter()
-        for i in range(0, len(docs), batch_size):
-            batch_docs = docs[i:i+batch_size]
+        while batch_rows := list(islice(rows, batch_size)):
+            batch_docs = [Document(page_content=content, metadata=metadata)
+                          for content, metadata in batch_rows]
+            document_count += len(batch_docs)
             timing_metrics["embedding"]["documents_embedded"] += len(batch_docs)
             if vector_store is None: # Only create for the first batch
                 vector_store = FAISS.from_documents(batch_docs, embedding=embedding_model)
@@ -267,8 +288,8 @@ else:
         if cuda_available:
             torch.cuda.synchronize()
         timing_metrics["embedding"]["files"].append({
-            "file": file,
-            "document_count": len(docs),
+            "file": file_path.name,
+            "document_count": document_count,
             "embedding_wall_seconds": time.perf_counter() - file_embedding_started,
         })
 
@@ -288,7 +309,10 @@ else:
     })
 
     # Save after full processing
-    vector_store.save_local(faiss_index_folder)
+    if vector_store is None:
+        raise ValueError(f"No TPC-H rows found in {csv_folder}")
+    vector_store.save_local(str(faiss_index_folder))
+    manifest_path.write_text(json.dumps(expected_manifest, indent=2), encoding="utf-8")
     print("FAISS vector store created and saved successfully!")
 
 save_timing_metrics()
@@ -313,83 +337,29 @@ class State(TypedDict):
     answer: AnswerItem
 def definePrompt():
     prompt = """
-        Your task is to provide the correct answer(s) to this question: QUESTION_HERE, based ONLY on the given context: CONTEXT_HERE.
-        For each answer, explain WHY it appears using **Witness Sets**: minimal sets of input tuples that justify the result.
-        Format of Witness Sets (as strings):  
-        - If there is ONE relevant tuple set: "{{<table_name>_<row>}}"  
-        - If there are MULTIPLE: "{{<table_name>_<row>},{<table_name>_<row>},...}}"  
-        IMPORTANT:
-        Return ONLY the JSON output, with no explanation, no introductory sentence, and no trailing comments.
-        If your output is not a valid JSON block in the format described, it will be discarded.
-        If the answer is not present in the context, return an empty array.
-        
-        
-        INVALID OUTPUT EXAMPLE (will be discarded):
-        The answer is: {"answer": [...], "why": [...]}
-        VALID OUTPUT EXAMPLE (will be accepted):
-        ```json
-        {
-            "answer": ["<answer_1>", "<answer_2>", ...],
-            "why": ["{{<table_name>_<row>},{<table_name>_<row>}}", "{{<table_name>_<row>}}", ...]
-        }
-        ```
-            
-        EXAMPLE 1:
-        CONTEXT:
-            - source: courses.csv, row: 0  
-            (course_id:101, course_name:Machine Learning, ...)  
-            - source: courses.csv, row: 3  
-            (course_id:104, course_name:Advanced Algorithms, ...)  
-            - source: enrollments.csv, row: 0  
-            (enrollment_id:1, student_id:1, course_id:101, ...)  
-            - source: enrollments.csv, row: 3  
-            (enrollment_id:4, student_id:1, course_id:104, ...)  
-            - source: enrollments.csv, row: 9  
-            (enrollment_id:10, student_id:2, course_id:101, ...)  
-            - source: students.csv, row: 0  
-            (student_id:1, name:Giulia, surname:Rossi, ...)  
-            - source: students.csv, row: 1  
-            (student_id:2, name:Marco, surname:Bianchi, ...)  
+        Answer QUESTION_HERE using ONLY the retrieved TPC-H tuples in CONTEXT_HERE.
+        Database schema (relationships only, not evidence): SCHEMA_HERE
+        For each answer, explain WHY using Witness Sets: minimal sets of input
+        tuples that justify that answer. Each answer has one corresponding why string.
+        Copy tuple IDs exactly from metadata tuple_id or the <table>_rownum field.
+        IDs are supplied by the dataset; never infer them from primary keys or CSV positions.
+        A witness containing two joined tuples is "{{supplier_212,nation_3}}".
+        Alternative witnesses for one answer are "{{orders_10,customer_14},{orders_20,customer_14}}".
+        Use only IDs present in the retrieved context. Do not invent missing rows.
+        Return ONLY a JSON object with "answer" and "why" arrays of strings.
+        If the context cannot answer the question, return {"answer": [], "why": []}.
 
-        QUESTION:  
-            "Which are the students (specify name and surname) enrolled in Machine Learning or in Advanced Algorithm courses?"
-
-        EXPECTED ANSWER:
-        ```json
-            {
-            "answer": ["Giulia Rossi","Marco Bianchi"],
-            "why": [
-            "{{courses_0,enrollments_0,students_0},{courses_3,enrollments_3,students_0}}",
-            "{{courses_0,enrollments_9,students_1}}"
-            ]
-            }
-        ```
-        
-        EXAMPLE 2:    
-        CONTEXT:
-            - source: departments.csv, row: 1
-            (department_id:2, department_name:Electronics, faculty:Engineering)
-           
-
-        QUESTION:  
-            "Which faculty does the Electronics department belong to?"
-
-        EXPECTED OUTPUT:
-        ```json
-        {
-            "answer": ["Engineering"],
-            "why": [
-            "{{departments_1}}"
-            ]
-        }
-        ```
+        EXAMPLE (illustrative only, never evidence for the actual question):
+        Context: tuple_id: region_2; r_regionkey: 1; r_name: AMERICA
+        Question: What is the name of the region with region key 1?
+        Output: {"answer": ["AMERICA"], "why": ["{{region_2}}"]}
     """
     return prompt
 
 # Step 1: Define Explanation Class: composed by file and row
 
 parser = JsonOutputParser(pydantic_schema=AnswerItem)    
-schema_path = os.path.join(repo_folder, "schemaTOY.txt")
+schema_path = os.path.join(repo_folder, "schemaTPCH.txt")
 # Load the schema from the file
 with open(schema_path, "r") as f:
     schema = f.read().strip()
@@ -650,11 +620,6 @@ def generate(state: State):
             }
 '''
 
-# Leggi le domande dal file JSON
-with open(os.path.join(repo_folder, "questions.json"), "r") as f:
-    data = json.load(f)
-    questions = list(data.keys())
-
 # Build the graph structure once
 #graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 #graph_builder.add_edge(START, "retrieve")
@@ -691,6 +656,8 @@ for i, question in enumerate(questions):
  
     result = {
         "question": question,
+        "question_type": data[question],
+        "dataset": "tpch",
         "models": {
             "llm": LLM_MODEL_NAME,
             "embedding": EMBEDDING_MODEL_NAME,
@@ -721,6 +688,8 @@ for i, question in enumerate(questions):
         },
     }
     all_results.append(result)
+    with open(output_filename, "w", encoding="utf-8") as output_file:
+        json.dump(all_results, output_file, indent=2, ensure_ascii=False)
     timing_metrics["questions"].append({
         "question_number": i + 1,
         "question": question,
@@ -736,7 +705,7 @@ for i, question in enumerate(questions):
         },
     })
     save_timing_metrics()
-example_output_txt = os.path.join(repo_folder, "full_context", "example_readable_output.txt")
+example_output_txt = output_folder / "example_readable_output.txt"
 with open(example_output_txt, "w", encoding="utf-8") as f:
     for idx, result in enumerate(all_results, 1):
         f.write(f"--- Question {idx} ---\n")
